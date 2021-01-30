@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
 <softwarelist name="bbc_flop_cover_ssd" description="bbc_flop_cover_ssd">
 
 	<software name="acornuse" supported="no">
@@ -7,7 +11,7 @@
 		<year>19??</year>
 		<publisher>Redwood Publishing</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="acorn user education disk (19xx)(redwood publishing).ssd" size="204800" crc="8e3b61aa" sha1="d1d2868f03b4ccb9e44b0d1e8b289ba2e4f1f61d"/>
 			</dataarea>
@@ -15,239 +19,164 @@
 	</software>
 
 	<software name="acornuse_1" supported="no">
-		<description>Acorn User Gallery (Disk 1)</description>
+		<description>Acorn User Gallery</description>
 		<year>1985</year>
 		<publisher>Redwood Publishing</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2, Gallery"/>
 			<dataarea name="rom" size="99072">
 				<rom name="acorn user gallery (1985)(redwood publishing)(disk 1 of 2)(gallery).ssd" size="99072" crc="96410443" sha1="47eaed184e279930ef47c1be83187e40762d5f1c"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornuse_2" supported="no">
-		<description>Acorn User Gallery (Disk 1, Alt 2)</description>
-		<year>1985</year>
-		<publisher>Redwood Publishing</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2, Gallery, Alt 2"/>
 			<dataarea name="rom" size="100352">
 				<rom name="acorn user gallery (1985)(redwood publishing)(disk 1 of 2)(gallery)[a2].ssd" size="100352" crc="fdc7eead" sha1="5093bf2ef0b3fc9394b5a98c0ad21073b3c86c6a"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornuse_3" supported="no">
-		<description>Acorn User Gallery (Disk 1, Alt 3)</description>
-		<year>1985</year>
-		<publisher>Redwood Publishing</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2, Gallery, Alt 3"/>
 			<dataarea name="rom" size="100352">
 				<rom name="acorn user gallery (1985)(redwood publishing)(disk 1 of 2)(gallery)[a3].ssd" size="100352" crc="805e23e9" sha1="2f706b3eb4f1b6025da7c7ed4206034c0dd7f58c"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornuse_4" supported="no">
-		<description>Acorn User Gallery (Disk 1, Alt)</description>
-		<year>1985</year>
-		<publisher>Redwood Publishing</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2, Gallery, Alt"/>
 			<dataarea name="rom" size="99072">
 				<rom name="acorn user gallery (1985)(redwood publishing)(disk 1 of 2)(gallery)[a].ssd" size="99072" crc="bcc50d65" sha1="060f4217242711a1f9d66a5389447502bacd4b6f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornuse_5" supported="no">
-		<description>Acorn User Gallery (Disk 2)</description>
-		<year>1985</year>
-		<publisher>Redwood Publishing</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, Pictures"/>
 			<dataarea name="rom" size="161792">
 				<rom name="acorn user gallery (1985)(redwood publishing)(disk 2 of 2)(pictures).ssd" size="161792" crc="63dee959" sha1="674d880b81bc798e81163d94f1040e3bf13b2f09"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornuse_6" supported="no">
-		<description>Acorn User Gallery (Disk 2, Alt 2)</description>
-		<year>1985</year>
-		<publisher>Redwood Publishing</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, Pictures, Alt 2"/>
 			<dataarea name="rom" size="204800">
 				<rom name="acorn user gallery (1985)(redwood publishing)(disk 2 of 2)(pictures)[a2].ssd" size="204800" crc="cd69b8ad" sha1="62612f23c921381131b2844c4e7d341f359e3ebf"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornuse_7" supported="no">
-		<description>Acorn User Gallery (Disk 2, Alt)</description>
-		<year>1985</year>
-		<publisher>Redwood Publishing</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop7" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, Pictures, Alt"/>
 			<dataarea name="rom" size="204800">
 				<rom name="acorn user gallery (1985)(redwood publishing)(disk 2 of 2)(pictures)[a].ssd" size="204800" crc="7eefe30d" sha1="c22b260fc05093dbc9b47ac0842b421552df4469"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="acornuse_8" supported="no">
-		<description>Acorn User Games Disc (Hacked TSTH)</description>
+	<software name="acornuse_2" supported="no">
+		<description>Acorn User Games Disc</description>
 		<year>1988</year>
 		<publisher>Redwood Publishing</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="158720">
 				<rom name="acorn user games disc (1988)(redwood publishing)[h tsth].ssd" size="158720" crc="fec427b4" sha1="6a68ae11c11801108e0e3069d879773d54684d6c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="acornuse_9" supported="no">
+	<software name="acornuse_3" supported="no">
 		<description>Acorn User Graphics Bonus</description>
 		<year>19??</year>
 		<publisher>Redwood Publishing</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="203264">
 				<rom name="acorn user graphics bonus (19xx)(redwood publishing).ssd" size="203264" crc="fe5fe69d" sha1="ab885d7fc89611e0892a547827d1831becec00d2"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornuse_10" supported="no">
-		<description>Acorn User Graphics Bonus (Side 0)</description>
-		<year>19??</year>
-		<publisher>Redwood Publishing</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="acorn user graphics bonus (19xx)(redwood publishing)(side 0).ssd" size="204800" crc="303f87fc" sha1="088c59f8760b6ee74c50462565b0b7d1c1f21c53"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornuse_11" supported="no">
-		<description>Acorn User Graphics Bonus (Side 1)</description>
-		<year>19??</year>
-		<publisher>Redwood Publishing</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="acorn user graphics bonus (19xx)(redwood publishing)(side 1).ssd" size="204800" crc="5a37fd5a" sha1="7d4ed0f64eb2bcbc61fb94962aff7c9247ba4041"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="acornuse_12" supported="no">
-		<description>Acorn User Graphics Utilities Disk (Alt 2, RUN !BOOT)</description>
+	<software name="acornuse_4" supported="no">
+		<description>Acorn User Graphics Utilities Disk</description>
 		<year>19??</year>
 		<publisher>Redwood Publishing</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2, RUN !BOOT"/>
 			<dataarea name="rom" size="93440">
 				<rom name="acorn user graphics utilities disk (19xx)(redwood publishing)[a2][run boot].ssd" size="93440" crc="de05df11" sha1="e824e850595152a0333ee215b108405e3214a868"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornuse_13" supported="no">
-		<description>Acorn User Graphics Utilities Disk (Alt 3, RUN !BOOT)</description>
-		<year>19??</year>
-		<publisher>Redwood Publishing</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 3, RUN !BOOT"/>
 			<dataarea name="rom" size="204800">
 				<rom name="acorn user graphics utilities disk (19xx)(redwood publishing)[a3][run boot].ssd" size="204800" crc="ac4f8b36" sha1="5c979d6a94cfcf8d4eb4c219ccb5c3a02a41445b"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornuse_14" supported="no">
-		<description>Acorn User Graphics Utilities Disk (Alt, RUN !BOOT)</description>
-		<year>19??</year>
-		<publisher>Redwood Publishing</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt, RUN !BOOT"/>
 			<dataarea name="rom" size="93440">
 				<rom name="acorn user graphics utilities disk (19xx)(redwood publishing)[a][run boot].ssd" size="93440" crc="3788fc20" sha1="d1c596fdd4dfefbccebadc4e9a612e377caa74fe"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornuse_15" supported="no">
-		<description>Acorn User Graphics Utilities Disk (RUN !BOOT)</description>
-		<year>19??</year>
-		<publisher>Redwood Publishing</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="RUN !BOOT"/>
 			<dataarea name="rom" size="93440">
 				<rom name="acorn user graphics utilities disk (19xx)(redwood publishing)[run boot].ssd" size="93440" crc="0ed8032a" sha1="743693a40231f852a478e124c2a3249faf71487d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="acornuse_16" supported="no">
+	<software name="acornuse_5" supported="no">
 		<description>Acorn User Network Utility Disk</description>
 		<year>1986</year>
 		<publisher>Redwood Publishing</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="acorn user network utility disk (1986)(redwood publishing).ssd" size="204800" crc="0d075447" sha1="551a2bf240e17293e230807f52eecc6bcf96a6ca"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="acornuse_17" supported="no">
+	<software name="acornuse_6" supported="no">
 		<description>Acorn User Portfolio Disk</description>
 		<year>1987</year>
 		<publisher>Redwood Publishing</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="acorn user portfolio disk (1987)(redwood publishing).ssd" size="204800" crc="cdfffb12" sha1="38648963aec33e4b28972ff796e25f00285bcea5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="acornuse_18" supported="no">
+	<software name="acornuse_7" supported="no">
 		<description>Acorn User Swr Utilities</description>
 		<year>1986</year>
 		<publisher>Redwood Publishing</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="acorn user swr utilities (1986)(redwood publishing).ssd" size="204800" crc="8aadd43c" sha1="e123a79bfbd45ca47430cbfe290c2643d732b775"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornuse_19" supported="no">
-		<description>Acorn User Swr Utilities (Side 0)</description>
-		<year>1986</year>
-		<publisher>Redwood Publishing</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="acorn user swr utilities (1986)(redwood publishing)(side 0).ssd" size="204800" crc="10330471" sha1="5b71537a1d0faa17a830a20776e08919f9f2ef6b"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornuse_20" supported="no">
-		<description>Acorn User Swr Utilities (Side 1)</description>
-		<year>1986</year>
-		<publisher>Redwood Publishing</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="acorn user swr utilities (1986)(redwood publishing)(side 1).ssd" size="204800" crc="d3789f26" sha1="303ae067f2a19a3d385fdf4f16d3b17db5ed6b8c"/>
 			</dataarea>

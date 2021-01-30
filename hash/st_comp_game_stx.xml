@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
 <softwarelist name="st_comp_game_stx" description="st_comp_game_stx">
 
 	<software name="bondcoll" supported="no">
@@ -7,7 +11,7 @@
 		<year>19??</year>
 		<publisher>Domark</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="rom" size="1853060">
 				<rom name="bond collection (19xx)(domark).stx" size="1853060" crc="42a3e9ac" sha1="c27585929c92aad7b98a08d65db22a1ca8452df6"/>
 			</dataarea>
@@ -15,119 +19,66 @@
 	</software>
 
 	<software name="capcomco" supported="no">
-		<description>Capcom Collection (Disk 01, Strider)</description>
+		<description>Capcom Collection</description>
 		<year>1991</year>
 		<publisher>U.S. Gold</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 01 of 10, Strider"/>
 			<dataarea name="rom" size="941150">
 				<rom name="capcom collection (1991)(u.s. gold)(disk 01 of 10)[strider].stx" size="941150" crc="e8ba2f01" sha1="5ffbbf6308f82f388121d20bd7099b9e9cdc8076"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="capcomco_1" supported="no">
-		<description>Capcom Collection (Disk 02, Strider II)</description>
-		<year>1991</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 02 of 10, Strider II"/>
 			<dataarea name="rom" size="857946">
 				<rom name="capcom collection (1991)(u.s. gold)(disk 02 of 10)[strider ii].stx" size="857946" crc="32c2320f" sha1="489b8f5ba926f3504282141b261b0d0563c7cc70"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="capcomco_2" supported="no">
-		<description>Capcom Collection (Disk 03, UN Squadron)</description>
-		<year>1991</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 03 of 10, UN Squadron"/>
 			<dataarea name="rom" size="1130132">
 				<rom name="capcom collection (1991)(u.s. gold)(disk 03 of 10)[un squadron].stx" size="1130132" crc="f3391422" sha1="9aed030808b77a7ef389d69cce37dce728d418e8"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="capcomco_3" supported="no">
-		<description>Capcom Collection (Disk 04, Ghouls 'n' Ghosts Disk A)</description>
-		<year>1991</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 04 of 10, Ghouls 'n' Ghosts Disk A"/>
 			<dataarea name="rom" size="1424720">
 				<rom name="capcom collection (1991)(u.s. gold)(disk 04 of 10)[ghouls 'n' ghosts disk a].stx" size="1424720" crc="37770c49" sha1="10a38ca283a2c17d5d2466abaf36a427ddfdfe63"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="capcomco_4" supported="no">
-		<description>Capcom Collection (Disk 05, Ghouls 'n' Ghosts Disk B)</description>
-		<year>1991</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop5" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 05 of 10, Ghouls 'n' Ghosts Disk B"/>
 			<dataarea name="rom" size="1424304">
 				<rom name="capcom collection (1991)(u.s. gold)(disk 05 of 10)[ghouls 'n' ghosts disk b].stx" size="1424304" crc="88ca368d" sha1="85d3c61d19aa003032f47b3cf8670c60567b7d91"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="capcomco_5" supported="no">
-		<description>Capcom Collection (Disk 06, Dynasty Wars)</description>
-		<year>1991</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop6" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 06 of 10, Dynasty Wars"/>
 			<dataarea name="rom" size="1129834">
 				<rom name="capcom collection (1991)(u.s. gold)(disk 06 of 10)[dynasty wars].stx" size="1129834" crc="5c9dad8c" sha1="b4c03abce51447fb16b9d235a0d5a756466a8b23"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="capcomco_6" supported="no">
-		<description>Capcom Collection (Disk 07, Led Storm)</description>
-		<year>1991</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop7" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 07 of 10, Led Storm"/>
 			<dataarea name="rom" size="1046664">
 				<rom name="capcom collection (1991)(u.s. gold)(disk 07 of 10)[led storm].stx" size="1046664" crc="a6997a3e" sha1="3d926147a88daa7e9600e095ae85e9beb8354356"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="capcomco_7" supported="no">
-		<description>Capcom Collection (Disk 08, Last Duel)</description>
-		<year>1991</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop8" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 08 of 10, Last Duel"/>
 			<dataarea name="rom" size="467334">
 				<rom name="capcom collection (1991)(u.s. gold)(disk 08 of 10)[last duel].stx" size="467334" crc="a4292e14" sha1="106433df820aad0c08fd052668e6fb9e8b1b0d87"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="capcomco_8" supported="no">
-		<description>Capcom Collection (Disk 09, Forgotten Worlds Disk A)</description>
-		<year>1991</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop9" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 09 of 10, Forgotten Worlds Disk A"/>
 			<dataarea name="rom" size="976892">
 				<rom name="capcom collection (1991)(u.s. gold)(disk 09 of 10)[forgotten worlds disk a].stx" size="976892" crc="1eb4ab16" sha1="970108cdefb7dba70cc8cfd723d974979663cd7c"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="capcomco_9" supported="no">
-		<description>Capcom Collection (Disk 10, Forgotten Worlds Disk B)</description>
-		<year>1991</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop10" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 10 of 10, Forgotten Worlds Disk B"/>
 			<dataarea name="rom" size="972130">
 				<rom name="capcom collection (1991)(u.s. gold)(disk 10 of 10)[forgotten worlds disk b].stx" size="972130" crc="7389bbcc" sha1="a4ebd7cb473997861db43bac6be9b9cd393b0f57"/>
 			</dataarea>
@@ -135,37 +86,25 @@
 	</software>
 
 	<software name="captainb" supported="no">
-		<description>Captain Blood (Disk 1)</description>
+		<description>Captain Blood</description>
 		<year>1988</year>
 		<publisher>Ere</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2"/>
 			<dataarea name="rom" size="925846">
 				<rom name="captain blood (1988)(ere)(disk 1 of 2).stx" size="925846" crc="b6a2bde0" sha1="de69863d598c937307af47f9c08241d681dc7aaa"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Captain Blood (1988)(Ere)(Disk 2 of 2) &amp; Arkanoid II - Revenge of Doh (1988)(Imagine)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="925818">
-				<rom name="captain blood (1988)(ere)(disk 2 of 2) &amp; arkanoid ii - revenge of doh (1988)(imagine).stx" size="925818" crc="6a79f487" sha1="528cab1d33ca36596e6c291f2cb5a87715902df3"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
 	<software name="compilco" supported="no">
-		<description>Compil Codemasters 16bits (BMX Simulator &amp; Mig-29 &amp; Pro Tennis &amp; Treasure Island Dizzy)</description>
+		<description>Compil Codemasters 16bits</description>
 		<year>19??</year>
 		<publisher>Codemasters</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="BMX Simulator &amp; Mig-29 &amp; Pro Tennis &amp; Treasure Island Dizzy"/>
 			<dataarea name="rom" size="1862866">
 				<rom name="compil codemasters 16bits (19xx)(codemasters)[bmx simulator &amp; mig-29 &amp; pro tennis &amp; treasure island dizzy].stx" size="1862866" crc="0a22497b" sha1="2940b2b70955ae5a4f28232cab444dfdf5545824"/>
 			</dataarea>
@@ -173,23 +112,18 @@
 	</software>
 
 	<software name="compilwo" supported="no">
-		<description>Compil World Cup Year 90 (Disk 1, ST Soccer)</description>
+		<description>Compil World Cup Year 90</description>
 		<year>1990</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2, ST Soccer"/>
 			<dataarea name="rom" size="885738">
 				<rom name="compil world cup year 90 (1990)(-)(disk 1 of 2)[st soccer].stx" size="885738" crc="c4af2b79" sha1="88a4ac73d243a842e62078ae25f2038a54dfa209"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="compilwo_1" supported="no">
-		<description>Compil World Cup Year 90 (Disk 2, Tracksuit Manager)</description>
-		<year>1990</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2, Tracksuit Manager"/>
 			<dataarea name="rom" size="938810">
 				<rom name="compil world cup year 90 (1990)(-)(disk 2 of 2)[tracksuit manager].stx" size="938810" crc="e425c6a3" sha1="43fcd54f38484b6b58ba49cec2fe14e9746626bf"/>
 			</dataarea>
@@ -197,129 +131,97 @@
 	</software>
 
 	<software name="compilat" supported="no">
-		<description>Compilation Sword and Magic (FR, Targhan &amp; Arborea)</description>
+		<description>Compilation Sword and Magic (FR)</description>
 		<year>1990</year>
 		<publisher>Silmarils</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Targhan &amp; Arborea"/>
 			<dataarea name="rom" size="1882648">
 				<rom name="compilation sword and magic (1990)(silmarils)(fr)[targhan &amp; arborea].stx" size="1882648" crc="4e622122" sha1="e3ee3b242d8ed596788602499607451ba28bd9ba"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Crazy Cars (1987)(Titus) &amp; Enduro Racer (1987)(Activision)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="937910">
-				<rom name="crazy cars (1987)(titus) &amp; enduro racer (1987)(activision).stx" size="937910" crc="086eadab" sha1="18f7f73ff1f8ebe6e076f6eb83d6804dc7f336ae"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
 	<software name="precious" supported="no">
-		<description>Precious Metal (Disk 1, L'Arche du Capitaine Blood Disk 1)</description>
+		<description>Precious Metal</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 5, L'Arche du Capitaine Blood Disk 1"/>
 			<dataarea name="rom" size="926472">
 				<rom name="precious metal (19xx)(-)(disk 1 of 5)[l'arche du capitaine blood disk 1].stx" size="926472" crc="8c12006e" sha1="b9cf9d9b2d121521f2709516d8e298be73cf0467"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="precious_1" supported="no">
-		<description>Precious Metal (Disk 2, L'Arche du Capitaine Blood Disk 1 - Arkanoid II)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 5, L'Arche du Capitaine Blood Disk 1 - Arkanoid II"/>
 			<dataarea name="rom" size="925624">
 				<rom name="precious metal (19xx)(-)(disk 2 of 5)[l'arche du capitaine blood disk 1 - arkanoid ii].stx" size="925624" crc="1e099409" sha1="9329bc56e5b84d037c27e39a5c6ffd45c7ae2e9a"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="precious_2" supported="no">
-		<description>Precious Metal (Disk 3, Xenon)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 3 of 5, Xenon"/>
 			<dataarea name="rom" size="922462">
 				<rom name="precious metal (19xx)(-)(disk 3 of 5)[xenon].stx" size="922462" crc="d28797df" sha1="5928205af72f53b7bd1259f41ccea572754d3588"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="precious_3" supported="no">
-		<description>Precious Metal (Disk 4, Super Hang-On Disk 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 4 of 5, Super Hang-On Disk 1"/>
 			<dataarea name="rom" size="924900">
 				<rom name="precious metal (19xx)(-)(disk 4 of 5)[super hang-on disk 1].stx" size="924900" crc="a8591255" sha1="0c86ff1940b0e0cfafd8651b153dba03bb0a6901"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="precious_4" supported="no">
-		<description>Precious Metal (Disk 5, Super Hang-On Disk 2)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop5" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 5 of 5, Super Hang-On Disk 2"/>
 			<dataarea name="rom" size="922176">
 				<rom name="precious metal (19xx)(-)(disk 5 of 5)[super hang-on disk 2].stx" size="922176" crc="1318d355" sha1="636058c8f296b3af6546d3a61538a8c9d16bbee8"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Rampage (1986)(Activision) &amp; Wizball (1987)(Ocean)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="931924">
-				<rom name="rampage (1986)(activision) &amp; wizball (1987)(ocean).stx" size="931924" crc="94879aed" sha1="5557c9bee1d8b8cbd6ed787b2ae539db8f21f0cd"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
 	<software name="slaygon" supported="no">
-		<description>Slaygon (Disk 1)</description>
+		<description>Slaygon</description>
 		<year>19??</year>
 		<publisher>Microdeal</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2"/>
 			<dataarea name="rom" size="883768">
 				<rom name="slaygon (19xx)(microdeal)(disk 1 of 2).stx" size="883768" crc="56df974f" sha1="2dcd7488d8a7203eb8a5135f1012c5d126537f0f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Slaygon (19xx)(Microdeal)(Disk 2 of 2) &amp; Goldrunner (1987)(Microdeal)</description>
-		<year>19??</year>
+	<software name="_fixme" supported="no">
+		<description>_FIXME_</description>
+		<year>????</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="part" interface="interface">
-			<dataarea name="data" size="883844">
+		<part name="part1" interface="interface">
+			<feature name="part_id" value="Captain Blood (1988)(Ere)(Disk 2 of 2) &amp; Arkanoid II - Revenge of Doh (1988)(Imagine)"/>
+			<dataarea name="rom" size="925818">
+				<rom name="captain blood (1988)(ere)(disk 2 of 2) &amp; arkanoid ii - revenge of doh (1988)(imagine).stx" size="925818" crc="6a79f487" sha1="528cab1d33ca36596e6c291f2cb5a87715902df3"/>
+			</dataarea>
+		</part>
+		<part name="part2" interface="interface">
+			<feature name="part_id" value="Crazy Cars (1987)(Titus) &amp; Enduro Racer (1987)(Activision)"/>
+			<dataarea name="rom" size="937910">
+				<rom name="crazy cars (1987)(titus) &amp; enduro racer (1987)(activision).stx" size="937910" crc="086eadab" sha1="18f7f73ff1f8ebe6e076f6eb83d6804dc7f336ae"/>
+			</dataarea>
+		</part>
+		<part name="part3" interface="interface">
+			<feature name="part_id" value="Rampage (1986)(Activision) &amp; Wizball (1987)(Ocean)"/>
+			<dataarea name="rom" size="931924">
+				<rom name="rampage (1986)(activision) &amp; wizball (1987)(ocean).stx" size="931924" crc="94879aed" sha1="5557c9bee1d8b8cbd6ed787b2ae539db8f21f0cd"/>
+			</dataarea>
+		</part>
+		<part name="part4" interface="interface">
+			<feature name="part_id" value="Slaygon (19xx)(Microdeal)(Disk 2 of 2) &amp; Goldrunner (1987)(Microdeal)"/>
+			<dataarea name="rom" size="883844">
 				<rom name="slaygon (19xx)(microdeal)(disk 2 of 2) &amp; goldrunner (1987)(microdeal).stx" size="883844" crc="5aff1eab" sha1="2d84722430fc1fa493533adc17e60d8e48b0ace6"/>
 			</dataarea>
 		</part>
 	</software>
-	-->
 
 </softwarelist>

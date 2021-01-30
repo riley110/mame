@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
 <softwarelist name="bbc_flop_multi_dsd" description="bbc_flop_multi_dsd">
 
 	<software name="8004word" supported="no">
@@ -7,7 +11,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="8004 words (19xx)(8-bit).dsd" size="409600" crc="14f23114" sha1="87c5ba1e940d91600004a479561fdd63a4f132a1"/>
 			</dataarea>
@@ -15,35 +19,24 @@
 	</software>
 
 	<software name="amusingt" supported="no">
-		<description>Amusing Text Files (Disk 1)</description>
+		<description>Amusing Text Files</description>
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 3"/>
 			<dataarea name="rom" size="409600">
 				<rom name="amusing text files (19xx)(8-bit)(disk 1 of 3).dsd" size="409600" crc="9af1070f" sha1="3fbf44dabce399152b2254c89a0471c5fb9b50d8"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="amusingt_1" supported="no">
-		<description>Amusing Text Files (Disk 2)</description>
-		<year>19??</year>
-		<publisher>8-Bit</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 3"/>
 			<dataarea name="rom" size="409600">
 				<rom name="amusing text files (19xx)(8-bit)(disk 2 of 3).dsd" size="409600" crc="e851497b" sha1="3bf696b98dd1ac062c6a7919042f4b5e1a89e607"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="amusingt_2" supported="no">
-		<description>Amusing Text Files (Disk 3)</description>
-		<year>19??</year>
-		<publisher>8-Bit</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 3 of 3"/>
 			<dataarea name="rom" size="409600">
 				<rom name="amusing text files (19xx)(8-bit)(disk 3 of 3).dsd" size="409600" crc="ef5dd135" sha1="b7d9ec0f33a85fd1d0763028c230770a4245733a"/>
 			</dataarea>
@@ -55,7 +48,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="animated pictures (19xx)(-).dsd" size="409600" crc="3b46266c" sha1="d24e95a2a2ccc9e04782eba7c949750ae8bd4ad4"/>
 			</dataarea>
@@ -63,47 +56,30 @@
 	</software>
 
 	<software name="apollopi" supported="no">
-		<description>Apollo Picture Show (Disk 1)</description>
+		<description>Apollo Picture Show</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 4"/>
 			<dataarea name="rom" size="409600">
 				<rom name="apollo picture show (19xx)(-)(disk 1 of 4).dsd" size="409600" crc="43e2263c" sha1="2ed795a47dc550ee2e919498d807151ba3708e8a"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="apollopi_1" supported="no">
-		<description>Apollo Picture Show (Disk 2)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 4"/>
 			<dataarea name="rom" size="409600">
 				<rom name="apollo picture show (19xx)(-)(disk 2 of 4).dsd" size="409600" crc="26937a7f" sha1="d162a87f0d2c9416182ea96534fa31e882d45fb5"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="apollopi_2" supported="no">
-		<description>Apollo Picture Show (Disk 3)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 3 of 4"/>
 			<dataarea name="rom" size="409600">
 				<rom name="apollo picture show (19xx)(-)(disk 3 of 4).dsd" size="409600" crc="08df9ee0" sha1="7976f0df2e3e4b52ec27dc83c078787cca40e15c"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="apollopi_3" supported="no">
-		<description>Apollo Picture Show (Disk 4)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 4 of 4"/>
 			<dataarea name="rom" size="409600">
 				<rom name="apollo picture show (19xx)(-)(disk 4 of 4).dsd" size="409600" crc="411eb2e9" sha1="ef556a374a5b0857da6b5f3822cc2746e39bac59"/>
 			</dataarea>
@@ -115,7 +91,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="bastard operator from hell (19xx)(-).dsd" size="409600" crc="4cdfebf0" sha1="44c1cfc7df14d9b33eabcaddd7ced030dd56bb1a"/>
 			</dataarea>
@@ -123,11 +99,12 @@
 	</software>
 
 	<software name="bbcpddis" supported="no">
-		<description>BBC PD Disk 076-1 - Digitised Pictures (Disk 1)</description>
+		<description>BBC PD Disk 076-1 - Digitised Pictures</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2, PD"/>
 			<dataarea name="rom" size="409600">
 				<rom name="bbc pd disk 076-1 - digitised pictures (19xx)(-)(disk 1 of 2)(pd).dsd" size="409600" crc="e307de54" sha1="3d9e73ddb788ad8e8ff9d4ff6a78c3dc87c6167a"/>
 			</dataarea>
@@ -135,11 +112,12 @@
 	</software>
 
 	<software name="bbcpddis_1" supported="no">
-		<description>BBC PD Disk 076-2 - Digitised Pictures (Disk 2)</description>
+		<description>BBC PD Disk 076-2 - Digitised Pictures</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, PD"/>
 			<dataarea name="rom" size="409600">
 				<rom name="bbc pd disk 076-2 - digitised pictures (19xx)(-)(disk 2 of 2)(pd).dsd" size="409600" crc="320315d7" sha1="f1bf53b8e6d765e3faa51cdb37e443545be59d26"/>
 			</dataarea>
@@ -151,7 +129,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="bbc pd disk 080 - digitised music (19xx)(-)(pd).dsd" size="409600" crc="c73c3475" sha1="bffe50135cfbb3ff2ffa9401b69baebe5c3b4642"/>
 			</dataarea>
@@ -163,7 +141,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="bbc pd disk 081 - digitised music (19xx)(-)(pd).dsd" size="409600" crc="40810c33" sha1="d4453a2e84bf1898517feac27e1ac046297a9e02"/>
 			</dataarea>
@@ -171,11 +149,12 @@
 	</software>
 
 	<software name="comedyet" supported="no">
-		<description>Comedy Etc. (Hacked 8-Bit)</description>
+		<description>Comedy Etc.</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="comedy etc. (19xx)(-)[h 8-bit].dsd" size="409600" crc="98e36758" sha1="1b87307d92aa2aa44a759c8aa4a5c66ee1c1b133"/>
 			</dataarea>
@@ -187,7 +166,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="dfs picture disk 1 (19xx)(8-bit).dsd" size="409600" crc="0d5d21d9" sha1="3e61cf5b780023d80ed7cf6dc2b40354bf6ddcb5"/>
 			</dataarea>
@@ -199,7 +178,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="dfs picture disk 2 (19xx)(8-bit).dsd" size="409600" crc="d771af91" sha1="73cb17c9351909a505e25a31f1702b9dbc5db311"/>
 			</dataarea>
@@ -211,7 +190,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="dfs picture disk 3 (19xx)(8-bit).dsd" size="409600" crc="55b6c8f7" sha1="caef65469b40a8d3b677c692dce6cfedc9fadf97"/>
 			</dataarea>
@@ -223,7 +202,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="dfs picture disk 4 (19xx)(8-bit).dsd" size="409600" crc="fe681ed8" sha1="5e45a334ed3c206e276ecb22879cd8e9a11339d6"/>
 			</dataarea>
@@ -235,7 +214,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="digitised pictures (19xx)(8-bit).dsd" size="409600" crc="e6f6e55b" sha1="6de1178c9273d6e3e16888c2ce45b9937ed15378"/>
 			</dataarea>
@@ -247,7 +226,7 @@
 		<year>19??</year>
 		<publisher>GLM</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="glm pd ultimate sound samples (19xx)(glm)(pd).dsd" size="409600" crc="8725bffd" sha1="27cca22e9b758ba2f61b2951427599c1c7c7e7ad"/>
 			</dataarea>
@@ -259,7 +238,7 @@
 		<year>19??</year>
 		<publisher>HeroZoft</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="herozoft digitised pictures 1 (19xx)(herozoft).dsd" size="409600" crc="505b4ec1" sha1="77c34e76b6df116651dc8d3747b575fffb814d15"/>
 			</dataarea>
@@ -271,7 +250,7 @@
 		<year>19??</year>
 		<publisher>HeroZoft</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="herozoft digitised pictures 2 (19xx)(herozoft).dsd" size="409600" crc="8fdcefc4" sha1="c8db9c3a9822392ea56c25f090a7a9619e1335a6"/>
 			</dataarea>
@@ -283,7 +262,7 @@
 		<year>19??</year>
 		<publisher>HeroZoft</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="herozoft digitised pictures 3 (19xx)(herozoft).dsd" size="409600" crc="27a38a32" sha1="6e707661ac4659009473a46a2fb79c9b03ef4794"/>
 			</dataarea>
@@ -291,11 +270,12 @@
 	</software>
 
 	<software name="hutworks" supported="no">
-		<description>Hutworks Text Files (Hacked 8-Bit)</description>
+		<description>Hutworks Text Files</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="hutworks text files (19xx)(-)[h 8-bit].dsd" size="409600" crc="12a1c28d" sha1="9a2bccceed8b4ee05c462dd18ac7fbec6eaa7334"/>
 			</dataarea>
@@ -307,7 +287,7 @@
 		<year>19??</year>
 		<publisher>J. Farmer</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="jjf pd disk 01 - music disc (19xx)(farmer, j.)(pd).dsd" size="409600" crc="9d235955" sha1="ccef40a1c0106a60164bf97119dfc89845d2ef98"/>
 			</dataarea>
@@ -319,7 +299,7 @@
 		<year>19??</year>
 		<publisher>J. Farmer</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="jjf pd disk 02 - music disc (19xx)(farmer, j.)(pd).dsd" size="409600" crc="384fc222" sha1="322542bcdd744d6184c1c108d1b8a7f1e5d1e8f9"/>
 			</dataarea>
@@ -331,7 +311,7 @@
 		<year>19??</year>
 		<publisher>J. Farmer</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="jjf pd disk 04 - graphics disk 2 (19xx)(farmer, j.)(pd).dsd" size="409600" crc="72de3318" sha1="dd2b5a74d245a0d831207d8df15637bd4555a36c"/>
 			</dataarea>
@@ -339,11 +319,12 @@
 	</software>
 
 	<software name="jjfpddis_3" supported="no">
-		<description>JJF PD Disk 12-1 - The Odyssey by Homer - Parts 1-18 (Public Domain, Disk 1)</description>
+		<description>JJF PD Disk 12-1 - The Odyssey by Homer - Parts 1-18 (Public Domain)</description>
 		<year>19??</year>
 		<publisher>J. Farmer</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2"/>
 			<dataarea name="rom" size="409600">
 				<rom name="jjf pd disk 12-1 - odyssey, the by homer - parts 1-18 (19xx)(farmer, j.)(pd)(disk 1 of 2).dsd" size="409600" crc="91bc471b" sha1="20e7131df359598cab50b73b96adf0a8e0507143"/>
 			</dataarea>
@@ -351,11 +332,12 @@
 	</software>
 
 	<software name="jjfpddis_4" supported="no">
-		<description>JJF PD Disk 12-2 - The Odyssey by Homer - Parts 19-30 (Public Domain, Disk 2)</description>
+		<description>JJF PD Disk 12-2 - The Odyssey by Homer - Parts 19-30 (Public Domain)</description>
 		<year>19??</year>
 		<publisher>J. Farmer</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2"/>
 			<dataarea name="rom" size="409600">
 				<rom name="jjf pd disk 12-2 - odyssey, the by homer - parts 19-30 (19xx)(farmer, j.)(pd)(disk 2 of 2).dsd" size="409600" crc="aaaa9d9a" sha1="62e65b00956a259fa147eaab8df70d0eb830f299"/>
 			</dataarea>
@@ -363,11 +345,12 @@
 	</software>
 
 	<software name="jjfpddis_5" supported="no">
-		<description>JJF PD Disk 13-1 - The Iliad by Homer - Parts 1-18 (Public Domain, Disk 1)</description>
+		<description>JJF PD Disk 13-1 - The Iliad by Homer - Parts 1-18 (Public Domain)</description>
 		<year>19??</year>
 		<publisher>J. Farmer</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 3"/>
 			<dataarea name="rom" size="409600">
 				<rom name="jjf pd disk 13-1 - iliad, the by homer - parts 1-18 (19xx)(farmer, j.)(pd)(disk 1 of 3).dsd" size="409600" crc="e363f168" sha1="c918633249501e7cd8d098d0791aec9124cd157a"/>
 			</dataarea>
@@ -375,11 +358,12 @@
 	</software>
 
 	<software name="jjfpddis_6" supported="no">
-		<description>JJF PD Disk 13-2 - The Iliad by Homer - Parts 19-36 (Public Domain, Disk 2)</description>
+		<description>JJF PD Disk 13-2 - The Iliad by Homer - Parts 19-36 (Public Domain)</description>
 		<year>19??</year>
 		<publisher>J. Farmer</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 3"/>
 			<dataarea name="rom" size="409600">
 				<rom name="jjf pd disk 13-2 - iliad, the by homer - parts 19-36 (19xx)(farmer, j.)(pd)(disk 2 of 3).dsd" size="409600" crc="2c1c34c6" sha1="a1d4060ba86bf317af16dd8ab91276b6c6feeb21"/>
 			</dataarea>
@@ -387,11 +371,12 @@
 	</software>
 
 	<software name="jjfpddis_7" supported="no">
-		<description>JJF PD Disk 13-3 - The Iliad by Homer - Parts 37-40 (Public Domain, Disk 3)</description>
+		<description>JJF PD Disk 13-3 - The Iliad by Homer - Parts 37-40 (Public Domain)</description>
 		<year>19??</year>
 		<publisher>J. Farmer</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 3 of 3"/>
 			<dataarea name="rom" size="204800">
 				<rom name="jjf pd disk 13-3 - iliad, the by homer - parts 37-40 (19xx)(farmer, j.)(pd)(disk 3 of 3).dsd" size="204800" crc="d36df7fa" sha1="698e4ebbfb506334775bf58d8f8f8c2bed610dd7"/>
 			</dataarea>
@@ -399,35 +384,30 @@
 	</software>
 
 	<software name="platorep" supported="no">
-		<description>Plato Republic (Public Domain, Disk 1, Hacked 8-Bit)</description>
+		<description>Plato Republic (Public Domain)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2, Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="plato republic (19xx)(-)(pd)(disk 1 of 2)[h 8-bit].dsd" size="409600" crc="0924010f" sha1="c285cf383fbb1c227f63873b000056a895cc1ba6"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="platorep_1" supported="no">
-		<description>Plato Republic (Public Domain, Disk 2, Hacked 8-Bit)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="plato republic (19xx)(-)(pd)(disk 2 of 2)[h 8-bit].dsd" size="409600" crc="f1b66a4c" sha1="5019b371114029b5a49b653c7aefb84655e66ab7"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="poemsamp" supported="no">
+	<software name="poemssto" supported="no">
 		<description>Poems &amp; Stories</description>
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="poems &amp; stories (19xx)(8-bit).dsd" size="409600" crc="0bfb78d5" sha1="56b75fc2116e5d00c64c9645a8693cd515af7111"/>
 			</dataarea>
@@ -435,23 +415,18 @@
 	</software>
 
 	<software name="poems" supported="no">
-		<description>Poems (Disk 1, Hacked 8-Bit)</description>
+		<description>Poems</description>
 		<year>19??</year>
 		<publisher>Fred Price</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2, Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="poems (19xx)(price, fred)(disk 1 of 2)[h 8-bit].dsd" size="409600" crc="b2836602" sha1="c83726928e2bd721b14796445b897937acd7d6eb"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="poems_1" supported="no">
-		<description>Poems (Disk 2, Hacked 8-Bit)</description>
-		<year>19??</year>
-		<publisher>Fred Price</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="poems (19xx)(price, fred)(disk 2 of 2)[h 8-bit].dsd" size="409600" crc="68e6291b" sha1="e909995b290231975cb487f4c5f704a4758e7f7b"/>
 			</dataarea>
@@ -459,59 +434,36 @@
 	</software>
 
 	<software name="printout" supported="no">
-		<description>Printout of Humour (Disk 1, Hacked 8-Bit)</description>
+		<description>Printout of Humour</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 5, Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="printout of humour (19xx)(-)(disk 1 of 5)[h 8-bit].dsd" size="409600" crc="bf98039a" sha1="0ee9883117d4970551cf3e88033ee9dd76a85b03"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="printout_1" supported="no">
-		<description>Printout of Humour (Disk 2, Hacked 8-Bit)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 5, Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="printout of humour (19xx)(-)(disk 2 of 5)[h 8-bit].dsd" size="409600" crc="fb721f98" sha1="9a6864ecf4c5ae2cbf3e9d3992a27708b5ce5de5"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="printout_2" supported="no">
-		<description>Printout of Humour (Disk 3, Hacked 8-Bit)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 3 of 5, Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="printout of humour (19xx)(-)(disk 3 of 5)[h 8-bit].dsd" size="409600" crc="ea8cae79" sha1="01e3106c9ddb033657b82a70a31b9d6afb0b1fa4"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="printout_3" supported="no">
-		<description>Printout of Humour (Disk 4, Hacked 8-Bit)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 4 of 5, Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="printout of humour (19xx)(-)(disk 4 of 5)[h 8-bit].dsd" size="409600" crc="ec885c43" sha1="44cc33bef33ad80a7a760d714a63dab5fd1bf5b3"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="printout_4" supported="no">
-		<description>Printout of Humour (Disk 5, Hacked 8-Bit)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 5 of 5, Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="printout of humour (19xx)(-)(disk 5 of 5)[h 8-bit].dsd" size="409600" crc="c9c72e5f" sha1="73a9407f041c9a8641fc2cafee9b007d668ef05a"/>
 			</dataarea>
@@ -519,11 +471,12 @@
 	</software>
 
 	<software name="rollingp" supported="no">
-		<description>Rolling Picture Show (Hacked 8-Bit)</description>
+		<description>Rolling Picture Show</description>
 		<year>1994</year>
 		<publisher>GFX</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="rolling picture show (1994)(gfx)[h 8-bit].dsd" size="409600" crc="ce80d6fe" sha1="f4a489cfaed9c64be3b8135604a964fdce7a70c8"/>
 			</dataarea>
@@ -531,11 +484,12 @@
 	</software>
 
 	<software name="sampledi" supported="no">
-		<description>Sample Disk 1 (Hacked 8-Bit)</description>
+		<description>Sample Disk 1</description>
 		<year>1991</year>
 		<publisher>Yorkshire Boys</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="sample disk 1 (1991)(yorkshire boys)[h 8-bit].dsd" size="409600" crc="5b4b365d" sha1="1ef1551b31e52f345cc5bd4a714950ced154600b"/>
 			</dataarea>
@@ -543,11 +497,12 @@
 	</software>
 
 	<software name="sampledi_1" supported="no">
-		<description>Sample Disk 2 (Hacked 8-Bit)</description>
+		<description>Sample Disk 2</description>
 		<year>1991</year>
 		<publisher>Yorkshire Boys</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="sample disk 2 (1991)(yorkshire boys)[h 8-bit].dsd" size="409600" crc="9eda5be1" sha1="28321ce87701749be78410827f6182b3b6da3f15"/>
 			</dataarea>
@@ -555,11 +510,12 @@
 	</software>
 
 	<software name="sampledi_2" supported="no">
-		<description>Sample Disk 3 (Hacked 8-Bit)</description>
+		<description>Sample Disk 3</description>
 		<year>1991</year>
 		<publisher>Yorkshire Boys</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="sample disk 3 (1991)(yorkshire boys)[h 8-bit].dsd" size="409600" crc="0d198ab9" sha1="319741a941881eecd569f75f4cf979d23586e7f9"/>
 			</dataarea>
@@ -571,7 +527,7 @@
 		<year>19??</year>
 		<publisher>C.J. Richardson</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="samples (19xx)(richardson, c.j.).dsd" size="409600" crc="4bbeb1b2" sha1="53fc0ed1eccbae8f88d734a35bd437953f6f9d48"/>
 			</dataarea>
@@ -583,7 +539,7 @@
 		<year>19??</year>
 		<publisher>C.J. Richardson</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="samples 03 (19xx)(richardson, c.j.).dsd" size="409600" crc="7ad66e8a" sha1="623c155cf20aeb0dd5a63a9dabc3eecfc1239b5d"/>
 			</dataarea>
@@ -595,7 +551,7 @@
 		<year>19??</year>
 		<publisher>C.J. Richardson</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="samples 04 (19xx)(richardson, c.j.).dsd" size="409600" crc="d6d2d2f6" sha1="2c49b4343a78bc1c359ac8471900512a36e0dd2e"/>
 			</dataarea>
@@ -607,7 +563,7 @@
 		<year>19??</year>
 		<publisher>C.J. Richardson</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="samples 06 (19xx)(richardson, c.j.).dsd" size="409600" crc="e1b4ba06" sha1="b593db625f4b85dab02e8f2eaa3f9d9cb9fcf530"/>
 			</dataarea>
@@ -619,7 +575,7 @@
 		<year>19??</year>
 		<publisher>C.J. Richardson</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="samples 07 (19xx)(richardson, c.j.).dsd" size="409600" crc="cd06ea69" sha1="ba3e5a12a06b21d652ea77400c54e64ff766fb30"/>
 			</dataarea>
@@ -631,7 +587,7 @@
 		<year>19??</year>
 		<publisher>C.J. Richardson</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="samples 08 (19xx)(richardson, c.j.).dsd" size="409600" crc="31cd8df7" sha1="68c10b6f396f56f948e42065b4e1e58f198402d2"/>
 			</dataarea>
@@ -643,7 +599,7 @@
 		<year>19??</year>
 		<publisher>C.J. Richardson</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="samples 09 (19xx)(richardson, c.j.).dsd" size="409600" crc="65ddc6b2" sha1="6e5102e7f01f830e94983853da526f4c59005417"/>
 			</dataarea>
@@ -655,7 +611,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="slide show - 1996 australian grand prix pictures (19xx)(8-bit).dsd" size="409600" crc="cc01d202" sha1="bb17adab0117fddc961144af5a191f64cabbc0f9"/>
 			</dataarea>
@@ -663,167 +619,157 @@
 	</software>
 
 	<software name="slidesho_1" supported="no">
-		<description>Slide Show - 8-Bit Software (Disk 1)</description>
+		<description>Slide Show - 8-Bit Software</description>
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2"/>
 			<dataarea name="rom" size="409600">
 				<rom name="slide show - 8-bit software (19xx)(8-bit)(disk 1 of 2).dsd" size="409600" crc="a2e8584c" sha1="9fc40791c1b80218097e6128b149c94aab37ec91"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="slidesho_2" supported="no">
-		<description>Slide Show - 8-Bit Software (Disk 2)</description>
-		<year>19??</year>
-		<publisher>8-Bit</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2"/>
 			<dataarea name="rom" size="409600">
 				<rom name="slide show - 8-bit software (19xx)(8-bit)(disk 2 of 2).dsd" size="409600" crc="73dc6036" sha1="85ef2d96255ceaa763e1ed5eda62960c0aff6833"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="slidesho_3" supported="no">
-		<description>Slide Show - 8-Bit Software (Disk 2, Alt)</description>
-		<year>19??</year>
-		<publisher>8-Bit</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, Alt"/>
 			<dataarea name="rom" size="409600">
 				<rom name="slide show - 8-bit software (19xx)(8-bit)(disk 2 of 2)[a].dsd" size="409600" crc="9ee35566" sha1="814b210af8f720b5da621d3c622c4ab57506a350"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="slidesho_4" supported="no">
-		<description>Slide Show - Cartoons (Hacked 8-Bit)</description>
+	<software name="slidesho_2" supported="no">
+		<description>Slide Show - Cartoons</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="slide show - cartoons (19xx)(-)[h 8-bit].dsd" size="409600" crc="38e97f48" sha1="27456e95c9c786342eec2e7aa4f1716336498a8c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="slidesho_5" supported="no">
+	<software name="slidesho_3" supported="no">
 		<description>Slide Show - Rogues Gallery</description>
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="slide show - rogues gallery (19xx)(8-bit).dsd" size="409600" crc="c70f6217" sha1="d6ec433f3b647dc8bb147834d2f1854865d30c71"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="slidesho_6" supported="no">
+	<software name="slidesho_4" supported="no">
 		<description>Slide Show - Star Wars</description>
 		<year>1986</year>
 		<publisher>HeroZoft</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="slide show - star wars (1986)(herozoft).dsd" size="409600" crc="5246f62f" sha1="48fffced66dab10613e2bd3f2a4a535984c4a0d8"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="slidesho_7" supported="no">
+	<software name="slidesho_5" supported="no">
 		<description>Slide Show 06</description>
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="slide show 06 (19xx)(8-bit).dsd" size="409600" crc="5f9b0e54" sha1="b7a00bf0d6d1d85e9a8da701c456745c69da6c8d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="slidesho_8" supported="no">
+	<software name="slidesho_6" supported="no">
 		<description>Slide Show 07</description>
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="slide show 07 (19xx)(8-bit).dsd" size="409600" crc="c4e4fb30" sha1="8268cba195198b33164696b901dbb6cc10b41fdc"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="slidesho_9" supported="no">
+	<software name="slidesho_7" supported="no">
 		<description>Slide Show 08</description>
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="slide show 08 (19xx)(8-bit).dsd" size="409600" crc="2be1e332" sha1="d2ee87763c2ec48914c099102aef51a5b40c8fe4"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="slidesho_10" supported="no">
+	<software name="slidesho_8" supported="no">
 		<description>Slide Show 09</description>
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="slide show 09 (19xx)(8-bit).dsd" size="409600" crc="11a2d173" sha1="63031fb726779c5a2b9e8afc6392abd5aad53f72"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="slidesho_11" supported="no">
+	<software name="slidesho_9" supported="no">
 		<description>Slide Show 10</description>
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="slide show 10 (19xx)(8-bit).dsd" size="409600" crc="f9ad211c" sha1="830a8447428ea7c607103d655455a6b3d4ea703b"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="slidesho_12" supported="no">
+	<software name="slidesho_10" supported="no">
 		<description>Slide Show 11</description>
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="slide show 11 (19xx)(8-bit).dsd" size="409600" crc="2d7a9746" sha1="77dd98e5170a1848f4b5729ad8171aef6dca9499"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="slidesho_13" supported="no">
+	<software name="slidesho_11" supported="no">
 		<description>Slide Show 12</description>
 		<year>19??</year>
 		<publisher>Yorkshire Boys</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="slide show 12 (19xx)(yorkshire boys).dsd" size="409600" crc="082ba325" sha1="f1b6e1ff47a795a1b9c84e05c65c32011834453d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="slidesho_14" supported="no">
+	<software name="slidesho_12" supported="no">
 		<description>Slide Show 13</description>
 		<year>19??</year>
 		<publisher>Yorkshire Boys</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="slide show 13 (19xx)(yorkshire boys).dsd" size="409600" crc="22c9165d" sha1="14992f4ee6782332684e93a70b12357e4a22e7f8"/>
 			</dataarea>
@@ -835,7 +781,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="three men in a boat (19xx)(8-bit).dsd" size="409600" crc="101da9c6" sha1="87fb1a4fd077b68a1f9d22a2af1d5b2a3ba0963d"/>
 			</dataarea>
@@ -843,11 +789,12 @@
 	</software>
 
 	<software name="whatisma" supported="no">
-		<description>What Is Man by Mark Twain - Part 1 (Public Domain, Disc 1, Hacked 8-Bit)</description>
+		<description>What Is Man by Mark Twain - Part 1 (Public Domain)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disc 1 of 2, Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="what is man by mark twain - part 1 (19xx)(-)(pd)(disc 1 of 2)[h 8-bit].dsd" size="409600" crc="77061650" sha1="b7112a2be39656346c7b98eb8fc9276c3cf1b81a"/>
 			</dataarea>
@@ -855,11 +802,12 @@
 	</software>
 
 	<software name="whatisma_1" supported="no">
-		<description>What Is Man by Mark Twain - Part 2 (Public Domain, Disc 2, Hacked 8-Bit)</description>
+		<description>What Is Man by Mark Twain - Part 2 (Public Domain)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disc 2 of 2, Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="what is man by mark twain - part 2 (19xx)(-)(pd)(disc 2 of 2)[h 8-bit].dsd" size="409600" crc="7050fef1" sha1="fb00556648c0391a0c4f2fbee2df347976780151"/>
 			</dataarea>

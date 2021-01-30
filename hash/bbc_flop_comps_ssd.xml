@@ -1,13 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
 <softwarelist name="bbc_flop_comps_ssd" description="bbc_flop_comps_ssd">
 
 	<software name="10oftheb" supported="no">
-		<description>10 of the Best Games (Hacked TSTH)</description>
+		<description>10 of the Best Games</description>
 		<year>19??</year>
 		<publisher>Database</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="111104">
 				<rom name="10 of the best games (19xx)(database)[h tsth].ssd" size="111104" crc="8e13fe5f" sha1="2fada1663169c54be193c8642ed49236b2f8bd89"/>
 			</dataarea>
@@ -19,7 +24,7 @@
 		<year>19??</year>
 		<publisher>Duncan Webster</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="8-bit software - issue 05 (19xx)(webster, duncan).ssd" size="204800" crc="158bf805" sha1="b93aa2d0e7fc47c76b4562aa89cbea24decb1246"/>
 			</dataarea>
@@ -31,7 +36,7 @@
 		<year>19??</year>
 		<publisher>Duncan Webster</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="8-bit software - issue 06 (19xx)(webster, duncan).ssd" size="204800" crc="c834045c" sha1="44a4695146220a5a6dcd86e4a45432ac15469806"/>
 			</dataarea>
@@ -43,7 +48,7 @@
 		<year>19??</year>
 		<publisher>Duncan Webster</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="8-bit software - issue 07 (19xx)(webster, duncan).ssd" size="204800" crc="394e254a" sha1="ec98f839dd05f9ba6b3c386010a29a8dabec1cba"/>
 			</dataarea>
@@ -55,7 +60,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="8-bit software compilation (19xx)(8-bit).ssd" size="204800" crc="0e8a26cf" sha1="63283261a23f30f1d00ef8c7db0e02e8053c35a6"/>
 			</dataarea>
@@ -67,7 +72,7 @@
 		<year>1997</year>
 		<publisher>C. Richardson</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="8-bit software info &amp; utilities (1997)(richardson, c.).ssd" size="204800" crc="7c5a513b" sha1="5fc524ce1d669f892cd0f8c7e1ca4515bfd020f2"/>
 			</dataarea>
@@ -79,7 +84,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="56832">
 				<rom name="acorn bbc roms (19xx)(-).ssd" size="56832" crc="eea882f2" sha1="671f25d5055ae9caf5d6cc0af62cd8b20884f3e8"/>
 			</dataarea>
@@ -91,7 +96,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="21248">
 				<rom name="acornsoft arcade games (19xx)(-).ssd" size="21248" crc="db6d26d7" sha1="881b2f17735f83966a414df6b5241a203f685c17"/>
 			</dataarea>
@@ -99,47 +104,37 @@
 	</software>
 
 	<software name="acornsof_1" supported="no">
-		<description>Acornsoft Games 1 (Side 0)</description>
+		<description>Acornsoft Games 1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="acornsoft games 1 (19xx)(-)(side 0).ssd" size="204800" crc="1f5aec73" sha1="d392807ea86e36cb5f176e80a3ca3517b617990c"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornsof_2" supported="no">
-		<description>Acornsoft Games 1 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="acornsoft games 1 (19xx)(-)(side 1).ssd" size="204800" crc="cb83c741" sha1="2cd90e6a1dfe38a0f4a0cf4ff47cea5fe8fc9def"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="acornsof_3" supported="no">
-		<description>Acornsoft Games 2 (Side 0)</description>
+	<software name="acornsof_2" supported="no">
+		<description>Acornsoft Games 2</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="acornsoft games 2 (19xx)(-)(side 0).ssd" size="204800" crc="4edd559f" sha1="5fb6c2ade8a23ba03c367ca32a639baf211eb651"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="acornsof_4" supported="no">
-		<description>Acornsoft Games 2 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="acornsoft games 2 (19xx)(-)(side 1).ssd" size="204800" crc="778c075d" sha1="f3ab79da5f620f7888d8259e644310075a0e9a23"/>
 			</dataarea>
@@ -147,23 +142,18 @@
 	</software>
 
 	<software name="alligata" supported="no">
-		<description>Alligata Acornsoft &amp; Atarisoft Games (Side 0)</description>
+		<description>Alligata Acornsoft &amp; Atarisoft Games</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="acornsoft, alligata &amp; atarisoft games (19xx)(-)(side 0).ssd" size="204800" crc="83ea83d1" sha1="fe3145adab11776d50c2524946e000d5681749ff"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="alligata_1" supported="no">
-		<description>Alligata Acornsoft &amp; Atarisoft Games (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="acornsoft, alligata &amp; atarisoft games (19xx)(-)(side 1).ssd" size="204800" crc="3a7e946a" sha1="cb62995c304621d5bab443216752ecb258e88867"/>
 			</dataarea>
@@ -171,11 +161,12 @@
 	</software>
 
 	<software name="adrianmo" supported="no">
-		<description>Adrian Mole Menu (Req Ice-Box)</description>
+		<description>Adrian Mole Menu</description>
 		<year>1987</year>
 		<publisher>R. MacAdam</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Req Ice-Box"/>
 			<dataarea name="rom" size="204800">
 				<rom name="adrian mole menu (1987)(macadam, r.)[req ice-box].ssd" size="204800" crc="6dc0ac3d" sha1="03273e36776cbc4cd64cadf731b37c61e083eaef"/>
 			</dataarea>
@@ -187,19 +178,13 @@
 		<year>19??</year>
 		<publisher>P. Davy</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="128256">
 				<rom name="adult basic education disks 34, 36 &amp; talking disc (19xx)(davy, p.).ssd" size="128256" crc="fa9bc4c6" sha1="473af2f9dca9163511986efd63b8f92e5f293f3d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="36adultb_1" supported="no">
-		<description>36 Adult Basic Education Disks 34 &amp; Talking Disc (Alt)</description>
-		<year>19??</year>
-		<publisher>P. Davy</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="128256">
 				<rom name="adult basic education disks 34, 36 &amp; talking disc (19xx)(davy, p.)[a].ssd" size="128256" crc="60d293dc" sha1="cead2709a7556be72ff0ba4a28dadd5702a37c28"/>
 			</dataarea>
@@ -211,43 +196,38 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="adventure games (19xx)(8-bit).ssd" size="204800" crc="304f679f" sha1="4323831020dd77777d4998908e09b79ff8992f77"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="alligata_2" supported="no">
-		<description>Alligata Games (Side 0)</description>
+	<software name="alligata_1" supported="no">
+		<description>Alligata Games</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="alligata games (19xx)(-)(side 0).ssd" size="204800" crc="636fadaa" sha1="ee8856dc2b870b6a86cf1b9157fc4182d26ddfd2"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="alligata_3" supported="no">
-		<description>Alligata Games (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="alligata games (19xx)(-)(side 1).ssd" size="204800" crc="b5d21cf5" sha1="3f8d0c94eb883a0b109b4290165ca92a5c6162f5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="alligata_4" supported="no">
-		<description>Alligata Games</description>
+	<software name="alligata_2" supported="no">
+		<description>Alligata Games (1)</description>
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="alligata games (19xx)(8-bit).ssd" size="204800" crc="66a1fdfe" sha1="6fae6fde3abe70b0da4debed4976d3b38caae5df"/>
 			</dataarea>
@@ -259,7 +239,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="amateur radio (19xx)(-).ssd" size="204800" crc="c3e128d3" sha1="a0c2a5385614ac58db38724690f8e828ae05575c"/>
 			</dataarea>
@@ -267,23 +247,18 @@
 	</software>
 
 	<software name="amxextra" supported="no">
-		<description>AMX Extras - Font Convertor (Side 0, FONTCON)</description>
+		<description>AMX Extras - Font Convertor</description>
 		<year>19??</year>
 		<publisher>Tecnation</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0, FONTCON"/>
 			<dataarea name="rom" size="204800">
 				<rom name="amx extras - font convertor (19xx)(tecnation)(side 0)[fontcon].ssd" size="204800" crc="96157138" sha1="a02ea4a3c8892388d323da55a99ec4c6a821047f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="amxextra_1" supported="no">
-		<description>AMX Extras - Font Convertor (Side 1)</description>
-		<year>19??</year>
-		<publisher>Tecnation</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="amx extras - font convertor (19xx)(tecnation)(side 1).ssd" size="204800" crc="058041e9" sha1="a395bfc089e573114ae434a341fcc6d2827124d2"/>
 			</dataarea>
@@ -291,47 +266,37 @@
 	</software>
 
 	<software name="amxfonts" supported="no">
-		<description>AMX Fonts 2 (Side 0)</description>
+		<description>AMX Fonts 2</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="amx fonts 2 (19xx)(-)(side 0).ssd" size="204800" crc="e4e5f612" sha1="cb0efd23027b6c291484bd2086bc1bd523f9ad9a"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="amxfonts_1" supported="no">
-		<description>AMX Fonts 2 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="amx fonts 2 (19xx)(-)(side 1).ssd" size="204800" crc="80b2c9da" sha1="6b7166f1f44aa27269ced3100c7e5c21cb010f41"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="amxfonts_2" supported="no">
-		<description>AMX Fonts 3 (Side 0)</description>
+	<software name="amxfonts_1" supported="no">
+		<description>AMX Fonts 3</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="amx fonts 3 (19xx)(-)(side 0).ssd" size="204800" crc="eb352880" sha1="76e662a2c3619a3f5f650dab7a1c73f181b2c957"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="amxfonts_3" supported="no">
-		<description>AMX Fonts 3 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="amx fonts 3 (19xx)(-)(side 1).ssd" size="204800" crc="e9d217b3" sha1="ea49ef7bf3a5ce3d844f07dbef1e477917008b2c"/>
 			</dataarea>
@@ -343,7 +308,7 @@
 		<year>1986</year>
 		<publisher>Tecnation</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="amx pagemaker extras (1986)(tecnation).ssd" size="204800" crc="ddf1480d" sha1="93a4b9feb02709a3825ff959e6c754ac6c90ca58"/>
 			</dataarea>
@@ -351,23 +316,25 @@
 	</software>
 
 	<software name="artistut" supported="no">
-		<description>Artist Utilities (Bad)</description>
+		<description>Artist Utilities</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Bad"/>
 			<dataarea name="rom" size="90368">
-				<rom name="artist utilities (19xx)(-)[b].ssd" size="90368" crc="0051dfc6" sha1="616b0f324cbd515f6844b3d74c0f15ba5ef1ca1c"/>
+				<rom name="artist utilities (19xx)(-)[b].ssd" size="90368" crc="0051dfc6" sha1="616b0f324cbd515f6844b3d74c0f15ba5ef1ca1c" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="asciiamp" supported="no">
-		<description>ASCII &amp; Disc Utilities (Hacked 8-Bit)</description>
+	<software name="asciidis" supported="no">
+		<description>ASCII &amp; Disc Utilities</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="204800">
 				<rom name="ascii &amp; disc utilities (19xx)(-)[h 8-bit].ssd" size="204800" crc="46f9a0a8" sha1="4431c92c727c444dd87f4ddcd1a7abfb092dec65"/>
 			</dataarea>
@@ -375,23 +342,18 @@
 	</software>
 
 	<software name="audiogen" supported="no">
-		<description>Audiogenic Games (Side 0)</description>
+		<description>Audiogenic Games</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="audiogenic games (19xx)(-)(side 0).ssd" size="204800" crc="e6b697e0" sha1="a89891f403e4eede6132b67b97d7c0d1f0316ccb"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="audiogen_1" supported="no">
-		<description>Audiogenic Games (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="audiogenic games (19xx)(-)(side 1).ssd" size="204800" crc="b23e3236" sha1="10f0e9103a55d57fa3a8a1236b10ebdceeae91d6"/>
 			</dataarea>
@@ -399,11 +361,12 @@
 	</software>
 
 	<software name="bazzasof" supported="no">
-		<description>Bazzasoft Compilation (Hacked 8-Bit)</description>
+		<description>Bazzasoft Compilation</description>
 		<year>19??</year>
 		<publisher>Bazzasoft</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="204800">
 				<rom name="bazzasoft compilation (19xx)(bazzasoft)[h 8-bit].ssd" size="204800" crc="e97b7f0b" sha1="308db29591d0216871e93c530ef2863623aace8c"/>
 			</dataarea>
@@ -411,23 +374,18 @@
 	</software>
 
 	<software name="bbcbonan" supported="no">
-		<description>BBC Bonanza (Side 1, Hacked TSTH)</description>
+		<description>BBC Bonanza</description>
 		<year>1987</year>
 		<publisher>Audiogenic</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1 of 2, Hacked TSTH"/>
 			<dataarea name="rom" size="84992">
 				<rom name="bbc bonanza (1987)(audiogenic)(side 1 of 2)[h tsth].ssd" size="84992" crc="71430bd4" sha1="9d92212c51ffc4d530e8e8743b82edbcef5869a8"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="bbcbonan_1" supported="no">
-		<description>BBC Bonanza (Side 2, Hacked TSTH)</description>
-		<year>1987</year>
-		<publisher>Audiogenic</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 2 of 2, Hacked TSTH"/>
 			<dataarea name="rom" size="64512">
 				<rom name="bbc bonanza (1987)(audiogenic)(side 2 of 2)[h tsth].ssd" size="64512" crc="9b686175" sha1="56a51a75c99f21012eddcae482c2b46c249c9179"/>
 			</dataarea>
@@ -439,19 +397,13 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="52480">
 				<rom name="bbc demos disk (19xx)(-).ssd" size="52480" crc="cdf3bf92" sha1="93244d0375f7e125869cd5aa3fbe21e5f1151628"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="bbcdemos_1" supported="no">
-		<description>BBC Demos Disk (Alt)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="52480">
 				<rom name="bbc demos disk (19xx)(-)[a].ssd" size="52480" crc="fa1f23cc" sha1="7b79f80d5b74f2a59d5353704be5173f2e26bede"/>
 			</dataarea>
@@ -463,7 +415,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="bbc pd disk 132 - disk duplicator iii (19xx)(-).ssd" size="204800" crc="ddbfae40" sha1="e8a2feddd14a557daa0672cf9dad879cdcdab7e7"/>
 			</dataarea>
@@ -475,7 +427,7 @@
 		<year>1993</year>
 		<publisher>SmylieSoft</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="bbc pd disk 155 - a to z of game cheats (1993)(smyliesoft).ssd" size="204800" crc="304c5da9" sha1="c9e28eebd402b7e0f8b377ce3672cbbd87fd5e61"/>
 			</dataarea>
@@ -487,7 +439,7 @@
 		<year>19??</year>
 		<publisher>Beebug</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="beebug demonstration disk (19xx)(beebug).ssd" size="204800" crc="07c600d5" sha1="c9fa5fe8f2496791df8c816dfa27fb6d16c47ae9"/>
 			</dataarea>
@@ -495,23 +447,18 @@
 	</software>
 
 	<software name="beebugpr" supported="no">
-		<description>Beebug Programs (Side 0)</description>
+		<description>Beebug Programs</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="beebug programs (19xx)(-)(side 0).ssd" size="204800" crc="b348fe0f" sha1="e8fac10709387dda1ffc48a0fa110b0190ea2cf8"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="beebugpr_1" supported="no">
-		<description>Beebug Programs (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="beebug programs (19xx)(-)(side 1).ssd" size="204800" crc="e3b8634d" sha1="bc44263b9a05b33b17380af9a7f766e2484b8919"/>
 			</dataarea>
@@ -519,11 +466,12 @@
 	</software>
 
 	<software name="bestofbe" supported="no">
-		<description>Best of Beebug - 10th Year Anniversary (MENU)</description>
+		<description>Best of Beebug - 10th Year Anniversary</description>
 		<year>19??</year>
 		<publisher>Beebug</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="MENU"/>
 			<dataarea name="rom" size="204800">
 				<rom name="best of beebug - 10th year anniversary (19xx)(beebug)[menu].ssd" size="204800" crc="5a4a9646" sha1="cf6142cd1598c51a52ea2bc14eadd7d2514be9d3"/>
 			</dataarea>
@@ -531,11 +479,12 @@
 	</software>
 
 	<software name="bestofbe_1" supported="no">
-		<description>Best of Beebug - Applications (MENU)</description>
+		<description>Best of Beebug - Applications</description>
 		<year>19??</year>
 		<publisher>Beebug</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="MENU"/>
 			<dataarea name="rom" size="204800">
 				<rom name="best of beebug - applications (19xx)(beebug)[menu].ssd" size="204800" crc="31c160d1" sha1="e6ec2c8bee24fcf7192c5f9b2643b06a9a6fbb78"/>
 			</dataarea>
@@ -547,7 +496,7 @@
 		<year>19??</year>
 		<publisher>Beebug</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="best of beebug - applications ii (19xx)(beebug).ssd" size="204800" crc="78e924a2" sha1="78e8b9788397c903c600da716b59f60b4d0fac8e"/>
 			</dataarea>
@@ -555,11 +504,12 @@
 	</software>
 
 	<software name="bestofbe_3" supported="no">
-		<description>Best of Beebug - Arcade Games (MENU)</description>
+		<description>Best of Beebug - Arcade Games</description>
 		<year>19??</year>
 		<publisher>Beebug</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="MENU"/>
 			<dataarea name="rom" size="204800">
 				<rom name="best of beebug - arcade games (19xx)(beebug)[menu].ssd" size="204800" crc="3bd3fd4c" sha1="9bdc6df89e570f754c39312b7c9e703c4b997e9a"/>
 			</dataarea>
@@ -567,11 +517,12 @@
 	</software>
 
 	<software name="bestofbe_4" supported="no">
-		<description>Best of Beebug - Card &amp; Board Games (MENU)</description>
+		<description>Best of Beebug - Card &amp; Board Games</description>
 		<year>19??</year>
 		<publisher>Beebug</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="MENU"/>
 			<dataarea name="rom" size="204800">
 				<rom name="best of beebug - card &amp; board games (19xx)(beebug)[menu].ssd" size="204800" crc="1d13c226" sha1="c6311e1a280b092ab6ec1d862e54fa5fa1a284ca"/>
 			</dataarea>
@@ -583,7 +534,7 @@
 		<year>19??</year>
 		<publisher>Beebug</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="best of beebug - games compilation (19xx)(beebug).ssd" size="204800" crc="891c46f5" sha1="1c7bab1a9f5fc20698697bb0129a43a878b2531d"/>
 			</dataarea>
@@ -591,11 +542,12 @@
 	</software>
 
 	<software name="bestofbe_6" supported="no">
-		<description>Best of Beebug - General Utilities (MENU)</description>
+		<description>Best of Beebug - General Utilities</description>
 		<year>19??</year>
 		<publisher>Beebug</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="MENU"/>
 			<dataarea name="rom" size="204800">
 				<rom name="best of beebug - general utilities (19xx)(beebug)[menu].ssd" size="204800" crc="a757d983" sha1="caa4a575fcb8c30905ae062bbdae6cfc82945e2f"/>
 			</dataarea>
@@ -607,7 +559,7 @@
 		<year>19??</year>
 		<publisher>Beebug</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="best of beebug - utility compilation (19xx)(beebug).ssd" size="204800" crc="cd6b2be0" sha1="30d845577c26793d63fef9f7badcb546b0cb8e15"/>
 			</dataarea>
@@ -615,35 +567,24 @@
 	</software>
 
 	<software name="blueribb" supported="no">
-		<description>Blue Ribbon Software Games (Disk 1, Hacked TSTH)</description>
+		<description>Blue Ribbon Software Games</description>
 		<year>1985</year>
 		<publisher>Blue Ribbon</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 3, Hacked TSTH"/>
 			<dataarea name="rom" size="90880">
 				<rom name="blue ribbon software games (1985)(blue ribbon)(disk 1 of 3)[h tsth].ssd" size="90880" crc="0c8878fe" sha1="db715f1820ee0a33694d8817f3c8d377bb296e33"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="blueribb_1" supported="no">
-		<description>Blue Ribbon Software Games (Disk 2, Hacked TSTH)</description>
-		<year>1985</year>
-		<publisher>Blue Ribbon</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 3, Hacked TSTH"/>
 			<dataarea name="rom" size="67584">
 				<rom name="blue ribbon software games (1985)(blue ribbon)(disk 2 of 3)[h tsth].ssd" size="67584" crc="d2e910a6" sha1="f417b2f70b1c0f58a1777e44405d40a53947d997"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="blueribb_2" supported="no">
-		<description>Blue Ribbon Software Games (Disk 3, Hacked TSTH)</description>
-		<year>1985</year>
-		<publisher>Blue Ribbon</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 3 of 3, Hacked TSTH"/>
 			<dataarea name="rom" size="73728">
 				<rom name="blue ribbon software games (1985)(blue ribbon)(disk 3 of 3)[h tsth].ssd" size="73728" crc="ae52b9b9" sha1="9e576452d96accd237aba01b4dd197f452a98111"/>
 			</dataarea>
@@ -651,47 +592,37 @@
 	</software>
 
 	<software name="bugbyteg" supported="no">
-		<description>Bug Byte Games 1 (Side 0)</description>
+		<description>Bug Byte Games 1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="bug byte games 1 (19xx)(-)(side 0).ssd" size="204800" crc="0f8f820f" sha1="7bd6b28b18c5242f6a7e0820dbd7abfa419ae11f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="bugbyteg_1" supported="no">
-		<description>Bug Byte Games 1 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="bug byte games 1 (19xx)(-)(side 1).ssd" size="204800" crc="fbcedaa6" sha1="dbf989cdf3accc54699ebc82512d8bc302ae5e92"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="bugbyteg_2" supported="no">
-		<description>Bug Byte Games 2 (Side 0)</description>
+	<software name="bugbyteg_1" supported="no">
+		<description>Bug Byte Games 2</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="bug byte games 2 (19xx)(-)(side 0).ssd" size="204800" crc="d0e4f34a" sha1="9e4e289cc014a567304408faa2609a31922686cc"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="bugbyteg_3" supported="no">
-		<description>Bug Byte Games 2 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="bug byte games 2 (19xx)(-)(side 1).ssd" size="204800" crc="15a08464" sha1="3d1ee7cf97c4a16e41e016193294454576b60883"/>
 			</dataarea>
@@ -699,11 +630,12 @@
 	</software>
 
 	<software name="ctutoria" supported="no">
-		<description>C Tutorials (Hacked 8-Bit)</description>
+		<description>C Tutorials</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="204800">
 				<rom name="c tutorials (19xx)(-)[h 8-bit].ssd" size="204800" crc="1b8b8faf" sha1="62d4d9327afa3b1af205f02e6f96a71aded8a79f"/>
 			</dataarea>
@@ -715,7 +647,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="colour printer dump utilities (19xx)(8-bit).ssd" size="204800" crc="d2802aeb" sha1="1c5125e34b6e2acdb8efaeec2248002c85448c25"/>
 			</dataarea>
@@ -723,11 +655,12 @@
 	</software>
 
 	<software name="thecompl" supported="no">
-		<description>The Complete Home Entertainment Centre (Hacked TSTH)</description>
+		<description>The Complete Home Entertainment Centre</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="162560">
 				<rom name="complete home entertainment centre, the (19xx)(-)[h tsth].ssd" size="162560" crc="362611ad" sha1="c58a9c8fd5b000a9b5e225e387af021f2acdf8c0"/>
 			</dataarea>
@@ -735,35 +668,30 @@
 	</software>
 
 	<software name="computer" supported="no">
-		<description>Computer Concepts ROMs (Side 0)</description>
+		<description>Computer Concepts ROMs</description>
 		<year>19??</year>
 		<publisher>Computer Concepts</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="computer concepts roms (19xx)(computer concepts)(side 0).ssd" size="204800" crc="796a9092" sha1="e6c69430d23c5b2a4fa9665c6d1ace0dbd01a9f4"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="computer_1" supported="no">
-		<description>Computer Concepts ROMs (Side 1)</description>
-		<year>19??</year>
-		<publisher>Computer Concepts</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="computer concepts roms (19xx)(computer concepts)(side 1).ssd" size="204800" crc="125057bf" sha1="114133906308e88d343cb1fa6b71741221154300"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="computer_2" supported="no">
+	<software name="computer_1" supported="no">
 		<description>Computer Hits 2</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="computer hits 2 (19xx)(-).ssd" size="204800" crc="b4a39b58" sha1="c5bd06339af48f746ff99985bad8320184ad6989"/>
 			</dataarea>
@@ -775,7 +703,7 @@
 		<year>19??</year>
 		<publisher>Dave Griffin</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="dave griffin game collection (19xx)(griffin, dave).ssd" size="204800" crc="f6e6489c" sha1="79afb0b642dccab67646603cf07b3fdcf0af3840"/>
 			</dataarea>
@@ -787,7 +715,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="51712">
 				<rom name="denkspellen (19xx)(-).ssd" size="51712" crc="968177d6" sha1="88382871e591dc3f64346f2207ea9b9eb811675a"/>
 			</dataarea>
@@ -799,19 +727,13 @@
 		<year>1985</year>
 		<publisher>Darren Allen</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="digital waveforms (1985)(allen, darren).ssd" size="204800" crc="085d56b6" sha1="fc4e5bf33a52101d67aa0c2374d138941ae6e54c"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="digitalw_1" supported="no">
-		<description>Digital Waveforms (Alt)</description>
-		<year>1985</year>
-		<publisher>Darren Allen</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="204800">
 				<rom name="digital waveforms (1985)(allen, darren)[a].ssd" size="204800" crc="274e924f" sha1="bdeb87b0f3e297c7a50767f838a7a319cebd3280"/>
 			</dataarea>
@@ -819,23 +741,18 @@
 	</software>
 
 	<software name="discmast" supported="no">
-		<description>Discmaster (Side 0)</description>
+		<description>Discmaster</description>
 		<year>19??</year>
 		<publisher>Beebug</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="discmaster (19xx)(beebug)(side 0).ssd" size="204800" crc="57ec7fee" sha1="688d6ce202f7720d3fe100928c4d6626e0d075c3"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="discmast_1" supported="no">
-		<description>Discmaster (Side 1)</description>
-		<year>19??</year>
-		<publisher>Beebug</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="discmaster (19xx)(beebug)(side 1).ssd" size="204800" crc="ba8318e2" sha1="91b552ad9d16df751d16579f1c273e4b0d4eb113"/>
 			</dataarea>
@@ -847,7 +764,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="disk utilities (19xx)(-).ssd" size="204800" crc="4b709d7f" sha1="81647603cc7ecb9bebea5d92f5a2248ef2753fe6"/>
 			</dataarea>
@@ -859,7 +776,7 @@
 		<year>1984</year>
 		<publisher>H. Hoornik</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="72192">
 				<rom name="drive 0d games (1984)(hoornik, h.).ssd" size="72192" crc="71caaec5" sha1="89fe8d336f5dceb78320098a0fff1e9eee8797cb"/>
 			</dataarea>
@@ -871,7 +788,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="84224">
 				<rom name="drive 2d games (19xx)(-).ssd" size="84224" crc="a58e2520" sha1="dd1c429cd3e453348f17c31a628d1c81c98401da"/>
 			</dataarea>
@@ -883,7 +800,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="education (19xx)(-).ssd" size="204800" crc="949143df" sha1="1a608032f8a616074ea151c8df55e7ab1c58fadc"/>
 			</dataarea>
@@ -895,7 +812,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="education - math (19xx)(8-bit).ssd" size="204800" crc="a7f70cfc" sha1="5eac613a1093184f341f49a57c27f8d45e9592e4"/>
 			</dataarea>
@@ -907,7 +824,7 @@
 		<year>1995</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="education 02 (1995)(8-bit).ssd" size="204800" crc="87a920e4" sha1="7ac665519710d5b60989bd7e47e47c772432f71c"/>
 			</dataarea>
@@ -919,7 +836,7 @@
 		<year>1996</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="educational games (1996)(8-bit).ssd" size="204800" crc="7c6d7155" sha1="5d3b823bd6c6b0c06fb09efdb7e43d4db75b49b4"/>
 			</dataarea>
@@ -931,7 +848,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="198144">
 				<rom name="elite variants (19xx)(-).ssd" size="198144" crc="83858816" sha1="8e0f291a0aafdfaae3b90495467295a438aedf49"/>
 			</dataarea>
@@ -939,23 +856,18 @@
 	</software>
 
 	<software name="eveneven" supported="no">
-		<description>Even Even More BASIC Games (Side 0)</description>
+		<description>Even Even More BASIC Games</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="even even more basic games (19xx)(-)(side 0).ssd" size="204800" crc="d0bf5008" sha1="d50689192278551254060a5cea93ef19b29d45da"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="eveneven_1" supported="no">
-		<description>Even Even More BASIC Games (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="even even more basic games (19xx)(-)(side 1).ssd" size="204800" crc="83e0b0e7" sha1="3e9d91395fdf20baf740334178d67a1b1d4539ba"/>
 			</dataarea>
@@ -963,23 +875,18 @@
 	</software>
 
 	<software name="evenmore" supported="no">
-		<description>Even More BASIC Games (Side 0)</description>
+		<description>Even More BASIC Games</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="even more basic games (19xx)(-)(side 0).ssd" size="204800" crc="318bba94" sha1="1d549d0ea183494ea845978d5e176dbbabdba62f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="evenmore_1" supported="no">
-		<description>Even More BASIC Games (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="even more basic games (19xx)(-)(side 1).ssd" size="204800" crc="10b9d5d5" sha1="7c04738ddd4b96ce1c2b1ca4ec0e72f8d4d7b0fe"/>
 			</dataarea>
@@ -991,7 +898,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="fast access demo disk (19xx)(-).ssd" size="204800" crc="a4edfaec" sha1="1904baeaefe422f589c9ec2db21aec354eaebdec"/>
 			</dataarea>
@@ -999,23 +906,18 @@
 	</software>
 
 	<software name="firebird" supported="no">
-		<description>Firebird Games (Side 0)</description>
+		<description>Firebird Games</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="firebird games (19xx)(-)(side 0).ssd" size="204800" crc="a8668f66" sha1="5127a66ca3fe27fd9bd239764a988c76ad7605c0"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="firebird_1" supported="no">
-		<description>Firebird Games (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="firebird games (19xx)(-)(side 1).ssd" size="204800" crc="c881374e" sha1="67351825ee1b99bfa90db84217e29601a567df21"/>
 			</dataarea>
@@ -1023,11 +925,12 @@
 	</software>
 
 	<software name="fivestar" supported="no">
-		<description>Five Star PD Games Volume 1 (E00DFS)</description>
+		<description>Five Star PD Games Volume 1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="E00DFS"/>
 			<dataarea name="rom" size="204800">
 				<rom name="five star pd games volume 1 (19xx)(-)[e00dfs].ssd" size="204800" crc="75802baf" sha1="d81830aaf13c3c52a8e2bba4151f2cf50eb6e274"/>
 			</dataarea>
@@ -1039,7 +942,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #01 (19xx)(-).ssd" size="204800" crc="b9c2d1b6" sha1="55eec57ee6f87dc137133b5fbed0c0e89703c11e"/>
 			</dataarea>
@@ -1051,7 +954,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #02 (19xx)(-).ssd" size="204800" crc="50e682b8" sha1="021f5cea765a85f43a729ae779ca3d6ec99eed7c"/>
 			</dataarea>
@@ -1063,19 +966,13 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #03 (19xx)(-).ssd" size="204800" crc="ec6561d9" sha1="87056ef7c6dd3961b5f468170d742197a0f5eb7d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="games03_1" supported="no">
-		<description>Games #03 (Alt)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games #03 (19xx)(-)[a].ssd" size="204800" crc="ea8db9a0" sha1="aafe7f65a7780c9bbc33b055dfb34b34f868a001"/>
 			</dataarea>
@@ -1087,7 +984,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #04 (19xx)(-).ssd" size="204800" crc="97763ceb" sha1="52cd00dfc0204c07081e0e3c41d308577a24b6f7"/>
 			</dataarea>
@@ -1099,7 +996,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #12 (19xx)(-).ssd" size="204800" crc="d4aa395a" sha1="b861d70558a652cab54822db99c246cc052f743c"/>
 			</dataarea>
@@ -1111,7 +1008,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #13 (19xx)(-).ssd" size="204800" crc="700baf3a" sha1="c802c34d5bf814ad89c398c3fe357501f377f22b"/>
 			</dataarea>
@@ -1123,7 +1020,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #14 (19xx)(-).ssd" size="204800" crc="49180604" sha1="d6a23c87643964da5715fddab5d44c32ae9dcc77"/>
 			</dataarea>
@@ -1135,7 +1032,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #15 (19xx)(-).ssd" size="204800" crc="211d03c7" sha1="f68363848414e6b770cff9b4a7ed8797d8d3f2a7"/>
 			</dataarea>
@@ -1147,7 +1044,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #20 (19xx)(-).ssd" size="204800" crc="4c74080a" sha1="ce04d6a660276db84b5a6df16fe20aec81851317"/>
 			</dataarea>
@@ -1159,7 +1056,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #21 (19xx)(-).ssd" size="204800" crc="b258aaf6" sha1="fe1808a596a548f02927f64d9e4b43969826c435"/>
 			</dataarea>
@@ -1171,7 +1068,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #22 (19xx)(-).ssd" size="204800" crc="876fef22" sha1="3c93df8ea2791c38533e953e977e318b8decaa4f"/>
 			</dataarea>
@@ -1183,7 +1080,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #23 (19xx)(-).ssd" size="204800" crc="087313cc" sha1="9c2fe3cdb43168a97579d1ec3b0d948029c59870"/>
 			</dataarea>
@@ -1195,7 +1092,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #24 (19xx)(-).ssd" size="204800" crc="32938a3c" sha1="e26f06502ca1f3b2e95502e9172c7fe359efa22b"/>
 			</dataarea>
@@ -1207,7 +1104,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #25 (19xx)(-).ssd" size="204800" crc="418ac373" sha1="8555ce970d99fc36d0afebcc8a02b4b8e660ba6c"/>
 			</dataarea>
@@ -1219,7 +1116,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #26 (19xx)(-).ssd" size="204800" crc="61e05bfb" sha1="9a7aa6054a123ee8ee3d7e35111a52ff25f6c9d8"/>
 			</dataarea>
@@ -1231,7 +1128,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #27 (19xx)(-).ssd" size="204800" crc="ad74c088" sha1="677c4d07b4fd8de072524f5b1d6fbcb191ed9159"/>
 			</dataarea>
@@ -1243,19 +1140,13 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #28 (19xx)(-).ssd" size="204800" crc="128ab633" sha1="e6c500e618c902d0f1ca6e8c7957b37e0ac99d7a"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="games28_1" supported="no">
-		<description>Games #28 (Alt)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games #28 (19xx)(-)[a].ssd" size="204800" crc="35bd713f" sha1="3407b6f3fa6ce3286588a8db05ebd3012dcc1de4"/>
 			</dataarea>
@@ -1267,7 +1158,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #29 (19xx)(-).ssd" size="204800" crc="cfddef46" sha1="ca7c151f5f12d2f07e610cf1accc3b7c0d146706"/>
 			</dataarea>
@@ -1279,19 +1170,13 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #30 (19xx)(-).ssd" size="204800" crc="62a5f931" sha1="f2ef5d65fe69fecfc0381b3d265e0b3e1279678e"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="games30_1" supported="no">
-		<description>Games #30 (Alt)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games #30 (19xx)(-)[a].ssd" size="204800" crc="fed39ba6" sha1="81d77e28cabe6e0214a412d8db3934b08a4268fe"/>
 			</dataarea>
@@ -1303,7 +1188,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #31 (19xx)(-).ssd" size="204800" crc="8f901e21" sha1="9964d339fa174d8900f06ac8ea41fa5743cf063b"/>
 			</dataarea>
@@ -1315,7 +1200,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #32 (19xx)(-).ssd" size="204800" crc="5bfb0394" sha1="44f2eb65b33c096a701f2901021f4e3c09bf38d1"/>
 			</dataarea>
@@ -1327,7 +1212,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #33 (19xx)(-).ssd" size="204800" crc="ff29bbc4" sha1="44026ec087480fcf13d2506fa358835fe8744f11"/>
 			</dataarea>
@@ -1339,7 +1224,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #35 (19xx)(-).ssd" size="204800" crc="7bec42ca" sha1="47b99953d9e21a57590899d72e8f76f7e41237fd"/>
 			</dataarea>
@@ -1351,7 +1236,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games #36 (19xx)(-).ssd" size="204800" crc="d1c7a1e3" sha1="ea682089222532fb61d4bd5ffe3708c07ea2fac7"/>
 			</dataarea>
@@ -1359,23 +1244,18 @@
 	</software>
 
 	<software name="games65" supported="no">
-		<description>Games 65 (Side 0)</description>
+		<description>Games 65</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games 65 (19xx)(-)(side 0).ssd" size="204800" crc="88427cce" sha1="83ffbf4ea265729a95a3f1f0408efa0e3f9a0613"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="games65_1" supported="no">
-		<description>Games 65 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games 65 (19xx)(-)(side 1).ssd" size="204800" crc="37ecaedc" sha1="0e8e3f362535d4a5f90aa25c4fd680b0dabcfb24"/>
 			</dataarea>
@@ -1383,23 +1263,18 @@
 	</software>
 
 	<software name="gamesa1" supported="no">
-		<description>Games A-1 (Side 0)</description>
+		<description>Games A-1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games a-1 (19xx)(-)(side 0).ssd" size="204800" crc="8c567d00" sha1="1a0742e3a6cbbe928baf7c404933639abba69ece"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesa1_1" supported="no">
-		<description>Games A-1 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games a-1 (19xx)(-)(side 1).ssd" size="204800" crc="e1d2816d" sha1="4fd63aa1dc2f0b601332eb6d7a307cb90170937f"/>
 			</dataarea>
@@ -1407,11 +1282,12 @@
 	</software>
 
 	<software name="gamesa2" supported="no">
-		<description>Games A-2 (Side 0)</description>
+		<description>Games A-2</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games a-2 (19xx)(-)(side 0).ssd" size="204800" crc="b4a6333e" sha1="57426e5f9c9718e98793d1b1b407177902ed7aae"/>
 			</dataarea>
@@ -1419,23 +1295,18 @@
 	</software>
 
 	<software name="gamesbc" supported="no">
-		<description>Games B-C (Side 0)</description>
+		<description>Games B-C</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games b-c (19xx)(-)(side 0).ssd" size="204800" crc="1655fa5d" sha1="d86514e43f622e3bed23c917290979d2be93887a"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesbc_1" supported="no">
-		<description>Games B-C (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games b-c (19xx)(-)(side 1).ssd" size="204800" crc="c36e59d7" sha1="c217e738ab857b246d37e6ee77c5021349a8ad86"/>
 			</dataarea>
@@ -1443,23 +1314,18 @@
 	</software>
 
 	<software name="gamescom" supported="no">
-		<description>Games Compendium 1 (Side 0)</description>
+		<description>Games Compendium 1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games compendium 1 (19xx)(-)(side 0).ssd" size="204800" crc="e015e04f" sha1="5647cec1fd7eda3562705d8af15a4ce98f9f7f02"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamescom_1" supported="no">
-		<description>Games Compendium 1 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games compendium 1 (19xx)(-)(side 1).ssd" size="204800" crc="53e456b3" sha1="067e6bb87b2228590ec94f98d3be8e591f7f0526"/>
 			</dataarea>
@@ -1467,23 +1333,18 @@
 	</software>
 
 	<software name="gamesd1" supported="no">
-		<description>Games D-1 (Side 0)</description>
+		<description>Games D-1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games d-1 (19xx)(-)(side 0).ssd" size="204800" crc="5519b2a3" sha1="1c64b6a1bab2e2d3eb58acc84d88c38d0172651d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesd1_1" supported="no">
-		<description>Games D-1 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games d-1 (19xx)(-)(side 1).ssd" size="204800" crc="c34b6246" sha1="87ddb485f175eb32496275533a4b2f9cbbdcc158"/>
 			</dataarea>
@@ -1491,23 +1352,18 @@
 	</software>
 
 	<software name="gamesd2" supported="no">
-		<description>Games D-2 (Side 0)</description>
+		<description>Games D-2</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games d-2 (19xx)(-)(side 0).ssd" size="204800" crc="37ba5ea8" sha1="5f381e1a989118607070513e78516aa846f641d2"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesd2_1" supported="no">
-		<description>Games D-2 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games d-2 (19xx)(-)(side 1).ssd" size="204800" crc="c2dffc5f" sha1="2eda7ef6cb5187684094c25dab246a3b6c5a8b2a"/>
 			</dataarea>
@@ -1519,7 +1375,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="games d-3 (19xx)(-).ssd" size="204800" crc="3e00a9c4" sha1="841737e24c5e2498697e00d927eeef5accaf531a"/>
 			</dataarea>
@@ -1531,7 +1387,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="75264">
 				<rom name="games disk 001 - 3 games (19xx)(-).ssd" size="75264" crc="0593df80" sha1="e171942551b8b898b09068c1ec5704464a9dd65c"/>
 			</dataarea>
@@ -1543,7 +1399,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="78848">
 				<rom name="games disk 002 - 4 games (19xx)(-).ssd" size="78848" crc="359b8bc5" sha1="cb6193618c91f88d9987b21eb5e495aa3b41bea1"/>
 			</dataarea>
@@ -1555,7 +1411,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="102912">
 				<rom name="games disk 003 - 4 games (19xx)(-).ssd" size="102912" crc="ff4760ff" sha1="a71ec0f2dff7574f2de73a15b784bd7be9f664bf"/>
 			</dataarea>
@@ -1567,7 +1423,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="75520">
 				<rom name="games disk 004 - 3 games (19xx)(-).ssd" size="75520" crc="b9a8deee" sha1="5f2b44c0d9c5da2e748bbdf763ae3e8a63e6e65b"/>
 			</dataarea>
@@ -1579,7 +1435,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="101888">
 				<rom name="games disk 007 - 4 games (19xx)(-).ssd" size="101888" crc="d81caae7" sha1="cb4b8daf298ce67e79e3db047c4290707a09c441"/>
 			</dataarea>
@@ -1591,7 +1447,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="102912">
 				<rom name="games disk 008 - 5 games (19xx)(-).ssd" size="102912" crc="873af538" sha1="0bdc6d83b135c67497fa0fe1c1cc1324959f025f"/>
 			</dataarea>
@@ -1603,7 +1459,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="74240">
 				<rom name="games disk 009 - 3 games (19xx)(-).ssd" size="74240" crc="6da5e06b" sha1="c8d5079fc6bb0b3cc1ea321a7d35eff128e25f1e"/>
 			</dataarea>
@@ -1615,7 +1471,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="102912">
 				<rom name="games disk 010 - 3 games (19xx)(-).ssd" size="102912" crc="15755fe1" sha1="7788ff53581abf72dffe1cba90dd94c95dd647e3"/>
 			</dataarea>
@@ -1623,23 +1479,18 @@
 	</software>
 
 	<software name="gamesdis_8" supported="no">
-		<description>Games Disk Blandet (Side 0)</description>
+		<description>Games Disk Blandet</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games disk blandet (19xx)(-)(side 0).ssd" size="204800" crc="969a9ab1" sha1="a9ef44f4e16dd09f0080831bd62f8146e826ab97"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesdis_9" supported="no">
-		<description>Games Disk Blandet (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games disk blandet (19xx)(-)(side 1).ssd" size="204800" crc="338ba775" sha1="5644fabc76cb768b05d90193c12be986b3a908a9"/>
 			</dataarea>
@@ -1647,23 +1498,18 @@
 	</software>
 
 	<software name="gamese1" supported="no">
-		<description>Games E-1 (Side 0)</description>
+		<description>Games E-1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games e-1 (19xx)(-)(side 0).ssd" size="204800" crc="41e438d5" sha1="8be84cbe68b4a86830442fc79e829f4fcbb654ae"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamese1_1" supported="no">
-		<description>Games E-1 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games e-1 (19xx)(-)(side 1).ssd" size="204800" crc="e5a77888" sha1="e3616d948a4ab135ac70e5f7bac7cdf7141f979a"/>
 			</dataarea>
@@ -1671,23 +1517,18 @@
 	</software>
 
 	<software name="gamesfor" supported="no">
-		<description>Games for Cheaters (Side 0)</description>
+		<description>Games for Cheaters</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games for cheaters (19xx)(-)(side 0).ssd" size="204800" crc="af6eb8fb" sha1="1f77b37a2b6a79cdfb81e6775ef75b3438c90c04"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesfor_1" supported="no">
-		<description>Games for Cheaters (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games for cheaters (19xx)(-)(side 1).ssd" size="204800" crc="833ac9ae" sha1="d74a353acc70cbba58a6f0705e4e2f59f21c4147"/>
 			</dataarea>
@@ -1695,23 +1536,18 @@
 	</software>
 
 	<software name="gamesfro" supported="no">
-		<description>Games from Magazines (Side 0)</description>
+		<description>Games from Magazines</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games from magazines (19xx)(-)(side 0).ssd" size="204800" crc="2b6399a8" sha1="212b4eba026b66f5e0171b793f903affff0d0a5d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesfro_1" supported="no">
-		<description>Games from Magazines (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games from magazines (19xx)(-)(side 1).ssd" size="204800" crc="76a1a107" sha1="69f6b3b210cfc7cf6491248bf030ab7efdff946b"/>
 			</dataarea>
@@ -1719,23 +1555,18 @@
 	</software>
 
 	<software name="gamesgh" supported="no">
-		<description>Games G-H (Side 0)</description>
+		<description>Games G-H</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games g-h (19xx)(-)(side 0).ssd" size="204800" crc="f5ff5001" sha1="007222fc4af06e98352618ac96edcd08cace27f7"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesgh_1" supported="no">
-		<description>Games G-H (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games g-h (19xx)(-)(side 1).ssd" size="204800" crc="f7ee4c22" sha1="7824fb6644dcc114d381ab03f636b36957bd9d02"/>
 			</dataarea>
@@ -1743,23 +1574,18 @@
 	</software>
 
 	<software name="gamesgal" supported="no">
-		<description>Games Galore (GALORE)</description>
+		<description>Games Galore</description>
 		<year>19??</year>
 		<publisher>Olssoft</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="GALORE"/>
 			<dataarea name="rom" size="23296">
 				<rom name="games galore (19xx)(olssoft)[galore].ssd" size="23296" crc="9e8bd224" sha1="0b2de0def99c1c5a6ba208690cd8e4263396e762"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesgal_1" supported="no">
-		<description>Games Galore (Hacked TSTH)</description>
-		<year>19??</year>
-		<publisher>Olssoft</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="24064">
 				<rom name="games galore (19xx)(olssoft)[h tsth].ssd" size="24064" crc="be41a585" sha1="e26f707986c2bd74a77cad4b06aa0dd9b87efbfa"/>
 			</dataarea>
@@ -1771,7 +1597,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="102912">
 				<rom name="games games games viii (19xx)(-).ssd" size="102912" crc="9abecc09" sha1="12050e3e700e406a1c91b9559dd00be529970ec8"/>
 			</dataarea>
@@ -1779,23 +1605,18 @@
 	</software>
 
 	<software name="gamesij" supported="no">
-		<description>Games I-J (Side 0)</description>
+		<description>Games I-J</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games i-j (19xx)(-)(side 0).ssd" size="204800" crc="c314dad3" sha1="7278ef955e34810f99737c86fbe48ddeb4567140"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesij_1" supported="no">
-		<description>Games I-J (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games i-j (19xx)(-)(side 1).ssd" size="204800" crc="0c525ee2" sha1="e0d6b9866f0390d340b0caf1113e5c12794a4f4e"/>
 			</dataarea>
@@ -1803,23 +1624,18 @@
 	</software>
 
 	<software name="gameskl" supported="no">
-		<description>Games K-L (Side 0)</description>
+		<description>Games K-L</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games k-l (19xx)(-)(side 0).ssd" size="204800" crc="dff1f65a" sha1="bb6732cb2fabf8bd222bf8fd67dc660b413cf5ee"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gameskl_1" supported="no">
-		<description>Games K-L (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games k-l (19xx)(-)(side 1).ssd" size="204800" crc="8cc8bbc7" sha1="95e8999dd13c8ee1b0547a6c434eed638e22061f"/>
 			</dataarea>
@@ -1827,23 +1643,18 @@
 	</software>
 
 	<software name="gamesm1" supported="no">
-		<description>Games M-1 (Side 0)</description>
+		<description>Games M-1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games m-1 (19xx)(-)(side 0).ssd" size="204800" crc="d58d9a66" sha1="44251e547c2a9f229842c52acd99b1aacd35dc59"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesm1_1" supported="no">
-		<description>Games M-1 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games m-1 (19xx)(-)(side 1).ssd" size="204800" crc="0efb8e17" sha1="8be318dc4521e7a42df603ecbcadf1faf3c55409"/>
 			</dataarea>
@@ -1851,23 +1662,18 @@
 	</software>
 
 	<software name="gamesm2" supported="no">
-		<description>Games M-2 (Side 0)</description>
+		<description>Games M-2</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games m-2 (19xx)(-)(side 0).ssd" size="204800" crc="1a543a48" sha1="d4aef6c257c43dbe5d52decc978595d9919d37ed"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesm2_1" supported="no">
-		<description>Games M-2 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games m-2 (19xx)(-)(side 1).ssd" size="204800" crc="a1f6f521" sha1="8c173ae8c24729e49bbe9304d01dedddaf2a8a5b"/>
 			</dataarea>
@@ -1875,23 +1681,18 @@
 	</software>
 
 	<software name="gamesno" supported="no">
-		<description>Games N-O (Side 0)</description>
+		<description>Games N-O</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games n-o (19xx)(-)(side 0).ssd" size="204800" crc="1337714d" sha1="78cfbbfd4a13c12a5bb0c8f2a9407644add71a67"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesno_1" supported="no">
-		<description>Games N-O (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games n-o (19xx)(-)(side 1).ssd" size="204800" crc="6d95b240" sha1="3116a4cf0ab2bbc282628a3f3d2ea3f30857e038"/>
 			</dataarea>
@@ -1899,11 +1700,12 @@
 	</software>
 
 	<software name="gamesofs" supported="no">
-		<description>Games of Strategy (Hacked TSTH)</description>
+		<description>Games of Strategy</description>
 		<year>1982</year>
 		<publisher>BBC</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="26624">
 				<rom name="games of strategy (1982)(bbc)[h tsth].ssd" size="26624" crc="7d3a889c" sha1="0ca651bd1dc53626b481620ffb877eb95fc78278"/>
 			</dataarea>
@@ -1911,23 +1713,18 @@
 	</software>
 
 	<software name="gamespq" supported="no">
-		<description>Games P-Q (Side 0)</description>
+		<description>Games P-Q</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games p-q (19xx)(-)(side 0).ssd" size="204800" crc="b67cf2ce" sha1="d9693f337c3179695ef8514b76c70b5531de439c"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamespq_1" supported="no">
-		<description>Games P-Q (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games p-q (19xx)(-)(side 1).ssd" size="204800" crc="6e2400e1" sha1="16d229eb6120d7653c404c8f707d90348ad4b25b"/>
 			</dataarea>
@@ -1935,23 +1732,18 @@
 	</software>
 
 	<software name="gamesrs" supported="no">
-		<description>Games R-S (Side 0)</description>
+		<description>Games R-S</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games r-s (19xx)(-)(side 0).ssd" size="204800" crc="99675f86" sha1="4605bb7f15c8e56c73fe0e86d0ce9591fc0d13df"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesrs_1" supported="no">
-		<description>Games R-S (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games r-s (19xx)(-)(side 1).ssd" size="204800" crc="1a61d188" sha1="e2465ce2e0793e52defedd4e6827ff13fd2d29d0"/>
 			</dataarea>
@@ -1959,23 +1751,18 @@
 	</software>
 
 	<software name="gamestu" supported="no">
-		<description>Games T-U (Side 0)</description>
+		<description>Games T-U</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games t-u (19xx)(-)(side 0).ssd" size="204800" crc="fca4fad1" sha1="32653033be4dbe06287d72220c7ee820013871b8"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamestu_1" supported="no">
-		<description>Games T-U (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games t-u (19xx)(-)(side 1).ssd" size="204800" crc="f245a66c" sha1="186b8036a31294989bbebb6fde09d0efb223b313"/>
 			</dataarea>
@@ -1983,23 +1770,18 @@
 	</software>
 
 	<software name="gamesvw" supported="no">
-		<description>Games V-W (Side 0)</description>
+		<description>Games V-W</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games v-w (19xx)(-)(side 0).ssd" size="204800" crc="2f209965" sha1="c2fa95f5e5dd565fb4b5612eee123870845dca05"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="gamesvw_1" supported="no">
-		<description>Games V-W (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="games v-w (19xx)(-)(side 1).ssd" size="204800" crc="2c741cbf" sha1="db0437b77521bf62dde44f1b9804432ad9eb71e5"/>
 			</dataarea>
@@ -2011,7 +1793,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="gold collection (19xx)(-).ssd" size="204800" crc="6b715172" sha1="b23750f1d206df1c9efb26e1d63253c6177e0d2f"/>
 			</dataarea>
@@ -2019,35 +1801,31 @@
 	</software>
 
 	<software name="thegoldc" supported="no">
-		<description>The Gold Collection 3 (Hacked TSTH)</description>
+		<description>The Gold Collection 3</description>
 		<year>19??</year>
 		<publisher>U.S. Gold</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="167168">
 				<rom name="gold collection 3, the (19xx)(u.s. gold)[h tsth].ssd" size="167168" crc="69987390" sha1="7a97249c174f8b2b60dad02b0ce367a3b5f4d41c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="grfxamps" supported="no">
-		<description>Grfx &amp; Snd1 (Side 0)</description>
+	<software name="grfxsnd1" supported="no">
+		<description>Grfx &amp; Snd1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="grfx &amp; snd1 (19xx)(-)(side 0).ssd" size="204800" crc="4b042032" sha1="8676f918fba22bab62ae83555ecf988f3210c668"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="grfxamps_1" supported="no">
-		<description>Grfx &amp; Snd1 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="grfx &amp; snd1 (19xx)(-)(side 1).ssd" size="204800" crc="40d8256d" sha1="1de3b63d1f81bb35a7efcf66404816de46d08a29"/>
 			</dataarea>
@@ -2059,7 +1837,7 @@
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - archive utilities (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="286271f8" sha1="9ce97dc8251a4a6d70bf8c9906bf205eb55a5a12"/>
 			</dataarea>
@@ -2067,11 +1845,12 @@
 	</software>
 
 	<software name="harstonp_1" supported="no">
-		<description>Harston PD Library - Black &amp; CJR File Archiver (v2.00, Public Domain, ARCHIVE)</description>
+		<description>Harston PD Library - Black &amp; CJR File Archiver (v2.00, Public Domain)</description>
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="ARCHIVE"/>
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - black &amp; cjr file archiver v2.00 (19xx)(harston, j.g.)(pd)[archive].ssd" size="204800" crc="6b3e6130" sha1="d0c45024a6848b1b741da4316512fad69c6e43a4"/>
 			</dataarea>
@@ -2083,7 +1862,7 @@
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - database utilities (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="c831d595" sha1="179d7ef817c361fdeec6cafd83db2588dbdd76e5"/>
 			</dataarea>
@@ -2091,11 +1870,12 @@
 	</software>
 
 	<software name="harstonp_3" supported="no">
-		<description>Harston PD Library - DOS Utilities (Public Domain, INTRO)</description>
+		<description>Harston PD Library - DOS Utilities (Public Domain)</description>
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="INTRO"/>
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - dos utilities (19xx)(harston, j.g.)(pd)[intro].ssd" size="204800" crc="3d1cb1a1" sha1="c5d3e1e89fc43187fba87e856c4e6594fed0fa22"/>
 			</dataarea>
@@ -2107,7 +1887,7 @@
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - ecomenu (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="34e6a9a6" sha1="0a3152bcdb907f732cb6279846dd74184eacf095"/>
 			</dataarea>
@@ -2119,7 +1899,7 @@
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - gobbler and life (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="c3be6aa9" sha1="96c7753c782bc0e9aa16386089d5058ce0941684"/>
 			</dataarea>
@@ -2131,7 +1911,7 @@
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="harston pd library - hadfs disk (19xx)(harston, j.g.)(pd).ssd" size="409600" crc="7968e897" sha1="5688f7b3b76d32ba96e9d07afc6e9d788ac901ac"/>
 			</dataarea>
@@ -2143,7 +1923,7 @@
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - ikon system (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="45688edc" sha1="3cd6c754eeb90f565ae5bad119544a46e2196315"/>
 			</dataarea>
@@ -2155,7 +1935,7 @@
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - music programs (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="699332e2" sha1="b0760782f1e99bdebae04397acd7e63629689f52"/>
 			</dataarea>
@@ -2167,7 +1947,7 @@
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - music programs 2 (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="fe859cc6" sha1="089861af398fc06978257cbf9e0749e10fc8b487"/>
 			</dataarea>
@@ -2179,7 +1959,7 @@
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - music utilities (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="cf419271" sha1="bcdfefb4baf95422b05a48e41bfce19a7f550290"/>
 			</dataarea>
@@ -2191,7 +1971,7 @@
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - paint (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="b5d38e29" sha1="b3f2d2623b8866d68bc7d119a0b347fdf406eb52"/>
 			</dataarea>
@@ -2203,91 +1983,85 @@
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - screen pictures (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="83281d65" sha1="fd3f07b1949547bda3c8110e726b99667be45ad9"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="harstonp_13" supported="no">
-		<description>Harston PD Library - Screen Pictures (Public Domain, Alt)</description>
-		<year>19??</year>
-		<publisher>J.G. Harston</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - screen pictures (19xx)(harston, j.g.)(pd)[a].ssd" size="204800" crc="bc0fa104" sha1="86040ff3932a99c7cdba1f0ee5cf061d2e67ecee"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="harstonp_14" supported="no">
+	<software name="harstonp_13" supported="no">
 		<description>Harston PD Library - Telextext Programs (Public Domain)</description>
 		<year>1991</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - telextext programs (1991)(harston, j.g.)(pd).ssd" size="204800" crc="fb390791" sha1="4c53ce28a4cb85cd329b98458d158d0caead3bd8"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="harstonp_15" supported="no">
+	<software name="harstonp_14" supported="no">
 		<description>Harston PD Library - Utilities 01 (Public Domain)</description>
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - utilities 01 (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="9c1f1970" sha1="5e57d3f38bc8ae357f740d5cd9a9602ee9cc9fe4"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="harstonp_16" supported="no">
+	<software name="harstonp_15" supported="no">
 		<description>Harston PD Library - Utilities 02 (Public Domain)</description>
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - utilities 02 (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="1e4f97dd" sha1="2f3540ad13caedb82c97e0158767ebd4e2991a02"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="harstonp_17" supported="no">
+	<software name="harstonp_16" supported="no">
 		<description>Harston PD Library - Utilities 03 (Public Domain)</description>
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="harston pd library - utilities 03 (19xx)(harston, j.g.)(pd).ssd" size="409600" crc="4864dbdd" sha1="b3eec0f118ddd25fada913397318cb5c95a1f75c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="harstonp_18" supported="no">
+	<software name="harstonp_17" supported="no">
 		<description>Harston PD Library - Utilities 04 (Public Domain)</description>
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="409600">
 				<rom name="harston pd library - utilities 04 (19xx)(harston, j.g.)(pd).ssd" size="409600" crc="cf56c9c6" sha1="cb20387760f80709f50db005cb891fd0b53fde66"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="harstonp_19" supported="no">
+	<software name="harstonp_18" supported="no">
 		<description>Harston PD Library - View Utilities and Programs (Public Domain)</description>
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="harston pd library - view utilities and programs (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="73a9f994" sha1="7f47a158fea421af71093226c4b0c63d97f3c041"/>
 			</dataarea>
@@ -2295,11 +2069,12 @@
 	</software>
 
 	<software name="headfirs" supported="no">
-		<description>HeadFirst PD (Public Domain, Hacked 8-Bit, !MENU)</description>
+		<description>HeadFirst PD (Public Domain)</description>
 		<year>19??</year>
 		<publisher>HeadFirst</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit, !MENU"/>
 			<dataarea name="rom" size="204800">
 				<rom name="headfirst pd (19xx)(headfirst)(pd)[h 8-bit][menu].ssd" size="204800" crc="4f419685" sha1="f83c1c22f68887f52e2b94e2f64c1739838aa7db"/>
 			</dataarea>
@@ -2307,23 +2082,18 @@
 	</software>
 
 	<software name="herozoft" supported="no">
-		<description>HeroZoft Graphic Utilities Disk (Side 0)</description>
+		<description>HeroZoft Graphic Utilities Disk</description>
 		<year>19??</year>
 		<publisher>HeroZoft</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="herozoft graphic utilities disk (19xx)(herozoft)(side 0).ssd" size="204800" crc="4072e420" sha1="f7e17b26b62220f25f340293f072210fb218c582"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="herozoft_1" supported="no">
-		<description>HeroZoft Graphic Utilities Disk (Side 1)</description>
-		<year>19??</year>
-		<publisher>HeroZoft</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="herozoft graphic utilities disk (19xx)(herozoft)(side 1).ssd" size="204800" crc="7a2f595f" sha1="f2a495bc6634488c3a5ad6d0dc0fd9e001911663"/>
 			</dataarea>
@@ -2331,11 +2101,12 @@
 	</software>
 
 	<software name="historyo" supported="no">
-		<description>History of Micro User Games - Vol 1 (Hacked TSTH)</description>
+		<description>History of Micro User Games - Vol 1</description>
 		<year>19??</year>
 		<publisher>Europress</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="84736">
 				<rom name="history of micro user games - vol 1 (19xx)(europress)[h tsth].ssd" size="84736" crc="645874d6" sha1="2818b9adfbe5cd2c7adb7540ab96bcfe3872e6ba"/>
 			</dataarea>
@@ -2347,7 +2118,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="ijk games (19xx)(-).ssd" size="204800" crc="6ac022da" sha1="24ca189c78e211f25d59b249ef58bc5c55bd2429"/>
 			</dataarea>
@@ -2355,23 +2126,18 @@
 	</software>
 
 	<software name="imagineg" supported="no">
-		<description>Imagine Games (Side 0)</description>
+		<description>Imagine Games</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="imagine games (19xx)(-)(side 0).ssd" size="204800" crc="f1eeb342" sha1="55992e9c4c5ea97d4274260dde831e0f05be66d4"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="imagineg_1" supported="no">
-		<description>Imagine Games (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="imagine games (19xx)(-)(side 1).ssd" size="204800" crc="efe2359e" sha1="74c05a1d1d49c57b98ef0d3aa4d0d98b6d5edd60"/>
 			</dataarea>
@@ -2383,7 +2149,7 @@
 		<year>19??</year>
 		<publisher>J. Farmer</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="jjf pd disk 10 - wordsquare 1 (19xx)(farmer, j.)(pd).ssd" size="204800" crc="0d72a09a" sha1="8fdfb1f843625e42ed06387ab1f3a26e705f94af"/>
 			</dataarea>
@@ -2395,7 +2161,7 @@
 		<year>19??</year>
 		<publisher>J. Farmer</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="jjf pd disk 58 - aeronautical dogfight 2 (19xx)(farmer, j.)(pd).ssd" size="204800" crc="dc412054" sha1="6ff171b7c06644b51911ab4f2a52990b0c043b74"/>
 			</dataarea>
@@ -2403,59 +2169,50 @@
 	</software>
 
 	<software name="keesvano" supported="no">
-		<description>Kees van Oss Compilation (Bad)</description>
+		<description>Kees van Oss Compilation</description>
 		<year>19??</year>
 		<publisher>Kees van Oss</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Bad"/>
 			<dataarea name="rom" size="102400">
-				<rom name="kees van oss compilation (19xx)(van oss, kees)[b].ssd" size="102400" crc="7dee50a9" sha1="cd95b0d5a1db05c963ee30c8f85b01e13bf41af7"/>
+				<rom name="kees van oss compilation (19xx)(van oss, kees)[b].ssd" size="102400" crc="7dee50a9" sha1="cd95b0d5a1db05c963ee30c8f85b01e13bf41af7" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="kopidesk" supported="no">
-		<description>Kopi Desk (Side 0)</description>
+		<description>Kopi Desk</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="kopi desk (19xx)(-)(side 0).ssd" size="204800" crc="43d8d881" sha1="05dcf8825f673725be25574340263635550cd2ca"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="kopidesk_1" supported="no">
-		<description>Kopi Desk (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="kopi desk (19xx)(-)(side 1).ssd" size="204800" crc="783d99bb" sha1="b08a7370ef03a0daf712b984a1b322516ac91edf"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="martecha" supported="no">
-		<description>Martech &amp; MRM Games (Side 0)</description>
+	<software name="martechm" supported="no">
+		<description>Martech &amp; MRM Games</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="martech &amp; mrm games (19xx)(-)(side 0).ssd" size="204800" crc="8c5e0590" sha1="40079d9e1521fa5945552ebe40d3ab6df071622e"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="martecha_1" supported="no">
-		<description>Martech &amp; MRM Games (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="martech &amp; mrm games (19xx)(-)(side 1).ssd" size="204800" crc="0c0e0534" sha1="42a6917f2e2bc76f5ead1dea2e13585a1b19778c"/>
 			</dataarea>
@@ -2463,11 +2220,12 @@
 	</software>
 
 	<software name="megaplay" supported="no">
-		<description>Megaplay Volume 1 (Hacked TSTH)</description>
+		<description>Megaplay Volume 1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="122112">
 				<rom name="megaplay volume 1 (19xx)(-)[h tsth].ssd" size="122112" crc="266e4c42" sha1="de45ee9b9d77a87cf17bf4d1d5b89c9e49498b21"/>
 			</dataarea>
@@ -2475,11 +2233,12 @@
 	</software>
 
 	<software name="micropow" supported="no">
-		<description>Micro Power Magic I (Hacked TSTH)</description>
+		<description>Micro Power Magic I</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="152576">
 				<rom name="micro power magic i (19xx)(-)[h tsth].ssd" size="152576" crc="b597e788" sha1="32e709c4ba33ca43e77e5e03ed9e7d51937ba909"/>
 			</dataarea>
@@ -2487,11 +2246,12 @@
 	</software>
 
 	<software name="micropow_1" supported="no">
-		<description>Micro Power Magic II (Hacked TSTH)</description>
+		<description>Micro Power Magic II</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="155392">
 				<rom name="micro power magic ii (19xx)(-)[h tsth].ssd" size="155392" crc="4ccde4b5" sha1="c7e4f3a64cca6775f737e1f66fd2a0f9a87bb2fa"/>
 			</dataarea>
@@ -2503,7 +2263,7 @@
 		<year>19??</year>
 		<publisher>GLM</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="miscellany 2 (19xx)(glm).ssd" size="204800" crc="b3850378" sha1="b4d30d2388c078c343eb8a7344823f597421db22"/>
 			</dataarea>
@@ -2511,11 +2271,12 @@
 	</software>
 
 	<software name="mrpd" supported="no">
-		<description>MRPD (Hacked 8-Bit)</description>
+		<description>MRPD</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="204800">
 				<rom name="mrpd (19xx)(-)[h 8-bit].ssd" size="204800" crc="95980013" sha1="f5e44353a61f22629a62c15d92485df04dd2fc3d"/>
 			</dataarea>
@@ -2527,7 +2288,7 @@
 		<year>19??</year>
 		<publisher>Digital Fantasia</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="28928">
 				<rom name="mysterious adventure 02 &amp; 03 (19xx)(digital fantasia).ssd" size="28928" crc="6719314c" sha1="3f745a1e2d98a7bf00ec2b3bbf800b7dde734e56"/>
 			</dataarea>
@@ -2539,7 +2300,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="national lottery programs (19xx)(8-bit).ssd" size="204800" crc="7f2c4f39" sha1="ddaf9db6b31f44152e2cb31d59b0a073377f1660"/>
 			</dataarea>
@@ -2547,23 +2308,25 @@
 	</software>
 
 	<software name="packette" supported="no">
-		<description>Packet Text Files (Hacked 8-Bit)</description>
+		<description>Packet Text Files</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="204800">
 				<rom name="packet text files (19xx)(-)[h 8-bit].ssd" size="204800" crc="32e9e6ab" sha1="8b83d1ca5b8f1409872e08c7742f515ae7f16e4f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="pageroma" supported="no">
-		<description>Pagerom &amp; Kangaterm (Hacked 8-Bit)</description>
+	<software name="pageromk" supported="no">
+		<description>Pagerom &amp; Kangaterm</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="204800">
 				<rom name="pagerom &amp; kangaterm (19xx)(-)[h 8-bit].ssd" size="204800" crc="057a97d5" sha1="29bfd8107f3a2f625fe7590f8d971609f7bd8aab"/>
 			</dataarea>
@@ -2575,7 +2338,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="pokes disc, the - issue 1 (19xx)(-).ssd" size="204800" crc="ed96bf98" sha1="34ff6a1066d3ba0bcf815b493a0a31ebc089853d"/>
 			</dataarea>
@@ -2583,23 +2346,18 @@
 	</software>
 
 	<software name="speechpr" supported="no">
-		<description>Speech Print Replay &amp; Other ROMs (Side 0)</description>
+		<description>Speech Print Replay &amp; Other ROMs</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="print replay, speech &amp; other roms (19xx)(-)(side 0).ssd" size="204800" crc="b258a6f2" sha1="c364653a9e4a967568647cb285b89c82fca96d23"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="speechpr_1" supported="no">
-		<description>Speech Print Replay &amp; Other ROMs (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="print replay, speech &amp; other roms (19xx)(-)(side 1).ssd" size="204800" crc="48904ff0" sha1="6407dbc47d14e77d05eae8740752bf604162da4d"/>
 			</dataarea>
@@ -2607,59 +2365,49 @@
 	</software>
 
 	<software name="programp" supported="no">
-		<description>Program Power 1 (Side 0)</description>
+		<description>Program Power 1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="program power 1 (19xx)(-)(side 0).ssd" size="204800" crc="25689f77" sha1="fe72f9ad11bbe464f2eb3c3aac1dc3d3a5640a84"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="programp_1" supported="no">
-		<description>Program Power 1 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="program power 1 (19xx)(-)(side 1).ssd" size="204800" crc="4b6979d7" sha1="b10c546ff14863ef0fb702474177c0e6e5cac700"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="programp_2" supported="no">
-		<description>Program Power 2 (Side 0)</description>
+	<software name="programp_1" supported="no">
+		<description>Program Power 2</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="program power 2 (19xx)(-)(side 0).ssd" size="204800" crc="fc9a249d" sha1="a6081d563585faf214914588d2476423a07a7cb2"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="programp_3" supported="no">
-		<description>Program Power 2 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="program power 2 (19xx)(-)(side 1).ssd" size="204800" crc="583b23bc" sha1="5693de475d3879975f9be33d9c2cc41902b25524"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="programp_4" supported="no">
+	<software name="programp_2" supported="no">
 		<description>Program Power 3</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="program power 3 (19xx)(-).ssd" size="204800" crc="521e2b44" sha1="987b23660fb04f03427c6d915ad285f4cba96dd9"/>
 			</dataarea>
@@ -2667,23 +2415,25 @@
 	</software>
 
 	<software name="programs" supported="no">
-		<description>Programs Vol. 2 (Hacked 8-Bit)</description>
+		<description>Programs Vol. 2</description>
 		<year>19??</year>
 		<publisher>C. Dewhurst</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="102400">
 				<rom name="programs vol. 2 (19xx)(dewhurst, c.)[h 8-bit].ssd" size="102400" crc="b121ee77" sha1="ff99b16b087bf62ceb2940137109b49515036286"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="repton1a" supported="no">
-		<description>Repton 1 &amp; 2 &amp; Editor (Hacked TSTH)</description>
+	<software name="repton12" supported="no">
+		<description>Repton 1 &amp; 2 &amp; Editor</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="69888">
 				<rom name="repton 1 &amp; 2 &amp; editor (19xx)(-)[h tsth].ssd" size="69888" crc="e66525d2" sha1="9e17486dccb31a24d9a6708700bb3dc24a386652"/>
 			</dataarea>
@@ -2695,7 +2445,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="91904">
 				<rom name="russian language and culture resources (19xx)(-).ssd" size="91904" crc="b40bbfa0" sha1="051bc868b41cf5c319822f047b1f3d3c4d596d7a"/>
 			</dataarea>
@@ -2703,11 +2453,12 @@
 	</software>
 
 	<software name="sbpddisk" supported="no">
-		<description>SBPD Disk 74 - Beebnet Col. Vol 1 (Hacked 8-Bit)</description>
+		<description>SBPD Disk 74 - Beebnet Col. Vol 1</description>
 		<year>19??</year>
 		<publisher>SBPD</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="204800">
 				<rom name="sbpd disk 74 - beebnet col. vol 1 (19xx)(sbpd)[h 8-bit].ssd" size="204800" crc="5a54e0d6" sha1="20c6bcdba6055bbc9d1d759f9ea3d341f4255505"/>
 			</dataarea>
@@ -2719,7 +2470,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 00 - disk filing system (19xx)(-).ssd" size="204800" crc="27921a6d" sha1="09f0d80e649d6f62b755945ff8e9a9f82893afc7"/>
 			</dataarea>
@@ -2731,7 +2482,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 01 - 21 items (19xx)(-).ssd" size="204800" crc="fe0e7a54" sha1="e91b7e34445a3a0b20c82a732d8aedb34eb2761e"/>
 			</dataarea>
@@ -2743,7 +2494,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 02 - 20 items (19xx)(-).ssd" size="204800" crc="c07a98a3" sha1="f3c15d16e99b81241766e5de1ea9a841550e568a"/>
 			</dataarea>
@@ -2755,7 +2506,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 03 - 30 items (19xx)(-).ssd" size="204800" crc="04a81efb" sha1="3efdcbdf4f9159c08be0fa8764b2860232600db4"/>
 			</dataarea>
@@ -2767,7 +2518,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 04 - 29 items (19xx)(-).ssd" size="204800" crc="f2ff6548" sha1="f6763ff0dea5e5172e8ae73bc015d891488f6ac8"/>
 			</dataarea>
@@ -2779,7 +2530,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 05 - 29 items (19xx)(-).ssd" size="204800" crc="59524c59" sha1="95f71e440119882f743adab5ec1810610a8d9803"/>
 			</dataarea>
@@ -2791,7 +2542,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 06 - 21 items (19xx)(-).ssd" size="204800" crc="5074fb6a" sha1="212fe080887891eceb4a3f6f157e6359f51a8ea4"/>
 			</dataarea>
@@ -2803,7 +2554,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 07 - 16 items (19xx)(-).ssd" size="204800" crc="810b0acf" sha1="bd32a69d15b9ec3e7b8db3944857d0dfc0913141"/>
 			</dataarea>
@@ -2815,7 +2566,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 08 - 12 items (19xx)(-).ssd" size="204800" crc="87957151" sha1="b87ab2a4f217d2e717351efa5b1f877a8a99f34a"/>
 			</dataarea>
@@ -2827,7 +2578,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 09 - 21 items (19xx)(-).ssd" size="204800" crc="2d776d8d" sha1="5a1b76e85681e492138d10737b4ecf36a7585082"/>
 			</dataarea>
@@ -2839,7 +2590,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 10 - 12 items (19xx)(-).ssd" size="204800" crc="f88664b9" sha1="d598e6126b6b89b1f81920ba5fa453c285f7524c"/>
 			</dataarea>
@@ -2851,7 +2602,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 11 - 14 items (19xx)(-).ssd" size="204800" crc="e7c65097" sha1="9abdb50f39ae92b40d4afc8998c5a56e9f9caace"/>
 			</dataarea>
@@ -2863,7 +2614,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 12 - 20 items (19xx)(-).ssd" size="204800" crc="6147c63e" sha1="ab1d197179dcc474620c039f3aaf5202de37e5e4"/>
 			</dataarea>
@@ -2875,7 +2626,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 13 - 24 items (19xx)(-).ssd" size="204800" crc="05a60064" sha1="dd0d730209e27e57dc774e8e6b7ca7e3addbf84e"/>
 			</dataarea>
@@ -2887,7 +2638,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 14 - 23 items (19xx)(-).ssd" size="204800" crc="ac7de274" sha1="37e1c67de41370978f3189fd338661e9bbdaad6b"/>
 			</dataarea>
@@ -2899,7 +2650,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 15 - 31 items (19xx)(-).ssd" size="204800" crc="c0cdd4f3" sha1="c3e5845103327c91145a77bc2b04bfcaebffab72"/>
 			</dataarea>
@@ -2911,7 +2662,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 16 - 14 items (19xx)(-).ssd" size="204800" crc="a9c796b5" sha1="8952e16f67847cdf99a105c750ad2ca335ebf5fd"/>
 			</dataarea>
@@ -2923,7 +2674,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 17 - 13 items (19xx)(-).ssd" size="204800" crc="b37f8866" sha1="981cdda21056c9f26372145d6c546853f3f18b50"/>
 			</dataarea>
@@ -2935,7 +2686,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 18 - 13 items (19xx)(-).ssd" size="204800" crc="a1e5ec67" sha1="fa7293e3ec5805aa8e6f3dcf08158db60a07713c"/>
 			</dataarea>
@@ -2947,7 +2698,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 19 - 29 items (19xx)(-).ssd" size="204800" crc="5e18385d" sha1="dea2d8fc3cc8ac7db908993b35d0a1b3b557abbd"/>
 			</dataarea>
@@ -2959,7 +2710,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 20 - 14 items (19xx)(-).ssd" size="204800" crc="eb7d7a92" sha1="7f7c6d1477d5e233512480d71bfd0d0627eeaf35"/>
 			</dataarea>
@@ -2971,7 +2722,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 21 - 31 items (19xx)(-).ssd" size="204800" crc="584e1135" sha1="885626543b012afd684ff012a5ec60b5e2a0dafa"/>
 			</dataarea>
@@ -2983,7 +2734,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 22 - 16 items (19xx)(-).ssd" size="204800" crc="f0ee743d" sha1="de34eadd01ecff6e6187936b45d1224742d5dead"/>
 			</dataarea>
@@ -2995,7 +2746,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 23 - 14 items (19xx)(-).ssd" size="204800" crc="a775acce" sha1="35a089c3abcc66330a0bb3c8f6690a517f0248f8"/>
 			</dataarea>
@@ -3007,7 +2758,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 24 - 15 items (19xx)(-).ssd" size="204800" crc="16677c80" sha1="57a27b621355163f42e61a122a8f0cdeac97dbfc"/>
 			</dataarea>
@@ -3019,7 +2770,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 25 - 14 items (19xx)(-).ssd" size="204800" crc="2daa4d80" sha1="fa3dbc181716a379301bda2e7b695c30ae4fdf3f"/>
 			</dataarea>
@@ -3031,7 +2782,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 26 - 12 items (19xx)(-).ssd" size="204800" crc="141a7df0" sha1="86124eb45e3e0fc4ceeeee07d5206ffb7889b49d"/>
 			</dataarea>
@@ -3043,7 +2794,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 27 - 17 items (19xx)(-).ssd" size="204800" crc="21854bae" sha1="483f0151600c229fa444da2ee1bbd464880b91d0"/>
 			</dataarea>
@@ -3055,7 +2806,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 28 - 17 items (19xx)(-).ssd" size="204800" crc="3cea608d" sha1="6936080bb5141ab860efa95501e481180b6a19a5"/>
 			</dataarea>
@@ -3067,7 +2818,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 29 - 17 items (19xx)(-).ssd" size="204800" crc="e87bd9d1" sha1="2618a9ec1d4c3ada2027c63a95c2f61356c08e51"/>
 			</dataarea>
@@ -3079,7 +2830,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 30 - 15 items (19xx)(-).ssd" size="204800" crc="136e3a94" sha1="dbf532b3b5850bfec489e4ca077ebea960a5c8a6"/>
 			</dataarea>
@@ -3091,7 +2842,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 31 - 11 items (19xx)(-).ssd" size="204800" crc="980a3557" sha1="ad4a589f70edeb6f7e17e415ee1dfd9e9d7a22fb"/>
 			</dataarea>
@@ -3103,7 +2854,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 32 - 01 item (19xx)(-).ssd" size="204800" crc="8f55f8b3" sha1="5dcc6bda89dc157eadac9cbf6181b606d4038922"/>
 			</dataarea>
@@ -3115,7 +2866,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 33 - 16 items (19xx)(-).ssd" size="204800" crc="1c5fbcc3" sha1="eefb96dcbceea88c2f394c2b62e70a14d2ba84fa"/>
 			</dataarea>
@@ -3127,7 +2878,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 34 - 15 items (19xx)(-).ssd" size="204800" crc="aef8c637" sha1="294fe553e97a8284662339be15a6da7003a84571"/>
 			</dataarea>
@@ -3139,7 +2890,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 35 - 16 items (19xx)(-).ssd" size="204800" crc="f17b569b" sha1="e04186d28ca958addfab29e0f4aa69d545eb981c"/>
 			</dataarea>
@@ -3151,7 +2902,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 36 - 04 items (19xx)(-).ssd" size="204800" crc="2d804237" sha1="e0d248f1ff8b15460d337aaee00cf60d3af7a962"/>
 			</dataarea>
@@ -3163,7 +2914,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 37 - 21 items (19xx)(-).ssd" size="204800" crc="f31a2101" sha1="7108246c2385450e860535a899087cde5869f4b4"/>
 			</dataarea>
@@ -3175,7 +2926,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 38 - 12 items (19xx)(-).ssd" size="204800" crc="8270fd8c" sha1="760135829819ff8c61d201641e245dc6999c7f3f"/>
 			</dataarea>
@@ -3187,7 +2938,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 39 - 20 items (19xx)(-).ssd" size="204800" crc="4feadeed" sha1="aa43c1e90b3b4b05da567678164461b9d85165c6"/>
 			</dataarea>
@@ -3199,7 +2950,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 40 - 14 items (19xx)(-).ssd" size="204800" crc="e9c910f0" sha1="c5f65816264547a8047b34c28cc434446b400831"/>
 			</dataarea>
@@ -3211,7 +2962,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 41 - 07 items (19xx)(-).ssd" size="204800" crc="13cdcafd" sha1="e586c40545c174e0b3b915b9e35398587e14db1e"/>
 			</dataarea>
@@ -3223,7 +2974,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 42 - 20 items (19xx)(-).ssd" size="204800" crc="8d438a52" sha1="056539c37e1cf3a57ff5fe5d85449d8a96e54943"/>
 			</dataarea>
@@ -3235,7 +2986,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 43 - 25 items (19xx)(-).ssd" size="204800" crc="a22efed8" sha1="f141bef85fe24c168f3439318635b06b5088cffd"/>
 			</dataarea>
@@ -3247,7 +2998,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 44 - 13 items (19xx)(-).ssd" size="204800" crc="d2747955" sha1="4a1db332a99c5f467b175a0e8f8b44855645bbee"/>
 			</dataarea>
@@ -3259,7 +3010,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 45 - 11 items (19xx)(-).ssd" size="204800" crc="59654848" sha1="eb442b5a43f7edf29a5e0c6643f8fc60128ee108"/>
 			</dataarea>
@@ -3271,7 +3022,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 46 - 11 items (19xx)(-).ssd" size="204800" crc="8ca741c9" sha1="9183b5db1df305026d59ca364927bfdf55814e60"/>
 			</dataarea>
@@ -3283,7 +3034,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 47 - 09 items (19xx)(-).ssd" size="204800" crc="aebbdf6c" sha1="a55f88b21e9f6859dc68e8c4aa7473932e544297"/>
 			</dataarea>
@@ -3295,7 +3046,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 48 - 07 items (19xx)(-).ssd" size="204800" crc="ed733db3" sha1="f0a7074f08c9d8edc3554eb23876cbdcd5e5ddf7"/>
 			</dataarea>
@@ -3307,7 +3058,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 49 - 06 items (19xx)(-).ssd" size="204800" crc="43ef8551" sha1="de544e964362365b3e1e970bc65bd61292cb9f56"/>
 			</dataarea>
@@ -3319,7 +3070,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 51 - 07 items (19xx)(-).ssd" size="204800" crc="6a99be9f" sha1="0d404e58e4b90bc31ed12c815b4c986046a75f1f"/>
 			</dataarea>
@@ -3331,7 +3082,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 52 - 15 items (19xx)(-).ssd" size="204800" crc="7d3ce561" sha1="0988ce1d3665478be698f6d9e98323fa7e84f376"/>
 			</dataarea>
@@ -3343,7 +3094,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 53 - 09 items (19xx)(-).ssd" size="204800" crc="8b64d521" sha1="0a2199df4d6a272f1ec29b266a6d152ed8b565c7"/>
 			</dataarea>
@@ -3355,7 +3106,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 54 - 16 items (19xx)(-).ssd" size="204800" crc="a0334f19" sha1="353d7bf4e17b381c43119e418e0cfbb2f42dfd72"/>
 			</dataarea>
@@ -3367,7 +3118,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 55 - 01 item (19xx)(-).ssd" size="204800" crc="1efcf7c7" sha1="3334cd27dc73724d72d65681e62be3b62a3bb0ed"/>
 			</dataarea>
@@ -3375,13 +3126,14 @@
 	</software>
 
 	<software name="sharxpla_55" supported="no">
-		<description>Sharx Place 57 - xx Items (Bad)</description>
+		<description>Sharx Place 57 - xx Items</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Bad"/>
 			<dataarea name="rom" size="204800">
-				<rom name="sharx place 57 - xx items (19xx)(-)[b].ssd" size="204800" crc="8417c037" sha1="3e6a58536af8cf39973a77121797403b0a04a457"/>
+				<rom name="sharx place 57 - xx items (19xx)(-)[b].ssd" size="204800" crc="8417c037" sha1="3e6a58536af8cf39973a77121797403b0a04a457" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3391,7 +3143,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 58 - 10 items (19xx)(-).ssd" size="204800" crc="f54e5891" sha1="4db917b10800cd5921b936a8bf4c28101a6ef548"/>
 			</dataarea>
@@ -3403,7 +3155,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 59 - 05 items (19xx)(-).ssd" size="204800" crc="6aedd3d3" sha1="ad52afe618913b839d398cc238911999c357be5b"/>
 			</dataarea>
@@ -3415,7 +3167,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 60 - 11 items (19xx)(-).ssd" size="204800" crc="048fe981" sha1="ff89b294e15f63e4c4e569214a0230faa2be4eea"/>
 			</dataarea>
@@ -3427,7 +3179,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 61 - 11 items (19xx)(-).ssd" size="204800" crc="875040b9" sha1="1ac8635f7c00073bc7732a5df9737524cb079f48"/>
 			</dataarea>
@@ -3439,7 +3191,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 63 - 02 items (19xx)(-).ssd" size="204800" crc="2ab2658c" sha1="05aba083933513bb21498c4c91d2da304e94ded7"/>
 			</dataarea>
@@ -3451,7 +3203,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="sharx place 64 - 04 items (19xx)(-).ssd" size="204800" crc="012a0511" sha1="fb9dea8b5bb90ae715e0000974825875befd4594"/>
 			</dataarea>
@@ -3463,19 +3215,13 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="smash 7 (19xx)(-).ssd" size="204800" crc="8cf1d13d" sha1="af8728185248efeeb3001332f5287cfdad056ddf"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="smash7_1" supported="no">
-		<description>Smash 7 (Hacked TSTH)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="132608">
 				<rom name="smash 7 (19xx)(-)[h tsth].ssd" size="132608" crc="a2dd7965" sha1="b50c0352fd6573a8241f2306198d2d105699b303"/>
 			</dataarea>
@@ -3483,11 +3229,12 @@
 	</software>
 
 	<software name="smash7pa" supported="no">
-		<description>Smash 7 - Part 1 (Hacked TSTH)</description>
+		<description>Smash 7 - Part 1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="86784">
 				<rom name="smash 7 - part 1 (19xx)(-)[h tsth].ssd" size="86784" crc="1d894da1" sha1="43ce154578f6ec87c570b960100934ce72cfb1f5"/>
 			</dataarea>
@@ -3495,11 +3242,12 @@
 	</software>
 
 	<software name="smash7pa_1" supported="no">
-		<description>Smash 7 - Part 2 (Hacked TSTH)</description>
+		<description>Smash 7 - Part 2</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="49920">
 				<rom name="smash 7 - part 2 (19xx)(-)[h tsth].ssd" size="49920" crc="7f252928" sha1="50d4c21e88be66fae9836d023ac1c6e16e417a23"/>
 			</dataarea>
@@ -3507,35 +3255,30 @@
 	</software>
 
 	<software name="software" supported="no">
-		<description>Software Invasion Games (Side 0)</description>
+		<description>Software Invasion Games</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="software invasion games (19xx)(-)(side 0).ssd" size="204800" crc="7a7efc59" sha1="daf00f05cbbec75cab75576011cd5a0bd8be6f97"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="software_1" supported="no">
-		<description>Software Invasion Games (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="software invasion games (19xx)(-)(side 1).ssd" size="204800" crc="c1f43c4d" sha1="da0eb2e257f84bbb302a73cd2a38b36add981882"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="software_2" supported="no">
+	<software name="software_1" supported="no">
 		<description>Software Invasion Smash 7</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="132608">
 				<rom name="software invasion smash 7 (19xx)(-).ssd" size="132608" crc="6e42340d" sha1="c2c72a92d85181835f78c3860fd934109b6c2ce2"/>
 			</dataarea>
@@ -3543,23 +3286,18 @@
 	</software>
 
 	<software name="solidisk" supported="no">
-		<description>Solidisk and Assorted ROMs (Side 0)</description>
+		<description>Solidisk and Assorted ROMs</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="solidisk and assorted roms (19xx)(-)(side 0).ssd" size="204800" crc="80b8a306" sha1="07043bfc839e1e7c41337aad524129bf2c58dcb6"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="solidisk_1" supported="no">
-		<description>Solidisk and Assorted ROMs (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="solidisk and assorted roms (19xx)(-)(side 1).ssd" size="204800" crc="91a9cc04" sha1="57038ef23b2ba98568e991c7c40921f1133309c4"/>
 			</dataarea>
@@ -3571,7 +3309,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="102400">
 				<rom name="spel 01 (19xx)(-).ssd" size="102400" crc="9fafa087" sha1="1c3981e873b4e6222a8155da2fed152cf35b05e5"/>
 			</dataarea>
@@ -3583,7 +3321,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="102400">
 				<rom name="spel 02 (19xx)(-).ssd" size="102400" crc="10980f9e" sha1="2250f96423ae9a25bb496932e177b55e3182edf6"/>
 			</dataarea>
@@ -3595,7 +3333,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="102400">
 				<rom name="spel 03 (19xx)(-).ssd" size="102400" crc="6c7ebddb" sha1="175f7a34669ad199f06a214f35551af85d64a2c7"/>
 			</dataarea>
@@ -3607,7 +3345,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="100864">
 				<rom name="spel 06 (19xx)(-).ssd" size="100864" crc="664d4674" sha1="17b883fb4be6b267e6d8a01c53de1245aa7a6fa1"/>
 			</dataarea>
@@ -3619,7 +3357,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="180224">
 				<rom name="spel 09 (19xx)(-).ssd" size="180224" crc="0c40a957" sha1="16bac24739e71483aa28b9189f2def74270114df"/>
 			</dataarea>
@@ -3631,7 +3369,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="180224">
 				<rom name="spel 12 (19xx)(-).ssd" size="180224" crc="fa7e921c" sha1="de182facd5959fc66141fa081117bc55132e3992"/>
 			</dataarea>
@@ -3639,23 +3377,18 @@
 	</software>
 
 	<software name="spildisk" supported="no">
-		<description>Spil Disk #46 (Side 0)</description>
+		<description>Spil Disk #46</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="spil disk #46 (19xx)(-)(side 0).ssd" size="204800" crc="0da1ecfc" sha1="950206df4ab64a36f354f91e5187482a91705681"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="spildisk_1" supported="no">
-		<description>Spil Disk #46 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="spil disk #46 (19xx)(-)(side 1).ssd" size="204800" crc="d0a4331d" sha1="2d4fded7b6036fbd1aee368e5bdddc830bd393cb"/>
 			</dataarea>
@@ -3667,7 +3400,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="89856">
 				<rom name="stairway to hell - games disc 4d3-r1 (19xx)(-).ssd" size="89856" crc="c711406f" sha1="28eaee98b10040cb02a67f2e59db623a66778dbe"/>
 			</dataarea>
@@ -3679,7 +3412,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="99584">
 				<rom name="stairway to hell - games disc 4d4-r1 (19xx)(-).ssd" size="99584" crc="cc98dfc0" sha1="004a06ab1d0f3846e8a6dc21c704ca74778a4d42"/>
 			</dataarea>
@@ -3691,7 +3424,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="99584">
 				<rom name="stairway to hell - games disc 4d5-r1 (19xx)(-).ssd" size="99584" crc="9730b6c3" sha1="90e5e6444847b151048a7cc28c57ae3a5f495a01"/>
 			</dataarea>
@@ -3703,7 +3436,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="176128">
 				<rom name="stairway to hell - games disc al2-r1 (19xx)(-).ssd" size="176128" crc="67b9c1dc" sha1="438fb917a4c93674d142e5be0cce159e625cf160"/>
 			</dataarea>
@@ -3715,7 +3448,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="181248">
 				<rom name="stairway to hell - games disc as2-r1 (19xx)(-).ssd" size="181248" crc="124b5dc7" sha1="c9c69c41fe84ea314876e2bec797ce0858e6d94d"/>
 			</dataarea>
@@ -3727,7 +3460,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="82176">
 				<rom name="stairway to hell - games disc bb2-r1 (19xx)(-).ssd" size="82176" crc="7b3f704b" sha1="78100e9a3153df4f99131fcb624513465f91a134"/>
 			</dataarea>
@@ -3739,7 +3472,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="72192">
 				<rom name="stairway to hell - games disc budj1-r1 (19xx)(-).ssd" size="72192" crc="130a9e54" sha1="26ada5801eb7e6b66b340a3ebefcff6d20c77fbd"/>
 			</dataarea>
@@ -3751,7 +3484,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92672">
 				<rom name="stairway to hell - games disc budj2-r1 (19xx)(-).ssd" size="92672" crc="5cec3e16" sha1="b302d309a99d1a021f8023754ecf4985d7020b62"/>
 			</dataarea>
@@ -3763,7 +3496,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="101632">
 				<rom name="stairway to hell - games disc cohcd-r1 (19xx)(-).ssd" size="101632" crc="a453c69d" sha1="dd57879089b3a0266ee3ea44116c75772a5b76dd"/>
 			</dataarea>
@@ -3775,7 +3508,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="130560">
 				<rom name="stairway to hell - games disc f1-r1 (19xx)(-).ssd" size="130560" crc="10fb00c0" sha1="8733443189a199e83ab4fd470a698edde1451407"/>
 			</dataarea>
@@ -3787,7 +3520,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="159488">
 				<rom name="stairway to hell - games disc g2-r1 (19xx)(-).ssd" size="159488" crc="8ed22988" sha1="09971e6e20c754fcf29ee85378c915835d244dc3"/>
 			</dataarea>
@@ -3799,7 +3532,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="44544">
 				<rom name="stairway to hell - games disc i2-r1 (19xx)(-).ssd" size="44544" crc="25ebe685" sha1="a00dfb3eed969d25f49074b26ad8f9bdd38dd8b1"/>
 			</dataarea>
@@ -3811,7 +3544,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="86016">
 				<rom name="stairway to hell - games disc k1-r1 (19xx)(-).ssd" size="86016" crc="48b625b3" sha1="d21923f2928bb99700fd0857ab99d84d1f2fc911"/>
 			</dataarea>
@@ -3823,7 +3556,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="196608">
 				<rom name="stairway to hell - games disc m4-r1 (19xx)(-).ssd" size="196608" crc="7a5a04f2" sha1="490337525c5cfebc922977ff5f0a35388db8b330"/>
 			</dataarea>
@@ -3835,7 +3568,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="123136">
 				<rom name="stairway to hell - games disc pq3-r1 (19xx)(-).ssd" size="123136" crc="19eb72ec" sha1="2f180c2122dee56d8a9d7b4c5db2725a6915e219"/>
 			</dataarea>
@@ -3847,7 +3580,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="87296">
 				<rom name="stairway to hell - games disc t2-r1 (19xx)(-).ssd" size="87296" crc="901ea834" sha1="0105ead6d579a0d1fa4926eacd5af03f32961d84"/>
 			</dataarea>
@@ -3859,7 +3592,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="155904">
 				<rom name="stairway to hell - games disc ty6-r1 (19xx)(-).ssd" size="155904" crc="5f028cbe" sha1="a1006a9b99579d5d23483b9a71fa4b6d64b220ea"/>
 			</dataarea>
@@ -3871,7 +3604,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="135168">
 				<rom name="stairway to hell - games disc vs1-r1 (19xx)(-).ssd" size="135168" crc="3176787d" sha1="c4a7ec7e94259fea2a4abbc523d48e764873d297"/>
 			</dataarea>
@@ -3879,59 +3612,49 @@
 	</software>
 
 	<software name="superior" supported="no">
-		<description>Superior Collection - Vol 1 (Disk 1, Hacked TSTH)</description>
+		<description>Superior Collection - Vol 1</description>
 		<year>19??</year>
 		<publisher>Superior</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2, Hacked TSTH"/>
 			<dataarea name="rom" size="82688">
 				<rom name="superior collection - vol 1 (19xx)(superior)(disk 1 of 2)[h tsth].ssd" size="82688" crc="ab2cea40" sha1="f091c7f8b3a1e8e9d3b72bdd16dab266031f8e0f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="superior_1" supported="no">
-		<description>Superior Collection - Vol 1 (Disk 2, Hacked TSTH)</description>
-		<year>19??</year>
-		<publisher>Superior</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, Hacked TSTH"/>
 			<dataarea name="rom" size="99840">
 				<rom name="superior collection - vol 1 (19xx)(superior)(disk 2 of 2)[h tsth].ssd" size="99840" crc="3702bcca" sha1="5774a78efb66c4c74765ebd02cf40cb324eb1c23"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="superior_2" supported="no">
-		<description>Superior Collection - Vol 2 (Disk 1, Hacked TSTH)</description>
+	<software name="superior_1" supported="no">
+		<description>Superior Collection - Vol 2</description>
 		<year>19??</year>
 		<publisher>Superior</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2, Hacked TSTH"/>
 			<dataarea name="rom" size="79104">
 				<rom name="superior collection - vol 2 (19xx)(superior)(disk 1 of 2)[h tsth].ssd" size="79104" crc="203d27b6" sha1="9d8e21a0b921f86dce0b6eafe1933791456c4a32"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="superior_3" supported="no">
-		<description>Superior Collection - Vol 2 (Disk 2, Hacked TSTH)</description>
-		<year>19??</year>
-		<publisher>Superior</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, Hacked TSTH"/>
 			<dataarea name="rom" size="90880">
 				<rom name="superior collection - vol 2 (19xx)(superior)(disk 2 of 2)[h tsth].ssd" size="90880" crc="5c784da3" sha1="1d7fa62287eb403c2a48ce2c2d2f7f4bbdaf860f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="superior_4" supported="no">
+	<software name="superior_2" supported="no">
 		<description>Superior Demonstration Disc</description>
 		<year>19??</year>
 		<publisher>Superior</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="superior demonstration disc (19xx)(superior).ssd" size="204800" crc="48f42d61" sha1="fa3d0aa68007f908cd3b30d410df3867240a6142"/>
 			</dataarea>
@@ -3943,7 +3666,7 @@
 		<year>2000</year>
 		<publisher>Thurrock Care</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="switch programs (2000)(care, thurrock).ssd" size="204800" crc="04627ec7" sha1="e15dbe2cd8cdb53be090cec4c03c739ec2a05022"/>
 			</dataarea>
@@ -3955,7 +3678,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="tape to disc utilities (19xx)(8-bit).ssd" size="204800" crc="3d554217" sha1="f8363c49a1ea053474abefff2275c7d231b1a73b"/>
 			</dataarea>
@@ -3967,7 +3690,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="tms utilities (19xx)(-).ssd" size="204800" crc="6414241b" sha1="a3c5244bb1b8d5860e9d2204b38bd4e1d72ca3e1"/>
 			</dataarea>
@@ -3975,11 +3698,12 @@
 	</software>
 
 	<software name="traditio" supported="no">
-		<description>Traditional Games (Hacked TSTH)</description>
+		<description>Traditional Games</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="28416">
 				<rom name="traditional games (19xx)(-)[h tsth].ssd" size="28416" crc="7161a82b" sha1="3a4b213c37eef22fe4d7c8666559ea86bab26da4"/>
 			</dataarea>
@@ -3991,7 +3715,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="transfer utilities (19xx)(8-bit).ssd" size="204800" crc="1a39783b" sha1="3088c175b779dc1945702f2cf9866803221864a1"/>
 			</dataarea>
@@ -3999,11 +3723,12 @@
 	</software>
 
 	<software name="triplede" supported="no">
-		<description>Triple Decker 01 (Hacked TSTH)</description>
+		<description>Triple Decker 01</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="27392">
 				<rom name="triple decker 01 (19xx)(-)[h tsth].ssd" size="27392" crc="1aa3d6c6" sha1="021e2f7371c4e071b129ff44279da1fd2adbfbd6"/>
 			</dataarea>
@@ -4011,11 +3736,12 @@
 	</software>
 
 	<software name="triplede_1" supported="no">
-		<description>Triple Decker 02 (Hacked TSTH)</description>
+		<description>Triple Decker 02</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="27904">
 				<rom name="triple decker 02 (19xx)(-)[h tsth].ssd" size="27904" crc="b10d2467" sha1="24bd49aadda75a122e86c69207fd3c25bc607057"/>
 			</dataarea>
@@ -4023,11 +3749,12 @@
 	</software>
 
 	<software name="triplede_2" supported="no">
-		<description>Triple Decker 04 (Hacked TSTH)</description>
+		<description>Triple Decker 04</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="24064">
 				<rom name="triple decker 04 (19xx)(-)[h tsth].ssd" size="24064" crc="03395da1" sha1="e3236f63a991e8963d5fe4a33d64cd37ec498c33"/>
 			</dataarea>
@@ -4035,11 +3762,12 @@
 	</software>
 
 	<software name="triplede_3" supported="no">
-		<description>Triple Decker 05 (Hacked TSTH)</description>
+		<description>Triple Decker 05</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="36096">
 				<rom name="triple decker 05 (19xx)(-)[h tsth].ssd" size="36096" crc="aff52755" sha1="f9926ee0b1c01db4ce3d81123c6755246e2f8317"/>
 			</dataarea>
@@ -4047,11 +3775,12 @@
 	</software>
 
 	<software name="triplede_4" supported="no">
-		<description>Triple Decker 06 (Hacked TSTH)</description>
+		<description>Triple Decker 06</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="32000">
 				<rom name="triple decker 06 (19xx)(-)[h tsth].ssd" size="32000" crc="bc79388c" sha1="7c4d0d459af78281d320362a15e764f00465a01b"/>
 			</dataarea>
@@ -4059,11 +3788,12 @@
 	</software>
 
 	<software name="triplede_5" supported="no">
-		<description>Triple Decker 07 (Hacked TSTH)</description>
+		<description>Triple Decker 07</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="22528">
 				<rom name="triple decker 07 (19xx)(-)[h tsth].ssd" size="22528" crc="c1e460b1" sha1="490333a935eda7cd1970c0b50a5c4023121b8725"/>
 			</dataarea>
@@ -4071,11 +3801,12 @@
 	</software>
 
 	<software name="triplede_6" supported="no">
-		<description>Triple Decker 09 (Hacked TSTH)</description>
+		<description>Triple Decker 09</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="16384">
 				<rom name="triple decker 09 (19xx)(-)[h tsth].ssd" size="16384" crc="3ef5e337" sha1="0b1a10917de50a850d645319a6e5702dbea55284"/>
 			</dataarea>
@@ -4083,11 +3814,12 @@
 	</software>
 
 	<software name="triplede_7" supported="no">
-		<description>Triple Decker 10 (Hacked TSTH)</description>
+		<description>Triple Decker 10</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="18688">
 				<rom name="triple decker 10 (19xx)(-)[h tsth].ssd" size="18688" crc="14acfe03" sha1="fa22da8f03629284d488eedac1ad048f4d94f9e7"/>
 			</dataarea>
@@ -4095,47 +3827,37 @@
 	</software>
 
 	<software name="tynesoft" supported="no">
-		<description>Tynesoft 1 (Side 0)</description>
+		<description>Tynesoft 1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="tynesoft 1 (19xx)(-)(side 0).ssd" size="204800" crc="f761fdad" sha1="9a42569c56940ec4df94fd19f19b294f2c826064"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="tynesoft_1" supported="no">
-		<description>Tynesoft 1 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="tynesoft 1 (19xx)(-)(side 1).ssd" size="204800" crc="37f72343" sha1="3104de68891badde945c3aaf173b1e4ed227a32b"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="tynesoft_2" supported="no">
-		<description>Tynesoft 2 (Side 0)</description>
+	<software name="tynesoft_1" supported="no">
+		<description>Tynesoft 2</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="tynesoft 2 (19xx)(-)(side 0).ssd" size="204800" crc="70b3f484" sha1="9eaf2370c3f5319befb1a049577bbb4a73ec14dc"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="tynesoft_3" supported="no">
-		<description>Tynesoft 2 (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="tynesoft 2 (19xx)(-)(side 1).ssd" size="204800" crc="c68e1c68" sha1="05f4dbc9686ca7cc9e7224e84e27ee0d56fc1349"/>
 			</dataarea>
@@ -4143,23 +3865,18 @@
 	</software>
 
 	<software name="usgoldga" supported="no">
-		<description>U.S. Gold Games (Side 0)</description>
+		<description>U.S. Gold Games</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="u.s. gold games (19xx)(-)(side 0).ssd" size="204800" crc="3b5fb6e3" sha1="2a292edd2498f0b8e00cc3cfcb03f55e27e0ed59"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="usgoldga_1" supported="no">
-		<description>U.S. Gold Games (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="u.s. gold games (19xx)(-)(side 1).ssd" size="204800" crc="a6df7cab" sha1="65e6334066140dba66bb48cb13e2f8b550ef163e"/>
 			</dataarea>
@@ -4171,7 +3888,7 @@
 		<year>19??</year>
 		<publisher>GLM</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="ultimate pd games (19xx)(glm)(pd).ssd" size="204800" crc="aa7af67d" sha1="067d2ad5c6a67dcb983cb02b6feb4232187220bf"/>
 			</dataarea>
@@ -4183,7 +3900,7 @@
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="204800">
 				<rom name="utilities (19xx)(8-bit).ssd" size="204800" crc="98de7214" sha1="dfade00724fdaa5822f171200e1ad9a322a10ab7"/>
 			</dataarea>
@@ -4191,11 +3908,12 @@
 	</software>
 
 	<software name="utilitie_1" supported="no">
-		<description>Utilities 1 (Hacked 8-Bit)</description>
+		<description>Utilities 1</description>
 		<year>19??</year>
 		<publisher>Red Shift</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="204800">
 				<rom name="utilities 1 (19xx)(red shift)[h 8-bit].ssd" size="204800" crc="fd17ea5a" sha1="ee577090b751264cb353f890ff260e756b245fa2"/>
 			</dataarea>
@@ -4203,59 +3921,43 @@
 	</software>
 
 	<software name="utilitie_2" supported="no">
-		<description>Utilities Disk 5 (MENU)</description>
+		<description>Utilities Disk 5</description>
 		<year>1991</year>
 		<publisher>GLM</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="MENU"/>
 			<dataarea name="rom" size="204800">
 				<rom name="utilities disk 5 (1991)(glm)[menu].ssd" size="204800" crc="36f905eb" sha1="44b01fc62069ec594161654af8f8fd3d696073f8"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="utilitya" supported="no">
-		<description>Utility &amp; Language ROMs (Side 0)</description>
+	<software name="utilityl" supported="no">
+		<description>Utility &amp; Language ROMs</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="utility &amp; language roms (19xx)(-)(side 0).ssd" size="204800" crc="41d991fe" sha1="a23d54388cb6cd7182b6209d059c968d846eb473"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="utilitya_1" supported="no">
-		<description>Utility &amp; Language ROMs (Side 0, Alt)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0, Alt"/>
 			<dataarea name="rom" size="204800">
 				<rom name="utility &amp; language roms (19xx)(-)(side 0)[a].ssd" size="204800" crc="a43d890d" sha1="631bc5474c191572baa220244d8505acc1e98271"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="utilitya_2" supported="no">
-		<description>Utility &amp; Language ROMs (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="utility &amp; language roms (19xx)(-)(side 1).ssd" size="204800" crc="47bf0aeb" sha1="59e71709031363641b9d88242252581b1c06ce43"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="utilitya_3" supported="no">
-		<description>Utility &amp; Language ROMs (Side 1, Alt)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1, Alt"/>
 			<dataarea name="rom" size="204800">
 				<rom name="utility &amp; language roms (19xx)(-)(side 1)[a].ssd" size="204800" crc="dc121d9b" sha1="e7ec15b2fd9d528d99e08ac06c2afc36e8d3f3c8"/>
 			</dataarea>
@@ -4263,11 +3965,12 @@
 	</software>
 
 	<software name="viewprin" supported="no">
-		<description>View Printer Drivers (Hacked 8-Bit)</description>
+		<description>View Printer Drivers</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="204800">
 				<rom name="view printer drivers (19xx)(-)[h 8-bit].ssd" size="204800" crc="215f6c73" sha1="bb8cb370695f9eaff6613e7621c97d37c8b69108"/>
 			</dataarea>
@@ -4275,23 +3978,25 @@
 	</software>
 
 	<software name="thevikin" supported="no">
-		<description>The Viking Collection (Bad)</description>
+		<description>The Viking Collection</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Bad"/>
 			<dataarea name="rom" size="204800">
-				<rom name="viking collection, the (19xx)(-)[b].ssd" size="204800" crc="f8876721" sha1="6a4bc2301512d878822426000c1c984bc70cf6cc"/>
+				<rom name="viking collection, the (19xx)(-)[b].ssd" size="204800" crc="f8876721" sha1="6a4bc2301512d878822426000c1c984bc70cf6cc" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="wargames" supported="no">
-		<description>War Games - Tobruk &amp; Salamanca (Hacked TSTH)</description>
+		<description>War Games - Tobruk &amp; Salamanca</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="27136">
 				<rom name="war games - tobruk &amp; salamanca (19xx)(-)[h tsth].ssd" size="27136" crc="73de7ac8" sha1="4313f2cb12c61db749f100db67804aa4b0c622f7"/>
 			</dataarea>
@@ -4299,23 +4004,18 @@
 	</software>
 
 	<software name="watfordr" supported="no">
-		<description>Watford ROMs (Side 0)</description>
+		<description>Watford ROMs</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
 			<dataarea name="rom" size="204800">
 				<rom name="watford roms (19xx)(-)(side 0).ssd" size="204800" crc="25dc7403" sha1="e358d456397129f48f81cbee2caf64951114cc04"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="watfordr_1" supported="no">
-		<description>Watford ROMs (Side 1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
 			<dataarea name="rom" size="204800">
 				<rom name="watford roms (19xx)(-)(side 1).ssd" size="204800" crc="f9dee99a" sha1="b34f9b8abc65227faca4bfc5e729eb09077e2f40"/>
 			</dataarea>
@@ -4323,11 +4023,12 @@
 	</software>
 
 	<software name="wbmugmr8" supported="no">
-		<description>WBMUG MR-8 - ACSII Files &amp; Texts (Hacked 8-Bit)</description>
+		<description>WBMUG MR-8 - ACSII Files &amp; Texts</description>
 		<year>19??</year>
 		<publisher>Mad Rabbit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="204800">
 				<rom name="wbmug mr-8 - acsii files &amp; texts (19xx)(mad rabbit)[h 8-bit].ssd" size="204800" crc="0847f00a" sha1="2fddeeb17db70e78f8ec2ca4ac0272545d9a7ebe"/>
 			</dataarea>
@@ -4335,11 +4036,12 @@
 	</software>
 
 	<software name="wbmugmr8_1" supported="no">
-		<description>WBMUG MR-8 - Communications (Hacked 8-Bit)</description>
+		<description>WBMUG MR-8 - Communications</description>
 		<year>19??</year>
 		<publisher>Mad Rabbit</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="204800">
 				<rom name="wbmug mr-8 - communications (19xx)(mad rabbit)[h 8-bit].ssd" size="204800" crc="2d39605c" sha1="69a2afc98c97e18964448df0d7ec9a2eab74f91a"/>
 			</dataarea>
@@ -4347,35 +4049,24 @@
 	</software>
 
 	<software name="zappakca" supported="no">
-		<description>Zap Pak - Cavey &amp; Killapede (Alt, PLAYER)</description>
+		<description>Zap Pak - Cavey &amp; Killapede</description>
 		<year>1987</year>
 		<publisher>Players</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Alt, PLAYER"/>
 			<dataarea name="rom" size="28160">
 				<rom name="zap pak - cavey &amp; killapede (1987)(players)[a][player].ssd" size="28160" crc="8039f25a" sha1="9e2feec9d0aa519e736ccb4fad172c4b45544da4"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="zappakca_1" supported="no">
-		<description>Zap Pak - Cavey &amp; Killapede (Hacked TSTH)</description>
-		<year>1987</year>
-		<publisher>Players</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="45056">
 				<rom name="zap pak - cavey &amp; killapede (1987)(players)[h tsth].ssd" size="45056" crc="9cd0ddb8" sha1="1d594bed057a9b65ffd9efde68c2102654f799e2"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="zappakca_2" supported="no">
-		<description>Zap Pak - Cavey &amp; Killapede (PLAYER)</description>
-		<year>1987</year>
-		<publisher>Players</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="PLAYER"/>
 			<dataarea name="rom" size="28160">
 				<rom name="zap pak - cavey &amp; killapede (1987)(players)[player].ssd" size="28160" crc="2f6df702" sha1="a3e8173f9c0222c04cf8957d0ee2d31682b12938"/>
 			</dataarea>

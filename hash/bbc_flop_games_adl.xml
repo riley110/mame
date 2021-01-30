@@ -1,13 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
 <softwarelist name="bbc_flop_games_adl" description="bbc_flop_games_adl">
 
 	<software name="soccerch" supported="no">
-		<description>Soccer Challenge (Hacked 8-Bit, ADFS)</description>
+		<description>Soccer Challenge</description>
 		<year>19??</year>
 		<publisher>Discovery</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit, ADFS"/>
 			<dataarea name="rom" size="655360">
 				<rom name="soccer challenge (19xx)(discovery)[h 8-bit][adfs].adl" size="655360" crc="5da0172b" sha1="83f905391ae3062b02a92049706167f2c5dfaa07"/>
 			</dataarea>
@@ -15,47 +20,30 @@
 	</software>
 
 	<software name="sundayag" supported="no">
-		<description>Sunday - A Graphic Adventure (Disk 1, Hacked 8-Bit, Alt, ADFS)</description>
+		<description>Sunday - A Graphic Adventure</description>
 		<year>1999</year>
 		<publisher>Dave</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2, Hacked 8-Bit, Alt, ADFS"/>
 			<dataarea name="rom" size="655360">
 				<rom name="sunday - a graphic adventure (1999)(dave)(disk 1 of 2)[h 8-bit][a][adfs].adl" size="655360" crc="4e74cdd6" sha1="cc3274ae0a8623c3effa5e5ec082787bb14e5716"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="sundayag_1" supported="no">
-		<description>Sunday - A Graphic Adventure (Disk 1, Hacked 8-Bit, ADFS)</description>
-		<year>1999</year>
-		<publisher>Dave</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2, Hacked 8-Bit, ADFS"/>
 			<dataarea name="rom" size="655360">
 				<rom name="sunday - a graphic adventure (1999)(dave)(disk 1 of 2)[h 8-bit][adfs].adl" size="655360" crc="1887dd13" sha1="22b5f9b9f10087fae13f5dd532938ad2aa7a0c1b"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="sundayag_2" supported="no">
-		<description>Sunday - A Graphic Adventure (Disk 2, Hacked 8-Bit, Alt, ADFS)</description>
-		<year>1999</year>
-		<publisher>Dave</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, Hacked 8-Bit, Alt, ADFS"/>
 			<dataarea name="rom" size="655360">
 				<rom name="sunday - a graphic adventure (1999)(dave)(disk 2 of 2)[h 8-bit][a][adfs].adl" size="655360" crc="aac1a30d" sha1="83263cf70e8658c415d2efa7722bf21d0d6c0938"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="sundayag_3" supported="no">
-		<description>Sunday - A Graphic Adventure (Disk 2, Hacked 8-Bit, ADFS)</description>
-		<year>1999</year>
-		<publisher>Dave</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, Hacked 8-Bit, ADFS"/>
 			<dataarea name="rom" size="655360">
 				<rom name="sunday - a graphic adventure (1999)(dave)(disk 2 of 2)[h 8-bit][adfs].adl" size="655360" crc="4e56eaa8" sha1="96f03fca77179354e611f700521ddc54994dfd45"/>
 			</dataarea>

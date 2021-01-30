@@ -1,37 +1,36 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
 <softwarelist name="a800_flop_comp_apps" description="a800_flop_comp_apps">
 
 	<software name="angsampl" supported="no">
-		<description>A.N.G. Sample Utilities (Freeware, Side A)</description>
+		<description>A.N.G. Sample Utilities (Freeware)</description>
 		<year>1993</year>
 		<publisher>ANG Software</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
 			<dataarea name="rom" size="133136">
 				<rom name="a.n.g. sample utilities (1993)(ang software)(fw)(side a).atr" size="133136" crc="1921c96b" sha1="6b57d142383fe6365bef75e8765dc1de1f2d51bc"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="angsampl_1" supported="no">
-		<description>A.N.G. Sample Utilities (Freeware, Side B)</description>
-		<year>1993</year>
-		<publisher>ANG Software</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
 			<dataarea name="rom" size="133136">
 				<rom name="a.n.g. sample utilities (1993)(ang software)(fw)(side b).atr" size="133136" crc="9a23b4fc" sha1="fb351a8806cfcd37ac88fbc9998e38c03cefaee5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="actionam" supported="no">
+	<software name="actiontu" supported="no">
 		<description>Action! &amp; Turbo Basic XL 1.5 &amp; Fig-Forth 1.1</description>
 		<year>1989</year>
 		<publisher>CHAOS Software</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="action &amp; turbo basic xl 1.5 &amp; fig-forth 1.1 (1989)(chaos software).atr" size="92176" crc="fbe39dec" sha1="f0537ba643ea594ff00011875d13c17dc4e778a8"/>
 			</dataarea>
@@ -39,37 +38,23 @@
 	</software>
 
 	<software name="aidspakk" supported="no">
-		<description>aIDS pAKK (1999-09-05, pl)</description>
+		<description>aIDS pAKK (pl, 1999-09-05)</description>
 		<year>1999</year>
 		<publisher>Aids</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="183952">
 				<rom name="aids pakk (1999-09-05)(aids)(pl).atr" size="183952" crc="bcd30c15" sha1="ba2c55150e1277b5383cacd53427f729b7b69dcb"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Antic Disassemble! (19xx)(Kibler, David) &amp; Greets (19xx)(-)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="92176">
-				<rom name="antic disassemble (19xx)(kibler, david) &amp; greets (19xx)(-).atr" size="92176" crc="64f5aeb2" sha1="19dd1ce690b40ac4c26442b7e23317289f405c1f"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
-	<software name="apewarpa" supported="no">
+	<software name="apewarpc" supported="no">
 		<description>APE - Warp &amp; Copy2000 &amp; My Copier &amp; Remote</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="ape - warp &amp; copy2000 &amp; my copier &amp; remote (19xx)(-).atr" size="92176" crc="010a7cb8" sha1="68dc6e276ca8d534bef61cc808702e2a332b0d0f"/>
 			</dataarea>
@@ -81,7 +66,7 @@
 		<year>1981</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="atari 800 basic 1.0 &amp; atari macro assembler 1.0a &amp; editor (1981)(-).atr" size="92176" crc="3fe01cb9" sha1="47f503d84015a62fa4e0a111769d03c26fc8f970"/>
 			</dataarea>
@@ -93,7 +78,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="133136">
 				<rom name="compression utilities (19xx)(-).atr" size="133136" crc="9ec3538f" sha1="7f8d132547b6dc4507a35c77b6fcdbe40caad7fa"/>
 			</dataarea>
@@ -105,7 +90,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="copy programs (19xx)(-).atr" size="92176" crc="67fcd299" sha1="747adabc197640bfb7b5262806c9f179520875a3"/>
 			</dataarea>
@@ -117,7 +102,7 @@
 		<year>1994</year>
 		<publisher>Kenneth Siders</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="disk2xfd v0.90 &amp; diskformer v0.90 (1994)(siders, kenneth).atr" size="92176" crc="da706a98" sha1="0c15c91718acde4e28066ab0fabf42a89bcde269"/>
 			</dataarea>
@@ -129,7 +114,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="183952">
 				<rom name="diverse utilities (19xx)(-)(de).atr" size="183952" crc="4e752527" sha1="2dc96269a81d7eb9702829acff4009c26ba8e769"/>
 			</dataarea>
@@ -141,7 +126,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="133136">
 				<rom name="dos disk #01 (19xx)(-).atr" size="133136" crc="6bd016c0" sha1="657d52a4e232d95a5d2581dbc79c3ad75317414e"/>
 			</dataarea>
@@ -153,7 +138,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="133136">
 				<rom name="dos disk #02 (19xx)(-).atr" size="133136" crc="7c3d7f53" sha1="73fc9c8b592f4f496f8c5e8f9ae48156a889948d"/>
 			</dataarea>
@@ -165,7 +150,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="dos's pack of 4 (19xx)(-).atr" size="92176" crc="0b36afa2" sha1="c155f41961bed55147f212a81e3c2bbbbbbafeaf"/>
 			</dataarea>
@@ -177,7 +162,7 @@
 		<year>19??</year>
 		<publisher>Titan-Soft</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="183952">
 				<rom name="dos's pack of 8 (19xx)(titan-soft).atr" size="183952" crc="2e130104" sha1="a291fe059ec8d476e1df58226c1dfdd1eac44330"/>
 			</dataarea>
@@ -189,7 +174,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="183952">
 				<rom name="gfx programs (19xx)(-).atr" size="183952" crc="ce83a9d3" sha1="e5d9f84c7471dc46e9866ad5170d93d98871105d"/>
 			</dataarea>
@@ -201,7 +186,7 @@
 		<year>1987</year>
 		<publisher>Pirate Software</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="happy utility menu v1.0 (1987)(pirate software).atr" size="92176" crc="ba2fc62f" sha1="1b20d019b51918c48875b9ead1b50fc94456bded"/>
 			</dataarea>
@@ -209,23 +194,18 @@
 	</software>
 
 	<software name="megacopi" supported="no">
-		<description>Mega Copier Disk (Side A)</description>
+		<description>Mega Copier Disk</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
 			<dataarea name="rom" size="92176">
 				<rom name="mega copier disk (19xx)(-)(side a).atr" size="92176" crc="5903ff6a" sha1="472d25723f3559d7b83a1fef78e8d1f2ed7314e8"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="megacopi_1" supported="no">
-		<description>Mega Copier Disk (Side B)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
 			<dataarea name="rom" size="92176">
 				<rom name="mega copier disk (19xx)(-)(side b).atr" size="92176" crc="a903cbb3" sha1="41246b5511c90f5ce38d9a522397706ffd8d2bb6"/>
 			</dataarea>
@@ -233,11 +213,12 @@
 	</software>
 
 	<software name="page6lib" supported="no">
-		<description>Page 6 Library Disk #DS30 (BASIC)</description>
+		<description>Page 6 Library Disk #DS30</description>
 		<year>19??</year>
 		<publisher>H. Brewer</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
 			<dataarea name="rom" size="92176">
 				<rom name="page 6 library disk #ds30 (19xx)(brewer, h.)[basic].atr" size="92176" crc="60610223" sha1="01abd1916a3d91e5550808ff58b4ccff394817b0"/>
 			</dataarea>
@@ -245,11 +226,12 @@
 	</software>
 
 	<software name="page6lib_1" supported="no">
-		<description>Page 6 Library Disk #DS31 (BASIC)</description>
+		<description>Page 6 Library Disk #DS31</description>
 		<year>19??</year>
 		<publisher>H. Brewer</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
 			<dataarea name="rom" size="92176">
 				<rom name="page 6 library disk #ds31 (19xx)(brewer, h.)[basic].atr" size="92176" crc="3f0d6477" sha1="2483fd0be5b493c58f7adf0d3ee899ce9e5f802d"/>
 			</dataarea>
@@ -257,11 +239,12 @@
 	</software>
 
 	<software name="professi" supported="no">
-		<description>Professional Copy (v1.42, pl, 128k, k-file)</description>
+		<description>Professional Copy (pl, v1.42)</description>
 		<year>19??</year>
 		<publisher>Taquart</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="128k, k-file"/>
 			<dataarea name="rom" size="5136">
 				<rom name="professional copy v1.42 (19xx)(taquart)(pl)[128k][k-file].atr" size="5136" crc="ef127a87" sha1="640bb3946d21002bae470a2ad0d9bb3e3e671630"/>
 			</dataarea>
@@ -269,11 +252,11 @@
 	</software>
 
 	<software name="quickass" supported="no">
-		<description>Quick Assembler v1.0 &amp; Turbo-Watson (v4.2, pl)</description>
+		<description>Quick Assembler v1.0 &amp; Turbo-Watson (pl, v4.2)</description>
 		<year>1988</year>
 		<publisher>JBW</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="quick assembler v1.0 &amp; turbo-watson v4.2 (1988)(jbw)(pl).atr" size="92176" crc="e9cfa63b" sha1="c9d3916bb8e5d9e3880d011d8bb8b685f29e12fe"/>
 			</dataarea>
@@ -285,19 +268,19 @@
 		<year>19??</year>
 		<publisher>SHP</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="183952">
 				<rom name="ram cart - utils (19xx)(shp)(pl).atr" size="183952" crc="ebade6d4" sha1="aac94a63925a50ce46cfee89e38fa7b2ab10ad49"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="sio2idea" supported="no">
+	<software name="sio2idem" supported="no">
 		<description>Sio2Ide &amp; MyDOS 4.50 &amp; BfE</description>
 		<year>2002</year>
 		<publisher>Z.K.</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="sio2ide &amp; mydos 4.50 &amp; bfe (2002)(z.k.).atr" size="92176" crc="e1c4cc22" sha1="88b581b25ef611ed7c6d5a8adea5265f624da54b"/>
 			</dataarea>
@@ -305,11 +288,12 @@
 	</software>
 
 	<software name="smartcop" supported="no">
-		<description>Smartcopy 1.1 &amp; 256k Memory Test (256k)</description>
+		<description>Smartcopy 1.1 &amp; 256k Memory Test</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="256k"/>
 			<dataarea name="rom" size="92176">
 				<rom name="smartcopy 1.1 &amp; 256k memory test (19xx)(-)[256k].atr" size="92176" crc="729d8241" sha1="0ed6cab630bb07233eaf39089d4d7c728ea88383"/>
 			</dataarea>
@@ -321,7 +305,7 @@
 		<year>1994</year>
 		<publisher>Fine Tooned Engineering</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="spartados v3.2f &amp; mars 8 (1994-02-25)(fine tooned engineering).atr" size="92176" crc="0bc6f4de" sha1="46b51fd9081f66f21a7cbd46655073732a9c9577"/>
 			</dataarea>
@@ -333,67 +317,61 @@
 		<year>1994</year>
 		<publisher>Fine Tooned Engineering</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="spartados v3.2f - toolkit (1994-02-25)(fine tooned engineering).atr" size="92176" crc="f1e475ef" sha1="3bbd5ebf0337778125d8d219a7612cd4ab2b8c77"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="spartado_2" supported="no">
-		<description>SpartaDOS - Toolkit (1994-02-25, Alt)</description>
-		<year>1994</year>
-		<publisher>Fine Tooned Engineering</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="143376">
 				<rom name="spartados v3.2f - toolkit (1994-02-25)(fine tooned engineering)[a].atr" size="143376" crc="64abc7ea" sha1="4e329908e03089feef15ea2747393cb36708ca9b"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="spartado_3" supported="no">
+	<software name="spartado_2" supported="no">
 		<description>SpartaDOS v3.2g &amp; Dirt (1994-06-04)</description>
 		<year>1994</year>
 		<publisher>FTe</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="spartados v3.2g &amp; dirt (1994-06-04)(fte).atr" size="92176" crc="ba37dad7" sha1="ebd3df2b6d95f167ad62ab9d049f04e52276d7ee"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="spartado_4" supported="no">
+	<software name="spartado_3" supported="no">
 		<description>SpartaDOS - Utilities #1 (pl)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="spartados v3.2g - utilities #1 (19xx)(-)(pl).atr" size="92176" crc="04a76424" sha1="a2ad37ca0c63e4c1cddc57198d302de1ae52d590"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="spartado_5" supported="no">
+	<software name="spartado_4" supported="no">
 		<description>SpartaDOS - Utilities #2 (pl)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="spartados v3.2g - utilities #2 (19xx)(-)(pl).atr" size="92176" crc="873ca15b" sha1="09ffe7c1a14aa205006aaa6570212a68dbc8eb08"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="spartado_6" supported="no">
+	<software name="spartado_5" supported="no">
 		<description>SpartaDOS - Utilities #3 (pl)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="92176">
 				<rom name="spartados v3.2g - utilities #3 (19xx)(-)(pl).atr" size="92176" crc="10de02bb" sha1="a5ef3021b8a28a04955f168fc45b8c6f3aadcee5"/>
 			</dataarea>
@@ -405,7 +383,7 @@
 		<year>19??</year>
 		<publisher>Tight</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="183952">
 				<rom name="tight tools packed v1.0 (19xx)(tight).atr" size="183952" crc="5ea23eba" sha1="254e193a0742470865adc4ced2b86ea43c90c742"/>
 			</dataarea>
@@ -413,49 +391,45 @@
 	</software>
 
 	<software name="wordmagi" supported="no">
-		<description>Word Magic rev 5 (Disk 1 Side A)</description>
+		<description>Word Magic rev 5</description>
 		<year>19??</year>
 		<publisher>Antic</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2 Side A"/>
 			<dataarea name="rom" size="92176">
 				<rom name="word magic rev 5 (19xx)(antic)(disk 1 of 2 side a).atr" size="92176" crc="000ab031" sha1="6e5256f5e1aa9ef2576bbef3b4cf9043c2ce7403"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="wordmagi_1" supported="no">
-		<description>Word Magic rev 5 (Disk 1 Side B, docs)</description>
-		<year>19??</year>
-		<publisher>Antic</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2 Side B, docs"/>
 			<dataarea name="rom" size="92176">
 				<rom name="word magic rev 5 (19xx)(antic)(disk 1 of 2 side b)[docs].atr" size="92176" crc="d720d6d8" sha1="2e16ff68a50896e9e610694b83f22552315d4707"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="wordmagi_2" supported="no">
-		<description>Word Magic rev 5 (Disk 2 Side A)</description>
-		<year>19??</year>
-		<publisher>Antic</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2 Side A"/>
 			<dataarea name="rom" size="92176">
 				<rom name="word magic rev 5 (19xx)(antic)(disk 2 of 2 side a).atr" size="92176" crc="90581d40" sha1="2afbc17c1aaa8644f60d0e833e889b6d407a7a13"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="wordmagi_3" supported="no">
-		<description>Word Magic rev 5 (Disk 2 Side B)</description>
-		<year>19??</year>
-		<publisher>Antic</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2 Side B"/>
 			<dataarea name="rom" size="92176">
 				<rom name="word magic rev 5 (19xx)(antic)(disk 2 of 2 side b).atr" size="92176" crc="a2944dff" sha1="98514e6ebd50692f7a556f6c919d1db89e936a5b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="_fixme" supported="no">
+		<description>_FIXME_</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="part1" interface="interface">
+			<feature name="part_id" value="Antic Disassemble! (19xx)(Kibler, David) &amp; Greets (19xx)(-)"/>
+			<dataarea name="rom" size="92176">
+				<rom name="antic disassemble (19xx)(kibler, david) &amp; greets (19xx)(-).atr" size="92176" crc="64f5aeb2" sha1="19dd1ce690b40ac4c26442b7e23317289f405c1f"/>
 			</dataarea>
 		</part>
 	</software>

@@ -1,49 +1,36 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
 <softwarelist name="bbc_flop_games_dsd" description="bbc_flop_games_dsd">
 
 	<software name="dunjunz" supported="no">
-		<description>Dunjunz (Bad)</description>
+		<description>Dunjunz</description>
 		<year>1987</year>
 		<publisher>Bug Byte</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Bad"/>
 			<dataarea name="rom" size="184832">
-				<rom name="dunjunz (1987)(bug byte)[b].dsd" size="184832" crc="24ef780d" sha1="a7e9b12e58f2902be2bb2ce3708cb10fb7d1d791"/>
+				<rom name="dunjunz (1987)(bug byte)[b].dsd" size="184832" crc="24ef780d" sha1="a7e9b12e58f2902be2bb2ce3708cb10fb7d1d791" status="baddump"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="dunjunz_1" supported="no">
-		<description>Dunjunz (DUNJUNZ)</description>
-		<year>1987</year>
-		<publisher>Bug Byte</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="DUNJUNZ"/>
 			<dataarea name="rom" size="185344">
 				<rom name="dunjunz (1987)(bug byte)[dunjunz].dsd" size="185344" crc="6d77f67d" sha1="1e96ccddac261d4d871d86cded7a60c8b5e85477"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="dunjunz_2" supported="no">
-		<description>Dunjunz (Hacked TSTH)</description>
-		<year>1987</year>
-		<publisher>Bug Byte</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="189440">
 				<rom name="dunjunz (1987)(bug byte)[h tsth].dsd" size="189440" crc="5c529c87" sha1="f078d2aba2a83a03274eb7a9f76aa369a9452dd8"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="dunjunz_3" supported="no">
-		<description>Dunjunz (Hacked TSTH, Alt)</description>
-		<year>1987</year>
-		<publisher>Bug Byte</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH, Alt"/>
 			<dataarea name="rom" size="58880">
 				<rom name="dunjunz (1987)(bug byte)[h tsth][a].dsd" size="58880" crc="7f9c137b" sha1="bb95d32a54c6066c34fa2d1e2d5166de4400e017"/>
 			</dataarea>
@@ -51,11 +38,12 @@
 	</software>
 
 	<software name="elite" supported="no">
-		<description>Elite (Hacked 8-Bit)</description>
+		<description>Elite</description>
 		<year>1984</year>
 		<publisher>Acornsoft</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="elite (1984)(acornsoft)[h 8-bit].dsd" size="409600" crc="6c46b258" sha1="14badd93d3b047c1cfb448b67343eebf901de0f5"/>
 			</dataarea>
@@ -67,7 +55,7 @@
 		<year>1990</year>
 		<publisher>Superior</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="146688">
 				<rom name="hostages (1990)(superior).dsd" size="146688" crc="c7cdd8fc" sha1="5dced7ae6a4da90ba4076b8253e3a2ce1a696fba"/>
 			</dataarea>
@@ -75,11 +63,12 @@
 	</software>
 
 	<software name="lancelot" supported="no">
-		<description>Lancelot (!BOOT)</description>
+		<description>Lancelot</description>
 		<year>1988</year>
 		<publisher>Level 9 - Mandarin</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="!BOOT"/>
 			<dataarea name="rom" size="409600">
 				<rom name="lancelot (1988)(level 9 - mandarin)[boot].dsd" size="409600" crc="867b0945" sha1="343ab51dbe83c0827919b4c4a254e707a652d8b4"/>
 			</dataarea>
@@ -91,7 +80,7 @@
 		<year>19??</year>
 		<publisher>Superior</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="152320">
 				<rom name="last ninja 2, the (19xx)(superior).dsd" size="152320" crc="3b8e5675" sha1="c9650322746db08ccf06b03fd70599916530c771"/>
 			</dataarea>
@@ -103,7 +92,7 @@
 		<year>1988</year>
 		<publisher>Superior</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="153088">
 				<rom name="last ninja, the (1988)(superior).dsd" size="153088" crc="7a780ad2" sha1="e2a9dea1571fd474670ba220bb980895a3b698f1"/>
 			</dataarea>
@@ -115,19 +104,13 @@
 		<year>19??</year>
 		<publisher>Superior</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="208128">
 				<rom name="master break (19xx)(superior).dsd" size="208128" crc="ab71460c" sha1="73f9ea9a1d34d881e50d69d351df12172b1e2556"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="masterbr_1" supported="no">
-		<description>Master Break (Hacked TSTH)</description>
-		<year>19??</year>
-		<publisher>Superior</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="104960">
 				<rom name="master break (19xx)(superior)[h tsth].dsd" size="104960" crc="93b6db07" sha1="5facee922c4d01d5f1f091ef7b3993f18e6bacc8"/>
 			</dataarea>
@@ -135,11 +118,12 @@
 	</software>
 
 	<software name="mixmania" supported="no">
-		<description>Mix Mania II (Hacked 8-Bit)</description>
+		<description>Mix Mania II</description>
 		<year>1991</year>
 		<publisher>Yorkshire Boys</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="mix mania ii (1991)(yorkshire boys)[h 8-bit].dsd" size="409600" crc="d597b0a2" sha1="d553057b64ff0868bdb951b661d34f791845956c"/>
 			</dataarea>
@@ -147,23 +131,18 @@
 	</software>
 
 	<software name="powerpla" supported="no">
-		<description>Powerplay - The Game of the Gods (Hacked TSTH)</description>
+		<description>Powerplay - The Game of the Gods</description>
 		<year>1985</year>
 		<publisher>Arcana</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="128512">
 				<rom name="powerplay - the game of the gods (1985)(arcana)[h tsth].dsd" size="128512" crc="23107f27" sha1="a12ed499ea6e34f3ae5e6f6790229a6be11356c9"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="powerpla_1" supported="no">
-		<description>Powerplay - The Game of the Gods (RUN !BOOT)</description>
-		<year>1985</year>
-		<publisher>Arcana</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="RUN !BOOT"/>
 			<dataarea name="rom" size="409600">
 				<rom name="powerplay - the game of the gods (1985)(arcana)[run boot].dsd" size="409600" crc="427211df" sha1="0db5990a837c57bc698b7b1d15f4bbcd58efeb35"/>
 			</dataarea>
@@ -171,23 +150,18 @@
 	</software>
 
 	<software name="reptonin" supported="no">
-		<description>Repton Infinity (Bad)</description>
+		<description>Repton Infinity</description>
 		<year>1988</year>
 		<publisher>Superior</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Bad"/>
 			<dataarea name="rom" size="243456">
-				<rom name="repton infinity (1988)(superior)[b].dsd" size="243456" crc="6c77848c" sha1="e429ce7d2156c080793eae5d6492fe74bbcf7ef0"/>
+				<rom name="repton infinity (1988)(superior)[b].dsd" size="243456" crc="6c77848c" sha1="e429ce7d2156c080793eae5d6492fe74bbcf7ef0" status="baddump"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="reptonin_1" supported="no">
-		<description>Repton Infinity (Hacked)</description>
-		<year>1988</year>
-		<publisher>Superior</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked"/>
 			<dataarea name="rom" size="246272">
 				<rom name="repton infinity (1988)(superior)[h].dsd" size="246272" crc="415eba66" sha1="2660633625fadafb88cc00b428a5e40637c5f216"/>
 			</dataarea>
@@ -199,19 +173,13 @@
 		<year>1985</year>
 		<publisher>Level 9</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="324608">
 				<rom name="secret diary of adrian mole, the (1985)(level 9).dsd" size="324608" crc="c5c97078" sha1="172703d5ca8ab6bc1f43b9fcc92a4795a531b429"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="thesecre_1" supported="no">
-		<description>The Secret Diary of Adrian Mole (Hacked TSTH)</description>
-		<year>1985</year>
-		<publisher>Level 9</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="rom" size="324608">
 				<rom name="secret diary of adrian mole, the (1985)(level 9)[h tsth].dsd" size="324608" crc="dbfb5f38" sha1="4590def3bfae6efe95678813c98dc27ce9b6a640"/>
 			</dataarea>
@@ -223,7 +191,7 @@
 		<year>1989</year>
 		<publisher>Tynesoft</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="352768">
 				<rom name="superman - man of steel (1989)(tynesoft).dsd" size="352768" crc="a0fa518f" sha1="c3c01b0b119cd4330e4bd0aaaefd287f01a8adf3"/>
 			</dataarea>
@@ -231,11 +199,12 @@
 	</software>
 
 	<software name="thewormb" supported="no">
-		<description>The Worm Book (Hacked 8-Bit)</description>
+		<description>The Worm Book</description>
 		<year>19??</year>
 		<publisher>A. Ahlberg - J. Ahlberg</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="rom" size="409600">
 				<rom name="worm book, the (19xx)(ahlberg, a. - ahlberg, j.)[h 8-bit].dsd" size="409600" crc="8fad7a8b" sha1="0152d667cc77e1d98dd396eab74aa9137150e278"/>
 			</dataarea>

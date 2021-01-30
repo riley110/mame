@@ -1,13 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
 <softwarelist name="bbc_flop_edu_adl" description="bbc_flop_edu_adl">
 
 	<software name="ceefaxad" supported="no">
-		<description>CeeFAX Advanced Teletext Receiver Course (Hacked 8-Bit, ADFS)</description>
+		<description>CeeFAX Advanced Teletext Receiver Course</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit, ADFS"/>
 			<dataarea name="rom" size="655360">
 				<rom name="ceefax advanced teletext receiver course (19xx)(-)[h 8-bit][adfs].adl" size="655360" crc="c312332f" sha1="2a6f1c815417d4883041c16831ad95f78552257a"/>
 			</dataarea>
@@ -15,11 +20,12 @@
 	</software>
 
 	<software name="ceefaxas" supported="no">
-		<description>CeeFAX ASM Notes (Hacked 8-Bit, ADFS)</description>
+		<description>CeeFAX ASM Notes</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit, ADFS"/>
 			<dataarea name="rom" size="655360">
 				<rom name="ceefax asm notes (19xx)(-)[h 8-bit][adfs].adl" size="655360" crc="d9a9630f" sha1="ecbc2f5af0dd05a02ec4e134c883d2b3b5c110c3"/>
 			</dataarea>
@@ -27,11 +33,12 @@
 	</software>
 
 	<software name="ceefaxdf" supported="no">
-		<description>CeeFAX DFS &amp; Speech (Hacked 8-Bit, ADFS)</description>
+		<description>CeeFAX DFS &amp; Speech</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit, ADFS"/>
 			<dataarea name="rom" size="655360">
 				<rom name="ceefax dfs &amp; speech (19xx)(-)[h 8-bit][adfs].adl" size="655360" crc="39ab0fc3" sha1="463afa2ae53190d1096062133b5cb08abc69ca89"/>
 			</dataarea>
@@ -39,11 +46,12 @@
 	</software>
 
 	<software name="ceefaxmo" supported="no">
-		<description>CeeFAX Mouse &amp; Lightpen Notes (Hacked 8-Bit, ADFS)</description>
+		<description>CeeFAX Mouse &amp; Lightpen Notes</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit, ADFS"/>
 			<dataarea name="rom" size="655360">
 				<rom name="ceefax mouse &amp; lightpen notes (19xx)(-)[h 8-bit][adfs].adl" size="655360" crc="b7a258ba" sha1="a4fe01e210a15dc1476c4d80d3f87381cf9b2910"/>
 			</dataarea>
@@ -51,11 +59,12 @@
 	</software>
 
 	<software name="ceefaxsw" supported="no">
-		<description>CeeFAX SWR Notes (Hacked 8-Bit, ADFS)</description>
+		<description>CeeFAX SWR Notes</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit, ADFS"/>
 			<dataarea name="rom" size="655360">
 				<rom name="ceefax swr notes (19xx)(-)[h 8-bit][adfs].adl" size="655360" crc="52a2d690" sha1="cde051eca8b6812a513935b8ab32a3641f5263ca"/>
 			</dataarea>
@@ -63,11 +72,12 @@
 	</software>
 
 	<software name="interbas" supported="no">
-		<description>Interbase Programming Manual (ADFS)</description>
+		<description>Interbase Programming Manual</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="ADFS"/>
 			<dataarea name="rom" size="655360">
 				<rom name="interbase programming manual (19xx)(-)[adfs].adl" size="655360" crc="761d8e9d" sha1="d841424d745a15abba6ddf1e46b22b83ca0cc823"/>
 			</dataarea>
