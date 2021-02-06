@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
 <softwarelist name="c64_flop_demo_g64" description="c64_flop_demo_g64">
 
 	<software name="26kg" supported="no">
@@ -8,13 +12,13 @@
 		<publisher>Triad</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="26kg (2000)(triad).g64" size="333744" crc="17d955bf" sha1="e21ee01441624a09e9843c70f65db0d6c643b872"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Alt"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="26kg (2000)(triad)[a].g64" size="333744" crc="37301956" sha1="8ae0f2e0eabfb7c615bfb81b4ffc9f703043e6da"/>
 			</dataarea>
 		</part>
@@ -26,7 +30,7 @@
 		<publisher>Venom</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="4k part (1996)(venom).g64" size="333744" crc="7581a150" sha1="003b7d7615eeaaaf8387f3acc5d092cb7c741530"/>
 			</dataarea>
 		</part>
@@ -39,13 +43,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A, Overdumped"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="awakening 100 (1992)(the ancient temple)(side a)[o].g64" size="333744" crc="f9c8b0f9" sha1="4818e2fd544cd6038b8fa789053338074d146670" status="baddump"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="awakening 100 (1992)(the ancient temple)(side b).g64" size="333744" crc="67625846" sha1="57ee1eb7dc8a495e94d2923eac4307f4eb9e204c"/>
 			</dataarea>
 		</part>
@@ -57,7 +61,7 @@
 		<publisher>The Wizards</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="344832">
+			<dataarea name="flop" size="344832">
 				<rom name="big fun (1989)(the wizards).g64" size="344832" crc="c133e327" sha1="33c0f9ad1899185a73a4dab408270ba1b3ad940c"/>
 			</dataarea>
 		</part>
@@ -69,7 +73,7 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="christmas songs (1984)(-).g64" size="333744" crc="00bf628f" sha1="5bad94812a0a93728b68d6cbdf4ce25d8de49ed5"/>
 			</dataarea>
 		</part>
@@ -82,25 +86,25 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="digital world (19xx)(samar)(side a).g64" size="333744" crc="7fdb694f" sha1="3ec97194ca4d82977cc97cbc50871018d62eb5cd"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side A, Alt"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="digital world (19xx)(samar)(side a)[a].g64" size="333744" crc="eb6ac8d1" sha1="4e1f20d6af8b0e6128b64bc565fb1dffe37320a2"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="digital world (19xx)(samar)(side b).g64" size="333744" crc="920201fb" sha1="f9c6f8ec389f9460887d15d4d6b7e0c98c1c2002"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
 			<feature name="part_id" value="Side B, Alt"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="digital world (19xx)(samar)(side b)[a].g64" size="333744" crc="7b7be0b3" sha1="5e0a2a24e67d0821075f2adef7cf630dd6312629"/>
 			</dataarea>
 		</part>
@@ -112,13 +116,13 @@
 		<publisher>Origo Dreamline</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="elysion - the requiem (1992-04-19)(origo dreamline).g64" size="333744" crc="c6718935" sha1="a34237b82f86983768c8be9b3c2446490b7d14ec"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Alt"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="elysion - the requiem (1992-04-19)(origo dreamline)[a].g64" size="333744" crc="4ca9eb57" sha1="27e7a53e48beae882e854a5e8760e85a94bc8c6f"/>
 			</dataarea>
 		</part>
@@ -130,7 +134,7 @@
 		<publisher>The 2nd Society</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="hilarious alf, the (1988)(the 2nd society).g64" size="333744" crc="cab0a536" sha1="643734493822d0f64d0e0fae6f733214063b4ac2"/>
 			</dataarea>
 		</part>
@@ -142,13 +146,13 @@
 		<publisher>Triad</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="horsing around (1999)(triad).g64" size="333744" crc="ad2fe988" sha1="6c3eaf5bc5f4906367f9f58f275a05f7839a29a8"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Alt"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="horsing around (1999)(triad)[a].g64" size="333744" crc="33d9a6d4" sha1="e624149a4691b4c8c2bfd1abfe430a9b9dcca096"/>
 			</dataarea>
 		</part>
@@ -160,13 +164,13 @@
 		<publisher>Judges</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="hubbard track 3 (1987)(judges).g64" size="333744" crc="1ebd36a9" sha1="4442a3d4d1d75307ba7cd88a52d754215afa94b2"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Alt"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="hubbard track 3 (1987)(judges)[a].g64" size="333744" crc="3e32df29" sha1="843116dde0a9973ea2073ffc2ec62053c3f39fed"/>
 			</dataarea>
 		</part>
@@ -179,19 +183,19 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="krestology 100 (1996)(crest)(side a).g64" size="333744" crc="0cb62e37" sha1="e49b54244e28c5c23879db1ca414641da4da2bd0"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side A, Bad"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="krestology 100 (1996)(crest)(side a)[b].g64" size="333744" crc="04c4a350" sha1="1108cd5d4df68f2f2bd78cfa41332ca596f1f43d" status="baddump"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="krestology 100 (1996)(crest)(side b).g64" size="333744" crc="f2e08d1e" sha1="e9c4e44438734ee3db0069bfb6728ad3597f68e0"/>
 			</dataarea>
 		</part>
@@ -204,13 +208,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="legoland 3 (1993-12-29)(fairlight)(side b).g64" size="333744" crc="f81c81d8" sha1="8164fe9144cbfadec2e1e8d876c901fe446cb6e2"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B, Alt"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="legoland 3 (1993-12-29)(fairlight)(side b)[a].g64" size="333744" crc="b427ab7f" sha1="f0938f6812d85542758ede6bdf4d259b29e2aba7"/>
 			</dataarea>
 		</part>
@@ -223,7 +227,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="megademo 1 (1997-02)(masters' design group)(side a).g64" size="333744" crc="57687cbc" sha1="510020fcc616f738893530ceb93ffb4d0d805bc8"/>
 			</dataarea>
 		</part>
@@ -235,7 +239,7 @@
 		<publisher>Crazy</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="that's design (1990)(crazy).g64" size="333744" crc="ebcad1c2" sha1="e8f0851f9e88140d63959b83a665776193a32929"/>
 			</dataarea>
 		</part>
@@ -247,13 +251,13 @@
 		<publisher>Byterapers</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="world of code 1 (1994-05)(byterapers).g64" size="333744" crc="41c67bf3" sha1="daddac9da2d95bd8b850a86c7fb354f8391d459d"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Alt"/>
-			<dataarea name="rom" size="333744">
+			<dataarea name="flop" size="333744">
 				<rom name="world of code 1 (1994-05)(byterapers)[a].g64" size="333744" crc="b4531da0" sha1="9835a28d119aa28364d836e87b987e41d015dd7c"/>
 			</dataarea>
 		</part>

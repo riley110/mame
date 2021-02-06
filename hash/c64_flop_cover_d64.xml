@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
 <softwarelist name="c64_flop_cover_d64" description="c64_flop_cover_d64">
 
 	<software name="commodor" supported="no">
@@ -9,13 +13,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore computer club #02 (19xx)(-)(es)(side a).d64" size="174848" crc="2077f1af" sha1="12b1920b866aabd953393c1f760f140b09fb8f29"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore computer club #02 (19xx)(-)(es)(side b).d64" size="174848" crc="db04d8b2" sha1="fff10e77b5faec0c0b924fa8b832f6552cc977d0"/>
 			</dataarea>
 		</part>
@@ -28,13 +32,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore computer club #05 (19xx)(-)(es)(side a).d64" size="174848" crc="5381d5d0" sha1="45d547c088cdca8f27f98181359dae5868cd6209"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore computer club #05 (19xx)(-)(es)(side b).d64" size="174848" crc="1ad6bce4" sha1="aae3caf8add7247e37fe7788c5e506d498b65cff"/>
 			</dataarea>
 		</part>
@@ -47,13 +51,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore computer club #07 (19xx)(-)(es)(side a).d64" size="174848" crc="de923730" sha1="173eed969db72779631c2bda55ed9e4dfe85510d"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore computer club #07 (19xx)(-)(es)(side b).d64" size="174848" crc="49b65ca3" sha1="5071da13e76858d74d46497d0f4c237ed45600bd"/>
 			</dataarea>
 		</part>
@@ -66,13 +70,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore computer club #10 (19xx)(-)(es)(side a).d64" size="174848" crc="28db8398" sha1="c609e947eb7a1a443e8e08e2dc01564141e8aef0"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore computer club #10 (19xx)(-)(es)(side b).d64" size="174848" crc="4412ae54" sha1="aa55cb64264e8b097e7f114ae9412ed5cc6f7b49"/>
 			</dataarea>
 		</part>
@@ -84,7 +88,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #01 (19xx)(future)(gb).d64" size="174848" crc="2f1ceedf" sha1="41be24bf9aa3b17597722858c91d4badd0bfc218"/>
 			</dataarea>
 		</part>
@@ -96,7 +100,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #02 (19xx)(future)(gb).d64" size="174848" crc="9f53ea03" sha1="ebe7b2ef6e0cc5cc9b1c8c62fb2970d03d9ffb83"/>
 			</dataarea>
 		</part>
@@ -108,7 +112,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #03 (19xx)(future)(gb).d64" size="174848" crc="d9ba001e" sha1="8d86f675a628aa79ab96c95b402d46880bfb8ebc"/>
 			</dataarea>
 		</part>
@@ -120,7 +124,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #04 (1991)(future)(gb).d64" size="174848" crc="d9c96aac" sha1="600128892bdf7b383e67b7d91d7b6cecb520fa4b"/>
 			</dataarea>
 		</part>
@@ -132,7 +136,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #05 (19xx)(future)(gb).d64" size="174848" crc="dcb40397" sha1="4b6febb36902bb3c84589f0694d0bd880453cf72"/>
 			</dataarea>
 		</part>
@@ -144,7 +148,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #06 (1991)(future)(gb).d64" size="174848" crc="378ec60e" sha1="4506cd33a746153bae648526966f91e917a20810"/>
 			</dataarea>
 		</part>
@@ -156,7 +160,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #07 (19xx)(future)(gb).d64" size="174848" crc="59d1db0f" sha1="e5a9c0a96e073b53a3cd5f282461572cd793c5e5"/>
 			</dataarea>
 		</part>
@@ -168,7 +172,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #08 (1991)(future)(gb).d64" size="174848" crc="fcfc8f1a" sha1="41e1ab38978c03a03d7d973caddd36e4fe4db9c9"/>
 			</dataarea>
 		</part>
@@ -180,7 +184,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #09 (1991)(future)(gb).d64" size="174848" crc="ff941b31" sha1="d3e6c432c966590a567e29f402649db2ed7bb5e7"/>
 			</dataarea>
 		</part>
@@ -192,7 +196,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #10 (19xx)(future)(gb).d64" size="174848" crc="181a487e" sha1="9bcaa4079c5289e582090836ba36b3eb7c088ac9"/>
 			</dataarea>
 		</part>
@@ -204,7 +208,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #11 (1991)(future)(gb).d64" size="174848" crc="810e29d6" sha1="15d3ea40db6de11b58a084b861ed686b813f78df"/>
 			</dataarea>
 		</part>
@@ -216,7 +220,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #12 (1991)(future)(gb).d64" size="174848" crc="e6f13fd5" sha1="46d894aa335c98fac00598f11b4a28d854758554"/>
 			</dataarea>
 		</part>
@@ -228,7 +232,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #13 (1991)(future)(gb).d64" size="174848" crc="24a92d46" sha1="a363c162eda17b47439b7e0fd78336b4d14bc099"/>
 			</dataarea>
 		</part>
@@ -240,7 +244,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #14 (1991)(future)(gb).d64" size="174848" crc="199dc262" sha1="62bf5540865f198e02a34a14b5cd433fbdece576"/>
 			</dataarea>
 		</part>
@@ -252,7 +256,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #15 (1991)(future)(gb).d64" size="174848" crc="370f7150" sha1="1a1091f91104138648a5edb77480fdeab8e38bef"/>
 			</dataarea>
 		</part>
@@ -264,7 +268,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #16 (1992)(future)(gb).d64" size="174848" crc="939f6865" sha1="23d1b6c13e6fd31c3bfa9982b6a1f098dd07b75e"/>
 			</dataarea>
 		</part>
@@ -276,7 +280,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #17 (1992)(future)(gb).d64" size="174848" crc="de737be8" sha1="8257bf5378ecdb3e5e96ce009433142c1fc86214"/>
 			</dataarea>
 		</part>
@@ -288,7 +292,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #18 (1992)(future)(gb).d64" size="174848" crc="9a219ce2" sha1="e75cc08818ee30820efb63c45b44d87db809980d"/>
 			</dataarea>
 		</part>
@@ -300,7 +304,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #19 (1992)(future)(gb).d64" size="174848" crc="52284e87" sha1="a13dcdb1ec2bee067a6e338439fe35da60594e79"/>
 			</dataarea>
 		</part>
@@ -312,7 +316,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #20 (1992)(future)(gb).d64" size="174848" crc="a7ee6ecc" sha1="245f934a745f5ebf64c62c243bc4cf73f02fe8fe"/>
 			</dataarea>
 		</part>
@@ -324,7 +328,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #21 (1992)(future)(gb).d64" size="174848" crc="f95b1997" sha1="956359ee66df0c22fbf61834aa1aac9aa05b8fc4"/>
 			</dataarea>
 		</part>
@@ -336,7 +340,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #22 (1992)(future)(gb).d64" size="174848" crc="0eb0db43" sha1="f5d88b2b2ec5fcb88c5f154fa429a7403d9fbc3b"/>
 			</dataarea>
 		</part>
@@ -348,7 +352,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #23 (1992)(future)(gb).d64" size="174848" crc="ea8808a6" sha1="87c3f0197b2c2e93e5905fe0f6f2b737cc7788ac"/>
 			</dataarea>
 		</part>
@@ -360,7 +364,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #24 (1992)(future)(gb).d64" size="174848" crc="864c55fe" sha1="3d7efb6ef39c9b1f59421dd2f8a162fafc401e15"/>
 			</dataarea>
 		</part>
@@ -373,25 +377,25 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #25 (1992-10)(future)(gb)(side a).d64" size="174848" crc="f04ca929" sha1="db7517f1b3631fd78d0657644ad547c2ab94e0d4"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side A, Verified"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #25 (1992-10)(future)(gb)(side a)[].d64" size="174848" crc="0e5bb40b" sha1="18e9419037d84ee953a33ff608f11dd1c110a0c4"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #25 (1992-10)(future)(gb)(side b).d64" size="174848" crc="f91bd2a5" sha1="abedf8c194f1bd42cc9589ff10a53a0769dc05a3"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
 			<feature name="part_id" value="Side B, Verified"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #25 (1992-10)(future)(gb)(side b)[].d64" size="174848" crc="93bc64d1" sha1="c6a5bf13abdfb21828e4ef14a5f0aeb5a327657d"/>
 			</dataarea>
 		</part>
@@ -403,7 +407,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #26 (1992)(future)(gb).d64" size="174848" crc="4b7a026c" sha1="4ac26406315124853748a47b574243ecdbd9c34b"/>
 			</dataarea>
 		</part>
@@ -415,7 +419,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #27 (1992)(future)(gb).d64" size="174848" crc="657f5c94" sha1="b6546b9b15a6cdddf10363bab7858e0ca959d044"/>
 			</dataarea>
 		</part>
@@ -427,7 +431,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #28 (1992)(future)(gb).d64" size="174848" crc="08766d0e" sha1="daffd9919c88362a53390c37854549be69bf6f9c"/>
 			</dataarea>
 		</part>
@@ -439,7 +443,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #29 (1993)(future)(gb).d64" size="174848" crc="9c1adad3" sha1="cbe9faa8102836255e9c8dbbd00fadcf8b8fbe00"/>
 			</dataarea>
 		</part>
@@ -451,7 +455,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #30 (1993)(future)(gb).d64" size="174848" crc="aa36bf91" sha1="4a7db1610ce71fdf262c6875dfe8597f82acb0e5"/>
 			</dataarea>
 		</part>
@@ -463,7 +467,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #31 (1994-04)(future)(gb).d64" size="174848" crc="2ee028f4" sha1="487c7b650785c41a1f7325a658ca0e8ac294532e"/>
 			</dataarea>
 		</part>
@@ -475,7 +479,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #31 (19xx)(future)(gb).d64" size="174848" crc="23ab9808" sha1="cc280895089267b5fb72721f9724a1a58507dd2a"/>
 			</dataarea>
 		</part>
@@ -487,7 +491,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #32 (19xx)(future)(gb).d64" size="174848" crc="15a959a2" sha1="499726d6c7c4fc3a29372f995ac775e6b44c5efc"/>
 			</dataarea>
 		</part>
@@ -499,7 +503,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #33 (19xx)(future)(gb).d64" size="174848" crc="93a65676" sha1="c06241f01a1a4c1af511e4cfa9d80e1d328501db"/>
 			</dataarea>
 		</part>
@@ -511,7 +515,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #34 (19xx)(future)(gb).d64" size="174848" crc="7cc4f2c4" sha1="225c1908cb26863491070eafd2c86341f0a97d2f"/>
 			</dataarea>
 		</part>
@@ -523,7 +527,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #35 (1993)(future)(gb).d64" size="174848" crc="7d9a7e47" sha1="fab973e8a7cab1237e00278ec83a1bc35cf69e40"/>
 			</dataarea>
 		</part>
@@ -535,7 +539,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #36 (19xx)(future)(gb).d64" size="174848" crc="3fb23d80" sha1="b373aae1f186c01acf025a10a65ef4aa8777b3a9"/>
 			</dataarea>
 		</part>
@@ -548,13 +552,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #37 (1994)(future)(gb)(side a).d64" size="174848" crc="3bf0f5b0" sha1="42736c7da3ff8d85400c728b6d932968d8a294da"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #37 (1994)(future)(gb)(side b).d64" size="174848" crc="cb3f0c65" sha1="33340579c085973be550a28f4cc7e70101a2d535"/>
 			</dataarea>
 		</part>
@@ -566,7 +570,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #38 (19xx)(future)(gb).d64" size="174848" crc="a6e4515c" sha1="829c68a81c427d88d0d0914f48aff8e0d76fd934"/>
 			</dataarea>
 		</part>
@@ -578,7 +582,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #39 (19xx)(future)(gb).d64" size="174848" crc="f1ccbaf2" sha1="a612d5c15e3cebafac02d1aa35ce4f6fa8589006"/>
 			</dataarea>
 		</part>
@@ -590,7 +594,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #40 (19xx)(future)(gb).d64" size="174848" crc="7021de64" sha1="1a170d116c850831aed467a60c44fc5f4f5346b6"/>
 			</dataarea>
 		</part>
@@ -602,7 +606,7 @@
 		<publisher>Future</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #41 (1991)(future)(gb).d64" size="174848" crc="06a6e203" sha1="a9e255dc10831be6694c3b3dd39893b27ba63e10"/>
 			</dataarea>
 		</part>
@@ -615,13 +619,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #42 (1994)(future)(gb)(side a).d64" size="174848" crc="1aa12654" sha1="9de37b4074198d6d342b9c882094c6a8654b91ba"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #42 (1994)(future)(gb)(side b).d64" size="174848" crc="a0fa550d" sha1="c9b6c8d27d51373fee44aff184584fe2131032f8"/>
 			</dataarea>
 		</part>
@@ -634,13 +638,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore plus - rimpaller (1985)(edigamma)(it)(side b).d64" size="174848" crc="358d1219" sha1="6a2c993c31dec9c80158ded1e7dbf5ce9a8170a7"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B, Alt"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="commodore plus - rimpaller (1985)(edigamma)(it)(side b)[a].d64" size="174848" crc="f3cfbd65" sha1="de6b366bed2f2e390aea4c32af43ea9cad60f678"/>
 			</dataarea>
 		</part>
@@ -653,13 +657,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="hit parade cbm 64 nr.05 - il gobbo di notre dame (19xx)(sipe)(it)(side a).d64" size="174848" crc="fd8e0600" sha1="ebf4d816df3dba13abd18ddb5a6c8be73416cc25"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side A, Alt"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="hit parade cbm 64 nr.05 - il gobbo di notre dame (19xx)(sipe)(it)(side a)[a].d64" size="174848" crc="098cc896" sha1="82f8c590abb935e23bd453e50a2890549e12b340"/>
 			</dataarea>
 		</part>
@@ -672,19 +676,19 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #1 85-03 (1985)(-)(es)(side a).d64" size="174848" crc="0be5146f" sha1="3b7b217647c457173d41298931cedf478af94220"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #1 85-03 (1985)(-)(es)(side b).d64" size="174848" crc="e2c83077" sha1="12e589a8351b6ae601441ce78f2a6f9027291b35"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="Single Tape Version"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #1 85-03 (1985)(-)(es)[single tape version].d64" size="174848" crc="eb9eeb0a" sha1="90a3ab0ffd36f645f65ccd3b5d7b217ebe84adfc"/>
 			</dataarea>
 		</part>
@@ -697,13 +701,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #4 85-06 (1985)(-)(es)(side a).d64" size="174848" crc="3db387ee" sha1="2a183ca9e6faaa38707c531c6288eb61e0e72973"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #4 85-06 (1985)(-)(es)(side b).d64" size="174848" crc="01164a05" sha1="b60e6a90dd19235fb3d9037aab99cdaf3bda8644"/>
 			</dataarea>
 		</part>
@@ -716,13 +720,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #5 85-08 (1985)(-)(es)(side a).d64" size="174848" crc="7cfa7c68" sha1="b35fd1a23af51578b168b44b3141d38173f743b5"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #5 85-08 (1985)(-)(es)(side b).d64" size="174848" crc="e9d214a7" sha1="6573c78eac2a33c581d147958612831b9d0c9da1"/>
 			</dataarea>
 		</part>
@@ -735,13 +739,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #6 85-09 (1985)(-)(es)(side a).d64" size="174848" crc="e70c61ff" sha1="3de31d6ff7325f5379acd4d9bed2160b4d3fadde"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #6 85-09 (1985)(-)(es)(side b).d64" size="174848" crc="54eece1e" sha1="68e194d8c3d518b0bf87cc4d984b276354d15ccb"/>
 			</dataarea>
 		</part>
@@ -754,13 +758,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #7 85-10 (1985)(-)(es)(side a).d64" size="174848" crc="4ddf22a7" sha1="9834a9ca39e7caa8dd92c5046d98ebcfad88f77f"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #7 85-10 (1985)(-)(es)(side b).d64" size="174848" crc="b02ba9d9" sha1="ab1b824f9ee639c9e20a614178dc48d301a61cf3"/>
 			</dataarea>
 		</part>
@@ -773,13 +777,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #8 85-11 (1985)(-)(es)(side a).d64" size="174848" crc="08c496c2" sha1="632cd1cbfe24af51f4cdb53a00e138fb7ec08d98"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #8 85-11 (1985)(-)(es)(side b).d64" size="174848" crc="d8976e3b" sha1="e9ff5875cf5e7b8524b1f0f8862c36eebfb60e22"/>
 			</dataarea>
 		</part>
@@ -792,13 +796,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #9 85-12 (1985)(-)(es)(side a).d64" size="174848" crc="1b5d51a7" sha1="6efb045d697300aa3aea54fc3dfa1c11960260c0"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run #9 85-12 (1985)(-)(es)(side b).d64" size="174848" crc="0074736b" sha1="0ab38b8c2188e296edf338d01f941fff1e53e9e8"/>
 			</dataarea>
 		</part>
@@ -811,13 +815,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="load'n'run extra 85-12 (1985)(-)(es)(side a).d64" size="174848" crc="a5ca7509" sha1="2ed1aa76dc51841932fd14dac2d33b646e5b992f"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="196608">
+			<dataarea name="flop" size="196608">
 				<rom name="load'n'run extra 85-12 (1985)(-)(es)(side b).d64" size="196608" crc="dfafe5de" sha1="73892ea91f409786e13ea5416c660141fe75162a"/>
 			</dataarea>
 		</part>
@@ -830,7 +834,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="logica 2000 - giochi da tavolo - biliardo (19xx)(logica 2000)(it)(side b).d64" size="174848" crc="12342043" sha1="71c53c025527def0db6492896529869cb2b6a2fd"/>
 			</dataarea>
 		</part>
@@ -843,7 +847,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="speciale sport nr.03 - motolos (1986)(-)(it)(side a).d64" size="174848" crc="5ff1cfa4" sha1="6a00ecdca31691d36bf6626dca3bceb1747bcae0"/>
 			</dataarea>
 		</part>
@@ -855,7 +859,7 @@
 		<publisher>Stars</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="stars commodore #1 85-09 (1985)(stars)(es).d64" size="174848" crc="3941b6e4" sha1="ff85c2258827058d55fa0571e006198a8bfc63da"/>
 			</dataarea>
 		</part>
@@ -868,13 +872,13 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Side A"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="stars commodore #5 85-12 (1985)(-)(es)(side a).d64" size="174848" crc="ec8aaa32" sha1="8b8ac39bd4e92491ced4f470ea30accceb539915"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Side B"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="stars commodore #5 85-12 (1985)(-)(es)(side b).d64" size="174848" crc="cdc710f0" sha1="d456ca2c4553a904749cb90b48890660d691a5dd"/>
 			</dataarea>
 		</part>
@@ -887,7 +891,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Key Guerra"/>
-			<dataarea name="rom" size="174848">
+			<dataarea name="flop" size="174848">
 				<rom name="viking nr.11 - street trooper (1987)(bonaventura di bello)(it)[key guerra].d64" size="174848" crc="fdfea849" sha1="046cbbd50f865877597862ce595384336c3f14d2"/>
 			</dataarea>
 		</part>
