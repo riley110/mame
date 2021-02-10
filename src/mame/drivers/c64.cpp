@@ -1622,6 +1622,24 @@ void c64_state::ntsc(machine_config &config)
     SOFTWARE_LIST(config, "flop_test_d71").set_original("c64_flop_test_d71").set_filter("NTSC");
     SOFTWARE_LIST(config, "flop_test_g64").set_original("c64_flop_test_g64").set_filter("NTSC");
     
+    SOFTWARE_LIST(config, "flop_bftp").set_original("c64_flop_bftp").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_bugjam").set_original("c64_flop_bugjam").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_cd96").set_original("c64_flop_cd96").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_dotson").set_original("c64_flop_dotson").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_dram_d64").set_original("c64_flop_dram_d64").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_dram_g64").set_original("c64_flop_dram_g64").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_einstein").set_original("c64_flop_einstein").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_eshaker").set_original("c64_flop_eshaker").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_fairlight").set_original("c64_flop_fairlight").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_gwn").set_original("c64_flop_gwn").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_hornet").set_original("c64_flop_hornet").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_hvoltage").set_original("c64_flop_hvoltage").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_jazzcat").set_original("c64_flop_jazzcat").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_manik").set_original("c64_flop_manik").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_oxyron").set_original("c64_flop_oxyron").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_tadpole").set_original("c64_flop_tadpole").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_watties").set_original("c64_flop_watties").set_filter("NTSC");
+    
 	// internal ram
 	RAM(config, RAM_TAG).set_default_size("64K");
 }
@@ -1852,6 +1870,24 @@ void c64_state::pal(machine_config &config)
     SOFTWARE_LIST(config, "flop_test_d64").set_original("c64_flop_test_d64").set_filter("PAL");
     SOFTWARE_LIST(config, "flop_test_d71").set_original("c64_flop_test_d71").set_filter("PAL");
     SOFTWARE_LIST(config, "flop_test_g64").set_original("c64_flop_test_g64").set_filter("PAL");
+    
+    SOFTWARE_LIST(config, "flop_bftp").set_original("c64_flop_bftp").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_bugjam").set_original("c64_flop_bugjam").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_cd96").set_original("c64_flop_cd96").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_dotson").set_original("c64_flop_dotson").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_dram_d64").set_original("c64_flop_dram_d64").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_dram_g64").set_original("c64_flop_dram_g64").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_einstein").set_original("c64_flop_einstein").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_eshaker").set_original("c64_flop_eshaker").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_fairlight").set_original("c64_flop_fairlight").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_gwn").set_original("c64_flop_gwn").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_hornet").set_original("c64_flop_hornet").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_hvoltage").set_original("c64_flop_hvoltage").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_jazzcat").set_original("c64_flop_jazzcat").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_manik").set_original("c64_flop_manik").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_oxyron").set_original("c64_flop_oxyron").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_tadpole").set_original("c64_flop_tadpole").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_watties").set_original("c64_flop_watties").set_filter("PAL");
     
 	// internal ram
 	RAM(config, RAM_TAG).set_default_size("64K");
