@@ -13,6 +13,7 @@ Crystals: 32.720 (X1), unmarked (X2).
 *************************************************************************************************************/
 #include "emu.h"
 #include "screen.h"
+#include "softlist_dev.h"
 
 
 //**************************************************************************
@@ -57,6 +58,10 @@ void c64dtv_state::c64dtv(machine_config &config)
 	screen.set_size(640,480);
 	screen.set_visarea_full();
 	screen.set_refresh_hz(30);
+    
+    // software
+    SOFTWARE_LIST(config, "flop_d64_list").set_original("c64dtv_flop_d64");
+    SOFTWARE_LIST(config, "flop_d81_list").set_original("c64dtv_flop_d81");
 }
 
 
