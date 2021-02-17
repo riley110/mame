@@ -858,6 +858,7 @@ void oric_state::oric(machine_config &config, bool add_ext) // this variable not
 	
 	/* software lists */
 	SOFTWARE_LIST(config, "cass_list").set_original("oric_cass");
+    SOFTWARE_LIST(config, "cass_multi_list").set_original("oric_cass_multi");
 	SOFTWARE_LIST(config, "flop_list").set_original("oric_flop");
 }
 
