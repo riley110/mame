@@ -159,6 +159,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="actionre" supported="no">
+		<description>Action Replay v1.5 (1989)(Datel electronics)[h Hackers Ethic] &amp; Warm and Fuzzy Ansi Editor v2.0 (1992)(Discordian) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="action replay v1.5 (1989)(datel electronics)[h hackers ethic] &amp; warm and fuzzy ansi editor v2.0 (1992)(discordian).adf" size="901120" crc="12f56dba" sha1="255e79c9d5c47b4ac1a3059ad3d0dd4c78f5279b"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="acucommu" supported="no">
 		<description>ACU Communications Disk 05</description>
 		<year>19??</year>
@@ -759,6 +771,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Bad virus damage"/>
 			<dataarea name="flop" size="901120">
 				<rom name="aegis audiomaster i - ii (1988)(aegis)[b virus damage].adf" size="901120" crc="3353d8e8" sha1="f8388de192138e85c4a925463dba338bd05b6214" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aegisdra" supported="no">
+		<description>Aegis Draw (19xx)(Aegis)[b] &amp; Perfect Sound v2.1 (1986)(SunRize Industries)[h Bignose] (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="aegis draw (19xx)(aegis)[b] &amp; perfect sound v2.1 (1986)(sunrize industries)[h bignose].adf" size="901120" crc="76f4283d" sha1="325e4c1d6d2660c2370dc86333faeaabdaf05c1e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -12489,6 +12513,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="redsecto" supported="no">
+		<description>Red Sector Demo-Maker v1.1 (1991)(Data Becker) &amp; Rainbow Writer v1.6 (1989)(Skull) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="red sector demo-maker v1.1 (1991)(data becker) &amp; rainbow writer v1.6 (1989)(skull).adf" size="901120" crc="d418cddf" sha1="27416b4d35e58da9c28a80b72459c735efbc06f1"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="thericha" supported="no">
 		<description>The Richard Smedley Collection</description>
 		<year>1992</year>
@@ -19552,31 +19588,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="zulu's dpaint iii workdisk (19xx)(titanics).adf" size="901120" crc="97b2b4c8" sha1="bac04e18019c49e851d116c4960fc74762a22e17"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="_fixme" supported="no">
-		<description>_FIXME_</description>
-		<year>????</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part1" interface="interface">
-			<feature name="part_id" value="Action Replay v1.5 (1989)(Datel electronics)[h Hackers Ethic] &amp; Warm and Fuzzy Ansi Editor v2.0 (1992)(Discordian)"/>
-			<dataarea name="flop" size="901120">
-				<rom name="action replay v1.5 (1989)(datel electronics)[h hackers ethic] &amp; warm and fuzzy ansi editor v2.0 (1992)(discordian).adf" size="901120" crc="12f56dba" sha1="255e79c9d5c47b4ac1a3059ad3d0dd4c78f5279b"/>
-			</dataarea>
-		</part>
-		<part name="part2" interface="interface">
-			<feature name="part_id" value="Aegis Draw (19xx)(Aegis)[b] &amp; Perfect Sound v2.1 (1986)(SunRize Industries)[h Bignose]"/>
-			<dataarea name="flop" size="901120">
-				<rom name="aegis draw (19xx)(aegis)[b] &amp; perfect sound v2.1 (1986)(sunrize industries)[h bignose].adf" size="901120" crc="76f4283d" sha1="325e4c1d6d2660c2370dc86333faeaabdaf05c1e"/>
-			</dataarea>
-		</part>
-		<part name="part3" interface="interface">
-			<feature name="part_id" value="Red Sector Demo-Maker v1.1 (1991)(Data Becker) &amp; Rainbow Writer v1.6 (1989)(Skull)"/>
-			<dataarea name="flop" size="901120">
-				<rom name="red sector demo-maker v1.1 (1991)(data becker) &amp; rainbow writer v1.6 (1989)(skull).adf" size="901120" crc="d418cddf" sha1="27416b4d35e58da9c28a80b72459c735efbc06f1"/>
 			</dataarea>
 		</part>
 	</software>

@@ -198,6 +198,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="astrobli" supported="no">
+		<description>Astroblitz (1988)(-) &amp; TI-Mazogz (1988)(B. Waldmann)(PD) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92160">
+				<rom name="astroblitz (1988)(-) &amp; ti-mazogz (1988)(b. waldmann)(pd).dsk" size="92160" crc="2b9f78ec" sha1="dd7447164a5b7f6c81b94862bee0ec199f384504"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="astronom" supported="no">
 		<description>Astronomy</description>
 		<year>1982</year>
@@ -7120,6 +7132,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="PHD 5054, req. PHM 3041, DSK1.SAVAGE1"/>
 			<dataarea name="flop" size="92160">
 				<rom name="savage island series (1981)(texas instruments)[phd 5054][req. phm 3041][dsk1.savage1].dsk" size="92160" crc="70d269b8" sha1="9aeca5c94ba489a091df18d6a96aab4b41c35ff1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scsicat" supported="no">
+		<description>SCSI Cat (19xx)(Bruce Harrison)(PD) &amp; Spelling Teacher (19xx)(ASDD Software)(PD) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92160">
+				<rom name="scsi cat (19xx)(bruce harrison)(pd) &amp; spelling teacher (19xx)(asdd software)(pd).dsk" size="92160" crc="40173a8a" sha1="941a6b8432488a4782aa20465f15cdbc85e53118"/>
 			</dataarea>
 		</part>
 	</software>
@@ -14314,25 +14338,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92160">
 				<rom name="xb utilities volume 1 (1991)(harrison software)(pd).dsk" size="92160" crc="ea85c72e" sha1="7b31a9490525dfaf7aed765a96bacde9bca37aaf"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="_fixme" supported="no">
-		<description>_FIXME_</description>
-		<year>????</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part1" interface="interface">
-			<feature name="part_id" value="Astroblitz (1988)(-) &amp; TI-Mazogz (1988)(B. Waldmann)(PD)"/>
-			<dataarea name="flop" size="92160">
-				<rom name="astroblitz (1988)(-) &amp; ti-mazogz (1988)(b. waldmann)(pd).dsk" size="92160" crc="2b9f78ec" sha1="dd7447164a5b7f6c81b94862bee0ec199f384504"/>
-			</dataarea>
-		</part>
-		<part name="part2" interface="interface">
-			<feature name="part_id" value="SCSI Cat (19xx)(Bruce Harrison)(PD) &amp; Spelling Teacher (19xx)(ASDD Software)(PD)"/>
-			<dataarea name="flop" size="92160">
-				<rom name="scsi cat (19xx)(bruce harrison)(pd) &amp; spelling teacher (19xx)(asdd software)(pd).dsk" size="92160" crc="40173a8a" sha1="941a6b8432488a4782aa20465f15cdbc85e53118"/>
 			</dataarea>
 		</part>
 	</software>

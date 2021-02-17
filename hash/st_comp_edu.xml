@@ -6,6 +6,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 -->
 <softwarelist name="st_comp_edu" description="st_comp_edu">
 
+	<software name="aladecou" supported="no">
+		<description>A la Decouverte de la Terre (19xx)(Coktel Vision)(fr) &amp; QI Test (19xx)(Pressimage)(fr) &amp; Vie et Mort des Dinosaures (19xx)(Carraz Editions)(fr) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="a la decouverte de la terre (19xx)(coktel vision)(fr) &amp; qi test (19xx)(pressimage)(fr) &amp; vie et mort des dinosaures .st" size="819200" crc="5235ff1c" sha1="be9a168b0481e52b2b7445590c311e2845c39e5e"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="papyboom" supported="no">
 		<description>Papy Boom CD Educatif 1 (fr)</description>
 		<year>2002</year>
@@ -56,19 +68,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="sewer software educational disk 3 (19xx)(sewer software).st" size="737280" crc="d5fd7dfb" sha1="8686bb0cc1ffb0e008b2ce7a688fb28cc412a343"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="_fixme" supported="no">
-		<description>_FIXME_</description>
-		<year>????</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part1" interface="interface">
-			<feature name="part_id" value="A la Decouverte de la Terre (19xx)(Coktel Vision)(fr) &amp; QI Test (19xx)(Pressimage)(fr) &amp; Vie et Mort des Dinosaures (19xx)(Carraz Editions)(fr)"/>
-			<dataarea name="flop" size="819200">
-				<rom name="a la decouverte de la terre (19xx)(coktel vision)(fr) &amp; qi test (19xx)(pressimage)(fr) &amp; vie et mort des dinosaures .st" size="819200" crc="5235ff1c" sha1="be9a168b0481e52b2b7445590c311e2845c39e5e"/>
 			</dataarea>
 		</part>
 	</software>

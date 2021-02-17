@@ -98,6 +98,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="captainb_1" supported="no">
+		<description>Captain Blood (1988)(Ere)(Disk 2 of 2) &amp; Arkanoid II - Revenge of Doh (1988)(Imagine) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="925818">
+				<rom name="captain blood (1988)(ere)(disk 2 of 2) &amp; arkanoid ii - revenge of doh (1988)(imagine).stx" size="925818" crc="6a79f487" sha1="528cab1d33ca36596e6c291f2cb5a87715902df3"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="compilco" supported="no">
 		<description>Compil Codemasters 16bits</description>
 		<year>19??</year>
@@ -143,6 +155,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="crazycar" supported="no">
+		<description>Crazy Cars (1987)(Titus) &amp; Enduro Racer (1987)(Activision) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="937910">
+				<rom name="crazy cars (1987)(titus) &amp; enduro racer (1987)(activision).stx" size="937910" crc="086eadab" sha1="18f7f73ff1f8ebe6e076f6eb83d6804dc7f336ae"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="precious" supported="no">
 		<description>Precious Metal</description>
 		<year>19??</year>
@@ -180,6 +204,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="rampage" supported="no">
+		<description>Rampage (1986)(Activision) &amp; Wizball (1987)(Ocean) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="931924">
+				<rom name="rampage (1986)(activision) &amp; wizball (1987)(ocean).stx" size="931924" crc="94879aed" sha1="5557c9bee1d8b8cbd6ed787b2ae539db8f21f0cd"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="slaygon" supported="no">
 		<description>Slaygon</description>
 		<year>19??</year>
@@ -193,31 +229,12 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="_fixme" supported="no">
-		<description>_FIXME_</description>
+	<software name="slaygon_1" supported="no">
+		<description>Slaygon (19xx)(Microdeal)(Disk 2 of 2) &amp; Goldrunner (1987)(Microdeal) (compilation)</description>
 		<year>????</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="part1" interface="interface">
-			<feature name="part_id" value="Captain Blood (1988)(Ere)(Disk 2 of 2) &amp; Arkanoid II - Revenge of Doh (1988)(Imagine)"/>
-			<dataarea name="flop" size="925818">
-				<rom name="captain blood (1988)(ere)(disk 2 of 2) &amp; arkanoid ii - revenge of doh (1988)(imagine).stx" size="925818" crc="6a79f487" sha1="528cab1d33ca36596e6c291f2cb5a87715902df3"/>
-			</dataarea>
-		</part>
-		<part name="part2" interface="interface">
-			<feature name="part_id" value="Crazy Cars (1987)(Titus) &amp; Enduro Racer (1987)(Activision)"/>
-			<dataarea name="flop" size="937910">
-				<rom name="crazy cars (1987)(titus) &amp; enduro racer (1987)(activision).stx" size="937910" crc="086eadab" sha1="18f7f73ff1f8ebe6e076f6eb83d6804dc7f336ae"/>
-			</dataarea>
-		</part>
-		<part name="part3" interface="interface">
-			<feature name="part_id" value="Rampage (1986)(Activision) &amp; Wizball (1987)(Ocean)"/>
-			<dataarea name="flop" size="931924">
-				<rom name="rampage (1986)(activision) &amp; wizball (1987)(ocean).stx" size="931924" crc="94879aed" sha1="5557c9bee1d8b8cbd6ed787b2ae539db8f21f0cd"/>
-			</dataarea>
-		</part>
-		<part name="part4" interface="interface">
-			<feature name="part_id" value="Slaygon (19xx)(Microdeal)(Disk 2 of 2) &amp; Goldrunner (1987)(Microdeal)"/>
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="883844">
 				<rom name="slaygon (19xx)(microdeal)(disk 2 of 2) &amp; goldrunner (1987)(microdeal).stx" size="883844" crc="5aff1eab" sha1="2d84722430fc1fa493533adc17e60d8e48b0ace6"/>
 			</dataarea>

@@ -49,6 +49,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="anticdis" supported="no">
+		<description>Antic Disassemble! (19xx)(Kibler, David) &amp; Greets (19xx)(-) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="antic disassemble (19xx)(kibler, david) &amp; greets (19xx)(-).atr" size="92176" crc="64f5aeb2" sha1="19dd1ce690b40ac4c26442b7e23317289f405c1f"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="apewarpc" supported="no">
 		<description>APE - Warp &amp; Copy2000 &amp; My Copier &amp; Remote</description>
 		<year>19??</year>
@@ -417,19 +429,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2 Side B"/>
 			<dataarea name="flop" size="92176">
 				<rom name="word magic rev 5 (19xx)(antic)(disk 2 of 2 side b).atr" size="92176" crc="a2944dff" sha1="98514e6ebd50692f7a556f6c919d1db89e936a5b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="_fixme" supported="no">
-		<description>_FIXME_</description>
-		<year>????</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part1" interface="interface">
-			<feature name="part_id" value="Antic Disassemble! (19xx)(Kibler, David) &amp; Greets (19xx)(-)"/>
-			<dataarea name="flop" size="92176">
-				<rom name="antic disassemble (19xx)(kibler, david) &amp; greets (19xx)(-).atr" size="92176" crc="64f5aeb2" sha1="19dd1ce690b40ac4c26442b7e23317289f405c1f"/>
 			</dataarea>
 		</part>
 	</software>

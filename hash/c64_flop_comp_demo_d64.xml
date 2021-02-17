@@ -1016,6 +1016,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="fantasti" supported="no">
+		<description>Fantastic Colors (1988)(X-Ample) &amp; Supernova (1988-03-30)(Omega 8) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="fantastic colors (1988)(x-ample) &amp; supernova (1988-03-30)(omega 8).d64" size="174848" crc="4642e575" sha1="d974b85cd0c1d0272a72df6cbf36a6d39ddea5ac"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="floppy20" supported="no">
 		<description>Floppy 2001 Demo Compo</description>
 		<year>2001</year>
@@ -1307,6 +1319,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="174848">
 				<rom name="kotze inside &amp; other stuff (1997)(metalvotze)[a2].d64" size="174848" crc="7980b71e" sha1="a6022f27dc4eff7ddf7d36a73b77da11783b495a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="masqueth" supported="no">
+		<description>Masque, The (1994)(Oxyron) &amp; Dein Zycrex (1994)(Antic) &amp; Fake (1994)(The Obsessed Maniacs) &amp; Bla Bla (1995)(Censor Design) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="masque, the (1994)(oxyron) &amp; dein zycrex (1994)(antic) &amp; fake (1994)(the obsessed maniacs) &amp; bla bla (1995)(cen.d64" size="174848" crc="5c7bf6c8" sha1="453914d537cbac606d265978f3edcf59b002e937"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="masqueth_1" supported="no">
+		<description>Masque, The (1994)(Oxyron) &amp; Dein Zycrex (1994)(Antic) &amp; Fake (1994)(The Obsessed Maniacs) &amp; Bla Bla (1995)(Censor Design)[a] (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="masque, the (1994)(oxyron) &amp; dein zycrex (1994)(antic) &amp; fake (1994)(the obsessed maniacs) &amp; bla bla (1995)(cen.d64" size="174848" crc="3c30e8f8" sha1="2f7c5b5c7a1918c5ceab59872f36b368b75cc824"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1734,31 +1770,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="zerky's disk (19xx)(front).d64" size="174848" crc="6fbc8e7f" sha1="b051d7dd6a2b380bd61c6952189d56c7fb129772"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="_fixme" supported="no">
-		<description>_FIXME_</description>
-		<year>????</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part1" interface="interface">
-			<feature name="part_id" value="Fantastic Colors (1988)(X-Ample) &amp; Supernova (1988-03-30)(Omega 8)"/>
-			<dataarea name="flop" size="174848">
-				<rom name="fantastic colors (1988)(x-ample) &amp; supernova (1988-03-30)(omega 8).d64" size="174848" crc="4642e575" sha1="d974b85cd0c1d0272a72df6cbf36a6d39ddea5ac"/>
-			</dataarea>
-		</part>
-		<part name="part2" interface="interface">
-			<feature name="part_id" value="Masque, The (1994)(Oxyron) &amp; Dein Zycrex (1994)(Antic) &amp; Fake (1994)(The Obsessed Maniacs) &amp; Bla Bla (1995)(Censor Design)"/>
-			<dataarea name="flop" size="174848">
-				<rom name="masque, the (1994)(oxyron) &amp; dein zycrex (1994)(antic) &amp; fake (1994)(the obsessed maniacs) &amp; bla bla (1995)(cen.d64" size="174848" crc="5c7bf6c8" sha1="453914d537cbac606d265978f3edcf59b002e937"/>
-			</dataarea>
-		</part>
-		<part name="part3" interface="interface">
-			<feature name="part_id" value="Masque, The (1994)(Oxyron) &amp; Dein Zycrex (1994)(Antic) &amp; Fake (1994)(The Obsessed Maniacs) &amp; Bla Bla (1995)(Censor Design)[a]"/>
-			<dataarea name="flop" size="174848">
-				<rom name="masque, the (1994)(oxyron) &amp; dein zycrex (1994)(antic) &amp; fake (1994)(the obsessed maniacs) &amp; bla bla (1995)(cen.d64" size="174848" crc="3c30e8f8" sha1="2f7c5b5c7a1918c5ceab59872f36b368b75cc824"/>
 			</dataarea>
 		</part>
 	</software>

@@ -4,7 +4,7 @@
 This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
 Credit goes to the TOSECDEV team for building this vast database over the years.
 -->
-<softwarelist name="amiga_tosec_demoav" description="Amiga TOSEC - Demos - Animations & Videos">
+<softwarelist name="amiga_tosec_demoav" description="Amiga TOSEC - Demos - Animations &amp; Videos">
 
 	<software name="copteran" supported="no">
 		<description>'copter Animation</description>
@@ -1765,6 +1765,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="bat2bat" supported="no">
+		<description>Bat-2-Bat (19xx)(Bob Fischer) &amp; Batman (19xx)(Schwartz, Eric W.) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="bat-2-bat (19xx)(bob fischer) &amp; batman (19xx)(schwartz, eric w.).adf" size="901120" crc="50255465" sha1="51ce8da95ac243f5db6819128d08f6ae70f0b76e"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="batmanth" supported="no">
 		<description>Batman - The Moviesetter Movie</description>
 		<year>1990</year>
@@ -2494,6 +2506,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="FFS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="bubblemen disk 84 - akira (199x)(bubblemen)[ffs].adf" size="901120" crc="a8d410f5" sha1="3be16d0072682a74194e0ee5e1f68715accd32fe"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bubbles" supported="no">
+		<description>Bubbles (19xx)(-) &amp; GhostPool (1988)(Dr. Gandalf) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="bubbles (19xx)(-) &amp; ghostpool (1988)(dr. gandalf).adf" size="901120" crc="a3a68ae2" sha1="89395013c620c4ac35184690e6f49dc69ce38f55"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9366,25 +9390,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2, Hacked BTTR"/>
 			<dataarea name="flop" size="901120">
 				<rom name="zynex 3 (1995-06-02)(dee, kenny)(disk 2 of 2)[h bttr].adf" size="901120" crc="1a343c85" sha1="5ee4eaf5811941f7f65a9c2502935a93d1e2c89b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="_fixme" supported="no">
-		<description>_FIXME_</description>
-		<year>????</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part1" interface="interface">
-			<feature name="part_id" value="Bat-2-Bat (19xx)(Bob Fischer) &amp; Batman (19xx)(Schwartz, Eric W.)"/>
-			<dataarea name="flop" size="901120">
-				<rom name="bat-2-bat (19xx)(bob fischer) &amp; batman (19xx)(schwartz, eric w.).adf" size="901120" crc="50255465" sha1="51ce8da95ac243f5db6819128d08f6ae70f0b76e"/>
-			</dataarea>
-		</part>
-		<part name="part2" interface="interface">
-			<feature name="part_id" value="Bubbles (19xx)(-) &amp; GhostPool (1988)(Dr. Gandalf)"/>
-			<dataarea name="flop" size="901120">
-				<rom name="bubbles (19xx)(-) &amp; ghostpool (1988)(dr. gandalf).adf" size="901120" crc="a3a68ae2" sha1="89395013c620c4ac35184690e6f49dc69ce38f55"/>
 			</dataarea>
 		</part>
 	</software>

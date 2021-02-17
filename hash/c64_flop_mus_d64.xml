@@ -20119,6 +20119,42 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="digitrac_2" supported="no">
+		<description>Digitrack #01 (1992-06-21)(Arcade) &amp; Digitrack #02 (1992-06-21)(Arcade) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="digitrack #01 (1992-06-21)(arcade) &amp; digitrack #02 (1992-06-21)(arcade).d64" size="174848" crc="d2fd6f53" sha1="b40a427bf82d52e28ecb59c97485241ece89bde6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="digitrac_3" supported="no">
+		<description>Digitrack #01 (1992-06-21)(Arcade) &amp; Digitrack #02 (1992-06-21)(Arcade)[a] (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="digitrack #01 (1992-06-21)(arcade) &amp; digitrack #02 (1992-06-21)(arcade)[a].d64" size="174848" crc="d52b6a2b" sha1="1fccc363e825d565a76f550e8d1fbee3a45b8e8c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="digitrac_4" supported="no">
+		<description>Digitrack #01 (1992-06-21)(Arcade) &amp; Digitrack #02 (1992-06-21)(Arcade)[a2] (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="digitrack #01 (1992-06-21)(arcade) &amp; digitrack #02 (1992-06-21)(arcade)[a2].d64" size="174848" crc="9f9dbc72" sha1="ef7e5ed1bfd0a37ca593e7cb48979ccb77d20dd2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="digitrac_5" supported="no">
 		<description>Digitrack #02 (1992-06-21)</description>
 		<year>1992</year>
 		<publisher>Arcade</publisher>
@@ -20130,7 +20166,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="digitrac_3" supported="no">
+	<software name="digitrac_6" supported="no">
 		<description>Digitrack #03 (1992-07-18)</description>
 		<year>1992</year>
 		<publisher>Arcade</publisher>
@@ -106711,39 +106747,21 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<year>????</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="part1" interface="interface">
+		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="(B)art Zax #001 (1992-09-28)(Collision)"/>
-			<dataarea name="flop" size="174848">
+			<dataarea name="rom" size="174848">
 				<rom name="(b)art zax #001 (1992-09-28)(collision).d64" size="174848" crc="b9210628" sha1="e93868354a4b6f19db918d21917513e004eea606"/>
 			</dataarea>
 		</part>
-		<part name="part2" interface="interface">
+		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="(B)art Zax #001 (1992-09-28)(Collision)[a]"/>
-			<dataarea name="flop" size="174848">
+			<dataarea name="rom" size="174848">
 				<rom name="(b)art zax #001 (1992-09-28)(collision)[a].d64" size="174848" crc="7f8f3589" sha1="9d95e0ac783aab98e70f94b70c0fab0a13f9b859"/>
 			</dataarea>
 		</part>
-		<part name="part3" interface="interface">
-			<feature name="part_id" value="Digitrack #01 (1992-06-21)(Arcade) &amp; Digitrack #02 (1992-06-21)(Arcade)"/>
-			<dataarea name="flop" size="174848">
-				<rom name="digitrack #01 (1992-06-21)(arcade) &amp; digitrack #02 (1992-06-21)(arcade).d64" size="174848" crc="d2fd6f53" sha1="b40a427bf82d52e28ecb59c97485241ece89bde6"/>
-			</dataarea>
-		</part>
-		<part name="part4" interface="interface">
-			<feature name="part_id" value="Digitrack #01 (1992-06-21)(Arcade) &amp; Digitrack #02 (1992-06-21)(Arcade)[a]"/>
-			<dataarea name="flop" size="174848">
-				<rom name="digitrack #01 (1992-06-21)(arcade) &amp; digitrack #02 (1992-06-21)(arcade)[a].d64" size="174848" crc="d52b6a2b" sha1="1fccc363e825d565a76f550e8d1fbee3a45b8e8c"/>
-			</dataarea>
-		</part>
-		<part name="part5" interface="interface">
-			<feature name="part_id" value="Digitrack #01 (1992-06-21)(Arcade) &amp; Digitrack #02 (1992-06-21)(Arcade)[a2]"/>
-			<dataarea name="flop" size="174848">
-				<rom name="digitrack #01 (1992-06-21)(arcade) &amp; digitrack #02 (1992-06-21)(arcade)[a2].d64" size="174848" crc="9f9dbc72" sha1="ef7e5ed1bfd0a37ca593e7cb48979ccb77d20dd2"/>
-			</dataarea>
-		</part>
-		<part name="part6" interface="interface">
+		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="J(46) - SIDWAVE 30 Years Anniversary Music Disk (2017-07-14)(SIDWAVE)"/>
-			<dataarea name="flop" size="174848">
+			<dataarea name="rom" size="174848">
 				<rom name="j(46) - sidwave 30 years anniversary music disk (2017-07-14)(sidwave).d64" size="174848" crc="5c18d77f" sha1="a3f4237779b7b83fd85e2164837345e1c67b1c96"/>
 			</dataarea>
 		</part>
