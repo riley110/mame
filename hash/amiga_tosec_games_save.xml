@@ -933,7 +933,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="kingsque_1" supported="no">
-		<description>King's Quest VI - Gone Heir Today Tomorrow</description>
+		<description>King's Quest VI - Heir Today, Gone Tomorrow</description>
 		<year>1994</year>
 		<publisher>Sierra</publisher>
 
@@ -1254,8 +1254,21 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="theshado" supported="no">
+		<description>The Shadows of Sergoth (Playable Demo, 2020-09-16)</description>
+		<year>2020</year>
+		<publisher>Double Sided Games</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="save disk"/>
+			<dataarea name="flop" size="901120">
+				<rom name="shadows of sergoth, the (demo-playable) (2020-09-16)(double sided games)[save disk].adf" size="901120" crc="6dbc9982" sha1="842e511fe401934c155e2b47bcea4e1680d54976"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="stablema" supported="no">
-		<description>Stable Masters II - 96 Season Update</description>
+		<description>Stable Masters II - 96 Season Update (v3.4)</description>
 		<year>1996</year>
 		<publisher>ESP</publisher>
 

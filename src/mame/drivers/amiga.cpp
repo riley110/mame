@@ -1669,6 +1669,7 @@ void amiga_state::amiga_base(machine_config &config)
     SOFTWARE_LIST(config, "tosec_pd_bpd").set_original("amiga_tosec_pd_bpd");
     SOFTWARE_LIST(config, "tosec_pd_bsk").set_original("amiga_tosec_pd_bsk");
     SOFTWARE_LIST(config, "tosec_pd_cactus").set_original("amiga_tosec_pd_cactus");
+    SOFTWARE_LIST(config, "tosec_pd_camelot").set_original("amiga_tosec_pd_camelot");
     SOFTWARE_LIST(config, "tosec_pd_dnh").set_original("amiga_tosec_pd_dnh");
     SOFTWARE_LIST(config, "tosec_pd_fish").set_original("amiga_tosec_pd_fish");
     SOFTWARE_LIST(config, "tosec_pd_franz").set_original("amiga_tosec_pd_franz");

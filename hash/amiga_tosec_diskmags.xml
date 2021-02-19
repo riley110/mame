@@ -1701,7 +1701,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="amigacod_33" supported="no">
-		<description>Amiga Coders Club - Special - Assembler (1991-06, Licenceware)</description>
+		<description>Amiga Coders Club - Special - Assembler (v1.00, 1991-06, Licenceware)</description>
 		<year>1991</year>
 		<publisher>Amiga Coders Club - Amiganuts United - Seasoft Computing</publisher>
 
@@ -5684,6 +5684,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="beginner" supported="no">
+		<description>Beginners Guide to Fishing (1996-12, Shareware)</description>
+		<year>1996</year>
+		<publisher>Wayne Howes</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="beginners guide to fishing (1996-12)(howes, wayne)(sw).adf" size="901120" crc="89be200c" sha1="06ef8c2103fa8b31519bf80b1e9d64deef16d220"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="beretiss" supported="no">
 		<description>Beret - Issue 0.5% (pl, 1998-01)</description>
 		<year>1998</year>
@@ -8510,6 +8522,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="cyberpun" supported="no">
+		<description>Cyberpunk Now! - Issue 5</description>
+		<year>1995</year>
+		<publisher>Asgard Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="cyberpunk now - issue 5 (1995)(asgard software)(disk 1 of 2).adf" size="901120" crc="3fd202cc" sha1="2a3476e18bf105fe588b8ec107e79eb72d2e7c48"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="cyberpunk now - issue 5 (1995)(asgard software)(disk 2 of 2).adf" size="901120" crc="2fb8b782" sha1="a5643eb7dad461dfb8a2c46d062d64116d3c01ca"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="discdigi" supported="no">
 		<description>D.I.S.C. - Digital Information Service for Computer-freaks - Issue 01 (1990-01)</description>
 		<year>1990</year>
@@ -10539,14 +10570,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="fenomena" supported="no">
-		<description>Fenomena - Issue 1 (AGA)</description>
+		<description>Fenomena - Issue 1 (1997-07)</description>
 		<year>1997</year>
-		<publisher>The Hang-On Crew</publisher>
+		<publisher>Hang-On</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad checksum, WB"/>
 			<dataarea name="flop" size="901120">
-				<rom name="fenomena - issue 1 (1997)(hang-on crew, the)(aga)[b checksum][wb].adf" size="901120" crc="6b5415a0" sha1="655792a1e5befde9e93f5253c0df20ce6c852392" status="baddump"/>
+				<rom name="fenomena - issue 1 (1997-07)(hang-on).adf" size="901120" crc="fe5c7fa9" sha1="825f864969335eae88f5e6c1ef2eca86139e6daa"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked The Scene Archives, WB, FFS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="fenomena - issue 1 (1997-07)(hang-on)[h the scene archives][wb, ffs].adf" size="901120" crc="6b5415a0" sha1="655792a1e5befde9e93f5253c0df20ce6c852392"/>
 			</dataarea>
 		</part>
 	</software>
@@ -10900,15 +10936,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="fourth dimension - issue 4 (1990-10-10)(cryptoburners)[h warlocks].adf" size="901120" crc="49ec476c" sha1="a90f415cfd0f6fe6823ecdcc1e65e737cfb811b5"/>
+				<rom name="fourth dimension - issue 4 (1990-10-10)(cryptoburners)[h warlock].adf" size="901120" crc="49ec476c" sha1="a90f415cfd0f6fe6823ecdcc1e65e737cfb811b5"/>
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks, Modified bamcopy"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="fourth dimension - issue 4 (1990-10-10)(cryptoburners)[h warlocks][m bamcopy].adf" size="901120" crc="092d710b" sha1="ae117827e4a181ea24308a90ef0fda8e941a6d31"/>
+				<rom name="fourth dimension - issue 4 (1990-10-10)(cryptoburners)[h warlock][m bamcopy].adf" size="901120" crc="092d710b" sha1="ae117827e4a181ea24308a90ef0fda8e941a6d31"/>
 			</dataarea>
 		</part>
 		<part name="flop6" interface="floppy_3_5">
@@ -11052,25 +11088,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="freedom crack - issue 02 (1990-07-20)(savage).adf" size="901120" crc="46a224a7" sha1="1dd677d9b9adb1c0f1fa5eb6180a6031b241e143"/>
+				<rom name="freedom crack - issue 02 (1990-07-20)(savage).adf" size="901120" crc="b44f522a" sha1="54b744c78675c9dae23130ad80240ef0a01833ce"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Modified doscopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="freedom crack - issue 02 (1990-07-20)(savage)[a].adf" size="901120" crc="b44f522a" sha1="54b744c78675c9dae23130ad80240ef0a01833ce"/>
+				<rom name="freedom crack - issue 02 (1990-07-20)(savage)[m doscopy].adf" size="901120" crc="46a224a7" sha1="1dd677d9b9adb1c0f1fa5eb6180a6031b241e143"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="freedomc_1" supported="no">
-		<description>Freedom Crack - Issue 04</description>
-		<year>199?</year>
+		<description>Freedom Crack - Issue 04 (1990-12-26)</description>
+		<year>1990</year>
 		<publisher>Amaze</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="freedom crack - issue 04 (199x)(amaze).adf" size="901120" crc="888d3ed6" sha1="3fc62cd960c621191e5397b590641ce3d44648ca"/>
+				<rom name="freedom crack - issue 04 (1990-12-26)(amaze).adf" size="901120" crc="888d3ed6" sha1="3fc62cd960c621191e5397b590641ce3d44648ca"/>
 			</dataarea>
 		</part>
 	</software>
@@ -13152,6 +13188,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="gurumedi" supported="no">
+		<description>Guru Meditation vol.6 (de)</description>
+		<year>1992</year>
+		<publisher>Frozen Bytes</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="guru meditation vol.6 (1992)(frozen bytes)(de).adf" size="901120" crc="60da20f1" sha1="fa41620295517e1e37cabbd475537935fcca5dbc"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="hackmagi" supported="no">
 		<description>Hack-Mag - Issue 1 (1990-08-22, Public Domain)</description>
 		<year>1990</year>
@@ -14236,25 +14284,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="itsmenta" supported="no">
-		<description>Its Mental II (1990-01-29)</description>
+		<description>It's Mental II - Yesh! It's Mental Too! (1990-01-29)</description>
 		<year>1990</year>
 		<publisher>British Swapping Syndicate</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="its mental ii (1990-01-29)(british swapping syndicate).adf" size="901120" crc="87634e92" sha1="a9202e69c73521c9e3b8e96a2bf3f6bf3121e4f4"/>
+				<rom name="it's mental ii - yesh it's mental too (1990-01-29)(british swapping syndicate).adf" size="901120" crc="87634e92" sha1="a9202e69c73521c9e3b8e96a2bf3f6bf3121e4f4"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="itsmenta_1" supported="no">
-		<description>Its Mental III (1991-02-18)</description>
+		<description>It's Mental III (1991-02-18)</description>
 		<year>1991</year>
 		<publisher>British Swapping Syndicate</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="its mental iii (1991-02-18)(british swapping syndicate).adf" size="901120" crc="fd5db5da" sha1="dae3d4fc70605add6dd1d5cc5f2d27108decc50a"/>
+				<rom name="it's mental iii (1991-02-18)(british swapping syndicate).adf" size="901120" crc="fd5db5da" sha1="dae3d4fc70605add6dd1d5cc5f2d27108decc50a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -14309,8 +14357,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong" supported="no">
-		<description>Snel Jong &amp; Wild #02 (nl)</description>
+	<software name="jongsnel" supported="no">
+		<description>Jong, Snel &amp; Wild #02 (nl)</description>
 		<year>1993</year>
 		<publisher>Amiga Computer Groep - Da Bagger Production Posse</publisher>
 
@@ -14321,8 +14369,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong_1" supported="no">
-		<description>Snel Jong &amp; Wild #05 (nl, 1993-09-11)</description>
+	<software name="jongsnel_1" supported="no">
+		<description>Jong, Snel &amp; Wild #05 (nl, 1993-09-11)</description>
 		<year>1993</year>
 		<publisher>Da Bagger Production Posse</publisher>
 
@@ -14333,8 +14381,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong_2" supported="no">
-		<description>Snel Jong &amp; Wild #06 (nl, 1993-10-09)</description>
+	<software name="jongsnel_2" supported="no">
+		<description>Jong, Snel &amp; Wild #06 (nl, 1993-10-09)</description>
 		<year>1993</year>
 		<publisher>Da Bagger Production Posse</publisher>
 
@@ -14345,8 +14393,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong_3" supported="no">
-		<description>Snel Jong &amp; Wild #07 (nl, 1993-11-13)</description>
+	<software name="jongsnel_3" supported="no">
+		<description>Jong, Snel &amp; Wild #07 (nl, 1993-11-13)</description>
 		<year>1993</year>
 		<publisher>Da Bagger Production Posse</publisher>
 
@@ -14357,8 +14405,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong_4" supported="no">
-		<description>Snel Jong &amp; Wild #08 (nl, 1993-12-11)</description>
+	<software name="jongsnel_4" supported="no">
+		<description>Jong, Snel &amp; Wild #08 (nl, 1993-12-11)</description>
 		<year>1993</year>
 		<publisher>Da Bagger Production Posse</publisher>
 
@@ -14369,8 +14417,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong_5" supported="no">
-		<description>Snel Jong &amp; Wild #09 (nl, 1994-01-08)</description>
+	<software name="jongsnel_5" supported="no">
+		<description>Jong, Snel &amp; Wild #09 (nl, 1994-01-08)</description>
 		<year>1994</year>
 		<publisher>Da Bagger Production Posse</publisher>
 
@@ -14381,8 +14429,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong_6" supported="no">
-		<description>Snel Jong &amp; Wild #10 (nl, 1994-02-12)</description>
+	<software name="jongsnel_6" supported="no">
+		<description>Jong, Snel &amp; Wild #10 (nl, 1994-02-12)</description>
 		<year>1994</year>
 		<publisher>Da Bagger Production Posse</publisher>
 
@@ -14394,8 +14442,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong_7" supported="no">
-		<description>Snel Jong &amp; Wild #12 (1994-04-07)</description>
+	<software name="jongsnel_7" supported="no">
+		<description>Jong, Snel &amp; Wild #12 (1994-04-07)</description>
 		<year>1994</year>
 		<publisher>Da Bagger Production Posse</publisher>
 
@@ -14413,8 +14461,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong_8" supported="no">
-		<description>Snel Jong &amp; Wild #13 (nl, 1994-05-07)</description>
+	<software name="jongsnel_8" supported="no">
+		<description>Jong, Snel &amp; Wild #13 (nl, 1994-05-07)</description>
 		<year>1994</year>
 		<publisher>Da Bagger Production Posse</publisher>
 
@@ -14426,8 +14474,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong_9" supported="no">
-		<description>Snel Jong &amp; Wild #15 (nl, 1994-07-07)</description>
+	<software name="jongsnel_9" supported="no">
+		<description>Jong, Snel &amp; Wild #15 (nl, 1994-07-07)</description>
 		<year>1994</year>
 		<publisher>Da Bagger Production Posse</publisher>
 
@@ -14439,8 +14487,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong_10" supported="no">
-		<description>Snel Jong &amp; Wild #16 (nl, 1994-08-07)</description>
+	<software name="jongsnel_10" supported="no">
+		<description>Jong, Snel &amp; Wild #16 (nl, 1994-08-07)</description>
 		<year>1994</year>
 		<publisher>Da Bagger Production Posse</publisher>
 
@@ -14458,8 +14506,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong_11" supported="no">
-		<description>Snel Jong &amp; Wild #17 (nl, 1994-10-06)</description>
+	<software name="jongsnel_11" supported="no">
+		<description>Jong, Snel &amp; Wild #17 (nl, 1994-10-06)</description>
 		<year>1994</year>
 		<publisher>Da Bagger Production Posse</publisher>
 
@@ -14471,8 +14519,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong_12" supported="no">
-		<description>Snel Jong &amp; Wild #18 (nl, 1994-11-07)</description>
+	<software name="jongsnel_12" supported="no">
+		<description>Jong, Snel &amp; Wild #18 (nl, 1994-11-07)</description>
 		<year>1994</year>
 		<publisher>Da Bagger Production Posse</publisher>
 
@@ -14484,8 +14532,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong_13" supported="no">
-		<description>Snel Jong &amp; Wild #19 (nl, 1994-12-07)</description>
+	<software name="jongsnel_13" supported="no">
+		<description>Jong, Snel &amp; Wild #19 (nl, 1994-12-07)</description>
 		<year>1994</year>
 		<publisher>Da Bagger Production Posse</publisher>
 
@@ -14497,8 +14545,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sneljong_14" supported="no">
-		<description>Snel Jong &amp; Wild #20 (nl, 1995-01-07)</description>
+	<software name="jongsnel_14" supported="no">
+		<description>Jong, Snel &amp; Wild #20 (nl, 1995-01-07)</description>
 		<year>1995</year>
 		<publisher>Da Bagger Production Posse</publisher>
 
@@ -15093,9 +15141,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="live - issue 3 (1993-11-23)(dream dealers)[h warlocks adf archive].adf" size="901120" crc="87852631" sha1="9d17a0052479ca7ad1fa4856a6b108e5f9499667"/>
+				<rom name="live - issue 3 (1993-11-23)(dream dealers)[h warlock].adf" size="901120" crc="87852631" sha1="9d17a0052479ca7ad1fa4856a6b108e5f9499667"/>
 			</dataarea>
 		</part>
 	</software>
@@ -16768,26 +16816,26 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="newsonto" supported="no">
-		<description>News On Tour - Issue 2 (de, 1989-08)</description>
+		<description>News on Tour - Issue 2 (de, 1989-08)</description>
 		<year>1989</year>
 		<publisher>Red Sector - Powerslaves - Scoopex</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="news on tour - issue 2 (1989-08)(red sector - powerslaves - scoopex)(de)[h warlocks].adf" size="901120" crc="ec7a003d" sha1="19cbcf26db10df4d95aa98b1773206e2839dad15"/>
+				<rom name="news on tour - issue 2 (1989-08)(red sector - powerslaves - scoopex)(de)[h warlock].adf" size="901120" crc="ec7a003d" sha1="19cbcf26db10df4d95aa98b1773206e2839dad15"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks, Modified bamcopy"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="news on tour - issue 2 (1989-08)(red sector - powerslaves - scoopex)(de)[h warlocks][m bamcopy].adf" size="901120" crc="c7db73b3" sha1="7ce740e8a07e25e761b7db1841597e09e34f29de"/>
+				<rom name="news on tour - issue 2 (1989-08)(red sector - powerslaves - scoopex)(de)[h warlock][m bamcopy].adf" size="901120" crc="c7db73b3" sha1="7ce740e8a07e25e761b7db1841597e09e34f29de"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="newsonto_1" supported="no">
-		<description>News On Tour - Issue 5 (1990-01-20)</description>
+		<description>News on Tour - Issue 5 (1990-01-20)</description>
 		<year>1990</year>
 		<publisher>Red Sector - Powerslaves - Scoopex</publisher>
 
@@ -16800,7 +16848,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="newsonto_2" supported="no">
-		<description>News On Tour - Issue 6 (1990-03-17)</description>
+		<description>News on Tour - Issue 6 (1990-03-17)</description>
 		<year>1990</year>
 		<publisher>Red Sector - Powerslaves</publisher>
 
@@ -16812,7 +16860,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="newsonto_3" supported="no">
-		<description>News On Tour - Issue 7 (1990-05-19)</description>
+		<description>News on Tour - Issue 7 (1990-05-19)</description>
 		<year>1990</year>
 		<publisher>Red Sector - Paradox</publisher>
 
@@ -17877,15 +17925,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 01 (1989-11-16)(crusaders)[h warlocks adf archive].adf" size="901120" crc="412394e2" sha1="ba60699364a6fa5e8eac0559651489f1aa1bcccd"/>
+				<rom name="official eurochart, the - issue 01 (1989-11-16)(crusaders)[h warlock].adf" size="901120" crc="412394e2" sha1="ba60699364a6fa5e8eac0559651489f1aa1bcccd"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 01 (1989-11-16)(crusaders)[h warlocks adf archive][a].adf" size="901120" crc="400de537" sha1="ee52ba33f1ab9086b01b048a540e3ea9662424c2"/>
+				<rom name="official eurochart, the - issue 01 (1989-11-16)(crusaders)[h warlock][m bamcopy].adf" size="901120" crc="400de537" sha1="ee52ba33f1ab9086b01b048a540e3ea9662424c2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -17901,15 +17949,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 02 (1990-01-01)(crusaders)[h warlocks adf archive].adf" size="901120" crc="5c34efb7" sha1="6056aec90324e750ce4ce22f018af6534348c2a0"/>
+				<rom name="official eurochart, the - issue 02 (1990-01-01)(crusaders)[h warlock].adf" size="901120" crc="5c34efb7" sha1="6056aec90324e750ce4ce22f018af6534348c2a0"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 02 (1990-01-01)(crusaders)[h warlocks adf archive][a].adf" size="901120" crc="d4902c05" sha1="d91e2fc5ef595c225ad15a523a7303f3536cc135"/>
+				<rom name="official eurochart, the - issue 02 (1990-01-01)(crusaders)[h warlock][m bamcopy].adf" size="901120" crc="d4902c05" sha1="d91e2fc5ef595c225ad15a523a7303f3536cc135"/>
 			</dataarea>
 		</part>
 	</software>
@@ -17925,15 +17973,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 03 (1990-03-01)(crusaders)[h warlocks adf archive].adf" size="901120" crc="2178a6af" sha1="f97a2f046bc6c7a518fd4571ac54ac369faf1e7c"/>
+				<rom name="official eurochart, the - issue 03 (1990-03-01)(crusaders)[h warlock].adf" size="901120" crc="2178a6af" sha1="f97a2f046bc6c7a518fd4571ac54ac369faf1e7c"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 03 (1990-03-01)(crusaders)[h warlocks adf archive][a].adf" size="901120" crc="16a375e5" sha1="71b242feba2085c74948da21bb795d2841fdcba7"/>
+				<rom name="official eurochart, the - issue 03 (1990-03-01)(crusaders)[h warlock][m bamcopy].adf" size="901120" crc="16a375e5" sha1="71b242feba2085c74948da21bb795d2841fdcba7"/>
 			</dataarea>
 		</part>
 	</software>
@@ -17949,15 +17997,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 04 (1990-05-01)(crusaders)[h warlocks adf archive].adf" size="901120" crc="c2e7ca88" sha1="989e05cd517d5dcc79dd2130b300b3bb4a7f59d1"/>
+				<rom name="official eurochart, the - issue 04 (1990-05-01)(crusaders)[h warlock].adf" size="901120" crc="c2e7ca88" sha1="989e05cd517d5dcc79dd2130b300b3bb4a7f59d1"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 04 (1990-05-01)(crusaders)[h warlocks adf archive][a].adf" size="901120" crc="7e39ed1d" sha1="b6a8a768fbffd6d8b936ed0281972a99d44e6c58"/>
+				<rom name="official eurochart, the - issue 04 (1990-05-01)(crusaders)[h warlock][m bamcopy].adf" size="901120" crc="7e39ed1d" sha1="b6a8a768fbffd6d8b936ed0281972a99d44e6c58"/>
 			</dataarea>
 		</part>
 	</software>
@@ -17969,188 +18017,194 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 05 (1990-07-01)(crusaders).adf" size="901120" crc="0f6567a8" sha1="06ecccf6b2f9744ee151687d4952fd05824c2ced"/>
+				<rom name="official eurochart, the - issue 05 (1990-07-01)(crusaders).adf" size="901120" crc="c5166c23" sha1="24c2da0549278d84b3fe161a0463c39ebb2c7e68"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Hacked Scene Archives"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 05 (1990-07-01)(crusaders)[a].adf" size="901120" crc="c5166c23" sha1="24c2da0549278d84b3fe161a0463c39ebb2c7e68"/>
+				<rom name="official eurochart, the - issue 05 (1990-07-01)(crusaders)[h scene archives].adf" size="901120" crc="0f6567a8" sha1="06ecccf6b2f9744ee151687d4952fd05824c2ced"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 05 (1990-07-01)(crusaders)[h warlocks adf archive].adf" size="901120" crc="334bfb52" sha1="21ab8a3374fbe9858dbc0e9bd98a238cd3be351c"/>
+				<rom name="official eurochart, the - issue 05 (1990-07-01)(crusaders)[h warlock].adf" size="901120" crc="334bfb52" sha1="21ab8a3374fbe9858dbc0e9bd98a238cd3be351c"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 05 (1990-07-01)(crusaders)[h warlocks adf archive][a].adf" size="901120" crc="876ceab9" sha1="6bdb7be41a01c0258843afde87cdc8a4bb370e51"/>
+				<rom name="official eurochart, the - issue 05 (1990-07-01)(crusaders)[h warlock][m bamcopy].adf" size="901120" crc="876ceab9" sha1="6bdb7be41a01c0258843afde87cdc8a4bb370e51"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="theoffic_6" supported="no">
-		<description>The Official Eurochart - Issue 06 (1990-09)</description>
+		<description>The Official Eurochart - Issue 06 (1990-09-03)</description>
 		<year>1990</year>
 		<publisher>Crusaders</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 06 (1990-09)(crusaders).adf" size="901120" crc="1b15489a" sha1="b33dd58736ef1d4f3e22006e0dbec0be9c08523d"/>
+				<rom name="official eurochart, the - issue 06 (1990-09-03)(crusaders).adf" size="901120" crc="1b15489a" sha1="b33dd58736ef1d4f3e22006e0dbec0be9c08523d"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 06 (1990-09)(crusaders)[h warlocks adf archive].adf" size="901120" crc="8d612cfa" sha1="1d8f16eeabe57605eedcd919a02deacb46ceddcf"/>
+				<rom name="official eurochart, the - issue 06 (1990-09-03)(crusaders)[h warlock].adf" size="901120" crc="8d612cfa" sha1="1d8f16eeabe57605eedcd919a02deacb46ceddcf"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 06 (1990-09)(crusaders)[h warlocks adf archive][a].adf" size="901120" crc="5e85f027" sha1="fc4c5ebe4c6274dd8533f457f6b6e047e422f10d"/>
+				<rom name="official eurochart, the - issue 06 (1990-09-03)(crusaders)[h warlock][m bamcopy].adf" size="901120" crc="5e85f027" sha1="fc4c5ebe4c6274dd8533f457f6b6e047e422f10d"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="theoffic_7" supported="no">
-		<description>The Official Eurochart - Issue 07 (1990-11)</description>
+		<description>The Official Eurochart - Issue 07 (1990-10-30)</description>
 		<year>1990</year>
 		<publisher>Crusaders</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 07 (1990-11)(crusaders)[h warlocks adf archive].adf" size="901120" crc="c2d6b8bb" sha1="794de52e8fac85cc96ffb2a5a16c2cd7cebb0875"/>
+				<rom name="official eurochart, the - issue 07 (1990-10-30)(crusaders)[h warlock].adf" size="901120" crc="c2d6b8bb" sha1="794de52e8fac85cc96ffb2a5a16c2cd7cebb0875"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 07 (1990-11)(crusaders)[h warlocks adf archive][a].adf" size="901120" crc="5f52eae6" sha1="d6b08fc3710122ea48d32a51600ecf96a58f78c3"/>
+				<rom name="official eurochart, the - issue 07 (1990-10-30)(crusaders)[h warlock][m bamcopy].adf" size="901120" crc="5f52eae6" sha1="d6b08fc3710122ea48d32a51600ecf96a58f78c3"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="theoffic_8" supported="no">
-		<description>The Official Eurochart - Issue 08 (1991-01-06)</description>
-		<year>1991</year>
+		<description>The Official Eurochart - Issue 08 (1990-12-27)</description>
+		<year>1990</year>
 		<publisher>Crusaders</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 08 (1991-01-06)(crusaders).adf" size="901120" crc="025f7fb5" sha1="d69c563160920c8c848f20cb793d854bb1dfb2a4"/>
+				<rom name="official eurochart, the - issue 08 (1990-12-27)(crusaders).adf" size="901120" crc="156891e3" sha1="b34185eee09d96ac6ef7c375a4654f615187a76d"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 2"/>
+			<feature name="part_id" value="Alt introtxt disabled"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 08 (1991-01-06)(crusaders)[a2].adf" size="901120" crc="c1784261" sha1="ca3711e4751859d098680bdf9d171e902f3c9951"/>
+				<rom name="official eurochart, the - issue 08 (1990-12-27)(crusaders)[a introtxt disabled].adf" size="901120" crc="c1784261" sha1="ca3711e4751859d098680bdf9d171e902f3c9951"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 3"/>
+			<feature name="part_id" value="Alt rebuilt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 08 (1991-01-06)(crusaders)[a3].adf" size="901120" crc="2dee0720" sha1="858008c43a1916d24e4c6637cfdcfef1f5f5de46"/>
+				<rom name="official eurochart, the - issue 08 (1990-12-27)(crusaders)[a rebuilt].adf" size="901120" crc="025f7fb5" sha1="d69c563160920c8c848f20cb793d854bb1dfb2a4"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt virus removed"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 08 (1991-01-06)(crusaders)[a].adf" size="901120" crc="adea6ab2" sha1="c6e19785b1b2f06306edc8ae7c1290f7209f2784"/>
+				<rom name="official eurochart, the - issue 08 (1990-12-27)(crusaders)[a virus removed].adf" size="901120" crc="c2637bf7" sha1="463dbd56edd738bf5130dbf9b47b5a864e43bfac"/>
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_3_5">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 08 (1991-01-06)(crusaders)[b].adf" size="901120" crc="cdcafb02" sha1="719ad3cb70c1d5dffc0e1b67fd2fe3d591b9b6fa" status="baddump"/>
+				<rom name="official eurochart, the - issue 08 (1990-12-27)(crusaders)[a].adf" size="901120" crc="2dee0720" sha1="858008c43a1916d24e4c6637cfdcfef1f5f5de46"/>
 			</dataarea>
 		</part>
 		<part name="flop6" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Bad bootblock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 08 (1991-01-06)(crusaders)[h warlocks adf archive].adf" size="901120" crc="7fd7fe14" sha1="d4ba068a8a0df981e80ee3700e1ac7215547543e"/>
+				<rom name="official eurochart, the - issue 08 (1990-12-27)(crusaders)[b bootblock].adf" size="901120" crc="cdcafb02" sha1="719ad3cb70c1d5dffc0e1b67fd2fe3d591b9b6fa" status="baddump"/>
 			</dataarea>
 		</part>
 		<part name="flop7" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 08 (1991-01-06)(crusaders)[h warlocks adf archive][a].adf" size="901120" crc="a00690a7" sha1="c65bbb8e452e6bd9f04a41094397cfd28e4393f3"/>
+				<rom name="official eurochart, the - issue 08 (1990-12-27)(crusaders)[h warlock].adf" size="901120" crc="7fd7fe14" sha1="d4ba068a8a0df981e80ee3700e1ac7215547543e"/>
 			</dataarea>
 		</part>
 		<part name="flop8" interface="floppy_3_5">
-			<feature name="part_id" value="Virus BGS9"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 08 (1991-01-06)(crusaders)[v bgs9].adf" size="901120" crc="c2637bf7" sha1="463dbd56edd738bf5130dbf9b47b5a864e43bfac" status="baddump"/>
+				<rom name="official eurochart, the - issue 08 (1990-12-27)(crusaders)[h warlock][m bamcopy].adf" size="901120" crc="a00690a7" sha1="c65bbb8e452e6bd9f04a41094397cfd28e4393f3"/>
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_3_5">
+			<feature name="part_id" value="Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="official eurochart, the - issue 08 (1990-12-27)(crusaders)[m bamcopy].adf" size="901120" crc="adea6ab2" sha1="c6e19785b1b2f06306edc8ae7c1290f7209f2784"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="theoffic_9" supported="no">
-		<description>The Official Eurochart - Issue 09 (1991-03)</description>
+		<description>The Official Eurochart - Issue 09 (1991-02-28)</description>
 		<year>1991</year>
 		<publisher>Crusaders</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 09 (1991-03)(crusaders).adf" size="901120" crc="7ac7fbe3" sha1="1a36f7d47ed8b98a3891ac9373fbf62708127685"/>
+				<rom name="official eurochart, the - issue 09 (1991-02-28)(crusaders).adf" size="901120" crc="ddadc0d5" sha1="1e12da41152e9c731ca292c52796caa0ca96e67f"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 2"/>
+			<feature name="part_id" value="Alt bootblock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 09 (1991-03)(crusaders)[a2].adf" size="901120" crc="ddadc0d5" sha1="1e12da41152e9c731ca292c52796caa0ca96e67f"/>
+				<rom name="official eurochart, the - issue 09 (1991-02-28)(crusaders)[a bootblock].adf" size="901120" crc="7ac7fbe3" sha1="1a36f7d47ed8b98a3891ac9373fbf62708127685"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 09 (1991-03)(crusaders)[a].adf" size="901120" crc="48676ac7" sha1="447699338aac40dccb345bba669205af1a66cf7d"/>
+				<rom name="official eurochart, the - issue 09 (1991-02-28)(crusaders)[h warlock].adf" size="901120" crc="ce45d059" sha1="9f26e0c5adabd628bbdb99fdbbdc200f4a519b83"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 09 (1991-03)(crusaders)[h warlocks adf archive].adf" size="901120" crc="ce45d059" sha1="9f26e0c5adabd628bbdb99fdbbdc200f4a519b83"/>
+				<rom name="official eurochart, the - issue 09 (1991-02-28)(crusaders)[h warlock][m bamcopy].adf" size="901120" crc="969a7aee" sha1="3b84c749edb19ad6fea9f76f853ba1543374fed3"/>
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Modified Zoom"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 09 (1991-03)(crusaders)[h warlocks adf archive][a].adf" size="901120" crc="969a7aee" sha1="3b84c749edb19ad6fea9f76f853ba1543374fed3"/>
+				<rom name="official eurochart, the - issue 09 (1991-02-28)(crusaders)[m zoom].adf" size="901120" crc="48676ac7" sha1="447699338aac40dccb345bba669205af1a66cf7d"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="theoffic_10" supported="no">
-		<description>The Official Eurochart - Issue 10 (1991-05)</description>
+		<description>The Official Eurochart - Issue 10 (1991-05-01)</description>
 		<year>1991</year>
 		<publisher>Crusaders</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 10 (1991-05)(crusaders).adf" size="901120" crc="6a8e62ee" sha1="e1ff8899902e8d51dadaf8dd59a135e34de172dc"/>
+				<rom name="official eurochart, the - issue 10 (1991-05-01)(crusaders).adf" size="901120" crc="72cf9e02" sha1="1798764db5ac9dde32b8f9e510db1bfbd75cfd2b"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Bad corrupt files"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 10 (1991-05)(crusaders)[a].adf" size="901120" crc="72cf9e02" sha1="1798764db5ac9dde32b8f9e510db1bfbd75cfd2b"/>
+				<rom name="official eurochart, the - issue 10 (1991-05-01)(crusaders)[b corrupt files].adf" size="901120" crc="6a8e62ee" sha1="e1ff8899902e8d51dadaf8dd59a135e34de172dc" status="baddump"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 10 (1991-05)(crusaders)[h warlocks adf archive].adf" size="901120" crc="1a0fda10" sha1="73929e2e826f7b993a2d63d97e3b961a1c06bcd8"/>
+				<rom name="official eurochart, the - issue 10 (1991-05-01)(crusaders)[h warlock].adf" size="901120" crc="1a0fda10" sha1="73929e2e826f7b993a2d63d97e3b961a1c06bcd8"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 10 (1991-05)(crusaders)[h warlocks adf archive][a].adf" size="901120" crc="bbfe4774" sha1="ec728aa49d47d3b9fe490c0d1e67fd93d2796252"/>
+				<rom name="official eurochart, the - issue 10 (1991-05-01)(crusaders)[h warlock][m bamcopy].adf" size="901120" crc="bbfe4774" sha1="ec728aa49d47d3b9fe490c0d1e67fd93d2796252"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18172,15 +18226,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 11 (1991-07)(crusaders)[h warlocks adf archive].adf" size="901120" crc="079dccaf" sha1="4e4238655119a940b6df6afe2053f3dc52db822f"/>
+				<rom name="official eurochart, the - issue 11 (1991-07)(crusaders)[h warlock].adf" size="901120" crc="079dccaf" sha1="4e4238655119a940b6df6afe2053f3dc52db822f"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 11 (1991-07)(crusaders)[h warlocks adf archive][a].adf" size="901120" crc="a72d730c" sha1="36d9c76df133b5ae55d1e62e19d4121a6d454d2e"/>
+				<rom name="official eurochart, the - issue 11 (1991-07)(crusaders)[h warlock][a].adf" size="901120" crc="a72d730c" sha1="36d9c76df133b5ae55d1e62e19d4121a6d454d2e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18196,15 +18250,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 12 (1991-09)(crusaders)[h warlocks adf archive].adf" size="901120" crc="8d5cd4bb" sha1="0ff071dc1670914871027b1e20c81a3c7bf1825c"/>
+				<rom name="official eurochart, the - issue 12 (1991-09)(crusaders)[h warlock].adf" size="901120" crc="8d5cd4bb" sha1="0ff071dc1670914871027b1e20c81a3c7bf1825c"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 12 (1991-09)(crusaders)[h warlocks adf archive][a].adf" size="901120" crc="9f9119bd" sha1="ab871a901594a4baff38871c52b693f7c4e175ba"/>
+				<rom name="official eurochart, the - issue 12 (1991-09)(crusaders)[h warlock][a].adf" size="901120" crc="9f9119bd" sha1="ab871a901594a4baff38871c52b693f7c4e175ba"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18226,15 +18280,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 13 (1991-10-31)(crusaders)[h warlocks adf archive].adf" size="901120" crc="7c61f23d" sha1="c28560064f34d21206f84418db875f29464218fd"/>
+				<rom name="official eurochart, the - issue 13 (1991-10-31)(crusaders)[h warlock].adf" size="901120" crc="7c61f23d" sha1="c28560064f34d21206f84418db875f29464218fd"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 13 (1991-10-31)(crusaders)[h warlocks adf archive][a].adf" size="901120" crc="646f2c84" sha1="419088c52b0bf3d4a9b67786067a736583891877"/>
+				<rom name="official eurochart, the - issue 13 (1991-10-31)(crusaders)[h warlock][a].adf" size="901120" crc="646f2c84" sha1="419088c52b0bf3d4a9b67786067a736583891877"/>
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_3_5">
@@ -18262,15 +18316,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 14 (1992-01)(crusaders)[h warlocks adf archive].adf" size="901120" crc="976ddaa0" sha1="e894291d5fd2f112635a2030f1ae8034fcf5e979"/>
+				<rom name="official eurochart, the - issue 14 (1992-01)(crusaders)[h warlock].adf" size="901120" crc="976ddaa0" sha1="e894291d5fd2f112635a2030f1ae8034fcf5e979"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 14 (1992-01)(crusaders)[h warlocks adf archive][a].adf" size="901120" crc="3fa3d1f1" sha1="027418769ac995b5a1a85e2ea36671f8051b7cc0"/>
+				<rom name="official eurochart, the - issue 14 (1992-01)(crusaders)[h warlock][a].adf" size="901120" crc="3fa3d1f1" sha1="027418769ac995b5a1a85e2ea36671f8051b7cc0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18304,15 +18358,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Bad 2"/>
+			<feature name="part_id" value="Hacked Warlock, Bad 2"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 15 (1992-07)(static bytes)[h warlocks adf archive][b2].adf" size="901120" crc="f231f716" sha1="b9317f90ff625e4e196473712b902ac5439bc4ef" status="baddump"/>
+				<rom name="official eurochart, the - issue 15 (1992-07)(static bytes)[h warlock][b2].adf" size="901120" crc="f231f716" sha1="b9317f90ff625e4e196473712b902ac5439bc4ef" status="baddump"/>
 			</dataarea>
 		</part>
 		<part name="flop6" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Bad"/>
+			<feature name="part_id" value="Hacked Warlock, Bad"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 15 (1992-07)(static bytes)[h warlocks adf archive][b].adf" size="901120" crc="4daf1a87" sha1="bee7045c09009df179872e99b548b8ca624a146f" status="baddump"/>
+				<rom name="official eurochart, the - issue 15 (1992-07)(static bytes)[h warlock][b].adf" size="901120" crc="4daf1a87" sha1="bee7045c09009df179872e99b548b8ca624a146f" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18346,15 +18400,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 16 (1992-09)(static bytes)[h warlocks adf archive].adf" size="901120" crc="db7c7b1d" sha1="9619f97e9168894deaee17747c0aec5f27def281"/>
+				<rom name="official eurochart, the - issue 16 (1992-09)(static bytes)[h warlock].adf" size="901120" crc="db7c7b1d" sha1="9619f97e9168894deaee17747c0aec5f27def281"/>
 			</dataarea>
 		</part>
 		<part name="flop6" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 16 (1992-09)(static bytes)[h warlocks adf archive][a].adf" size="901120" crc="86c35f0d" sha1="c5a3724a380e375caf5620c10b7877f9021bea37"/>
+				<rom name="official eurochart, the - issue 16 (1992-09)(static bytes)[h warlock][a].adf" size="901120" crc="86c35f0d" sha1="c5a3724a380e375caf5620c10b7877f9021bea37"/>
 			</dataarea>
 		</part>
 		<part name="flop7" interface="floppy_3_5">
@@ -18376,15 +18430,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 17 (1992-11)(static bytes)[h warlocks adf archive].adf" size="901120" crc="90dd69a3" sha1="284dd83fa5e817d27c212baa3ff8a552125f19f5"/>
+				<rom name="official eurochart, the - issue 17 (1992-11)(static bytes)[h warlock].adf" size="901120" crc="90dd69a3" sha1="284dd83fa5e817d27c212baa3ff8a552125f19f5"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 17 (1992-11)(static bytes)[h warlocks adf archive][a].adf" size="901120" crc="fed8e651" sha1="a651923d2178e58ad3183ce4c87043a7193d3d03"/>
+				<rom name="official eurochart, the - issue 17 (1992-11)(static bytes)[h warlock][a].adf" size="901120" crc="fed8e651" sha1="a651923d2178e58ad3183ce4c87043a7193d3d03"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18412,15 +18466,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 18 (1992-12-29)(static bytes)[h warlocks adf archive].adf" size="901120" crc="3fd456a6" sha1="f9e6099fd89fee28ef551f02dd62b2da9cd031bb"/>
+				<rom name="official eurochart, the - issue 18 (1992-12-29)(static bytes)[h warlock].adf" size="901120" crc="3fd456a6" sha1="f9e6099fd89fee28ef551f02dd62b2da9cd031bb"/>
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 18 (1992-12-29)(static bytes)[h warlocks adf archive][a].adf" size="901120" crc="f7faa5dd" sha1="0664bca8b2c1afc1564c742e663ed2e9e3256a50"/>
+				<rom name="official eurochart, the - issue 18 (1992-12-29)(static bytes)[h warlock][a].adf" size="901120" crc="f7faa5dd" sha1="0664bca8b2c1afc1564c742e663ed2e9e3256a50"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18442,15 +18496,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 19 (1993-03-02)(static bytes)[h warlocks adf archive].adf" size="901120" crc="86bf35b0" sha1="e733d90ff81e2b71a6c220e85d3e7ad6b6314fff"/>
+				<rom name="official eurochart, the - issue 19 (1993-03-02)(static bytes)[h warlock].adf" size="901120" crc="86bf35b0" sha1="e733d90ff81e2b71a6c220e85d3e7ad6b6314fff"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 19 (1993-03-02)(static bytes)[h warlocks adf archive][a].adf" size="901120" crc="d95bf0d4" sha1="b1626d29f2639625a9356e3fb098fa2f9dad74ac"/>
+				<rom name="official eurochart, the - issue 19 (1993-03-02)(static bytes)[h warlock][a].adf" size="901120" crc="d95bf0d4" sha1="b1626d29f2639625a9356e3fb098fa2f9dad74ac"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18466,15 +18520,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 20 (1993-05)(static bytes)[h warlocks adf archive].adf" size="901120" crc="ca7f8eb3" sha1="f364f1f5ee4f7adf12523f55d6d6a437cb6ae81a"/>
+				<rom name="official eurochart, the - issue 20 (1993-05)(static bytes)[h warlock].adf" size="901120" crc="ca7f8eb3" sha1="f364f1f5ee4f7adf12523f55d6d6a437cb6ae81a"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 20 (1993-05)(static bytes)[h warlocks adf archive][a].adf" size="901120" crc="a287a8dc" sha1="fc2cd3667cb5a1e7e0562e5c1a5dae4cff19b082"/>
+				<rom name="official eurochart, the - issue 20 (1993-05)(static bytes)[h warlock][a].adf" size="901120" crc="a287a8dc" sha1="fc2cd3667cb5a1e7e0562e5c1a5dae4cff19b082"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18496,15 +18550,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 21 (1993-09)(static bytes)[h warlocks adf archive].adf" size="901120" crc="70dffb58" sha1="18ca2a04e63644aa3d32c4875449a90640157c27"/>
+				<rom name="official eurochart, the - issue 21 (1993-09)(static bytes)[h warlock].adf" size="901120" crc="70dffb58" sha1="18ca2a04e63644aa3d32c4875449a90640157c27"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 21 (1993-09)(static bytes)[h warlocks adf archive][a].adf" size="901120" crc="e984bc20" sha1="97d8aa87b67074aa1a362ecf1fbf2f701176d689"/>
+				<rom name="official eurochart, the - issue 21 (1993-09)(static bytes)[h warlock][a].adf" size="901120" crc="e984bc20" sha1="97d8aa87b67074aa1a362ecf1fbf2f701176d689"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18532,15 +18586,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 22 (1993-11)(static bytes)[h warlocks adf archive].adf" size="901120" crc="b09da37d" sha1="52b5de416318a78ddfdf8ee5cb12fc093ba96188"/>
+				<rom name="official eurochart, the - issue 22 (1993-11)(static bytes)[h warlock].adf" size="901120" crc="b09da37d" sha1="52b5de416318a78ddfdf8ee5cb12fc093ba96188"/>
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 22 (1993-11)(static bytes)[h warlocks adf archive][a].adf" size="901120" crc="ec0a61ca" sha1="0d204eef750f54202a4193472c5026fd573cff0d"/>
+				<rom name="official eurochart, the - issue 22 (1993-11)(static bytes)[h warlock][a].adf" size="901120" crc="ec0a61ca" sha1="0d204eef750f54202a4193472c5026fd573cff0d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18562,15 +18616,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 23 (1993-12-30)(static bytes)[h warlocks adf archive].adf" size="901120" crc="37c5791a" sha1="271669f6b3ec13aeb30514e5555b6954cd1f7e91"/>
+				<rom name="official eurochart, the - issue 23 (1993-12-30)(static bytes)[h warlock].adf" size="901120" crc="37c5791a" sha1="271669f6b3ec13aeb30514e5555b6954cd1f7e91"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Modified bamcopy"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 23 (1993-12-30)(static bytes)[h warlocks adf archive][m bamcopy].adf" size="901120" crc="f800ad2b" sha1="bab18ad9b6d4fb595c34c2784494e1c966bc347e"/>
+				<rom name="official eurochart, the - issue 23 (1993-12-30)(static bytes)[h warlock][m bamcopy].adf" size="901120" crc="f800ad2b" sha1="bab18ad9b6d4fb595c34c2784494e1c966bc347e"/>
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_3_5">
@@ -18610,15 +18664,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 24 (1994-03)(static bytes)[h warlocks adf archive].adf" size="901120" crc="ef7d5439" sha1="feb8ab7ec23341d61a3634b99d956332048ee66d"/>
+				<rom name="official eurochart, the - issue 24 (1994-03)(static bytes)[h warlock].adf" size="901120" crc="ef7d5439" sha1="feb8ab7ec23341d61a3634b99d956332048ee66d"/>
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="official eurochart, the - issue 24 (1994-03)(static bytes)[h warlocks adf archive][a].adf" size="901120" crc="e2d11487" sha1="a540d3cec657615ad9ae4b4748c224df2437d497"/>
+				<rom name="official eurochart, the - issue 24 (1994-03)(static bytes)[h warlock][a].adf" size="901120" crc="e2d11487" sha1="a540d3cec657615ad9ae4b4748c224df2437d497"/>
 			</dataarea>
 		</part>
 	</software>
@@ -19057,6 +19111,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked startup-sequence"/>
 			<dataarea name="flop" size="901120">
 				<rom name="outlaw - issue 2 (1994-04-24)(eremation)(en-fr)[h startup-sequence].adf" size="901120" crc="771ceccf" sha1="d512ced8c9d67cdf062c64caaff64b65bbdfed65"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theoutla" supported="no">
+		<description>The Outlaws Express - Issue 1</description>
+		<year>1990</year>
+		<publisher>The Outlaws</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="outlaws express, the - issue 1 (1990)(the outlaws).adf" size="901120" crc="772636f0" sha1="6782cfab002703c6a4ed3e30b32e97c63f59fb58"/>
 			</dataarea>
 		</part>
 	</software>
@@ -19510,15 +19576,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="playbyte - commercial intro - issue 1 (1992)(shining)[h warlocks adf archive].adf" size="901120" crc="768812dc" sha1="d1a41d698b023ef57b52a2e6f53e609a0ce8bd9e"/>
+				<rom name="playbyte - commercial intro - issue 1 (1992)(shining)[h warlock].adf" size="901120" crc="197df74d" sha1="838a912cee190b9e94b55bd5a085cd80496cfad9"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks ADF Archive, Alt"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="playbyte - commercial intro - issue 1 (1992)(shining)[h warlocks adf archive][a].adf" size="901120" crc="197df74d" sha1="838a912cee190b9e94b55bd5a085cd80496cfad9"/>
+				<rom name="playbyte - commercial intro - issue 1 (1992)(shining)[h warlock][m bamcopy].adf" size="901120" crc="768812dc" sha1="d1a41d698b023ef57b52a2e6f53e609a0ce8bd9e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20570,6 +20636,42 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="rafmagaz" supported="no">
+		<description>RAF Magazine - Royal Information #1 (1990-08-10)</description>
+		<year>1990</year>
+		<publisher>Royal Amiga Force</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="raf magazine - royal information #1 (1990-08-10)(royal amiga force).adf" size="901120" crc="5ec33312" sha1="5d42ae19196bf2d790a97bfc5df93783dc780f59"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rafmagaz_1" supported="no">
+		<description>RAF Magazine - Royal Information #2 (1991-03-08)</description>
+		<year>1991</year>
+		<publisher>Royal Amiga Force - Spreadpoint</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="raf magazine - royal information #2 (1991-03-08)(royal amiga force - spreadpoint).adf" size="901120" crc="ec874f65" sha1="3b17d356b74b974e6166147dcce774213c09c1d9"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Bad dump"/>
+			<dataarea name="flop" size="901120">
+				<rom name="raf magazine - royal information #2 (1991-03-08)(royal amiga force - spreadpoint)[b dump].adf" size="901120" crc="7e29cf36" sha1="6537170c435778096e3f63ddd48e5858a05a2948" status="baddump"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked Biotech, Bad dump"/>
+			<dataarea name="flop" size="901120">
+				<rom name="raf magazine - royal information #2 (1991-03-08)(royal amiga force - spreadpoint)[h biotech][b dump].adf" size="901120" crc="f678a05e" sha1="6242782b137e635800d1e74b61f6769517ca2e2a" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="rageissu" supported="no">
 		<description>Rage! - Issue 1 (AGA, 1996-06-12)</description>
 		<year>1996</year>
@@ -20775,42 +20877,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 3 of 3, bonus disk"/>
 			<dataarea name="flop" size="901120">
 				<rom name="ripper, the - issue 9 (19xx)(raising hell productions)(disk 3 of 3)[bonus disk].adf" size="901120" crc="45f2dd45" sha1="590f7b5fc00cd0886e8e5db666c90afce5feda5b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="royalami" supported="no">
-		<description>Royal Amiga Force Magazine - Issue 1 (1990-08-10)</description>
-		<year>1990</year>
-		<publisher>Royal Amiga Force</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="royal amiga force magazine - issue 1 (1990-08-10)(royal amiga force).adf" size="901120" crc="5ec33312" sha1="5d42ae19196bf2d790a97bfc5df93783dc780f59"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="royalinf" supported="no">
-		<description>Royal Information - Issue 2 (1991-03-08)</description>
-		<year>1991</year>
-		<publisher>Royal Amiga Force - Spreadpoint</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="royal information - issue 2 (1991-03-08)(royal amiga force - spreadpoint).adf" size="901120" crc="ec874f65" sha1="3b17d356b74b974e6166147dcce774213c09c1d9"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="royal information - issue 2 (1991-03-08)(royal amiga force - spreadpoint)[a2].adf" size="901120" crc="f678a05e" sha1="6242782b137e635800d1e74b61f6769517ca2e2a"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="901120">
-				<rom name="royal information - issue 2 (1991-03-08)(royal amiga force - spreadpoint)[a].adf" size="901120" crc="7e29cf36" sha1="6537170c435778096e3f63ddd48e5858a05a2948"/>
 			</dataarea>
 		</part>
 	</software>
@@ -23093,13 +23159,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="suicid - issue 1 (1992-07-14)(energy - grace).adf" size="901120" crc="01fe16f0" sha1="e146f9abda98cc10db828d100866515dec1f9cc5"/>
+				<rom name="suicid - issue 1 (1992-07-14)(energy - grace).adf" size="901120" crc="1f952441" sha1="e910ac99dd1901462db38701902b43ff6ac4fd1e"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Hacked Scene Archives"/>
 			<dataarea name="flop" size="901120">
-				<rom name="suicid - issue 1 (1992-07-14)(energy - grace)[a].adf" size="901120" crc="1f952441" sha1="e910ac99dd1901462db38701902b43ff6ac4fd1e"/>
+				<rom name="suicid - issue 1 (1992-07-14)(energy - grace)[h scene archives].adf" size="901120" crc="01fe16f0" sha1="e146f9abda98cc10db828d100866515dec1f9cc5"/>
 			</dataarea>
 		</part>
 	</software>
@@ -23117,98 +23183,151 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="suicidis_2" supported="no">
-		<description>Suicid - Issue 3 (1992-11)</description>
+		<description>Suicid - Issue 3 (1992-12-01)</description>
 		<year>1992</year>
 		<publisher>Energy</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="901120">
-				<rom name="suicid - issue 3 (1992-11)(energy)[a2].adf" size="901120" crc="ba453e6a" sha1="fa14c6c6969551d0c00f7914fb97fdd87c4060ee"/>
+				<rom name="suicid - issue 3 (1992-12-01)(energy).adf" size="901120" crc="fcfb3bae" sha1="85f2af03bdfe1b8f77f9042d558872e88561c87e"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 3"/>
+			<feature name="part_id" value="Alt bootblock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="suicid - issue 3 (1992-11)(energy)[a3].adf" size="901120" crc="28fe88f4" sha1="f94ac9b87c74518c13397c6b4aaa465aa603bda3"/>
+				<rom name="suicid - issue 3 (1992-12-01)(energy)[a bootblock].adf" size="901120" crc="ba453e6a" sha1="fa14c6c6969551d0c00f7914fb97fdd87c4060ee"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 4"/>
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="suicid - issue 3 (1992-11)(energy)[a4].adf" size="901120" crc="82c9d58e" sha1="48746f5d1579fd2a177f8c1646e22539b4327c2e"/>
+				<rom name="suicid - issue 3 (1992-12-01)(energy)[a].adf" size="901120" crc="82c9d58e" sha1="48746f5d1579fd2a177f8c1646e22539b4327c2e"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Bad corrupt file"/>
 			<dataarea name="flop" size="901120">
-				<rom name="suicid - issue 3 (1992-11)(energy)[a].adf" size="901120" crc="fcfb3bae" sha1="85f2af03bdfe1b8f77f9042d558872e88561c87e"/>
+				<rom name="suicid - issue 3 (1992-12-01)(energy)[b corrupt file].adf" size="901120" crc="28fe88f4" sha1="f94ac9b87c74518c13397c6b4aaa465aa603bda3" status="baddump"/>
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_3_5">
 			<feature name="part_id" value="Bad errdms"/>
 			<dataarea name="flop" size="901120">
-				<rom name="suicid - issue 3 (1992-11)(energy)[b errdms].adf" size="901120" crc="ea65f570" sha1="bf1d25e7877609819e734bd514d2bbfdd56bf4ce" status="baddump"/>
+				<rom name="suicid - issue 3 (1992-12-01)(energy)[b errdms].adf" size="901120" crc="ea65f570" sha1="bf1d25e7877609819e734bd514d2bbfdd56bf4ce" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="suicidis_3" supported="no">
-		<description>Suicid - Issue 4</description>
-		<year>199?</year>
+		<description>Suicid - Issue 4 (1993-02-23)</description>
+		<year>1993</year>
 		<publisher>Energy</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="suicid - issue 4 (199x)(energy).adf" size="901120" crc="4569d93a" sha1="d9003c0567a70379f41b9197aa992bee1da66818"/>
+				<rom name="suicid - issue 4 (1993-02-23)(energy).adf" size="901120" crc="c66478a3" sha1="315aeb16b37b25b81abd3a475f21a6eece443cdd"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 2"/>
+			<feature name="part_id" value="Alt bootblock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="suicid - issue 4 (199x)(energy)[a2].adf" size="901120" crc="bff0c320" sha1="34db4df97ed09bbebbe446d99131ab0f91bba007"/>
+				<rom name="suicid - issue 4 (1993-02-23)(energy)[a bootblock].adf" size="901120" crc="89b9d4b0" sha1="4ee2c07245cfea79a7f862facdf92637bfe8e3f1"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Bad corrupt files"/>
 			<dataarea name="flop" size="901120">
-				<rom name="suicid - issue 4 (199x)(energy)[a].adf" size="901120" crc="89b9d4b0" sha1="4ee2c07245cfea79a7f862facdf92637bfe8e3f1"/>
+				<rom name="suicid - issue 4 (1993-02-23)(energy)[b corrupt files].adf" size="901120" crc="4569d93a" sha1="d9003c0567a70379f41b9197aa992bee1da66818" status="baddump"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="suicid - issue 4 (1993-02-23)(energy)[m bamcopy].adf" size="901120" crc="bff0c320" sha1="34db4df97ed09bbebbe446d99131ab0f91bba007"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="suicidis_4" supported="no">
-		<description>Suicid - Issue 5</description>
-		<year>199?</year>
+		<description>Suicid - Issue 5 (1993-04-11)</description>
+		<year>1993</year>
 		<publisher>Energy - Manitou</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="suicid - issue 5 (199x)(energy - manitou).adf" size="901120" crc="379f22dc" sha1="b69f32f265efe90a946a36682618ad3a2b8e3a55"/>
+				<rom name="suicid - issue 5 (1993-04-11)(energy - manitou).adf" size="901120" crc="bb52e494" sha1="871664e5aa0f788b04aa0aec6ed31ab595212a19"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Fixed A1200"/>
 			<dataarea name="flop" size="901120">
-				<rom name="suicid - issue 5 (199x)(energy - manitou)[f a1200].adf" size="901120" crc="e75c15c8" sha1="a22653453bc7635fe7e371cd89b7b14772f71769"/>
+				<rom name="suicid - issue 5 (1993-04-11)(energy - manitou)[f a1200].adf" size="901120" crc="22fa2c85" sha1="e263e7ec22f585539b65903cb3765d8bd22479ce"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Fixed A1200, Bad corrupt file"/>
+			<dataarea name="flop" size="901120">
+				<rom name="suicid - issue 5 (1993-04-11)(energy - manitou)[f a1200][b corrupt file].adf" size="901120" crc="e75c15c8" sha1="a22653453bc7635fe7e371cd89b7b14772f71769" status="baddump"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="suicid - issue 5 (1993-04-11)(energy - manitou)[m bamcopy].adf" size="901120" crc="379f22dc" sha1="b69f32f265efe90a946a36682618ad3a2b8e3a55"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="suicidis_5" supported="no">
-		<description>Suicid - Issue 6</description>
-		<year>199?</year>
+		<description>Suicid - Issue 6 (1993-07)</description>
+		<year>1993</year>
 		<publisher>Energy - Manitou</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="suicid - issue 6 (199x)(energy - manitou).adf" size="901120" crc="d6379f43" sha1="05d5ba41e19c2397a3fc7fb912e66925db84cdb8"/>
+				<rom name="suicid - issue 6 (1993-07)(energy - manitou).adf" size="901120" crc="70d1cbb9" sha1="dcfec764d0e7885d5afbb30436e3c402f75ce898"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Bad corrupt file"/>
 			<dataarea name="flop" size="901120">
-				<rom name="suicid - issue 6 (199x)(energy - manitou)[a].adf" size="901120" crc="70d1cbb9" sha1="dcfec764d0e7885d5afbb30436e3c402f75ce898"/>
+				<rom name="suicid - issue 6 (1993-07)(energy - manitou)[b corrupt file].adf" size="901120" crc="d6379f43" sha1="05d5ba41e19c2397a3fc7fb912e66925db84cdb8" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="suomenli" supported="no">
+		<description>Suomen Lista - Issue 2 (1993-05-09)</description>
+		<year>1993</year>
+		<publisher>Stellar - Virtual Dreams</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="suomen lista - issue 2 (1993-05-09)(stellar - virtual dreams).adf" size="901120" crc="5c3137bd" sha1="0168fed96733b7d0ca84848dcdd95579d4a0398d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="suomenli_1" supported="no">
+		<description>Suomen Lista - Issue 3 (1993-09-01)</description>
+		<year>1993</year>
+		<publisher>Stellar - Virtual Dreams</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="suomen lista - issue 3 (1993-09-01)(stellar - virtual dreams).adf" size="901120" crc="e50a2a34" sha1="9ac1880fdbece01eec958511da86defb3b82725d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="suomenli_2" supported="no">
+		<description>Suomen Lista - Issue 4 (1994-02-01)</description>
+		<year>1994</year>
+		<publisher>Banal Projects - Complex - Stellar - Virtual Dreams</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="suomen lista - issue 4 (1994-02-01)(banal projects - complex - stellar - virtual dreams).adf" size="901120" crc="dd20c51b" sha1="8f336b7b202d100bb570c4d0060efe3f73bc2163"/>
 			</dataarea>
 		</part>
 	</software>
@@ -23461,7 +23580,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="tailstoo" supported="no">
-		<description>Tails Too Terrible To Tell</description>
+		<description>Tails Too Terrible to Tell</description>
 		<year>1990</year>
 		<publisher>Predator</publisher>
 
@@ -24153,15 +24272,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Stellar</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks"/>
+			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="times - issue 3 (1993-07-30)(stellar)[h warlocks].adf" size="901120" crc="cbb49d51" sha1="ed51d6109786e9a621fb74146c74bf0b666060c0"/>
+				<rom name="times - issue 3 (1993-07-30)(stellar)[h warlock].adf" size="901120" crc="cbb49d51" sha1="ed51d6109786e9a621fb74146c74bf0b666060c0"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Warlocks, Modified bamcopy"/>
+			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="times - issue 3 (1993-07-30)(stellar)[h warlocks][m bamcopy].adf" size="901120" crc="d889c623" sha1="85cda5e301a8a9457bf048b332cf33f9f1956926"/>
+				<rom name="times - issue 3 (1993-07-30)(stellar)[h warlock][m bamcopy].adf" size="901120" crc="d889c623" sha1="85cda5e301a8a9457bf048b332cf33f9f1956926"/>
 			</dataarea>
 		</part>
 	</software>
@@ -24174,6 +24293,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="times - issue 3 (19xx)(travellers).adf" size="901120" crc="0618ec20" sha1="00c017153f38565aec17169f7f826a9b9d2ca377"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tintrash" supported="no">
+		<description>TIN - Trashcan International News XV (fr, 1996-10)</description>
+		<year>1996</year>
+		<publisher>Amiga Multitask Force</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="tin - trashcan international news xv (1996-10)(amiga multitask force)(fr).adf" size="901120" crc="99cd6e73" sha1="c7d95eca6046983d12f3af447c71382cdff012e7"/>
 			</dataarea>
 		</part>
 	</software>
@@ -24360,15 +24491,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2, Hacked Warlocks"/>
+			<feature name="part_id" value="Disk 1 of 2, Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="top secret - issue 15 (1993-12-03)(majic 12)(disk 1 of 2)[h warlocks].adf" size="901120" crc="ab3832fd" sha1="3399bede5e308185ecaff4ee98d3f0bbf5631574"/>
+				<rom name="top secret - issue 15 (1993-12-03)(majic 12)(disk 1 of 2)[h warlock].adf" size="901120" crc="ab3832fd" sha1="3399bede5e308185ecaff4ee98d3f0bbf5631574"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2, Hacked Warlocks, Modified bamcopy"/>
+			<feature name="part_id" value="Disk 1 of 2, Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
-				<rom name="top secret - issue 15 (1993-12-03)(majic 12)(disk 1 of 2)[h warlocks][m bamcopy].adf" size="901120" crc="19fe1fc7" sha1="a1ffa591f9b6d89a8a64e16cf534499bf919ea27"/>
+				<rom name="top secret - issue 15 (1993-12-03)(majic 12)(disk 1 of 2)[h warlock][m bamcopy].adf" size="901120" crc="19fe1fc7" sha1="a1ffa591f9b6d89a8a64e16cf534499bf919ea27"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
@@ -24884,6 +25015,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="tricks of the trade - issue #07 (1997-08-30)(bad language - raze).adf" size="901120" crc="f63b90c8" sha1="0e294ab53d7c36c86ffb36389db3e4471a8ac874"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="twat3iss" supported="no">
+		<description>Twat 3 - Issue #3 (1994-02-03)</description>
+		<year>1994</year>
+		<publisher>Combat 18</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="twat 3 - issue #3 (1994-02-03)(combat 18).adf" size="901120" crc="7b2002ae" sha1="60175e1c75a8377445b97a35c94a1fa33895e09e"/>
 			</dataarea>
 		</part>
 	</software>

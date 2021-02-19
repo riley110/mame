@@ -180,6 +180,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="les4sais" supported="no">
+		<description>Les 4 Saisons de l'Ecriture - Les Bases de l'Ecrit 6eme-3eme (FR)</description>
+		<year>1990</year>
+		<publisher>Generation 5</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="4 saisons de l'ecriture, les - les bases de l'ecrit 6eme-3eme (1990)(generation 5)(fr).adf" size="901120" crc="c8d6a5b1" sha1="b595315783aeb1f075ea6342d9f3c8eceefbeb36"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="aword" supported="no">
 		<description>A-Word (PL, v1.02, 1992-03)</description>
 		<year>1992</year>
@@ -431,7 +443,62 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="alldogsg" supported="no">
-		<description>All Dogs Go To Heaven</description>
+		<description>All Dogs Go to Heaven</description>
+		<year>1990</year>
+		<publisher>Merit</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 3, Cracked by PNA"/>
+			<dataarea name="flop" size="901120">
+				<rom name="all dogs go to heaven (1990)(merit)(disk 1 of 3)[cr pna].adf" size="901120" crc="f11522b5" sha1="cbb1a5e96069c759c95083e303ae9ded9591f6be"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 3, Cracked by PNA, docs"/>
+			<dataarea name="flop" size="901120">
+				<rom name="all dogs go to heaven (1990)(merit)(disk 1 of 3)[cr pna][docs].adf" size="901120" crc="e9cf2542" sha1="c5252d341d311fbaa5cdf221e390d3e8a53c4f9c"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 3, Cracked by PNA, Hacked ACU, docs"/>
+			<dataarea name="flop" size="901120">
+				<rom name="all dogs go to heaven (1990)(merit)(disk 1 of 3)[cr pna][h acu][docs].adf" size="901120" crc="34770822" sha1="4e6c630e146d94cc18b9f79fb256418fbbddd432"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 3, Cracked by PNA, Hacked Free Access"/>
+			<dataarea name="flop" size="901120">
+				<rom name="all dogs go to heaven (1990)(merit)(disk 1 of 3)[cr pna][h free access].adf" size="901120" crc="6474c3d8" sha1="f6a6f2f25e811a075f32b86f29c5d4b1d3f334bb"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 3"/>
+			<dataarea name="flop" size="901120">
+				<rom name="all dogs go to heaven (1990)(merit)(disk 2 of 3).adf" size="901120" crc="211cb108" sha1="9cb84ae9facda171413a72c73e302019cf0003ea"/>
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 3, Hacked Free Access"/>
+			<dataarea name="flop" size="901120">
+				<rom name="all dogs go to heaven (1990)(merit)(disk 2 of 3)[h free access].adf" size="901120" crc="310f80ee" sha1="9eaf0576ab9dce994f56c0a461663bc8d8200449"/>
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 3 of 3"/>
+			<dataarea name="flop" size="901120">
+				<rom name="all dogs go to heaven (1990)(merit)(disk 3 of 3).adf" size="901120" crc="f2b364a2" sha1="706867f8ff036b989a1b56306b2c555ece8a7dd6"/>
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 3 of 3, Hacked Free Access"/>
+			<dataarea name="flop" size="901120">
+				<rom name="all dogs go to heaven (1990)(merit)(disk 3 of 3)[h free access].adf" size="901120" crc="986a0dba" sha1="f53e746be6dfe16e0cab8c101ef77b2a2dc09bfb"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="alldogsg_1" supported="no">
+		<description>All Dogs Go to Heaven (1)</description>
 		<year>1991</year>
 		<publisher>Merit</publisher>
 
@@ -444,7 +511,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Hacked CPY, Electric Crayon"/>
 			<dataarea name="flop" size="901120">
-				<rom name="all dogs go to heaven (1991)(merit)[h cpy][electric crayon].adf" size="901120" crc="9a6acefb" sha1="775800020d41f6c46c269564769dcb654258d6bc"/>
+				<rom name="all dogs go to heaven (1991)(merit)[h cpy][electric crayon].adf" size="901120" crc="d34d9f8d" sha1="c155ffd2336dbdd9e1268c425540f75f6ecb1649"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked CPY, Modified bamcopy, Electric Crayon"/>
+			<dataarea name="flop" size="901120">
+				<rom name="all dogs go to heaven (1991)(merit)[h cpy][m bamcopy][electric crayon].adf" size="901120" crc="9a6acefb" sha1="775800020d41f6c46c269564769dcb654258d6bc"/>
 			</dataarea>
 		</part>
 	</software>
@@ -937,7 +1010,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="barneybe_1" supported="no">
-		<description>Barney Bear Goes To School (v1.0)</description>
+		<description>Barney Bear Goes to School (v1.0)</description>
 		<year>1990</year>
 		<publisher>Free Spirit</publisher>
 
@@ -956,7 +1029,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="barneybe_2" supported="no">
-		<description>Barney Bear Goes To School (de/en, v3.0)</description>
+		<description>Barney Bear Goes to School (de/en, v3.0)</description>
 		<year>1990</year>
 		<publisher>Free Spirit</publisher>
 
@@ -1153,6 +1226,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Underdumped"/>
 			<dataarea name="flop" size="889856">
 				<rom name="calendar quiz (1991)(helios)[u].adf" size="889856" crc="9c84d0b4" sha1="cc4d946f48299acbbaf7a293e34edfe67a59089e" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="canaillo" supported="no">
+		<description>Canailloux-1 (v1.7)</description>
+		<year>1997</year>
+		<publisher>CGP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="canailloux-1 v1.7 (1997)(cgp).adf" size="901120" crc="f67fadc2" sha1="41048c802bc1d21f5d2a9b224a26253a8f49e24a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1599,6 +1684,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="dinosaur_1" supported="no">
+		<description>Dinosaurs One</description>
+		<year>1991</year>
+		<publisher>Total Concepts - CLR Licenceware</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="dinosaurs one (1991)(total concepts - clr licenceware).adf" size="901120" crc="a566d2f8" sha1="6b9857aa493a4f262ef5ef67eae8bead8ad1f550"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked PDSoft"/>
+			<dataarea name="flop" size="901120">
+				<rom name="dinosaurs one (1991)(total concepts - clr licenceware)[h pdsoft].adf" size="901120" crc="c0456882" sha1="21550e07b34431761bdc147e8fc633ad197045e6"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked Software 2000"/>
+			<dataarea name="flop" size="901120">
+				<rom name="dinosaurs one (1991)(total concepts - clr licenceware)[h software 2000].adf" size="901120" crc="651578fa" sha1="ff93ee7067a0bbec7955ffc0aba8c848e4fea6c1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dinosaur_2" supported="no">
 		<description>Dinosaurs Two and Mass Extinctions</description>
 		<year>1992</year>
 		<publisher>Total Concepts - CLR Licenceware</publisher>
@@ -3356,14 +3465,68 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="keystomu" supported="no">
-		<description>Keys to Music</description>
+		<description>Keys to Music vol.I - Learn to Read Music</description>
 		<year>1992</year>
-		<publisher>Electronic Theatre</publisher>
+		<publisher>Electric Theatre</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 5, WB2.0"/>
+			<feature name="part_id" value="Disk 1 of 5, Hacked Lepers, WB"/>
 			<dataarea name="flop" size="901120">
-				<rom name="keys to music (1992)(electronic theatre)(disk 1 of 5)[wb2.0].adf" size="901120" crc="d1951d87" sha1="5e9df25c5d95d2a3885d921d551f4a4d6e2173cb"/>
+				<rom name="keys to music vol.i - learn to read music (1992)(electric theatre)(disk 1 of 5)[h lepers][wb].adf" size="901120" crc="c1c1ce9d" sha1="e92fed7a33570dc61ed72f459c6e71aa964c7d23"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 5, WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="keys to music vol.i - learn to read music (1992)(electric theatre)(disk 1 of 5)[wb].adf" size="901120" crc="d1951d87" sha1="5e9df25c5d95d2a3885d921d551f4a4d6e2173cb"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 5, Modified bamcopy, WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="keys to music vol.i - learn to read music (1992)(electric theatre)(disk 2 of 5)[m bamcopy][wb].adf" size="901120" crc="616d2cca" sha1="32c6a1fefd3b534873cea40faedbc768f86752da"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 5, WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="keys to music vol.i - learn to read music (1992)(electric theatre)(disk 2 of 5)[wb].adf" size="901120" crc="ebf92d56" sha1="152f9c2334a92ade409d44a24deee3672f0603d8"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 3 of 5, Modified bamcopy, WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="keys to music vol.i - learn to read music (1992)(electric theatre)(disk 3 of 5)[m bamcopy][wb].adf" size="901120" crc="3ebbb7dd" sha1="908e431658ee5df23ccdf88e8fabb26ae6bc6923"/>
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 3 of 5, WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="keys to music vol.i - learn to read music (1992)(electric theatre)(disk 3 of 5)[wb].adf" size="901120" crc="9f54f9bc" sha1="2eff4ec76f5ecb34861adfba1d025092914a3b1e"/>
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 4 of 5, Modified bamcopy, WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="keys to music vol.i - learn to read music (1992)(electric theatre)(disk 4 of 5)[m bamcopy][wb].adf" size="901120" crc="e1cba364" sha1="15bf60b2bb67d67abbd4ea3d399666f62f9866cb"/>
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 4 of 5, WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="keys to music vol.i - learn to read music (1992)(electric theatre)(disk 4 of 5)[wb].adf" size="901120" crc="1e28c930" sha1="fdd3992dfb775fcb5dcd80636ead261a0022a4fd"/>
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 5 of 5, Modified bamcopy, WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="keys to music vol.i - learn to read music (1992)(electric theatre)(disk 5 of 5)[m bamcopy][wb].adf" size="901120" crc="0d303f7f" sha1="45f0e5c9b4f128f51338bb0aca574b8f10bca982"/>
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 5 of 5, WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="keys to music vol.i - learn to read music (1992)(electric theatre)(disk 5 of 5)[wb].adf" size="901120" crc="b17037e0" sha1="3decadef451269fdaeedc243079186aeb29e7668"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3635,7 +3798,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="kidsacad_3" supported="no">
-		<description>Kids' Academy - Where, Which What</description>
+		<description>Kids' Academy - Which, Where, What</description>
 		<year>1992</year>
 		<publisher>Prisma Software</publisher>
 
@@ -3898,7 +4061,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="linkword" supported="no">
-		<description>LinkWord - Russian, German Spanish</description>
+		<description>LinkWord - German, Russian, Spanish</description>
 		<year>1987</year>
 		<publisher>Chris Barrett - Craig Smith</publisher>
 
@@ -4388,18 +4551,36 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="mathtalk" supported="no">
-		<description>MathTalk FRACTIONS (v2.0)</description>
+		<description>MathTalk Fractions (v1.0)</description>
 		<year>1987</year>
 		<publisher>First Byte</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="mathtalk fractions v2.0 (1987)(first byte).adf" size="901120" crc="2a69d1e3" sha1="7bb3fb7393daf2c9a7731d24a89e5a6a5f5f7d77"/>
+				<rom name="mathtalk fractions v1.0 (1987)(first byte).adf" size="901120" crc="9cdb9c01" sha1="d055f99e6773a9030ccef7dccfbd4930272d22cc"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="mathtalk_1" supported="no">
+		<description>MathTalk Fractions (v2.0)</description>
+		<year>1988</year>
+		<publisher>First Byte</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mathtalk fractions v2.0 (1988)(first byte).adf" size="901120" crc="2a69d1e3" sha1="7bb3fb7393daf2c9a7731d24a89e5a6a5f5f7d77"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked Avitrox - MaxSoft"/>
+			<dataarea name="flop" size="901120">
+				<rom name="mathtalk fractions v2.0 (1988)(first byte)[h avitrox - maxsoft].adf" size="901120" crc="df5a97a2" sha1="25f10dd8975a367dec07007613f90f30030c131e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mathtalk_2" supported="no">
 		<description>MathTalk (v1.0)</description>
 		<year>1986</year>
 		<publisher>First Byte</publisher>
@@ -4902,7 +5083,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="mypainta_1" supported="no">
-		<description>My Paint - African Rain Forest Coloring Book</description>
+		<description>My Paint - African Rain Forest Coloring Book (v2.0)</description>
 		<year>1993</year>
 		<publisher>Saddleback Graphics</publisher>
 
@@ -6144,8 +6325,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="frenchsp" supported="no">
-		<description>French, Spanish German, Italian Tutor (Public Domain)</description>
+	<software name="spanishf" supported="no">
+		<description>Spanish, French, German, Italian Tutor (Public Domain)</description>
 		<year>1990</year>
 		<publisher>K. Grigg</publisher>
 
@@ -6604,7 +6785,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thingsto" supported="no">
-		<description>Things to do with Numbers</description>
+		<description>Things to Do with Numbers</description>
 		<year>1989</year>
 		<publisher>Soft Stuff</publisher>
 
@@ -6617,7 +6798,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thingsto_1" supported="no">
-		<description>Things to do with Words</description>
+		<description>Things to Do with Words</description>
 		<year>1989</year>
 		<publisher>Soft Stuff</publisher>
 
@@ -6766,6 +6947,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TKT"/>
 			<dataarea name="flop" size="901120">
 				<rom name="vocabulary adventure iii (1985)(queue)[h tkt].adf" size="901120" crc="e8d4a067" sha1="08f1e6dbc0ca975395ad8d0c58779c3abf5b2797"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="voyageat" supported="no">
+		<description>Voyage a Travers la France (FR)</description>
+		<year>1991</year>
+		<publisher>Esat Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="voyage a travers la france (1991)(esat software)(fr).adf" size="901120" crc="371a6121" sha1="2b3d654aeb70c2de52c1f9b398300293e2066205"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7235,7 +7428,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="worldtou_8" supported="no">
-		<description>World Tour - Russia And Western Asia (v1.00)</description>
+		<description>World Tour - Russia and Western Asia (v1.00)</description>
 		<year>1990</year>
 		<publisher>Designing Minds</publisher>
 

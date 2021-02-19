@@ -1466,6 +1466,45 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="alienres_2" supported="no">
+		<description>Alien Research Centre 3 (2020-08-07)</description>
+		<year>2020</year>
+		<publisher>Pension</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="DAAD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="alien research centre 3 (2020-08-07)(pension)[daad].adf" size="901120" crc="3eb9f057" sha1="bf1fc59a90493e405cc0845f5938ae42ec5142c2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="alienres_3" supported="no">
+		<description>Alien Research Centre 3 (2020-11-12)</description>
+		<year>2020</year>
+		<publisher>Pension</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="DAAD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="alien research centre 3 (2020-11-12)(pension)[daad].adf" size="901120" crc="2b95b208" sha1="a34fc333f55a7b45dbf230018bce5d7cd5da6e50"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="alienres_4" supported="no">
+		<description>Alien Research Centre 3 (2020-12-12)</description>
+		<year>2020</year>
+		<publisher>Pension</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="DAAD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="alien research centre 3 (2020-12-12)(pension)[daad].adf" size="901120" crc="621b5803" sha1="5d381474a253ff8040b7e855acb85819fdfec8fe"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="alienspa" supported="no">
 		<description>Alien Space (Shareware)</description>
 		<year>1994</year>
@@ -3400,6 +3439,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="arena" supported="no">
+		<description>Arena (v1.0, 1992-09-09)</description>
+		<year>1992</year>
+		<publisher>Wraith</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="arena v1.0 (1992-09-09)(wraith).adf" size="901120" crc="b670c096" sha1="d6af7f1f502777729e287669f6c4207c8a522344"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="argus" supported="no">
 		<description>Argus (Shareware)</description>
 		<year>1995</year>
@@ -3794,8 +3845,20 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="astrodod" supported="no">
+		<description>Astro Dodge (v1.0)</description>
+		<year>199?</year>
+		<publisher>Equinox</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="astro dodge v1.0 (199x)(equinox).adf" size="901120" crc="8f1d7599" sha1="4bfc7b4f2022018fd874a97e3c26f2c3ddd51862"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="astrokid" supported="no">
-		<description>Astrokid in The Battle of Planet Funk (v1.1, 1996-06-22, Public Domain)</description>
+		<description>Astrokid in the Battle of Planet Funk (v1.1, 1996-06-22, Public Domain)</description>
 		<year>1996</year>
 		<publisher>Living and Electronic Dreams - Comic Classics</publisher>
 
@@ -4228,6 +4291,11 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Overflow</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="automobiles v1.0 (1994-04-09)(overflow)(pd).adf" size="901120" crc="4c333ce6" sha1="80c0f4eb624265dc2ecc1d8c5af318e971623dd2"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Fixed AGA-ECS LGD"/>
 			<dataarea name="flop" size="901120">
 				<rom name="automobiles v1.0 (1994-04-09)(overflow)(pd)[f aga-ecs lgd].adf" size="901120" crc="8ee002ac" sha1="44650c41a417dddb56d12b62671685f9f6e515d2"/>
@@ -4611,7 +4679,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="baldythe" supported="no">
-		<description>Baldy - The Search For Missing Disks (Public Domain)</description>
+		<description>Baldy - The Search for Missing Disks (Public Domain)</description>
 		<year>1992</year>
 		<publisher>Cabi-Soft</publisher>
 
@@ -4621,9 +4689,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Five-Star PD - Software 2000"/>
+			<feature name="part_id" value="Hacked Five-Star PD - Software 2000"/>
 			<dataarea name="flop" size="901120">
-				<rom name="baldy - the search for missing disks (1992)(cabi-soft)(pd)[five-star pd - software 2000].adf" size="901120" crc="c95bc160" sha1="5d685906c70eca88a61658670e9254ff0504196c"/>
+				<rom name="baldy - the search for missing disks (1992)(cabi-soft)(pd)[h five-star pd - software 2000].adf" size="901120" crc="c95bc160" sha1="5d685906c70eca88a61658670e9254ff0504196c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5572,6 +5640,32 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="behindcl_8" supported="no">
+		<description>Behind Closed Doors 9 (2020-11-12)</description>
+		<year>2020</year>
+		<publisher>Pension</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="DAAD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="behind closed doors 9 (2020-11-12)(pension)[daad].adf" size="901120" crc="a4b27a50" sha1="38fc3a70da2e9cce58c2de89214cc5e34e798740"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="behindcl_9" supported="no">
+		<description>Behind Closed Doors 9B - PunyInfom Enters the Fray (2020-07-17)</description>
+		<year>2020</year>
+		<publisher>Pension</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="DAAD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="behind closed doors 9b - punyinfom enters the fray (2020-07-17)(pension)[daad].adf" size="901120" crc="ff835ac2" sha1="bf98e43b8b8d597209a51ec97d008b5b3cbfa881"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="behinder" supported="no">
 		<description>Behinderten Olympics 92 (Public Domain)</description>
 		<year>1992</year>
@@ -5872,30 +5966,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="blackdaw_1" supported="no">
-		<description>Black Dawn - Rebirth (Playable Demo, v1.0, 2019-10-24)</description>
-		<year>2019</year>
-		<publisher>ZSoft - Double Sided Games</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="black dawn - rebirth v1.0 (demo-playable) (2019-10-24)(zsoft - double sided games).adf" size="901120" crc="6a46a3fe" sha1="3ca0e0cbc39e8b15f94483b0fab1077554b6e84d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="blackdaw_2" supported="no">
-		<description>Black Dawn - Rebirth (Playable Demo, v1.2, 2019-12-02)</description>
-		<year>2019</year>
-		<publisher>ZSoft - Double Sided Games</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="black dawn - rebirth v1.2 (demo-playable) (2019-12-02)(zsoft - double sided games).adf" size="901120" crc="10f89ba7" sha1="da15032b35d2872a7a7236ad2e2381d49fc1e33c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="blackdaw_3" supported="no">
 		<description>Black Dawn II (Shareware/Registered)</description>
 		<year>1994</year>
 		<publisher>Black Dragon - F1 Licenceware</publisher>
@@ -5908,7 +5978,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="blackdaw_4" supported="no">
+	<software name="blackdaw_2" supported="no">
 		<description>Black Dawn II (Shareware)</description>
 		<year>1994</year>
 		<publisher>Black Dragon</publisher>
@@ -5927,7 +5997,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="blackdaw_5" supported="no">
+	<software name="blackdaw_3" supported="no">
 		<description>Black Dawn VI - Hellbound (Licenceware)</description>
 		<year>1995</year>
 		<publisher>ZSoft - F1 Licenceware</publisher>
@@ -6206,7 +6276,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="blazingg_5" supported="no">
-		<description>Blazing Guns - Preview (2016-09-23, Alpha)</description>
+		<description>Blazing Guns - Preview (v0.06, 2016-09-23, Alpha)</description>
 		<year>2016</year>
 		<publisher>Asman - Aszu</publisher>
 
@@ -6218,7 +6288,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="blazingg_6" supported="no">
-		<description>Blazing Guns - Preview (2016-09-23, Beta)</description>
+		<description>Blazing Guns - Preview (v0.06, 2016-09-23, Beta)</description>
 		<year>2016</year>
 		<publisher>Asman - Aszu</publisher>
 
@@ -6230,7 +6300,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="blazingg_7" supported="no">
-		<description>Blazing Guns - Preview (2016-09-27)</description>
+		<description>Blazing Guns - Preview (v0.06, 2016-09-27)</description>
 		<year>2016</year>
 		<publisher>Asman - Aszu</publisher>
 
@@ -6326,7 +6396,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="blazingg_15" supported="no">
-		<description>Blazing Guns - Special Koyot1222 (2017-04-29)</description>
+		<description>Blazing Guns - Special Koyot1222 (v0.13, 2017-04-29)</description>
 		<year>2017</year>
 		<publisher>Asman - Aszu</publisher>
 
@@ -6580,26 +6650,33 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="blobble" supported="no">
-		<description>Blobble (Shareware)</description>
+		<description>Blobble (1995-01, Shareware)</description>
 		<year>1995</year>
-		<publisher>Vector 7</publisher>
+		<publisher>Bali</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="16 levels demo"/>
 			<dataarea name="flop" size="901120">
-				<rom name="blobble (1995)(vector 7)(sw).adf" size="901120" crc="611f50a8" sha1="e3e821979e2b848bb884697bb2df55440b14bc87"/>
+				<rom name="blobble (1995-01)(bali)(sw)[16 levels demo].adf" size="901120" crc="d1861d5e" sha1="2debf4679f45a4d59c7d2e4c1c75ba40d10140db"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked LGD, 16 levels demo"/>
+			<dataarea name="flop" size="901120">
+				<rom name="blobble (1995-01)(bali)(sw)[h lgd][16 levels demo].adf" size="901120" crc="016f71fa" sha1="dc7f513056482e82ab29269fa9719676121f1567"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="blobble_1" supported="no">
-		<description>Blobble (Playable Demo, Public Domain)</description>
+		<description>Blobble (1995-10, Shareware)</description>
 		<year>1995</year>
-		<publisher>Bali</publisher>
+		<publisher>Vector 7</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked LGD"/>
+			<feature name="part_id" value="16 levels demo"/>
 			<dataarea name="flop" size="901120">
-				<rom name="blobble (demo-playable) (1995)(bali)(pd)[h lgd].adf" size="901120" crc="016f71fa" sha1="dc7f513056482e82ab29269fa9719676121f1567"/>
+				<rom name="blobble (1995-10)(vector 7)(sw)[16 levels demo].adf" size="901120" crc="611f50a8" sha1="e3e821979e2b848bb884697bb2df55440b14bc87"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7034,6 +7111,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="bombjack_1" supported="no">
+		<description>Bomb Jack Beer Edition (2020-12-30)</description>
+		<year>2020</year>
+		<publisher>McGeezer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="bomb jack beer edition (2020-12-30)(mcgeezer).adf" size="901120" crc="b84f1673" sha1="401c9b3836718ca42e5cbdfc02473d5a914b3fe8"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bombjack_2" supported="no">
 		<description>Bomb Jack Beer Edition beta (2018-02-14)</description>
 		<year>2018</year>
 		<publisher>McGeezer</publisher>
@@ -7045,7 +7134,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bombjack_2" supported="no">
+	<software name="bombjack_3" supported="no">
 		<description>Bomb Jack Beer Edition beta 1 (2018-02-26)</description>
 		<year>2018</year>
 		<publisher>McGeezer</publisher>
@@ -7057,7 +7146,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bombjack_3" supported="no">
+	<software name="bombjack_4" supported="no">
 		<description>Bomb Jack Beer Edition beta 2 (2018-03-03)</description>
 		<year>2018</year>
 		<publisher>McGeezer</publisher>
@@ -7069,7 +7158,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bombjack_4" supported="no">
+	<software name="bombjack_5" supported="no">
 		<description>Bomb Jack Beer Edition beta 2b (2018-03-04)</description>
 		<year>2018</year>
 		<publisher>McGeezer</publisher>
@@ -7081,7 +7170,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bombjack_5" supported="no">
+	<software name="bombjack_6" supported="no">
 		<description>Bomb Jack Beer Edition beta 2c (2018-03-05)</description>
 		<year>2018</year>
 		<publisher>McGeezer</publisher>
@@ -7093,7 +7182,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bombjack_6" supported="no">
+	<software name="bombjack_7" supported="no">
 		<description>Bomb Jack Beer Edition beta 2d (2018-03-16)</description>
 		<year>2018</year>
 		<publisher>McGeezer</publisher>
@@ -7105,7 +7194,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bombjack_7" supported="no">
+	<software name="bombjack_8" supported="no">
 		<description>Bomb Jack Beer Edition beta 3 (2018-03-18)</description>
 		<year>2018</year>
 		<publisher>McGeezer</publisher>
@@ -7117,7 +7206,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bombjack_8" supported="no">
+	<software name="bombjack_9" supported="no">
 		<description>Bomb Jack Beer Edition beta 3e (2018-03-30)</description>
 		<year>2018</year>
 		<publisher>McGeezer</publisher>
@@ -7129,7 +7218,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bombjack_9" supported="no">
+	<software name="bombjack_10" supported="no">
 		<description>Bomb Jack Beer Edition beta 4a (2018-04-02)</description>
 		<year>2018</year>
 		<publisher>McGeezer</publisher>
@@ -7141,7 +7230,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bombjack_10" supported="no">
+	<software name="bombjack_11" supported="no">
 		<description>Bomb Jack Beer Edition beta 5a (2018-04-18)</description>
 		<year>2018</year>
 		<publisher>McGeezer</publisher>
@@ -7153,7 +7242,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bombjack_11" supported="no">
+	<software name="bombjack_12" supported="no">
 		<description>Bomb Jack Beer Edition beta 5e (2018-04-26)</description>
 		<year>2018</year>
 		<publisher>McGeezer</publisher>
@@ -7165,7 +7254,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bombjack_12" supported="no">
+	<software name="bombjack_13" supported="no">
 		<description>Bomb Jack Beer Edition beta 6b (2018-04-29)</description>
 		<year>2018</year>
 		<publisher>McGeezer</publisher>
@@ -7177,7 +7266,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bombjack_13" supported="no">
+	<software name="bombjack_14" supported="no">
 		<description>Bomb Jack Beer Edition beta 7a (2018-05-06)</description>
 		<year>2018</year>
 		<publisher>McGeezer</publisher>
@@ -7189,7 +7278,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bombjack_14" supported="no">
+	<software name="bombjack_15" supported="no">
 		<description>Bomb Jacky (Shareware)</description>
 		<year>1993</year>
 		<publisher>Unique Dimension</publisher>
@@ -7247,7 +7336,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	<software name="bombswee" supported="no">
 		<description>Bomb Sweeper (Public Domain)</description>
 		<year>1992</year>
-		<publisher>Close To The Edge</publisher>
+		<publisher>Close to the Edge</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
@@ -8178,7 +8267,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="bulboand_1" supported="no">
-		<description>Bulbo and The Lizard-King (2019-03-26)</description>
+		<description>Bulbo and the Lizard-King (2019-03-26)</description>
 		<year>2019</year>
 		<publisher>Pension</publisher>
 
@@ -8186,6 +8275,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="DAAD"/>
 			<dataarea name="flop" size="901120">
 				<rom name="bulbo and the lizard-king (2019-03-26)(pension)[daad].adf" size="901120" crc="d75a14fc" sha1="c00fdc17dc11af597daea4a36cbfb4e1e104fb36"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bulboand_2" supported="no">
+		<description>Bulbo and the Lizard-King (v2, 2020-08-22)</description>
+		<year>2020</year>
+		<publisher>Pension</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="DAAD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="bulbo and the lizard-king v2 (2020-08-22)(pension)[daad].adf" size="901120" crc="7170284b" sha1="4701f5153ed48bc1ca3dfa1d98427eec7865529f"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9326,6 +9428,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="chickenc" supported="no">
+		<description>Chicken Coop (2020-07-14)</description>
+		<year>2020</year>
+		<publisher>Czorny</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked ross, Redpill"/>
+			<dataarea name="flop" size="901120">
+				<rom name="chicken coop (2020-07-14)(czorny)[h ross][redpill].adf" size="901120" crc="a418a969" sha1="8cd8d5d27d9e2c40a7e1c51db6c3cefdbac30bf3"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="thechild" supported="no">
 		<description>The Child Murderer (AGA, Shareware)</description>
 		<year>1994</year>
@@ -9680,7 +9795,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="climbing" supported="no">
-		<description>Climbing Up</description>
+		<description>Climbing up</description>
 		<year>1996</year>
 		<publisher>Alternative Realities</publisher>
 
@@ -9698,7 +9813,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="climbing_1" supported="no">
-		<description>Climbing Up Editor</description>
+		<description>Climbing up Editor</description>
 		<year>1996</year>
 		<publisher>Alternative Realities</publisher>
 
@@ -10233,6 +10348,66 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="crazycol" supported="no">
+		<description>Crazy Columns (Playable Demo, v0.92, 2021-01-16)</description>
+		<year>2021</year>
+		<publisher>Jochen Hoffer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="crazy columns v0.92 (demo-playable) (2021-01-16)(hoffer, jochen).adf" size="901120" crc="d3fdfbb0" sha1="3f74a11ac19f5b954d1e82963ec8e480fe0363b7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crazycol_1" supported="no">
+		<description>Crazy Columns (Playable Demo, v0.93, 2021-01-24)</description>
+		<year>2021</year>
+		<publisher>Jochen Hoffer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="crazy columns v0.93 (demo-playable) (2021-01-24)(hoffer, jochen).adf" size="901120" crc="b154b9dc" sha1="83231a3c6ead70e2db036a60ad7fac9ecb14d7e4"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crazycol_2" supported="no">
+		<description>Crazy Columns (de, Playable Demo, v0.93, 2021-01-24)</description>
+		<year>2021</year>
+		<publisher>Jochen Hoffer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="crazy columns v0.93 (demo-playable) (2021-01-24)(hoffer, jochen)(de).adf" size="901120" crc="80a0fc47" sha1="4c50436ded69678858eee5f6649333825ba85b6a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crazycol_3" supported="no">
+		<description>Crazy Columns (Playable Demo, v0.95, 2021-02-06)</description>
+		<year>2021</year>
+		<publisher>Jochen Hoffer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="crazy columns v0.95 (demo-playable) (2021-02-06)(hoffer, jochen).adf" size="901120" crc="b1869add" sha1="f3488718b9c20ab9a7f158d652960915283dca2f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crazycol_4" supported="no">
+		<description>Crazy Columns (de, Playable Demo, v0.95, 2021-02-06)</description>
+		<year>2021</year>
+		<publisher>Jochen Hoffer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="crazy columns v0.95 (demo-playable) (2021-02-06)(hoffer, jochen)(de).adf" size="901120" crc="9635e95f" sha1="5a8eed0783ebd281c29003c6b31effbc5f0d904a"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="crazypip" supported="no">
 		<description>Crazy Pipes (v2.0, 1991-10-18, Shareware)</description>
 		<year>1991</year>
@@ -10349,7 +10524,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="crazysue_1" supported="no">
-		<description>Crazy Sue...Goes On (Public Domain)</description>
+		<description>Crazy Sue...Goes on (Public Domain)</description>
 		<year>1992</year>
 		<publisher>Hironymous Jumpshoe</publisher>
 
@@ -11586,6 +11761,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="deluxebl" supported="no">
+		<description>Deluxe Blobble (Shareware)</description>
+		<year>1997</year>
+		<publisher>AIM Design</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked SB-Soft, 8 levels demo"/>
+			<dataarea name="flop" size="901120">
+				<rom name="deluxe blobble (1997)(aim design)(sw)[h sb-soft][8 levels demo].adf" size="901120" crc="6412f516" sha1="b7eb9ba051bdc83586b2701ce5579508aa20e296"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="deluxega" supported="no">
 		<description>Deluxe Galaga (Shareware/Registered)</description>
 		<year>199?</year>
@@ -12077,7 +12265,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="dentawol" supported="no">
-		<description>Dent A Wolf (AGA, v3.567, 1994-09-09)</description>
+		<description>Dent a Wolf (AGA, v3.567, 1994-09-09)</description>
 		<year>1994</year>
 		<publisher>Silltunna</publisher>
 
@@ -12883,6 +13071,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="dodgyroc" supported="no">
+		<description>Dodgy Rocks (2020-09-16)</description>
+		<year>2020</year>
+		<publisher>Daedelus - Nigriv</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="dodgy rocks (2020-09-16)(daedelus - nigriv).adf" size="901120" crc="ada31b3f" sha1="e01cf750c50267fb143e492d01bca946d50c251d"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="thedogbo" supported="no">
 		<description>The Dogboy (2019-06-26)</description>
 		<year>2019</year>
@@ -13001,6 +13201,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2, unfinished"/>
 			<dataarea name="flop" size="901120">
 				<rom name="don don land (1992)(sunteam)(disk 2 of 2)[unfinished].adf" size="901120" crc="1ad06356" sha1="281de60fab6985b58b8ca6d43658be9c26b4adc0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="donjonde" supported="no">
+		<description>Donjon de BatteMan (fr, 2021-01-12)</description>
+		<year>2021</year>
+		<publisher>BatteMan</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Z-Machine"/>
+			<dataarea name="flop" size="901120">
+				<rom name="donjon de batteman (2021-01-12)(batteman)(fr)[z-machine].adf" size="901120" crc="a7300e73" sha1="3191d76774b35dabb83cf13424a948a76aaf03f0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -14597,6 +14810,12 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 				<rom name="else we get mad v1.02 (2017-12-19)(amiga wave).adf" size="901120" crc="a3750db7" sha1="34b0732b87ae3efe70156b2eeb8f0e4831270e81"/>
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Trained +3 by Flashtro"/>
+			<dataarea name="flop" size="901120">
+				<rom name="else we get mad v1.02 (2017-12-19)(amiga wave)[t +3 flashtro].adf" size="901120" crc="d9be3b35" sha1="d9a3cca835ab07fe91f2af5c22afda230c5ebb13"/>
+			</dataarea>
+		</part>
 	</software>
 
 	<software name="elvesdre" supported="no">
@@ -14971,7 +15190,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="epsilon9" supported="no">
-		<description>Epsilon 9 - The Revenge of The Stingons (Licenceware)</description>
+		<description>Epsilon 9 - The Revenge of the Stingons (Licenceware)</description>
 		<year>1995</year>
 		<publisher>DTO Software - F1 Licenceware</publisher>
 
@@ -15343,6 +15562,32 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="aneveryd_1" supported="no">
+		<description>An Everyday Tale of a Seeker of Gold (2020-08-28)</description>
+		<year>2020</year>
+		<publisher>Pension</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="DAAD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="everyday tale of a seeker of gold, an (2020-08-28)(pension)[daad].adf" size="901120" crc="6f953003" sha1="662addeed901531a7092db09be36b74fc8025021"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aneveryd_2" supported="no">
+		<description>An Everyday Tale of a Seeker of Gold (2020-09-05)</description>
+		<year>2020</year>
+		<publisher>Pension</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="DAAD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="everyday tale of a seeker of gold, an (2020-09-05)(pension)[daad].adf" size="901120" crc="eaf51432" sha1="3819e789db3ba54b54ca0af3c65125c725ada22d"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="evildawn" supported="no">
 		<description>Evil Dawn (Public Domain)</description>
 		<year>1989</year>
@@ -15412,50 +15657,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="exitor v5.06a (1987-03-31)(swiss cracking association - big apple).adf" size="901120" crc="3e2c85fc" sha1="8b68c35b4549bb6ba816ebcf55d349007cc51237"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="theexper" supported="no">
-		<description>The Experiment (Licenceware)</description>
-		<year>1996</year>
-		<publisher>DAS - F1 Licenceware</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 3, 1998 edition, GRAC"/>
-			<dataarea name="flop" size="901120">
-				<rom name="experiment, the (1996)(das - f1 licenceware)(lw)(disk 1 of 3)[1998 edition][grac].adf" size="901120" crc="dc226387" sha1="f73825f1c42d3133cac064c60d40d4f46313b381"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 3, 1998 edition"/>
-			<dataarea name="flop" size="901120">
-				<rom name="experiment, the (1996)(das - f1 licenceware)(lw)(disk 2 of 3)[1998 edition].adf" size="901120" crc="c0e09069" sha1="3a1f68d620d66d82df848cc8e12506699d889928"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 3 of 3, 1998 edition"/>
-			<dataarea name="flop" size="901120">
-				<rom name="experiment, the (1996)(das - f1 licenceware)(lw)(disk 3 of 3)[1998 edition].adf" size="901120" crc="3746c3c8" sha1="1e5d7aad22ca777a566a77efabfd2d276c815c62"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="theexper_1" supported="no">
-		<description>The Experiment (Playable Demo, Public Domain)</description>
-		<year>1996</year>
-		<publisher>DAS - F1 Licenceware</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt, GRAC"/>
-			<dataarea name="flop" size="901120">
-				<rom name="experiment, the (demo-playable) (1996)(das - f1 licenceware)(pd)[a][grac].adf" size="901120" crc="380bc711" sha1="5b0bbf5b12b8fcf04be62f5952055c179dc413ba"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="GRAC"/>
-			<dataarea name="flop" size="901120">
-				<rom name="experiment, the (demo-playable) (1996)(das - f1 licenceware)(pd)[grac].adf" size="901120" crc="fe98dacc" sha1="1d81fa4b0b674478aae98654dcbbd134d74bb8f0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -15843,6 +16044,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="fenetres" supported="no">
+		<description>Fenetre sur ma Cour (fr, 2020-08-08)</description>
+		<year>2020</year>
+		<publisher>BatteMan</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Z-Machine"/>
+			<dataarea name="flop" size="901120">
+				<rom name="fenetre sur ma cour (2020-08-08)(batteman)(fr)[z-machine].adf" size="901120" crc="87710f51" sha1="793832bac37c0f41841667549b86a5d2f849a406"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="dasfest" supported="no">
 		<description>Das Fest (de, Public Domain)</description>
 		<year>199?</year>
@@ -16078,8 +16292,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="mightyfi" supported="no">
-		<description>Mighty Find It Mind, Off You Go!, Word Hop (Licenceware)</description>
+	<software name="finditmi" supported="no">
+		<description>Find It, Mighty Mind, Off You Go!, Word Hop (Licenceware)</description>
 		<year>1994</year>
 		<publisher>Gina Mears - F1 Licenceware</publisher>
 
@@ -16380,6 +16594,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="flormem" supported="no">
+		<description>Flormem (1996-01)</description>
+		<year>1996</year>
+		<publisher>H. Robin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="AMOS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="flormem (1996-01)(robin, h.)[amos].adf" size="901120" crc="a8969ca5" sha1="99a6089648fa73a81a3ae8258f8725f3e175dc28"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="fluffles" supported="no">
 		<description>Fluffles</description>
 		<year>1996</year>
@@ -16572,7 +16799,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="fortress_2" supported="no">
-		<description>Fortress - A500 (version, Licenceware)</description>
+		<description>Fortress - A500 version (Licenceware)</description>
 		<year>1994</year>
 		<publisher>Digital Ninja - F1 Licenceware</publisher>
 
@@ -16714,6 +16941,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="fred's journey v1.2 (2020-04-13)(cosmos designs - retroguru).adf" size="901120" crc="58449a40" sha1="d4b56076717533170972799da73a1dba8706c485"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fredsjou_3" supported="no">
+		<description>Fred's Journey (v2.0, 2020-07-05)</description>
+		<year>2020</year>
+		<publisher>Cosmos Designs - Retroguru</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="fred's journey v2.0 (2020-07-05)(cosmos designs - retroguru).adf" size="901120" crc="54274a35" sha1="bbc93f2f97048d02acead6bc26c836c59302b37d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -17018,6 +17257,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="fruitmac" supported="no">
+		<description>FruitMachine (AGA, Playable Demo, 1994-12-08)</description>
+		<year>1994</year>
+		<publisher>Project A</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="fruitmachine (demo-playable) (1994-12-08)(project a)(aga).adf" size="901120" crc="ccfdb0d4" sha1="7b036882c6545fff2439b779efc05298596a00a3"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="frustrat" supported="no">
 		<description>Frustration (1992-04-20)</description>
 		<year>1992</year>
@@ -17045,6 +17296,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="DAAD"/>
 			<dataarea name="flop" size="901120">
 				<rom name="fuddo and slam (2019-03-19)(pension)[daad].adf" size="901120" crc="100895a8" sha1="efb71c6ae15e307fca2f80e12737b8a1a94f0665"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fuddoand_1" supported="no">
+		<description>Fuddo and Slam 2 (2020-12-11)</description>
+		<year>2020</year>
+		<publisher>Pension</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="DAAD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="fuddo and slam 2 (2020-12-11)(pension)[daad].adf" size="901120" crc="79b8bccf" sha1="3d392ff6d20b9a6b157e0f24a051a7128eedfcd7"/>
 			</dataarea>
 		</part>
 	</software>
@@ -17238,6 +17502,12 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Fixed A500+ ATX, Hacked Triton, Trained +3 by ATX"/>
+			<dataarea name="flop" size="901120">
+				<rom name="gainforce (1991)(infernal byte systems)[f a500+ atx][h triton][t +3 atx].adf" size="901120" crc="1e729eaa" sha1="a2142ddfbc0e6c78275b2b0b0df793a4bd3a5328"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
 			<feature name="part_id" value="Hacked Triton"/>
 			<dataarea name="flop" size="901120">
 				<rom name="gainforce (1991)(infernal byte systems)[h triton].adf" size="901120" crc="ea9c2e14" sha1="67c29f35acc1f42a82c4b90ad1d25d79f94a330a"/>
@@ -18835,7 +19105,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="guymere2_1" supported="no">
-		<description>Guymere 2 II - Jetez De Chine l'Encre (1994-12-25)</description>
+		<description>Guymere 2 II - De Chine, Jetez l'Encre (1994-12-25)</description>
 		<year>1994</year>
 		<publisher>Jean-Pierre Software</publisher>
 
@@ -18847,7 +19117,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="guymere2_2" supported="no">
-		<description>Guymere 2 II - Jetez De Chine l'Encre (1994-12-26)</description>
+		<description>Guymere 2 II - De Chine, Jetez l'Encre (1994-12-26)</description>
 		<year>1994</year>
 		<publisher>Jean-Pierre Software</publisher>
 
@@ -19138,6 +19408,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="level 1, 2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="hellzone - carnage extreme (1992)(interscan)(sw)[level 1, 2].adf" size="901120" crc="0a8be1ac" sha1="2e10e98a095df1429f0d2165f56690effb40569b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hemoglob" supported="no">
+		<description>HemoGlobiins</description>
+		<year>1995</year>
+		<publisher>o'Moses</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2, AMOS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="hemoglobiins (1995)(o'moses)(disk 1 of 2)[amos].adf" size="901120" crc="9d837af2" sha1="d2415aac79bc082eca1076b43cc48bb9dff2dcdd"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="hemoglobiins (1995)(o'moses)(disk 2 of 2).adf" size="901120" crc="2716f5c7" sha1="976683d82669a35b92e445343c5fd98b430a15c0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20791,6 +21080,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="inviyya_4" supported="no">
+		<description>Inviyya (Playable Demo, v2, 2020-03-08)</description>
+		<year>2020</year>
+		<publisher>Premium - Tigerskunk - Triace</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="inviyya v2 (demo-playable) (2020-03-08)(premium - tigerskunk - triace).adf" size="901120" crc="8d439453" sha1="8513dae05c5c7ff757dfc3085355e8e38a18de8b"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="ironclad" supported="no">
 		<description>Iron Clads - Surface Naval Combat Game (v1.0, 1992-05-16, Public Domain)</description>
 		<year>1992</year>
@@ -21432,7 +21733,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thejumpa" supported="no">
-		<description>The Jump And Run Game</description>
+		<description>The Jump and Run Game</description>
 		<year>1991</year>
 		<publisher>Miky Wenngatz</publisher>
 
@@ -21754,9 +22055,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Rob Maddison - F1 Licenceware</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="1998 edition, AMOS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="karate master (demo-playable) (1998-04-25)(maddison, rob - f1 licenceware)(pd)[1998 edition][amos].adf" size="901120" crc="f10f8c8b" sha1="bb67fc8622c52c718fbab68bf89d28e50056c95c"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="AMOS"/>
 			<dataarea name="flop" size="901120">
-				<rom name="karate master (demo-playable) (1998-04-25)(maddison, rob - f1 licenceware)(pd)[amos].adf" size="901120" crc="f10f8c8b" sha1="bb67fc8622c52c718fbab68bf89d28e50056c95c"/>
+				<rom name="karate master (demo-playable) (1998-04-25)(maddison, rob - f1 licenceware)(pd)[amos].adf" size="901120" crc="d4c6b7c5" sha1="162ef26c6ae1b3a19edfe6fa4b1cf0066fe95838"/>
 			</dataarea>
 		</part>
 	</software>
@@ -21881,7 +22188,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="kickup" supported="no">
-		<description>Kick' Up</description>
+		<description>Kick' up</description>
 		<year>19??</year>
 		<publisher>M. Silbernagl</publisher>
 
@@ -21894,7 +22201,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="kickitad" supported="no">
-		<description>Kickit - A Day For The Laiban (1997-02-16, Public Domain)</description>
+		<description>Kickit - A Day for the Laiban (1997-02-16, Public Domain)</description>
 		<year>1997</year>
 		<publisher>Three Little Elks</publisher>
 
@@ -23545,6 +23852,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="lightspe" supported="no">
+		<description>LightSpeed (v1.0, Licenceware)</description>
+		<year>1995</year>
+		<publisher>Sublime</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="lightspeed v1.0 (1995)(sublime)(lw)[wb].adf" size="901120" crc="0481c588" sha1="42061b26603257180bc6b9a2b6bf551e92f4b184"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="limonada" supported="no">
 		<description>Limonada (cs, v1.0.1)</description>
 		<year>2010</year>
@@ -24334,6 +24654,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="malediction v3.0 (1995-03)(d'heeger, sebastien - 17-bit software)(aga)(sw)(disk 2 of 2).adf" size="901120" crc="09473bfa" sha1="356c4e1ebf376fb54cde982bc8cdf03db861d43b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="maledict_3" supported="no">
+		<description>Malediction (AGA, en/fr, v3.01, 1995-04, Shareware)</description>
+		<year>1995</year>
+		<publisher>Sebastien D'Heeger</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="malediction v3.01 (1995-04)(d'heeger, sebastien)(aga)(en-fr)(sw)(disk 1 of 2).adf" size="901120" crc="470d69b3" sha1="66e7ef5235f33f100ef4cd23258e00d5a0c9e792"/>
 			</dataarea>
 		</part>
 	</software>
@@ -27113,6 +27446,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="nautilus" supported="no">
+		<description>Nautilus</description>
+		<year>199?</year>
+		<publisher>Equinox</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="nautilus (199x)(equinox).adf" size="901120" crc="c1d60037" sha1="2a53c753a96b997f56af86f18b846e285919dac1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nautilus_1" supported="no">
 		<description>Nautilus (v1.4, Public Domain)</description>
 		<year>1997</year>
 		<publisher>M. LeDouarain</publisher>
@@ -27706,7 +28051,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="oddsonfa" supported="no">
-		<description>Odds On Favourite (Licenceware)</description>
+		<description>Odds on Favourite (Licenceware)</description>
 		<year>1998</year>
 		<publisher>Park Productions - F1 Software</publisher>
 
@@ -28605,6 +28950,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="pacman3d" supported="no">
+		<description>Pacman 3D (Shareware)</description>
+		<year>1994</year>
+		<publisher>Andrew Heckles</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="AMOS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="pacman 3d (1994)(heckles, andrew)(sw)[amos].adf" size="901120" crc="8e359a1a" sha1="fb8a3600e8faace6d49e5d5a0a78735491411ad3"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="pacman87" supported="no">
 		<description>Pacman 87</description>
 		<year>1987</year>
@@ -29241,13 +29599,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="phantom" supported="no">
-		<description>Phantom</description>
-		<year>1995</year>
+		<description>Phantom (v1.0, 1996-01-04, Shareware)</description>
+		<year>1996</year>
 		<publisher>Andreas Lunn</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="phantom (1995)(lunn, andreas).adf" size="901120" crc="f42f4f3a" sha1="bc8acc50cc64c69b6b3866b2abdf86d7cf7aff69"/>
+				<rom name="phantom v1.0 (1996-01-04)(lunn, andreas)(sw).adf" size="901120" crc="f42f4f3a" sha1="bc8acc50cc64c69b6b3866b2abdf86d7cf7aff69"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt"/>
+			<dataarea name="flop" size="901120">
+				<rom name="phantom v1.0 (1996-01-04)(lunn, andreas)(sw)[a].adf" size="901120" crc="070c3382" sha1="429ae185cf501326c9dc56248f5bc45c3a7e3caf"/>
 			</dataarea>
 		</part>
 	</software>
@@ -29576,7 +29940,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="pitchnpu" supported="no">
-		<description>Pitch'N'Putt (Licenceware)</description>
+		<description>Pitch'n'Putt (Licenceware)</description>
 		<year>1996</year>
 		<publisher>Paul Phelps - F1 Licenceware</publisher>
 
@@ -29638,6 +30002,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 5 of 5, 1997 edition"/>
 			<dataarea name="flop" size="901120">
 				<rom name="pitch'n'putt (1996)(phelps, paul - f1 licenceware)(lw)(disk 5 of 5)[1997 edition].adf" size="901120" crc="6e46970c" sha1="5db5ee437267812da351115a037956e0d4340140"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pitchnpu_1" supported="no">
+		<description>Pitch'n'Putt (Playable Demo, Licenceware)</description>
+		<year>1996</year>
+		<publisher>Paul Phelps - F1 Licenceware</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="pitch'n'putt (demo-playable) (1996)(phelps, paul - f1 licenceware)(lw).adf" size="901120" crc="c30e04c7" sha1="b9b3cad333e8845e8947df97824094f71d1d08e9"/>
 			</dataarea>
 		</part>
 	</software>
@@ -29704,8 +30080,40 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Frentic</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="AMOS, The One #80"/>
 			<dataarea name="flop" size="901120">
-				<rom name="plat-man (1995)(frentic).adf" size="901120" crc="5c32dd7a" sha1="676e04bc409aaefba81a5a34496a52c99293c857"/>
+				<rom name="plat-man (1995)(frentic)[amos][the one #80].adf" size="901120" crc="5c32dd7a" sha1="676e04bc409aaefba81a5a34496a52c99293c857"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked Courbois, FFS, updated, AMOS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="plat-man (1995)(frentic)[h courbois][ffs][updated][amos].adf" size="901120" crc="e08af6d9" sha1="1b4ea1ca89ecbb3b778c2fef1f7079d488e04a9e"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked LGD, AMOS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="plat-man (1995)(frentic)[h lgd][amos].adf" size="901120" crc="a84038e8" sha1="f75220f035e453b93ae4dc0907d98af66d219ce6"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="updated, AMOS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="plat-man (1995)(frentic)[updated][amos].adf" size="901120" crc="f0c75fd0" sha1="855df16b0ab9a34f346104a27fdc43af78ba70ac"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="platform" supported="no">
+		<description>Platform (2021-01-30)</description>
+		<year>2021</year>
+		<publisher>nobody</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Scorpion Engine"/>
+			<dataarea name="flop" size="901120">
+				<rom name="platform (2021-01-30)(nobody)[scorpion engine].adf" size="901120" crc="8059a6d0" sha1="77f757f17aab90068b14d3bb38cebcbec15e7101"/>
 			</dataarea>
 		</part>
 	</software>
@@ -31014,6 +31422,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="puzzle wizard (1987)(ozer, a.).adf" size="901120" crc="6099aa7c" sha1="8715d120ed2572eeefc69536134ee4bd1912d251"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="puzzlewi_1" supported="no">
+		<description>Puzzle Wizard (1)</description>
+		<year>1988</year>
+		<publisher>Mak - RAF</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="IFF2PCS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="puzzle wizard (1988)(mak - raf)[iff2pcs].adf" size="901120" crc="89be3c96" sha1="e985f80cc1046c12e1fd6b4c27cc5d75a660b1d6"/>
 			</dataarea>
 		</part>
 	</software>
@@ -32473,6 +32894,45 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="retarded_2" supported="no">
+		<description>Retarded Creatures and Caverns 2 (2020-11-12)</description>
+		<year>2020</year>
+		<publisher>Pension</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="DAAD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="retarded creatures and caverns 2 (2020-11-12)(pension)[daad].adf" size="901120" crc="c75666f8" sha1="2731ef102b0349816a90d02843b42db0c83e8d87"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="retarded_3" supported="no">
+		<description>Retarded Creatures and Caverns 2 (2020-12-12)</description>
+		<year>2020</year>
+		<publisher>Pension</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="DAAD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="retarded creatures and caverns 2 (2020-12-12)(pension)[daad].adf" size="901120" crc="235d21f3" sha1="35df5f973237da5d543eda41e910421422617f71"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="retarded_4" supported="no">
+		<description>Retarded Creatures and Caverns 2 (2020-12-17)</description>
+		<year>2020</year>
+		<publisher>Pension</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="DAAD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="retarded creatures and caverns 2 (2020-12-17)(pension)[daad].adf" size="901120" crc="9bd4e866" sha1="ce18af7ea7b74e990812e4c1bd73d394e7bd71ea"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="retro" supported="no">
 		<description>Retro (AGA)</description>
 		<year>1999</year>
@@ -32774,7 +33234,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="ringsofz" supported="no">
-		<description>Rings of Zon Volume 1 - Joe Agima to The Rescue! (v1.0, Shareware)</description>
+		<description>Rings of Zon Volume 1 - Joe Agima to the Rescue! (v1.0, Shareware)</description>
 		<year>1990</year>
 		<publisher>Micro Fix</publisher>
 
@@ -33569,6 +34029,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="rygar" supported="no">
+		<description>Rygar (AGA, 2020-12-30)</description>
+		<year>2020</year>
+		<publisher>McGeezer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="rygar (2020-12-30)(mcgeezer)(aga).adf" size="901120" crc="d545c5d8" sha1="15df5b9fae2f4a07307ea8d22b87e88092dbdaf1"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="samegame" supported="no">
 		<description>SameGame (v2.6, 2000-09, Freeware)</description>
 		<year>2000</year>
@@ -33643,7 +34115,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="santaesc" supported="no">
-		<description>Santa Escape - KS1x Edition (2019-12-18, Freeware)</description>
+		<description>Santa Escape - KS1x Edition (v1.0, 2019-12-18, Freeware)</description>
 		<year>2019</year>
 		<publisher>Amiten</publisher>
 
@@ -33656,7 +34128,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="santaesc_1" supported="no">
-		<description>Santa Escape - KS2.0+ Edition (2019-12-18, Freeware)</description>
+		<description>Santa Escape - KS2.0+ Edition (v1.0, 2019-12-18, Freeware)</description>
 		<year>2019</year>
 		<publisher>Amiten</publisher>
 
@@ -33664,6 +34136,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="AMOS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="santa escape v1.0 - ks2.0+ edition (2019-12-18)(amiten)(fw)[amos].adf" size="901120" crc="8f1a71a8" sha1="ee91285ca17cf924018e81eba7a87d5574874bdc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="santarun" supported="no">
+		<description>Santa Run (2020-12-19)</description>
+		<year>2020</year>
+		<publisher>Double Sided Games</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="santa run (2020-12-19)(double sided games).adf" size="901120" crc="50125036" sha1="25ed746cf6d4ed69c471d498c263d0e76bcd09fd"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Trained by Flashtro"/>
+			<dataarea name="flop" size="901120">
+				<rom name="santa run (2020-12-19)(double sided games)[t flashtro].adf" size="901120" crc="d6c52c79" sha1="8ee9c62f8dd6a78a62e71817e65be2b113f174c8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -34272,6 +34762,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="secret elf squad (demo-playable) (1995)(entactogenic design).adf" size="901120" crc="ff1b7420" sha1="e86bd456dc34bdbd17709c3bffc087be0140a839"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thesecre" supported="no">
+		<description>The Secret of Little Hodcome (2020-08-27)</description>
+		<year>2020</year>
+		<publisher>Pension</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="DAAD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="secret of little hodcome, the (2020-08-27)(pension)[daad].adf" size="901120" crc="8d2b43f5" sha1="cdf2af76c6e4b5774a4d2e4663d5ae12efd3756a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -35949,7 +36452,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="sneerrai" supported="no">
-		<description>Sneer - Raider of The Lost Wok (1995-02, Freeware)</description>
+		<description>Sneer - Raider of the Lost Wok (1995-02, Freeware)</description>
 		<year>1995</year>
 		<publisher>Funny Bugs</publisher>
 
@@ -36273,7 +36776,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="somethin" supported="no">
-		<description>Something About The Bunny r1 (Public Domain)</description>
+		<description>Something About the Bunny r1 (Public Domain)</description>
 		<year>1998</year>
 		<publisher>GLYPH</publisher>
 
@@ -36437,18 +36940,45 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="spaceinv" supported="no">
-		<description>Space Invaders (v0.3, Public Domain)</description>
-		<year>19??</year>
-		<publisher>Y. Gold</publisher>
+		<description>Space Invaders (2020-12-24)</description>
+		<year>2020</year>
+		<publisher>Havie Spring</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="inc. source code, Blitz BASIC"/>
 			<dataarea name="flop" size="901120">
-				<rom name="space invaders v0.3 (19xx)(gold, y.)(pd).adf" size="901120" crc="1da64150" sha1="59eb308a4ccd7e7e8269742bfd05819b89f0b16f"/>
+				<rom name="space invaders (2020-12-24)(spring, havie)[inc. source code, blitz basic].adf" size="901120" crc="b3f1479a" sha1="7621308f397e28afd56decb878b73e60b772ccc7"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="spaceinv_1" supported="no">
+		<description>Space Invaders (2021-01-28)</description>
+		<year>2021</year>
+		<publisher>Havie Spring</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="inc. source code, Blitz BASIC"/>
+			<dataarea name="flop" size="901120">
+				<rom name="space invaders (2021-01-28)(spring, havie)[inc. source code, blitz basic].adf" size="901120" crc="ea1437b6" sha1="f27d1ecd3d2459f9789a55f94dafa0315dc90a12"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spaceinv_2" supported="no">
+		<description>Space Invaders (v0.3)</description>
+		<year>1994</year>
+		<publisher>Yair Goldfinger</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="inc. source code, C"/>
+			<dataarea name="flop" size="901120">
+				<rom name="space invaders v0.3 (1994)(goldfinger, yair)[inc. source code, c].adf" size="901120" crc="1da64150" sha1="59eb308a4ccd7e7e8269742bfd05819b89f0b16f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spaceinv_3" supported="no">
 		<description>Space Invasion</description>
 		<year>1993</year>
 		<publisher>Towerbyte Software</publisher>
@@ -36466,7 +36996,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="spaceinv_2" supported="no">
+	<software name="spaceinv_4" supported="no">
 		<description>Space Invasion (1)</description>
 		<year>1998</year>
 		<publisher>K. Gallagher</publisher>
@@ -36479,7 +37009,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="spaceinv_3" supported="no">
+	<software name="spaceinv_5" supported="no">
 		<description>Space Invasion II</description>
 		<year>1994</year>
 		<publisher>Towerbyte Software</publisher>
@@ -36566,7 +37096,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Electric Illusions</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="inc. Roll On v1.3"/>
+			<feature name="part_id" value="inc. Roll on v1.3"/>
 			<dataarea name="flop" size="901120">
 				<rom name="space rescue (1992)(electric illusions)(sw-r)[inc. roll on v1.3].adf" size="901120" crc="6ce5a2ba" sha1="8cbe90947ca01a84e959be57be248c4f92ea828d"/>
 			</dataarea>
@@ -36921,6 +37451,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="AMOS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="speedtris (1994)(polygon software - f1 licenceware)(lw)[amos].adf" size="901120" crc="6460cef4" sha1="9de9c86a6558f91a3c1c919ee525c7e072171a3c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="speleolo" supported="no">
+		<description>Speleologie en Aveugle (fr, 2020-08-22)</description>
+		<year>2020</year>
+		<publisher>BatteMan</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Z-Machine"/>
+			<dataarea name="flop" size="901120">
+				<rom name="speleologie en aveugle (2020-08-22)(batteman)(fr)[z-machine].adf" size="901120" crc="41cedc1e" sha1="e1384314197d4738967969242a181940ec1631fe"/>
 			</dataarea>
 		</part>
 	</software>
@@ -38220,6 +38763,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="stations" supported="no">
+		<description>Station Spatiale S16 – Prologue (fr, 2021-01-26)</description>
+		<year>2021</year>
+		<publisher>Samuel Verschelde</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Z-Machine"/>
+			<dataarea name="flop" size="901120">
+				<rom name="station spatiale s16  prologue (2021-01-26)(verschelde, samuel)(fr)[z-machine].adf" size="901120" crc="b957d857" sha1="8cc43aed18d8a513fada38643bdaa982fc39a899"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="statisti" supported="no">
 		<description>Statistic Monopoly (Public Domain)</description>
 		<year>1994</year>
@@ -39188,6 +39744,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="superspr_2" supported="no">
+		<description>Super Sprint v1.4 beta (2021-02-03)</description>
+		<year>2021</year>
+		<publisher>McGeezer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="super sprint v1.4 beta (2021-02-03)(mcgeezer).adf" size="901120" crc="88605d54" sha1="bfbd1e4945d8cab06c3f8034d60d167d504d547e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="superspr_3" supported="no">
+		<description>Super Sprint v1.5 beta (2021-02-07)</description>
+		<year>2021</year>
+		<publisher>McGeezer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="super sprint v1.5 beta (2021-02-07)(mcgeezer).adf" size="901120" crc="1a380d3d" sha1="bd672f084bb14801557dd08e220e12965ff2ee85"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="supertra" supported="no">
 		<description>Super Trail (de)</description>
 		<year>1995</year>
@@ -39349,7 +39929,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="swordoft" supported="no">
-		<description>Sword of The Warlock (Shareware)</description>
+		<description>Sword of the Warlock (Shareware)</description>
 		<year>1991</year>
 		<publisher>Alan Broz</publisher>
 
@@ -39817,6 +40397,66 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="tapperte" supported="no">
+		<description>Tapper Test.01 (2020-03-10)</description>
+		<year>2020</year>
+		<publisher>Old_Bob</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="tapper test.01 (2020-03-10)(old_bob).adf" size="901120" crc="e63cb4ef" sha1="d5bea24665fa07da2402b89afe1d9a7d23538bf3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tapperte_1" supported="no">
+		<description>Tapper Test.01b (2020-03-11)</description>
+		<year>2020</year>
+		<publisher>Old_Bob</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="tapper test.01b (2020-03-11)(old_bob).adf" size="901120" crc="11530525" sha1="26976822d4aeff8db8bc7c38f3019eb9f09c8c0e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tapperte_2" supported="no">
+		<description>Tapper Test.02a (2020-05-21)</description>
+		<year>2020</year>
+		<publisher>Old_Bob</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="tapper test.02a (2020-05-21)(old_bob).adf" size="901120" crc="cd8b5ebb" sha1="1c01b486062c970365431e0836c3e94266a0d06e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tapperte_3" supported="no">
+		<description>Tapper Test.03a (2021-01-06)</description>
+		<year>2021</year>
+		<publisher>Old_Bob</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="tapper test.03a (2021-01-06)(old_bob).adf" size="901120" crc="45d3a97f" sha1="ea16793d6d109d7c36d9662a6997d665930748ce"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tapperte_4" supported="no">
+		<description>Tapper Test.04a (2021-01-21)</description>
+		<year>2021</year>
+		<publisher>Old_Bob</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="tapper test.04a (2021-01-21)(old_bob).adf" size="901120" crc="b41899e3" sha1="48e1cb224cb408a569196499be3d82ce685229fb"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="targis" supported="no">
 		<description>Targis (NTSC, Shareware)</description>
 		<year>1993</year>
@@ -40009,13 +40649,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="tecnobal_1" supported="no">
-		<description>TecnoballZ (AGA, Shareware)</description>
-		<year>1996</year>
+		<description>TecnoballZ (AGA, v0.83, 1995-05-31, Shareware)</description>
+		<year>1995</year>
 		<publisher>TLK Games</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="tecnoballz (1996)(tlk games)(aga)(sw).adf" size="901120" crc="6374173d" sha1="991ca548a9d4ffa383e6d4e9ff66d46577196a49"/>
+				<rom name="tecnoballz v0.83 (1995-05-31)(tlk games)(aga)(sw).adf" size="901120" crc="ae356acd" sha1="26b8ea794819a75698d8ddfb33f3361bdb0fe088"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tecnobal_2" supported="no">
+		<description>TecnoballZ (AGA, v0.90, 2003-02-09, Shareware)</description>
+		<year>2003</year>
+		<publisher>TLK Games</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="tecnoballz v0.90 (2003-02-09)(tlk games)(aga)(sw).adf" size="901120" crc="6374173d" sha1="991ca548a9d4ffa383e6d4e9ff66d46577196a49"/>
 			</dataarea>
 		</part>
 	</software>
@@ -40752,6 +41404,48 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="tinybobb" supported="no">
+		<description>Tiny Bobble (2020-08-24)</description>
+		<year>2020</year>
+		<publisher>Abyss</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="tiny bobble (2020-08-24)(abyss).adf" size="901120" crc="d8fb2dda" sha1="558a64b1d2d2f858b7bde7fee6757fdedd72f40a"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Trained +2 by Flashtro"/>
+			<dataarea name="flop" size="901120">
+				<rom name="tiny bobble (2020-08-24)(abyss)[t +2 flashtro].adf" size="901120" crc="b389733c" sha1="ea7f749f576afddfd28c1edd00642ed0b6cd8e6a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tinybobb_1" supported="no">
+		<description>Tiny Bobble rc4 (2020-08-23)</description>
+		<year>2020</year>
+		<publisher>Abyss</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="tiny bobble rc4 (2020-08-23)(abyss).adf" size="901120" crc="de842688" sha1="36a553765903cb5a5885f4ba01796c4d4ac14f4e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tinybobb_2" supported="no">
+		<description>Tiny Bobble (v0.92, 2020-08-14)</description>
+		<year>2020</year>
+		<publisher>Abyss</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="tiny bobble v0.92 (2020-08-14)(abyss).adf" size="901120" crc="84053801" sha1="2f16f21476f0dd31cd618a6a596543d46271b004"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="tinygala" supported="no">
 		<description>Tiny Galaga (2020-05-24)</description>
 		<year>2020</year>
@@ -41313,37 +42007,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="tradetra" supported="no">
-		<description>Trade Travel Fight (de)</description>
-		<year>1990</year>
-		<publisher>CompuTec Verlag</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Amiga Fun 90-08"/>
-			<dataarea name="flop" size="901120">
-				<rom name="trade travel fight (1990)(computec verlag)(de)[amiga fun 90-08].adf" size="901120" crc="66cbc598" sha1="eff737e94993f74483073d84c995c30ca42b525e"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Translated en Storm, Alt, Amiga Fun 90-08"/>
-			<dataarea name="flop" size="901120">
-				<rom name="trade travel fight (1990)(computec verlag)(de)[tr en storm][a][amiga fun 90-08].adf" size="901120" crc="a9029d93" sha1="efe281d27140b1e525b941ac80f0685ee6b74480"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Translated en Storm, Amiga Fun 90-08"/>
-			<dataarea name="flop" size="901120">
-				<rom name="trade travel fight (1990)(computec verlag)(de)[tr en storm][amiga fun 90-08].adf" size="901120" crc="fcfb1cac" sha1="322eef566195562c1f31f54dd7c438285111377f"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Virus Butonic v3.00, Amiga Fun 90-08"/>
-			<dataarea name="flop" size="901120">
-				<rom name="trade travel fight (1990)(computec verlag)(de)[v butonic v3.00][amiga fun 90-08].adf" size="901120" crc="32292727" sha1="d72834836ba1bf9596d5ad052ecb85363a49ffcf" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="trailbla" supported="no">
 		<description>Trailblazer (v1.0, 1992-07-01, Shareware)</description>
 		<year>1992</year>
@@ -41558,8 +42221,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="3trektri" supported="no">
-		<description>3, Trek Trivia Vol. 2 4, 5</description>
+	<software name="trektriv" supported="no">
+		<description>Trek Trivia Vol. 2, 3, 4, 5</description>
 		<year>1988</year>
 		<publisher>Micro FX</publisher>
 
@@ -41663,9 +42326,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Fixed memconfig Stingray"/>
+			<feature name="part_id" value="Fixed mem configs Stingray"/>
 			<dataarea name="flop" size="901120">
-				<rom name="trog (1992)(parsons, dave)[f memconfig stingray].adf" size="901120" crc="7b2b0c33" sha1="a9eed0895a3ba17ec7a5ec82182fff3d4645f47c"/>
+				<rom name="trog (1992)(parsons, dave)[f mem configs stingray].adf" size="901120" crc="7b2b0c33" sha1="a9eed0895a3ba17ec7a5ec82182fff3d4645f47c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -41820,20 +42483,20 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="truckino" supported="no">
-		<description>Truckin On</description>
+		<description>Truckin-On</description>
 		<year>19??</year>
-		<publisher>R. Lewis - 17-Bit Software</publisher>
+		<publisher>Ron Lewis - 17-Bit Software</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Disk 1 of 2"/>
 			<dataarea name="flop" size="901120">
-				<rom name="truckin on (19xx)(lewis, r. - 17-bit software)(disk 1 of 2).adf" size="901120" crc="86897176" sha1="4b07016db6a27b3ed3fe9b4836c9339728e1567e"/>
+				<rom name="truckin-on (19xx)(lewis, ron - 17-bit software)(disk 1 of 2).adf" size="901120" crc="86897176" sha1="4b07016db6a27b3ed3fe9b4836c9339728e1567e"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Disk 2 of 2"/>
 			<dataarea name="flop" size="901120">
-				<rom name="truckin on (19xx)(lewis, r. - 17-bit software)(disk 2 of 2).adf" size="901120" crc="88fead06" sha1="f173dbeef22f44c32465d4943534d1c32d496399"/>
+				<rom name="truckin-on (19xx)(lewis, ron - 17-bit software)(disk 2 of 2).adf" size="901120" crc="88fead06" sha1="f173dbeef22f44c32465d4943534d1c32d496399"/>
 			</dataarea>
 		</part>
 	</software>
@@ -43383,7 +44046,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="aweekint" supported="no">
-		<description>A Week In The Life r3 (Public Domain)</description>
+		<description>A Week in the Life r3 (Public Domain)</description>
 		<year>1997</year>
 		<publisher>Neil James Brown</publisher>
 
@@ -43497,7 +44160,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Modified puzzle The Editor, X-rated version"/>
+			<feature name="part_id" value="Modified puzzle the Editor, X-rated version"/>
 			<dataarea name="flop" size="901120">
 				<rom name="wheel of fortune (1988)(shafer, kent)(fw)[m puzzle the editor][x-rated version].adf" size="901120" crc="a9b7b27f" sha1="56c58994ab67a89fdec0aaba0cc478fbe60d47ce"/>
 			</dataarea>
@@ -44254,6 +44917,36 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="wormy" supported="no">
+		<description>Wormy (v1.0, 2020-07-21)</description>
+		<year>2020</year>
+		<publisher>Coagulus</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="wormy v1.0 (2020-07-21)(coagulus).adf" size="901120" crc="a3a2f2f3" sha1="26efbb7a821d8514bb7fd22f3f64b4bb9ebd156c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wormy_1" supported="no">
+		<description>Wormy (v1.1, 2020-07-26)</description>
+		<year>2020</year>
+		<publisher>Coagulus</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="wormy v1.1 (2020-07-26)(coagulus).adf" size="901120" crc="53307aca" sha1="9c383b4e3b6708e36b6522cd69bb860a08122323"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Trained +2 by Flashtro"/>
+			<dataarea name="flop" size="901120">
+				<rom name="wormy v1.1 (2020-07-26)(coagulus)[t +2 flashtro].adf" size="901120" crc="4f12a476" sha1="47ab624f2c687f5eccc1187afa17ffd224791d09"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="wotsitsn" supported="no">
 		<description>Wots Its Name (v1.2, Public Domain)</description>
 		<year>19??</year>
@@ -44963,6 +45656,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="zgr3d" supported="no">
+		<description>ZGR3D (v1.3.1, 2020-10-30)</description>
+		<year>2020</year>
+		<publisher>Project R3D</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="zgr3d v1.3.1 (2020-10-30)(project r3d).adf" size="901120" crc="32247959" sha1="932a996ef966159f1eb99d15f5118fa7f8ff613a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zgr3d_1" supported="no">
+		<description>ZGR3D (v1.3.3, 2020-12-01)</description>
+		<year>2020</year>
+		<publisher>Project R3D</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="zgr3d v1.3.3 (2020-12-01)(project r3d).adf" size="901120" crc="826dfb8b" sha1="8ee8716e6fe421e33cc3f09c046baf1da70e6a04"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="zgred" supported="no">
 		<description>ZGRED (v1.0, 2020-04-12)</description>
 		<year>2020</year>
@@ -44971,6 +45688,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="zgred v1.0 (2020-04-12)(project r3d).adf" size="901120" crc="19bce5a9" sha1="283bfbf317cb368a984473b0f6432012b2a7120b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zgred_1" supported="no">
+		<description>ZGRED (v1.0, 2020-04-27)</description>
+		<year>2020</year>
+		<publisher>Project R3D</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="updated"/>
+			<dataarea name="flop" size="901120">
+				<rom name="zgred v1.0 (2020-04-27)(project r3d)[updated].adf" size="901120" crc="de40ceb4" sha1="8be488d1b3a93571f95f5e2e955fd5b275153a72"/>
 			</dataarea>
 		</part>
 	</software>

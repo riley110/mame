@@ -867,63 +867,69 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="bugmine1" supported="no">
-		<description>BugMine #1</description>
+		<description>BugMine 1</description>
 		<year>199?</year>
 		<publisher>Noshtromo 2000</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="bugmine #1 (199x)(noshtromo 2000).adf" size="901120" crc="629c91d3" sha1="462fe66626e4923e27688973c3d68c015036e11f"/>
+				<rom name="bugmine 1 (199x)(noshtromo 2000).adf" size="901120" crc="629c91d3" sha1="462fe66626e4923e27688973c3d68c015036e11f"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="bugmine2" supported="no">
-		<description>BugMine #2 - The Revenge (1992-09-25)</description>
+		<description>BugMine 2 - The Revenge (1992-09-25)</description>
 		<year>1992</year>
 		<publisher>Noshtromo 2000</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="bugmine #2 - the revenge (1992-09-25)(noshtromo 2000).adf" size="901120" crc="72790905" sha1="8afd955fccd10cc9d0b3f6e0cf9f348565378553"/>
+				<rom name="bugmine 2 - the revenge (1992-09-25)(noshtromo 2000).adf" size="901120" crc="d73b6cee" sha1="fa0f99efbafcd6ada374222e4ca83cbac4852ad9"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt"/>
+			<dataarea name="flop" size="901120">
+				<rom name="bugmine 2 - the revenge (1992-09-25)(noshtromo 2000)[a].adf" size="901120" crc="72790905" sha1="8afd955fccd10cc9d0b3f6e0cf9f348565378553"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="bugmine3" supported="no">
-		<description>BugMine #3</description>
+		<description>BugMine 3</description>
 		<year>199?</year>
 		<publisher>Noshtromo 2000</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Fixed No One Inc, Hacked EMC-H"/>
 			<dataarea name="flop" size="901120">
-				<rom name="bugmine #3 (199x)(noshtromo 2000)[f no one inc][h emc-h].adf" size="901120" crc="512cca5b" sha1="ab78c3104b8e3e23b14eded027385ab7e875ff17"/>
+				<rom name="bugmine 3 (199x)(noshtromo 2000)[f no one inc][h emc-h].adf" size="901120" crc="512cca5b" sha1="ab78c3104b8e3e23b14eded027385ab7e875ff17"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Fixed Skippy, Hacked EMC-A, Bad corrupt files"/>
 			<dataarea name="flop" size="901120">
-				<rom name="bugmine #3 (199x)(noshtromo 2000)[f skippy][h emc-a][b corrupt files].adf" size="901120" crc="2380b2fe" sha1="98ba15216eefcf7f11db25d0eb84c030a28ac524" status="baddump"/>
+				<rom name="bugmine 3 (199x)(noshtromo 2000)[f skippy][h emc-a][b corrupt files].adf" size="901120" crc="2380b2fe" sha1="98ba15216eefcf7f11db25d0eb84c030a28ac524" status="baddump"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
 			<feature name="part_id" value="Fixed Skippy, Hacked EMC-A, Underdumped, Bad corrupt files"/>
 			<dataarea name="flop" size="889856">
-				<rom name="bugmine #3 (199x)(noshtromo 2000)[f skippy][h emc-a][u][b corrupt files].adf" size="889856" crc="a50d88d6" sha1="68dce07807e9d2c302963cd545339ff12b8ea25b" status="baddump"/>
+				<rom name="bugmine 3 (199x)(noshtromo 2000)[f skippy][h emc-a][u][b corrupt files].adf" size="889856" crc="a50d88d6" sha1="68dce07807e9d2c302963cd545339ff12b8ea25b" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="bugmine4" supported="no">
-		<description>BugMine #4</description>
+		<description>BugMine 4</description>
 		<year>199?</year>
 		<publisher>Noshtromo 2000</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Hacked EMC-Oz"/>
 			<dataarea name="flop" size="901120">
-				<rom name="bugmine #4 (199x)(noshtromo 2000)[h emc-oz].adf" size="901120" crc="b4a5c827" sha1="155de82aad94bebc1d6c0c1ba01a58ea560f2369"/>
+				<rom name="bugmine 4 (199x)(noshtromo 2000)[h emc-oz].adf" size="901120" crc="b4a5c827" sha1="155de82aad94bebc1d6c0c1ba01a58ea560f2369"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5053,11 +5059,11 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	<software name="openyour" supported="no">
 		<description>Open Your Mind 2</description>
 		<year>19??</year>
-		<publisher>The Bold and The Beautiful</publisher>
+		<publisher>The Bold and the Beautiful</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="open your mind 2 (19xx)(bold and the beautiful, the).adf" size="901120" crc="dba9be4e" sha1="b431576a4c49767cb4b7a3f8706beb5a5ecd3350"/>
+				<rom name="open your mind 2 (19xx)(the bold and the beautiful).adf" size="901120" crc="dba9be4e" sha1="b431576a4c49767cb4b7a3f8706beb5a5ecd3350"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6278,12 +6284,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 
 	<software name="venommin" supported="no">
 		<description>Venom Mine 1</description>
-		<year>1991</year>
+		<year>1992</year>
 		<publisher>Venom</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="venom mine 1 (1991)(venom).adf" size="901120" crc="8965e4d6" sha1="a0752f70584fcda4f1ba1e01530c39ac09c9eca1"/>
+				<rom name="venom mine 1 (1992)(venom).adf" size="901120" crc="35bb6a59" sha1="7a0c19cae3b50be13a907e6d60ecd23efda156ee"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt"/>
+			<dataarea name="flop" size="901120">
+				<rom name="venom mine 1 (1992)(venom)[a].adf" size="901120" crc="8965e4d6" sha1="a0752f70584fcda4f1ba1e01530c39ac09c9eca1"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6295,7 +6307,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="venom mine 2 (1993)(venom).adf" size="901120" crc="4d093959" sha1="0cd69b588743aa7b24f3aeff2963631d7e96d5f4"/>
+				<rom name="venom mine 2 (1993)(venom).adf" size="901120" crc="89c2717e" sha1="8e28d1df17aff145d74a1ea679b88bad9849348a"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Modified highscore"/>
+			<dataarea name="flop" size="901120">
+				<rom name="venom mine 2 (1993)(venom)[m highscore].adf" size="901120" crc="4d093959" sha1="0cd69b588743aa7b24f3aeff2963631d7e96d5f4"/>
 			</dataarea>
 		</part>
 	</software>

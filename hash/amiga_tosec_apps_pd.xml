@@ -67,6 +67,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="256colou" supported="no">
+		<description>256 Colour Icons</description>
+		<year>1994</year>
+		<publisher>PAW</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked PDSoft, WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="256 colour icons (1994)(paw)[h pdsoft][wb].adf" size="901120" crc="51b2f931" sha1="3d3f4fab3d61ae9cc0fc9468b5ae4075be1ffeea"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="256 colour icons (1994)(paw)[wb].adf" size="901120" crc="e9134cd1" sha1="cf342c6f0fe09bdc3258ee60a64e2c6ddf2afb3d"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="3rddayth" supported="no">
 		<description>3rd Day - The Ripper</description>
 		<year>19??</year>
@@ -87,6 +106,73 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="a-gene - anglican v1.3 (19xx)(simpson, mike - 17-bit software)(sw).adf" size="901120" crc="4b33a984" sha1="4fd2554e0c790ddafde1d2a26723db3bd06675c5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="azofligh" supported="no">
+		<description>A-Z of Lightwave Objects</description>
+		<year>1994</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 5, Hacked 17-Bit Software, req. Lightwave"/>
+			<dataarea name="flop" size="901120">
+				<rom name="a-z of lightwave objects (1994)(-)(disk 1 of 5)[h 17-bit software][req. lightwave].adf" size="901120" crc="8565e197" sha1="825c159ed3858fc041f9fa724a45b04e2a6681c0"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 5, req. Lightwave"/>
+			<dataarea name="flop" size="901120">
+				<rom name="a-z of lightwave objects (1994)(-)(disk 1 of 5)[req. lightwave].adf" size="901120" crc="4767c2ba" sha1="70af62bd61a8edb1f14b4497fe5f844159a13359"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 5, Hacked 17-Bit Software, req. Lightwave"/>
+			<dataarea name="flop" size="901120">
+				<rom name="a-z of lightwave objects (1994)(-)(disk 2 of 5)[h 17-bit software][req. lightwave].adf" size="901120" crc="4dffd9ed" sha1="2754b74e20c2cfbda49e96fafaf601e85fe32edd"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 5, req. Lightwave"/>
+			<dataarea name="flop" size="901120">
+				<rom name="a-z of lightwave objects (1994)(-)(disk 2 of 5)[req. lightwave].adf" size="901120" crc="06daf304" sha1="dc8f135c6d4dbaf521733477ec406fb5427a417e"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 3 of 5, Hacked 17-Bit Software, req. Lightwave"/>
+			<dataarea name="flop" size="901120">
+				<rom name="a-z of lightwave objects (1994)(-)(disk 3 of 5)[h 17-bit software][req. lightwave].adf" size="901120" crc="3d93ed5a" sha1="fdfe80d59036977366e7f5b0adebcd21c743dc95"/>
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 3 of 5, req. Lightwave"/>
+			<dataarea name="flop" size="901120">
+				<rom name="a-z of lightwave objects (1994)(-)(disk 3 of 5)[req. lightwave].adf" size="901120" crc="6bdd3660" sha1="60728f7467b8fd725a322aff3c38d814a5bd2dd5"/>
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 4 of 5, Hacked 17-Bit Software, req. Lightwave"/>
+			<dataarea name="flop" size="901120">
+				<rom name="a-z of lightwave objects (1994)(-)(disk 4 of 5)[h 17-bit software][req. lightwave].adf" size="901120" crc="8e87ee97" sha1="d6c7db2568804269545f3d081a71ef090cb1d683"/>
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 4 of 5, req. Lightwave"/>
+			<dataarea name="flop" size="901120">
+				<rom name="a-z of lightwave objects (1994)(-)(disk 4 of 5)[req. lightwave].adf" size="901120" crc="cf27af6d" sha1="aa251f94920f02a6599e6e3336c1b527bbf1b488"/>
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 5 of 5, Hacked 17-Bit Software, req. Lightwave"/>
+			<dataarea name="flop" size="901120">
+				<rom name="a-z of lightwave objects (1994)(-)(disk 5 of 5)[h 17-bit software][req. lightwave].adf" size="901120" crc="6456b50f" sha1="c9670c7f7449c358fed673ba3d1095f153d176ae"/>
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 5 of 5, req. Lightwave"/>
+			<dataarea name="flop" size="901120">
+				<rom name="a-z of lightwave objects (1994)(-)(disk 5 of 5)[req. lightwave].adf" size="901120" crc="d998d629" sha1="ae8825bf4fc0a6a052007baa258d424f89cdfca9"/>
 			</dataarea>
 		</part>
 	</software>
@@ -651,6 +737,126 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="amigates" supported="no">
+		<description>Amiga Test Kit (v1.10, 2020-06-20)</description>
+		<year>2020</year>
+		<publisher>Keirf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="amiga test kit v1.10 (2020-06-20)(keirf).adf" size="901120" crc="f97ddd50" sha1="c38eefbbf98a8e0a971daeae0981849b58772d6b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amigates_1" supported="no">
+		<description>Amiga Test Kit (v1.11, 2020-07-22)</description>
+		<year>2020</year>
+		<publisher>Keirf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="amiga test kit v1.11 (2020-07-22)(keirf).adf" size="901120" crc="9f7124a8" sha1="fafb0ddea63256eef26a8055978349ac6d601d37"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amigates_2" supported="no">
+		<description>Amiga Test Kit (v1.12, 2020-08-21)</description>
+		<year>2020</year>
+		<publisher>Keirf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="amiga test kit v1.12 (2020-08-21)(keirf).adf" size="901120" crc="77fd6235" sha1="eabd0017268e11cbfedf8d397762ba3b3e3c8150"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amigates_3" supported="no">
+		<description>Amiga Test Kit (v1.3, 2019-03-14)</description>
+		<year>2019</year>
+		<publisher>Keirf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="amiga test kit v1.3 (2019-03-14)(keirf).adf" size="901120" crc="7aa06d29" sha1="499fa9694a6a60243854751f659c98e4e7fd18d7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amigates_4" supported="no">
+		<description>Amiga Test Kit (v1.4, 2019-06-03)</description>
+		<year>2019</year>
+		<publisher>Keirf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="amiga test kit v1.4 (2019-06-03)(keirf).adf" size="901120" crc="eb9261d0" sha1="738a9cc3b95688f8e77b640d2ffd518422cb49aa"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amigates_5" supported="no">
+		<description>Amiga Test Kit (v1.5, 2019-09-28)</description>
+		<year>2019</year>
+		<publisher>Keirf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="amiga test kit v1.5 (2019-09-28)(keirf).adf" size="901120" crc="c692e821" sha1="57f00a3bc0d83548573237f1336b56fab371c84d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amigates_6" supported="no">
+		<description>Amiga Test Kit (v1.6, 2020-03-07)</description>
+		<year>2020</year>
+		<publisher>Keirf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="amiga test kit v1.6 (2020-03-07)(keirf).adf" size="901120" crc="00f06734" sha1="df98c3521500d567ee1e7f649f33e74fd2d00b2a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amigates_7" supported="no">
+		<description>Amiga Test Kit (v1.7, 2020-03-23)</description>
+		<year>2020</year>
+		<publisher>Keirf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="amiga test kit v1.7 (2020-03-23)(keirf).adf" size="901120" crc="901cbd87" sha1="4c653236adbfca8d4419ba34614a32babdab4928"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amigates_8" supported="no">
+		<description>Amiga Test Kit (v1.8, 2020-06-04)</description>
+		<year>2020</year>
+		<publisher>Keirf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="amiga test kit v1.8 (2020-06-04)(keirf).adf" size="901120" crc="6237ca29" sha1="10c5c554b23e79f94443456255f599da074341a9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amigates_9" supported="no">
+		<description>Amiga Test Kit (v1.9, 2020-06-04)</description>
+		<year>2020</year>
+		<publisher>Keirf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="amiga test kit v1.9 (2020-06-04)(keirf).adf" size="901120" crc="3f705d8b" sha1="cdec7e17cbebc3389f4d1e6aebc9d86364e479c3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amigates_10" supported="no">
 		<description>Amiga Test Script Interpreter (A1200, v01.41, Public Domain)</description>
 		<year>1993</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -761,7 +967,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="amyskyav" supported="no">
-		<description>AmySky - A VideoCrypt Card Emulator</description>
+		<description>AmySky - A VideoCrypt Card Emulator (v1.0)</description>
 		<year>1995</year>
 		<publisher>Intruder</publisher>
 
@@ -1161,6 +1367,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="assembly" supported="no">
+		<description>Assembly 1994 Votedisk (1994-08-06)</description>
+		<year>1994</year>
+		<publisher>Virtual Dreams</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="assembly 1994 votedisk (1994-08-06)(virtual dreams).adf" size="901120" crc="164ea334" sha1="65845599b71854337407363ff5b3a52386fcf146"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="atariemu" supported="no">
 		<description>Atari Emulator TOS Versions</description>
 		<year>1990</year>
@@ -1189,6 +1407,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked 17-Bit Software, Modified bamcopy, AMOS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="audio animation studio v1.0 (1991)(cool cucumbers)(sw)[h 17-bit software][m bamcopy][amos].adf" size="901120" crc="a64f043b" sha1="f810f619af3f8069173a7ffec4182feff631b582"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="autoster" supported="no">
+		<description>AutoStereograms (v1.1, 1993-12)</description>
+		<year>1993</year>
+		<publisher>Andrew Chilton</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB, inc. 3Dots v1.0"/>
+			<dataarea name="flop" size="901120">
+				<rom name="autostereograms v1.1 (1993-12)(chilton, andrew)[wb][inc. 3dots v1.0].adf" size="901120" crc="c086c741" sha1="3704ca673e7d5bb8d3969ec25a67d638469d9e38"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2196,7 +2427,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="copthelo" supported="no">
-		<description>Cop The Lot Professional (Public Domain)</description>
+		<description>Cop the Lot Professional (Public Domain)</description>
 		<year>1995</year>
 		<publisher>Challenge Logic</publisher>
 
@@ -2852,6 +3083,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="dynamica" supported="no">
+		<description>DynamiCache (v1.02, 1993-06-15)</description>
+		<year>1993</year>
+		<publisher>Christopher A. Wolf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="FFS, WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="dynamicache v1.02 (1993-06-15)(wolf, christopher a.)[ffs, wb].adf" size="901120" crc="2d2d74f3" sha1="58e9d9f880ef0ae3eac04ec8d0bd1371dca82eea"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="eaglepla" supported="no">
 		<description>EaglePlayer (v1.54, Shareware)</description>
 		<year>1995</year>
@@ -2880,6 +3124,31 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked VSN"/>
 			<dataarea name="flop" size="901120">
 				<rom name="easy arc (199x)(ford, mike)[h vsn].adf" size="901120" crc="faf479a6" sha1="66bf449d565404d09a5442767cf0e4bbfc0f989b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="edplayer" supported="no">
+		<description>EdPlayer (v2.1, 1992-09-20)</description>
+		<year>1992</year>
+		<publisher>Ed Mackey</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="edplayer v2.1 (1992-09-20)(mackey, ed).adf" size="901120" crc="7e20d025" sha1="2f1a6fc034a54e955f2a3392f778c276f2936d0a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="emulator" supported="no">
+		<description>Emulatora 500 (pl, 1994-06-10)</description>
+		<year>1994</year>
+		<publisher>Pawea Rosowski</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="req. Amiga CDTV"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emulatora 500 (1994-06-10)(rosowski, pawea)(pl)[req. amiga cdtv].adf" size="901120" crc="e618e37c" sha1="d56202f5012b17503359cd109010f5911809487c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3053,6 +3322,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="fast call (demo) (1991)(brueckner, martin)(de).adf" size="901120" crc="56e2c79f" sha1="dbace7d7341f91d803518b0c404a9561432fee14"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fastintr" supported="no">
+		<description>FastIntro-Maker (v2.2, 1993-01-20, Shareware)</description>
+		<year>1993</year>
+		<publisher>Michael Bialas</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="fastintro-maker v2.2 (1993-01-20)(bialas, michael)(sw)[wb].adf" size="901120" crc="29bd7521" sha1="c68b850178275dcea38492dcb217dd80eef703e2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3410,7 +3692,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="fontsfor" supported="no">
-		<description>Fonts for the Red Sector Demo Maker (vol.1)</description>
+		<description>Fonts for the Red Sector Demo Maker vol.1</description>
 		<year>1991</year>
 		<publisher>Blitterchips PD</publisher>
 
@@ -3448,7 +3730,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="fracspac" supported="no">
-		<description>Fracspace - 3D Modeler (v1.2)</description>
+		<description>Fracspace - 3D Modeler v1.2 (v1.0)</description>
 		<year>1992</year>
 		<publisher>Lee Bull</publisher>
 
@@ -3492,6 +3774,32 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="free paint rev.37 eta (1992)(trost, bjorn - sandman pd)(pd).adf" size="901120" crc="5b0d3f8c" sha1="ac3da4b89bbcbb7e9c47682f89f98017977f4f3b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="freecopy" supported="no">
+		<description>FreeCopy (v1.4, 1991-05-10)</description>
+		<year>1991</year>
+		<publisher>Greg Pringle</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked Virus Free PD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="freecopy v1.4 (1991-05-10)(pringle, greg)[h virus free pd].adf" size="901120" crc="31f28047" sha1="db8cceb201432be6a712fa4ac733a69a8a7de685"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="freecopy_1" supported="no">
+		<description>FreeCopy (v1.8, 1992-03-25)</description>
+		<year>1992</year>
+		<publisher>Greg Pringle</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked United PD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="freecopy v1.8 (1992-03-25)(pringle, greg)[h united pd].adf" size="901120" crc="54657c58" sha1="ad638e0feac4d6a0cfda497e1ee53a016517d12b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3903,6 +4211,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="iifinter" supported="no">
+		<description>IIF - Interchange Icon Format 2.0 Edition 1#1 (1991-11-11)</description>
+		<year>1991</year>
+		<publisher>Hans Fernstroem</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2, WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="iif - interchange icon format 2.0 edition 1#1 (1991-11-11)(fernstroem, hans)(disk 1 of 2)[wb].adf" size="901120" crc="c914416c" sha1="e7849a83c7bf798cefd7e688b11d811e41a4fdfb"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="iif - interchange icon format 2.0 edition 1#1 (1991-11-11)(fernstroem, hans)(disk 2 of 2).adf" size="901120" crc="9fac62a9" sha1="46717748a0003f503ab5959475e203c1f005b964"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="illusion" supported="no">
 		<description>Illusions - Artistix II (Shareware)</description>
 		<year>1994</year>
@@ -4095,19 +4422,37 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="intromak" supported="no">
-		<description>Intromaker (v1.0)</description>
+		<description>Intromaker (v1.0, 1989-10)</description>
 		<year>1989</year>
 		<publisher>Dope</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="intromaker v1.0 (1989)(dope).adf" size="901120" crc="39175726" sha1="6977df026d1907806a46fbde48181f0ddfeb25c1"/>
+				<rom name="intromaker v1.0 (1989-10)(dope).adf" size="901120" crc="f7342ace" sha1="e2251278f0f7c9595907a13ab43f38ca674bf597"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Alt"/>
 			<dataarea name="flop" size="901120">
-				<rom name="intromaker v1.0 (1989)(dope)[a].adf" size="901120" crc="dd5af682" sha1="2a3c487945a4d7411d875c252fa7aa6b4809597e"/>
+				<rom name="intromaker v1.0 (1989-10)(dope)[a].adf" size="901120" crc="39175726" sha1="6977df026d1907806a46fbde48181f0ddfeb25c1"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked FDS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="intromaker v1.0 (1989-10)(dope)[h fds].adf" size="901120" crc="dd5af682" sha1="2a3c487945a4d7411d875c252fa7aa6b4809597e"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked Franciskus"/>
+			<dataarea name="flop" size="901120">
+				<rom name="intromaker v1.0 (1989-10)(dope)[h franciskus].adf" size="901120" crc="5f9230c4" sha1="5150274c219490b003483e5993d785bac6a54a97"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked Lads"/>
+			<dataarea name="flop" size="901120">
+				<rom name="intromaker v1.0 (1989-10)(dope)[h lads].adf" size="901120" crc="f1261b19" sha1="a9d671c9bfae07496e79c3b2619d47f08efc4d4a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4125,6 +4470,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="intuiext" supported="no">
+		<description>IntuiExtend (v1.3b, 1996-02, Shareware)</description>
+		<year>1996</year>
+		<publisher>Philippe Cierp</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="req. AMOS Pro v1.12+"/>
+			<dataarea name="flop" size="901120">
+				<rom name="intuiextend v1.3b (1996-02)(cierp, philippe)(sw)[req. amos pro v1.12+].adf" size="901120" crc="1cfa0138" sha1="36d00d12dd8f1819a31c255e4539a7f581312f6c"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="ischcopy" supported="no">
 		<description>Isch-Copy (v1.0)</description>
 		<year>1993</year>
@@ -4133,6 +4491,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="isch-copy v1.0 (1993)(isch crew).adf" size="901120" crc="62547fb9" sha1="f0589fbb4d12c05ad8043daf33ff91e43faf6a98"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jwindows" supported="no">
+		<description>J-Windows (Demo, Licenceware)</description>
+		<year>1996</year>
+		<publisher>F1 Licenceware</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="req. AMOS Professional"/>
+			<dataarea name="flop" size="901120">
+				<rom name="j-windows (demo) (1996)(f1 licenceware)(lw)[req. amos professional].adf" size="901120" crc="36417228" sha1="e800995275bae63a6a2428cebc9299d1ac0f408e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4367,7 +4738,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="lastwill" supported="no">
-		<description>Last Will And Testament (v1.03, Public Domain)</description>
+		<description>Last Will and Testament (v1.03, Public Domain)</description>
 		<year>19??</year>
 		<publisher>Adam McCrory - James Rose</publisher>
 
@@ -4543,6 +4914,67 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="disk mag tool"/>
 			<dataarea name="flop" size="901120">
 				<rom name="magnum pro (19xx)(f1 licenceware)(lw)[disk mag tool].adf" size="901120" crc="a7376d84" sha1="5f21d6625f6c556b89de168b3bffb8b6e130a6c0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magnumth" supported="no">
+		<description>Magnum - The Disk Magazine Creator (v1.0, 1992-04-16)</description>
+		<year>1992</year>
+		<publisher>Wai Hung Lui</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked 17-Bit Software"/>
+			<dataarea name="flop" size="901120">
+				<rom name="magnum v1.0 - the disk magazine creator (1992-04-16)(lui, wai hung)[h 17-bit software].adf" size="901120" crc="76e57563" sha1="45af75a451adcf9ac66d560783b603de910aa272"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked 17-Bit Software, Alt diskoptim"/>
+			<dataarea name="flop" size="901120">
+				<rom name="magnum v1.0 - the disk magazine creator (1992-04-16)(lui, wai hung)[h 17-bit software][a diskoptim].adf" size="901120" crc="319e6d6c" sha1="d551c9b5c5fb7f686514bf224a0b9fee5f0e6d8d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magnumth_1" supported="no">
+		<description>Magnum - The Disk Magazine Creator (v1.4, 1992-10-13)</description>
+		<year>1992</year>
+		<publisher>Wai Hung Lui</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="magnum v1.4 - the disk magazine creator (1992-10-13)(lui, wai hung).adf" size="901120" crc="ed222472" sha1="67a649966d32d334591c688b02a8c06e1d7a16b1"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked PDSoft"/>
+			<dataarea name="flop" size="901120">
+				<rom name="magnum v1.4 - the disk magazine creator (1992-10-13)(lui, wai hung)[h pdsoft].adf" size="901120" crc="e80ab7b8" sha1="f012c4cd62d17a4c1efd0538a890f7316f9a92f0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magnumth_2" supported="no">
+		<description>Magnum - The Disk Magazine Creator (v1.7, 1993-07-15)</description>
+		<year>1993</year>
+		<publisher>Wai Hung Lui</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="magnum v1.7 - the disk magazine creator (1993-07-15)(lui, wai hung).adf" size="901120" crc="f249dd8e" sha1="7abcd1999ffdc85e26c661ee272211ee42094966"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magnumth_3" supported="no">
+		<description>Magnum - The Disk Magazine Creator (v1.8)</description>
+		<year>1993</year>
+		<publisher>Wai Hung Lui</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="magnum v1.8 - the disk magazine creator (1993)(lui, wai hung).adf" size="901120" crc="f54e94a7" sha1="e8ecb11a395e932462dfbcf772d6125211287815"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4974,6 +5406,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Bad checksum error"/>
 			<dataarea name="flop" size="901120">
 				<rom name="megajitter (1994)(vanheksuwe, l.)(pd)[b checksum error].adf" size="901120" crc="c7b20b5a" sha1="7b3187e0b0d6ad6442d26f9ea73e64d828f8e2e0" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="menucrea" supported="no">
+		<description>Menu Creator (v1.1)</description>
+		<year>1990</year>
+		<publisher>Random</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="menu creator v1.1 (1990)(random).adf" size="901120" crc="5606d4ad" sha1="e5e2901b3cb1f6f39af9ca89835b43b70d9d91b5"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6182,6 +6626,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="protitle" supported="no">
+		<description>ProTitler Video Titling System (v1.0, Shareware)</description>
+		<year>1994</year>
+		<publisher>Jason Henegan</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protitler video titling system v1.0 (1994)(henegan, jason)(sw)[wb].adf" size="901120" crc="70322dda" sha1="5c89040e0e5778c761ae5314e21073473bd95048"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="protrack" supported="no">
 		<description>ProTracker (v1.1B, 1991-04, Public Domain)</description>
 		<year>1991</year>
@@ -6209,7 +6666,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="protrack_2" supported="no">
-		<description>ProTracker v1.8 Serial-Link (version)</description>
+		<description>ProTracker v1.8 Serial-Link version</description>
 		<year>1994</year>
 		<publisher>Scandal</publisher>
 
@@ -7414,6 +7871,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="shockthe" supported="no">
+		<description>Shock - The SlideShow Generator (v1.2, Shareware)</description>
+		<year>1995</year>
+		<publisher>Vittorio Ferrari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="HD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="shock - the slideshow generator v1.2 (1995)(ferrari, vittorio)(sw)[hd].adf" size="901120" crc="a6e0a1d7" sha1="708c65be85e354047e4767ee411af8df2e143cc2"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="thesickn" supported="no">
 		<description>The Sickness Simulator</description>
 		<year>1991</year>
@@ -7516,6 +7986,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="slideshow construction set v1.0 (1988-06-18)(rybicki, adam - 17-bit software)(sw).adf" size="901120" crc="e42ab032" sha1="b753c5727f8193cec27546f404042b39544cef08"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="slidesho_1" supported="no">
+		<description>Slideshow Construction (v2.0)</description>
+		<year>199?</year>
+		<publisher>John Kinsella</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="AMOS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="slideshow construction v2.0 (199x)(kinsella, john)[amos].adf" size="901120" crc="13a83f1a" sha1="3acd535251fbb4b48654c36bb1bfac915e09fb4d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7980,6 +8463,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="swazblan" supported="no">
+		<description>SwazBlanker (v2.7, 1995-02-15, Shareware)</description>
+		<year>1995</year>
+		<publisher>David Swasbrook</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked 17-Bit Software, KS3.0, inc. ImageFX v2.0 SDK"/>
+			<dataarea name="flop" size="901120">
+				<rom name="swazblanker v2.7 (1995-02-15)(swasbrook, david)(sw)[h 17-bit software][ks3.0][inc. imagefx v2.0 sdk].adf" size="901120" crc="5bae0fbe" sha1="be126d64c393a34ff888dbbf3290cfc76b4ea62a"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked Alma Diffusion, KS3.0, inc. ImageFX v2.0 SDK"/>
+			<dataarea name="flop" size="901120">
+				<rom name="swazblanker v2.7 (1995-02-15)(swasbrook, david)(sw)[h alma diffusion][ks3.0][inc. imagefx v2.0 sdk].adf" size="901120" crc="1e394bf4" sha1="602f798190bf077b381c61c9ec28eb7aa9da24aa"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="syncropa" supported="no">
 		<description>Syncropacker (v4.6, 1990-02-20)</description>
 		<year>1990</year>
@@ -7988,6 +8490,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="syncropacker v4.6 (1990-02-20)(science 451).adf" size="901120" crc="e633f244" sha1="1d9fe7a687aabf9361a3d14ea894d1a2c0612d43"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sysinfo" supported="no">
+		<description>SysInfo (v4.3, 2019-09-27, Freeware)</description>
+		<year>2019</year>
+		<publisher>Tobias Geijersson</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="sysinfo v4.3 (2019-09-27)(geijersson, tobias)(fw).adf" size="901120" crc="a28026c9" sha1="f71eaa33c86f1dbe86b68dc09338afacbdaae7f1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sysinfo_1" supported="no">
+		<description>SysInfo (v4.4, 2020-11-11, Freeware)</description>
+		<year>2020</year>
+		<publisher>Tobias Geijersson</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="sysinfo v4.4 (2020-11-11)(geijersson, tobias)(fw).adf" size="901120" crc="0df619e4" sha1="e98f5d878491345cdbca18b1fffe795ce40d2676"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8001,6 +8527,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Virus Degrad"/>
 			<dataarea name="flop" size="901120">
 				<rom name="sysop safe v1.0 (1993)(ax)[v degrad].adf" size="901120" crc="d6ef0648" sha1="66a96f3aeff63b93374211a9da7a7f3b80acf105" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="systest" supported="no">
+		<description>SysTest (v1.2, 2018-11-30)</description>
+		<year>2018</year>
+		<publisher>Keirf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="systest v1.2 (2018-11-30)(keirf).adf" size="901120" crc="92a656d8" sha1="d10fe27eb11c6c0704f54951287effdee8c6daed"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8026,6 +8564,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="tarot ii (1991-07-05)(axle)(disk 2 of 2).adf" size="901120" crc="eab0fa68" sha1="2e980d8736ab4ee90754b2790673ea7a7922d942"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thetaxsu" supported="no">
+		<description>The Tax Survival Kit</description>
+		<year>1993</year>
+		<publisher>Harv Harris</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="tax survival kit, the (1993)(harris, harv).adf" size="901120" crc="d58e40d4" sha1="4ede7fe8906f3de2813a21e717e28ad88783ba93"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8275,6 +8825,31 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="transity" supported="no">
+		<description>Transity (fr, v1.0, 1989-10-11)</description>
+		<year>1989</year>
+		<publisher>Europeenne de Telematique</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="transity v1.0 (1989-10-11)(europeenne de telematique)(fr).adf" size="901120" crc="360ad825" sha1="79f832bc0b97eda1edd29567b07e783ca1b6da84"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="translat" supported="no">
+		<description>Translator (fr, v3.0, 1996-01, Shareware)</description>
+		<year>1996</year>
+		<publisher>Nicolas Hamel</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="translator v3.0 (1996-01)(hamel, nicolas)(fr)(sw)[wb].adf" size="901120" crc="0a6226e1" sha1="a7cec8a97c00b4bfe20f4508600eecf8f02d72d1"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="transnib" supported="no">
 		<description>TransNib (v1.00, Freeware)</description>
 		<year>1993</year>
@@ -8438,6 +9013,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="tv graphics volume 1 (1989)(bailey, george)(disk 2 of 2).adf" size="901120" crc="bc4bb7db" sha1="ae3a357080a427c3dfab11943d479288d85d0905"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="twinexpr" supported="no">
+		<description>Twin Express (v1.1a, 1992-01-07, Shareware)</description>
+		<year>1992</year>
+		<publisher>Omnicode</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="twin express v1.1a (1992-01-07)(omnicode)(sw)[wb].adf" size="901120" crc="9ced011a" sha1="2905a1a65bf6704444942e9bed84e136a9b8ec31"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9283,6 +9871,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="x-beat pro (1993)(askew, dale - howard, john)(sw).adf" size="901120" crc="055a2af8" sha1="68675f1dcfa1ac4cf3b3692c3a7168887c806512"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xlist" supported="no">
+		<description>X-List (v3.0)</description>
+		<year>1994</year>
+		<publisher>Carlos Miguel Gomes</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="AMOS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="x-list v3.0 (1994)(gomes, carlos miguel)[amos].adf" size="901120" crc="ea86b671" sha1="4dc2fb9999e4ae6f47c3b4c5eef5c5b9fbd59fe1"/>
 			</dataarea>
 		</part>
 	</software>
