@@ -229,7 +229,8 @@ void astrocde_home_state::astrocde(machine_config &config)
 	m_accessory->ltpen_handler().set(FUNC(astrocde_home_state::lightpen_trigger_w));
 
 	/* Software lists */
-	SOFTWARE_LIST(config, "cart_list").set_original("astrocde");
+	SOFTWARE_LIST(config, "cart_list").set_original("astrocde_cart");
+    SOFTWARE_LIST(config, "cass_list").set_original("astrocde_cass");
 }
 
 
