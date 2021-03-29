@@ -4,7 +4,7 @@
 This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
 Credit goes to the TOSECDEV team for building this vast database over the years.
 -->
-<softwarelist name="a800_flop_apps" description="a800_flop_apps">
+<softwarelist name="a800_flop_apps" description="Atari 800 floppy disks (Applications)">
 
 	<software name="1030expr" supported="no">
 		<description>1030 Express! 2.1 (1985-12, Public Domain)</description>
@@ -143,8 +143,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="64k600xl" supported="no">
-		<description>64K-600XL 800XL Basic Switcher</description>
+	<software name="800xl64k" supported="no">
+		<description>800XL, 64K-600XL Basic Switcher</description>
 		<year>19??</year>
 		<publisher>Matthew J. W. Ratcliff</publisher>
 
@@ -1630,11 +1630,12 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="basicxep" supported="no">
-		<description>Basic XE Programming Language - Extensions (XE-XL)</description>
+		<description>Basic XE Programming Language - Extensions (v4.1)</description>
 		<year>1986</year>
 		<publisher>OSS</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="XE-XL"/>
 			<dataarea name="flop" size="92176">
 				<rom name="basic xe programming language v4.1 - extensions (1986)(oss)(xe-xl).atr" size="92176" crc="e1c6d065" sha1="8749107e28cfa7add26a5628562c708fa62e0ce0"/>
 			</dataarea>
@@ -4493,7 +4494,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="dos256kr" supported="no">
-		<description>DOS - 256k Ram Disk</description>
+		<description>DOS - 256k Ram Disk (v2.x)</description>
 		<year>1987</year>
 		<publisher>Atari</publisher>
 
@@ -6031,7 +6032,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="happyxlo" supported="no">
-		<description>HappyXL OS (v1c)</description>
+		<description>HappyXL OS v1c</description>
 		<year>1986</year>
 		<publisher>Happy Computers</publisher>
 
@@ -8597,7 +8598,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="picility" supported="no">
-		<description>Picility (v9G)</description>
+		<description>Picility v9G</description>
 		<year>1984</year>
 		<publisher>James H. Trageser</publisher>
 
@@ -9076,8 +9077,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="20profes" supported="no">
-		<description>2.0, Professional Copy 2.1 1.42, 1.3 (pl)</description>
+	<software name="professi" supported="no">
+		<description>Professional Copy 2.1, 2.0, 1.42, 1.3 (pl)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -9089,7 +9090,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="professi" supported="no">
+	<software name="professi_1" supported="no">
 		<description>Professional Copy Install (pl, v2.0)</description>
 		<year>19??</year>
 		<publisher>Taquart</publisher>
@@ -9102,7 +9103,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="professi_1" supported="no">
+	<software name="professi_2" supported="no">
 		<description>Professional Demo</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -11535,7 +11536,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="voicemas" supported="no">
-		<description>Voicemaster (vM1.XE)</description>
+		<description>Voicemaster vM1.XE</description>
 		<year>1985</year>
 		<publisher>Covox</publisher>
 
