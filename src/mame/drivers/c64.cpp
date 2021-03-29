@@ -1490,7 +1490,7 @@ void c64_state::softlists(machine_config &config, const char *filter) {
     SOFTWARE_LIST(config, "flop_col_tadpole").set_original("c64_flop_col_tadpole").set_filter(filter);
     SOFTWARE_LIST(config, "flop_col_watties").set_original("c64_flop_col_watties").set_filter(filter);
     
-    SOFTWARE_LIST(config, "flop_comp_demo_d64").set_original("c64_flop_comp_demo_g64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_comp_demo_d64").set_original("c64_flop_comp_demo_d64").set_filter(filter);
     SOFTWARE_LIST(config, "flop_comp_demo_g64").set_original("c64_flop_comp_demo_g64").set_filter(filter);
     SOFTWARE_LIST(config, "flop_comp_edu").set_original("c64_flop_comp_edu").set_filter(filter);
     SOFTWARE_LIST(config, "flop_comp_game_d64").set_original("c64_flop_comp_game_d64").set_filter(filter);
@@ -1550,7 +1550,7 @@ void c64_state::softlists(machine_config &config, const char *filter) {
     SOFTWARE_LIST(config, "flop_music_d81").set_original("c64_flop_music_d81").set_filter(filter);
     SOFTWARE_LIST(config, "flop_music_g64").set_original("c64_flop_music_g64").set_filter(filter);
     
-    SOFTWARE_LIST(config, "flop_os_d64").set_original("c64_flop_os_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_os").set_original("c64_flop_os").set_filter(filter);
     
     SOFTWARE_LIST(config, "flop_pd_d64").set_original("c64_flop_pd_d64").set_filter(filter);
     SOFTWARE_LIST(config, "flop_pd_g64").set_original("c64_flop_pd_g64").set_filter(filter);
