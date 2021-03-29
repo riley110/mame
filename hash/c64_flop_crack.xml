@@ -4,7 +4,7 @@
 This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
 Credit goes to the TOSECDEV team for building this vast database over the years.
 -->
-<softwarelist name="c64_flop_crack" description="c64_flop_crack">
+<softwarelist name="c64_flop_crack" description="Commodore 64 floppy disks (Cracktros)">
 
 	<software name="2intros" supported="no">
 		<description>2 Intros</description>
@@ -1419,6 +1419,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="174848">
 				<rom name="fabulous (19xx)(wanderer)[a2].d64" size="174848" crc="4332bb1e" sha1="d9825ff7cb4f28771b4eab8608f236c3bbb28f49"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fegpanot" supported="no">
+		<description>FE + GP - Another Intro (1989-05)</description>
+		<year>1989</year>
+		<publisher>Fire-Eagle - Genesis Project</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="fe + gp - another intro (1989-05)(fire-eagle - genesis project).d64" size="174848" crc="b7e1ef32" sha1="2b68581bb73a63e632f0be34cca7985bb48d1514"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
+			<dataarea name="flop" size="174848">
+				<rom name="fe + gp - another intro (1989-05)(fire-eagle - genesis project)[a].d64" size="174848" crc="329a3816" sha1="1d038a19546b472fa4afece3181083d38301c98a"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
+			<dataarea name="flop" size="174848">
+				<rom name="fe + gp - another intro (1989-05)(fire-eagle - genesis project)[a2].d64" size="174848" crc="99e22015" sha1="d0b5cf27f3e3a9e9bfd580218680869679896a92"/>
 			</dataarea>
 		</part>
 	</software>

@@ -4,7 +4,7 @@
 This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
 Credit goes to the TOSECDEV team for building this vast database over the years.
 -->
-<softwarelist name="c64_flop_gfx_d64" description="c64_flop_gfx_d64">
+<softwarelist name="c64_flop_gfx_d64" description="Commodore 64 floppy disks (Graphics - D64)">
 
 	<software name="ff" supported="no">
 		<description>$FF (2014-05-30)</description>
@@ -2007,6 +2007,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="art logo 2 (19xx)(turtles).d64" size="174848" crc="77c12c25" sha1="3b5e5f5ff31e729a31d30941e018108d640eb8a2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="artifici" supported="no">
+		<description>Artificial Dream (1997-06)</description>
+		<year>1997</year>
+		<publisher>Albion Crew</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="artificial dream (1997-06)(albion crew).d64" size="174848" crc="5315f0a5" sha1="e5d81910f7eb1d8c43d3d6454951f65a19d5930b"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
+			<dataarea name="flop" size="174848">
+				<rom name="artificial dream (1997-06)(albion crew)[a].d64" size="174848" crc="f33a7177" sha1="1de3cdd58ae580b15a3ee76c2673257e447eb56d"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
+			<dataarea name="flop" size="174848">
+				<rom name="artificial dream (1997-06)(albion crew)[a2].d64" size="174848" crc="f3b9b308" sha1="e5eb5fb1a87080a82ca706c631c48b886b8d5a51"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8523,6 +8547,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="ironmetm" supported="no">
+		<description>Iron Met Maiden</description>
+		<year>1996</year>
+		<publisher>Mayhem</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="iron met maiden (1996)(mayhem).d64" size="174848" crc="467adc80" sha1="c645485142ac24a3c0ae1dd770f6ed5bebdbec75"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
+			<dataarea name="flop" size="174848">
+				<rom name="iron met maiden (1996)(mayhem)[a].d64" size="174848" crc="e57e6da4" sha1="483050265b6aa5cc753096f67469cb5d43741f40"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="ironstyl" supported="no">
 		<description>Ironstyle Logo</description>
 		<year>19??</year>
@@ -13438,6 +13480,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="menonly4" supported="no">
+		<description>Men Only 4</description>
+		<year>1997</year>
+		<publisher>Mayhem</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="men only 4 (1997)(mayhem).d64" size="174848" crc="52f0d62d" sha1="4db89e56a207adad04718e22a7280cbc48f32aed"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="mermaid" supported="no">
 		<description>Mermaid (2009-10-31)</description>
 		<year>2009</year>
@@ -15705,8 +15759,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="deathsex" supported="no">
-		<description>Death, Sex Art</description>
+	<software name="sexdeath" supported="no">
+		<description>Sex, Death, Art</description>
 		<year>1997</year>
 		<publisher>Angry</publisher>
 
@@ -17340,6 +17394,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="whoop logo (1989-03)(eltronic).d64" size="174848" crc="e9c63f4a" sha1="0e1fb125b356f89d666f9ff16979fab63babb3db"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="whynot" supported="no">
+		<description>Why Not!</description>
+		<year>1988</year>
+		<publisher>Ian &amp; Mic</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="why not (1988)(ian &amp; mic).d64" size="174848" crc="db8c0337" sha1="c7f8bfc4c5e6f078b60de7b34b6694916259d2ce"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
+			<dataarea name="flop" size="174848">
+				<rom name="why not (1988)(ian &amp; mic)[a].d64" size="174848" crc="1d223096" sha1="8f1fef191dc8c4a891978de20e721bd9ea0d0fa2"/>
 			</dataarea>
 		</part>
 	</software>

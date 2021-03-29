@@ -158,6 +158,7 @@ public:
 
 	int m_user_pa2;
 	int m_user_pb;
+    void softlists(machine_config &config, const char *filter);
 	void pal(machine_config &config);
 	void ntsc(machine_config &config);
 	void pet64(machine_config &config);
@@ -1452,6 +1453,111 @@ void c64_state::machine_reset()
 //  MACHINE DRIVERS
 //**************************************************************************
 
+void c64_state::softlists(machine_config &config, const char *filter) {
+    SOFTWARE_LIST(config, "cart_list_vic10").set_original("vic10").set_filter(filter);
+    SOFTWARE_LIST(config, "cart_list_c64").set_original("c64_cart").set_filter(filter);
+    SOFTWARE_LIST(config, "cass_list").set_original("c64_cass").set_filter(filter);
+    // disk softlist split into originals and misc (homebrew and cracks)
+    SOFTWARE_LIST(config, "flop525_orig").set_original("c64_flop_orig").set_filter(filter);
+    SOFTWARE_LIST(config, "flop525_misc").set_compatible("c64_flop_misc").set_filter(filter);
+    
+    // TOSEC lists
+    SOFTWARE_LIST(config, "flop_anim").set_original("c64_flop_anim").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_app_d64").set_original("c64_flop_app_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_app_d71").set_original("c64_flop_app_d71").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_app_d81").set_original("c64_flop_app_d81").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_app_g64").set_original("c64_flop_app_g64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_app_test_d64").set_original("c64_flop_app_test_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_app_test_d71").set_original("c64_flop_app_test_d71").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_app_test_g64").set_original("c64_flop_app_test_g64").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_col_bftp").set_original("c64_flop_col_bftp").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_bugjam").set_original("c64_flop_col_bugjam").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_cd96").set_original("c64_flop_col_cd96").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_dotson").set_original("c64_flop_col_dotson").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_dram_d64").set_original("c64_flop_col_dram_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_dram_g64").set_original("c64_flop_col_dram_g64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_einstein").set_original("c64_flop_col_einstein").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_eshaker").set_original("c64_flop_col_eshaker").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_fairlight").set_original("c64_flop_col_fairlight").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_gwn").set_original("c64_flop_col_gwn").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_hornet").set_original("c64_flop_col_hornet").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_hvoltage").set_original("c64_flop_col_hvoltage").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_jazzcat").set_original("c64_flop_col_jazzcat").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_manik").set_original("c64_flop_col_manik").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_oxyron").set_original("c64_flop_col_oxyron").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_tadpole").set_original("c64_flop_col_tadpole").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_col_watties").set_original("c64_flop_col_watties").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_comp_demo_d64").set_original("c64_flop_comp_demo_g64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_comp_demo_g64").set_original("c64_flop_comp_demo_g64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_comp_edu").set_original("c64_flop_comp_edu").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_comp_game_d64").set_original("c64_flop_comp_game_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_comp_game_d81").set_original("c64_flop_comp_game_d81").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_comp_mag").set_original("c64_flop_comp_mag").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_comp_music").set_original("c64_flop_comp_music").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_comp_var").set_original("c64_flop_comp_var").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_cover_d64").set_original("c64_flop_cover_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_cover_d81").set_original("c64_flop_cover_d81").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_crack").set_original("c64_flop_crack").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_demo_d64").set_original("c64_flop_demo_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_demo_d71").set_original("c64_flop_demo_d71").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_demo_d81").set_original("c64_flop_demo_d81").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_demo_g64").set_original("c64_flop_demo_g64").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_doc_d64").set_original("c64_flop_doc_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_doc_g64").set_original("c64_flop_doc_g64").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_edu_d64").set_original("c64_flop_edu_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_edu_d81").set_original("c64_flop_edu_d81").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_edu_g64").set_original("c64_flop_edu_g64").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_game_d64").set_original("c64_flop_game_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_game_d71").set_original("c64_flop_game_d71").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_game_d81").set_original("c64_flop_game_d81").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_game_g64").set_original("c64_flop_game_g64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_game_3dck").set_original("c64_flop_game_3dck").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_game_acs").set_original("c64_flop_game_acs").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_game_bdash_d64").set_original("c64_flop_game_bdash_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_game_bdash_g64").set_original("c64_flop_game_bdash_g64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_game_gkgm").set_original("c64_flop_game_gkgm").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_game_pcs").set_original("c64_flop_game_pcs").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_game_prv_d64").set_original("c64_flop_game_prv_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_game_prv_d81").set_original("c64_flop_game_prv_d81").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_game_prv_g64").set_original("c64_flop_game_prv_g64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_game_seuck_d64").set_original("c64_flop_game_seuck_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_game_seuck_g64").set_original("c64_flop_game_seuck_g64").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_geos").set_original("c64_flop_geos").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_gfx_d64").set_original("c64_flop_gfx_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_gfx_d81").set_original("c64_flop_gfx_d81").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_mag_com_d64").set_original("c64_flop_mag_com_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_mag_com_d81").set_original("c64_flop_mag_com_d81").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_mag_com_g64").set_original("c64_flop_mag_com_g64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_mag_scene_d64").set_original("c64_flop_mag_scene_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_mag_scene_d71").set_original("c64_flop_mag_scene_d71").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_mag_scene_d81").set_original("c64_flop_mag_scene_d81").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_mag_scene_g64").set_original("c64_flop_mag_scene_g64").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_music_d64").set_original("c64_flop_music_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_music_d71").set_original("c64_flop_music_d71").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_music_d81").set_original("c64_flop_music_d81").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_music_g64").set_original("c64_flop_music_g64").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_os_d64").set_original("c64_flop_os_d64").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_pd_d64").set_original("c64_flop_pd_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_pd_g64").set_original("c64_flop_pd_g64").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_src").set_original("c64_flop_src").set_filter(filter);
+}
+
 //-------------------------------------------------
 //  machine_config( ntsc )
 //-------------------------------------------------
@@ -1556,89 +1662,8 @@ void c64_state::ntsc(machine_config &config)
 
 	QUICKLOAD(config, "quickload", "p00,prg,t64", CBM_QUICKLOAD_DELAY).set_load_callback(FUNC(c64_state::quickload_c64));
 
-	// software list
-	SOFTWARE_LIST(config, "cart_list_vic10").set_original("vic10").set_filter("NTSC");
-	SOFTWARE_LIST(config, "cart_list_c64").set_original("c64_cart").set_filter("NTSC");
-	SOFTWARE_LIST(config, "cass_list").set_original("c64_cass").set_filter("NTSC");
-	// disk softlist split into originals and misc (homebrew and cracks)
-	SOFTWARE_LIST(config, "flop525_orig").set_original("c64_flop_orig").set_filter("NTSC");
-	SOFTWARE_LIST(config, "flop525_misc").set_compatible("c64_flop_misc").set_filter("NTSC");
-    
-    SOFTWARE_LIST(config, "flop_acs").set_original("c64_flop_acs").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_anim").set_original("c64_flop_anim").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_apps_d64").set_original("c64_flop_apps_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_apps_d81").set_original("c64_flop_apps_d81").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_apps_g64").set_original("c64_flop_apps_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_bdash_d64").set_original("c64_flop_bdash_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_bdash_g64").set_original("c64_flop_bdash_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_comp_demo_d64").set_original("c64_flop_comp_demo_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_comp_demo_g64").set_original("c64_flop_comp_demo_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_comp_edu").set_original("c64_flop_comp_edu").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_comp_game_d64").set_original("c64_flop_comp_game_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_comp_game_d81").set_original("c64_flop_comp_game_d81").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_comp_mags").set_original("c64_flop_comp_mags").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_comp_mus").set_original("c64_flop_comp_mus").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_comp_var").set_original("c64_flop_comp_var").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_cover_d64").set_original("c64_flop_cover_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_cover_d81").set_original("c64_flop_cover_d81").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_crack").set_original("c64_flop_crack").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_demo_d64").set_original("c64_flop_demo_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_demo_d71").set_original("c64_flop_demo_d71").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_demo_g64").set_original("c64_flop_demo_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_docs_d64").set_original("c64_flop_docs_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_docs_g64").set_original("c64_flop_docs_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_edu_d64").set_original("c64_flop_edu_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_edu_d81").set_original("c64_flop_edu_d81").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_edu_g64").set_original("c64_flop_edu_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_gamep_d64").set_original("c64_flop_gamep_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_gamep_d81").set_original("c64_flop_gamep_d81").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_gamep_g64").set_original("c64_flop_gamep_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_games_d64").set_original("c64_flop_games_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_games_d71").set_original("c64_flop_games_d71").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_games_d81").set_original("c64_flop_games_d81").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_games_g64").set_original("c64_flop_games_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_geos").set_original("c64_flop_geos").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_gfx_d64").set_original("c64_flop_gfx_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_gfx_d81").set_original("c64_flop_gfx_d81").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_gkgm").set_original("c64_flop_gkgm").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_magc_d64").set_original("c64_flop_magc_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_magc_d81").set_original("c64_flop_magc_d81").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_magc_g64").set_original("c64_flop_magc_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_mags_d64").set_original("c64_flop_mags_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_mags_d71").set_original("c64_flop_mags_d71").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_mags_d81").set_original("c64_flop_mags_d81").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_mags_g64").set_original("c64_flop_mags_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_mus_d64").set_original("c64_flop_mus_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_mus_d71").set_original("c64_flop_mus_d71").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_mus_d81").set_original("c64_flop_mus_d81").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_mus_g64").set_original("c64_flop_mus_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_pcs").set_original("c64_flop_pcs").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_pd_d64").set_original("c64_flop_pd_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_pd_g64").set_original("c64_flop_pd_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_seuck_d64").set_original("c64_flop_seuck_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_seuck_g64").set_original("c64_flop_seuck_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_src").set_original("c64_flop_src").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_test_d64").set_original("c64_flop_test_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_test_d71").set_original("c64_flop_test_d71").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_test_g64").set_original("c64_flop_test_g64").set_filter("NTSC");
-    
-    SOFTWARE_LIST(config, "flop_bftp").set_original("c64_flop_bftp").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_bugjam").set_original("c64_flop_bugjam").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_cd96").set_original("c64_flop_cd96").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_dotson").set_original("c64_flop_dotson").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_dram_d64").set_original("c64_flop_dram_d64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_dram_g64").set_original("c64_flop_dram_g64").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_einstein").set_original("c64_flop_einstein").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_eshaker").set_original("c64_flop_eshaker").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_fairlight").set_original("c64_flop_fairlight").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_gwn").set_original("c64_flop_gwn").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_hornet").set_original("c64_flop_hornet").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_hvoltage").set_original("c64_flop_hvoltage").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_jazzcat").set_original("c64_flop_jazzcat").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_manik").set_original("c64_flop_manik").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_oxyron").set_original("c64_flop_oxyron").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_tadpole").set_original("c64_flop_tadpole").set_filter("NTSC");
-    SOFTWARE_LIST(config, "flop_watties").set_original("c64_flop_watties").set_filter("NTSC");
+    // software lists
+    softlists(config, "NTSC");
     
 	// internal ram
 	RAM(config, RAM_TAG).set_default_size("64K");
@@ -1805,89 +1830,8 @@ void c64_state::pal(machine_config &config)
 
 	QUICKLOAD(config, "quickload", "p00,prg,t64", CBM_QUICKLOAD_DELAY).set_load_callback(FUNC(c64_state::quickload_c64));
 
-	// software list
-	SOFTWARE_LIST(config, "cart_list_vic10").set_original("vic10").set_filter("PAL");
-	SOFTWARE_LIST(config, "cart_list_c64").set_original("c64_cart").set_filter("PAL");
-	SOFTWARE_LIST(config, "cass_list").set_original("c64_cass").set_filter("PAL");
-	// disk softlist split into originals and misc (homebrew and cracks)
-	SOFTWARE_LIST(config, "flop525_orig").set_original("c64_flop_orig").set_filter("PAL");
-	SOFTWARE_LIST(config, "flop525_misc").set_compatible("c64_flop_misc").set_filter("PAL");
-    
-    SOFTWARE_LIST(config, "flop_acs").set_original("c64_flop_acs").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_anim").set_original("c64_flop_anim").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_apps_d64").set_original("c64_flop_apps_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_apps_d81").set_original("c64_flop_apps_d81").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_apps_g64").set_original("c64_flop_apps_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_bdash_d64").set_original("c64_flop_bdash_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_bdash_g64").set_original("c64_flop_bdash_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_comp_demo_d64").set_original("c64_flop_comp_demo_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_comp_demo_g64").set_original("c64_flop_comp_demo_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_comp_edu").set_original("c64_flop_comp_edu").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_comp_game_d64").set_original("c64_flop_comp_game_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_comp_game_d81").set_original("c64_flop_comp_game_d81").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_comp_mags").set_original("c64_flop_comp_mags").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_comp_mus").set_original("c64_flop_comp_mus").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_comp_var").set_original("c64_flop_comp_var").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_cover_d64").set_original("c64_flop_cover_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_cover_d81").set_original("c64_flop_cover_d81").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_crack").set_original("c64_flop_crack").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_demo_d64").set_original("c64_flop_demo_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_demo_d71").set_original("c64_flop_demo_d71").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_demo_g64").set_original("c64_flop_demo_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_docs_d64").set_original("c64_flop_docs_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_docs_g64").set_original("c64_flop_docs_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_edu_d64").set_original("c64_flop_edu_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_edu_d81").set_original("c64_flop_edu_d81").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_edu_g64").set_original("c64_flop_edu_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_gamep_d64").set_original("c64_flop_gamep_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_gamep_d81").set_original("c64_flop_gamep_d81").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_gamep_g64").set_original("c64_flop_gamep_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_games_d64").set_original("c64_flop_games_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_games_d71").set_original("c64_flop_games_d71").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_games_d81").set_original("c64_flop_games_d81").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_games_g64").set_original("c64_flop_games_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_geos").set_original("c64_flop_geos").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_gfx_d64").set_original("c64_flop_gfx_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_gfx_d81").set_original("c64_flop_gfx_d81").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_gkgm").set_original("c64_flop_gkgm").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_magc_d64").set_original("c64_flop_magc_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_magc_d81").set_original("c64_flop_magc_d81").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_magc_g64").set_original("c64_flop_magc_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_mags_d64").set_original("c64_flop_mags_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_mags_d71").set_original("c64_flop_mags_d71").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_mags_d81").set_original("c64_flop_mags_d81").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_mags_g64").set_original("c64_flop_mags_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_mus_d64").set_original("c64_flop_mus_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_mus_d71").set_original("c64_flop_mus_d71").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_mus_d81").set_original("c64_flop_mus_d81").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_mus_g64").set_original("c64_flop_mus_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_pcs").set_original("c64_flop_pcs").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_pd_d64").set_original("c64_flop_pd_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_pd_g64").set_original("c64_flop_pd_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_seuck_d64").set_original("c64_flop_seuck_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_seuck_g64").set_original("c64_flop_seuck_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_src").set_original("c64_flop_src").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_test_d64").set_original("c64_flop_test_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_test_d71").set_original("c64_flop_test_d71").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_test_g64").set_original("c64_flop_test_g64").set_filter("PAL");
-    
-    SOFTWARE_LIST(config, "flop_bftp").set_original("c64_flop_bftp").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_bugjam").set_original("c64_flop_bugjam").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_cd96").set_original("c64_flop_cd96").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_dotson").set_original("c64_flop_dotson").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_dram_d64").set_original("c64_flop_dram_d64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_dram_g64").set_original("c64_flop_dram_g64").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_einstein").set_original("c64_flop_einstein").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_eshaker").set_original("c64_flop_eshaker").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_fairlight").set_original("c64_flop_fairlight").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_gwn").set_original("c64_flop_gwn").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_hornet").set_original("c64_flop_hornet").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_hvoltage").set_original("c64_flop_hvoltage").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_jazzcat").set_original("c64_flop_jazzcat").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_manik").set_original("c64_flop_manik").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_oxyron").set_original("c64_flop_oxyron").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_tadpole").set_original("c64_flop_tadpole").set_filter("PAL");
-    SOFTWARE_LIST(config, "flop_watties").set_original("c64_flop_watties").set_filter("PAL");
+    // software lists
+    softlists(config, "PAL");
     
 	// internal ram
 	RAM(config, RAM_TAG).set_default_size("64K");

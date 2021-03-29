@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
+<softwarelist name="c64_flop_app_test_g64" description="Commodore 64 floppy disks (Applications - Test Disks - G64)">
+
+	<software name="1351mous" supported="no">
+		<description>1351 Mouse Demo Disk</description>
+		<year>19??</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="333744">
+				<rom name="1351 mouse demo disk (19xx)(commodore).g64" size="333744" crc="ce853f52" sha1="d947842bac80814e8917706e54cf5959ab7bb6f5"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
+			<dataarea name="flop" size="286164">
+				<rom name="1351 mouse demo disk (19xx)(commodore)[a].g64" size="286164" crc="4062e076" sha1="83d010c3e4659590fdf3cb9f8a59c98e27517c10"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="1541demo" supported="no">
+		<description>1541 Demo Disk</description>
+		<year>19??</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="333744">
+				<rom name="1541 demo disk (19xx)(commodore).g64" size="333744" crc="fc9c94e2" sha1="f4f3a7a4e86528d56f0c5eb2a770aed9e378bccc"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
+			<dataarea name="flop" size="333744">
+				<rom name="1541 demo disk (19xx)(commodore)[a].g64" size="333744" crc="93cbdc5c" sha1="6c364292392d2d23205d6c0474cb182e89e9aa9b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="1571demo" supported="no">
+		<description>1571 Demo Disk</description>
+		<year>19??</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="333744">
+				<rom name="1571 demo disk (19xx)(commodore).g64" size="333744" crc="1be368f3" sha1="ac378e4e0cecb3f28dfb7794f3e0fc9bbf0c77b7"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
+			<dataarea name="flop" size="333744">
+				<rom name="1571 demo disk (19xx)(commodore)[a].g64" size="333744" crc="cd08ac11" sha1="b2a5d1a03a90a78a3888afc334e7bcec57090a07"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
+			<dataarea name="flop" size="333744">
+				<rom name="1571 demo disk (19xx)(commodore)[a2].g64" size="333744" crc="876f1a00" sha1="e86283647c35c7bc394b9b39f05c7a191ecb04b2"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 3"/>
+			<dataarea name="flop" size="333744">
+				<rom name="1571 demo disk (19xx)(commodore)[a3].g64" size="333744" crc="3529f5ab" sha1="6190607b24b974324b03e8ed6d2246653afb6679"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="1700reut" supported="no">
+		<description>1700 REU Test Demo Disk</description>
+		<year>19??</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="333744">
+				<rom name="1700 reu test demo disk (19xx)(commodore).g64" size="333744" crc="2405c4e8" sha1="a26686ab9610880e592a972f94676a52f340b785"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="1764test" supported="no">
+		<description>1764 Test Demo Disk</description>
+		<year>19??</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="333744">
+				<rom name="1764 test demo disk (19xx)(commodore).g64" size="333744" crc="83487447" sha1="60d3361fa3fd592555a47fc55dedc9732ed1187a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="c64testd" supported="no">
+		<description>C64 Test Demo Disk</description>
+		<year>19??</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="325814">
+				<rom name="c64 test demo disk (19xx)(commodore).g64" size="325814" crc="9b764120" sha1="a0ef658b9a88c8bf64be379e798624c8e8931f45"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="commodor" supported="no">
+		<description>Commodore 1541</description>
+		<year>1983</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Alt, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a][test demo-diskette].g64" size="333744" crc="00d8ac5b" sha1="5cb5b7b2180f8447952fab32b734b2b5ab2f2659"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 10, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a10][test demo-diskette].g64" size="333744" crc="c71e867e" sha1="ee9ba47fe42a41d9732fd4762cc6100fae785f5f"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 11, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a11][test demo-diskette].g64" size="333744" crc="8fc43075" sha1="3be10ed34579376078b4b5fe99080980f9cc8939"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 12, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a12][test demo-diskette].g64" size="333744" crc="5c6c05d9" sha1="c94b49e3c034df9f1261bcfb38e54d32aa9d311f"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 13, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a13][test demo-diskette].g64" size="333744" crc="5febe366" sha1="a2bc709d9ab16e80c77dbb799f9bfb967115c129"/>
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 14, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a14][test demo-diskette].g64" size="333744" crc="799b36fb" sha1="9bf4fc16df4a2c53509c39cfd36e3a850ab32e5a"/>
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 15, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a15][test demo-diskette].g64" size="333744" crc="2999a37c" sha1="5328d19b62991b154333640f470921c8b106df06"/>
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a2][test demo-diskette].g64" size="333744" crc="78072c76" sha1="6f2e86a61de7c9e14ea9416ad9ef2b160e923ac3"/>
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 3, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a3][test demo-diskette].g64" size="333744" crc="98ecf05e" sha1="94e2a4e8645543e43b637576d00a821b0f73df9f"/>
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 4, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a4][test demo-diskette].g64" size="333744" crc="a2f9a111" sha1="0e2e8845cc3fc1dd454c73927e978d15742f3c57"/>
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 5, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a5][test demo-diskette].g64" size="333744" crc="ccd9a2cb" sha1="10cbb5bfdbcb8a76916b599cce5d9538862c9588"/>
+			</dataarea>
+		</part>
+		<part name="flop12" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 6, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a6][test demo-diskette].g64" size="333744" crc="971ee318" sha1="fe37f3ebfbd97d8a800fb7ccd288546aa419a800"/>
+			</dataarea>
+		</part>
+		<part name="flop13" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 7, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a7][test demo-diskette].g64" size="333744" crc="72edec34" sha1="c78452a43a5320f8ff8d8f8dd87687ef6d2ed8ba"/>
+			</dataarea>
+		</part>
+		<part name="flop14" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 8, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a8][test demo-diskette].g64" size="333744" crc="e3b70859" sha1="16f2fc7e76b22b406cf6c64d156a47133efd74ff"/>
+			</dataarea>
+		</part>
+		<part name="flop15" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 9, test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[a9][test demo-diskette].g64" size="333744" crc="dc5f4e8b" sha1="0d0e61d4e0aede8f22704c0d128d67a1727bf870"/>
+			</dataarea>
+		</part>
+		<part name="flop16" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette"/>
+			<dataarea name="flop" size="333744">
+				<rom name="commodore 1541 (1983)(commodore)[test demo-diskette].g64" size="333744" crc="14edba03" sha1="3dc053b5c797f6dab0d85e397765b37971ee28a8"/>
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

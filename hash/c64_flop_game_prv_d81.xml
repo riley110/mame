@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
+<softwarelist name="c64_flop_game_prv_d81" description="Commodore 64 floppy disks (Games - Previews - D81)">
+
+	<software name="aftermat" supported="no">
+		<description>Aftermath</description>
+		<year>1990</year>
+		<publisher>Mark A. Dickenson</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="aftermath (1990)(mark a. dickenson).d81" size="819200" crc="83c25532" sha1="32125871aec7d59e452d1bfb117fe5273fd93039"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghostsng" supported="no">
+		<description>Ghosts'n Goblins Arcade (Demo)</description>
+		<year>2015</year>
+		<publisher>Chris Butler - Erhan Verschueren - Geert Verschueren - Tomaz Kac</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Cracked by N0"/>
+			<dataarea name="flop" size="819200">
+				<rom name="ghosts'n goblins arcade (demo) (2015)(butler, chris - verschueren, erhan - verschueren, geert - kac, tomaz)[cr n0].d81" size="819200" crc="c241df4b" sha1="bba86274eca9a4aaa63d1eec205e9c281e04269d"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Cracked by N0, Alt"/>
+			<dataarea name="flop" size="819200">
+				<rom name="ghosts'n goblins arcade (demo) (2015)(butler, chris - verschueren, erhan - verschueren, geert - kac, tomaz)[cr n0][a].d81" size="819200" crc="4d4ee699" sha1="b5892a85762e6b2cadf416cbf5964205ed837ec4"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yogisbig" supported="no">
+		<description>Yogi's Big Clean Up</description>
+		<year>1992</year>
+		<publisher>Hi-Tec</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="yogi's big clean up (1992)(hi-tec).d81" size="819200" crc="3839dbee" sha1="28d9f15bec98d541cb10787f31375bb546d7e0da"/>
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

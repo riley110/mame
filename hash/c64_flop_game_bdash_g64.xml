@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
+<softwarelist name="c64_flop_game_bdash_g64" description="Commodore 64 floppy disks (Games - Boulder Dash - G64)">
+
+	<software name="boulderd" supported="no">
+		<description>Boulder Dash 50</description>
+		<year>2001</year>
+		<publisher>Liepa, Peter &amp; Spaans, Ruben</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="333744">
+				<rom name="boulder dash 50 (2001)(liepa, peter &amp; spaans, ruben).g64" size="333744" crc="aec8ab24" sha1="9375c4d31f6da2ef99b9df2e5b46637b99ecc926"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
+			<dataarea name="flop" size="333744">
+				<rom name="boulder dash 50 (2001)(liepa, peter &amp; spaans, ruben)[a].g64" size="333744" crc="d5aa9b54" sha1="f61f7b3e5536de9e0405303260c1ea8162ab55fc"/>
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
+<softwarelist name="c64_flop_game_3dck" description="Commodore 64 floppy disks (Games - 3DCK)">
+
+	<software name="3dadvent" supported="no">
+		<description>3-D Adventure</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="3-d adventure (19xx)(-).d64" size="174848" crc="f86830fd" sha1="c13375d7fe9d61cf87bd3c3154e9f19c71271125"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
+			<dataarea name="flop" size="174848">
+				<rom name="3-d adventure (19xx)(-)[a].d64" size="174848" crc="b4400545" sha1="85b431b3c73f18abd44710bd1eb2f165d09118c4"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="achancei" supported="no">
+		<description>A Chance in Hell</description>
+		<year>199?</year>
+		<publisher>S. Flanagan</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="chance in hell, a (199x)(flanagan, s.).d64" size="174848" crc="9bc93b3a" sha1="9893765155a40938acae24080bfe8d2167b24c20"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by DNS"/>
+			<dataarea name="flop" size="174848">
+				<rom name="chance in hell, a (199x)(flanagan, s.)[cr dns].d64" size="174848" crc="af57a02f" sha1="79338edf7df0ddb6776bf4de05fcebe9355adc20"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by DNS, Alt"/>
+			<dataarea name="flop" size="174848">
+				<rom name="chance in hell, a (199x)(flanagan, s.)[cr dns][a].d64" size="174848" crc="78802ff8" sha1="2d458d99580ab5861afdc48b0c7b30d2be29e502"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cyborg29" supported="no">
+		<description>Cyborg 2900</description>
+		<year>19??</year>
+		<publisher>Marcel Smuz</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="cyborg 2900 (19xx)(smuz, marcel).d64" size="174848" crc="b9d9e909" sha1="dbbba25452a1d6e31f7a3817072f470966114ced"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="escapefr" supported="no">
+		<description>Escape from Zaphod</description>
+		<year>19??</year>
+		<publisher>Richard Bayliss</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="escape from zaphod (19xx)(bayliss, richard).d64" size="174848" crc="545bd886" sha1="105c6de708f969810e29cded90273810ad368a47"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="herrdesb" supported="no">
+		<description>Herr des Bosen (de)</description>
+		<year>19??</year>
+		<publisher>Arman Behdad</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Lord of Evil"/>
+			<dataarea name="flop" size="174848">
+				<rom name="herr des bosen (19xx)(behdad, arman)(de)[lord of evil].d64" size="174848" crc="c7380ab6" sha1="79cb706fc98bc343c92313147a6202e8be6ef4da"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="timecrys" supported="no">
+		<description>Time Crystal</description>
+		<year>19??</year>
+		<publisher>Philip Boyce</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="time crystal (19xx)(boyce, philip).d64" size="174848" crc="5ddc8c22" sha1="c2b2a71a28282b05b98158ae65b61cd534aaa6cb"/>
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

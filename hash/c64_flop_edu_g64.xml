@@ -4,7 +4,7 @@
 This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
 Credit goes to the TOSECDEV team for building this vast database over the years.
 -->
-<softwarelist name="c64_flop_edu_g64" description="c64_flop_edu_g64">
+<softwarelist name="c64_flop_edu_g64" description="Commodore 64 floppy disks (Educational - G64)">
 
 	<software name="abcalpha" supported="no">
 		<description>ABC - Alphabet Beasts &amp; Co.</description>
@@ -1404,7 +1404,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="indiansi" supported="no">
-		<description>Indians Indians</description>
+		<description>Indians, Indians</description>
 		<year>1985</year>
 		<publisher>Orange Cherry Software</publisher>
 
@@ -2673,6 +2673,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="picturep" supported="no">
+		<description>Picture Parts</description>
+		<year>1984</year>
+		<publisher>Thunder Mountain</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="286164">
+				<rom name="picture parts (1984)(thunder mountain).g64" size="286164" crc="b2bfef8c" sha1="5806da3833a5e147257a18395f033820953df759"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="derpreis" supported="no">
 		<description>Der Preis ist Heiss (de)</description>
 		<year>1991</year>
@@ -3344,8 +3356,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="dcticket" supported="no">
-		<description>DC Ticket to Washington</description>
+	<software name="ticketto" supported="no">
+		<description>Ticket to Washington, DC</description>
 		<year>1988</year>
 		<publisher>Blue Lion Software</publisher>
 
@@ -3425,18 +3437,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 
 	<software name="trivia64" supported="no">
 		<description>Trivia 64</description>
-		<year>19??</year>
+		<year>198?</year>
 		<publisher>Advantage Computer Assessories</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="286164">
-				<rom name="trivia 64 (19xx)(advantage computer assessories).g64" size="286164" crc="087bf6a5" sha1="7c309de6c6dd259f5d7a725895d3e6584048e5e3"/>
+				<rom name="trivia 64 (198x)(advantage computer assessories).g64" size="286164" crc="087bf6a5" sha1="7c309de6c6dd259f5d7a725895d3e6584048e5e3"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Alt"/>
 			<dataarea name="flop" size="333744">
-				<rom name="trivia 64 (19xx)(advantage computer assessories)[a].g64" size="333744" crc="595a9ceb" sha1="51b0fc14e0505b0302df71623850c81f457ce7ce"/>
+				<rom name="trivia 64 (198x)(advantage computer assessories)[a].g64" size="333744" crc="595a9ceb" sha1="51b0fc14e0505b0302df71623850c81f457ce7ce"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3881,8 +3893,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="losewino" supported="no">
-		<description>Lose Win or Draw</description>
+	<software name="winloseo" supported="no">
+		<description>Win, Lose or Draw</description>
 		<year>1988</year>
 		<publisher>Hi Tech</publisher>
 
@@ -3918,8 +3930,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="losewino_1" supported="no">
-		<description>Lose Win or Draw (1)</description>
+	<software name="winloseo_1" supported="no">
+		<description>Win, Lose or Draw (1)</description>
 		<year>1988</year>
 		<publisher>Hi-tec</publisher>
 
@@ -3949,8 +3961,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="losewino_2" supported="no">
-		<description>Lose Win or Draw 2nd Edition</description>
+	<software name="winloseo_2" supported="no">
+		<description>Win, Lose or Draw 2nd Edition</description>
 		<year>19??</year>
 		<publisher>Hi-tec</publisher>
 
@@ -3968,8 +3980,8 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="losewino_3" supported="no">
-		<description>Lose Win or Draw Junior</description>
+	<software name="winloseo_3" supported="no">
+		<description>Win, Lose or Draw Junior</description>
 		<year>1989</year>
 		<publisher>Hi Tech Expressions</publisher>
 

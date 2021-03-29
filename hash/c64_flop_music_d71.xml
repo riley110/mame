@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
+<softwarelist name="c64_flop_music_d71" description="Commodore 64 floppy disks (Music - D71)">
+
+	<software name="69positi" supported="no">
+		<description>69 positions 100% (2006-12-27)</description>
+		<year>2006</year>
+		<publisher>Vulture Design</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="69 positions 100 (2006-12-27)(vulture design).d71" size="349696" crc="e1e48cfa" sha1="761a7f9d60a7366f2d730e33215f9796f4aec167"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chickenm" supported="no">
+		<description>Chicken Mc Digis</description>
+		<year>19??</year>
+		<publisher>The Ancient Temple</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked"/>
+			<dataarea name="flop" size="351062">
+				<rom name="chicken mc digis (19xx)(the ancient temple)[h].d71" size="351062" crc="25c79b54" sha1="9f2346720450b87a6688a74325396a5f5b4ddd36"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked, Alt"/>
+			<dataarea name="flop" size="349696">
+				<rom name="chicken mc digis (19xx)(the ancient temple)[h][a].d71" size="349696" crc="04c2b349" sha1="54195b851d5567f1e606dea768c028fb5cc11bf8"/>
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
