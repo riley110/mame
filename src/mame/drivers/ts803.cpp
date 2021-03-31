@@ -467,10 +467,10 @@ void ts803_state::ts803(machine_config &config)
 	/* floppy disk */
 	FD1793(config, m_fdc, 1_MHz_XTAL);
 	m_fdc->intrq_wr_callback().set("sti", FUNC(z80sti_device::i7_w));
-	FLOPPY_CONNECTOR(config, "fdc:0", ts803_floppies, "525dd", floppy_image_device::default_floppy_formats).enable_sound(true);
-	FLOPPY_CONNECTOR(config, "fdc:1", ts803_floppies, "525dd", floppy_image_device::default_floppy_formats).enable_sound(true);
-
-	SOFTWARE_LIST(config, "flop_list").set_original("ts803_flop");
+	FLOPPY_CONNECTOR(config, "fdc:0", ts803_floppies, "525dd", floppy_image_device::default_mfm_floppy_formats).enable_sound(true);
+	FLOPPY_CONNECTOR(config, "fdc:1", ts803_floppies, "525dd", floppy_image_device::default_mfm_floppy_formats).enable_sound(true);
+    
+    SOFTWARE_LIST(config, "flop_list").set_original("ts803_flop");
 }
 
 /* ROM definition */
