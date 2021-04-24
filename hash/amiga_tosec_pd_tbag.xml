@@ -500,18 +500,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="tbagtamp_40" supported="no">
-		<description>TBAG - Tampa Bay Amiga Group's Disk of the Month #41 (Public Domain)</description>
-		<year>1990</year>
-		<publisher>Merlin's Software - Amiganuts United</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="tbag - tampa bay amiga group's disk of the month #41 (1990)(merlin's software - amiganuts united)(pd).adf" size="901120" crc="abaa5390" sha1="603ec035f0ed80eccecb0f7ef9d321c3e6ea1e78"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tbagtamp_41" supported="no">
 		<description>TBAG - Tampa Bay Amiga Group's Disk of the Month #41 (Public Domain) (1)</description>
 		<year>1990</year>
 		<publisher>Merlin's Software</publisher>
@@ -519,6 +507,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="tbag - tampa bay amiga group's disk of the month #41 (1990)(merlin's software)(pd).adf" size="901120" crc="b6aa068e" sha1="c2608ef90a93e6f3e694a16a252ac0af38156760"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tbagtamp_41" supported="no">
+		<description>TBAG - Tampa Bay Amiga Group's Disk of the Month #41 (Public Domain)</description>
+		<year>1990</year>
+		<publisher>Merlin's Software - Amiganuts United</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="tbag - tampa bay amiga group's disk of the month #41 (1990)(merlin's software - amiganuts united)(pd).adf" size="901120" crc="abaa5390" sha1="603ec035f0ed80eccecb0f7ef9d321c3e6ea1e78"/>
 			</dataarea>
 		</part>
 	</software>
@@ -762,7 +762,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="tbag - tampa bay amiga group's disk of the month #61 (1991)(merlin's software - amiganuts united)(pd)[a].adf" size="901120" crc="fa24d728" sha1="a89dc264ec8a528e50d0283144ba684c096b4dee"/>
 			</dataarea>
@@ -878,7 +878,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="tbagtamp_71" supported="no">
+	<software name="tbagtamp_70_a" cloneof="tbagtamp_70" supported="no">
 		<description>TBAG - Tampa Bay Amiga Group's Disk of the Month #70 (Public Domain) (1)</description>
 		<year>199?</year>
 		<publisher>Merlin's Software - Amiganuts United</publisher>
@@ -890,7 +890,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="tbagtamp_72" supported="no">
+	<software name="tbagtamp_71" supported="no">
 		<description>TBAG - Tampa Bay Amiga Group's Disk of the Month #71 (Public Domain)</description>
 		<year>1992</year>
 		<publisher>Merlin's Software - Amiganuts United</publisher>
@@ -902,7 +902,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="tbagtamp_73" supported="no">
+	<software name="tbagtamp_72" supported="no">
 		<description>TBAG - Tampa Bay Amiga Group's Disk of the Month #72 (Public Domain)</description>
 		<year>1992</year>
 		<publisher>Merlin's Software - Amiganuts United</publisher>
@@ -920,7 +920,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="tbagtamp_74" supported="no">
+	<software name="tbagtamp_73" supported="no">
 		<description>TBAG - Tampa Bay Amiga Group's Disk of the Month #73 (Public Domain)</description>
 		<year>1992</year>
 		<publisher>Merlin's Software - Amiganuts United</publisher>
@@ -932,7 +932,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="tbagtamp_75" supported="no">
+	<software name="tbagtamp_74" supported="no">
 		<description>TBAG - Tampa Bay Amiga Group's Disk of the Month #74 (Public Domain)</description>
 		<year>1992</year>
 		<publisher>Merlin's Software - Amiganuts United</publisher>
@@ -944,7 +944,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="tbagtamp_76" supported="no">
+	<software name="tbagtamp_75" supported="no">
 		<description>TBAG - Tampa Bay Amiga Group's Disk of the Month #75 (Public Domain)</description>
 		<year>1993</year>
 		<publisher>Merlin's Software - Amiganuts United</publisher>
@@ -956,7 +956,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="tbagtamp_77" supported="no">
+	<software name="tbagtamp_76" supported="no">
 		<description>TBAG - Tampa Bay Amiga Group's Disk of the Month #76 (Public Domain)</description>
 		<year>1993</year>
 		<publisher>Merlin's Software - Amiganuts United</publisher>
@@ -968,7 +968,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="tbagtamp_78" supported="no">
+	<software name="tbagtamp_77" supported="no">
 		<description>TBAG - Tampa Bay Amiga Group's Disk of the Month #77 (Public Domain)</description>
 		<year>1993</year>
 		<publisher>Merlin's Software - Amiganuts United</publisher>

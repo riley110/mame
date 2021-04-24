@@ -329,15 +329,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Scope PD</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad linkbbs file, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="scope disk #024 (199x)(scope pd)(us)[b linkbbs file][wb].adf" size="901120" crc="b490c3e3" sha1="2d0fffd65ec7c7413e17eb94fff97b2a15d271f4" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="scope disk #024 (199x)(scope pd)(us)[wb].adf" size="901120" crc="d60aedb4" sha1="9fa435092bc7681b814db97696063dda43e89ddc"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Bad linkbbs file"/>
+			<dataarea name="flop" size="901120">
+				<rom name="scope disk #024 (199x)(scope pd)(us)[b linkbbs file][wb].adf" size="901120" crc="b490c3e3" sha1="2d0fffd65ec7c7413e17eb94fff97b2a15d271f4" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>

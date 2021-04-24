@@ -6,6 +6,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 -->
 <softwarelist name="amiga_tosec_pd_mega" description="Commodore Amiga floppy disks (Public Domain - MegaDisc)">
 
+	<software name="megadost" supported="no">
+		<description>MegaDOS - The Amiga DOS Manual</description>
+		<year>19??</year>
+		<publisher>MegaDisc Digital Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megados - the amiga dos manual (19xx)(megadisc digital publishing).adf" size="901120" crc="a9869108" sha1="f95a92aedd8c112eeb33a860b903a29001dc380f"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="megadisc" supported="no">
 		<description>MegaDisc 01 (AU)</description>
 		<year>1987</year>
@@ -38,15 +50,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>MegaDisc Digital Publishing</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megadisc 03 (1987)(megadisc digital publishing)(au)[m][wb].adf" size="901120" crc="4a9ac269" sha1="2823741a42f82be33765778c3127cbbcb2efa1de"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="megadisc 03 (1987)(megadisc digital publishing)(au)[wb].adf" size="901120" crc="746c3096" sha1="37c17fa15e2dbdc5441d8af751c981702e9b10f9"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megadisc 03 (1987)(megadisc digital publishing)(au)[m][wb].adf" size="901120" crc="4a9ac269" sha1="2823741a42f82be33765778c3127cbbcb2efa1de"/>
 			</dataarea>
 		</part>
 	</software>
@@ -57,15 +69,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>MegaDisc Digital Publishing</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megadisc 04 (1988)(megadisc digital publishing)(au)[m][wb].adf" size="901120" crc="d9e7acb7" sha1="530d3d0d4e3d76c4afd00fd200b8871cbe94c4f1"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="megadisc 04 (1988)(megadisc digital publishing)(au)[wb].adf" size="901120" crc="32b0af6e" sha1="c45f7b1c98111d2fca915907bb4252a95bd1757a"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megadisc 04 (1988)(megadisc digital publishing)(au)[m][wb].adf" size="901120" crc="d9e7acb7" sha1="530d3d0d4e3d76c4afd00fd200b8871cbe94c4f1"/>
 			</dataarea>
 		</part>
 	</software>
@@ -76,7 +88,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>MegaDisc Digital Publishing</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad dump, WB"/>
+			<feature name="part_id" value="WB, Bad dump"/>
 			<dataarea name="flop" size="901120">
 				<rom name="megadisc 05 (1988)(megadisc digital publishing)(au)[b dump][wb].adf" size="901120" crc="d3d076df" sha1="1528ba93f61737096edb249ba1d7bc1526fe15fa" status="baddump"/>
 			</dataarea>
@@ -89,15 +101,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>MegaDisc Digital Publishing</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megadisc 06 (1988)(megadisc digital publishing)(au)[m][wb].adf" size="901120" crc="9fe02425" sha1="6021f16b669a21c22dbfabfdf70a6910aac693fe"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="megadisc 06 (1988)(megadisc digital publishing)(au)[wb].adf" size="901120" crc="2a7af678" sha1="99ec8e6270eb79bf7b3e149e89234799384b0908"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megadisc 06 (1988)(megadisc digital publishing)(au)[m][wb].adf" size="901120" crc="9fe02425" sha1="6021f16b669a21c22dbfabfdf70a6910aac693fe"/>
 			</dataarea>
 		</part>
 	</software>
@@ -134,7 +146,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>MegaDisc Digital Publishing</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt file, WB"/>
+			<feature name="part_id" value="WB, Bad corrupt file"/>
 			<dataarea name="flop" size="901120">
 				<rom name="megadisc 09 (1988)(megadisc digital publishing)(au)[b corrupt file][wb].adf" size="901120" crc="d09965b2" sha1="867538055d4e5ab30ace74e0db3be5e1a686a05a" status="baddump"/>
 			</dataarea>
@@ -186,15 +198,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>MegaDisc Digital Publishing</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad missing files, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megadisc 13 (1989)(megadisc digital publishing)(au)[b missing files][wb].adf" size="901120" crc="a659d5e3" sha1="d786027056b40314fb330b74f909783a74b933b0" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="megadisc 13 (1989)(megadisc digital publishing)(au)[wb].adf" size="901120" crc="6bcac254" sha1="88481e4846f2396a5cb2fb615b788d20da9eb02a"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Bad missing files"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megadisc 13 (1989)(megadisc digital publishing)(au)[b missing files][wb].adf" size="901120" crc="a659d5e3" sha1="d786027056b40314fb330b74f909783a74b933b0" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -563,15 +575,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>MegaDisc Digital Publishing</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2, Modified doscopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megadisc 36 (1993-11)(megadisc digital publishing)(au)(disk 1 of 2)[m doscopy][wb].adf" size="901120" crc="8ee3fb4e" sha1="ccf71575ec469fd186e929948a538f2377c50f90"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Disk 1 of 2, WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="megadisc 36 (1993-11)(megadisc digital publishing)(au)(disk 1 of 2)[wb].adf" size="901120" crc="6d7111fc" sha1="7ab3ca954cb9e6971738e68fec7ef02265a8891f"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2, WB, Modified doscopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megadisc 36 (1993-11)(megadisc digital publishing)(au)(disk 1 of 2)[m doscopy][wb].adf" size="901120" crc="8ee3fb4e" sha1="ccf71575ec469fd186e929948a538f2377c50f90"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
@@ -652,7 +664,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megadisc_40" supported="no">
+	<software name="megadisc_39_a" cloneof="megadisc_39" supported="no">
 		<description>MegaDisc 40 (AU, 1997-07)</description>
 		<year>1997</year>
 		<publisher>MegaDisc Digital Publishing</publisher>
@@ -665,7 +677,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megadisc_41" supported="no">
+	<software name="megadisc_40" supported="no">
 		<description>MegaDisc 41 (AU, 1994-09)</description>
 		<year>1994</year>
 		<publisher>MegaDisc Digital Publishing</publisher>
@@ -684,7 +696,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megadisc_42" supported="no">
+	<software name="megadisc_41" supported="no">
 		<description>MegaDisc 42 (AU, 1994-11)</description>
 		<year>1994</year>
 		<publisher>MegaDisc Digital Publishing</publisher>
@@ -703,21 +715,21 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megadisc_43" supported="no">
+	<software name="megadisc_42" supported="no">
 		<description>MegaDisc 43 (AU, 1995-03)</description>
 		<year>1995</year>
 		<publisher>MegaDisc Digital Publishing</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2, Modified bamcopy - icons, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megadisc 43 (1995-03)(megadisc digital publishing)(au)(disk 1 of 2)[m bamcopy - icons][wb].adf" size="901120" crc="6fdc3443" sha1="0babeeebacbda4cbddcb7134375d135edc55d106"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Disk 1 of 2, WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="megadisc 43 (1995-03)(megadisc digital publishing)(au)(disk 1 of 2)[wb].adf" size="901120" crc="4d4a5c14" sha1="98d625c8a55313938be3f5770ec932fa25bd8af2"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2, WB, Modified bamcopy - icons"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megadisc 43 (1995-03)(megadisc digital publishing)(au)(disk 1 of 2)[m bamcopy - icons][wb].adf" size="901120" crc="6fdc3443" sha1="0babeeebacbda4cbddcb7134375d135edc55d106"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
@@ -734,21 +746,21 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megadisc_44" supported="no">
+	<software name="megadisc_43" supported="no">
 		<description>MegaDisc 44 (AU, 1995-08)</description>
 		<year>1995</year>
 		<publisher>MegaDisc Digital Publishing</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2, Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megadisc 44 (1995-08)(megadisc digital publishing)(au)(disk 1 of 2)[m bamcopy][wb].adf" size="901120" crc="fc90eb26" sha1="e74bb92156d636018091d88f30fb49ecb4695c65"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Disk 1 of 2, WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="megadisc 44 (1995-08)(megadisc digital publishing)(au)(disk 1 of 2)[wb].adf" size="901120" crc="55043113" sha1="1e54def855db423fb21cd84b9918e30f9651b83b"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2, WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megadisc 44 (1995-08)(megadisc digital publishing)(au)(disk 1 of 2)[m bamcopy][wb].adf" size="901120" crc="fc90eb26" sha1="e74bb92156d636018091d88f30fb49ecb4695c65"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
@@ -759,7 +771,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megadisc_45" supported="no">
+	<software name="megadisc_44" supported="no">
 		<description>MegaDisc 45 (AU, 1996-03)</description>
 		<year>1996</year>
 		<publisher>MegaDisc Digital Publishing</publisher>
@@ -774,18 +786,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="megadisc 45 (1996-03)(megadisc digital publishing)(au)(disk 2 of 2).adf" size="901120" crc="e31ff7d0" sha1="09313ccb937036ed29ba7fd64859ec494ea318b9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megadost" supported="no">
-		<description>MegaDOS - The Amiga DOS Manual</description>
-		<year>19??</year>
-		<publisher>MegaDisc Digital Publishing</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megados - the amiga dos manual (19xx)(megadisc digital publishing).adf" size="901120" crc="a9869108" sha1="f95a92aedd8c112eeb33a860b903a29001dc380f"/>
 			</dataarea>
 		</part>
 	</software>

@@ -220,15 +220,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Amiga Public Domain Connection</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="apdc disk #025 - programming languages (198x)(amiga public domain connection)(us)[m][wb].adf" size="901120" crc="c09bc498" sha1="24de63ce7d8e0b1810663de2a8c3e48934ab3b2f"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="apdc disk #025 - programming languages (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="cf3b0a1b" sha1="422b53a712be984db81add255a0aa7bcbf1cf3eb"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="apdc disk #025 - programming languages (198x)(amiga public domain connection)(us)[m][wb].adf" size="901120" crc="c09bc498" sha1="24de63ce7d8e0b1810663de2a8c3e48934ab3b2f"/>
 			</dataarea>
 		</part>
 	</software>

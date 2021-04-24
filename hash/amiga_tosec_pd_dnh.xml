@@ -94,6 +94,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="hurtigsv" supported="no">
+		<description>Hurtigsvarspremie (NO, 1990-05)</description>
+		<year>1990</year>
+		<publisher>Data-Tronic AS</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="hurtigsvarspremie (1990-05)(data-tronic as)(no).adf" size="901120" crc="af3ace3d" sha1="f2c41194431108a3ea730746833328af07288914"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="dnhpddis" supported="no">
 		<description>dNh PD Disk Nr.16 (NO)</description>
 		<year>1990</year>
@@ -153,18 +165,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="dnh's katalogdisk v1.0 (1991-04-17)(data-tronic as)(no).adf" size="901120" crc="14fa3fa9" sha1="88fbfd76744f093a2ec8def43d82ba394375108f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="hurtigsv" supported="no">
-		<description>Hurtigsvarspremie (NO, 1990-05)</description>
-		<year>1990</year>
-		<publisher>Data-Tronic AS</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="hurtigsvarspremie (1990-05)(data-tronic as)(no).adf" size="901120" crc="af3ace3d" sha1="f2c41194431108a3ea730746833328af07288914"/>
 			</dataarea>
 		</part>
 	</software>

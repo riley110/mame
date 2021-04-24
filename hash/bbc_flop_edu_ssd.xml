@@ -18,6 +18,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="amathema" supported="no">
+		<description>A Mathemagical Adventure</description>
+		<year>1984</year>
+		<publisher>ATM</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="77568">
+				<rom name="mathemagical adventure, a (1984)(atm).ssd" size="77568" crc="7564f6bc" sha1="1b9e6bd52a406a638829f8dd577d983fb20d88cf"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="77568">
+				<rom name="mathemagical adventure, a (1984)(atm)[a].ssd" size="77568" crc="6f8df630" sha1="32cab03fb2d9c234ed1bea0d2c6f4abef8696564"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="captionw" supported="no">
 		<description>Caption - Work Disk 1</description>
 		<year>1990</year>
@@ -62,18 +80,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="101376">
 				<rom name="caption v3.02 (1990)(ncet).ssd" size="101376" crc="d9ed72cb" sha1="947f5e5ffca5322cf1df6de8d0e356fbb0ab1d42"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ceefaxin" supported="no">
-		<description>Ceefax in Grade II Braille v1C</description>
-		<year>1985</year>
-		<publisher>University of Birmingham</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="28928">
-				<rom name="ceefax in grade ii braille v1c (1985)(university of birmingham).ssd" size="28928" crc="eb66c06e" sha1="342b1acaa4f64f15ffe8d165ee9f96130fd57b58"/>
 			</dataarea>
 		</part>
 	</software>
@@ -130,15 +136,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thecompl" supported="no">
-		<description>The Complete Cocktail Maker</description>
-		<year>19??</year>
-		<publisher>Acornsoft</publisher>
+	<software name="ceefaxin" supported="no">
+		<description>Ceefax in Grade II Braille v1C</description>
+		<year>1985</year>
+		<publisher>University of Birmingham</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked Olsen"/>
-			<dataarea name="flop" size="24832">
-				<rom name="complete cocktail maker, the (19xx)(acornsoft)[h olsen].ssd" size="24832" crc="42c25a33" sha1="81dc75acc638d499bd1ae7984b02b85d3638114e"/>
+			<dataarea name="flop" size="28928">
+				<rom name="ceefax in grade ii braille v1c (1985)(university of birmingham).ssd" size="28928" crc="eb66c06e" sha1="342b1acaa4f64f15ffe8d165ee9f96130fd57b58"/>
 			</dataarea>
 		</part>
 	</software>
@@ -154,7 +159,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="87296">
 				<rom name="emergency first aid - cardiopulmonary resuscitation (1986)(rennison, andy)[a].ssd" size="87296" crc="d2eb5d93" sha1="d48f046aef44c5d14abe41d0aa4300704beacbed"/>
 			</dataarea>
@@ -184,7 +189,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="189184">
 				<rom name="griffin basic mathematics (19xx)(griffin)[a].ssd" size="189184" crc="ef3f12cd" sha1="7c0cb1d30ad0dfa0515ac496f58b45ac1adecf07"/>
 			</dataarea>
@@ -239,7 +244,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="50688">
 				<rom name="knitwear designer (1987)(database publications)[a].ssd" size="50688" crc="b978c60f" sha1="1f3eb5d369365616bc2e124f98280f7f6b2ba6d4"/>
 			</dataarea>
@@ -270,15 +275,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Acornsoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, COUNT"/>
-			<dataarea name="flop" size="11264">
-				<rom name="let's count (1984)(acornsoft)[a][count].ssd" size="11264" crc="331ffee2" sha1="1af2dd2e45252f452ac74f13f80018e8e8769af9"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="COUNT"/>
 			<dataarea name="flop" size="11264">
 				<rom name="let's count (1984)(acornsoft)[count].ssd" size="11264" crc="96c0b899" sha1="158078a1b3c096786d0bdb0ea46b4e04c052d5e5"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="COUNT, Alt 1"/>
+			<dataarea name="flop" size="11264">
+				<rom name="let's count (1984)(acornsoft)[a][count].ssd" size="11264" crc="331ffee2" sha1="1af2dd2e45252f452ac74f13f80018e8e8769af9"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
@@ -297,24 +302,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="169728">
 				<rom name="linkword french (1983)(acornsoft).ssd" size="169728" crc="6b2a8617" sha1="78c7adf19f28f03156e126db8ea4dd314b329a02"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="amathema" supported="no">
-		<description>A Mathemagical Adventure</description>
-		<year>1984</year>
-		<publisher>ATM</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="77568">
-				<rom name="mathemagical adventure, a (1984)(atm).ssd" size="77568" crc="7564f6bc" sha1="1b9e6bd52a406a638829f8dd577d983fb20d88cf"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="77568">
-				<rom name="mathemagical adventure, a (1984)(atm)[a].ssd" size="77568" crc="6f8df630" sha1="32cab03fb2d9c234ed1bea0d2c6f4abef8696564"/>
 			</dataarea>
 		</part>
 	</software>
@@ -392,18 +379,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="mrtsmone" supported="no">
-		<description>Mr. T's - Money Box - Money</description>
-		<year>19??</year>
-		<publisher>Ebury</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="20992">
-				<rom name="mr. t's - money box - money (19xx)(ebury).ssd" size="20992" crc="69e37957" sha1="b53227c874c33412a6c5e21d076aff7834356800"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="mrtsmone_1" supported="no">
 		<description>Mr. T's - Money Box - Money Box</description>
 		<year>19??</year>
 		<publisher>Ebury</publisher>
@@ -411,6 +386,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="20992">
 				<rom name="mr. t's - money box - money box (19xx)(ebury).ssd" size="20992" crc="976b08fc" sha1="a7982b07dddac0bfb1727eb848971a9721388fe7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mrtsmone_1" supported="no">
+		<description>Mr. T's - Money Box - Money</description>
+		<year>19??</year>
+		<publisher>Ebury</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="20992">
+				<rom name="mr. t's - money box - money (19xx)(ebury).ssd" size="20992" crc="69e37957" sha1="b53227c874c33412a6c5e21d076aff7834356800"/>
 			</dataarea>
 		</part>
 	</software>
@@ -459,25 +446,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="29952">
 				<rom name="mr. t's - shape games - shapes (19xx)(ebury).ssd" size="29952" crc="9f8cb926" sha1="3fb634c02aaf88b007b2a57cdd2a3e3c33766ca4"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="theperio" supported="no">
-		<description>The Periodic Table</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, CHEMIST"/>
-			<dataarea name="flop" size="11776">
-				<rom name="periodic table, the (19xx)(-)[a][chemist].ssd" size="11776" crc="7cbf2dce" sha1="6eeb029ee1e7602510727cb32fe8762e47e5ec9d"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="CHEMIST"/>
-			<dataarea name="flop" size="11776">
-				<rom name="periodic table, the (19xx)(-)[chemist].ssd" size="11776" crc="4a5994ca" sha1="cca2d7dee8af4a0f01b7095b9dcec1dea435a42b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -639,6 +607,38 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="thecompl" supported="no">
+		<description>The Complete Cocktail Maker</description>
+		<year>19??</year>
+		<publisher>Acornsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked Olsen"/>
+			<dataarea name="flop" size="24832">
+				<rom name="complete cocktail maker, the (19xx)(acornsoft)[h olsen].ssd" size="24832" crc="42c25a33" sha1="81dc75acc638d499bd1ae7984b02b85d3638114e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theperio" supported="no">
+		<description>The Periodic Table</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="CHEMIST"/>
+			<dataarea name="flop" size="11776">
+				<rom name="periodic table, the (19xx)(-)[chemist].ssd" size="11776" crc="4a5994ca" sha1="cca2d7dee8af4a0f01b7095b9dcec1dea435a42b"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="CHEMIST, Alt 1"/>
+			<dataarea name="flop" size="11776">
+				<rom name="periodic table, the (19xx)(-)[a][chemist].ssd" size="11776" crc="7cbf2dce" sha1="6eeb029ee1e7602510727cb32fe8762e47e5ec9d"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="touchtyp" supported="no">
 		<description>Touch Typing Tutor</description>
 		<year>1983</year>
@@ -670,27 +670,27 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, LOADER"/>
-			<dataarea name="flop" size="15872">
-				<rom name="world geography (19xx)(-)[a][loader].ssd" size="15872" crc="3a51e690" sha1="1b4372a530f2182ef1a0cd467efe8ac3b2ec7435"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="GEO"/>
 			<dataarea name="flop" size="16128">
 				<rom name="world geography (19xx)(-)[geo].ssd" size="16128" crc="1e14b465" sha1="e5d1b41a9163724f14da8a86c7edb3463dc0462c"/>
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="GEOG"/>
 			<dataarea name="flop" size="23808">
 				<rom name="world geography (19xx)(-)[geog].ssd" size="23808" crc="f82b8c9b" sha1="120e95c45ce5e9053141dd0fb2c7d016c7bbdb8f"/>
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="LOADER"/>
 			<dataarea name="flop" size="15872">
 				<rom name="world geography (19xx)(-)[loader].ssd" size="15872" crc="ce7b932a" sha1="39b8a014ae4d848ddd8e33aa0da3fe7193d8b0e8"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="LOADER, Alt 1"/>
+			<dataarea name="flop" size="15872">
+				<rom name="world geography (19xx)(-)[a][loader].ssd" size="15872" crc="3a51e690" sha1="1b4372a530f2182ef1a0cd467efe8ac3b2ec7435"/>
 			</dataarea>
 		</part>
 	</software>

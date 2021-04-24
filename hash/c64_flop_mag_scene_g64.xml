@@ -6,18 +6,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 -->
 <softwarelist name="c64_flop_mag_scene_g64" description="Commodore 64 floppy disks (Diskmags - Scene - G64)">
 
-	<software name="thebest4" supported="no">
-		<description>The Best #4 (1995-11)</description>
-		<year>1995</year>
-		<publisher>Alpha Flight 1970</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
-				<rom name="best, the #4 (1995-11)(alpha flight 1970).g64" size="333744" crc="63726C20" sha1="D4ADBFA5D58821EEEC4B09EB45340E90D7B4C4D6"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="commodor" supported="no">
 		<description>Commodore Free Issue #26</description>
 		<year>2009</year>
@@ -72,9 +60,21 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="333744">
 				<rom name="insider #6 (1996-03-17)(reflex)[a].g64" size="333744" crc="4D69F379" sha1="2BE8B6B32103E4DB853C1B90316071E77EB067A5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thebest4" supported="no">
+		<description>The Best #4 (1995-11)</description>
+		<year>1995</year>
+		<publisher>Alpha Flight 1970</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="333744">
+				<rom name="best, the #4 (1995-11)(alpha flight 1970).g64" size="333744" crc="63726C20" sha1="D4ADBFA5D58821EEEC4B09EB45340E90D7B4C4D6"/>
 			</dataarea>
 		</part>
 	</software>
@@ -91,7 +91,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 2 Side B, Alt"/>
+			<feature name="part_id" value="Disk 2 of 2 Side B, Alt 1"/>
 			<dataarea name="flop" size="333744">
 				<rom name="tiger-disk #068 (19xx)(tiger-crew)(de)(disk 2 of 2 side b)[a].g64" size="333744" crc="1AEAA5D3" sha1="5F19BBF0B68A073AEAA22BECD8E43D684FE49A3F"/>
 			</dataarea>

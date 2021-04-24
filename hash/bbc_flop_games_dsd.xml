@@ -12,7 +12,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Bug Byte</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Bad 1"/>
 			<dataarea name="flop" size="184832">
 				<rom name="dunjunz (1987)(bug byte)[b].dsd" size="184832" crc="24ef780d" sha1="a7e9b12e58f2902be2bb2ce3708cb10fb7d1d791" status="baddump"/>
 			</dataarea>
@@ -30,7 +30,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH, Alt"/>
+			<feature name="part_id" value="Hacked TSTH, Alt 1"/>
 			<dataarea name="flop" size="58880">
 				<rom name="dunjunz (1987)(bug byte)[h tsth][a].dsd" size="58880" crc="7f9c137b" sha1="bb95d32a54c6066c34fa2d1e2d5166de4400e017"/>
 			</dataarea>
@@ -71,30 +71,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="!BOOT"/>
 			<dataarea name="flop" size="409600">
 				<rom name="lancelot (1988)(level 9 - mandarin)[boot].dsd" size="409600" crc="867b0945" sha1="343ab51dbe83c0827919b4c4a254e707a652d8b4"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thelastn" supported="no">
-		<description>The Last Ninja 2</description>
-		<year>19??</year>
-		<publisher>Superior</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="152320">
-				<rom name="last ninja 2, the (19xx)(superior).dsd" size="152320" crc="3b8e5675" sha1="c9650322746db08ccf06b03fd70599916530c771"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thelastn_1" supported="no">
-		<description>The Last Ninja</description>
-		<year>1988</year>
-		<publisher>Superior</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="153088">
-				<rom name="last ninja, the (1988)(superior).dsd" size="153088" crc="7a780ad2" sha1="e2a9dea1571fd474670ba220bb980895a3b698f1"/>
 			</dataarea>
 		</part>
 	</software>
@@ -155,15 +131,51 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Superior</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Bad 1"/>
 			<dataarea name="flop" size="243456">
 				<rom name="repton infinity (1988)(superior)[b].dsd" size="243456" crc="6c77848c" sha1="e429ce7d2156c080793eae5d6492fe74bbcf7ef0" status="baddump"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked"/>
+			<feature name="part_id" value="Hacked 1"/>
 			<dataarea name="flop" size="246272">
 				<rom name="repton infinity (1988)(superior)[h].dsd" size="246272" crc="415eba66" sha1="2660633625fadafb88cc00b428a5e40637c5f216"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="superman" supported="no">
+		<description>Superman - Man of Steel</description>
+		<year>1989</year>
+		<publisher>Tynesoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="352768">
+				<rom name="superman - man of steel (1989)(tynesoft).dsd" size="352768" crc="a0fa518f" sha1="c3c01b0b119cd4330e4bd0aaaefd287f01a8adf3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thelastn" supported="no">
+		<description>The Last Ninja 2</description>
+		<year>19??</year>
+		<publisher>Superior</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="152320">
+				<rom name="last ninja 2, the (19xx)(superior).dsd" size="152320" crc="3b8e5675" sha1="c9650322746db08ccf06b03fd70599916530c771"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thelastn_1" supported="no">
+		<description>The Last Ninja</description>
+		<year>1988</year>
+		<publisher>Superior</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153088">
+				<rom name="last ninja, the (1988)(superior).dsd" size="153088" crc="7a780ad2" sha1="e2a9dea1571fd474670ba220bb980895a3b698f1"/>
 			</dataarea>
 		</part>
 	</software>
@@ -182,18 +194,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="324608">
 				<rom name="secret diary of adrian mole, the (1985)(level 9)[h tsth].dsd" size="324608" crc="dbfb5f38" sha1="4590def3bfae6efe95678813c98dc27ce9b6a640"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="superman" supported="no">
-		<description>Superman - Man of Steel</description>
-		<year>1989</year>
-		<publisher>Tynesoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="352768">
-				<rom name="superman - man of steel (1989)(tynesoft).dsd" size="352768" crc="a0fa518f" sha1="c3c01b0b119cd4330e4bd0aaaefd287f01a8adf3"/>
 			</dataarea>
 		</part>
 	</software>

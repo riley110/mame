@@ -30,6 +30,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="apxgraph" supported="no">
+		<description>APX Graphic Shop - Documentation</description>
+		<year>1985</year>
+		<publisher>Antic</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="apx graphic shop - documentation (1985)(antic).atr" size="92176" crc="078c5135" sha1="927774e6b76e07e7c3ff939b0d71ae40cf8a2dbc"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="actiontu" supported="no">
 		<description>Action! Tutorial</description>
 		<year>19??</year>
@@ -51,18 +63,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 3 of 3"/>
 			<dataarea name="flop" size="92176">
 				<rom name="action tutorial (19xx)(-)(disk 3 of 3).atr" size="92176" crc="e30040c5" sha1="fd3f4c28f0c6bf5a6177a0b60e18fb5fd5cb0264"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="apxgraph" supported="no">
-		<description>APX Graphic Shop - Documentation</description>
-		<year>1985</year>
-		<publisher>Antic</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="apx graphic shop - documentation (1985)(antic).atr" size="92176" crc="078c5135" sha1="927774e6b76e07e7c3ff939b0d71ae40cf8a2dbc"/>
 			</dataarea>
 		</part>
 	</software>
@@ -148,18 +148,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thenewss" supported="no">
-		<description>The News Station - Documentation</description>
-		<year>1986</year>
-		<publisher>Alan Reeve</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="news station, the - documentation (1986)(reeve, alan).atr" size="92176" crc="451631fe" sha1="a59bb862b9b1d35b0fed787e3924a458bfe9fc20"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="sherlock" supported="no">
 		<description>Sherlock 1050 - Documentation</description>
 		<year>1985</year>
@@ -190,15 +178,27 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Rassilon Software</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt, BASIC"/>
+			<feature name="part_id" value="Side B, BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="tauz &amp; kelb (1988)(rassilon software)(us)(side b)[basic].atr" size="92176" crc="191ddad4" sha1="9e7853452617cc2915be594c8816ae335f4af580"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, BASIC, Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="tauz &amp; kelb (1988)(rassilon software)(us)(side b)[a][basic].atr" size="92176" crc="718df2ea" sha1="86a9eca8275a20795ed87f1bbfec06593893f9cf"/>
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, BASIC"/>
+	</software>
+
+	<software name="thenewss" supported="no">
+		<description>The News Station - Documentation</description>
+		<year>1986</year>
+		<publisher>Alan Reeve</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92176">
-				<rom name="tauz &amp; kelb (1988)(rassilon software)(us)(side b)[basic].atr" size="92176" crc="191ddad4" sha1="9e7853452617cc2915be594c8816ae335f4af580"/>
+				<rom name="news station, the - documentation (1986)(reeve, alan).atr" size="92176" crc="451631fe" sha1="a59bb862b9b1d35b0fed787e3924a458bfe9fc20"/>
 			</dataarea>
 		</part>
 	</software>

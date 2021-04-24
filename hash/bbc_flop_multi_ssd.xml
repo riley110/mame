@@ -219,25 +219,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="music" supported="no">
-		<description>Music</description>
-		<year>1983</year>
-		<publisher>Bug Byte</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, MUSIC"/>
-			<dataarea name="flop" size="11264">
-				<rom name="music (1983)(bug byte)[a][music].ssd" size="11264" crc="6f3e5ae6" sha1="a230c92f7204516a605631caf79c21ca6d72cfb7"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="MUSIC"/>
-			<dataarea name="flop" size="11264">
-				<rom name="music (1983)(bug byte)[music].ssd" size="11264" crc="7402edf1" sha1="000227a6d602fb79d072fe8fa0862e25f50569bb"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="music500" supported="no">
 		<description>Music 5000</description>
 		<year>19??</year>
@@ -363,6 +344,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="music" supported="no">
+		<description>Music</description>
+		<year>1983</year>
+		<publisher>Bug Byte</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="MUSIC"/>
+			<dataarea name="flop" size="11264">
+				<rom name="music (1983)(bug byte)[music].ssd" size="11264" crc="7402edf1" sha1="000227a6d602fb79d072fe8fa0862e25f50569bb"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="MUSIC, Alt 1"/>
+			<dataarea name="flop" size="11264">
+				<rom name="music (1983)(bug byte)[a][music].ssd" size="11264" crc="6f3e5ae6" sha1="a230c92f7204516a605631caf79c21ca6d72cfb7"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="pictures" supported="no">
 		<description>Picture Show 1</description>
 		<year>19??</year>
@@ -429,7 +429,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Side 1, Alt"/>
+			<feature name="part_id" value="Side 1, Alt 1"/>
 			<dataarea name="flop" size="204800">
 				<rom name="slide show - pictures (19xx)(technograffiti)(side 1)[a].ssd" size="204800" crc="9e850525" sha1="f4a25e5c44434b2043039d6d2dceecd84a93cdc8"/>
 			</dataarea>
@@ -559,15 +559,72 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, SOUNDLI"/>
+			<feature name="part_id" value="SOUNDLI"/>
+			<dataarea name="flop" size="6656">
+				<rom name="sound library (19xx)(-)[soundli].ssd" size="6656" crc="fce4b418" sha1="e1306dd2a6a9e8feccab310182523aa63aa7f658"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="SOUNDLI, Alt 1"/>
 			<dataarea name="flop" size="6656">
 				<rom name="sound library (19xx)(-)[a][soundli].ssd" size="6656" crc="bcd15ac9" sha1="77c2f7678e6f19fd2a205e963b710c2876045ec1"/>
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="tmssound" supported="no">
+		<description>TMS Sound and Music Library - 400 Years of Music</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
+			<dataarea name="flop" size="204800">
+				<rom name="tms sound and music library - 400 years of music (19xx)(-)(side 0).ssd" size="204800" crc="ee5ddbe5" sha1="a734d4a03d39a155ae952937469967a75dd45ad2"/>
+			</dataarea>
+		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="SOUNDLI"/>
-			<dataarea name="flop" size="6656">
-				<rom name="sound library (19xx)(-)[soundli].ssd" size="6656" crc="fce4b418" sha1="e1306dd2a6a9e8feccab310182523aa63aa7f658"/>
+			<feature name="part_id" value="Side 1"/>
+			<dataarea name="flop" size="204800">
+				<rom name="tms sound and music library - 400 years of music (19xx)(-)(side 1).ssd" size="204800" crc="2edf46d7" sha1="2845ba50c69232184de97025844d6e535fe8ff69"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tmssound_1" supported="no">
+		<description>TMS Sound and Music Library - Micro Compositions</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
+			<dataarea name="flop" size="204800">
+				<rom name="tms sound and music library - micro compositions (19xx)(-)(side 0).ssd" size="204800" crc="91dd7af6" sha1="3339fc372814f5d6cf7f6e247d06d2b877d5b025"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
+			<dataarea name="flop" size="204800">
+				<rom name="tms sound and music library - micro compositions (19xx)(-)(side 1).ssd" size="204800" crc="38803c75" sha1="43f9d63f091efcf8f9253f599cd96d5b7c2acbcd"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tmssound_2" supported="no">
+		<description>TMS Sound and Music Library</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
+			<dataarea name="flop" size="204800">
+				<rom name="tms sound and music library (19xx)(-)(side 0).ssd" size="204800" crc="56a2f074" sha1="b54a3f2f81a509f74c058e2539a37004fe30999c"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
+			<dataarea name="flop" size="204800">
+				<rom name="tms sound and music library (19xx)(-)(side 1).ssd" size="204800" crc="404e6377" sha1="3b0d3701296e484579e9ff811be60d1d0da14d4b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -620,63 +677,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="tmssound" supported="no">
-		<description>TMS Sound and Music Library</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side 0"/>
-			<dataarea name="flop" size="204800">
-				<rom name="tms sound and music library (19xx)(-)(side 0).ssd" size="204800" crc="56a2f074" sha1="b54a3f2f81a509f74c058e2539a37004fe30999c"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side 1"/>
-			<dataarea name="flop" size="204800">
-				<rom name="tms sound and music library (19xx)(-)(side 1).ssd" size="204800" crc="404e6377" sha1="3b0d3701296e484579e9ff811be60d1d0da14d4b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tmssound_1" supported="no">
-		<description>TMS Sound and Music Library - 400 Years of Music</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side 0"/>
-			<dataarea name="flop" size="204800">
-				<rom name="tms sound and music library - 400 years of music (19xx)(-)(side 0).ssd" size="204800" crc="ee5ddbe5" sha1="a734d4a03d39a155ae952937469967a75dd45ad2"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side 1"/>
-			<dataarea name="flop" size="204800">
-				<rom name="tms sound and music library - 400 years of music (19xx)(-)(side 1).ssd" size="204800" crc="2edf46d7" sha1="2845ba50c69232184de97025844d6e535fe8ff69"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tmssound_2" supported="no">
-		<description>TMS Sound and Music Library - Micro Compositions</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side 0"/>
-			<dataarea name="flop" size="204800">
-				<rom name="tms sound and music library - micro compositions (19xx)(-)(side 0).ssd" size="204800" crc="91dd7af6" sha1="3339fc372814f5d6cf7f6e247d06d2b877d5b025"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side 1"/>
-			<dataarea name="flop" size="204800">
-				<rom name="tms sound and music library - micro compositions (19xx)(-)(side 1).ssd" size="204800" crc="38803c75" sha1="43f9d63f091efcf8f9253f599cd96d5b7c2acbcd"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="tomseddo" supported="no">
 		<description>Tom Seddon's Music Disk</description>
 		<year>19??</year>
@@ -688,7 +688,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="116480">
 				<rom name="tom seddon's music disk (19xx)(-)[a].ssd" size="116480" crc="760d225f" sha1="ba0870a5e1d0cd96a78a567e3c36ec079ed97195"/>
 			</dataarea>

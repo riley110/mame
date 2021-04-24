@@ -6,19 +6,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 -->
 <softwarelist name="bbc_flop_edu_dsd" description="Acorn BBC series floppy disks (Educational - DSD)">
 
-	<software name="ceefaxad" supported="no">
-		<description>CeeFAX Advanced Teletext Receiver Notes</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked 8-Bit"/>
-			<dataarea name="flop" size="409600">
-				<rom name="ceefax advanced teletext receiver notes (19xx)(-)[h 8-bit].dsd" size="409600" crc="0fc37af3" sha1="7f152dc59f667d4ee58934936fc7270f1f3eb6e9"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="ceefaxas" supported="no">
 		<description>CeeFAX ASM Notes</description>
 		<year>19??</year>
@@ -31,9 +18,22 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked 8-Bit, Alt"/>
+			<feature name="part_id" value="Hacked 8-Bit, Alt 1"/>
 			<dataarea name="flop" size="409600">
 				<rom name="ceefax asm notes (19xx)(-)[h 8-bit][a].dsd" size="409600" crc="4d01dede" sha1="05ac052861e2b89ee19fce9c9ac191d6d63bea93"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ceefaxad" supported="no">
+		<description>CeeFAX Advanced Teletext Receiver Notes</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
+			<dataarea name="flop" size="409600">
+				<rom name="ceefax advanced teletext receiver notes (19xx)(-)[h 8-bit].dsd" size="409600" crc="0fc37af3" sha1="7f152dc59f667d4ee58934936fc7270f1f3eb6e9"/>
 			</dataarea>
 		</part>
 	</software>
@@ -115,6 +115,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="revisegc" supported="no">
+		<description>Revise GCE-CSE Biology</description>
+		<year>1984</year>
+		<publisher>Acornsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="171520">
+				<rom name="revise gce-cse biology (1984)(acornsoft).dsd" size="171520" crc="eab00ccd" sha1="228e0a491de1522bece06d97bbac3976e23431f7"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="theonlin" supported="no">
 		<description>The Online World Handbook (v1.7)</description>
 		<year>19??</year>
@@ -136,18 +148,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 3 of 3, Hacked 8-Bit"/>
 			<dataarea name="flop" size="409600">
 				<rom name="online world handbook, the v1.7 (19xx)(-)(disk 3 of 3)[h 8-bit].dsd" size="409600" crc="a622ddd4" sha1="4f55d5f050214d539a87e7054279b4c071f63ccf"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="revisegc" supported="no">
-		<description>Revise GCE-CSE Biology</description>
-		<year>1984</year>
-		<publisher>Acornsoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="171520">
-				<rom name="revise gce-cse biology (1984)(acornsoft).dsd" size="171520" crc="eab00ccd" sha1="228e0a491de1522bece06d97bbac3976e23431f7"/>
 			</dataarea>
 		</part>
 	</software>

@@ -6,6 +6,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 -->
 <softwarelist name="bbc_flop_demos" description="Acorn BBC series floppy disks (Demos - SSD)">
 
+	<software name="musicdem" supported="no">
+		<description>Music Demo</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="DEMO"/>
+			<dataarea name="flop" size="36608">
+				<rom name="music demo (19xx)(-)[demo].ssd" size="36608" crc="74657735" sha1="bba3adc66fe17bde637a537534156a84e689a447"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="DEMO, Alt 1"/>
+			<dataarea name="flop" size="36608">
+				<rom name="music demo (19xx)(-)[a][demo].ssd" size="36608" crc="8ef4d9d6" sha1="451d329b4a2837da06d3ecba7cbcaedcc8a89ab9"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="thedream" supported="no">
 		<description>The Dreamscape</description>
 		<year>1994</year>
@@ -15,25 +34,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="flop" size="204800">
 				<rom name="dreamscape, the (1994)(dspd)[h 8-bit].ssd" size="204800" crc="f9788ede" sha1="07029fd240d98db2aabdefb98770332ded71e445"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdem" supported="no">
-		<description>Music Demo</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, DEMO"/>
-			<dataarea name="flop" size="36608">
-				<rom name="music demo (19xx)(-)[a][demo].ssd" size="36608" crc="8ef4d9d6" sha1="451d329b4a2837da06d3ecba7cbcaedcc8a89ab9"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="DEMO"/>
-			<dataarea name="flop" size="36608">
-				<rom name="music demo (19xx)(-)[demo].ssd" size="36608" crc="74657735" sha1="bba3adc66fe17bde637a537534156a84e689a447"/>
 			</dataarea>
 		</part>
 	</software>

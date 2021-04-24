@@ -25,6 +25,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="apewarpc" supported="no">
+		<description>APE - Warp &amp; Copy2000 &amp; My Copier &amp; Remote</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="ape - warp &amp; copy2000 &amp; my copier &amp; remote (19xx)(-).atr" size="92176" crc="010a7cb8" sha1="68dc6e276ca8d534bef61cc808702e2a332b0d0f"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="actiontu" supported="no">
 		<description>Action! &amp; Turbo Basic XL 1.5 &amp; Fig-Forth 1.1</description>
 		<year>1989</year>
@@ -37,18 +49,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="aidspakk" supported="no">
-		<description>aIDS pAKK (pl, 1999-09-05)</description>
-		<year>1999</year>
-		<publisher>Aids</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="183952">
-				<rom name="aids pakk (1999-09-05)(aids)(pl).atr" size="183952" crc="bcd30c15" sha1="ba2c55150e1277b5383cacd53427f729b7b69dcb"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="anticdis" supported="no">
 		<description>Antic Disassemble! (19xx)(Kibler, David) &amp; Greets (19xx)(-) (compilation)</description>
 		<year>????</year>
@@ -57,18 +57,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92176">
 				<rom name="antic disassemble (19xx)(kibler, david) &amp; greets (19xx)(-).atr" size="92176" crc="64f5aeb2" sha1="19dd1ce690b40ac4c26442b7e23317289f405c1f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="apewarpc" supported="no">
-		<description>APE - Warp &amp; Copy2000 &amp; My Copier &amp; Remote</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="ape - warp &amp; copy2000 &amp; my copier &amp; remote (19xx)(-).atr" size="92176" crc="010a7cb8" sha1="68dc6e276ca8d534bef61cc808702e2a332b0d0f"/>
 			</dataarea>
 		</part>
 	</software>
@@ -105,30 +93,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92176">
 				<rom name="copy programs (19xx)(-).atr" size="92176" crc="67fcd299" sha1="747adabc197640bfb7b5262806c9f179520875a3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="disk2xfd" supported="no">
-		<description>Disk2Xfd v0.90 &amp; DiskFormer (v0.90)</description>
-		<year>1994</year>
-		<publisher>Kenneth Siders</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="disk2xfd v0.90 &amp; diskformer v0.90 (1994)(siders, kenneth).atr" size="92176" crc="da706a98" sha1="0c15c91718acde4e28066ab0fabf42a89bcde269"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="diverseu" supported="no">
-		<description>Diverse Utilities (de)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="183952">
-				<rom name="diverse utilities (19xx)(-)(de).atr" size="183952" crc="4e752527" sha1="2dc96269a81d7eb9702829acff4009c26ba8e769"/>
 			</dataarea>
 		</part>
 	</software>
@@ -177,6 +141,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="183952">
 				<rom name="dos's pack of 8 (19xx)(titan-soft).atr" size="183952" crc="2e130104" sha1="a291fe059ec8d476e1df58226c1dfdd1eac44330"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="disk2xfd" supported="no">
+		<description>Disk2Xfd v0.90 &amp; DiskFormer (v0.90)</description>
+		<year>1994</year>
+		<publisher>Kenneth Siders</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="disk2xfd v0.90 &amp; diskformer v0.90 (1994)(siders, kenneth).atr" size="92176" crc="da706a98" sha1="0c15c91718acde4e28066ab0fabf42a89bcde269"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diverseu" supported="no">
+		<description>Diverse Utilities (de)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="183952">
+				<rom name="diverse utilities (19xx)(-)(de).atr" size="183952" crc="4e752527" sha1="2dc96269a81d7eb9702829acff4009c26ba8e769"/>
 			</dataarea>
 		</part>
 	</software>
@@ -313,18 +301,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="spartado" supported="no">
-		<description>SpartaDOS v3.2f &amp; Mars 8 (1994-02-25)</description>
-		<year>1994</year>
-		<publisher>Fine Tooned Engineering</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="spartados v3.2f &amp; mars 8 (1994-02-25)(fine tooned engineering).atr" size="92176" crc="0bc6f4de" sha1="46b51fd9081f66f21a7cbd46655073732a9c9577"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="spartado_1" supported="no">
 		<description>SpartaDOS - Toolkit (v3.2f, 1994-02-25)</description>
 		<year>1994</year>
 		<publisher>Fine Tooned Engineering</publisher>
@@ -335,26 +311,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="143376">
 				<rom name="spartados v3.2f - toolkit (1994-02-25)(fine tooned engineering)[a].atr" size="143376" crc="64abc7ea" sha1="4e329908e03089feef15ea2747393cb36708ca9b"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="spartado_2" supported="no">
-		<description>SpartaDOS v3.2g &amp; Dirt (1994-06-04)</description>
-		<year>1994</year>
-		<publisher>FTe</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="spartados v3.2g &amp; dirt (1994-06-04)(fte).atr" size="92176" crc="ba37dad7" sha1="ebd3df2b6d95f167ad62ab9d049f04e52276d7ee"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="spartado_3" supported="no">
+	<software name="spartado_1" supported="no">
 		<description>SpartaDOS - Utilities #1 (pl, v3.2g)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -366,7 +330,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="spartado_4" supported="no">
+	<software name="spartado_2" supported="no">
 		<description>SpartaDOS - Utilities #2 (pl, v3.2g)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -378,7 +342,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="spartado_5" supported="no">
+	<software name="spartado_3" supported="no">
 		<description>SpartaDOS - Utilities #3 (pl, v3.2g)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -386,6 +350,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92176">
 				<rom name="spartados v3.2g - utilities #3 (19xx)(-)(pl).atr" size="92176" crc="10de02bb" sha1="a5ef3021b8a28a04955f168fc45b8c6f3aadcee5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spartado_4" supported="no">
+		<description>SpartaDOS v3.2f &amp; Mars 8 (1994-02-25)</description>
+		<year>1994</year>
+		<publisher>Fine Tooned Engineering</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="spartados v3.2f &amp; mars 8 (1994-02-25)(fine tooned engineering).atr" size="92176" crc="0bc6f4de" sha1="46b51fd9081f66f21a7cbd46655073732a9c9577"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spartado_5" supported="no">
+		<description>SpartaDOS v3.2g &amp; Dirt (1994-06-04)</description>
+		<year>1994</year>
+		<publisher>FTe</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="spartados v3.2g &amp; dirt (1994-06-04)(fte).atr" size="92176" crc="ba37dad7" sha1="ebd3df2b6d95f167ad62ab9d049f04e52276d7ee"/>
 			</dataarea>
 		</part>
 	</software>
@@ -429,6 +417,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2 Side B"/>
 			<dataarea name="flop" size="92176">
 				<rom name="word magic rev 5 (19xx)(antic)(disk 2 of 2 side b).atr" size="92176" crc="a2944dff" sha1="98514e6ebd50692f7a556f6c919d1db89e936a5b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aidspakk" supported="no">
+		<description>aIDS pAKK (pl, 1999-09-05)</description>
+		<year>1999</year>
+		<publisher>Aids</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="183952">
+				<rom name="aids pakk (1999-09-05)(aids)(pl).atr" size="183952" crc="bcd30c15" sha1="ba2c55150e1277b5383cacd53427f729b7b69dcb"/>
 			</dataarea>
 		</part>
 	</software>

@@ -18,6 +18,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="magarp11" supported="no">
+		<description>MAG ARP 1.1 (1988-03)</description>
+		<year>1988</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 085"/>
+			<dataarea name="flop" size="901120">
+				<rom name="mag arp 1.1 (1988-03)(memphis amiga group)[disk 085].adf" size="901120" crc="96cd7d3c" sha1="6ea1ca06b6ca2b32f863c971a252356209b22afc"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="magamiga" supported="no">
 		<description>MAG Amiga Ladies Volume 1 (1988-08)</description>
 		<year>1988</year>
@@ -52,19 +65,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="mag arcspack16 (1996-02)(memphis amiga group).adf" size="901120" crc="9a115371" sha1="52344dea0a329904331b29c20249bda8a263e12c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magarp11" supported="no">
-		<description>MAG ARP 1.1 (1988-03)</description>
-		<year>1988</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 085"/>
-			<dataarea name="flop" size="901120">
-				<rom name="mag arp 1.1 (1988-03)(memphis amiga group)[disk 085].adf" size="901120" crc="96cd7d3c" sha1="6ea1ca06b6ca2b32f863c971a252356209b22afc"/>
 			</dataarea>
 		</part>
 	</software>
@@ -151,774 +151,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="mag compressors disk 2 (1991-10)(memphis amiga group).adf" size="901120" crc="701708e7" sha1="ebb992c96c14efdc8bc8f8eb9a9d625fb027efc2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdatat" supported="no">
-		<description>MAG DataTypes 1 (1995-04)</description>
-		<year>1995</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag datatypes 1 (1995-04)(memphis amiga group).adf" size="901120" crc="0c3f8003" sha1="db4435581b73fb8d96e5ba0d20a1a07c8311364b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdatat_1" supported="no">
-		<description>MAG DataTypes 2 (1995-04)</description>
-		<year>1995</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag datatypes 2 (1995-04)(memphis amiga group).adf" size="901120" crc="0b0a0fc6" sha1="62d7897f2cae28721c5ff52b10e381d95ea91b1a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk" supported="no">
-		<description>MAG Disk (1989-06)</description>
-		<year>1989</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1989-06)(memphis amiga group).adf" size="901120" crc="56684613" sha1="a3e6a4cf2427ad0f8b6b7af771c629550c2b84ad"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_1" supported="no">
-		<description>MAG Disk (1989-07)</description>
-		<year>1989</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1989-07)(memphis amiga group).adf" size="901120" crc="6a146dd5" sha1="83609e309ffe3fc05cf76a0bbe78e957f20c7f77"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_2" supported="no">
-		<description>MAG Disk (1989-08)</description>
-		<year>1989</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1989-08)(memphis amiga group).adf" size="901120" crc="e89d1b43" sha1="bd88ddb6e5071d1bfe61a4ae0ecd3279ba6bbc7c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_3" supported="no">
-		<description>MAG Disk (1989-09)</description>
-		<year>1989</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1989-09)(memphis amiga group).adf" size="901120" crc="177ca8b5" sha1="b569af2d02f5fe74abc7d54438c696dcb78ff67f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_4" supported="no">
-		<description>MAG Disk (1989-10)</description>
-		<year>1989</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1989-10)(memphis amiga group).adf" size="901120" crc="72061305" sha1="cf31dda7b64656abe5ad24da2681aac8fecc06f1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_5" supported="no">
-		<description>MAG Disk (1989-11)</description>
-		<year>1989</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1989-11)(memphis amiga group).adf" size="901120" crc="bd1286b6" sha1="b5313d9f6523bf693d06f857baf05a3f757e700a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_6" supported="no">
-		<description>MAG Disk (1989-12)</description>
-		<year>1989</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1989-12)(memphis amiga group).adf" size="901120" crc="dfad022e" sha1="7dd54b2313b1fb577e1d0bfecd2105d0a714207b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_7" supported="no">
-		<description>MAG Disk (1990-01)</description>
-		<year>1990</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1990-01)(memphis amiga group).adf" size="901120" crc="0f1e289e" sha1="d48f7ccd2afca50ae775e83ff1fd76cc9b8a7592"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_8" supported="no">
-		<description>MAG Disk (1990-02)</description>
-		<year>1990</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1990-02)(memphis amiga group).adf" size="901120" crc="06b1e8e2" sha1="9267fdd4da7400a7f603dae1fb259a231a67997c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_9" supported="no">
-		<description>MAG Disk (1990-04)</description>
-		<year>1990</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1990-04)(memphis amiga group).adf" size="901120" crc="7c94d67a" sha1="deb903e58ae7218f8fb8ab776d71d2e4587b0de2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_10" supported="no">
-		<description>MAG Disk (1990-05)</description>
-		<year>1990</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1990-05)(memphis amiga group).adf" size="901120" crc="8b16971a" sha1="3d93743ac328b3afb7e1712e931bc5d693e42a35"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_11" supported="no">
-		<description>MAG Disk (1990-06)</description>
-		<year>1990</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1990-06)(memphis amiga group).adf" size="901120" crc="4e518333" sha1="e0988700ea965e312820ff617f77b8f493160806"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_12" supported="no">
-		<description>MAG Disk (1990-07)</description>
-		<year>1990</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1990-07)(memphis amiga group).adf" size="901120" crc="f7325892" sha1="a55d04702b45392e03abfab8e5328aa253c5b160"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_13" supported="no">
-		<description>MAG Disk (1990-09)</description>
-		<year>1990</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1990-09)(memphis amiga group).adf" size="901120" crc="51539dc0" sha1="85c209b159c5c0ccd341c8dcc12e07eac2ce613f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_14" supported="no">
-		<description>MAG Disk (1990-10)</description>
-		<year>1990</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1990-10)(memphis amiga group).adf" size="901120" crc="b7d3c759" sha1="4357fa57dbd47d40e5aca6d8c0f7180015cde823"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_15" supported="no">
-		<description>MAG Disk (1991-01)</description>
-		<year>1991</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1991-01)(memphis amiga group).adf" size="901120" crc="09e5c942" sha1="5792e87ac79476462e887a2c6b2236d2a8ca71a8"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_16" supported="no">
-		<description>MAG Disk (1991-03)</description>
-		<year>1991</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1991-03)(memphis amiga group).adf" size="901120" crc="721789c9" sha1="a6d7033f580026310d1c5405270161c89b7ba826"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_17" supported="no">
-		<description>MAG Disk (1991-04)</description>
-		<year>1991</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1991-04)(memphis amiga group).adf" size="901120" crc="5d8d2a75" sha1="1dde1f2bb5a8a40be7942677bd99a172aed659fc"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_18" supported="no">
-		<description>MAG Disk (1991-05)</description>
-		<year>1991</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1991-05)(memphis amiga group).adf" size="901120" crc="d9bfa424" sha1="05d7935481d57a9837c5a7b0dc7527f305935396"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_19" supported="no">
-		<description>MAG Disk (1991-07)</description>
-		<year>1991</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1991-07)(memphis amiga group).adf" size="901120" crc="e1fe73af" sha1="10d4ea18f1090839b437b48a293efd92612f6d10"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_20" supported="no">
-		<description>MAG Disk (1993-04)</description>
-		<year>1993</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1993-04)(memphis amiga group).adf" size="901120" crc="6a62857b" sha1="f0bf7baabae977768270c7461bea055e04ccd448"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_21" supported="no">
-		<description>MAG Disk (1993-05)</description>
-		<year>1993</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1993-05)(memphis amiga group).adf" size="901120" crc="aa2e3a2c" sha1="c66920457d989186cdc576343c1ecb0af4a99034"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_22" supported="no">
-		<description>MAG Disk (1993-06)</description>
-		<year>1993</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1993-06)(memphis amiga group).adf" size="901120" crc="5f7eadd7" sha1="1d8b2a6795113e77fc619e53310927f289a753e6"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_23" supported="no">
-		<description>MAG Disk (1993-09)</description>
-		<year>1993</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1993-09)(memphis amiga group).adf" size="901120" crc="074c7c54" sha1="6d039effba5310999bc887855689baee512f40dc"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_24" supported="no">
-		<description>MAG Disk (1994-01)</description>
-		<year>1994</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1994-01)(memphis amiga group).adf" size="901120" crc="7c837cf4" sha1="61c5d989f5ffc5b76977ddbfef000e2ed7c26b43"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_25" supported="no">
-		<description>MAG Disk (1994-02)</description>
-		<year>1994</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1994-02)(memphis amiga group).adf" size="901120" crc="2385dc6e" sha1="3c880c87433512fbe2187485ff28cd1f22ca9347"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_26" supported="no">
-		<description>MAG Disk (1994-03)</description>
-		<year>1994</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1994-03)(memphis amiga group).adf" size="901120" crc="2f790dd7" sha1="4f2aeb3ad091c6ab841d41e40009af78036c10f0"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_27" supported="no">
-		<description>MAG Disk (1994-04)</description>
-		<year>1994</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1994-04)(memphis amiga group).adf" size="901120" crc="9e7f684f" sha1="8c542f4a6117efcfa59e8c875f0cddde3dbbed22"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_28" supported="no">
-		<description>MAG Disk (1994-05)</description>
-		<year>1994</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1994-05)(memphis amiga group).adf" size="901120" crc="7a43676e" sha1="4278f4069a076bf1770d46c18cca9c80b1d732e2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_29" supported="no">
-		<description>MAG Disk (1994-06)</description>
-		<year>1994</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1994-06)(memphis amiga group).adf" size="901120" crc="6ec0de04" sha1="e0c676e95c80dcfde647e1438e2ad8742b542844"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_30" supported="no">
-		<description>MAG Disk (1994-07)</description>
-		<year>1994</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1994-07)(memphis amiga group).adf" size="901120" crc="14586559" sha1="e96472ece542feeefc9f597a94110688a6d335b9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_31" supported="no">
-		<description>MAG Disk (1994-08)</description>
-		<year>1994</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1994-08)(memphis amiga group).adf" size="901120" crc="90040869" sha1="8acab46dcf9a4523cba4f2ed2f4b3aa15f54062e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_32" supported="no">
-		<description>MAG Disk (1994-11)</description>
-		<year>1994</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1994-11)(memphis amiga group).adf" size="901120" crc="0ec2666a" sha1="99769e86d2200179ec160327e6b465c333e007a9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_33" supported="no">
-		<description>MAG Disk (1995-05)</description>
-		<year>1995</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1995-05)(memphis amiga group).adf" size="901120" crc="9804e9cd" sha1="0aeaf927f988e2a06d90175b3dcc7a27ff60ae68"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_34" supported="no">
-		<description>MAG Disk (1995-06)</description>
-		<year>1995</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1995-06)(memphis amiga group).adf" size="901120" crc="df9ba8d2" sha1="f830683a369f16c1753042e3a2d9bb70e0bfbe48"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Verified"/>
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1995-06)(memphis amiga group)[].adf" size="901120" crc="a1ee8d3c" sha1="d9b91205fccfd8e4fb833abea41b89f560d4c43f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_35" supported="no">
-		<description>MAG Disk (1995-07)</description>
-		<year>1995</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1995-07)(memphis amiga group).adf" size="901120" crc="0066e936" sha1="2655934ff690915df026c067ffa0c746e9e71344"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_36" supported="no">
-		<description>MAG Disk (1995-09)</description>
-		<year>1995</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1995-09)(memphis amiga group).adf" size="901120" crc="07e8ae4a" sha1="3973a8fe83ff66583eacd29e3926856dd6aeaab4"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_37" supported="no">
-		<description>MAG Disk (1995-12)</description>
-		<year>1995</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1995-12)(memphis amiga group).adf" size="901120" crc="b35047a7" sha1="dd314b27a413dba2b832aa8089e314d718d7fdd4"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_38" supported="no">
-		<description>MAG Disk (1996-03)</description>
-		<year>1996</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1996-03)(memphis amiga group).adf" size="901120" crc="bfab4f45" sha1="62de6c26c8f979ac6ce0eb94c465e9d37c8ae378"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_39" supported="no">
-		<description>MAG Disk (1996-04)</description>
-		<year>1996</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1996-04)(memphis amiga group).adf" size="901120" crc="0ab27b68" sha1="d487c24e0c153a903f4f274342a4a412a4593e45"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Verified"/>
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1996-04)(memphis amiga group)[].adf" size="901120" crc="b5a197c1" sha1="f09b2cbd71c230d83ed24f661643c7598c3efa1f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_40" supported="no">
-		<description>MAG Disk (1996-05)</description>
-		<year>1996</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1996-05)(memphis amiga group).adf" size="901120" crc="ee6fb096" sha1="d2e15373dab77c687ff7ba79788ab43af41d819a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk_41" supported="no">
-		<description>MAG Disk (1996-06)</description>
-		<year>1996</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk (1996-06)(memphis amiga group).adf" size="901120" crc="f82c55a8" sha1="59daae7ff043cb10d63dc96db4d1fe42769c57d3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk0" supported="no">
-		<description>MAG Disk 099 (1988-08)</description>
-		<year>1988</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk 099 (1988-08)(memphis amiga group).adf" size="901120" crc="12837038" sha1="cb6235de33804a231a277b6acb2d4ac5834dbe86"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk1" supported="no">
-		<description>MAG Disk 110 (1989-02)</description>
-		<year>1989</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk 110 (1989-02)(memphis amiga group).adf" size="901120" crc="31ac2d00" sha1="b1852e2925e9922dc66cbc851f9f663ace3515a9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk1_1" supported="no">
-		<description>MAG Disk 111 (1989-03)</description>
-		<year>1989</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk 111 (1989-03)(memphis amiga group).adf" size="901120" crc="fedc0dbf" sha1="d0bc10fbf647fc8a74a0fd3c9d8e457413c54834"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisk1_2" supported="no">
-		<description>MAG Disk 116 (1989-05)</description>
-		<year>1989</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk 116 (1989-05)(memphis amiga group).adf" size="901120" crc="561f6c95" sha1="6defb905d8e94355495d28c52908b0fbc51d329c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisko" supported="no">
-		<description>MAG Disk of the Month (1991-08)</description>
-		<year>1991</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk of the month (1991-08)(memphis amiga group).adf" size="901120" crc="a4f9e3a8" sha1="86b89dd1b096adec141b15a3011378aafa327e83"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisko_1" supported="no">
-		<description>MAG Disk of the Month (1991-09)</description>
-		<year>1991</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk of the month (1991-09)(memphis amiga group).adf" size="901120" crc="b58d4d18" sha1="822de11682c5bd7e5a537a94528a22cb5aec3765"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdisko_2" supported="no">
-		<description>MAG Disk of the Month (1991-10)</description>
-		<year>1991</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag disk of the month (1991-10)(memphis amiga group).adf" size="901120" crc="454e8562" sha1="859892b6b43d24ac7ede1eea576e8024a00c9798"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdiskm" supported="no">
-		<description>MAG DiskMAG Volume 1 Number 2 (1988-11)</description>
-		<year>1988</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag diskmag volume 1 number 2 (1988-11)(memphis amiga group).adf" size="901120" crc="af2eeac1" sha1="b85aca357b89dee3efa8dea54ac0d68127f6edc6"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdiskm_1" supported="no">
-		<description>MAG DiskMAG Volume 1 Number 3 (1988-12)</description>
-		<year>1988</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag diskmag volume 1 number 3 (1988-12)(memphis amiga group).adf" size="901120" crc="9cd4c7b1" sha1="69b47e464ca96837a68c0ec56be7f02aff1ce123"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdiskm_2" supported="no">
-		<description>MAG DiskMAG Volume 1 Number 4 (1989-01)</description>
-		<year>1989</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag diskmag volume 1 number 4 (1989-01)(memphis amiga group).adf" size="901120" crc="0b3bc823" sha1="a155b30d2ada043bae77375d63097dbc627985ac"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdiskm_3" supported="no">
-		<description>MAG diskMAGazine (1991-04)</description>
-		<year>1991</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag diskmagazine (1991-04)(memphis amiga group).adf" size="901120" crc="31b5fe73" sha1="31a5554caa5c333ff788e07d9c0bdbd35ef16596"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdiskm_4" supported="no">
-		<description>MAG diskMAGazine (1991-08)</description>
-		<year>1991</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag diskmagazine (1991-08)(memphis amiga group).adf" size="901120" crc="4a85b448" sha1="2c546320a1bfc9d6233762417fc6f8b888ea0f5c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdiskm_5" supported="no">
-		<description>MAG diskMAGazine (1991-09)</description>
-		<year>1991</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag diskmagazine (1991-09)(memphis amiga group).adf" size="901120" crc="c73bd257" sha1="d1f8a374ecc39281b311551ca42b275f9c291e0d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdiskm_6" supported="no">
-		<description>MAG diskMAGazine (1992-01)</description>
-		<year>1992</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag diskmagazine (1992-01)(memphis amiga group).adf" size="901120" crc="185916e7" sha1="267b83f8fa0fdcc9e56d75caf936c709f111043d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdiskm_7" supported="no">
-		<description>MAG diskMAGazine (1992-02)</description>
-		<year>1992</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag diskmagazine (1992-02)(memphis amiga group).adf" size="901120" crc="6c0664a2" sha1="3e459f5ef09ad4c4c28f1afc1b87dd2fd0b89655"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdiskm_8" supported="no">
-		<description>MAG diskMAGazine (1992-03)</description>
-		<year>1992</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag diskmagazine (1992-03)(memphis amiga group).adf" size="901120" crc="39f59638" sha1="bda8a180371c881ca2fa2d2fc92071ce07de8832"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdiskm_9" supported="no">
-		<description>MAG diskMAGazine (1992-04)</description>
-		<year>1992</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag diskmagazine (1992-04)(memphis amiga group).adf" size="901120" crc="cced5963" sha1="97b10e07bb2ce0d3c241839db54caf7b843d2e93"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdiskm_10" supported="no">
-		<description>MAG diskMAGazine (1992-05)</description>
-		<year>1992</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag diskmagazine (1992-05)(memphis amiga group).adf" size="901120" crc="889d36f0" sha1="be9f2916442938987a5bb9cf2f0bf71ce86bc0a1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magdiskm_11" supported="no">
-		<description>MAG diskMAGazine - Variety Pack (1992-07)</description>
-		<year>1992</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mag diskmagazine - variety pack (1992-07)(memphis amiga group).adf" size="901120" crc="b39bb08c" sha1="86e862583aac7e45580b9c2ff3e42b4c2876499e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1027,6 +259,666 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="mag dos 2.0 utilities disk 10 (1992-08)(memphis amiga group).adf" size="901120" crc="37302771" sha1="348bd76e211b2eaaa064478138e1347cadefe0f7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdatat" supported="no">
+		<description>MAG DataTypes 1 (1995-04)</description>
+		<year>1995</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag datatypes 1 (1995-04)(memphis amiga group).adf" size="901120" crc="0c3f8003" sha1="db4435581b73fb8d96e5ba0d20a1a07c8311364b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdatat_1" supported="no">
+		<description>MAG DataTypes 2 (1995-04)</description>
+		<year>1995</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag datatypes 2 (1995-04)(memphis amiga group).adf" size="901120" crc="0b0a0fc6" sha1="62d7897f2cae28721c5ff52b10e381d95ea91b1a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk0" supported="no">
+		<description>MAG Disk 099 (1988-08)</description>
+		<year>1988</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk 099 (1988-08)(memphis amiga group).adf" size="901120" crc="12837038" sha1="cb6235de33804a231a277b6acb2d4ac5834dbe86"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk1" supported="no">
+		<description>MAG Disk 110 (1989-02)</description>
+		<year>1989</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk 110 (1989-02)(memphis amiga group).adf" size="901120" crc="31ac2d00" sha1="b1852e2925e9922dc66cbc851f9f663ace3515a9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk1_1" supported="no">
+		<description>MAG Disk 111 (1989-03)</description>
+		<year>1989</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk 111 (1989-03)(memphis amiga group).adf" size="901120" crc="fedc0dbf" sha1="d0bc10fbf647fc8a74a0fd3c9d8e457413c54834"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk1_2" supported="no">
+		<description>MAG Disk 116 (1989-05)</description>
+		<year>1989</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk 116 (1989-05)(memphis amiga group).adf" size="901120" crc="561f6c95" sha1="6defb905d8e94355495d28c52908b0fbc51d329c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisko" supported="no">
+		<description>MAG Disk of the Month (1991-08)</description>
+		<year>1991</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk of the month (1991-08)(memphis amiga group).adf" size="901120" crc="a4f9e3a8" sha1="86b89dd1b096adec141b15a3011378aafa327e83"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisko_a" cloneof="magdisko" supported="no">
+		<description>MAG Disk of the Month (1991-09)</description>
+		<year>1991</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk of the month (1991-09)(memphis amiga group).adf" size="901120" crc="b58d4d18" sha1="822de11682c5bd7e5a537a94528a22cb5aec3765"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisko_b" cloneof="magdisko" supported="no">
+		<description>MAG Disk of the Month (1991-10)</description>
+		<year>1991</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk of the month (1991-10)(memphis amiga group).adf" size="901120" crc="454e8562" sha1="859892b6b43d24ac7ede1eea576e8024a00c9798"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdiskm" supported="no">
+		<description>MAG DiskMAG Volume 1 Number 2 (1988-11)</description>
+		<year>1988</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag diskmag volume 1 number 2 (1988-11)(memphis amiga group).adf" size="901120" crc="af2eeac1" sha1="b85aca357b89dee3efa8dea54ac0d68127f6edc6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdiskm_1" supported="no">
+		<description>MAG DiskMAG Volume 1 Number 3 (1988-12)</description>
+		<year>1988</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag diskmag volume 1 number 3 (1988-12)(memphis amiga group).adf" size="901120" crc="9cd4c7b1" sha1="69b47e464ca96837a68c0ec56be7f02aff1ce123"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdiskm_2" supported="no">
+		<description>MAG DiskMAG Volume 1 Number 4 (1989-01)</description>
+		<year>1989</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag diskmag volume 1 number 4 (1989-01)(memphis amiga group).adf" size="901120" crc="0b3bc823" sha1="a155b30d2ada043bae77375d63097dbc627985ac"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk" supported="no">
+		<description>MAG Disk (1989-06)</description>
+		<year>1989</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1989-06)(memphis amiga group).adf" size="901120" crc="56684613" sha1="a3e6a4cf2427ad0f8b6b7af771c629550c2b84ad"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_a" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1989-07)</description>
+		<year>1989</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1989-07)(memphis amiga group).adf" size="901120" crc="6a146dd5" sha1="83609e309ffe3fc05cf76a0bbe78e957f20c7f77"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_b" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1989-08)</description>
+		<year>1989</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1989-08)(memphis amiga group).adf" size="901120" crc="e89d1b43" sha1="bd88ddb6e5071d1bfe61a4ae0ecd3279ba6bbc7c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_c" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1989-09)</description>
+		<year>1989</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1989-09)(memphis amiga group).adf" size="901120" crc="177ca8b5" sha1="b569af2d02f5fe74abc7d54438c696dcb78ff67f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_d" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1989-10)</description>
+		<year>1989</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1989-10)(memphis amiga group).adf" size="901120" crc="72061305" sha1="cf31dda7b64656abe5ad24da2681aac8fecc06f1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_e" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1989-11)</description>
+		<year>1989</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1989-11)(memphis amiga group).adf" size="901120" crc="bd1286b6" sha1="b5313d9f6523bf693d06f857baf05a3f757e700a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_f" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1989-12)</description>
+		<year>1989</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1989-12)(memphis amiga group).adf" size="901120" crc="dfad022e" sha1="7dd54b2313b1fb577e1d0bfecd2105d0a714207b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_g" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1990-01)</description>
+		<year>1990</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1990-01)(memphis amiga group).adf" size="901120" crc="0f1e289e" sha1="d48f7ccd2afca50ae775e83ff1fd76cc9b8a7592"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_h" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1990-02)</description>
+		<year>1990</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1990-02)(memphis amiga group).adf" size="901120" crc="06b1e8e2" sha1="9267fdd4da7400a7f603dae1fb259a231a67997c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_i" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1990-04)</description>
+		<year>1990</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1990-04)(memphis amiga group).adf" size="901120" crc="7c94d67a" sha1="deb903e58ae7218f8fb8ab776d71d2e4587b0de2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_j" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1990-05)</description>
+		<year>1990</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1990-05)(memphis amiga group).adf" size="901120" crc="8b16971a" sha1="3d93743ac328b3afb7e1712e931bc5d693e42a35"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_k" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1990-06)</description>
+		<year>1990</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1990-06)(memphis amiga group).adf" size="901120" crc="4e518333" sha1="e0988700ea965e312820ff617f77b8f493160806"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_l" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1990-07)</description>
+		<year>1990</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1990-07)(memphis amiga group).adf" size="901120" crc="f7325892" sha1="a55d04702b45392e03abfab8e5328aa253c5b160"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_m" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1990-09)</description>
+		<year>1990</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1990-09)(memphis amiga group).adf" size="901120" crc="51539dc0" sha1="85c209b159c5c0ccd341c8dcc12e07eac2ce613f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_n" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1990-10)</description>
+		<year>1990</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1990-10)(memphis amiga group).adf" size="901120" crc="b7d3c759" sha1="4357fa57dbd47d40e5aca6d8c0f7180015cde823"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_o" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1991-01)</description>
+		<year>1991</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1991-01)(memphis amiga group).adf" size="901120" crc="09e5c942" sha1="5792e87ac79476462e887a2c6b2236d2a8ca71a8"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_p" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1991-03)</description>
+		<year>1991</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1991-03)(memphis amiga group).adf" size="901120" crc="721789c9" sha1="a6d7033f580026310d1c5405270161c89b7ba826"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_q" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1991-04)</description>
+		<year>1991</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1991-04)(memphis amiga group).adf" size="901120" crc="5d8d2a75" sha1="1dde1f2bb5a8a40be7942677bd99a172aed659fc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_r" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1991-05)</description>
+		<year>1991</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1991-05)(memphis amiga group).adf" size="901120" crc="d9bfa424" sha1="05d7935481d57a9837c5a7b0dc7527f305935396"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_s" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1991-07)</description>
+		<year>1991</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1991-07)(memphis amiga group).adf" size="901120" crc="e1fe73af" sha1="10d4ea18f1090839b437b48a293efd92612f6d10"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_t" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1993-04)</description>
+		<year>1993</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1993-04)(memphis amiga group).adf" size="901120" crc="6a62857b" sha1="f0bf7baabae977768270c7461bea055e04ccd448"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_u" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1993-05)</description>
+		<year>1993</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1993-05)(memphis amiga group).adf" size="901120" crc="aa2e3a2c" sha1="c66920457d989186cdc576343c1ecb0af4a99034"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_v" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1993-06)</description>
+		<year>1993</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1993-06)(memphis amiga group).adf" size="901120" crc="5f7eadd7" sha1="1d8b2a6795113e77fc619e53310927f289a753e6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_w" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1993-09)</description>
+		<year>1993</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1993-09)(memphis amiga group).adf" size="901120" crc="074c7c54" sha1="6d039effba5310999bc887855689baee512f40dc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_x" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1994-01)</description>
+		<year>1994</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1994-01)(memphis amiga group).adf" size="901120" crc="7c837cf4" sha1="61c5d989f5ffc5b76977ddbfef000e2ed7c26b43"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_y" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1994-02)</description>
+		<year>1994</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1994-02)(memphis amiga group).adf" size="901120" crc="2385dc6e" sha1="3c880c87433512fbe2187485ff28cd1f22ca9347"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_z" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1994-03)</description>
+		<year>1994</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1994-03)(memphis amiga group).adf" size="901120" crc="2f790dd7" sha1="4f2aeb3ad091c6ab841d41e40009af78036c10f0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_aa" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1994-04)</description>
+		<year>1994</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1994-04)(memphis amiga group).adf" size="901120" crc="9e7f684f" sha1="8c542f4a6117efcfa59e8c875f0cddde3dbbed22"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_ab" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1994-05)</description>
+		<year>1994</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1994-05)(memphis amiga group).adf" size="901120" crc="7a43676e" sha1="4278f4069a076bf1770d46c18cca9c80b1d732e2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_ac" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1994-06)</description>
+		<year>1994</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1994-06)(memphis amiga group).adf" size="901120" crc="6ec0de04" sha1="e0c676e95c80dcfde647e1438e2ad8742b542844"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_ad" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1994-07)</description>
+		<year>1994</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1994-07)(memphis amiga group).adf" size="901120" crc="14586559" sha1="e96472ece542feeefc9f597a94110688a6d335b9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_ae" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1994-08)</description>
+		<year>1994</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1994-08)(memphis amiga group).adf" size="901120" crc="90040869" sha1="8acab46dcf9a4523cba4f2ed2f4b3aa15f54062e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_af" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1994-11)</description>
+		<year>1994</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1994-11)(memphis amiga group).adf" size="901120" crc="0ec2666a" sha1="99769e86d2200179ec160327e6b465c333e007a9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_ag" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1995-05)</description>
+		<year>1995</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1995-05)(memphis amiga group).adf" size="901120" crc="9804e9cd" sha1="0aeaf927f988e2a06d90175b3dcc7a27ff60ae68"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_ah" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1995-06)</description>
+		<year>1995</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1995-06)(memphis amiga group).adf" size="901120" crc="df9ba8d2" sha1="f830683a369f16c1753042e3a2d9bb70e0bfbe48"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Verified"/>
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1995-06)(memphis amiga group)[].adf" size="901120" crc="a1ee8d3c" sha1="d9b91205fccfd8e4fb833abea41b89f560d4c43f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_ai" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1995-07)</description>
+		<year>1995</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1995-07)(memphis amiga group).adf" size="901120" crc="0066e936" sha1="2655934ff690915df026c067ffa0c746e9e71344"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_aj" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1995-09)</description>
+		<year>1995</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1995-09)(memphis amiga group).adf" size="901120" crc="07e8ae4a" sha1="3973a8fe83ff66583eacd29e3926856dd6aeaab4"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_ak" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1995-12)</description>
+		<year>1995</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1995-12)(memphis amiga group).adf" size="901120" crc="b35047a7" sha1="dd314b27a413dba2b832aa8089e314d718d7fdd4"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_al" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1996-03)</description>
+		<year>1996</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1996-03)(memphis amiga group).adf" size="901120" crc="bfab4f45" sha1="62de6c26c8f979ac6ce0eb94c465e9d37c8ae378"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_am" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1996-04)</description>
+		<year>1996</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1996-04)(memphis amiga group).adf" size="901120" crc="0ab27b68" sha1="d487c24e0c153a903f4f274342a4a412a4593e45"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Verified"/>
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1996-04)(memphis amiga group)[].adf" size="901120" crc="b5a197c1" sha1="f09b2cbd71c230d83ed24f661643c7598c3efa1f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_an" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1996-05)</description>
+		<year>1996</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1996-05)(memphis amiga group).adf" size="901120" crc="ee6fb096" sha1="d2e15373dab77c687ff7ba79788ab43af41d819a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdisk_ao" cloneof="magdisk" supported="no">
+		<description>MAG Disk (1996-06)</description>
+		<year>1996</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag disk (1996-06)(memphis amiga group).adf" size="901120" crc="f82c55a8" sha1="59daae7ff043cb10d63dc96db4d1fe42769c57d3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1302,7 +1194,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="magnewus_1" supported="no">
+	<software name="magnewus_a" cloneof="magnewus" supported="no">
 		<description>MAG New User Disk Set (v2, 1994-08)</description>
 		<year>1994</year>
 		<publisher>Memphis Amiga Group</publisher>
@@ -1394,19 +1286,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="magutili" supported="no">
-		<description>MAG Utilities (1988-07)</description>
-		<year>1988</year>
-		<publisher>Memphis Amiga Group</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 097"/>
-			<dataarea name="flop" size="901120">
-				<rom name="mag utilities (1988-07)(memphis amiga group)[disk 097].adf" size="901120" crc="b0292bd2" sha1="49b44d02e9191ad42801676693c3079e32971900"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magutili_1" supported="no">
 		<description>MAG Utilities 1 (1995-01)</description>
 		<year>1995</year>
 		<publisher>Memphis Amiga Group</publisher>
@@ -1418,7 +1297,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="magutili_2" supported="no">
+	<software name="magutili_1" supported="no">
 		<description>MAG Utilities 3 (1987-03)</description>
 		<year>1987</year>
 		<publisher>Memphis Amiga Group</publisher>
@@ -1431,7 +1310,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="magutili_3" supported="no">
+	<software name="magutili_2" supported="no">
 		<description>MAG Utilities Disk - SID 2.0 (1992-06)</description>
 		<year>1992</year>
 		<publisher>Memphis Amiga Group</publisher>
@@ -1439,6 +1318,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="mag utilities disk - sid 2.0 (1992-06)(memphis amiga group).adf" size="901120" crc="abee28f4" sha1="5b38d82c544744c512f85c1d74a8f0fd194a6680"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magutili_3" supported="no">
+		<description>MAG Utilities (1988-07)</description>
+		<year>1988</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 097"/>
+			<dataarea name="flop" size="901120">
+				<rom name="mag utilities (1988-07)(memphis amiga group)[disk 097].adf" size="901120" crc="b0292bd2" sha1="49b44d02e9191ad42801676693c3079e32971900"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1451,6 +1343,114 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="mag virus utilities (1991-10)(memphis amiga group).adf" size="901120" crc="b1efd4a8" sha1="802af55426ff633ca0ffbcbc3b453018db5da138"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdiskm_3" supported="no">
+		<description>MAG diskMAGazine - Variety Pack (1992-07)</description>
+		<year>1992</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag diskmagazine - variety pack (1992-07)(memphis amiga group).adf" size="901120" crc="b39bb08c" sha1="86e862583aac7e45580b9c2ff3e42b4c2876499e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdiskm_4" supported="no">
+		<description>MAG diskMAGazine (1991-04)</description>
+		<year>1991</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag diskmagazine (1991-04)(memphis amiga group).adf" size="901120" crc="31b5fe73" sha1="31a5554caa5c333ff788e07d9c0bdbd35ef16596"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdiskm_4_a" cloneof="magdiskm_4" supported="no">
+		<description>MAG diskMAGazine (1991-08)</description>
+		<year>1991</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag diskmagazine (1991-08)(memphis amiga group).adf" size="901120" crc="4a85b448" sha1="2c546320a1bfc9d6233762417fc6f8b888ea0f5c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdiskm_4_b" cloneof="magdiskm_4" supported="no">
+		<description>MAG diskMAGazine (1991-09)</description>
+		<year>1991</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag diskmagazine (1991-09)(memphis amiga group).adf" size="901120" crc="c73bd257" sha1="d1f8a374ecc39281b311551ca42b275f9c291e0d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdiskm_4_c" cloneof="magdiskm_4" supported="no">
+		<description>MAG diskMAGazine (1992-01)</description>
+		<year>1992</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag diskmagazine (1992-01)(memphis amiga group).adf" size="901120" crc="185916e7" sha1="267b83f8fa0fdcc9e56d75caf936c709f111043d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdiskm_4_d" cloneof="magdiskm_4" supported="no">
+		<description>MAG diskMAGazine (1992-02)</description>
+		<year>1992</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag diskmagazine (1992-02)(memphis amiga group).adf" size="901120" crc="6c0664a2" sha1="3e459f5ef09ad4c4c28f1afc1b87dd2fd0b89655"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdiskm_4_e" cloneof="magdiskm_4" supported="no">
+		<description>MAG diskMAGazine (1992-03)</description>
+		<year>1992</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag diskmagazine (1992-03)(memphis amiga group).adf" size="901120" crc="39f59638" sha1="bda8a180371c881ca2fa2d2fc92071ce07de8832"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdiskm_4_f" cloneof="magdiskm_4" supported="no">
+		<description>MAG diskMAGazine (1992-04)</description>
+		<year>1992</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag diskmagazine (1992-04)(memphis amiga group).adf" size="901120" crc="cced5963" sha1="97b10e07bb2ce0d3c241839db54caf7b843d2e93"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magdiskm_4_g" cloneof="magdiskm_4" supported="no">
+		<description>MAG diskMAGazine (1992-05)</description>
+		<year>1992</year>
+		<publisher>Memphis Amiga Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mag diskmagazine (1992-05)(memphis amiga group).adf" size="901120" crc="889d36f0" sha1="be9f2916442938987a5bb9cf2f0bf71ce86bc0a1"/>
 			</dataarea>
 		</part>
 	</software>

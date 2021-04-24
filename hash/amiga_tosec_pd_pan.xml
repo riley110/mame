@@ -50,20 +50,33 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Pacific North-West Amigas Club</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="panorama - disk 03 (1986-04-09)(pacific north-west amigas club)[m][wb].adf" size="901120" crc="30597dfc" sha1="a0ccf824671049b09255c44e1ad656019d293f80"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="panorama - disk 03 (1986-04-09)(pacific north-west amigas club)[wb].adf" size="901120" crc="8ecbdb55" sha1="02c162505615a6ac0c5159e1c5d5de365eb00570"/>
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="panorama - disk 03 (1986-04-09)(pacific north-west amigas club)[m][wb].adf" size="901120" crc="30597dfc" sha1="a0ccf824671049b09255c44e1ad656019d293f80"/>
+			</dataarea>
+		</part>
 	</software>
 
 	<software name="panorama_3" supported="no">
+		<description>Panorama - Disk 04B</description>
+		<year>1986</year>
+		<publisher>Pacific North-West Amigas Club</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Bad corrupt files"/>
+			<dataarea name="flop" size="901120">
+				<rom name="panorama - disk 04b (1986)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="b9bdb5af" sha1="d4464b16b9f43fb79cfe735ede146e67dd3e55cc" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="panorama_4" supported="no">
 		<description>Panorama - Disk 04 (1986-05-14)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
@@ -72,19 +85,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="panorama - disk 04 (1986-05-14)(pacific north-west amigas club)[wb].adf" size="901120" crc="786418e5" sha1="2e4b18eec0f0bc9747d3bbcc5195ead1ddd21ef2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="panorama_4" supported="no">
-		<description>Panorama - Disk 04B</description>
-		<year>1986</year>
-		<publisher>Pacific North-West Amigas Club</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt files, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="panorama - disk 04b (1986)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="b9bdb5af" sha1="d4464b16b9f43fb79cfe735ede146e67dd3e55cc" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -238,7 +238,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Pacific North-West Amigas Club</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt files, WB"/>
+			<feature name="part_id" value="WB, Bad corrupt files"/>
 			<dataarea name="flop" size="901120">
 				<rom name="panorama - disk 10a (1986-10-08)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="f6593eb8" sha1="3950bc31ffd2330d75b6306d6ab7e837b6e312df" status="baddump"/>
 			</dataarea>
@@ -420,7 +420,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Pacific North-West Amigas Club</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt file, WB"/>
+			<feature name="part_id" value="WB, Bad corrupt file"/>
 			<dataarea name="flop" size="901120">
 				<rom name="panorama - disk 15c (1987-03-25)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="96e2e995" sha1="1698f08b600c1b395ce499720be8eff81a3a2d3f" status="baddump"/>
 			</dataarea>
@@ -433,7 +433,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Pacific North-West Amigas Club</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt file, WB"/>
+			<feature name="part_id" value="WB, Bad corrupt file"/>
 			<dataarea name="flop" size="901120">
 				<rom name="panorama - disk 16a (1987-04-08)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="cab092d4" sha1="6160eb3c4df54a63b9b326ec8ecb8fd5a99a0b68" status="baddump"/>
 			</dataarea>
@@ -485,15 +485,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Pacific North-West Amigas Club</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt file, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="panorama - disk 17c (1987-05)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="5e5b663a" sha1="51bd77faa6a1d23fc75903593c4e2d3eb74cf1e2" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="panorama - disk 17c (1987-05)(pacific north-west amigas club)[wb].adf" size="901120" crc="76431410" sha1="b319a12bc346554d1c18af30b45738aefd19b1c3"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Bad corrupt file"/>
+			<dataarea name="flop" size="901120">
+				<rom name="panorama - disk 17c (1987-05)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="5e5b663a" sha1="51bd77faa6a1d23fc75903593c4e2d3eb74cf1e2" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -517,7 +517,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Pacific North-West Amigas Club</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt files, WB"/>
+			<feature name="part_id" value="WB, Bad corrupt files"/>
 			<dataarea name="flop" size="901120">
 				<rom name="panorama - disk 18a (1987-06-10)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="127860da" sha1="51aac5b10cda9a42ba08da4ecce411226ff50387" status="baddump"/>
 			</dataarea>
@@ -543,7 +543,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Pacific North-West Amigas Club</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt file, WB"/>
+			<feature name="part_id" value="WB, Bad corrupt file"/>
 			<dataarea name="flop" size="901120">
 				<rom name="panorama - disk 19a (1987-07-08)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="b36994d7" sha1="d681a27c57ad15b8cc95f664ec6c65cb9065e5c1" status="baddump"/>
 			</dataarea>
@@ -556,7 +556,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Pacific North-West Amigas Club</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt file, WB"/>
+			<feature name="part_id" value="WB, Bad corrupt file"/>
 			<dataarea name="flop" size="901120">
 				<rom name="panorama - disk 19b (1987-07-08)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="c54fc5f5" sha1="85246a764c53e57cafd294075b4bca6fe135e90a" status="baddump"/>
 			</dataarea>
@@ -647,7 +647,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Pacific North-West Amigas Club</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt files, WB"/>
+			<feature name="part_id" value="WB, Bad corrupt files"/>
 			<dataarea name="flop" size="901120">
 				<rom name="panorama - disk 21b (1987-09-09)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="1ce1fe71" sha1="dba877c8e659d298633e8008e73e3058795dac98" status="baddump"/>
 			</dataarea>
@@ -751,7 +751,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Pacific North-West Amigas Club</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt files, WB"/>
+			<feature name="part_id" value="WB, Bad corrupt files"/>
 			<dataarea name="flop" size="901120">
 				<rom name="panorama - disk 23b (1987-11-11)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="aa2cacfe" sha1="4f14c6f24bb57a51148eed0e5b1f8f4ae61bfd3c" status="baddump"/>
 			</dataarea>
@@ -790,7 +790,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Pacific North-West Amigas Club</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt files, WB"/>
+			<feature name="part_id" value="WB, Bad corrupt files"/>
 			<dataarea name="flop" size="901120">
 				<rom name="panorama - disk 24a (1987-12-09)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="f4562521" sha1="33eb4c5bf3b53b5089f14559f9a3b20f8141f322" status="baddump"/>
 			</dataarea>
@@ -829,15 +829,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Pacific North-West Amigas Club</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt file, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="panorama - disk 25b (1988-01-13)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="03b192de" sha1="9a9cd30681965a12a725cb7e75f5a692197bc5e8" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="panorama - disk 25b (1988-01-13)(pacific north-west amigas club)[wb].adf" size="901120" crc="73031483" sha1="a1a25ded18aa6ff27dc27d74d12daa6deccac955"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Bad corrupt file"/>
+			<dataarea name="flop" size="901120">
+				<rom name="panorama - disk 25b (1988-01-13)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="03b192de" sha1="9a9cd30681965a12a725cb7e75f5a692197bc5e8" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -874,7 +874,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Pacific North-West Amigas Club</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt file, WB"/>
+			<feature name="part_id" value="WB, Bad corrupt file"/>
 			<dataarea name="flop" size="901120">
 				<rom name="panorama - disk 26c (1988-02-24)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="eb0cbee7" sha1="c6d7703fbcf3d45a881ef756eb76fe0a3d2c0962" status="baddump"/>
 			</dataarea>

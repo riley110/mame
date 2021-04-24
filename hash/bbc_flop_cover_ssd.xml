@@ -30,21 +30,21 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2, Gallery, Alt 1"/>
+			<dataarea name="flop" size="99072">
+				<rom name="acorn user gallery (1985)(redwood publishing)(disk 1 of 2)(gallery)[a].ssd" size="99072" crc="bcc50d65" sha1="060f4217242711a1f9d66a5389447502bacd4b6f"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="Disk 1 of 2, Gallery, Alt 2"/>
 			<dataarea name="flop" size="100352">
 				<rom name="acorn user gallery (1985)(redwood publishing)(disk 1 of 2)(gallery)[a2].ssd" size="100352" crc="fdc7eead" sha1="5093bf2ef0b3fc9394b5a98c0ad21073b3c86c6a"/>
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
 			<feature name="part_id" value="Disk 1 of 2, Gallery, Alt 3"/>
 			<dataarea name="flop" size="100352">
 				<rom name="acorn user gallery (1985)(redwood publishing)(disk 1 of 2)(gallery)[a3].ssd" size="100352" crc="805e23e9" sha1="2f706b3eb4f1b6025da7c7ed4206034c0dd7f58c"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1 of 2, Gallery, Alt"/>
-			<dataarea name="flop" size="99072">
-				<rom name="acorn user gallery (1985)(redwood publishing)(disk 1 of 2)(gallery)[a].ssd" size="99072" crc="bcc50d65" sha1="060f4217242711a1f9d66a5389447502bacd4b6f"/>
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_5_25">
@@ -54,15 +54,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop6" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 2, Pictures, Alt 2"/>
+			<feature name="part_id" value="Disk 2 of 2, Pictures, Alt 1"/>
 			<dataarea name="flop" size="204800">
-				<rom name="acorn user gallery (1985)(redwood publishing)(disk 2 of 2)(pictures)[a2].ssd" size="204800" crc="cd69b8ad" sha1="62612f23c921381131b2844c4e7d341f359e3ebf"/>
+				<rom name="acorn user gallery (1985)(redwood publishing)(disk 2 of 2)(pictures)[a].ssd" size="204800" crc="7eefe30d" sha1="c22b260fc05093dbc9b47ac0842b421552df4469"/>
 			</dataarea>
 		</part>
 		<part name="flop7" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 2, Pictures, Alt"/>
+			<feature name="part_id" value="Disk 2 of 2, Pictures, Alt 2"/>
 			<dataarea name="flop" size="204800">
-				<rom name="acorn user gallery (1985)(redwood publishing)(disk 2 of 2)(pictures)[a].ssd" size="204800" crc="7eefe30d" sha1="c22b260fc05093dbc9b47ac0842b421552df4469"/>
+				<rom name="acorn user gallery (1985)(redwood publishing)(disk 2 of 2)(pictures)[a2].ssd" size="204800" crc="cd69b8ad" sha1="62612f23c921381131b2844c4e7d341f359e3ebf"/>
 			</dataarea>
 		</part>
 	</software>
@@ -110,27 +110,27 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Redwood Publishing</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2, RUN !BOOT"/>
+			<feature name="part_id" value="RUN !BOOT"/>
 			<dataarea name="flop" size="93440">
-				<rom name="acorn user graphics utilities disk (19xx)(redwood publishing)[a2][run boot].ssd" size="93440" crc="de05df11" sha1="e824e850595152a0333ee215b108405e3214a868"/>
+				<rom name="acorn user graphics utilities disk (19xx)(redwood publishing)[run boot].ssd" size="93440" crc="0ed8032a" sha1="743693a40231f852a478e124c2a3249faf71487d"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 3, RUN !BOOT"/>
-			<dataarea name="flop" size="204800">
-				<rom name="acorn user graphics utilities disk (19xx)(redwood publishing)[a3][run boot].ssd" size="204800" crc="ac4f8b36" sha1="5c979d6a94cfcf8d4eb4c219ccb5c3a02a41445b"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, RUN !BOOT"/>
+			<feature name="part_id" value="RUN !BOOT, Alt 1"/>
 			<dataarea name="flop" size="93440">
 				<rom name="acorn user graphics utilities disk (19xx)(redwood publishing)[a][run boot].ssd" size="93440" crc="3788fc20" sha1="d1c596fdd4dfefbccebadc4e9a612e377caa74fe"/>
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="RUN !BOOT"/>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="RUN !BOOT, Alt 2"/>
 			<dataarea name="flop" size="93440">
-				<rom name="acorn user graphics utilities disk (19xx)(redwood publishing)[run boot].ssd" size="93440" crc="0ed8032a" sha1="743693a40231f852a478e124c2a3249faf71487d"/>
+				<rom name="acorn user graphics utilities disk (19xx)(redwood publishing)[a2][run boot].ssd" size="93440" crc="de05df11" sha1="e824e850595152a0333ee215b108405e3214a868"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="RUN !BOOT, Alt 3"/>
+			<dataarea name="flop" size="204800">
+				<rom name="acorn user graphics utilities disk (19xx)(redwood publishing)[a3][run boot].ssd" size="204800" crc="ac4f8b36" sha1="5c979d6a94cfcf8d4eb4c219ccb5c3a02a41445b"/>
 			</dataarea>
 		</part>
 	</software>

@@ -19,6 +19,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="auraadve" supported="no">
+		<description>AURA Adventures (GB, Freeware)</description>
+		<year>1994</year>
+		<publisher>Aura</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="aura adventures (1994)(aura)(gb)(fw).atr" size="133136" crc="aa4fdaca" sha1="44ecfa5d2bdf16dbf970c77ed0731606811a45cf"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="arcadebo" supported="no">
 		<description>Arcade Bonanza (US)</description>
 		<year>1985</year>
@@ -43,18 +55,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="auraadve" supported="no">
-		<description>AURA Adventures (GB, Freeware)</description>
-		<year>1994</year>
-		<publisher>Aura</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="aura adventures (1994)(aura)(gb)(fw).atr" size="133136" crc="aa4fdaca" sha1="44ecfa5d2bdf16dbf970c77ed0731606811a45cf"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="bishopss" supported="no">
 		<description>Bishop's Square + Maxwell's Demon (US)</description>
 		<year>1982</year>
@@ -64,19 +64,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="BASIC"/>
 			<dataarea name="flop" size="92176">
 				<rom name="bishop's square + maxwell's demon (1982)(datasoft)(us)[basic].atr" size="92176" crc="81232ce2" sha1="648d59ab014941bdd8f3fb6a5d74d2241e54401a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thecaste" supported="no">
-		<description>The Casten Game Disk (US)</description>
-		<year>1985</year>
-		<publisher>Antic</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="133136">
-				<rom name="casten game disk, the (1985)(antic)(us)[basic].atr" size="133136" crc="7c4ee457" sha1="8398820ac45d2dfcf99d233208b9deef426d61ce"/>
 			</dataarea>
 		</part>
 	</software>
@@ -155,7 +142,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="four great games volume 3 (1987)(microvalue)(gb)(side a)[a].atr" size="92176" crc="711b3803" sha1="765f9815e198abec2b9fcd4907d291905ce2fdbc"/>
 			</dataarea>
@@ -167,15 +154,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, phantom"/>
-			<dataarea name="flop" size="92176">
-				<rom name="four great games volume 3 (1987)(microvalue)(gb)[a][phantom].atr" size="92176" crc="0b2463b9" sha1="bbbc28e9c38e85c6c9efa61056434771702f2647"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
 			<feature name="part_id" value="phantom"/>
 			<dataarea name="flop" size="92176">
 				<rom name="four great games volume 3 (1987)(microvalue)(gb)[phantom].atr" size="92176" crc="351a838d" sha1="31cc55ec3df88c60ebb849571b0c5a0c36c4c7c6"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="phantom, Alt 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="four great games volume 3 (1987)(microvalue)(gb)[a][phantom].atr" size="92176" crc="0b2463b9" sha1="bbbc28e9c38e85c6c9efa61056434771702f2647"/>
 			</dataarea>
 		</part>
 	</software>
@@ -251,21 +238,21 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>MicroProse</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2, BASIC"/>
+			<feature name="part_id" value="BASIC"/>
 			<dataarea name="flop" size="92176">
-				<rom name="microprose - chopper rescue &amp; hellcat ace &amp; floyd of the jungle (1982)(microprose)[a2][basic].atr" size="92176" crc="3e508bdf" sha1="2cd6a5733057d3464e2920445dfc941398e9aa89"/>
+				<rom name="microprose - chopper rescue &amp; hellcat ace &amp; floyd of the jungle (1982)(microprose)[basic].atr" size="92176" crc="c4aa8f46" sha1="0de1541b123196544a67c1253a9f65319aeb5003"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, BASIC"/>
+			<feature name="part_id" value="BASIC, Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="microprose - chopper rescue &amp; hellcat ace &amp; floyd of the jungle (1982)(microprose)[a][basic].atr" size="92176" crc="74ef356a" sha1="b9de402720a2770f0a4f870b617f7b80c7a3bbb9"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
+			<feature name="part_id" value="BASIC, Alt 2"/>
 			<dataarea name="flop" size="92176">
-				<rom name="microprose - chopper rescue &amp; hellcat ace &amp; floyd of the jungle (1982)(microprose)[basic].atr" size="92176" crc="c4aa8f46" sha1="0de1541b123196544a67c1253a9f65319aeb5003"/>
+				<rom name="microprose - chopper rescue &amp; hellcat ace &amp; floyd of the jungle (1982)(microprose)[a2][basic].atr" size="92176" crc="3e508bdf" sha1="2cd6a5733057d3464e2920445dfc941398e9aa89"/>
 			</dataarea>
 		</part>
 	</software>
@@ -282,27 +269,27 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by Mr. Bacardi, Alt 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="muff &amp; drutt (1992)(asf)(pl)[cr mr. bacardi][a].atr" size="92176" crc="f35385bc" sha1="22d02e131ffa27f3410025130a642497e7e8bad8"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="Cracked by Mr. Bacardi, Alt 2"/>
 			<dataarea name="flop" size="92176">
 				<rom name="muff &amp; drutt (1992)(asf)(pl)[cr mr. bacardi][a2].atr" size="92176" crc="ca161aee" sha1="d8de76fa14e89c2551423bc650405b70f5f9a695"/>
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Cracked by Mr. Bacardi, Alt"/>
-			<dataarea name="flop" size="92176">
-				<rom name="muff &amp; drutt (1992)(asf)(pl)[cr mr. bacardi][a].atr" size="92176" crc="f35385bc" sha1="22d02e131ffa27f3410025130a642497e7e8bad8"/>
-			</dataarea>
-		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked GSL - LBS, k-file"/>
-			<dataarea name="flop" size="10640">
-				<rom name="muff &amp; drutt (1992)(asf)(pl)[h gsl - lbs][k-file].atr" size="10640" crc="5f69647f" sha1="8b3ae3b5abd679d403b73934f59df32871edebab"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
 			<feature name="part_id" value="Hacked Homesoft"/>
 			<dataarea name="flop" size="65552">
 				<rom name="muff &amp; drutt (1992)(asf)(pl)[h homesoft].atr" size="65552" crc="a15b9ae9" sha1="87b497a2b49dfd5d44c80ec58d2cc570f81f1bb6"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Hacked GSL - LBS"/>
+			<dataarea name="flop" size="10640">
+				<rom name="muff &amp; drutt (1992)(asf)(pl)[h gsl - lbs][k-file].atr" size="10640" crc="5f69647f" sha1="8b3ae3b5abd679d403b73934f59df32871edebab"/>
 			</dataarea>
 		</part>
 	</software>
@@ -361,7 +348,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="silicon dreams trilogy (1986)(rainbird)(gb)[a].atr" size="133136" crc="4dabfd5a" sha1="7cab66fd6bfc17e29937e4d4b74c111f8beb1904"/>
 			</dataarea>
@@ -405,7 +392,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="tauz &amp; kelb (1988)(rassilon software)(us)(side a)[a].atr" size="92176" crc="e6d681ab" sha1="6a3cfe802a506623e199da3a7445379c737152d3"/>
 			</dataarea>
@@ -413,6 +400,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="templeof" supported="no">
+		<description>Temple of Apshai Trilogy (GB)</description>
+		<year>1986</year>
+		<publisher>U.S. Gold</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="temple of apshai trilogy (1986)(u.s. gold)(gb).atr" size="92176" crc="a5cdca88" sha1="e9955303ba855beeafb0e5bf9b5b683d0fbb8701"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="templeof_1" supported="no">
 		<description>Temple of Apshai Trilogy (US)</description>
 		<year>1985</year>
 		<publisher>Epyx</publisher>
@@ -425,14 +424,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="templeof_1" supported="no">
-		<description>Temple of Apshai Trilogy (GB)</description>
-		<year>1986</year>
-		<publisher>U.S. Gold</publisher>
+	<software name="thecaste" supported="no">
+		<description>The Casten Game Disk (US)</description>
+		<year>1985</year>
+		<publisher>Antic</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="temple of apshai trilogy (1986)(u.s. gold)(gb).atr" size="92176" crc="a5cdca88" sha1="e9955303ba855beeafb0e5bf9b5b683d0fbb8701"/>
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="133136">
+				<rom name="casten game disk, the (1985)(antic)(us)[basic].atr" size="133136" crc="7c4ee457" sha1="8398820ac45d2dfcf99d233208b9deef426d61ce"/>
 			</dataarea>
 		</part>
 	</software>

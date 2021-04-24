@@ -66,18 +66,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thelastn" supported="no">
-		<description>The Last Ninja 2</description>
-		<year>1988</year>
-		<publisher>System 3</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="349696">
-				<rom name="last ninja 2, the (1988)(system 3).d71" size="349696" crc="95a01053" sha1="40e2616e6e81b51ce82ce2687c75d9adb6e63cad"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="metalwar" supported="no">
 		<description>Metal Warrior 4 - Agents of Metal</description>
 		<year>2003</year>
@@ -90,25 +78,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="therunni" supported="no">
-		<description>The Running Man</description>
-		<year>1989</year>
-		<publisher>Grandslam Entertainment</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="349696">
-				<rom name="running man, the (1989)(grandslam entertainment).d71" size="349696" crc="7f9ca349" sha1="468172b009d84cb5d634cd963164ff544878aae2"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="skateord" supported="no">
 		<description>Skate or Die!</description>
 		<year>1987</year>
 		<publisher>Electronic Arts</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Cracked by The Stock, docs, EasyFlash 2012-04-30"/>
+			<feature name="part_id" value="docs, EasyFlash 2012-04-30, Cracked by The Stock"/>
 			<dataarea name="flop" size="349696">
 				<rom name="skate or die (1987)(electronic arts)[cr the stock][docs][easyflash 2012-04-30].d71" size="349696" crc="f9381cb5" sha1="89bcdf26b10930fa608a9e3f98f732e9e0fab1d6"/>
 			</dataarea>
@@ -147,6 +123,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="349696">
 				<rom name="summer games 2 (1985)(epyx).d71" size="349696" crc="676dca12" sha1="414b9e630ce63ddfb9aa2d31ab4355b3044ad912"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thelastn" supported="no">
+		<description>The Last Ninja 2</description>
+		<year>1988</year>
+		<publisher>System 3</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="last ninja 2, the (1988)(system 3).d71" size="349696" crc="95a01053" sha1="40e2616e6e81b51ce82ce2687c75d9adb6e63cad"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="therunni" supported="no">
+		<description>The Running Man</description>
+		<year>1989</year>
+		<publisher>Grandslam Entertainment</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="running man, the (1989)(grandslam entertainment).d71" size="349696" crc="7f9ca349" sha1="468172b009d84cb5d634cd963164ff544878aae2"/>
 			</dataarea>
 		</part>
 	</software>

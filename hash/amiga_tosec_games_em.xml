@@ -17,7 +17,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="ace mines #1 (1992-05)(ace-ware)[a].adf" size="901120" crc="bc2be86e" sha1="82e5843d169777b2722762aaad97609c90182744"/>
 			</dataarea>
@@ -43,81 +43,21 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="theadven" supported="no">
-		<description>The Adventures of Mr. B - Part 1</description>
-		<year>1991</year>
-		<publisher>Mr. B</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="adventures of mr. b, the - part 1 (1991)(mr. b).adf" size="901120" crc="72d09cae" sha1="c5528cc7c571c5a6d83eec2938bd46d519a6d648"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt intro disabled"/>
-			<dataarea name="flop" size="901120">
-				<rom name="adventures of mr. b, the - part 1 (1991)(mr. b)[a intro disabled].adf" size="901120" crc="779526b8" sha1="ad0e0c4309e78e166d46ac3c0dfbea0b3fe94ad3"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked"/>
-			<dataarea name="flop" size="901120">
-				<rom name="adventures of mr. b, the - part 1 (1991)(mr. b)[h].adf" size="901120" crc="3f4db867" sha1="1c87fbd512d72fec61b9f7ae82c3ed11c97c1ff2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="theadven_1" supported="no">
-		<description>The Adventures of Mr. B - Part 2</description>
-		<year>1992</year>
-		<publisher>Mr. B</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="adventures of mr. b, the - part 2 (1992)(mr. b).adf" size="901120" crc="97ade994" sha1="9f3f578f624d92337e8120faa829dbaae7a00e09"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Modified"/>
-			<dataarea name="flop" size="901120">
-				<rom name="adventures of mr. b, the - part 2 (1992)(mr. b)[m].adf" size="901120" crc="9bbb112a" sha1="d21370422646db03bc1cd825706c2eb7f723f643"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="theadven_2" supported="no">
-		<description>The Adventures of Mr. B - Part 3</description>
-		<year>1994</year>
-		<publisher>Mr. B</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="adventures of mr. b, the - part 3 (1994)(mr. b).adf" size="901120" crc="dfa1f924" sha1="f90cff35a89db3c8d79f174abc79319687964927"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt files"/>
-			<dataarea name="flop" size="901120">
-				<rom name="adventures of mr. b, the - part 3 (1994)(mr. b)[b corrupt files].adf" size="901120" crc="91664c06" sha1="2b4a742a228ac91f7c8bb9c0380f87cc1617eb1d" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="amidashe" supported="no">
 		<description>Ami Dasher #1</description>
 		<year>199?</year>
 		<publisher>The Bullfrog</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A"/>
+			<feature name="part_id" value="Hacked 1"/>
 			<dataarea name="flop" size="901120">
-				<rom name="ami dasher #1 (199x)(the bullfrog)[h emc-a].adf" size="901120" crc="593e9ff9" sha1="03791bc103e9a76e761e2b07043fb57143e40e87"/>
+				<rom name="ami dasher #1 (199x)(the bullfrog)[h].adf" size="901120" crc="012674f7" sha1="ff9e1598a4a8559922cc3fb1ca93a193c4dfc8c8"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked"/>
+			<feature name="part_id" value="Hacked EMC-A"/>
 			<dataarea name="flop" size="901120">
-				<rom name="ami dasher #1 (199x)(the bullfrog)[h].adf" size="901120" crc="012674f7" sha1="ff9e1598a4a8559922cc3fb1ca93a193c4dfc8c8"/>
+				<rom name="ami dasher #1 (199x)(the bullfrog)[h emc-a].adf" size="901120" crc="593e9ff9" sha1="03791bc103e9a76e761e2b07043fb57143e40e87"/>
 			</dataarea>
 		</part>
 	</software>
@@ -454,7 +394,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Modified"/>
+			<feature name="part_id" value="Modified 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="bobbydash #1 (1991-10)(monty bob)[m].adf" size="901120" crc="08d26734" sha1="860b9e4281edc64b1afa052c4d3be05a81075f1d"/>
 			</dataarea>
@@ -472,7 +412,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked"/>
+			<feature name="part_id" value="Hacked 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="bondmine #01 (1992)(de bond)[h].adf" size="901120" crc="5f1fe48e" sha1="c256215ea32454fd69482ee04afd146d13283d2d"/>
 			</dataarea>
@@ -497,7 +437,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>De Bond</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked"/>
+			<feature name="part_id" value="Hacked 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="bondmine #03 - starring miss emerald (1992)(de bond)[h].adf" size="901120" crc="527986f5" sha1="44117890d7b267d5b58df1998a18236234eb45dc"/>
 			</dataarea>
@@ -522,7 +462,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>De Bond</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked"/>
+			<feature name="part_id" value="Hacked 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="bondmine #05 (1992)(de bond)[h].adf" size="901120" crc="3a342fcd" sha1="0b374e5195f2804324ed72d7420e487de7380a27"/>
 			</dataarea>
@@ -541,7 +481,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked"/>
+			<feature name="part_id" value="Hacked 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="bondmine #06 (1992)(de bond)[h].adf" size="901120" crc="c77ed5e1" sha1="39f241e4be949ba259e939579551ec4d045c4c5c"/>
 			</dataarea>
@@ -584,7 +524,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked, aka Xmas Mine #1"/>
+			<feature name="part_id" value="aka Xmas Mine #1, Hacked 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="bondmine #09 (1992-12)(de bond)[h][aka xmas mine #1].adf" size="901120" crc="f6f5a4c4" sha1="ac96e5f733469b4736aa7271904058bd6ecba578"/>
 			</dataarea>
@@ -616,24 +556,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="bondmine_11" supported="no">
-		<description>Bondmine #12 - The Rebirth</description>
-		<year>1993</year>
-		<publisher>De Bond</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="bondmine #12 - the rebirth (1993)(de bond).adf" size="901120" crc="06f79f60" sha1="f8178aa1bd488ee89ad31baad65721659209efc6"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="reissue"/>
-			<dataarea name="flop" size="901120">
-				<rom name="bondmine #12 - the rebirth (1993)(de bond)[reissue].adf" size="901120" crc="6eae5894" sha1="80cc3c372e535769fac83599e99732ca01c7af33"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bondmine_12" supported="no">
 		<description>BondMine #13</description>
 		<year>1993</year>
 		<publisher>De Bond</publisher>
@@ -646,7 +568,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bondmine_13" supported="no">
+	<software name="bondmine_12" supported="no">
 		<description>BondMine #14</description>
 		<year>1993</year>
 		<publisher>De Bond</publisher>
@@ -658,38 +580,38 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bondmine_14" supported="no">
+	<software name="bondmine_13" supported="no">
 		<description>BondMine #15 (1993-12)</description>
 		<year>1993</year>
 		<publisher>De Bond</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 2, aka Xmas Mine #2, 1994 reissue"/>
-			<dataarea name="flop" size="901120">
-				<rom name="bondmine #15 (1993-12)(de bond)[a2][aka xmas mine #2][1994 reissue].adf" size="901120" crc="06172325" sha1="8bf921069448e140ac2e3d994c230a65dabf7312"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt, aka Xmas Mine #2, 1994 reissue"/>
-			<dataarea name="flop" size="901120">
-				<rom name="bondmine #15 (1993-12)(de bond)[a][aka xmas mine #2][1994 reissue].adf" size="901120" crc="c66e1913" sha1="470d2b5a747ca0575dbb63bb3937e7ed5c5245c7"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
 			<feature name="part_id" value="aka Xmas Mine #2, 1994 reissue"/>
 			<dataarea name="flop" size="901120">
 				<rom name="bondmine #15 (1993-12)(de bond)[aka xmas mine #2][1994 reissue].adf" size="901120" crc="1f636b5b" sha1="c00047fc503455144faa7a0e3e886289e1018ba3"/>
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="aka Xmas Mine #2, 1994 reissue, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="bondmine #15 (1993-12)(de bond)[a][aka xmas mine #2][1994 reissue].adf" size="901120" crc="c66e1913" sha1="470d2b5a747ca0575dbb63bb3937e7ed5c5245c7"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="aka Xmas Mine #2, 1994 reissue, Alt 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="bondmine #15 (1993-12)(de bond)[a2][aka xmas mine #2][1994 reissue].adf" size="901120" crc="06172325" sha1="8bf921069448e140ac2e3d994c230a65dabf7312"/>
+			</dataarea>
+		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-H, aka Xmas Mine #2"/>
+			<feature name="part_id" value="aka Xmas Mine #2, Hacked EMC-H"/>
 			<dataarea name="flop" size="901120">
 				<rom name="bondmine #15 (1993-12)(de bond)[h emc-h][aka xmas mine #2].adf" size="901120" crc="01eecebe" sha1="4b1c825a02c3e15263bbb43bfff336d96649db37"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="bondmine_15" supported="no">
+	<software name="bondmine_14" supported="no">
 		<description>BondMine #16</description>
 		<year>1994</year>
 		<publisher>De Bond</publisher>
@@ -697,6 +619,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="bondmine #16 (1994)(de bond).adf" size="901120" crc="25da0076" sha1="9de2eee727750c3816c06c3ed1108a47b19c6838"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bondmine_15" supported="no">
+		<description>BondMine #17.5A</description>
+		<year>1995</year>
+		<publisher>De Bond</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-H"/>
+			<dataarea name="flop" size="901120">
+				<rom name="bondmine #17.5a (1995)(de bond)[h emc-h].adf" size="901120" crc="b8388c41" sha1="da048a05b32cf666f7c7cfe26de8eccbb5c91acb"/>
 			</dataarea>
 		</part>
 	</software>
@@ -715,19 +650,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="bondmine_17" supported="no">
-		<description>BondMine #17.5A</description>
-		<year>1995</year>
-		<publisher>De Bond</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-H"/>
-			<dataarea name="flop" size="901120">
-				<rom name="bondmine #17.5a (1995)(de bond)[h emc-h].adf" size="901120" crc="b8388c41" sha1="da048a05b32cf666f7c7cfe26de8eccbb5c91acb"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bondmine_18" supported="no">
 		<description>BondMine #18</description>
 		<year>1995</year>
 		<publisher>De Bond</publisher>
@@ -739,7 +661,37 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="bondmine_18" supported="no">
+		<description>Bondmine #12 - The Rebirth</description>
+		<year>1993</year>
+		<publisher>De Bond</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="bondmine #12 - the rebirth (1993)(de bond).adf" size="901120" crc="06f79f60" sha1="f8178aa1bd488ee89ad31baad65721659209efc6"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="reissue"/>
+			<dataarea name="flop" size="901120">
+				<rom name="bondmine #12 - the rebirth (1993)(de bond)[reissue].adf" size="901120" crc="6eae5894" sha1="80cc3c372e535769fac83599e99732ca01c7af33"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="boulderd" supported="no">
+		<description>Boulder Dash Professional</description>
+		<year>1988</year>
+		<publisher>Kuko-Soft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="boulder dash professional (1988)(kuko-soft).adf" size="901120" crc="f97c2b0b" sha1="48d677c534e57b977f97bae01f97f9f459787715"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boulderd_1" supported="no">
 		<description>Boulder Dash</description>
 		<year>1987</year>
 		<publisher>Kingsoft</publisher>
@@ -750,33 +702,21 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="boulder dash (1987)(kingsoft)[a].adf" size="901120" crc="5c3c0a58" sha1="58eb13889748b86bcb5f2f033df60155beec1ee1"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
 			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="boulder dash (1987)(kingsoft)[a2].adf" size="901120" crc="de609e58" sha1="5f3c4d6fa4424256d6ef7b9853c5931b6e5b0889"/>
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="901120">
-				<rom name="boulder dash (1987)(kingsoft)[a].adf" size="901120" crc="5c3c0a58" sha1="58eb13889748b86bcb5f2f033df60155beec1ee1"/>
-			</dataarea>
-		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Bobius, new levels"/>
+			<feature name="part_id" value="new levels, Hacked Bobius"/>
 			<dataarea name="flop" size="901120">
 				<rom name="boulder dash (1987)(kingsoft)[h bobius][new levels].adf" size="901120" crc="0a0fe94e" sha1="4cad11a97a5430ef78fe6935dff3027296e971db"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="boulderd_1" supported="no">
-		<description>Boulder Dash Professional</description>
-		<year>1988</year>
-		<publisher>Kuko-Soft</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="boulder dash professional (1988)(kuko-soft).adf" size="901120" crc="f97c2b0b" sha1="48d677c534e57b977f97bae01f97f9f459787715"/>
 			</dataarea>
 		</part>
 	</software>
@@ -792,45 +732,45 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt files"/>
-			<dataarea name="flop" size="901120">
-				<rom name="boulderdash c64 (1989-06)(no one inc)[b corrupt files].adf" size="901120" crc="1f78e7e0" sha1="bd661a5afb68ced40b31fb47f1e4d7768dbfe2ad" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
 			<feature name="part_id" value="Bad 2 corrupt files"/>
 			<dataarea name="flop" size="901120">
 				<rom name="boulderdash c64 (1989-06)(no one inc)[b2 corrupt files].adf" size="901120" crc="214cd2e8" sha1="ea990dd9f1c702192d39a6e8ae3b109332570195" status="baddump"/>
 			</dataarea>
 		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt files"/>
+			<dataarea name="flop" size="901120">
+				<rom name="boulderdash c64 (1989-06)(no one inc)[b corrupt files].adf" size="901120" crc="1f78e7e0" sha1="bd661a5afb68ced40b31fb47f1e4d7768dbfe2ad" status="baddump"/>
+			</dataarea>
+		</part>
 		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="boulderdash c64 (1989-06)(no one inc)[h].adf" size="901120" crc="3b5c4bbc" sha1="b3098f0c35deba15762e87027aa37ef2b56353ce"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
 			<feature name="part_id" value="Hacked 2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="boulderdash c64 (1989-06)(no one inc)[h2].adf" size="901120" crc="5d4d2071" sha1="dfe0b4dce1bf6a9acdfe543a9f16558ae2bd0c72"/>
 			</dataarea>
 		</part>
-		<part name="flop5" interface="floppy_3_5">
+		<part name="flop6" interface="floppy_3_5">
 			<feature name="part_id" value="Hacked 3"/>
 			<dataarea name="flop" size="901120">
 				<rom name="boulderdash c64 (1989-06)(no one inc)[h3].adf" size="901120" crc="aafd799c" sha1="9c83b6beaf7b06e502a2df3d8ca55c79c6e6b83a"/>
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked"/>
-			<dataarea name="flop" size="901120">
-				<rom name="boulderdash c64 (1989-06)(no one inc)[h].adf" size="901120" crc="3b5c4bbc" sha1="b3098f0c35deba15762e87027aa37ef2b56353ce"/>
-			</dataarea>
-		</part>
 		<part name="flop7" interface="floppy_3_5">
-			<feature name="part_id" value="Virus BGS9, Alt, virus removed"/>
+			<feature name="part_id" value="virus removed, Virus BGS9"/>
 			<dataarea name="flop" size="901120">
-				<rom name="boulderdash c64 (1989-06)(no one inc)[v bgs9][a][virus removed].adf" size="901120" crc="7ed1788e" sha1="9529416e2f64d4ff34968c020807647fb7423d8a" status="baddump"/>
+				<rom name="boulderdash c64 (1989-06)(no one inc)[v bgs9][virus removed].adf" size="901120" crc="a4c66d95" sha1="f7dc047eeec178ca8ae5139d90dd6007a5391e58" status="baddump"/>
 			</dataarea>
 		</part>
 		<part name="flop8" interface="floppy_3_5">
-			<feature name="part_id" value="Virus BGS9, virus removed"/>
+			<feature name="part_id" value="virus removed, Virus BGS9, Alt 1"/>
 			<dataarea name="flop" size="901120">
-				<rom name="boulderdash c64 (1989-06)(no one inc)[v bgs9][virus removed].adf" size="901120" crc="a4c66d95" sha1="f7dc047eeec178ca8ae5139d90dd6007a5391e58" status="baddump"/>
+				<rom name="boulderdash c64 (1989-06)(no one inc)[v bgs9][a][virus removed].adf" size="901120" crc="7ed1788e" sha1="9529416e2f64d4ff34968c020807647fb7423d8a" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -846,7 +786,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="boulderdash ii (1987)(laser)[a].adf" size="901120" crc="181ffeec" sha1="0206bd7bf8b6a09c056e774ab82a45152452eeee"/>
 			</dataarea>
@@ -889,7 +829,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="bugmine 2 - the revenge (1992-09-25)(noshtromo 2000)[a].adf" size="901120" crc="72790905" sha1="8afd955fccd10cc9d0b3f6e0cf9f348565378553"/>
 			</dataarea>
@@ -914,7 +854,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Fixed Skippy, Hacked EMC-A, Underdumped, Bad corrupt files"/>
+			<feature name="part_id" value="Fixed Skippy, Hacked EMC-A, Underdumped 1, Bad corrupt files"/>
 			<dataarea name="flop" size="889856">
 				<rom name="bugmine 3 (199x)(noshtromo 2000)[f skippy][h emc-a][u][b corrupt files].adf" size="889856" crc="a50d88d6" sha1="68dce07807e9d2c302963cd545339ff12b8ea25b" status="baddump"/>
 			</dataarea>
@@ -1165,14 +1105,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Black Lady - Scorpio</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked"/>
+			<feature name="part_id" value="Hacked 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="crazy mine #06 (1996-09-06)(black lady - scorpio)(aga)[h].adf" size="901120" crc="ba19d392" sha1="52e6a229220974d508edc642d7f2eca6044d6fcd"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="crazymin_5" supported="no">
+	<software name="crazymin_4_a" cloneof="crazymin_4" supported="no">
 		<description>Crazy Mine #06 (ECS-AGA, 1996-09-06)</description>
 		<year>1996</year>
 		<publisher>Black Lady - Scorpio</publisher>
@@ -1184,7 +1124,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="crazymin_6" supported="no">
+	<software name="crazymin_5" supported="no">
 		<description>Crazy Mine #07 (ECS-AGA)</description>
 		<year>1996</year>
 		<publisher>Black Lady - Scorpio</publisher>
@@ -1196,7 +1136,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="crazymin_7" supported="no">
+	<software name="crazymin_6" supported="no">
 		<description>Crazy Mine #08 (ECS-AGA)</description>
 		<year>1996</year>
 		<publisher>Black Lady - Scorpio</publisher>
@@ -1208,7 +1148,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="crazymin_8" supported="no">
+	<software name="crazymin_7" supported="no">
 		<description>Crazy Mine #09 (ECS-AGA)</description>
 		<year>199?</year>
 		<publisher>Black Lady - Scorpio</publisher>
@@ -1220,7 +1160,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="crazymin_9" supported="no">
+	<software name="crazymin_8" supported="no">
 		<description>Crazy Mine #10 (ECS-AGA)</description>
 		<year>199?</year>
 		<publisher>Black Lady - Scorpio</publisher>
@@ -1278,19 +1218,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="crystalc_3" supported="no">
-		<description>Crystal Caverns #4 (ECS-AGA)</description>
-		<year>1993</year>
-		<publisher>Galaxy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Denis F."/>
-			<dataarea name="flop" size="901120">
-				<rom name="crystal caverns #4 (1993)(galaxy)(ecs-aga)[h denis f.].adf" size="901120" crc="465ae820" sha1="fbd6aabdefaf53c1b4532cdb69b6e586d7592499"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="crystalc_4" supported="no">
 		<description>Crystal Caverns #4</description>
 		<year>1993</year>
 		<publisher>Galaxy</publisher>
@@ -1299,6 +1226,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked EMC-A"/>
 			<dataarea name="flop" size="901120">
 				<rom name="crystal caverns #4 (1993)(galaxy)[h emc-a].adf" size="901120" crc="ec445f42" sha1="e2fcc3b07527951fd396b761113f958e36ac710a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crystalc_3_a" cloneof="crystalc_3" supported="no">
+		<description>Crystal Caverns #4 (ECS-AGA)</description>
+		<year>1993</year>
+		<publisher>Galaxy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked Denis F."/>
+			<dataarea name="flop" size="901120">
+				<rom name="crystal caverns #4 (1993)(galaxy)(ecs-aga)[h denis f.].adf" size="901120" crc="465ae820" sha1="fbd6aabdefaf53c1b4532cdb69b6e586d7592499"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2028,6 +1968,54 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="emcmine2" supported="no">
+		<description>EMC Mine 2 (ECS-AGA)</description>
+		<year>199?</year>
+		<publisher>Emerald Mine Club Holland</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="emc mine 2 (199x)(emerald mine club holland)(ecs-aga).adf" size="901120" crc="f3f3e4d1" sha1="503882d9d67c1b878405e41029fbc5eb8c39d6d4"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="emcmine3" supported="no">
+		<description>EMC Mine 3 (ECS-AGA)</description>
+		<year>199?</year>
+		<publisher>Emerald Mine Club Holland</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="emc mine 3 (199x)(emerald mine club holland)(ecs-aga).adf" size="901120" crc="f50b6d36" sha1="1d60bd07a5aa65ad2c42cda282e7a79c749fc016"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="emcmine4" supported="no">
+		<description>EMC Mine 4 (ECS-AGA)</description>
+		<year>199?</year>
+		<publisher>Emerald Mine Club Holland</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="emc mine 4 (199x)(emerald mine club holland)(ecs-aga).adf" size="901120" crc="2430c845" sha1="4ef2a918c3443a30eb8ae8bde5f06b3fcbd36177"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="emcmine5" supported="no">
+		<description>EMC Mine 5 (ECS-AGA, 1999-07-11)</description>
+		<year>1999</year>
+		<publisher>Emerald Mine Club Holland</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="emc mine 5 (1999-07-11)(emerald mine club holland)(ecs-aga).adf" size="901120" crc="b51bb06d" sha1="b8394c4cc8b1f5d746cf66dd8587b36f375ef9de"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="eaglemin" supported="no">
 		<description>Eagle Mine #01 (ECS-AGA)</description>
 		<year>199?</year>
@@ -2367,50 +2355,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="eatmine" supported="no">
-		<description>Eat Mine (1989-11)</description>
-		<year>1989</year>
-		<publisher>No One Incorporated</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked MWB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="eat mine (1989-11)(no one incorporated)[h mwb].adf" size="901120" crc="c6e74bd4" sha1="707a0f6c65104c6fb00ebfdcc02f566331a4ec68"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked MWB, Alt intro removed"/>
-			<dataarea name="flop" size="901120">
-				<rom name="eat mine (1989-11)(no one incorporated)[h mwb][a intro removed].adf" size="901120" crc="b948120e" sha1="6a4c652667fd6c470003f00b560f894739a39619"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked MWB, Alt 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="eat mine (1989-11)(no one incorporated)[h mwb][a2].adf" size="901120" crc="1d02218b" sha1="9fa9e1e1cd682824451eea4fc26df7fa78d9df84"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked MWB, Alt"/>
-			<dataarea name="flop" size="901120">
-				<rom name="eat mine (1989-11)(no one incorporated)[h mwb][a].adf" size="901120" crc="2c339d2f" sha1="c5ae633760c2b171894a56a02c6c066ef673a57d"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked MWB, updated"/>
-			<dataarea name="flop" size="901120">
-				<rom name="eat mine (1989-11)(no one incorporated)[h mwb][updated].adf" size="901120" crc="6223c6ce" sha1="3ced7c1025dd31dd8d41486d3257fb5953d02f10"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="eatmine2" supported="no">
 		<description>Eat Mine 2</description>
 		<year>1991</year>
 		<publisher>No One Incorporated</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked"/>
+			<feature name="part_id" value="Hacked 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="eat mine 2 (1991)(no one incorporated)[h].adf" size="901120" crc="553b41fb" sha1="362ebf676723392ff1c83e7ab50c3b86dd0eb9e4"/>
 			</dataarea>
@@ -2423,9 +2374,46 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>No One Incorporated</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked"/>
+			<feature name="part_id" value="Hacked 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="eat mine 3 (1991)(no one incorporated)[h].adf" size="901120" crc="394d75a5" sha1="acd4ad9397bf57cef8324a3892acf8b41e57fd4f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eatmine" supported="no">
+		<description>Eat Mine (1989-11)</description>
+		<year>1989</year>
+		<publisher>No One Incorporated</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked MWB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="eat mine (1989-11)(no one incorporated)[h mwb].adf" size="901120" crc="c6e74bd4" sha1="707a0f6c65104c6fb00ebfdcc02f566331a4ec68"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked MWB, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="eat mine (1989-11)(no one incorporated)[h mwb][a].adf" size="901120" crc="2c339d2f" sha1="c5ae633760c2b171894a56a02c6c066ef673a57d"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked MWB, Alt 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="eat mine (1989-11)(no one incorporated)[h mwb][a2].adf" size="901120" crc="1d02218b" sha1="9fa9e1e1cd682824451eea4fc26df7fa78d9df84"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked MWB, Alt intro removed"/>
+			<dataarea name="flop" size="901120">
+				<rom name="eat mine (1989-11)(no one incorporated)[h mwb][a intro removed].adf" size="901120" crc="b948120e" sha1="6a4c652667fd6c470003f00b560f894739a39619"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<feature name="part_id" value="updated, Hacked MWB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="eat mine (1989-11)(no one incorporated)[h mwb][updated].adf" size="901120" crc="6223c6ce" sha1="3ced7c1025dd31dd8d41486d3257fb5953d02f10"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2846,85 +2834,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emcmine2" supported="no">
-		<description>EMC Mine 2 (ECS-AGA)</description>
-		<year>199?</year>
-		<publisher>Emerald Mine Club Holland</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="emc mine 2 (199x)(emerald mine club holland)(ecs-aga).adf" size="901120" crc="f3f3e4d1" sha1="503882d9d67c1b878405e41029fbc5eb8c39d6d4"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="emcmine3" supported="no">
-		<description>EMC Mine 3 (ECS-AGA)</description>
-		<year>199?</year>
-		<publisher>Emerald Mine Club Holland</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="emc mine 3 (199x)(emerald mine club holland)(ecs-aga).adf" size="901120" crc="f50b6d36" sha1="1d60bd07a5aa65ad2c42cda282e7a79c749fc016"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="emcmine4" supported="no">
-		<description>EMC Mine 4 (ECS-AGA)</description>
-		<year>199?</year>
-		<publisher>Emerald Mine Club Holland</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="emc mine 4 (199x)(emerald mine club holland)(ecs-aga).adf" size="901120" crc="2430c845" sha1="4ef2a918c3443a30eb8ae8bde5f06b3fcbd36177"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="emcmine5" supported="no">
-		<description>EMC Mine 5 (ECS-AGA, 1999-07-11)</description>
-		<year>1999</year>
-		<publisher>Emerald Mine Club Holland</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="emc mine 5 (1999-07-11)(emerald mine club holland)(ecs-aga).adf" size="901120" crc="b51bb06d" sha1="b8394c4cc8b1f5d746cf66dd8587b36f375ef9de"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="emerald4" supported="no">
-		<description>Emerald 4 Pro</description>
-		<year>1991</year>
-		<publisher>Synthetic Line</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="emerald 4 pro (1991)(synthetic line).adf" size="901120" crc="69000eda" sha1="85c6117dc604a944d5fffe23e65994dc3159e4a0"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald 4 pro (1991)(synthetic line)[a2].adf" size="901120" crc="c3941b8c" sha1="8a99f54e02efcc21e72c7dfcc4db294cf6953aa3"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 3"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald 4 pro (1991)(synthetic line)[a3].adf" size="901120" crc="99811e44" sha1="478b84e7632d27e4f0155021aadc075210d7bf21"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald 4 pro (1991)(synthetic line)[a].adf" size="901120" crc="5cfe83ff" sha1="12d219f1a3376a8df5eec26a2c586d36c7e7a222"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="emerald4_1" supported="no">
 		<description>Emerald 4 Pro Extra</description>
 		<year>1991</year>
 		<publisher>Synthetic Line</publisher>
@@ -2935,9 +2845,39 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald 4 pro extra (1991)(synthetic line)[a].adf" size="901120" crc="8e5ac803" sha1="c636e9b1eeb9f7bb5655ddb170fe68cfb2b18905"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="emerald4_1" supported="no">
+		<description>Emerald 4 Pro</description>
+		<year>1991</year>
+		<publisher>Synthetic Line</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="emerald 4 pro (1991)(synthetic line).adf" size="901120" crc="69000eda" sha1="85c6117dc604a944d5fffe23e65994dc3159e4a0"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald 4 pro (1991)(synthetic line)[a].adf" size="901120" crc="5cfe83ff" sha1="12d219f1a3376a8df5eec26a2c586d36c7e7a222"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald 4 pro (1991)(synthetic line)[a2].adf" size="901120" crc="c3941b8c" sha1="8a99f54e02efcc21e72c7dfcc4db294cf6953aa3"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 3"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald 4 pro (1991)(synthetic line)[a3].adf" size="901120" crc="99811e44" sha1="478b84e7632d27e4f0155021aadc075210d7bf21"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2975,31 +2915,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="emeraldd" supported="no">
-		<description>Emerald Dash</description>
-		<year>1995</year>
-		<publisher>Ruppelware</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-H"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald dash (1995)(ruppelware)[h emc-h].adf" size="901120" crc="ff7d0c98" sha1="79cc3108dbbc2068d3290f74c833e5b440a3fe5f"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-H, Alt 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald dash (1995)(ruppelware)[h emc-h][a2].adf" size="901120" crc="cdf6af16" sha1="3470d2b81d685810afb35c7894ba72e28fd34c45"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-H, Alt"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald dash (1995)(ruppelware)[h emc-h][a].adf" size="901120" crc="e09936fa" sha1="09d27582880e18fe0b4994fddf7eab2c8e1efaa6"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="emeraldd_1" supported="no">
 		<description>Emerald Dash 2</description>
 		<year>1995</year>
 		<publisher>Ruppelware</publisher>
@@ -3012,7 +2927,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldd_2" supported="no">
+	<software name="emeraldd_1" supported="no">
 		<description>Emerald Dash 3</description>
 		<year>1995</year>
 		<publisher>Ruppelware</publisher>
@@ -3021,6 +2936,31 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked EMC-H"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald dash 3 (1995)(ruppelware)[h emc-h].adf" size="901120" crc="51c47274" sha1="1fb70841cdb146f31bb94d2f86764a2d12d8297e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="emeraldd_2" supported="no">
+		<description>Emerald Dash</description>
+		<year>1995</year>
+		<publisher>Ruppelware</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-H"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald dash (1995)(ruppelware)[h emc-h].adf" size="901120" crc="ff7d0c98" sha1="79cc3108dbbc2068d3290f74c833e5b440a3fe5f"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-H, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald dash (1995)(ruppelware)[h emc-h][a].adf" size="901120" crc="e09936fa" sha1="09d27582880e18fe0b4994fddf7eab2c8e1efaa6"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-H, Alt 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald dash (1995)(ruppelware)[h emc-h][a2].adf" size="901120" crc="cdf6af16" sha1="3470d2b81d685810afb35c7894ba72e28fd34c45"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3062,18 +3002,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="emeraldf" supported="no">
-		<description>Emerald Freak I</description>
-		<year>1990</year>
-		<publisher>Coca-Cola Freak</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="emerald freak i (1990)(coca-cola freak).adf" size="901120" crc="7c35fb5e" sha1="1bb4344616815db8f1653fbba7402af72f7abd22"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="emeraldf_1" supported="no">
 		<description>Emerald Freak II</description>
 		<year>1990</year>
 		<publisher>Coca-Cola Freak</publisher>
@@ -3081,6 +3009,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="emerald freak ii (1990)(coca-cola freak).adf" size="901120" crc="150e9455" sha1="5356e219353d72fd409288a7c3916b62dcb33e24"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="emeraldf_1" supported="no">
+		<description>Emerald Freak I</description>
+		<year>1990</year>
+		<publisher>Coca-Cola Freak</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="emerald freak i (1990)(coca-cola freak).adf" size="901120" crc="7c35fb5e" sha1="1bb4344616815db8f1653fbba7402af72f7abd22"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3098,7 +3038,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldh_1" supported="no">
+	<software name="emeraldh_a" cloneof="emeraldh" supported="no">
 		<description>Emerald Head (1)</description>
 		<year>1993</year>
 		<publisher>Blockheads</publisher>
@@ -3122,7 +3062,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mine 10 (1990)(no one inc)[a].adf" size="901120" crc="b4d77b1c" sha1="4416c564e847abf2d02af75c3836a16e8ad000ed"/>
 			</dataarea>
@@ -3183,7 +3123,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-H, Alt"/>
+			<feature name="part_id" value="Hacked EMC-H, Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mine 14 - royal boulderdash conv. (199x)(no one inc)[h emc-h][a].adf" size="901120" crc="53156608" sha1="135cdffe0992479285693651d74d21a33902d7e8"/>
 			</dataarea>
@@ -3324,44 +3264,20 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald mine i - kelly's rescue (1990)(ruppelware)[a].adf" size="901120" crc="a905b582" sha1="cb1bec4dd511d9e35b7801161e9f067d4072dcd9"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
 			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mine i - kelly's rescue (1990)(ruppelware)[a2].adf" size="901120" crc="5003bfd3" sha1="4f107da8823375ab78effb26846a8329a596f820"/>
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald mine i - kelly's rescue (1990)(ruppelware)[a].adf" size="901120" crc="a905b582" sha1="cb1bec4dd511d9e35b7801161e9f067d4072dcd9"/>
-			</dataarea>
-		</part>
 	</software>
 
 	<software name="emeraldm_16" supported="no">
-		<description>Emerald Mine III</description>
-		<year>19??</year>
-		<publisher>No One Inc - Blockheads</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="emerald mine iii (19xx)(no one inc - blockheads).adf" size="901120" crc="b07dad5a" sha1="b9f5fa0e21337bb7abcd5d78e8e85b3148960947"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald mine iii (19xx)(no one inc - blockheads)[a].adf" size="901120" crc="1c505fa5" sha1="195da7aa4cc16d7405e8e676a9094fb0ba232465"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Virus BGS9"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald mine iii (19xx)(no one inc - blockheads)[v bgs9].adf" size="901120" crc="d7bcd7c9" sha1="86f47ca06e338f5efa78660cf319bed2fd077eef" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="emeraldm_17" supported="no">
 		<description>Emerald Mine III Prof</description>
 		<year>1990</year>
 		<publisher>No One Inc - Blockheads</publisher>
@@ -3391,7 +3307,43 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="emeraldm_17" supported="no">
+		<description>Emerald Mine III</description>
+		<year>19??</year>
+		<publisher>No One Inc - Blockheads</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="emerald mine iii (19xx)(no one inc - blockheads).adf" size="901120" crc="b07dad5a" sha1="b9f5fa0e21337bb7abcd5d78e8e85b3148960947"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald mine iii (19xx)(no one inc - blockheads)[a].adf" size="901120" crc="1c505fa5" sha1="195da7aa4cc16d7405e8e676a9094fb0ba232465"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Virus BGS9"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald mine iii (19xx)(no one inc - blockheads)[v bgs9].adf" size="901120" crc="d7bcd7c9" sha1="86f47ca06e338f5efa78660cf319bed2fd077eef" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="emeraldm_18" supported="no">
+		<description>Emerald Mine IV Adv.</description>
+		<year>19??</year>
+		<publisher>No One Inc - Blockheads</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="emerald mine iv adv. (19xx)(no one inc - blockheads).adf" size="901120" crc="bac3cd9f" sha1="7deb10c03cd3e63640481d2d23202750113e143d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="emeraldm_19" supported="no">
 		<description>Emerald Mine IV</description>
 		<year>19??</year>
 		<publisher>No One Inc - Blockheads</publisher>
@@ -3402,39 +3354,27 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald mine iv (19xx)(no one inc - blockheads)[a].adf" size="901120" crc="5505c6aa" sha1="7a3edb25efc89ad09a2dd3fab373e40622857ec2"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
 			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mine iv (19xx)(no one inc - blockheads)[a2].adf" size="901120" crc="371bbd0c" sha1="a0c26d8932c00455b8b86815862072b127bf3f5f"/>
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
+		<part name="flop4" interface="floppy_3_5">
 			<feature name="part_id" value="Alt 3"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mine iv (19xx)(no one inc - blockheads)[a3].adf" size="901120" crc="508169fa" sha1="f5252471a3d04ff916da48cd0a3accb2a5b003ee"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald mine iv (19xx)(no one inc - blockheads)[a].adf" size="901120" crc="5505c6aa" sha1="7a3edb25efc89ad09a2dd3fab373e40622857ec2"/>
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_3_5">
 			<feature name="part_id" value="Hacked Aces2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mine iv (19xx)(no one inc - blockheads)[h aces2].adf" size="901120" crc="81c86665" sha1="14df890e683dd6fd425c6fcd2b04790bad65e58c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="emeraldm_19" supported="no">
-		<description>Emerald Mine IV Adv.</description>
-		<year>19??</year>
-		<publisher>No One Inc - Blockheads</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="emerald mine iv adv. (19xx)(no one inc - blockheads).adf" size="901120" crc="bac3cd9f" sha1="7deb10c03cd3e63640481d2d23202750113e143d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3466,6 +3406,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="emeraldm_22" supported="no">
+		<description>Emerald Mine Tools (AGA, v6.03, 1998-05-08)</description>
+		<year>1998</year>
+		<publisher>No One Inc</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald mine tools v6.03 (1998-05-08)(no one inc)(aga)(disk 1 of 2).adf" size="901120" crc="b5e1676b" sha1="af4cec6a21ca7567519a11395c30e20c0373d715"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald mine tools v6.03 (1998-05-08)(no one inc)(aga)(disk 2 of 2).adf" size="901120" crc="b02ca17c" sha1="a5c18eb954d50db610be5d7f0f545f9eae776e0a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="emeraldm_22_a" cloneof="emeraldm_22" supported="no">
 		<description>Emerald Mine Tools (v3.1, 1991-01-20)</description>
 		<year>1991</year>
 		<publisher>No One Inc</publisher>
@@ -3484,7 +3443,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_23" supported="no">
+	<software name="emeraldm_22_b" cloneof="emeraldm_22" supported="no">
 		<description>Emerald Mine Tools (v3.51, 1992-06-03)</description>
 		<year>1992</year>
 		<publisher>No One Inc</publisher>
@@ -3508,14 +3467,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 2, Alt"/>
+			<feature name="part_id" value="Disk 2 of 2, Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mine tools v3.51 (1992-06-03)(no one inc)(disk 2 of 2)[a].adf" size="901120" crc="6c05482a" sha1="70e5d3591176f9bdf1147f562df25f55c623ee05"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="emeraldm_24" supported="no">
+	<software name="emeraldm_22_c" cloneof="emeraldm_22" supported="no">
 		<description>Emerald Mine Tools (v4.20, 1993-01-30)</description>
 		<year>1993</year>
 		<publisher>No One Inc</publisher>
@@ -3534,7 +3493,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_25" supported="no">
+	<software name="emeraldm_22_d" cloneof="emeraldm_22" supported="no">
 		<description>Emerald Mine Tools (v4.60, 1993-04-24)</description>
 		<year>1993</year>
 		<publisher>No One Inc</publisher>
@@ -3546,15 +3505,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2, Alt user data"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald mine tools v4.60 (1993-04-24)(no one inc)(disk 1 of 2)[a user data].adf" size="901120" crc="c022f7ce" sha1="2068330c85ac84768c744afb2c494b669f40b345"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
 			<feature name="part_id" value="Disk 1 of 2, Alt 2 user data"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mine tools v4.60 (1993-04-24)(no one inc)(disk 1 of 2)[a2 user data].adf" size="901120" crc="889582bf" sha1="112f5d5dacd93e4fcad83a730ce4feadcf1fa40a"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2, Alt user data"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald mine tools v4.60 (1993-04-24)(no one inc)(disk 1 of 2)[a user data].adf" size="901120" crc="c022f7ce" sha1="2068330c85ac84768c744afb2c494b669f40b345"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
@@ -3565,7 +3524,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_26" supported="no">
+	<software name="emeraldm_22_e" cloneof="emeraldm_22" supported="no">
 		<description>Emerald Mine Tools (v5.00, 1994-04-09)</description>
 		<year>1994</year>
 		<publisher>No One Inc</publisher>
@@ -3596,26 +3555,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_27" supported="no">
-		<description>Emerald Mine Tools (AGA, v6.03, 1998-05-08)</description>
-		<year>1998</year>
-		<publisher>No One Inc</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald mine tools v6.03 (1998-05-08)(no one inc)(aga)(disk 1 of 2).adf" size="901120" crc="b5e1676b" sha1="af4cec6a21ca7567519a11395c30e20c0373d715"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald mine tools v6.03 (1998-05-08)(no one inc)(aga)(disk 2 of 2).adf" size="901120" crc="b02ca17c" sha1="a5c18eb954d50db610be5d7f0f545f9eae776e0a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="emeraldm_28" supported="no">
+	<software name="emeraldm_22_f" cloneof="emeraldm_22" supported="no">
 		<description>Emerald Mine Tools (v6.03, 1998-05-08)</description>
 		<year>1998</year>
 		<publisher>No One Inc</publisher>
@@ -3634,7 +3574,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_29" supported="no">
+	<software name="emeraldm_23" supported="no">
 		<description>Emerald Mine Tutorial 1</description>
 		<year>1993</year>
 		<publisher>No One Inc</publisher>
@@ -3647,7 +3587,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_30" supported="no">
+	<software name="emeraldm_24" supported="no">
 		<description>Emerald Mine Tutorial 2</description>
 		<year>1991</year>
 		<publisher>No One Inc</publisher>
@@ -3658,20 +3598,20 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald mine tutorial 2 (1991)(no one inc)[a].adf" size="901120" crc="88668d08" sha1="6b80ed853d0802ae0bf7c837ecf7d41f02408f52"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
 			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mine tutorial 2 (1991)(no one inc)[a2].adf" size="901120" crc="0a3fb803" sha1="e4ce859311afd669b74ca3987c109382661d6aee"/>
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald mine tutorial 2 (1991)(no one inc)[a].adf" size="901120" crc="88668d08" sha1="6b80ed853d0802ae0bf7c837ecf7d41f02408f52"/>
-			</dataarea>
-		</part>
 	</software>
 
-	<software name="emeraldm_31" supported="no">
+	<software name="emeraldm_25" supported="no">
 		<description>Emerald Mine Tutorial 3</description>
 		<year>1992</year>
 		<publisher>No One Inc</publisher>
@@ -3684,7 +3624,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_32" supported="no">
+	<software name="emeraldm_26" supported="no">
 		<description>Emerald Mine Utilities</description>
 		<year>1990</year>
 		<publisher>Ruppelware</publisher>
@@ -3697,19 +3637,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_33" supported="no">
-		<description>Emerald Mine (Playable Demo, v6.00c, 1995-12-17)</description>
-		<year>1995</year>
-		<publisher>Emerald Mine Club Holland</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="emerald mine v6.00c (demo-playable) (1995-12-17)(emerald mine club holland).adf" size="901120" crc="b768e486" sha1="f15978d11286b589679b0c5de94791764b72181e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="emeraldm_34" supported="no">
+	<software name="emeraldm_27" supported="no">
 		<description>Emerald Mine VIII</description>
 		<year>19??</year>
 		<publisher>No One Inc</publisher>
@@ -3721,7 +3649,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_35" supported="no">
+	<software name="emeraldm_28" supported="no">
+		<description>Emerald Mine (Playable Demo, v6.00c, 1995-12-17)</description>
+		<year>1995</year>
+		<publisher>Emerald Mine Club Holland</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="emerald mine v6.00c (demo-playable) (1995-12-17)(emerald mine club holland).adf" size="901120" crc="b768e486" sha1="f15978d11286b589679b0c5de94791764b72181e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="emeraldm_29" supported="no">
 		<description>Emerald Mines 5</description>
 		<year>1988</year>
 		<publisher>No One Inc</publisher>
@@ -3734,7 +3674,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_36" supported="no">
+	<software name="emeraldm_30" supported="no">
 		<description>Emerald Mines 6</description>
 		<year>19??</year>
 		<publisher>No One Inc</publisher>
@@ -3747,7 +3687,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_37" supported="no">
+	<software name="emeraldm_31" supported="no">
 		<description>Emerald Mines 7</description>
 		<year>19??</year>
 		<publisher>No One Inc</publisher>
@@ -3760,80 +3700,80 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_38" supported="no">
+	<software name="emeraldm_32" supported="no">
 		<description>Emerald Mines CD32</description>
 		<year>1994</year>
 		<publisher>Almathera</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 01 of 12, Program, Hacked Backlash, HD, CD32 rip, LHA archive"/>
+			<feature name="part_id" value="Disk 01 of 12, Program, HD, CD32 rip, LHA archive, Hacked Backlash"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mines cd32 (1994)(almathera)(disk 01 of 12)(program)[h backlash][hd, cd32 rip, lha archive].adf" size="901120" crc="fc06a6fb" sha1="9cb5c7dbad19679d8e8dc0836a8e6d24a2819484"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 02 of 12, GFX1, Hacked Backlash, HD, CD32 rip, LHA archive"/>
+			<feature name="part_id" value="Disk 02 of 12, GFX1, HD, CD32 rip, LHA archive, Hacked Backlash"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mines cd32 (1994)(almathera)(disk 02 of 12)(gfx1)[h backlash][hd, cd32 rip, lha archive].adf" size="901120" crc="55311fee" sha1="305f6ef3c52a9362338590319c7ecf0613bc0180"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 03 of 12, GFX2, Hacked Backlash, HD, CD32 rip, LHA archive"/>
+			<feature name="part_id" value="Disk 03 of 12, GFX2, HD, CD32 rip, LHA archive, Hacked Backlash"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mines cd32 (1994)(almathera)(disk 03 of 12)(gfx2)[h backlash][hd, cd32 rip, lha archive].adf" size="901120" crc="4fd8d422" sha1="d5046b51e91a549c48ae941e571592e928bb8eee"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 04 of 12, Lev1, Hacked Backlash, HD, CD32 rip, LHA archive"/>
+			<feature name="part_id" value="Disk 04 of 12, Lev1, HD, CD32 rip, LHA archive, Hacked Backlash"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mines cd32 (1994)(almathera)(disk 04 of 12)(lev1)[h backlash][hd, cd32 rip, lha archive].adf" size="901120" crc="8aafeac1" sha1="23b1cae4672c3389eb1ac713bfd1437ea0bb8cea"/>
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 05 of 12, Lev2, Hacked Backlash, HD, CD32 rip, LHA archive"/>
+			<feature name="part_id" value="Disk 05 of 12, Lev2, HD, CD32 rip, LHA archive, Hacked Backlash"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mines cd32 (1994)(almathera)(disk 05 of 12)(lev2)[h backlash][hd, cd32 rip, lha archive].adf" size="901120" crc="aacbe82d" sha1="e72f063edbd017b61ff5ba0f78aeb3064dc2faf1"/>
 			</dataarea>
 		</part>
 		<part name="flop6" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 06 of 12, Lev3, Hacked Backlash, HD, CD32 rip, LHA archive"/>
+			<feature name="part_id" value="Disk 06 of 12, Lev3, HD, CD32 rip, LHA archive, Hacked Backlash"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mines cd32 (1994)(almathera)(disk 06 of 12)(lev3)[h backlash][hd, cd32 rip, lha archive].adf" size="901120" crc="a6d6061d" sha1="6a4d09298633c0654d75917234c1b8280a46de58"/>
 			</dataarea>
 		</part>
 		<part name="flop7" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 07 of 12, Lev4, Hacked Backlash, HD, CD32 rip, LHA archive"/>
+			<feature name="part_id" value="Disk 07 of 12, Lev4, HD, CD32 rip, LHA archive, Hacked Backlash"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mines cd32 (1994)(almathera)(disk 07 of 12)(lev4)[h backlash][hd, cd32 rip, lha archive].adf" size="901120" crc="a33dd360" sha1="e468c9a06ebc859e26962b66866da3674100e29c"/>
 			</dataarea>
 		</part>
 		<part name="flop8" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 08 of 12, Lev5, Hacked Backlash, HD, CD32 rip, LHA archive"/>
+			<feature name="part_id" value="Disk 08 of 12, Lev5, HD, CD32 rip, LHA archive, Hacked Backlash"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mines cd32 (1994)(almathera)(disk 08 of 12)(lev5)[h backlash][hd, cd32 rip, lha archive].adf" size="901120" crc="2a349d43" sha1="f2d55342caa917c25ebc58e2019a4e1030ffaebd"/>
 			</dataarea>
 		</part>
 		<part name="flop9" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 10 of 12, Lev7, Hacked Backlash, HD, CD32 rip, LHA archive"/>
+			<feature name="part_id" value="Disk 10 of 12, Lev7, HD, CD32 rip, LHA archive, Hacked Backlash"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mines cd32 (1994)(almathera)(disk 10 of 12)(lev7)[h backlash][hd, cd32 rip, lha archive].adf" size="901120" crc="b5ba2144" sha1="9a45053f93e147ca25e24409b195c6bd04cb0409"/>
 			</dataarea>
 		</part>
 		<part name="flop10" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 11 of 12, Lev8, Hacked Backlash, HD, CD32 rip, LHA archive"/>
+			<feature name="part_id" value="Disk 11 of 12, Lev8, HD, CD32 rip, LHA archive, Hacked Backlash"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mines cd32 (1994)(almathera)(disk 11 of 12)(lev8)[h backlash][hd, cd32 rip, lha archive].adf" size="901120" crc="ed150e39" sha1="9da9a0ee5f910fc0e2923cb52dc01bffa59d9dbc"/>
 			</dataarea>
 		</part>
 		<part name="flop11" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 12 of 12, Lev9, Hacked Backlash, HD, CD32 rip, LHA archive"/>
+			<feature name="part_id" value="Disk 12 of 12, Lev9, HD, CD32 rip, LHA archive, Hacked Backlash"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mines cd32 (1994)(almathera)(disk 12 of 12)(lev9)[h backlash][hd, cd32 rip, lha archive].adf" size="901120" crc="3680973b" sha1="c786ed3d9929c37551f1f11b27be3663598760dd"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="emeraldm_39" supported="no">
+	<software name="emeraldm_33" supported="no">
 		<description>Emerald Mines IV (Public Domain)</description>
 		<year>19??</year>
 		<publisher>New Emerald Mines</publisher>
@@ -3857,27 +3797,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked No One Inc - Blockheads, Alt"/>
+			<feature name="part_id" value="Hacked No One Inc - Blockheads, Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald runner mine 1 (1992)(runners)[h no one inc - blockheads][a].adf" size="901120" crc="8aa11eef" sha1="25b5ef823ce902f1e02cc613781b1d40a31b38f0"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="theexcep" supported="no">
-		<description>The Exception One</description>
-		<year>1990</year>
-		<publisher>Leo - Stefan</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="exception one, the (1990)(leo - stefan).adf" size="901120" crc="256cd7a3" sha1="bf4e69f1536acb264dcdb951d750b60aa3f8ac20"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="901120">
-				<rom name="exception one, the (1990)(leo - stefan)[a].adf" size="901120" crc="bf2d9b9a" sha1="c964d32f8a4bd9b0b06f53289557ebb8cdb4d0bf"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3888,7 +3810,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Leo - Stefan</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Underdumped"/>
+			<feature name="part_id" value="Underdumped 1"/>
 			<dataarea name="flop" size="889856">
 				<rom name="expert mine 1 (1992)(leo - stefan)[u].adf" size="889856" crc="ac2d0836" sha1="b79dd90953aedd0682346c11c77cd3529efde1ae" status="baddump"/>
 			</dataarea>
@@ -3919,7 +3841,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="expert mine 3 (1993)(leo - stefan)[a].adf" size="901120" crc="1a711df3" sha1="74e62589a4b68b4365255ac2976acfda46ce57a0"/>
 			</dataarea>
@@ -4058,15 +3980,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked SSC - EMC-A, Alt 2"/>
+			<feature name="part_id" value="Hacked SSC - EMC-A, Alt 1"/>
 			<dataarea name="flop" size="901120">
-				<rom name="gold nuggets 1 (1992)(skippy)[h ssc - emc-a][a2].adf" size="901120" crc="d2c720bd" sha1="4b0655e4a70d5bced59860f7faa05a210fd9ad7e"/>
+				<rom name="gold nuggets 1 (1992)(skippy)[h ssc - emc-a][a].adf" size="901120" crc="a5886870" sha1="972a81fbfcdc16e025e41e2c23b0d0bc95a753af"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked SSC - EMC-A, Alt"/>
+			<feature name="part_id" value="Hacked SSC - EMC-A, Alt 2"/>
 			<dataarea name="flop" size="901120">
-				<rom name="gold nuggets 1 (1992)(skippy)[h ssc - emc-a][a].adf" size="901120" crc="a5886870" sha1="972a81fbfcdc16e025e41e2c23b0d0bc95a753af"/>
+				<rom name="gold nuggets 1 (1992)(skippy)[h ssc - emc-a][a2].adf" size="901120" crc="d2c720bd" sha1="4b0655e4a70d5bced59860f7faa05a210fd9ad7e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4077,15 +3999,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Skippy</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="gold nuggets 2 (1992)(skippy)[h emc-a][wb].adf" size="901120" crc="885ad78a" sha1="498bd5e711cc112d5ece76bb41f7488901c3c83b"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Hacked SSC - EMC-A"/>
 			<dataarea name="flop" size="901120">
 				<rom name="gold nuggets 2 (1992)(skippy)[h ssc - emc-a].adf" size="901120" crc="3b77fc11" sha1="788e62329014ed287c33a30904b6baf3a2c530be"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Hacked EMC-A"/>
+			<dataarea name="flop" size="901120">
+				<rom name="gold nuggets 2 (1992)(skippy)[h emc-a][wb].adf" size="901120" crc="885ad78a" sha1="498bd5e711cc112d5ece76bb41f7488901c3c83b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4117,14 +4039,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="hauntedm" supported="no">
-		<description>Haunted Mine I</description>
-		<year>19??</year>
+		<description>Haunted Mine III</description>
+		<year>1992</year>
 		<publisher>Skippy</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked De Bond"/>
 			<dataarea name="flop" size="901120">
-				<rom name="haunted mine i (19xx)(skippy)[h de bond].adf" size="901120" crc="953cbc34" sha1="8b92e8292ac0a05a6c9b57206b7b3a9786bd8846"/>
+				<rom name="haunted mine iii (1992)(skippy).adf" size="901120" crc="97cc12f6" sha1="44b8a3321af4e600cca60d0da02c62877bff6a62"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4142,18 +4063,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="hauntedm_2" supported="no">
-		<description>Haunted Mine III</description>
-		<year>1992</year>
-		<publisher>Skippy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="haunted mine iii (1992)(skippy).adf" size="901120" crc="97cc12f6" sha1="44b8a3321af4e600cca60d0da02c62877bff6a62"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="hauntedm_3" supported="no">
 		<description>Haunted Mine IV</description>
 		<year>1992</year>
 		<publisher>Skippy</publisher>
@@ -4161,6 +4070,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="haunted mine iv (1992)(skippy).adf" size="901120" crc="e0a662fd" sha1="3378d93094812abb71140be11584f2d767bfdb46"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hauntedm_3" supported="no">
+		<description>Haunted Mine I</description>
+		<year>19??</year>
+		<publisher>Skippy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked De Bond"/>
+			<dataarea name="flop" size="901120">
+				<rom name="haunted mine i (19xx)(skippy)[h de bond].adf" size="901120" crc="953cbc34" sha1="8b92e8292ac0a05a6c9b57206b7b3a9786bd8846"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4179,20 +4101,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="intoalad" supported="no">
-		<description>Into Aladdin's Caves I (1995-06)</description>
-		<year>1995</year>
+		<description>Into Aladdin's Caves III</description>
+		<year>199?</year>
 		<publisher>Skippy</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Fixed EMC-H"/>
 			<dataarea name="flop" size="901120">
-				<rom name="into aladdin's caves i (1995-06)(skippy)[f emc-h].adf" size="901120" crc="960f0f58" sha1="ea306158e5bcae8baaa6c44993dc41cd57ac6035"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked MWB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="into aladdin's caves i (1995-06)(skippy)[h mwb].adf" size="901120" crc="03a00fa1" sha1="ab94fbe1d655d9b41f98c0fe467c511f960baac8"/>
+				<rom name="into aladdin's caves iii (199x)(skippy)[f emc-h].adf" size="901120" crc="e1227c7a" sha1="fdc6bff1088cd869ccab3ce777df56b6742115b8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4217,19 +4133,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="intoalad_2" supported="no">
-		<description>Into Aladdin's Caves III</description>
-		<year>199?</year>
-		<publisher>Skippy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Fixed EMC-H"/>
-			<dataarea name="flop" size="901120">
-				<rom name="into aladdin's caves iii (199x)(skippy)[f emc-h].adf" size="901120" crc="e1227c7a" sha1="fdc6bff1088cd869ccab3ce777df56b6742115b8"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="intoalad_3" supported="no">
 		<description>Into Aladdin's Caves IV</description>
 		<year>199?</year>
 		<publisher>Skippy</publisher>
@@ -4248,6 +4151,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="intoalad_3" supported="no">
+		<description>Into Aladdin's Caves I (1995-06)</description>
+		<year>1995</year>
+		<publisher>Skippy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Fixed EMC-H"/>
+			<dataarea name="flop" size="901120">
+				<rom name="into aladdin's caves i (1995-06)(skippy)[f emc-h].adf" size="901120" crc="960f0f58" sha1="ea306158e5bcae8baaa6c44993dc41cd57ac6035"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked MWB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="into aladdin's caves i (1995-06)(skippy)[h mwb].adf" size="901120" crc="03a00fa1" sha1="ab94fbe1d655d9b41f98c0fe467c511f960baac8"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="intothec" supported="no">
 		<description>Into the Cold Caves</description>
 		<year>1991</year>
@@ -4261,6 +4183,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="intothed" supported="no">
+		<description>Into the Dusty Mines II (ECS-AGA)</description>
+		<year>1995</year>
+		<publisher>Futureman - ET</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="into the dusty mines ii (1995)(futureman - et)(ecs-aga).adf" size="901120" crc="22a04c86" sha1="88ce3447c47a6fcd741b11f867b1ec89f9dc0656"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="intothed_1" supported="no">
 		<description>Into the Dusty Mines I (ECS-AGA, 1995-09-30)</description>
 		<year>1995</year>
 		<publisher>Futureman - ET</publisher>
@@ -4274,18 +4208,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked MWB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="into the dusty mines i (1995-09-30)(futureman - et)(ecs-aga)[h mwb].adf" size="901120" crc="b8b0df09" sha1="59e6a524dc9ea9a5d9f26659017ecdffa1ca69f8"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="intothed_1" supported="no">
-		<description>Into the Dusty Mines II (ECS-AGA)</description>
-		<year>1995</year>
-		<publisher>Futureman - ET</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="into the dusty mines ii (1995)(futureman - et)(ecs-aga).adf" size="901120" crc="22a04c86" sha1="88ce3447c47a6fcd741b11f867b1ec89f9dc0656"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4381,7 +4303,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-GB, Alt"/>
+			<feature name="part_id" value="Hacked EMC-GB, Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="kevinmine 1 (1993)(kevin)[h emc-gb][a].adf" size="901120" crc="6798406f" sha1="70c3c9b1b10b68d7b1364d7a1687c1aa987d284f"/>
 			</dataarea>
@@ -4400,7 +4322,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-GB, Alt"/>
+			<feature name="part_id" value="Hacked EMC-GB, Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="kevinmine 2 (1993)(kevin)[h emc-gb][a].adf" size="901120" crc="ee98ca7b" sha1="97c09cc7e95e4a371bfbedcf31d90fcf08659db3"/>
 			</dataarea>
@@ -4421,18 +4343,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="kidsfunm" supported="no">
-		<description>Kid's Fun Mine</description>
-		<year>19??</year>
-		<publisher>No One Inc</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="kid's fun mine (19xx)(no one inc).adf" size="901120" crc="80739c66" sha1="a479e5d97e694693fb0a8f4f3babbd9c49193d22"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="kidsfunm_1" supported="no">
 		<description>Kid's Fun Mine 1</description>
 		<year>19??</year>
 		<publisher>Unknown Kid</publisher>
@@ -4441,6 +4351,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked Millenium"/>
 			<dataarea name="flop" size="901120">
 				<rom name="kid's fun mine 1 (19xx)(unknown kid)[h millenium].adf" size="901120" crc="084e764c" sha1="d0bdbae2351af2768b6aa653bda4c776f372e99a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kidsfunm_1" supported="no">
+		<description>Kid's Fun Mine</description>
+		<year>19??</year>
+		<publisher>No One Inc</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="kid's fun mine (19xx)(no one inc).adf" size="901120" crc="80739c66" sha1="a479e5d97e694693fb0a8f4f3babbd9c49193d22"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4495,15 +4417,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked MES, Alt 2"/>
+			<feature name="part_id" value="Hacked MES, Alt 1"/>
 			<dataarea name="flop" size="901120">
-				<rom name="laser's emerald mine disk (1988)(laser)[h mes][a2].adf" size="901120" crc="a584180a" sha1="a952a6ccf02e8a71a79297e664f1948072037b01"/>
+				<rom name="laser's emerald mine disk (1988)(laser)[h mes][a].adf" size="901120" crc="b9608055" sha1="aab1514fb4454f3deed4e81b70ceb7d9dc7cf179"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked MES, Alt"/>
+			<feature name="part_id" value="Hacked MES, Alt 2"/>
 			<dataarea name="flop" size="901120">
-				<rom name="laser's emerald mine disk (1988)(laser)[h mes][a].adf" size="901120" crc="b9608055" sha1="aab1514fb4454f3deed4e81b70ceb7d9dc7cf179"/>
+				<rom name="laser's emerald mine disk (1988)(laser)[h mes][a2].adf" size="901120" crc="a584180a" sha1="a952a6ccf02e8a71a79297e664f1948072037b01"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4568,13 +4490,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="marathon mine part 2 (1989)(no one inc - blockheads)[a].adf" size="901120" crc="56be7f6e" sha1="c1e8acbb01fe85d1cfa73e8a5774b41c6ca03a74"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Bad 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="marathon mine part 2 (1989)(no one inc - blockheads)[b].adf" size="901120" crc="37d65ea2" sha1="a401be41fc26e679ba76096f4e2deac5f097d360" status="baddump"/>
 			</dataarea>
@@ -4601,18 +4523,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="new emerald mines i (1994)(illegal s).adf" size="901120" crc="03d8e42d" sha1="8d6d5babaac6d8e3792d8ab917005aeb91914017"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thenewem" supported="no">
-		<description>The New Emerald Mines</description>
-		<year>1988</year>
-		<publisher>PGM - DRD</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="new emerald mines, the (1988)(pgm - drd).adf" size="901120" crc="8b524790" sha1="7760896a764b8f8246253156ca9d1a89580d660b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4666,7 +4576,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="no one mine 02 (1990)(no one inc)[a].adf" size="901120" crc="4c32bb34" sha1="1b697c9c596b4056dc97a16816baa1d496db3612"/>
 			</dataarea>
@@ -4733,7 +4643,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="no one mine 07 (1991)(no one inc)[a].adf" size="901120" crc="856f6bcd" sha1="ae86c0b7ae9fd45110d48ff643fbc4b065d140da"/>
 			</dataarea>
@@ -4775,7 +4685,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="no one mine 10 (1991)(no one inc)[a].adf" size="901120" crc="fb05da27" sha1="760f2233aaadacb7d54e17ea0105670c3ba967fe"/>
 			</dataarea>
@@ -4855,7 +4765,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="noonemin_16" supported="no">
+	<software name="noonemin_15_a" cloneof="noonemin_15" supported="no">
 		<description>No One Mine 16 (1)</description>
 		<year>1993</year>
 		<publisher>No One Inc</publisher>
@@ -4868,7 +4778,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="noonemin_17" supported="no">
+	<software name="noonemin_16" supported="no">
 		<description>No One Mine 17</description>
 		<year>1993</year>
 		<publisher>No One Inc</publisher>
@@ -4881,7 +4791,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="noonemin_18" supported="no">
+	<software name="noonemin_17" supported="no">
 		<description>No One Mine 18</description>
 		<year>1994</year>
 		<publisher>No One Inc</publisher>
@@ -4892,14 +4802,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="no one mine 18 (1994)(no one inc)[a].adf" size="901120" crc="92faf35a" sha1="878b8e88da01c297137c4e9168665f0e505a57fd"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="noonemin_19" supported="no">
+	<software name="noonemin_18" supported="no">
 		<description>No One Mine 19 (AGA)</description>
 		<year>1995</year>
 		<publisher>No One Inc</publisher>
@@ -4910,14 +4820,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="no one mine 19 (1995)(no one inc)(aga)[a].adf" size="901120" crc="921338bf" sha1="4fd8ed1d074213852d98db2f4866328604fc8f80"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="noonemin_20" supported="no">
+	<software name="noonemin_19" supported="no">
 		<description>No One Mine 20 (AGA)</description>
 		<year>1995</year>
 		<publisher>No One Inc</publisher>
@@ -4930,6 +4840,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="normalmi" supported="no">
+		<description>Normal Mine 10</description>
+		<year>1996</year>
+		<publisher>Scorpio - Black Lady</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="normal mine 10 (1996)(scorpio - black lady).adf" size="901120" crc="341467cb" sha1="fe7124295c7a4935e90bc36810046b345250af51"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="normalmi_1" supported="no">
 		<description>Normal Mine 1</description>
 		<year>1995</year>
 		<publisher>Scorpio - Black Lady - Daniel</publisher>
@@ -4938,18 +4860,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked EMC-H"/>
 			<dataarea name="flop" size="901120">
 				<rom name="normal mine 1 (1995)(scorpio - black lady - daniel)[h emc-h].adf" size="901120" crc="4db577e4" sha1="eebb6b086eea0d96c00cb5222d8cfaf6f0c6b247"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="normalmi_1" supported="no">
-		<description>Normal Mine 10</description>
-		<year>1996</year>
-		<publisher>Scorpio - Black Lady</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="normal mine 10 (1996)(scorpio - black lady).adf" size="901120" crc="341467cb" sha1="fe7124295c7a4935e90bc36810046b345250af51"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5018,19 +4928,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="ohnomore" supported="no">
-		<description>Oh! No More Yams</description>
-		<year>1993</year>
-		<publisher>Skippy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A"/>
-			<dataarea name="flop" size="901120">
-				<rom name="oh no more yams (1993)(skippy)[h emc-a].adf" size="901120" crc="b4697d98" sha1="af7346ec7bbe4f6abefd3f4da0cbf8e810ba8ac8"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ohnomore_1" supported="no">
 		<description>Oh! No More Yams 2</description>
 		<year>1993</year>
 		<publisher>Skippy</publisher>
@@ -5039,6 +4936,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked EMC-A"/>
 			<dataarea name="flop" size="901120">
 				<rom name="oh no more yams 2 (1993)(skippy)[h emc-a].adf" size="901120" crc="1d8214f2" sha1="2c5d33cf496e86cb604297131ba7660b86b73589"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ohnomore_1" supported="no">
+		<description>Oh! No More Yams</description>
+		<year>1993</year>
+		<publisher>Skippy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-A"/>
+			<dataarea name="flop" size="901120">
+				<rom name="oh no more yams (1993)(skippy)[h emc-a].adf" size="901120" crc="b4697d98" sha1="af7346ec7bbe4f6abefd3f4da0cbf8e810ba8ac8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5095,14 +5005,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="ozminesi" supported="no">
-		<description>Oz Mines I</description>
-		<year>1991</year>
+		<description>Oz Mines III</description>
+		<year>1992</year>
 		<publisher>Skippy</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked SSC - EMC-A"/>
+			<feature name="part_id" value="Hacked LSD - EMC-A"/>
 			<dataarea name="flop" size="901120">
-				<rom name="oz mines i (1991)(skippy)[h ssc - emc-a].adf" size="901120" crc="ebe9d0ce" sha1="6043d0c30c78513b6c35968016b8bf7bd6a50fbb"/>
+				<rom name="oz mines iii (1992)(skippy)[h lsd - emc-a].adf" size="901120" crc="a0935679" sha1="5894b1de99b2b5d7378c02f5a38760caa7a7cf09"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5121,14 +5031,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="ozminesi_2" supported="no">
-		<description>Oz Mines III</description>
-		<year>1992</year>
+		<description>Oz Mines I</description>
+		<year>1991</year>
 		<publisher>Skippy</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked LSD - EMC-A"/>
+			<feature name="part_id" value="Hacked SSC - EMC-A"/>
 			<dataarea name="flop" size="901120">
-				<rom name="oz mines iii (1992)(skippy)[h lsd - emc-a].adf" size="901120" crc="a0935679" sha1="5894b1de99b2b5d7378c02f5a38760caa7a7cf09"/>
+				<rom name="oz mines i (1991)(skippy)[h ssc - emc-a].adf" size="901120" crc="ebe9d0ce" sha1="6043d0c30c78513b6c35968016b8bf7bd6a50fbb"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5238,6 +5148,116 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="pacminia" supported="no">
+		<description>Pacminia 2</description>
+		<year>1994</year>
+		<publisher>Skippy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-A - MWB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="pacminia 2 (1994)(skippy)[h emc-a - mwb].adf" size="901120" crc="4ea0ffe0" sha1="f75e31f4354acd230b103202cdde9fc0f2d5c059"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-A - MWB, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="pacminia 2 (1994)(skippy)[h emc-a - mwb][a].adf" size="901120" crc="cf284fcf" sha1="c506e788a682222cb6bd90ac9678c6e7af56e007"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pacminia_1" supported="no">
+		<description>Pacminia 3</description>
+		<year>1994</year>
+		<publisher>Skippy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-A"/>
+			<dataarea name="flop" size="901120">
+				<rom name="pacminia 3 (1994)(skippy)[h emc-a].adf" size="901120" crc="b2ac17bc" sha1="b8bb0bea88c2148b5d46fe378bac6b9ba5b32338"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pacminia_2" supported="no">
+		<description>Pacminia 4</description>
+		<year>1994</year>
+		<publisher>Skippy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-A"/>
+			<dataarea name="flop" size="901120">
+				<rom name="pacminia 4 (1994)(skippy)[h emc-a].adf" size="901120" crc="b6b94ee6" sha1="a8effe7a8d4220a13e208326bc9628527d86d479"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pacminia_3" supported="no">
+		<description>Pacminia 5</description>
+		<year>1994</year>
+		<publisher>Skippy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-A"/>
+			<dataarea name="flop" size="901120">
+				<rom name="pacminia 5 (1994)(skippy)[h emc-a].adf" size="901120" crc="f46b1e05" sha1="26416056ca46014e972c28a16a1c05363e1c3efa"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pacminia_4" supported="no">
+		<description>Pacminia 6</description>
+		<year>1994</year>
+		<publisher>Skippy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-A"/>
+			<dataarea name="flop" size="901120">
+				<rom name="pacminia 6 (1994)(skippy)[h emc-a].adf" size="901120" crc="3ab34e8d" sha1="7ee307497ccf1118b0f858c0bc70a1fd3ee7c4fb"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pacminia_5" supported="no">
+		<description>Pacminia 7</description>
+		<year>1994</year>
+		<publisher>Skippy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-A"/>
+			<dataarea name="flop" size="901120">
+				<rom name="pacminia 7 (1994)(skippy)[h emc-a].adf" size="901120" crc="b68f8893" sha1="c60f1a5f062116ab056255d315e9ec2b5a776964"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pacminia_6" supported="no">
+		<description>Pacminia 8</description>
+		<year>1994</year>
+		<publisher>Skippy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-A"/>
+			<dataarea name="flop" size="901120">
+				<rom name="pacminia 8 (1994)(skippy)[h emc-a].adf" size="901120" crc="f884327a" sha1="af6bb0fb463f4faf683b23414334ac3fedd9e7d8"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pacminia_7" supported="no">
+		<description>Pacminia 9</description>
+		<year>1994</year>
+		<publisher>Skippy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-A"/>
+			<dataarea name="flop" size="901120">
+				<rom name="pacminia 9 (1994)(skippy)[h emc-a].adf" size="901120" crc="0073421a" sha1="d6af4dec344eec0907e328027c4d4eca1dfdae6d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pacminia_8" supported="no">
 		<description>Pacminia</description>
 		<year>1994</year>
 		<publisher>Skippy</publisher>
@@ -5252,116 +5272,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked EMC-A"/>
 			<dataarea name="flop" size="901120">
 				<rom name="pacminia (1994)(skippy)[h emc-a].adf" size="901120" crc="2dc76951" sha1="cce5e224954655142b44b04faaf7e5e9bee21504"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pacminia_1" supported="no">
-		<description>Pacminia 2</description>
-		<year>1994</year>
-		<publisher>Skippy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A - MWB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="pacminia 2 (1994)(skippy)[h emc-a - mwb].adf" size="901120" crc="4ea0ffe0" sha1="f75e31f4354acd230b103202cdde9fc0f2d5c059"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A - MWB, Alt"/>
-			<dataarea name="flop" size="901120">
-				<rom name="pacminia 2 (1994)(skippy)[h emc-a - mwb][a].adf" size="901120" crc="cf284fcf" sha1="c506e788a682222cb6bd90ac9678c6e7af56e007"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pacminia_2" supported="no">
-		<description>Pacminia 3</description>
-		<year>1994</year>
-		<publisher>Skippy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A"/>
-			<dataarea name="flop" size="901120">
-				<rom name="pacminia 3 (1994)(skippy)[h emc-a].adf" size="901120" crc="b2ac17bc" sha1="b8bb0bea88c2148b5d46fe378bac6b9ba5b32338"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pacminia_3" supported="no">
-		<description>Pacminia 4</description>
-		<year>1994</year>
-		<publisher>Skippy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A"/>
-			<dataarea name="flop" size="901120">
-				<rom name="pacminia 4 (1994)(skippy)[h emc-a].adf" size="901120" crc="b6b94ee6" sha1="a8effe7a8d4220a13e208326bc9628527d86d479"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pacminia_4" supported="no">
-		<description>Pacminia 5</description>
-		<year>1994</year>
-		<publisher>Skippy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A"/>
-			<dataarea name="flop" size="901120">
-				<rom name="pacminia 5 (1994)(skippy)[h emc-a].adf" size="901120" crc="f46b1e05" sha1="26416056ca46014e972c28a16a1c05363e1c3efa"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pacminia_5" supported="no">
-		<description>Pacminia 6</description>
-		<year>1994</year>
-		<publisher>Skippy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A"/>
-			<dataarea name="flop" size="901120">
-				<rom name="pacminia 6 (1994)(skippy)[h emc-a].adf" size="901120" crc="3ab34e8d" sha1="7ee307497ccf1118b0f858c0bc70a1fd3ee7c4fb"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pacminia_6" supported="no">
-		<description>Pacminia 7</description>
-		<year>1994</year>
-		<publisher>Skippy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A"/>
-			<dataarea name="flop" size="901120">
-				<rom name="pacminia 7 (1994)(skippy)[h emc-a].adf" size="901120" crc="b68f8893" sha1="c60f1a5f062116ab056255d315e9ec2b5a776964"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pacminia_7" supported="no">
-		<description>Pacminia 8</description>
-		<year>1994</year>
-		<publisher>Skippy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A"/>
-			<dataarea name="flop" size="901120">
-				<rom name="pacminia 8 (1994)(skippy)[h emc-a].adf" size="901120" crc="f884327a" sha1="af6bb0fb463f4faf683b23414334ac3fedd9e7d8"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pacminia_8" supported="no">
-		<description>Pacminia 9</description>
-		<year>1994</year>
-		<publisher>Skippy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A"/>
-			<dataarea name="flop" size="901120">
-				<rom name="pacminia 9 (1994)(skippy)[h emc-a].adf" size="901120" crc="0073421a" sha1="d6af4dec344eec0907e328027c4d4eca1dfdae6d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5542,6 +5452,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="profibou" supported="no">
+		<description>Profi Boulderdash II</description>
+		<year>1990</year>
+		<publisher>EDU</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad 2 virus damage"/>
+			<dataarea name="flop" size="901120">
+				<rom name="profi boulderdash ii (1990)(edu)[b2 virus damage].adf" size="901120" crc="7095a427" sha1="31a03361264ed7e0e6a911412203326cbf72e8bd" status="baddump"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Bad virus damage"/>
+			<dataarea name="flop" size="901120">
+				<rom name="profi boulderdash ii (1990)(edu)[b virus damage].adf" size="901120" crc="e383f8b2" sha1="326a92d62e4c73bc3881f6c75e7db31303c25b29" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="profibou_1" supported="no">
 		<description>Profi Boulderdash I</description>
 		<year>1990</year>
 		<publisher>EDU</publisher>
@@ -5552,28 +5481,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="profi boulderdash i (1990)(edu)[a].adf" size="901120" crc="56187e7c" sha1="0238e8bc4aa3cc1241fdee272b06ad8a3dd5ab7d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="profibou_1" supported="no">
-		<description>Profi Boulderdash II</description>
-		<year>1990</year>
-		<publisher>EDU</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad virus damage"/>
-			<dataarea name="flop" size="901120">
-				<rom name="profi boulderdash ii (1990)(edu)[b virus damage].adf" size="901120" crc="e383f8b2" sha1="326a92d62e4c73bc3881f6c75e7db31303c25b29" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Bad 2 virus damage"/>
-			<dataarea name="flop" size="901120">
-				<rom name="profi boulderdash ii (1990)(edu)[b2 virus damage].adf" size="901120" crc="7095a427" sha1="31a03361264ed7e0e6a911412203326cbf72e8bd" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5584,7 +5494,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Dion</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A, Alt"/>
+			<feature name="part_id" value="Hacked EMC-A, Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="recycled mines 01 (1991)(dion)[h emc-a][a].adf" size="901120" crc="941bee9a" sha1="1e52598446d8c50bf3c1848caeafd0664b1e616b"/>
 			</dataarea>
@@ -5597,7 +5507,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Dion</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A, Alt"/>
+			<feature name="part_id" value="Hacked EMC-A, Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="recycled mines 02 (1991)(dion)[h emc-a][a].adf" size="901120" crc="f0525278" sha1="2594d7913dbcb24cca1b090deaec8fa28ccbf36e"/>
 			</dataarea>
@@ -5627,7 +5537,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="recycled mines 2 (1991)(skippy)[a].adf" size="901120" crc="b51372ef" sha1="53349fd80d299a09e92bf2e642758aabeefbe827"/>
 			</dataarea>
@@ -5645,7 +5555,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="recycled mines i (1991)(skippy)[a].adf" size="901120" crc="b1740fee" sha1="1d000c237d59c5d66eb9ba4f43cfbeb047966cb3"/>
 			</dataarea>
@@ -5702,7 +5612,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="royal boulderdash (19xx)(posocopi)[a].adf" size="901120" crc="31a3caf7" sha1="4ae79f11a292de3a692d7705c307448d39e4b018"/>
 			</dataarea>
@@ -5764,15 +5674,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-H, Alt 2"/>
+			<feature name="part_id" value="Hacked EMC-H, Alt 1"/>
 			<dataarea name="flop" size="901120">
-				<rom name="runner mine 6 - spacewalker (1993)(runners)[h emc-h][a2].adf" size="901120" crc="c3f1196d" sha1="b1db95df0cfe7380551a83ecd1f212a09ebb91b2"/>
+				<rom name="runner mine 6 - spacewalker (1993)(runners)[h emc-h][a].adf" size="901120" crc="2f805a71" sha1="6ac371ee0837c7449eb15034e65ee7ec8d183a92"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-H, Alt"/>
+			<feature name="part_id" value="Hacked EMC-H, Alt 2"/>
 			<dataarea name="flop" size="901120">
-				<rom name="runner mine 6 - spacewalker (1993)(runners)[h emc-h][a].adf" size="901120" crc="2f805a71" sha1="6ac371ee0837c7449eb15034e65ee7ec8d183a92"/>
+				<rom name="runner mine 6 - spacewalker (1993)(runners)[h emc-h][a2].adf" size="901120" crc="c3f1196d" sha1="b1db95df0cfe7380551a83ecd1f212a09ebb91b2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5800,7 +5710,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="ruppelmine 2 (1991)(ruppelware)[a].adf" size="901120" crc="e093d334" sha1="53ac0884edba1dca249ad13b5db90a71661e559e"/>
 			</dataarea>
@@ -5953,19 +5863,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="solomons" supported="no">
-		<description>Solomon's Lost Mine</description>
-		<year>1993</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked EMC-A"/>
-			<dataarea name="flop" size="901120">
-				<rom name="solomon's lost mine (1993)(-)[h emc-a].adf" size="901120" crc="fa551eec" sha1="32d47d31016daad12196ed64e68ab6f9e8d53c62"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="solomons_1" supported="no">
 		<description>Solomon's Lost Mine 2</description>
 		<year>1993</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -5974,6 +5871,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked EMC-A"/>
 			<dataarea name="flop" size="901120">
 				<rom name="solomon's lost mine 2 (1993)(-)[h emc-a].adf" size="901120" crc="d849621e" sha1="90247f927c735350de5f113fb2a65811f413fad9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="solomons_1" supported="no">
+		<description>Solomon's Lost Mine</description>
+		<year>1993</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked EMC-A"/>
+			<dataarea name="flop" size="901120">
+				<rom name="solomon's lost mine (1993)(-)[h emc-a].adf" size="901120" crc="fa551eec" sha1="32d47d31016daad12196ed64e68ab6f9e8d53c62"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6158,6 +6068,96 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="theadven" supported="no">
+		<description>The Adventures of Mr. B - Part 1</description>
+		<year>1991</year>
+		<publisher>Mr. B</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="adventures of mr. b, the - part 1 (1991)(mr. b).adf" size="901120" crc="72d09cae" sha1="c5528cc7c571c5a6d83eec2938bd46d519a6d648"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt intro disabled"/>
+			<dataarea name="flop" size="901120">
+				<rom name="adventures of mr. b, the - part 1 (1991)(mr. b)[a intro disabled].adf" size="901120" crc="779526b8" sha1="ad0e0c4309e78e166d46ac3c0dfbea0b3fe94ad3"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="adventures of mr. b, the - part 1 (1991)(mr. b)[h].adf" size="901120" crc="3f4db867" sha1="1c87fbd512d72fec61b9f7ae82c3ed11c97c1ff2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theadven_1" supported="no">
+		<description>The Adventures of Mr. B - Part 2</description>
+		<year>1992</year>
+		<publisher>Mr. B</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="adventures of mr. b, the - part 2 (1992)(mr. b).adf" size="901120" crc="97ade994" sha1="9f3f578f624d92337e8120faa829dbaae7a00e09"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Modified 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="adventures of mr. b, the - part 2 (1992)(mr. b)[m].adf" size="901120" crc="9bbb112a" sha1="d21370422646db03bc1cd825706c2eb7f723f643"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theadven_2" supported="no">
+		<description>The Adventures of Mr. B - Part 3</description>
+		<year>1994</year>
+		<publisher>Mr. B</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="adventures of mr. b, the - part 3 (1994)(mr. b).adf" size="901120" crc="dfa1f924" sha1="f90cff35a89db3c8d79f174abc79319687964927"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt files"/>
+			<dataarea name="flop" size="901120">
+				<rom name="adventures of mr. b, the - part 3 (1994)(mr. b)[b corrupt files].adf" size="901120" crc="91664c06" sha1="2b4a742a228ac91f7c8bb9c0380f87cc1617eb1d" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theexcep" supported="no">
+		<description>The Exception One</description>
+		<year>1990</year>
+		<publisher>Leo - Stefan</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="exception one, the (1990)(leo - stefan).adf" size="901120" crc="256cd7a3" sha1="bf4e69f1536acb264dcdb951d750b60aa3f8ac20"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="exception one, the (1990)(leo - stefan)[a].adf" size="901120" crc="bf2d9b9a" sha1="c964d32f8a4bd9b0b06f53289557ebb8cdb4d0bf"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thenewem" supported="no">
+		<description>The New Emerald Mines</description>
+		<year>1988</year>
+		<publisher>PGM - DRD</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="new emerald mines, the (1988)(pgm - drd).adf" size="901120" crc="8b524790" sha1="7760896a764b8f8246253156ca9d1a89580d660b"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="throught" supported="no">
 		<description>Through the Chaos Caves - The Green Levels (AGA)</description>
 		<year>1995</year>
@@ -6201,7 +6201,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Fixed"/>
+			<feature name="part_id" value="Fixed 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="through the chaos caves 4 (1995)(caveman)[f].adf" size="901120" crc="a68251b0" sha1="ac5dc7c6de1788aff1cdeec4291a1f057385313f"/>
 			</dataarea>
@@ -6293,7 +6293,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="venom mine 1 (1992)(venom)[a].adf" size="901120" crc="8965e4d6" sha1="a0752f70584fcda4f1ba1e01530c39ac09c9eca1"/>
 			</dataarea>

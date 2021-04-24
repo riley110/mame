@@ -181,15 +181,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad virus damage, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0015 (1986)(fred fish)(pd)[b virus damage][wb].adf" size="901120" crc="6363663a" sha1="a42bfb1f19184a1a7797690b4ab9a1028b3d7ef3" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0015 (1986)(fred fish)(pd)[wb].adf" size="901120" crc="98ac6b5a" sha1="14c8d84cb206b90c6ffe20727441d1041a394838"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Bad virus damage"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0015 (1986)(fred fish)(pd)[b virus damage][wb].adf" size="901120" crc="6363663a" sha1="a42bfb1f19184a1a7797690b4ab9a1028b3d7ef3" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -356,15 +356,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0028 (1986)(fred fish)(pd)[a][wb].adf" size="901120" crc="516b9055" sha1="cfd14bbf12c1c28c3cbd465b4b20bde27335d0b0"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0028 (1986)(fred fish)(pd)[wb].adf" size="901120" crc="a13e8170" sha1="84780188c3df1d3682a522d72038d069c44ee685"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0028 (1986)(fred fish)(pd)[a][wb].adf" size="901120" crc="516b9055" sha1="cfd14bbf12c1c28c3cbd465b4b20bde27335d0b0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -895,7 +895,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0069 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="1b04024f" sha1="57aa660879764a3fafbf7456f938f12ebba64826"/>
 			</dataarea>
@@ -921,7 +921,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0072 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="c2ace69a" sha1="6bd92f15b3ca135ecef880398be3c893b476d2a5"/>
 			</dataarea>
@@ -934,7 +934,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0073 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="f631890f" sha1="0524a856ce9fe459d59f8d3cc3572314b93e11c9"/>
 			</dataarea>
@@ -960,7 +960,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0075 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="f2588bed" sha1="879680ca864a22f5ebbd7fc5bde4652c1548deb4"/>
 			</dataarea>
@@ -991,15 +991,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0077 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="bd3b5655" sha1="5822a7b0037354e844990bb666e5f82ee8135429"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0077 (1987)(fred fish)(pd)[wb].adf" size="901120" crc="477b0631" sha1="a4dc7790954be6d6c856e0b3151778a9301290ae"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Hacked CTACS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0077 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="bd3b5655" sha1="5822a7b0037354e844990bb666e5f82ee8135429"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1010,7 +1010,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0078 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="956987a3" sha1="e56181a1b6455943efffd7e36cde444c68187bf1"/>
 			</dataarea>
@@ -1023,7 +1023,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0079 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="fa201fa2" sha1="41e164d72293b975c18627c326eab7aa9f32c079"/>
 			</dataarea>
@@ -1166,7 +1166,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0091 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="22355b60" sha1="9c1beb14293839f250dbd0c90d4c8a59c88eafdb"/>
 			</dataarea>
@@ -1192,7 +1192,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0093 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="bf44f14a" sha1="cdcae69a1ed0d1ba81b01ec7681c7801a0d0c7bf"/>
 			</dataarea>
@@ -1205,7 +1205,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0094 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="85e05ced" sha1="f97a86c9899bfd8bb8ab31bbc98d047ebf4a9aa1"/>
 			</dataarea>
@@ -1231,7 +1231,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0096 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="16bff643" sha1="a74972152a68c78fdbec7e1f9e8e62a7a826bf82"/>
 			</dataarea>
@@ -1257,7 +1257,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0098 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="4ed36dad" sha1="5598182f1dea4d5c28de125ee3dd0c9ad3b16c6f"/>
 			</dataarea>
@@ -1282,7 +1282,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0100 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="1bf7a545" sha1="c2c5a0f259b09df3fac25e3cc606b480a909f0f2"/>
 			</dataarea>
@@ -1295,7 +1295,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0101 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="0f3630ae" sha1="4127784ac4a7bd1b9627aa1e6c46de03f4ece374"/>
 			</dataarea>
@@ -1321,7 +1321,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0103 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="da2627a8" sha1="2dad55f17cf101c7e24308be4ed11ce8f3d2a907"/>
 			</dataarea>
@@ -1334,7 +1334,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0104 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="29269b17" sha1="be59d5a5f2917bdf4b254030260d5268cb8f627b"/>
 			</dataarea>
@@ -1399,7 +1399,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0109 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="8be0200e" sha1="f400fe24442a5423bef6629904de6bbfcdd36ae5"/>
 			</dataarea>
@@ -1490,15 +1490,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0116 (1987)(fred fish)(pd)[a][wb].adf" size="901120" crc="b20210ca" sha1="11cec8500ccfe1d73bb21222d8a33cf4569cf568"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0116 (1987)(fred fish)(pd)[wb].adf" size="901120" crc="805d85eb" sha1="1dc6287a7c3f094a3c542bd48b6e484ffd60cae3"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0116 (1987)(fred fish)(pd)[a][wb].adf" size="901120" crc="b20210ca" sha1="11cec8500ccfe1d73bb21222d8a33cf4569cf568"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1561,7 +1561,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0121 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="d6be8164" sha1="86598af0ef47c14d0ec0333b313b0cae698cb7dd"/>
 			</dataarea>
@@ -1574,7 +1574,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0122 (1987)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="73714c80" sha1="1a1a4974fd98e0b5fd27e78332b1f30a29712627"/>
 			</dataarea>
@@ -1613,7 +1613,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0125 (1988)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="c255b42c" sha1="f2612ba595fd4282801226dddcc28dfb0dfaa4d1"/>
 			</dataarea>
@@ -1639,7 +1639,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0127 (1988)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="5288f2d0" sha1="f2e33e1a24b8ca9d48c157867b473abe84a7cb7b"/>
 			</dataarea>
@@ -1652,7 +1652,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0128 (1988)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="41a9c2ff" sha1="bdb93bf145d3df3907c7c74f076e15ef68daaa54"/>
 			</dataarea>
@@ -1678,7 +1678,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0130 (1988)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="83e5e864" sha1="275ade03ada3cd34da142664a4d3753c2bba9fb4"/>
 			</dataarea>
@@ -1691,7 +1691,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0131 (1988)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="b546af95" sha1="75dc73d381005d31fcca45d8c1acb7aec8b6b1a8"/>
 			</dataarea>
@@ -1704,7 +1704,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0132 (1988)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="e6364ed2" sha1="dbb5108052d0f2b509d20e0244106ea491cde15a"/>
 			</dataarea>
@@ -1756,7 +1756,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0137 (1988)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="df7db441" sha1="86996cc62d018ed5fffe5ca46c8b5ded366368e6"/>
 			</dataarea>
@@ -1769,7 +1769,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0138 (1988)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="2ed59945" sha1="d9c020afd5da70202453cdf68fc0dee45d34af98"/>
 			</dataarea>
@@ -1821,7 +1821,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked CTACS, WB"/>
+			<feature name="part_id" value="WB, Hacked CTACS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0142 (1988)(fred fish)(pd)[h ctacs][wb].adf" size="901120" crc="92ce6af5" sha1="90f987998d5401c020e47f3d0a10b877b8db43ca"/>
 			</dataarea>
@@ -2146,15 +2146,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0167 (1988)(fred fish)(pd)[a][wb].adf" size="901120" crc="e958cb05" sha1="0b68d851299f1402ca1abe5d170d36138037246d"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0167 (1988)(fred fish)(pd)[wb].adf" size="901120" crc="5714ef18" sha1="0f90bec084ea8e80ae734f09a4866fa2fff253cd"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0167 (1988)(fred fish)(pd)[a][wb].adf" size="901120" crc="e958cb05" sha1="0b68d851299f1402ca1abe5d170d36138037246d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2191,15 +2191,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0170 (1988)(fred fish)(pd)[a][wb].adf" size="901120" crc="f2274a91" sha1="cc3b29c90b39d4b3b407fbe65832814c08decbf8"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0170 (1988)(fred fish)(pd)[wb].adf" size="901120" crc="93968750" sha1="c4f8a26d581b91fce446807b31179a0923b1482d"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0170 (1988)(fred fish)(pd)[a][wb].adf" size="901120" crc="f2274a91" sha1="cc3b29c90b39d4b3b407fbe65832814c08decbf8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2327,15 +2327,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt missing files, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0180 (1989)(fred fish)(pd)[a missing files][wb].adf" size="901120" crc="a7c7c2e9" sha1="b519ab26963cb8a5b2cbf0cc952c377148a58fd7"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0180 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="c7d72824" sha1="117f6acde47a3cf4158be1de3c54cd8034a43e51"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt missing files"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0180 (1989)(fred fish)(pd)[a missing files][wb].adf" size="901120" crc="a7c7c2e9" sha1="b519ab26963cb8a5b2cbf0cc952c377148a58fd7"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2541,15 +2541,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0196 (1989)(fred fish)(pd)[a][wb].adf" size="901120" crc="76d338da" sha1="60df887465ef5558d77c74112da931a5fd0a9826"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0196 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="617f052b" sha1="76f23b91dc7b8ea4e2a93c3381fe1d8463fc27c8"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0196 (1989)(fred fish)(pd)[a][wb].adf" size="901120" crc="76d338da" sha1="60df887465ef5558d77c74112da931a5fd0a9826"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2677,15 +2677,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt file, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0206 (1989)(fred fish)(pd)[b corrupt file][wb].adf" size="901120" crc="8437594d" sha1="4fc0310b455e712b42bff5a03fc35b871dda6618" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0206 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="c3d1e6d4" sha1="44f6afcaa187a50da7d07303cfebcb02b9831554"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Bad corrupt file"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0206 (1989)(fred fish)(pd)[b corrupt file][wb].adf" size="901120" crc="8437594d" sha1="4fc0310b455e712b42bff5a03fc35b871dda6618" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2904,15 +2904,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Translated de Wolf Computertechnik, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0223 (1989)(fred fish)(pd)[tr de wolf computertechnik][wb].adf" size="901120" crc="c4fffb6b" sha1="9ca9947dabe4b3731b7e6302c571e6778312bac8"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0223 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="d6fcea93" sha1="a0cc729ed1f2fb0698e362ec5f625575886cc64b"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Translated de Wolf Computertechnik"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0223 (1989)(fred fish)(pd)[tr de wolf computertechnik][wb].adf" size="901120" crc="c4fffb6b" sha1="9ca9947dabe4b3731b7e6302c571e6778312bac8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3150,15 +3150,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0241 (1989)(fred fish)(pd)[a][wb].adf" size="901120" crc="a284324f" sha1="978c8f5e99809cba0166ad5f86ba63756b5e7a0a"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0241 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="300da320" sha1="d679e84af65c00601f7bdd8b5be2713c34771261"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0241 (1989)(fred fish)(pd)[a][wb].adf" size="901120" crc="a284324f" sha1="978c8f5e99809cba0166ad5f86ba63756b5e7a0a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3286,15 +3286,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt file, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0251 (1989)(fred fish)(pd)[b corrupt file][wb].adf" size="901120" crc="b585d5e8" sha1="82220fa30b2a1d005376ec01103d62af65614f9e" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0251 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="f043ad7f" sha1="079caede9c7e603df7c8882729940c582f2ff716"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Bad corrupt file"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0251 (1989)(fred fish)(pd)[b corrupt file][wb].adf" size="901120" crc="b585d5e8" sha1="82220fa30b2a1d005376ec01103d62af65614f9e" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3493,15 +3493,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad repaired file, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0266 (1989)(fred fish)(pd)[b repaired file][wb].adf" size="901120" crc="65b3ea0d" sha1="ab9f60bfab8f47817c51cbdd8877f77015f74b7a" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0266 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="8d128d60" sha1="c5ded158b84967ea3be2423850cd304e45d5058d"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Bad repaired file"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0266 (1989)(fred fish)(pd)[b repaired file][wb].adf" size="901120" crc="65b3ea0d" sha1="ab9f60bfab8f47817c51cbdd8877f77015f74b7a" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3512,7 +3512,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt rebuilt, WB"/>
+			<feature name="part_id" value="WB, Alt rebuilt"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0267 (1989)(fred fish)(pd)[a rebuilt][wb].adf" size="901120" crc="03e687f9" sha1="659df001d6a1b54504306eb59a94c708beba93f3"/>
 			</dataarea>
@@ -3551,15 +3551,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0270 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="d55169df" sha1="96a7196f29d577a96f749661e818ab6e65456a42"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0270 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="6cf80ee3" sha1="5765bfeaed094b77b531f115da130b9d2ac2ccaa"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0270 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="d55169df" sha1="96a7196f29d577a96f749661e818ab6e65456a42"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3570,15 +3570,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0271 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="7a0b6aae" sha1="8659a1a14f30fc4660435d4be15bb091d6d7a1be"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0271 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="f95c9fd9" sha1="7e1ebafae48f6f0b709551ce6f2eed93448528d3"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0271 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="7a0b6aae" sha1="8659a1a14f30fc4660435d4be15bb091d6d7a1be"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3589,15 +3589,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0272 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="ff3972c5" sha1="02aeb233a634435f681fa28d5caa1eaebb33182b"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0272 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="9361ae99" sha1="e596abadd0e572b6007a013dc31d643e3be26e71"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0272 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="ff3972c5" sha1="02aeb233a634435f681fa28d5caa1eaebb33182b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3608,15 +3608,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0273 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="d116c819" sha1="820e47d468374bb9fef63b524a8ba899ccd2244b"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0273 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="98849901" sha1="29bb9a7777c4267114fd95b03625d5c3d13d06e0"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0273 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="d116c819" sha1="820e47d468374bb9fef63b524a8ba899ccd2244b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3627,15 +3627,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt rebuilt, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0274 (1989)(fred fish)(pd)[a rebuilt][wb].adf" size="901120" crc="a54d8631" sha1="1f9e7536bcd250ebb17a0391056647279b82323b"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0274 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="e6a4e912" sha1="8091848bab958e9940f1290aac31426bedf9e00c"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt rebuilt"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0274 (1989)(fred fish)(pd)[a rebuilt][wb].adf" size="901120" crc="a54d8631" sha1="1f9e7536bcd250ebb17a0391056647279b82323b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3646,15 +3646,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0275 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="48ce3c20" sha1="82961180d1123d191583bcd912c08cc4c4f0cbab"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0275 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="f698c51f" sha1="abfcc8592f98f14fb103b2b599d08f744da6cf23"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0275 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="48ce3c20" sha1="82961180d1123d191583bcd912c08cc4c4f0cbab"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3665,15 +3665,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0276 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="29f202cc" sha1="59eb76b3a23dccd1a057569f38acc08451745cc5"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0276 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="a8d21709" sha1="0b06a04fa5ed91df96b66dc1386a286bc916e680"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0276 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="29f202cc" sha1="59eb76b3a23dccd1a057569f38acc08451745cc5"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3684,15 +3684,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0277 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="136adb14" sha1="8452e4c0d7fc3d8a84f97b9be5a4642dc80bd80a"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0277 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="7ba9ae9b" sha1="cb7911822eac9bbbddf9366e3b4886bb31142b70"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0277 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="136adb14" sha1="8452e4c0d7fc3d8a84f97b9be5a4642dc80bd80a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3703,15 +3703,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0278 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="6c8b7b29" sha1="7d9b4d93379e84516ff8da7840282a53f428e88a"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0278 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="4f81f8cb" sha1="8adf9d445c327820f0fb1ea15172d985851a7d2d"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0278 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="6c8b7b29" sha1="7d9b4d93379e84516ff8da7840282a53f428e88a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3722,15 +3722,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0279 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="dd29e72a" sha1="31e54d33007cb9a9722c2cfd0121590b88ed3683"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0279 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="09f4fa68" sha1="2aa79eba0536d370d13f1a746e7612b0c9eb5eb2"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0279 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="dd29e72a" sha1="31e54d33007cb9a9722c2cfd0121590b88ed3683"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3741,15 +3741,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt rebuilt, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0280 (1989)(fred fish)(pd)[a rebuilt][wb].adf" size="901120" crc="5e850912" sha1="755b1f91265bbac5ba723debc17ac8f63d71b03b"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0280 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="63860518" sha1="959266aa18547fce45e229dcce2906036985f7d6"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt rebuilt"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0280 (1989)(fred fish)(pd)[a rebuilt][wb].adf" size="901120" crc="5e850912" sha1="755b1f91265bbac5ba723debc17ac8f63d71b03b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3760,15 +3760,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0281 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="fccb3391" sha1="81495f47cdbba8f13c0757d9e381bc61786e863e"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0281 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="3e33d51f" sha1="6d9b2bcb9ad9c54df0508f2be738ab473f1cca17"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0281 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="fccb3391" sha1="81495f47cdbba8f13c0757d9e381bc61786e863e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3779,15 +3779,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0282 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="1ea79a29" sha1="6a28db3dec714922f94a5b36b3d78bfa2c593127"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0282 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="66d91a2a" sha1="3783751b08a7c1e7b58fca8677618175a63dc0d8"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0282 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="1ea79a29" sha1="6a28db3dec714922f94a5b36b3d78bfa2c593127"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3811,15 +3811,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0284 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="867f34f7" sha1="204eb9cbe9e343481cbe6d9f6ad11488ddee0dcb"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0284 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="b9759e2d" sha1="8a0fd1bbd15a69e4b52d43b790b9e785cad6d95c"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0284 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="867f34f7" sha1="204eb9cbe9e343481cbe6d9f6ad11488ddee0dcb"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3830,15 +3830,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0285 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="6e0c1f29" sha1="022febb705119e1348245863237bb1f13a2ad101"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0285 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="16586f9d" sha1="de004b0514c8866e394ac28cc3d2b8f35216b3d8"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0285 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="6e0c1f29" sha1="022febb705119e1348245863237bb1f13a2ad101"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3849,15 +3849,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0286 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="1167f735" sha1="2efd3f234f6d86e5882d6228f3f707f078d92087"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0286 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="d68acd9c" sha1="b27e683c94aa1de36b927e06ccdecbc06706647f"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0286 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="1167f735" sha1="2efd3f234f6d86e5882d6228f3f707f078d92087"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3881,15 +3881,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0288 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="b9604f41" sha1="44ca097b435fae7ae6bfa8c60181408a1c531264"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0288 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="1480a596" sha1="5406ee33eb6616ce7e51f83cd9c15fc5d1cd7c0b"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0288 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="b9604f41" sha1="44ca097b435fae7ae6bfa8c60181408a1c531264"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3900,15 +3900,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0289 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="a0f93963" sha1="c05b770d42fe01165290358f551014fff7192333"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0289 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="ab400cdf" sha1="6609dd3115c7bff7607a0e2ab94eb233c8992c91"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0289 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="a0f93963" sha1="c05b770d42fe01165290358f551014fff7192333"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3919,15 +3919,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0290 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="cfde63b3" sha1="cabac9669b0272a6d9530b762b6d2d25609205ae"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0290 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="26ad33bb" sha1="b7125c15d6c22d99b02d3d1b3efabaf0fb1c54c6"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0290 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="cfde63b3" sha1="cabac9669b0272a6d9530b762b6d2d25609205ae"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3938,15 +3938,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt rebuilt, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0291 (1989)(fred fish)(pd)[a rebuilt][wb].adf" size="901120" crc="1d32cc98" sha1="a21b18139a1b05d980f28687ecd57108b6fda8da"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0291 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="b8339bef" sha1="a09013a486903203192f7ee32e1bba52e0de22c4"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt rebuilt"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0291 (1989)(fred fish)(pd)[a rebuilt][wb].adf" size="901120" crc="1d32cc98" sha1="a21b18139a1b05d980f28687ecd57108b6fda8da"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3957,15 +3957,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0292 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="ba3e7198" sha1="bb95e32cca22568f31f8df36ac77d0eb4e248014"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0292 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="27cb934a" sha1="9ffe09ecf9df246faa0811dbb533bf5bd68cba36"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0292 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="ba3e7198" sha1="bb95e32cca22568f31f8df36ac77d0eb4e248014"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3989,15 +3989,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0294 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="093df439" sha1="edce752246071a8f3d794cebd68eb48383e765a6"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0294 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="185537ea" sha1="08124412a8d743798df6c867f9d714fdc22b5c1d"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0294 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="093df439" sha1="edce752246071a8f3d794cebd68eb48383e765a6"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4008,15 +4008,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0295 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="06ebfcca" sha1="809d6bdc9807199a7cb4797460dd8595483ac538"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0295 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="65047411" sha1="8d39314ecb36631de83d9ceacccbed1e49b4ffba"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0295 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="06ebfcca" sha1="809d6bdc9807199a7cb4797460dd8595483ac538"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4027,15 +4027,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0296 (1989)(fred fish)(pd)[m][wb].adf" size="901120" crc="37bfa506" sha1="83dd5f86566871e9491c3f0fb48b42fd5fcc3eed"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0296 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="fb5af995" sha1="30868a8dfc3d5e8de8fa49296f28c7cab6de1780"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0296 (1989)(fred fish)(pd)[m][wb].adf" size="901120" crc="37bfa506" sha1="83dd5f86566871e9491c3f0fb48b42fd5fcc3eed"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4046,15 +4046,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0297 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="d55e5b25" sha1="8ac728dd2ab8a09f2b3dc321e921b72de8ae22a2"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0297 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="1c79f6fb" sha1="23392796dcfb3821d8b29c5402068820a7e9b722"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0297 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="d55e5b25" sha1="8ac728dd2ab8a09f2b3dc321e921b72de8ae22a2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4078,15 +4078,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0299 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="d179c7df" sha1="664ad7882aa65ac89e56e9e5f3303d175ed60ecd"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0299 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="7f69aa54" sha1="76fb6d06197179e450d790071216fb1ed175a6ef"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0299 (1989)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="d179c7df" sha1="664ad7882aa65ac89e56e9e5f3303d175ed60ecd"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4097,15 +4097,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt bootblock, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0300 (1989)(fred fish)(pd)[a bootblock][wb].adf" size="901120" crc="e1b341dd" sha1="8c69de9878f9786c3463980f7890d5c946933d42"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0300 (1989)(fred fish)(pd)[wb].adf" size="901120" crc="6a86d62d" sha1="9c519dfe22e8251df86debf89d695fd37ed249c0"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt bootblock"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0300 (1989)(fred fish)(pd)[a bootblock][wb].adf" size="901120" crc="e1b341dd" sha1="8c69de9878f9786c3463980f7890d5c946933d42"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4116,15 +4116,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0301 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="ff2457f3" sha1="e7022047bbf066b512b1ff1c03d48db6b5549f9e"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0301 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="a77ccaae" sha1="a70c2f15ecb148df779c2cd9ee5411ea67e54528"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0301 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="ff2457f3" sha1="e7022047bbf066b512b1ff1c03d48db6b5549f9e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4148,15 +4148,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0303 (1990)(fred fish)(pd)[m][wb].adf" size="901120" crc="1d5585cf" sha1="13620ab96f30e1b21e3e2a9be3c015ef31686e3a"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0303 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="9bc678a5" sha1="7fa56e6c8cd3d5eec3d3005db974656aad3c0238"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0303 (1990)(fred fish)(pd)[m][wb].adf" size="901120" crc="1d5585cf" sha1="13620ab96f30e1b21e3e2a9be3c015ef31686e3a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4167,15 +4167,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0304 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="7e1b9b8d" sha1="c1ef75ba1c3ee2f225b02e33fb0c9ae746f860fd"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0304 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="db6653a4" sha1="329ceed2aae0424c043340ff231b2710f76e6850"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0304 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="7e1b9b8d" sha1="c1ef75ba1c3ee2f225b02e33fb0c9ae746f860fd"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4199,15 +4199,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0306 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="fb79a0b7" sha1="76e7567f19d059e9c68ca78a1a9bd5a1e83df44a"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0306 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="89c5626b" sha1="92708e70d372d63b4e92d58864b254eb7802571e"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0306 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="fb79a0b7" sha1="76e7567f19d059e9c68ca78a1a9bd5a1e83df44a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4218,15 +4218,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0307 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="7fe2ceaf" sha1="c5fc3892ee193ba46505ac53863db0d3b91f4d31"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0307 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="117d542b" sha1="601f4eb92eecd3d8d0b84ae2eb40bb9705d94c58"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0307 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="7fe2ceaf" sha1="c5fc3892ee193ba46505ac53863db0d3b91f4d31"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4237,15 +4237,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0308 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="6f2d4536" sha1="4077f167f831eab312fe1f06e2290e3606f8ad67"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0308 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="dc3fe08e" sha1="ae77783b6567c467cf62407e134636ec8ddf68b7"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0308 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="6f2d4536" sha1="4077f167f831eab312fe1f06e2290e3606f8ad67"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4256,15 +4256,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0309 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="dcfef4bf" sha1="48fdc0eb424957af79ab939e19cb2aa5796ff575"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0309 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="106ccfa9" sha1="bfc0c4bd960546d57de5b7c78a378f26c26ed82f"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0309 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="dcfef4bf" sha1="48fdc0eb424957af79ab939e19cb2aa5796ff575"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4275,15 +4275,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0310 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="ab1f628f" sha1="04a299a4b48b686444454754f81d764dc1f5c869"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0310 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="d9388119" sha1="0d71f43d8d867b9c36c29bdd543906a7f434780c"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0310 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="ab1f628f" sha1="04a299a4b48b686444454754f81d764dc1f5c869"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4307,15 +4307,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0312 (1990)(fred fish)(pd)[m][wb].adf" size="901120" crc="f8279c06" sha1="70bd923cfba6324d97c04b92fa543fd3ff436024"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0312 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="4d5a2c46" sha1="ecb5c4aa7db92e72e7b02b5d93b0a5924d89364e"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0312 (1990)(fred fish)(pd)[m][wb].adf" size="901120" crc="f8279c06" sha1="70bd923cfba6324d97c04b92fa543fd3ff436024"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4326,15 +4326,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0313 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="c55cbaf7" sha1="7a01517914e076340d248d1bb33d20aa122fd543"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0313 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="d2af3aab" sha1="0b711ae1c14b3525635e9e8c028259b23c33988f"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0313 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="c55cbaf7" sha1="7a01517914e076340d248d1bb33d20aa122fd543"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4345,15 +4345,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0314 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="456b7983" sha1="c5d0f63c0459f7689f64ea7eebe2468425f047bc"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0314 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="8a11ccdf" sha1="8c61a3b7a9df7b0705ee65dd9495cf1581ecf2c0"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0314 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="456b7983" sha1="c5d0f63c0459f7689f64ea7eebe2468425f047bc"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4364,15 +4364,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0315 (1990)(fred fish)(pd)[m][wb].adf" size="901120" crc="19f360fb" sha1="1160b86574c98cf94ae1a337bd1df0dc5d9754ec"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0315 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="eb472553" sha1="17d9002d9061bab520d7cd947a8c61657b226f17"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0315 (1990)(fred fish)(pd)[m][wb].adf" size="901120" crc="19f360fb" sha1="1160b86574c98cf94ae1a337bd1df0dc5d9754ec"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4383,15 +4383,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0316 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="e3bb7c8f" sha1="881b3894bc54823208e21391ebf787b6e463e5f3"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0316 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="7bac48da" sha1="56f7f33aadd68b40bab4fda7b16ca707a653dccf"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0316 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="e3bb7c8f" sha1="881b3894bc54823208e21391ebf787b6e463e5f3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4415,15 +4415,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0318 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="d44f86f7" sha1="c199337a51da3e421d04b416f8af192a403d1f64"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0318 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="4ff25677" sha1="eebc5a91f47914df0cf2d20cf57093d4059f73f4"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0318 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="d44f86f7" sha1="c199337a51da3e421d04b416f8af192a403d1f64"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4434,15 +4434,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0319 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="bd395b7c" sha1="c8e81349bd6b04c11f72dfea3e05976f836a3dee"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0319 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="c7a98a82" sha1="cd88b4bae1590c907e717fbf776d2bcbd23d4b73"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0319 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="bd395b7c" sha1="c8e81349bd6b04c11f72dfea3e05976f836a3dee"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4453,15 +4453,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0320 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="691747db" sha1="3f51dc634b85ab5b0f3c65dc5567f5e6f8ae16c2"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0320 (1990)(fred fish)(pd)[wb].adf" size="901120" crc="c3c97d7a" sha1="9d258d274d0803ef0b991d3147303774b1ef9f42"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0320 (1990)(fred fish)(pd)[m bamcopy][wb].adf" size="901120" crc="691747db" sha1="3f51dc634b85ab5b0f3c65dc5567f5e6f8ae16c2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6103,15 +6103,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0448 (1991)(fred fish)(pd)[a][wb].adf" size="901120" crc="63bb78bc" sha1="500c3fd58898cc95080ce8362f21f01360880716"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0448 (1991)(fred fish)(pd)[wb].adf" size="901120" crc="de2563ce" sha1="337fc6965f104f45b993202eabf89fcfb30469aa"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0448 (1991)(fred fish)(pd)[a][wb].adf" size="901120" crc="63bb78bc" sha1="500c3fd58898cc95080ce8362f21f01360880716"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6213,15 +6213,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt file, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0456 (1991)(fred fish)(pd)[b corrupt file][wb].adf" size="901120" crc="a188e345" sha1="b24c13a1237bc64a71cb1aac59c3353f86a53b6f" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0456 (1991)(fred fish)(pd)[wb].adf" size="901120" crc="81b8752c" sha1="d07263b46ffb56cbe5adbc6e6683f80ff7912f16"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Bad corrupt file"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0456 (1991)(fred fish)(pd)[b corrupt file][wb].adf" size="901120" crc="a188e345" sha1="b24c13a1237bc64a71cb1aac59c3353f86a53b6f" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8338,15 +8338,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Fred Fish</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked PD-Soft, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="amiga library disk #0619 (1992)(fred fish)(pd)[h pd-soft][wb].adf" size="901120" crc="79a73da3" sha1="c3fd8e16aef8111aae086c128ec35d68126595bd"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga library disk #0619 (1992)(fred fish)(pd)[wb].adf" size="901120" crc="14d3e4fa" sha1="4cbf1283fe1d5651cb31096a7b4f5cf88dab1ac0"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Hacked PD-Soft"/>
+			<dataarea name="flop" size="901120">
+				<rom name="amiga library disk #0619 (1992)(fred fish)(pd)[h pd-soft][wb].adf" size="901120" crc="79a73da3" sha1="c3fd8e16aef8111aae086c128ec35d68126595bd"/>
 			</dataarea>
 		</part>
 	</software>

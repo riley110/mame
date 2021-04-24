@@ -17,7 +17,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a].d64" size="174848" crc="928e0caf" sha1="ccd999ecaa977a46ab7cb50605e32083ee0a8c53"/>
 			</dataarea>
@@ -173,7 +173,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a].d64" size="174848" crc="db9769ba" sha1="8bcfb7f21c5c25bc23474f962bf07eaa0700eb47"/>
 			</dataarea>
@@ -317,7 +317,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="1571 demo disk (19xx)(commodore)[a].d64" size="174848" crc="0fa12d1d" sha1="9f88a8543c10a85d48df28b2f15aa8ea115ddeae"/>
 			</dataarea>
@@ -377,7 +377,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="1700 reu test demo disk (19xx)(commodore)[a].d64" size="174848" crc="dfe2f6de" sha1="1003f4cbfe41a9e1c250795b908176584c1ac600"/>
 			</dataarea>
@@ -395,7 +395,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="1750 clone reu test demo disk (19xx)(commodore)[a].d64" size="174848" crc="a3efc6d4" sha1="938b90d44c8509ee08eb1bd82cdaf9c2e3b7f513"/>
 			</dataarea>
@@ -413,7 +413,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="1764 test demo disk (19xx)(commodore)[a].d64" size="174848" crc="9b65bcdb" sha1="968a2b32ed0064db5117eab949a2cde0dc10694d"/>
 			</dataarea>
@@ -467,7 +467,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a].d64" size="174848" crc="dc9498ad" sha1="9b4f5b111a10f5deaaa5e105f0e5bfb5eae66968"/>
 			</dataarea>
@@ -714,153 +714,153 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Commodore</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, test demo-diskette"/>
+			<feature name="part_id" value="test demo-diskette"/>
+			<dataarea name="flop" size="174848">
+				<rom name="commodore 1541 (1983)(commodore)[test demo-diskette].d64" size="174848" crc="4833e51c" sha1="6eeb59d5c500f4dc690aeb31eb2507973e89ee87"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 1"/>
 			<dataarea name="flop" size="175531">
 				<rom name="commodore 1541 (1983)(commodore)[a][test demo-diskette].d64" size="175531" crc="8c78c7ae" sha1="dd9fb9dff1c9cfba373e4c877586b986ca14150d"/>
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 10, test demo-diskette"/>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 10"/>
 			<dataarea name="flop" size="175531">
 				<rom name="commodore 1541 (1983)(commodore)[a10][test demo-diskette].d64" size="175531" crc="4a5ab8d5" sha1="7a62bfcb02e8db992ebc6a0de47a23dad06a016c"/>
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 11, test demo-diskette"/>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 11"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a11][test demo-diskette].d64" size="174848" crc="7e27dde7" sha1="73ee80fad9e7f7a137cd1704cdfb0cc1a67cb66f"/>
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 12, test demo-diskette"/>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 12"/>
 			<dataarea name="flop" size="175531">
 				<rom name="commodore 1541 (1983)(commodore)[a12][test demo-diskette].d64" size="175531" crc="befcb598" sha1="56de143c88e84161737486f476021aa9c391be78"/>
 			</dataarea>
 		</part>
-		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 13, test demo-diskette"/>
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 13"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a13][test demo-diskette].d64" size="174848" crc="563bfff9" sha1="3505099124c26955ddf5e88084d622b1e8713409"/>
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 14, test demo-diskette"/>
+		<part name="flop7" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 14"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a14][test demo-diskette].d64" size="174848" crc="594ede78" sha1="466a8eee2e295b82cfde0e999411ad0f4f5346fa"/>
 			</dataarea>
 		</part>
-		<part name="flop7" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 15, test demo-diskette"/>
+		<part name="flop8" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 15"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a15][test demo-diskette].d64" size="174848" crc="5271cb5a" sha1="82b02b0d35e15d7e77301f92b5ab12215414967d"/>
 			</dataarea>
 		</part>
-		<part name="flop8" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 16, test demo-diskette"/>
+		<part name="flop9" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 16"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a16][test demo-diskette].d64" size="174848" crc="c1988021" sha1="a2e16660621e2ed3985fd3725dddf726f399903b"/>
 			</dataarea>
 		</part>
-		<part name="flop9" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 17, test demo-diskette"/>
+		<part name="flop10" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 17"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a17][test demo-diskette].d64" size="174848" crc="88f040f8" sha1="8c0f2507d376e488be318a7f2197d909d9cb3de3"/>
 			</dataarea>
 		</part>
-		<part name="flop10" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 18, test demo-diskette"/>
+		<part name="flop11" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 18"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a18][test demo-diskette].d64" size="174848" crc="c590d39e" sha1="9cad4749f589303af02fe90e13bde39dd4681d7d"/>
 			</dataarea>
 		</part>
-		<part name="flop11" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 19, test demo-diskette"/>
+		<part name="flop12" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 19"/>
 			<dataarea name="flop" size="175531">
 				<rom name="commodore 1541 (1983)(commodore)[a19][test demo-diskette].d64" size="175531" crc="5f7ba3d8" sha1="92aa5203669382faf10ef1c6958eddf1d565b264"/>
 			</dataarea>
 		</part>
-		<part name="flop12" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2, test demo-diskette"/>
+		<part name="flop13" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 2"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a2][test demo-diskette].d64" size="174848" crc="915d9c20" sha1="a1f75722574afcc30826a9a403c89ddeb668468b"/>
 			</dataarea>
 		</part>
-		<part name="flop13" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 20, test demo-diskette"/>
+		<part name="flop14" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 20"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a20][test demo-diskette].d64" size="174848" crc="33b8a540" sha1="a0acff390b6859ceed37c12a6af66df26f8ba363"/>
 			</dataarea>
 		</part>
-		<part name="flop14" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 21, test demo-diskette"/>
+		<part name="flop15" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 21"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a21][test demo-diskette].d64" size="174848" crc="5f37ff06" sha1="02adcaf76354071f769d157739b13a599096fe31"/>
 			</dataarea>
 		</part>
-		<part name="flop15" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 22, test demo-diskette"/>
+		<part name="flop16" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 22"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a22][test demo-diskette].d64" size="174848" crc="ceb6146b" sha1="4a8b7d6e448567301a15f7367b331aa2ec13057b"/>
 			</dataarea>
 		</part>
-		<part name="flop16" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 23, test demo-diskette"/>
+		<part name="flop17" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 23"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a23][test demo-diskette].d64" size="174848" crc="b97260ee" sha1="a6829a883429c672aa090a8cf826adc0e0bf6df1"/>
 			</dataarea>
 		</part>
-		<part name="flop17" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 24, test demo-diskette"/>
+		<part name="flop18" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 24"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a24][test demo-diskette].d64" size="174848" crc="b29b7c27" sha1="72fc2f68a966cbf2890d8419a10087357facf8f0"/>
 			</dataarea>
 		</part>
-		<part name="flop18" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 3, test demo-diskette"/>
+		<part name="flop19" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 3"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a3][test demo-diskette].d64" size="174848" crc="d97dcfc9" sha1="19412d8be0847b9204054fe8b6f052e1c1a45b81"/>
 			</dataarea>
 		</part>
-		<part name="flop19" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 4, test demo-diskette"/>
+		<part name="flop20" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 4"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a4][test demo-diskette].d64" size="174848" crc="993392db" sha1="1f5412be1bab5fa12e653c7b0d578d99130540f7"/>
 			</dataarea>
 		</part>
-		<part name="flop20" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 5, test demo-diskette"/>
+		<part name="flop21" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 5"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a5][test demo-diskette].d64" size="174848" crc="1632fb46" sha1="d53bea2228d61989e9fa1c2ede4bd86e4fefeb48"/>
 			</dataarea>
 		</part>
-		<part name="flop21" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 6, test demo-diskette"/>
+		<part name="flop22" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 6"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a6][test demo-diskette].d64" size="174848" crc="2ee2c1e6" sha1="7a8dc0fd0f6fbc2c153c0dbd845f513459b463e2"/>
 			</dataarea>
 		</part>
-		<part name="flop22" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 7, test demo-diskette"/>
+		<part name="flop23" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 7"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a7][test demo-diskette].d64" size="174848" crc="a706af44" sha1="7c88ba7858ea51e71414fd4c33c105b08790476a"/>
 			</dataarea>
 		</part>
-		<part name="flop23" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 8, test demo-diskette"/>
+		<part name="flop24" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 8"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a8][test demo-diskette].d64" size="174848" crc="d3fe7b8f" sha1="c153d1432983030f492b439b32497e3272ad7c0f"/>
 			</dataarea>
 		</part>
-		<part name="flop24" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 9, test demo-diskette"/>
+		<part name="flop25" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 9"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a9][test demo-diskette].d64" size="174848" crc="e984a23f" sha1="e1fd32c6e844a9c610da2adf3ff5f2e5c0aa1a24"/>
-			</dataarea>
-		</part>
-		<part name="flop25" interface="floppy_5_25">
-			<feature name="part_id" value="test demo-diskette"/>
-			<dataarea name="flop" size="174848">
-				<rom name="commodore 1541 (1983)(commodore)[test demo-diskette].d64" size="174848" crc="4833e51c" sha1="6eeb59d5c500f4dc690aeb31eb2507973e89ee87"/>
 			</dataarea>
 		</part>
 	</software>
@@ -871,27 +871,27 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Commodore</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, test demo-diskette"/>
+			<feature name="part_id" value="test demo-diskette"/>
+			<dataarea name="flop" size="174848">
+				<rom name="commodore sx-64 (1984)(commodore)[test demo-diskette].d64" size="174848" crc="d96ab84a" sha1="9f9480afbfcd628f68ad16e1e5a84bbcd86fc426"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore sx-64 (1984)(commodore)[a][test demo-diskette].d64" size="174848" crc="99b689fd" sha1="bb270585973317389c2a486f57e5e9646904acbc"/>
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2, test demo-diskette"/>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 2"/>
 			<dataarea name="flop" size="175531">
 				<rom name="commodore sx-64 (1984)(commodore)[a2][test demo-diskette].d64" size="175531" crc="fe17b24a" sha1="8fd4fb3ae5e255c6e10d4cb8a9157d966e23950c"/>
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 3, test demo-diskette"/>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette, Alt 3"/>
 			<dataarea name="flop" size="174848">
 				<rom name="commodore sx-64 (1984)(commodore)[a3][test demo-diskette].d64" size="174848" crc="41d06c4f" sha1="a4449ad1c9b2ef4d4f381d9109c9b029f70d9396"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="test demo-diskette"/>
-			<dataarea name="flop" size="174848">
-				<rom name="commodore sx-64 (1984)(commodore)[test demo-diskette].d64" size="174848" crc="d96ab84a" sha1="9f9480afbfcd628f68ad16e1e5a84bbcd86fc426"/>
 			</dataarea>
 		</part>
 	</software>
@@ -907,7 +907,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="175531">
 				<rom name="ramboard test demo disk (19xx)(commodore)[a].d64" size="175531" crc="870fa405" sha1="b5dc15bd509b20fc25974de87badaf3089b1278a"/>
 			</dataarea>
@@ -937,7 +937,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="td64test (19xx)(-)[a].d64" size="174848" crc="15c45fca" sha1="ea1177a87465dd72c22cfa1a7445049faa4c60f9"/>
 			</dataarea>

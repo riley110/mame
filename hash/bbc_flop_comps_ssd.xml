@@ -79,6 +79,88 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="amxextra" supported="no">
+		<description>AMX Extras - Font Convertor</description>
+		<year>19??</year>
+		<publisher>Tecnation</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0, FONTCON"/>
+			<dataarea name="flop" size="204800">
+				<rom name="amx extras - font convertor (19xx)(tecnation)(side 0)[fontcon].ssd" size="204800" crc="96157138" sha1="a02ea4a3c8892388d323da55a99ec4c6a821047f"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
+			<dataarea name="flop" size="204800">
+				<rom name="amx extras - font convertor (19xx)(tecnation)(side 1).ssd" size="204800" crc="058041e9" sha1="a395bfc089e573114ae434a341fcc6d2827124d2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amxfonts" supported="no">
+		<description>AMX Fonts 2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
+			<dataarea name="flop" size="204800">
+				<rom name="amx fonts 2 (19xx)(-)(side 0).ssd" size="204800" crc="e4e5f612" sha1="cb0efd23027b6c291484bd2086bc1bd523f9ad9a"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
+			<dataarea name="flop" size="204800">
+				<rom name="amx fonts 2 (19xx)(-)(side 1).ssd" size="204800" crc="80b2c9da" sha1="6b7166f1f44aa27269ced3100c7e5c21cb010f41"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amxfonts_1" supported="no">
+		<description>AMX Fonts 3</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
+			<dataarea name="flop" size="204800">
+				<rom name="amx fonts 3 (19xx)(-)(side 0).ssd" size="204800" crc="eb352880" sha1="76e662a2c3619a3f5f650dab7a1c73f181b2c957"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
+			<dataarea name="flop" size="204800">
+				<rom name="amx fonts 3 (19xx)(-)(side 1).ssd" size="204800" crc="e9d217b3" sha1="ea49ef7bf3a5ce3d844f07dbef1e477917008b2c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amxpagem" supported="no">
+		<description>AMX Pagemaker Extras</description>
+		<year>1986</year>
+		<publisher>Tecnation</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="amx pagemaker extras (1986)(tecnation).ssd" size="204800" crc="ddf1480d" sha1="93a4b9feb02709a3825ff959e6c754ac6c90ca58"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="asciidis" supported="no">
+		<description>ASCII &amp; Disc Utilities</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
+			<dataarea name="flop" size="204800">
+				<rom name="ascii &amp; disc utilities (19xx)(-)[h 8-bit].ssd" size="204800" crc="46f9a0a8" sha1="4431c92c727c444dd87f4ddcd1a7abfb092dec65"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="acornbbc" supported="no">
 		<description>Acorn BBC ROMs</description>
 		<year>19??</year>
@@ -184,7 +266,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="128256">
 				<rom name="adult basic education disks 34, 36 &amp; talking disc (19xx)(davy, p.)[a].ssd" size="128256" crc="60d293dc" sha1="cead2709a7556be72ff0ba4a28dadd5702a37c28"/>
 			</dataarea>
@@ -246,97 +328,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="amxextra" supported="no">
-		<description>AMX Extras - Font Convertor</description>
-		<year>19??</year>
-		<publisher>Tecnation</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side 0, FONTCON"/>
-			<dataarea name="flop" size="204800">
-				<rom name="amx extras - font convertor (19xx)(tecnation)(side 0)[fontcon].ssd" size="204800" crc="96157138" sha1="a02ea4a3c8892388d323da55a99ec4c6a821047f"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side 1"/>
-			<dataarea name="flop" size="204800">
-				<rom name="amx extras - font convertor (19xx)(tecnation)(side 1).ssd" size="204800" crc="058041e9" sha1="a395bfc089e573114ae434a341fcc6d2827124d2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="amxfonts" supported="no">
-		<description>AMX Fonts 2</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side 0"/>
-			<dataarea name="flop" size="204800">
-				<rom name="amx fonts 2 (19xx)(-)(side 0).ssd" size="204800" crc="e4e5f612" sha1="cb0efd23027b6c291484bd2086bc1bd523f9ad9a"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side 1"/>
-			<dataarea name="flop" size="204800">
-				<rom name="amx fonts 2 (19xx)(-)(side 1).ssd" size="204800" crc="80b2c9da" sha1="6b7166f1f44aa27269ced3100c7e5c21cb010f41"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="amxfonts_1" supported="no">
-		<description>AMX Fonts 3</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side 0"/>
-			<dataarea name="flop" size="204800">
-				<rom name="amx fonts 3 (19xx)(-)(side 0).ssd" size="204800" crc="eb352880" sha1="76e662a2c3619a3f5f650dab7a1c73f181b2c957"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side 1"/>
-			<dataarea name="flop" size="204800">
-				<rom name="amx fonts 3 (19xx)(-)(side 1).ssd" size="204800" crc="e9d217b3" sha1="ea49ef7bf3a5ce3d844f07dbef1e477917008b2c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="amxpagem" supported="no">
-		<description>AMX Pagemaker Extras</description>
-		<year>1986</year>
-		<publisher>Tecnation</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="amx pagemaker extras (1986)(tecnation).ssd" size="204800" crc="ddf1480d" sha1="93a4b9feb02709a3825ff959e6c754ac6c90ca58"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="artistut" supported="no">
 		<description>Artist Utilities</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Bad 1"/>
 			<dataarea name="flop" size="90368">
 				<rom name="artist utilities (19xx)(-)[b].ssd" size="90368" crc="0051dfc6" sha1="616b0f324cbd515f6844b3d74c0f15ba5ef1ca1c" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="asciidis" supported="no">
-		<description>ASCII &amp; Disc Utilities</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked 8-Bit"/>
-			<dataarea name="flop" size="204800">
-				<rom name="ascii &amp; disc utilities (19xx)(-)[h 8-bit].ssd" size="204800" crc="46f9a0a8" sha1="4431c92c727c444dd87f4ddcd1a7abfb092dec65"/>
 			</dataarea>
 		</part>
 	</software>
@@ -356,19 +356,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side 1"/>
 			<dataarea name="flop" size="204800">
 				<rom name="audiogenic games (19xx)(-)(side 1).ssd" size="204800" crc="b23e3236" sha1="10f0e9103a55d57fa3a8a1236b10ebdceeae91d6"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bazzasof" supported="no">
-		<description>Bazzasoft Compilation</description>
-		<year>19??</year>
-		<publisher>Bazzasoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked 8-Bit"/>
-			<dataarea name="flop" size="204800">
-				<rom name="bazzasoft compilation (19xx)(bazzasoft)[h 8-bit].ssd" size="204800" crc="e97b7f0b" sha1="308db29591d0216871e93c530ef2863623aace8c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -403,7 +390,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="52480">
 				<rom name="bbc demos disk (19xx)(-)[a].ssd" size="52480" crc="fa1f23cc" sha1="7b79f80d5b74f2a59d5353704be5173f2e26bede"/>
 			</dataarea>
@@ -430,6 +417,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
 				<rom name="bbc pd disk 155 - a to z of game cheats (1993)(smyliesoft).ssd" size="204800" crc="304c5da9" sha1="c9e28eebd402b7e0f8b377ce3672cbbd87fd5e61"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bazzasof" supported="no">
+		<description>Bazzasoft Compilation</description>
+		<year>19??</year>
+		<publisher>Bazzasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
+			<dataarea name="flop" size="204800">
+				<rom name="bazzasoft compilation (19xx)(bazzasoft)[h 8-bit].ssd" size="204800" crc="e97b7f0b" sha1="308db29591d0216871e93c530ef2863623aace8c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -479,6 +479,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="bestofbe_1" supported="no">
+		<description>Best of Beebug - Applications II</description>
+		<year>19??</year>
+		<publisher>Beebug</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="best of beebug - applications ii (19xx)(beebug).ssd" size="204800" crc="78e924a2" sha1="78e8b9788397c903c600da716b59f60b4d0fac8e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bestofbe_2" supported="no">
 		<description>Best of Beebug - Applications</description>
 		<year>19??</year>
 		<publisher>Beebug</publisher>
@@ -487,18 +499,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="MENU"/>
 			<dataarea name="flop" size="204800">
 				<rom name="best of beebug - applications (19xx)(beebug)[menu].ssd" size="204800" crc="31c160d1" sha1="e6ec2c8bee24fcf7192c5f9b2643b06a9a6fbb78"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bestofbe_2" supported="no">
-		<description>Best of Beebug - Applications II</description>
-		<year>19??</year>
-		<publisher>Beebug</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="best of beebug - applications ii (19xx)(beebug).ssd" size="204800" crc="78e924a2" sha1="78e8b9788397c903c600da716b59f60b4d0fac8e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -654,19 +654,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thecompl" supported="no">
-		<description>The Complete Home Entertainment Centre</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="162560">
-				<rom name="complete home entertainment centre, the (19xx)(-)[h tsth].ssd" size="162560" crc="362611ad" sha1="c58a9c8fd5b000a9b5e225e387af021f2acdf8c0"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="computer" supported="no">
 		<description>Computer Concepts ROMs</description>
 		<year>19??</year>
@@ -733,7 +720,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="204800">
 				<rom name="digital waveforms (1985)(allen, darren)[a].ssd" size="204800" crc="274e924f" sha1="bdeb87b0f3e297c7a50767f838a7a319cebd3280"/>
 			</dataarea>
@@ -796,18 +783,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="educatio" supported="no">
-		<description>Education</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="education (19xx)(-).ssd" size="204800" crc="949143df" sha1="1a608032f8a616074ea151c8df55e7ab1c58fadc"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="educatio_1" supported="no">
 		<description>Education - Math</description>
 		<year>19??</year>
 		<publisher>8-Bit</publisher>
@@ -819,7 +794,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="educatio_2" supported="no">
+	<software name="educatio_1" supported="no">
 		<description>Education 02</description>
 		<year>1995</year>
 		<publisher>8-Bit</publisher>
@@ -827,6 +802,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
 				<rom name="education 02 (1995)(8-bit).ssd" size="204800" crc="87a920e4" sha1="7ac665519710d5b60989bd7e47e47c772432f71c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="educatio_2" supported="no">
+		<description>Education</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="education (19xx)(-).ssd" size="204800" crc="949143df" sha1="1a608032f8a616074ea151c8df55e7ab1c58fadc"/>
 			</dataarea>
 		</part>
 	</software>
@@ -972,7 +959,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="204800">
 				<rom name="games #03 (19xx)(-)[a].ssd" size="204800" crc="ea8db9a0" sha1="aafe7f65a7780c9bbc33b055dfb34b34f868a001"/>
 			</dataarea>
@@ -1146,7 +1133,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="204800">
 				<rom name="games #28 (19xx)(-)[a].ssd" size="204800" crc="35bd713f" sha1="3407b6f3fa6ce3286588a8db05ebd3012dcc1de4"/>
 			</dataarea>
@@ -1176,7 +1163,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="204800">
 				<rom name="games #30 (19xx)(-)[a].ssd" size="204800" crc="fed39ba6" sha1="81d77e28cabe6e0214a412d8db3934b08a4268fe"/>
 			</dataarea>
@@ -1516,44 +1503,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="gamesfor" supported="no">
-		<description>Games for Cheaters</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side 0"/>
-			<dataarea name="flop" size="204800">
-				<rom name="games for cheaters (19xx)(-)(side 0).ssd" size="204800" crc="af6eb8fb" sha1="1f77b37a2b6a79cdfb81e6775ef75b3438c90c04"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side 1"/>
-			<dataarea name="flop" size="204800">
-				<rom name="games for cheaters (19xx)(-)(side 1).ssd" size="204800" crc="833ac9ae" sha1="d74a353acc70cbba58a6f0705e4e2f59f21c4147"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamesfro" supported="no">
-		<description>Games from Magazines</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side 0"/>
-			<dataarea name="flop" size="204800">
-				<rom name="games from magazines (19xx)(-)(side 0).ssd" size="204800" crc="2b6399a8" sha1="212b4eba026b66f5e0171b793f903affff0d0a5d"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side 1"/>
-			<dataarea name="flop" size="204800">
-				<rom name="games from magazines (19xx)(-)(side 1).ssd" size="204800" crc="76a1a107" sha1="69f6b3b210cfc7cf6491248bf030ab7efdff946b"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="gamesgh" supported="no">
 		<description>Games G-H</description>
 		<year>19??</year>
@@ -1699,19 +1648,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="gamesofs" supported="no">
-		<description>Games of Strategy</description>
-		<year>1982</year>
-		<publisher>BBC</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="26624">
-				<rom name="games of strategy (1982)(bbc)[h tsth].ssd" size="26624" crc="7d3a889c" sha1="0ca651bd1dc53626b481620ffb877eb95fc78278"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="gamespq" supported="no">
 		<description>Games P-Q</description>
 		<year>19??</year>
@@ -1788,6 +1724,57 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="gamesfor" supported="no">
+		<description>Games for Cheaters</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
+			<dataarea name="flop" size="204800">
+				<rom name="games for cheaters (19xx)(-)(side 0).ssd" size="204800" crc="af6eb8fb" sha1="1f77b37a2b6a79cdfb81e6775ef75b3438c90c04"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
+			<dataarea name="flop" size="204800">
+				<rom name="games for cheaters (19xx)(-)(side 1).ssd" size="204800" crc="833ac9ae" sha1="d74a353acc70cbba58a6f0705e4e2f59f21c4147"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gamesfro" supported="no">
+		<description>Games from Magazines</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 0"/>
+			<dataarea name="flop" size="204800">
+				<rom name="games from magazines (19xx)(-)(side 0).ssd" size="204800" crc="2b6399a8" sha1="212b4eba026b66f5e0171b793f903affff0d0a5d"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
+			<dataarea name="flop" size="204800">
+				<rom name="games from magazines (19xx)(-)(side 1).ssd" size="204800" crc="76a1a107" sha1="69f6b3b210cfc7cf6491248bf030ab7efdff946b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gamesofs" supported="no">
+		<description>Games of Strategy</description>
+		<year>1982</year>
+		<publisher>BBC</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="26624">
+				<rom name="games of strategy (1982)(bbc)[h tsth].ssd" size="26624" crc="7d3a889c" sha1="0ca651bd1dc53626b481620ffb877eb95fc78278"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="goldcoll" supported="no">
 		<description>Gold Collection</description>
 		<year>19??</year>
@@ -1796,19 +1783,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
 				<rom name="gold collection (19xx)(-).ssd" size="204800" crc="6b715172" sha1="b23750f1d206df1c9efb26e1d63253c6177e0d2f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thegoldc" supported="no">
-		<description>The Gold Collection 3</description>
-		<year>19??</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="167168">
-				<rom name="gold collection 3, the (19xx)(u.s. gold)[h tsth].ssd" size="167168" crc="69987390" sha1="7a97249c174f8b2b60dad02b0ce367a3b5f4d41c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1858,18 +1832,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="harstonp_2" supported="no">
-		<description>Harston PD Library - Database Utilities (Public Domain)</description>
-		<year>19??</year>
-		<publisher>J.G. Harston</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="harston pd library - database utilities (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="c831d595" sha1="179d7ef817c361fdeec6cafd83db2588dbdd76e5"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="harstonp_3" supported="no">
 		<description>Harston PD Library - DOS Utilities (Public Domain)</description>
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
@@ -1878,6 +1840,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="INTRO"/>
 			<dataarea name="flop" size="204800">
 				<rom name="harston pd library - dos utilities (19xx)(harston, j.g.)(pd)[intro].ssd" size="204800" crc="3d1cb1a1" sha1="c5d3e1e89fc43187fba87e856c4e6594fed0fa22"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="harstonp_3" supported="no">
+		<description>Harston PD Library - Database Utilities (Public Domain)</description>
+		<year>19??</year>
+		<publisher>J.G. Harston</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="harston pd library - database utilities (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="c831d595" sha1="179d7ef817c361fdeec6cafd83db2588dbdd76e5"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1931,18 +1905,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="harstonp_8" supported="no">
-		<description>Harston PD Library - Music Programs (Public Domain)</description>
-		<year>19??</year>
-		<publisher>J.G. Harston</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="harston pd library - music programs (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="699332e2" sha1="b0760782f1e99bdebae04397acd7e63629689f52"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="harstonp_9" supported="no">
 		<description>Harston PD Library - Music Programs 2 (Public Domain)</description>
 		<year>19??</year>
 		<publisher>J.G. Harston</publisher>
@@ -1950,6 +1912,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
 				<rom name="harston pd library - music programs 2 (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="fe859cc6" sha1="089861af398fc06978257cbf9e0749e10fc8b487"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="harstonp_9" supported="no">
+		<description>Harston PD Library - Music Programs (Public Domain)</description>
+		<year>19??</year>
+		<publisher>J.G. Harston</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="harston pd library - music programs (19xx)(harston, j.g.)(pd).ssd" size="204800" crc="699332e2" sha1="b0760782f1e99bdebae04397acd7e63629689f52"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1989,7 +1963,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="204800">
 				<rom name="harston pd library - screen pictures (19xx)(harston, j.g.)(pd)[a].ssd" size="204800" crc="bc0fa104" sha1="86040ff3932a99c7cdba1f0ee5cf061d2e67ecee"/>
 			</dataarea>
@@ -2074,7 +2048,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>HeadFirst</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked 8-Bit, !MENU"/>
+			<feature name="part_id" value="!MENU, Hacked 8-Bit"/>
 			<dataarea name="flop" size="204800">
 				<rom name="headfirst pd (19xx)(headfirst)(pd)[h 8-bit][menu].ssd" size="204800" crc="4f419685" sha1="f83c1c22f68887f52e2b94e2f64c1739838aa7db"/>
 			</dataarea>
@@ -2174,7 +2148,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Kees van Oss</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Bad 1"/>
 			<dataarea name="flop" size="102400">
 				<rom name="kees van oss compilation (19xx)(van oss, kees)[b].ssd" size="102400" crc="7dee50a9" sha1="cd95b0d5a1db05c963ee30c8f85b01e13bf41af7" status="baddump"/>
 			</dataarea>
@@ -2196,6 +2170,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side 1"/>
 			<dataarea name="flop" size="204800">
 				<rom name="kopi desk (19xx)(-)(side 1).ssd" size="204800" crc="783d99bb" sha1="b08a7370ef03a0daf712b984a1b322516ac91edf"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mrpd" supported="no">
+		<description>MRPD</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
+			<dataarea name="flop" size="204800">
+				<rom name="mrpd (19xx)(-)[h 8-bit].ssd" size="204800" crc="95980013" sha1="f5e44353a61f22629a62c15d92485df04dd2fc3d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2233,19 +2220,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="micropow" supported="no">
-		<description>Micro Power Magic I</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="152576">
-				<rom name="micro power magic i (19xx)(-)[h tsth].ssd" size="152576" crc="b597e788" sha1="32e709c4ba33ca43e77e5e03ed9e7d51937ba909"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="micropow_1" supported="no">
 		<description>Micro Power Magic II</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -2258,6 +2232,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="micropow_1" supported="no">
+		<description>Micro Power Magic I</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="152576">
+				<rom name="micro power magic i (19xx)(-)[h tsth].ssd" size="152576" crc="b597e788" sha1="32e709c4ba33ca43e77e5e03ed9e7d51937ba909"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="miscella" supported="no">
 		<description>Miscellany 2</description>
 		<year>19??</year>
@@ -2266,19 +2253,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
 				<rom name="miscellany 2 (19xx)(glm).ssd" size="204800" crc="b3850378" sha1="b4d30d2388c078c343eb8a7344823f597421db22"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="mrpd" supported="no">
-		<description>MRPD</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked 8-Bit"/>
-			<dataarea name="flop" size="204800">
-				<rom name="mrpd (19xx)(-)[h 8-bit].ssd" size="204800" crc="95980013" sha1="f5e44353a61f22629a62c15d92485df04dd2fc3d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2329,18 +2303,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="flop" size="204800">
 				<rom name="pagerom &amp; kangaterm (19xx)(-)[h 8-bit].ssd" size="204800" crc="057a97d5" sha1="29bfd8107f3a2f625fe7590f8d971609f7bd8aab"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thepokes" supported="no">
-		<description>The Pokes Disc - Issue 1</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="pokes disc, the - issue 1 (19xx)(-).ssd" size="204800" crc="ed96bf98" sha1="34ff6a1066d3ba0bcf815b493a0a31ebc089853d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3131,7 +3093,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Bad 1"/>
 			<dataarea name="flop" size="204800">
 				<rom name="sharx place 57 - xx items (19xx)(-)[b].ssd" size="204800" crc="8417c037" sha1="3e6a58536af8cf39973a77121797403b0a04a457" status="baddump"/>
 			</dataarea>
@@ -3210,24 +3172,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="smash7" supported="no">
-		<description>Smash 7</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="smash 7 (19xx)(-).ssd" size="204800" crc="8cf1d13d" sha1="af8728185248efeeb3001332f5287cfdad056ddf"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="132608">
-				<rom name="smash 7 (19xx)(-)[h tsth].ssd" size="132608" crc="a2dd7965" sha1="b50c0352fd6573a8241f2306198d2d105699b303"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="smash7pa" supported="no">
 		<description>Smash 7 - Part 1</description>
 		<year>19??</year>
@@ -3250,6 +3194,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="49920">
 				<rom name="smash 7 - part 2 (19xx)(-)[h tsth].ssd" size="49920" crc="7f252928" sha1="50d4c21e88be66fae9836d023ac1c6e16e417a23"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="smash7" supported="no">
+		<description>Smash 7</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="smash 7 (19xx)(-).ssd" size="204800" crc="8cf1d13d" sha1="af8728185248efeeb3001332f5287cfdad056ddf"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="132608">
+				<rom name="smash 7 (19xx)(-)[h tsth].ssd" size="132608" crc="a2dd7965" sha1="b50c0352fd6573a8241f2306198d2d105699b303"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3673,6 +3635,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="tmsutili" supported="no">
+		<description>TMS Utilities</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="tms utilities (19xx)(-).ssd" size="204800" crc="6414241b" sha1="a3c5244bb1b8d5860e9d2204b38bd4e1d72ca3e1"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="tapetodi" supported="no">
 		<description>Tape to Disc Utilities</description>
 		<year>19??</year>
@@ -3685,14 +3659,53 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="tmsutili" supported="no">
-		<description>TMS Utilities</description>
+	<software name="thecompl" supported="no">
+		<description>The Complete Home Entertainment Centre</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="162560">
+				<rom name="complete home entertainment centre, the (19xx)(-)[h tsth].ssd" size="162560" crc="362611ad" sha1="c58a9c8fd5b000a9b5e225e387af021f2acdf8c0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thegoldc" supported="no">
+		<description>The Gold Collection 3</description>
+		<year>19??</year>
+		<publisher>U.S. Gold</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="167168">
+				<rom name="gold collection 3, the (19xx)(u.s. gold)[h tsth].ssd" size="167168" crc="69987390" sha1="7a97249c174f8b2b60dad02b0ce367a3b5f4d41c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thepokes" supported="no">
+		<description>The Pokes Disc - Issue 1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
-				<rom name="tms utilities (19xx)(-).ssd" size="204800" crc="6414241b" sha1="a3c5244bb1b8d5860e9d2204b38bd4e1d72ca3e1"/>
+				<rom name="pokes disc, the - issue 1 (19xx)(-).ssd" size="204800" crc="ed96bf98" sha1="34ff6a1066d3ba0bcf815b493a0a31ebc089853d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thevikin" supported="no">
+		<description>The Viking Collection</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Bad 1"/>
+			<dataarea name="flop" size="204800">
+				<rom name="viking collection, the (19xx)(-)[b].ssd" size="204800" crc="f8876721" sha1="6a4bc2301512d878822426000c1c984bc70cf6cc" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3896,18 +3909,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="utilitie" supported="no">
-		<description>Utilities</description>
-		<year>19??</year>
-		<publisher>8-Bit</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="utilities (19xx)(8-bit).ssd" size="204800" crc="98de7214" sha1="dfade00724fdaa5822f171200e1ad9a322a10ab7"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="utilitie_1" supported="no">
 		<description>Utilities 1</description>
 		<year>19??</year>
 		<publisher>Red Shift</publisher>
@@ -3920,7 +3921,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="utilitie_2" supported="no">
+	<software name="utilitie_1" supported="no">
 		<description>Utilities Disk 5</description>
 		<year>1991</year>
 		<publisher>GLM</publisher>
@@ -3929,6 +3930,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="MENU"/>
 			<dataarea name="flop" size="204800">
 				<rom name="utilities disk 5 (1991)(glm)[menu].ssd" size="204800" crc="36f905eb" sha1="44b01fc62069ec594161654af8f8fd3d696073f8"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="utilitie_2" supported="no">
+		<description>Utilities</description>
+		<year>19??</year>
+		<publisher>8-Bit</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="utilities (19xx)(8-bit).ssd" size="204800" crc="98de7214" sha1="dfade00724fdaa5822f171200e1ad9a322a10ab7"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3945,7 +3958,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side 0, Alt"/>
+			<feature name="part_id" value="Side 0, Alt 1"/>
 			<dataarea name="flop" size="204800">
 				<rom name="utility &amp; language roms (19xx)(-)(side 0)[a].ssd" size="204800" crc="a43d890d" sha1="631bc5474c191572baa220244d8505acc1e98271"/>
 			</dataarea>
@@ -3957,7 +3970,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side 1, Alt"/>
+			<feature name="part_id" value="Side 1, Alt 1"/>
 			<dataarea name="flop" size="204800">
 				<rom name="utility &amp; language roms (19xx)(-)(side 1)[a].ssd" size="204800" crc="dc121d9b" sha1="e7ec15b2fd9d528d99e08ac06c2afc36e8d3f3c8"/>
 			</dataarea>
@@ -3977,15 +3990,28 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thevikin" supported="no">
-		<description>The Viking Collection</description>
+	<software name="wbmugmr8" supported="no">
+		<description>WBMUG MR-8 - ACSII Files &amp; Texts</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Mad Rabbit</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Hacked 8-Bit"/>
 			<dataarea name="flop" size="204800">
-				<rom name="viking collection, the (19xx)(-)[b].ssd" size="204800" crc="f8876721" sha1="6a4bc2301512d878822426000c1c984bc70cf6cc" status="baddump"/>
+				<rom name="wbmug mr-8 - acsii files &amp; texts (19xx)(mad rabbit)[h 8-bit].ssd" size="204800" crc="0847f00a" sha1="2fddeeb17db70e78f8ec2ca4ac0272545d9a7ebe"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wbmugmr8_1" supported="no">
+		<description>WBMUG MR-8 - Communications</description>
+		<year>19??</year>
+		<publisher>Mad Rabbit</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 8-Bit"/>
+			<dataarea name="flop" size="204800">
+				<rom name="wbmug mr-8 - communications (19xx)(mad rabbit)[h 8-bit].ssd" size="204800" crc="2d39605c" sha1="69a2afc98c97e18964448df0d7ec9a2eab74f91a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4022,53 +4048,27 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="wbmugmr8" supported="no">
-		<description>WBMUG MR-8 - ACSII Files &amp; Texts</description>
-		<year>19??</year>
-		<publisher>Mad Rabbit</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked 8-Bit"/>
-			<dataarea name="flop" size="204800">
-				<rom name="wbmug mr-8 - acsii files &amp; texts (19xx)(mad rabbit)[h 8-bit].ssd" size="204800" crc="0847f00a" sha1="2fddeeb17db70e78f8ec2ca4ac0272545d9a7ebe"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="wbmugmr8_1" supported="no">
-		<description>WBMUG MR-8 - Communications</description>
-		<year>19??</year>
-		<publisher>Mad Rabbit</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked 8-Bit"/>
-			<dataarea name="flop" size="204800">
-				<rom name="wbmug mr-8 - communications (19xx)(mad rabbit)[h 8-bit].ssd" size="204800" crc="2d39605c" sha1="69a2afc98c97e18964448df0d7ec9a2eab74f91a"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="zappakca" supported="no">
 		<description>Zap Pak - Cavey &amp; Killapede</description>
 		<year>1987</year>
 		<publisher>Players</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, PLAYER"/>
-			<dataarea name="flop" size="28160">
-				<rom name="zap pak - cavey &amp; killapede (1987)(players)[a][player].ssd" size="28160" crc="8039f25a" sha1="9e2feec9d0aa519e736ccb4fad172c4b45544da4"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="45056">
 				<rom name="zap pak - cavey &amp; killapede (1987)(players)[h tsth].ssd" size="45056" crc="9cd0ddb8" sha1="1d594bed057a9b65ffd9efde68c2102654f799e2"/>
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="PLAYER"/>
 			<dataarea name="flop" size="28160">
 				<rom name="zap pak - cavey &amp; killapede (1987)(players)[player].ssd" size="28160" crc="2f6df702" sha1="a3e8173f9c0222c04cf8957d0ee2d31682b12938"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="PLAYER, Alt 1"/>
+			<dataarea name="flop" size="28160">
+				<rom name="zap pak - cavey &amp; killapede (1987)(players)[a][player].ssd" size="28160" crc="8039f25a" sha1="9e2feec9d0aa519e736ccb4fad172c4b45544da4"/>
 			</dataarea>
 		</part>
 	</software>

@@ -30,7 +30,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Bad 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="alien evil contacts (1988-01-30)(mister antic)[b].atr" size="92176" crc="68a69012" sha1="247d1acced345f0d8c52068c617e0a83f67390d5" status="baddump"/>
 			</dataarea>
@@ -61,7 +61,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="anime 4ever (2000)(ssg)(pl)(side a)[a].atr" size="183952" crc="3d0bde5f" sha1="24da3421799285ca025e183641646b5e1771612e"/>
 			</dataarea>
@@ -111,38 +111,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="theasski" supported="no">
-		<description>The Asskicker (PL)</description>
-		<year>1996</year>
-		<publisher>Shadows</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="asskicker, the (1996)(shadows)(pl)[128k].atr" size="133136" crc="ec65a87e" sha1="28e10a700a3fe86c4a424dbfe93a51450a5e9232"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, 128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="asskicker, the (1996)(shadows)(pl)[a][128k].atr" size="133136" crc="c5bd1f24" sha1="10e704cf0c35b0a90d6d40c3cecbe1d64abcb77c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="theasski_1" supported="no">
-		<description>The Asskicker (PL, 1997-07-18)</description>
-		<year>1997</year>
-		<publisher>Shadows</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked Tamas, 128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="asskicker, the (1997-07-18)(shadows)(pl)[h tamas][128k].atr" size="133136" crc="4a2cd720" sha1="3f14f429033fab344986d70268e82f475afbf291"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="ataridea" supported="no">
 		<description>Atari Dealer Demo</description>
 		<year>1980</year>
@@ -163,24 +131,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="183952">
 				<rom name="atari digital sound (1987)(t.b)(pl).atr" size="183952" crc="4616096d" sha1="922fec52e400cfef5583b2c7e7750c9f7a90ab2e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="theatari" supported="no">
-		<description>The Atari Expo Demo 1991 (de)</description>
-		<year>1991</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="atari expo demo 1991, the (1991)(-)(de).atr" size="133136" crc="e34bcca1" sha1="fbd4a8d961ecd63174f6e83c6eda59f7c7e3de4d"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="133136">
-				<rom name="atari expo demo 1991, the (1991)(-)(de)[a].atr" size="133136" crc="48c5ed65" sha1="71090438d649b5a387fcfd1394276d78928439a0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -227,25 +177,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="theatari_1" supported="no">
-		<description>The Atari Spring 1996 Fair Demo Project</description>
-		<year>1996</year>
-		<publisher>ACE</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A"/>
-			<dataarea name="flop" size="133136">
-				<rom name="atari spring 1996 fair demo project, the (1996)(ace)(side a).atr" size="133136" crc="3a63ed61" sha1="27692cbf1905b304e7ee119886966e4f7bc2f048"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B"/>
-			<dataarea name="flop" size="133136">
-				<rom name="atari spring 1996 fair demo project, the (1996)(ace)(side b).atr" size="133136" crc="2b9329cb" sha1="49c0d2d0f7e9c04ddcac6c497dc0b5885f0af741"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="atariada" supported="no">
 		<description>Atariada '99 - Stuff</description>
 		<year>1999</year>
@@ -254,6 +185,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="133136">
 				<rom name="atariada '99 - stuff (1999)(-).atr" size="133136" crc="11e8b4d8" sha1="914c44e51631a8fc5f7fd91eaf78aa662ee7f34e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blbmusic" supported="no">
+		<description>BLB Music (pl)</description>
+		<year>2002</year>
+		<publisher>SHP</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="183952">
+				<rom name="blb music (2002)(shp)(pl).atr" size="183952" crc="9a12502d" sha1="ce854d3484db40d02a2f175c74dbdf5ee8af76d8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -271,69 +214,51 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thebesto" supported="no">
-		<description>The Best of YFA (pl)</description>
-		<year>1994</year>
-		<publisher>YFA</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="best of yfa, the (1994)(yfa)(pl).atr" size="133136" crc="66825375" sha1="ff4ae2ff53a6db1ab3f6d53e7d5ea75baac73009"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="133136">
-				<rom name="best of yfa, the (1994)(yfa)(pl)[a].atr" size="133136" crc="4f5ae42f" sha1="1e9516e37d2738427e8e98fdf2667aa144cde8b0"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="bigatari" supported="no">
 		<description>Big Atari 8-Bit Demo</description>
 		<year>1989</year>
 		<publisher>High-Tech Team</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt 2, OS Rev 2"/>
-			<dataarea name="flop" size="133136">
-				<rom name="big atari 8-bit demo (1989)(high-tech team)(side a)[a2][os rev 2].atr" size="133136" crc="c13dea54" sha1="ef24514a7d65c67c093f12cd05c0051a767a8fa6"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt, OS Rev 2"/>
-			<dataarea name="flop" size="133136">
-				<rom name="big atari 8-bit demo (1989)(high-tech team)(side a)[a][os rev 2].atr" size="133136" crc="afe645ab" sha1="89eb809fa2fa9237fd20c0eb3791fb3d6b8efb0d"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="Side A, OS Rev 2"/>
 			<dataarea name="flop" size="133136">
 				<rom name="big atari 8-bit demo (1989)(high-tech team)(side a)[os rev 2].atr" size="133136" crc="f61bc916" sha1="496a8b2e2b1591206473643f6e4da311737cf76b"/>
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt 2, OS Rev 2"/>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, OS Rev 2, Alt 1"/>
 			<dataarea name="flop" size="133136">
-				<rom name="big atari 8-bit demo (1989)(high-tech team)(side b)[a2][os rev 2].atr" size="133136" crc="206105a6" sha1="08a4099467603a11144ac47fe463922475b89a6e"/>
+				<rom name="big atari 8-bit demo (1989)(high-tech team)(side a)[a][os rev 2].atr" size="133136" crc="afe645ab" sha1="89eb809fa2fa9237fd20c0eb3791fb3d6b8efb0d"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, OS Rev 2, Alt 2"/>
+			<dataarea name="flop" size="133136">
+				<rom name="big atari 8-bit demo (1989)(high-tech team)(side a)[a2][os rev 2].atr" size="133136" crc="c13dea54" sha1="ef24514a7d65c67c093f12cd05c0051a767a8fa6"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, OS Rev 2"/>
+			<dataarea name="flop" size="133136">
+				<rom name="big atari 8-bit demo (1989)(high-tech team)(side b)[os rev 2].atr" size="133136" crc="9df8f3e1" sha1="6ab20d645b6104499e5edd8a1b44ed539f8e4480"/>
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt 3, OS Rev 2"/>
-			<dataarea name="flop" size="133136">
-				<rom name="big atari 8-bit demo (1989)(high-tech team)(side b)[a3][os rev 2].atr" size="133136" crc="4e7fc993" sha1="6e0f5cd58b10052196319afa42352c7a161e074f"/>
-			</dataarea>
-		</part>
-		<part name="flop6" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt, OS Rev 2"/>
+			<feature name="part_id" value="Side B, OS Rev 2, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="big atari 8-bit demo (1989)(high-tech team)(side b)[a][os rev 2].atr" size="133136" crc="b42044bb" sha1="25d480999f21712d32ef4c3f79e444db9c208cec"/>
 			</dataarea>
 		</part>
-		<part name="flop7" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, OS Rev 2"/>
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, OS Rev 2, Alt 2"/>
 			<dataarea name="flop" size="133136">
-				<rom name="big atari 8-bit demo (1989)(high-tech team)(side b)[os rev 2].atr" size="133136" crc="9df8f3e1" sha1="6ab20d645b6104499e5edd8a1b44ed539f8e4480"/>
+				<rom name="big atari 8-bit demo (1989)(high-tech team)(side b)[a2][os rev 2].atr" size="133136" crc="206105a6" sha1="08a4099467603a11144ac47fe463922475b89a6e"/>
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, OS Rev 2, Alt 3"/>
+			<dataarea name="flop" size="133136">
+				<rom name="big atari 8-bit demo (1989)(high-tech team)(side b)[a3][os rev 2].atr" size="133136" crc="4e7fc993" sha1="6e0f5cd58b10052196319afa42352c7a161e074f"/>
 			</dataarea>
 		</part>
 	</software>
@@ -349,21 +274,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="bitter reality (1994-06-04)(slight)(pl)[a].atr" size="133136" crc="201de0b6" sha1="67cb040c881426bd3315b16f806fb03e0dbc2823"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="blbmusic" supported="no">
-		<description>BLB Music (pl)</description>
-		<year>2002</year>
-		<publisher>SHP</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="183952">
-				<rom name="blb music (2002)(shp)(pl).atr" size="183952" crc="9a12502d" sha1="ce854d3484db40d02a2f175c74dbdf5ee8af76d8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -380,7 +293,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="bonus side '96 (1996)(tight)(pl)(side a)[a].atr" size="183952" crc="1f0e8545" sha1="972612ed366dc6a4ca2fa72f817eb59f9915efcc"/>
 			</dataarea>
@@ -392,7 +305,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt"/>
+			<feature name="part_id" value="Side B, Alt 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="bonus side '96 (1996)(tight)(pl)(side b)[a].atr" size="183952" crc="cc8db5b5" sha1="3762a29f91093e2f29cccf3c9cc20b618d43531b"/>
 			</dataarea>
@@ -436,15 +349,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt 2"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="133136">
-				<rom name="cool emotion (1993)(hard)(side a)[a2].atr" size="133136" crc="78a0261b" sha1="65412173c551c816b92854bd98443453ed7672b1"/>
+				<rom name="cool emotion (1993)(hard)(side a)[a].atr" size="133136" crc="cbece060" sha1="86cb3585e1a488098756c1903da8e63fd0bc6ca7"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 2"/>
 			<dataarea name="flop" size="133136">
-				<rom name="cool emotion (1993)(hard)(side a)[a].atr" size="133136" crc="cbece060" sha1="86cb3585e1a488098756c1903da8e63fd0bc6ca7"/>
+				<rom name="cool emotion (1993)(hard)(side a)[a2].atr" size="133136" crc="78a0261b" sha1="65412173c551c816b92854bd98443453ed7672b1"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
@@ -454,40 +367,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt 2"/>
-			<dataarea name="flop" size="133136">
-				<rom name="cool emotion (1993)(hard)(side b)[a2].atr" size="133136" crc="7ec44ec9" sha1="58c7c41d30c84178be9e832f096d60aa1a3b567f"/>
-			</dataarea>
-		</part>
-		<part name="flop6" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt"/>
+			<feature name="part_id" value="Side B, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="cool emotion (1993)(hard)(side b)[a].atr" size="133136" crc="c92e21d7" sha1="63b63e59492b34ef265a699f58b472418a49c526"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="dethemo" supported="no">
-		<description>De Themo (pl)</description>
-		<year>1997</year>
-		<publisher>Anonimous Atarians</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="128k"/>
-			<dataarea name="flop" size="92176">
-				<rom name="de themo (1997)(anonimous atarians)(pl)[128k].atr" size="92176" crc="4955010d" sha1="518646b4aaacad73d5384a1059e8aa7881723f03"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2, 128k"/>
-			<dataarea name="flop" size="92176">
-				<rom name="de themo (1997)(anonimous atarians)(pl)[a2][128k].atr" size="92176" crc="3f60e16d" sha1="9a158250194693919d891a9f2928cbcb9eb8f4ad"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, 128k"/>
-			<dataarea name="flop" size="92176">
-				<rom name="de themo (1997)(anonimous atarians)(pl)[a][128k].atr" size="92176" crc="57f0c953" sha1="9301b9f6746fe82b7f5ec7d66cb000ab7f764f18"/>
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Alt 2"/>
+			<dataarea name="flop" size="133136">
+				<rom name="cool emotion (1993)(hard)(side b)[a2].atr" size="133136" crc="7ec44ec9" sha1="58c7c41d30c84178be9e832f096d60aa1a3b567f"/>
 			</dataarea>
 		</part>
 	</software>
@@ -504,7 +392,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt, 256k"/>
+			<feature name="part_id" value="Side A, 256k, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="de themo 2 (1997)(anonimous atarians)(pl)(side a)[a][256k].atr" size="133136" crc="ac07fb72" sha1="da2e614432a84634e713f909a4d2575e66100034"/>
 			</dataarea>
@@ -516,9 +404,34 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt, 256k"/>
+			<feature name="part_id" value="Side B, 256k, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="de themo 2 (1997)(anonimous atarians)(pl)(side b)[a][256k].atr" size="133136" crc="4b38cf61" sha1="69cdb1aa7ed9f042f3c0d8ff1d7dba3bd17c1289"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dethemo" supported="no">
+		<description>De Themo (pl)</description>
+		<year>1997</year>
+		<publisher>Anonimous Atarians</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="128k"/>
+			<dataarea name="flop" size="92176">
+				<rom name="de themo (1997)(anonimous atarians)(pl)[128k].atr" size="92176" crc="4955010d" sha1="518646b4aaacad73d5384a1059e8aa7881723f03"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="128k, Alt 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="de themo (1997)(anonimous atarians)(pl)[a][128k].atr" size="92176" crc="57f0c953" sha1="9301b9f6746fe82b7f5ec7d66cb000ab7f764f18"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="128k, Alt 2"/>
+			<dataarea name="flop" size="92176">
+				<rom name="de themo (1997)(anonimous atarians)(pl)[a2][128k].atr" size="92176" crc="3f60e16d" sha1="9a158250194693919d891a9f2928cbcb9eb8f4ad"/>
 			</dataarea>
 		</part>
 	</software>
@@ -594,7 +507,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="demologicus (1993)(waxsoft)(pl)[a].atr" size="133136" crc="d1556925" sha1="91d1a698e8807a121c5d654da398c3b769a501b7"/>
 			</dataarea>
@@ -612,15 +525,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="133136">
-				<rom name="demonic laughter (1997-02-18)(-)(pl)[a2].atr" size="133136" crc="949927ac" sha1="66f7ff504e1489f62b7a8072368afbfcb6b30dbf"/>
+				<rom name="demonic laughter (1997-02-18)(-)(pl)[a].atr" size="133136" crc="7e3a44e8" sha1="57059e4d4a382d2c53ac90a6b43c7bb7ab10333f"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="133136">
-				<rom name="demonic laughter (1997-02-18)(-)(pl)[a].atr" size="133136" crc="7e3a44e8" sha1="57059e4d4a382d2c53ac90a6b43c7bb7ab10333f"/>
+				<rom name="demonic laughter (1997-02-18)(-)(pl)[a2].atr" size="133136" crc="949927ac" sha1="66f7ff504e1489f62b7a8072368afbfcb6b30dbf"/>
 			</dataarea>
 		</part>
 	</software>
@@ -667,15 +580,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="92176">
-				<rom name="drunk tank (1995)(quasimodos)(pl)[a2].atr" size="92176" crc="822f3de8" sha1="63ff630e191ebd654fb5e389c4321070baa06da1"/>
+				<rom name="drunk tank (1995)(quasimodos)(pl)[a].atr" size="92176" crc="cd6600eb" sha1="716645293ecfaf40c312b064765d5315ce8fb42c"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="92176">
-				<rom name="drunk tank (1995)(quasimodos)(pl)[a].atr" size="92176" crc="cd6600eb" sha1="716645293ecfaf40c312b064765d5315ce8fb42c"/>
+				<rom name="drunk tank (1995)(quasimodos)(pl)[a2].atr" size="92176" crc="822f3de8" sha1="63ff630e191ebd654fb5e389c4321070baa06da1"/>
 			</dataarea>
 		</part>
 	</software>
@@ -692,7 +605,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="edelweis (1992-02-01)(chaos club chemnitz)(de)(side a)[a].atr" size="183952" crc="0a2907a5" sha1="671ba8a977d34870777c12c2a6a89d4cc59f5b75"/>
 			</dataarea>
@@ -717,7 +630,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="electron's slideshow (19xx)(taquart)(pl)(side a)[a].atr" size="133136" crc="0d787a3a" sha1="ce56d06b0eb2d1b1add980419d079881d842e171"/>
 			</dataarea>
@@ -729,7 +642,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt"/>
+			<feature name="part_id" value="Side B, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="electron's slideshow (19xx)(taquart)(pl)(side b)[a].atr" size="133136" crc="c2577eec" sha1="be33201b5ca5335e62a31936379e6331cc9aebbf"/>
 			</dataarea>
@@ -760,7 +673,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="endless dream (1994)(zelax)(pl)[a].atr" size="133136" crc="e984787d" sha1="b173b80f2edebfbed262e871c286921eda69bcad"/>
 			</dataarea>
@@ -778,7 +691,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Bad 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="entrance of dragon (1995)(high voltage)(pl)[b].atr" size="133136" crc="ba02db8e" sha1="9ec549323c71276b31b5e0b832cdec56baaab9b7" status="baddump"/>
 			</dataarea>
@@ -797,7 +710,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, 128k"/>
+			<feature name="part_id" value="128k, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="ergo bibamus (2001)(quasimodos)(pl)[a][128k].atr" size="133136" crc="2e0dafc7" sha1="7ea4663df6b04bb9eb0fada92368328bf316243f"/>
 			</dataarea>
@@ -816,7 +729,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, 128k, stereo"/>
+			<feature name="part_id" value="128k, stereo, Alt 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="extract (1997)(bit busters)(pl)[a][128k][stereo].atr" size="183952" crc="bbbde481" sha1="5d602d7a46db2cb337e9ea2732498d5d55c257fb"/>
 			</dataarea>
@@ -831,49 +744,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="133136">
 				<rom name="fantastic demo (1993)(yfa - glonisz)(pl).atr" size="133136" crc="a26b32f4" sha1="9965ddf8e77f866fc473cba6f5bcf3cb9af62fce"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thefirst" supported="no">
-		<description>The First Attack</description>
-		<year>1995</year>
-		<publisher>TNT</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A"/>
-			<dataarea name="flop" size="92176">
-				<rom name="first attack, the (1995)(tnt)(side a).atr" size="92176" crc="afd218bc" sha1="cad03f942a7a19bb35ab5ca65709392fff585ea5"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
-			<dataarea name="flop" size="92176">
-				<rom name="first attack, the (1995)(tnt)(side a)[a].atr" size="92176" crc="c7423082" sha1="dcfff14f9454a0bdc002290e0505e35073a3479d"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Side B"/>
-			<dataarea name="flop" size="92176">
-				<rom name="first attack, the (1995)(tnt)(side b).atr" size="92176" crc="4c3ec883" sha1="f75463f02905e3b322707e57f9f8b0559b23254c"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt"/>
-			<dataarea name="flop" size="92176">
-				<rom name="first attack, the (1995)(tnt)(side b)[a].atr" size="92176" crc="24aee0bd" sha1="4be96c10c3141066e0d4f2bf4a73dade48368e91"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thefirst_1" supported="no">
-		<description>The First Explosion (pl, 1994-06-03)</description>
-		<year>1994</year>
-		<publisher>Madman Federation</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="first explosion, the (1994-06-03)(madman federation)(pl).atr" size="133136" crc="dff7f91c" sha1="ffb88af178be82aede228780af2dca8e12b4720b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -901,15 +771,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="183952">
-				<rom name="forever 2e3 party disk (2001-03)(-)[a2].atr" size="183952" crc="7cf02965" sha1="7f4e6608c77c253f2c8c4d82cc509a1090338cd2"/>
+				<rom name="forever 2e3 party disk (2001-03)(-)[a].atr" size="183952" crc="57353a31" sha1="d477aafa5b33ce71b437798d5e6fae54f7055f85"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="183952">
-				<rom name="forever 2e3 party disk (2001-03)(-)[a].atr" size="183952" crc="57353a31" sha1="d477aafa5b33ce71b437798d5e6fae54f7055f85"/>
+				<rom name="forever 2e3 party disk (2001-03)(-)[a2].atr" size="183952" crc="7cf02965" sha1="7f4e6608c77c253f2c8c4d82cc509a1090338cd2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -925,7 +795,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="forever 2e3 second edition party disk (2001-03)(-)[a].atr" size="133136" crc="820178bf" sha1="e73712b7513e1e990379b03bb67a9b9a85cc73ea"/>
 			</dataarea>
@@ -943,7 +813,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="forever 3 - party stuff (2002-03)(-)[a].atr" size="92176" crc="1f5093a8" sha1="0400a2c5f004a49538717c33cf1b88b893fec243"/>
 			</dataarea>
@@ -1004,7 +874,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="garfield (1990)(husak, jakub)(pl)[a].atr" size="133136" crc="1f2256cd" sha1="bb95b09e79604eb7ef20faedb6df52e1762a0042"/>
 			</dataarea>
@@ -1047,18 +917,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thegraph" supported="no">
-		<description>The Graphic Demo</description>
-		<year>1986</year>
-		<publisher>Compy Shop</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="graphic demo, the (1986)(compy shop).atr" size="92176" crc="f985db7a" sha1="8296ffc6b70ad28433ec52a5c7628ee48e8f0160"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="grasssli" supported="no">
 		<description>Grass' Slideshow (pl)</description>
 		<year>1996</year>
@@ -1070,33 +928,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="grass' slideshow (1996)(mec)(pl)[a].atr" size="133136" crc="ab957c46" sha1="ab9b5161a634a77db7c8bb62a2b41077ca2a0f03"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thegreat" supported="no">
-		<description>The Great Demo 1 (DE, en)</description>
-		<year>1991</year>
-		<publisher>Brains Software Systems</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="great demo 1, the (1991)(brains software systems)(de)(en).atr" size="133136" crc="3a89bfe0" sha1="dbd9772139d7feec3edf408168073aabe1c88b46"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thegreat_1" supported="no">
-		<description>The Great Demo 2 (DE, en)</description>
-		<year>1991</year>
-		<publisher>Brains Software Systems</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="great demo 2, the (1991)(brains software systems)(de)(en).atr" size="133136" crc="2db6bc07" sha1="692ddc5fe5702532a898739d9248dc850fe4a6c2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1131,83 +965,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="grzyb graphics collection (1994)(shadows)(pl)[a].atr" size="183952" crc="26c7bbb4" sha1="42dde920b89bf2352cfe2186956926b8f860e71b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thehalle" supported="no">
-		<description>The Halle Project '94 - Beyond the Minds Eye</description>
-		<year>1994</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1 of 2"/>
-			<dataarea name="flop" size="133136">
-				<rom name="halle project '94, the - beyond the minds eye (1994)(-)(disk 1 of 2).atr" size="133136" crc="60f64a0f" sha1="4e6d8e2cc47eee0082512b874a23f7599a05a79a"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1 of 2, Alt"/>
-			<dataarea name="flop" size="133136">
-				<rom name="halle project '94, the - beyond the minds eye (1994)(-)(disk 1 of 2)[a].atr" size="133136" crc="492efd55" sha1="1cf3a77635da96aacf6ce62b327e6b2f38469769"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 2, 256k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="halle project '94, the - beyond the minds eye (1994)(-)(disk 2 of 2)[256k].atr" size="133136" crc="f0522d57" sha1="84ab33cbe88e532ac703ee50cd4641c62b711c96"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 2, Alt, 256k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="halle project '94, the - beyond the minds eye (1994)(-)(disk 2 of 2)[a][256k].atr" size="133136" crc="d98a9a0d" sha1="903ca7deecac7d699bcb63d86eda75320c892aca"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 2, Bad, 256k"/>
-			<dataarea name="flop" size="92176">
-				<rom name="halle project '94, the - beyond the minds eye (1994)(-)(disk 2 of 2)[b][256k].atr" size="92176" crc="8616275a" sha1="19eda88cbcc5a4371c9ca14a27890c854f46e14f" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thehalle_1" supported="no">
-		<description>The Halle Project 1993</description>
-		<year>1993</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1 of 3"/>
-			<dataarea name="flop" size="133136">
-				<rom name="halle project 1993, the (1993)(-)(disk 1 of 3).atr" size="133136" crc="ee80fc2a" sha1="dc99d7a88abc758a1bf0344e7bc90948db467c26"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 3"/>
-			<dataarea name="flop" size="133136">
-				<rom name="halle project 1993, the (1993)(-)(disk 2 of 3).atr" size="133136" crc="de891405" sha1="872ef98610c3e147f20a837447aa4bb8a5718715"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 3, Alt 2"/>
-			<dataarea name="flop" size="133136">
-				<rom name="halle project 1993, the (1993)(-)(disk 2 of 3)[a2].atr" size="133136" crc="f751a35f" sha1="1b3e8d04d33f5f053921f818545294ed9e4fe191"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 3, Alt"/>
-			<dataarea name="flop" size="133136">
-				<rom name="halle project 1993, the (1993)(-)(disk 2 of 3)[a].atr" size="133136" crc="25882570" sha1="3d753ef5009464c5946977f3b2427df7be57ee8d"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 3 of 3"/>
-			<dataarea name="flop" size="133136">
-				<rom name="halle project 1993, the (1993)(-)(disk 3 of 3).atr" size="133136" crc="0c50922a" sha1="da79672fb436904879e9aa74a5a37ab76445b0f9"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1236,15 +996,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt 2"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="133136">
-				<rom name="happy demo (1995)(biela, tomasz - hauke, maciej)(pl)(side a)[a2].atr" size="133136" crc="d5296262" sha1="cd9fd940378ca87c37d76098576eb50e389de21a"/>
+				<rom name="happy demo (1995)(biela, tomasz - hauke, maciej)(pl)(side a)[a].atr" size="133136" crc="a30b6b23" sha1="83335df9b83384d7244a07bfa9f511e7a5a96411"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 2"/>
 			<dataarea name="flop" size="133136">
-				<rom name="happy demo (1995)(biela, tomasz - hauke, maciej)(pl)(side a)[a].atr" size="133136" crc="a30b6b23" sha1="83335df9b83384d7244a07bfa9f511e7a5a96411"/>
+				<rom name="happy demo (1995)(biela, tomasz - hauke, maciej)(pl)(side a)[a2].atr" size="133136" crc="d5296262" sha1="cd9fd940378ca87c37d76098576eb50e389de21a"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
@@ -1291,7 +1051,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="hobbytronic demo 1989 (1989)(abbuc)(de)(pd)(side a)[a].atr" size="92176" crc="b685614a" sha1="cec9dd9fb60b85742324c09be6752441dc6d95d3"/>
 			</dataarea>
@@ -1303,7 +1063,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt"/>
+			<feature name="part_id" value="Side B, Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="hobbytronic demo 1989 (1989)(abbuc)(de)(pd)(side b)[a].atr" size="92176" crc="c319e591" sha1="cf0566351f3f6de043a4940f26dbf02f510861b2"/>
 			</dataarea>
@@ -1353,7 +1113,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="hobbytronic demo 1992 (1992)(abbuc)(de)(pd)(side a)[a].atr" size="133136" crc="179626f8" sha1="c373c92356ba6616d5d87cfe425ae0fc6a426c40"/>
 			</dataarea>
@@ -1365,7 +1125,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt"/>
+			<feature name="part_id" value="Side B, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="hobbytronic demo 1992 (1992)(abbuc)(de)(pd)(side b)[a].atr" size="133136" crc="94c262db" sha1="c678ab69048231aa3b9b18ff3d46a820c5f67181"/>
 			</dataarea>
@@ -1385,18 +1145,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="horror" supported="no">
-		<description>Horror</description>
-		<year>1989</year>
-		<publisher>Paul Hirst</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="horror (1989)(paul hirst).atr" size="92176" crc="4816a13a" sha1="5ce2e730b354bcc0f7c939b481e06cc7668bae73"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="horrorii" supported="no">
 		<description>Horror II</description>
 		<year>1989</year>
@@ -1409,39 +1157,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="igor" supported="no">
-		<description>Igor (pl)</description>
-		<year>1997</year>
-		<publisher>MadTeam</publisher>
+	<software name="horror" supported="no">
+		<description>Horror</description>
+		<year>1989</year>
+		<publisher>Paul Hirst</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, 128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="igor (1997)(madteam)(pl)(side a)[128k].atr" size="133136" crc="41dc237f" sha1="16f6ef5b1b31e0b3ac184f0ca61fefa407248479"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt 2, 128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="igor (1997)(madteam)(pl)(side a)[a2][128k].atr" size="133136" crc="68049425" sha1="b732cb9334bf88511c6bcdc373b1ed0858d3a111"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt, 128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="igor (1997)(madteam)(pl)(side a)[a][128k].atr" size="133136" crc="b6a7f000" sha1="c604ddd7071a2d64b0f4c8452aac3f285ef234e1"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, 128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="igor (1997)(madteam)(pl)(side b)[128k].atr" size="133136" crc="4e532319" sha1="54ad3badc885ed4852129c2186df4f76a0e0410f"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt, 128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="igor (1997)(madteam)(pl)(side b)[a][128k].atr" size="133136" crc="678b9443" sha1="0e0e6e539fac7b5e1e23c2a3082355a72b3a53f5"/>
+			<dataarea name="flop" size="92176">
+				<rom name="horror (1989)(paul hirst).atr" size="92176" crc="4816a13a" sha1="5ce2e730b354bcc0f7c939b481e06cc7668bae73"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1465,6 +1188,43 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="igor" supported="no">
+		<description>Igor (pl)</description>
+		<year>1997</year>
+		<publisher>MadTeam</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, 128k"/>
+			<dataarea name="flop" size="133136">
+				<rom name="igor (1997)(madteam)(pl)(side a)[128k].atr" size="133136" crc="41dc237f" sha1="16f6ef5b1b31e0b3ac184f0ca61fefa407248479"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, 128k, Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="igor (1997)(madteam)(pl)(side a)[a][128k].atr" size="133136" crc="b6a7f000" sha1="c604ddd7071a2d64b0f4c8452aac3f285ef234e1"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, 128k, Alt 2"/>
+			<dataarea name="flop" size="133136">
+				<rom name="igor (1997)(madteam)(pl)(side a)[a2][128k].atr" size="133136" crc="68049425" sha1="b732cb9334bf88511c6bcdc373b1ed0858d3a111"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, 128k"/>
+			<dataarea name="flop" size="133136">
+				<rom name="igor (1997)(madteam)(pl)(side b)[128k].atr" size="133136" crc="4e532319" sha1="54ad3badc885ed4852129c2186df4f76a0e0410f"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, 128k, Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="igor (1997)(madteam)(pl)(side b)[a][128k].atr" size="133136" crc="678b9443" sha1="0e0e6e539fac7b5e1e23c2a3082355a72b3a53f5"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="incredib" supported="no">
 		<description>Incredible Story (pl, 1997-04-19)</description>
 		<year>1997</year>
@@ -1477,7 +1237,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, 128k, stereo"/>
+			<feature name="part_id" value="128k, stereo, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="incredible story (1997-04-19)(excellent)(pl)[a][128k][stereo].atr" size="133136" crc="40819571" sha1="0af0a936bb22575e193d8ac1801329d4b511c390"/>
 			</dataarea>
@@ -1507,21 +1267,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="intel outside #4 msx compo (1997)(-)(pl)[a].atr" size="183952" crc="2795b528" sha1="85dfb86658fc6fbfe455801c4a285141977b1c59"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="theintel" supported="no">
-		<description>The Intel Outside Demo (pl)</description>
-		<year>19??</year>
-		<publisher>Our 5oft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="intel outside demo, the (19xx)(our 5oft)(pl).atr" size="133136" crc="49c01f32" sha1="aa6e467f201cee78ba1edf4a468520f790d087d6"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1538,7 +1286,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, 128k"/>
+			<feature name="part_id" value="128k, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="isolation - no more rice ... (1998)(mec)[a][128k].atr" size="133136" crc="55c85a63" sha1="87018d5fb53b55ecb36462f7c108ffbee30dc383"/>
 			</dataarea>
@@ -1554,55 +1302,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Turbo Basic XL"/>
 			<dataarea name="flop" size="92176">
 				<rom name="james brown demo (1993)(nbs)[turbo basic xl].atr" size="92176" crc="86805898" sha1="0874693312bbc0fbe533e85f189d006e69969c3d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="journey" supported="no">
-		<description>Journey</description>
-		<year>1997</year>
-		<publisher>Polynominals</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1 of 4, Disk A, 128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="journey (1997)(polynominals)(disk 1 of 4)(disk a)[128k].atr" size="133136" crc="f8d521b1" sha1="d27e3636da1bd9eb77da5434e180220db90e4475"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1 of 4, Disk A, Alt, 128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="journey (1997)(polynominals)(disk 1 of 4)(disk a)[a][128k].atr" size="133136" crc="9d71cbd6" sha1="23a4abcb9402b2b2c452bd73025c0846171c14b0"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 4, Disk B, 128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="journey (1997)(polynominals)(disk 2 of 4)(disk b)[128k].atr" size="133136" crc="6f67b1ba" sha1="3e54b5176a681600880305f470682b9f768c6db5"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 4, Disk B, Alt, 128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="journey (1997)(polynominals)(disk 2 of 4)(disk b)[a][128k].atr" size="133136" crc="0f568b1a" sha1="a612c35aa0f37eedcbd258e1a6b1d7f247e36ab2"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 3 of 4, Disk C, 128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="journey (1997)(polynominals)(disk 3 of 4)(disk c)[128k].atr" size="133136" crc="62052873" sha1="d7d071c786f00e7a2131e6f7190a8ce110055d7d"/>
-			</dataarea>
-		</part>
-		<part name="flop6" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 4 of 4, Disk D, 128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="journey (1997)(polynominals)(disk 4 of 4)(disk d)[128k].atr" size="133136" crc="92d02412" sha1="bd92dc8880562e7ddd1d6e351ea675a6983f87aa"/>
-			</dataarea>
-		</part>
-		<part name="flop7" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 4 of 4, Disk D, Alt, 128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="journey (1997)(polynominals)(disk 4 of 4)(disk d)[a][128k].atr" size="133136" crc="3e4a7e08" sha1="14f40652346f6db746c8f0efa58110193ec2fed9"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1626,6 +1325,55 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="journey" supported="no">
+		<description>Journey</description>
+		<year>1997</year>
+		<publisher>Polynominals</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 4, Disk A, 128k"/>
+			<dataarea name="flop" size="133136">
+				<rom name="journey (1997)(polynominals)(disk 1 of 4)(disk a)[128k].atr" size="133136" crc="f8d521b1" sha1="d27e3636da1bd9eb77da5434e180220db90e4475"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 4, Disk A, 128k, Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="journey (1997)(polynominals)(disk 1 of 4)(disk a)[a][128k].atr" size="133136" crc="9d71cbd6" sha1="23a4abcb9402b2b2c452bd73025c0846171c14b0"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 4, Disk B, 128k"/>
+			<dataarea name="flop" size="133136">
+				<rom name="journey (1997)(polynominals)(disk 2 of 4)(disk b)[128k].atr" size="133136" crc="6f67b1ba" sha1="3e54b5176a681600880305f470682b9f768c6db5"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 4, Disk B, 128k, Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="journey (1997)(polynominals)(disk 2 of 4)(disk b)[a][128k].atr" size="133136" crc="0f568b1a" sha1="a612c35aa0f37eedcbd258e1a6b1d7f247e36ab2"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 3 of 4, Disk C, 128k"/>
+			<dataarea name="flop" size="133136">
+				<rom name="journey (1997)(polynominals)(disk 3 of 4)(disk c)[128k].atr" size="133136" crc="62052873" sha1="d7d071c786f00e7a2131e6f7190a8ce110055d7d"/>
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 4 of 4, Disk D, 128k"/>
+			<dataarea name="flop" size="133136">
+				<rom name="journey (1997)(polynominals)(disk 4 of 4)(disk d)[128k].atr" size="133136" crc="92d02412" sha1="bd92dc8880562e7ddd1d6e351ea675a6983f87aa"/>
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 4 of 4, Disk D, 128k, Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="journey (1997)(polynominals)(disk 4 of 4)(disk d)[a][128k].atr" size="133136" crc="3e4a7e08" sha1="14f40652346f6db746c8f0efa58110193ec2fed9"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="joyride" supported="no">
 		<description>Joyride (HU, en)</description>
 		<year>1995</year>
@@ -1638,7 +1386,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="joyride (1995)(hard software)(hu)(en)(side a)[a].atr" size="133136" crc="b4d09a9f" sha1="68d47311a9e6b52ae51f8935bf7ff9b847cb6d1b"/>
 			</dataarea>
@@ -1650,7 +1398,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt"/>
+			<feature name="part_id" value="Side B, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="joyride (1995)(hard software)(hu)(en)(side b)[a].atr" size="133136" crc="2b067b1b" sha1="3da45eab82f2123fb28853ab52f414c1ccd0be8f"/>
 			</dataarea>
@@ -1830,18 +1578,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="lastpart_5" supported="no">
-		<description>Last Party 2k (pl)</description>
-		<year>2000</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="183952">
-				<rom name="last party 2k (2000)(-)(pl).atr" size="183952" crc="7cd21777" sha1="bbac9adab05711819dc2cf3e633526f9e5bfda9d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="lastpart_6" supported="no">
 		<description>Last Party 2k1 (pl)</description>
 		<year>2001</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -1853,7 +1589,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="lastpart_7" supported="no">
+	<software name="lastpart_6" supported="no">
 		<description>Last Party 2k2 16kB Compo Stuff (pl)</description>
 		<year>2002</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -1865,7 +1601,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="lastpart_8" supported="no">
+	<software name="lastpart_7" supported="no">
 		<description>Last Party 2k2 256B Compo Stuff (pl)</description>
 		<year>2002</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -1877,7 +1613,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="lastpart_9" supported="no">
+	<software name="lastpart_8" supported="no">
 		<description>Last Party 2k2 GFX Compo Convert (pl)</description>
 		<year>2002</year>
 		<publisher>MadTeam</publisher>
@@ -1889,7 +1625,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="lastpart_10" supported="no">
+	<software name="lastpart_9" supported="no">
 		<description>Last Party 2k2 Mod-Neo Compo Stuff (pl)</description>
 		<year>2002</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -1901,7 +1637,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="lastpart_11" supported="no">
+	<software name="lastpart_10" supported="no">
 		<description>Last Party 2k2 Music Compo Stuff (pl)</description>
 		<year>2002</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -1913,7 +1649,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="lastpart_12" supported="no">
+	<software name="lastpart_11" supported="no">
 		<description>Last Party 2k2 Rip Pictures #1 (pl)</description>
 		<year>2002</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -1925,7 +1661,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="lastpart_13" supported="no">
+	<software name="lastpart_12" supported="no">
 		<description>Last Party 2k2 Rip Pictures #2 (pl)</description>
 		<year>2002</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -1933,6 +1669,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="183936">
 				<rom name="last party 2k2 rip pictures #2 (2002)(-)(pl).atr" size="183936" crc="bc7ff1cd" sha1="1b74b2b56d5ae44d13f9d93265b4bc72ad11778e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lastpart_13" supported="no">
+		<description>Last Party 2k (pl)</description>
+		<year>2000</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="183952">
+				<rom name="last party 2k (2000)(-)(pl).atr" size="183952" crc="7cd21777" sha1="bbac9adab05711819dc2cf3e633526f9e5bfda9d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1960,7 +1708,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="lato ludzikow 2k - stuff (2000)(-)(pl)[a].atr" size="183952" crc="9f5d7719" sha1="1bf2b6cacd10b2aa66ad90564246477e6952831b"/>
 			</dataarea>
@@ -2002,7 +1750,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="lato ludzikow 2k2 - compos (2002)(-)(pl)[a].atr" size="92176" crc="d76a106e" sha1="4ac0e9dba00f73dedd2ad16e526bacdf77f0c7fc"/>
 			</dataarea>
@@ -2045,7 +1793,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="manga rulez #1 (1996)(apocalypse riders)(pl)[a].atr" size="133136" crc="7dbb0565" sha1="d723f5c18417a1d81ed8e031094c1bf8a9731d15"/>
 			</dataarea>
@@ -2063,7 +1811,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="manga rulez #2 (1996)(mec - apocalypse riders)(pl)[a].atr" size="133136" crc="70ce63ef" sha1="05840cb4577fb28305bcf3e67525f26258cafc06"/>
 			</dataarea>
@@ -2078,24 +1826,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92176">
 				<rom name="micro discount demo (1992-09-15)(our 5oft)(pl).atr" size="92176" crc="46580b1c" sha1="5bd344c146df17d32bdccc79d355cd8c9d1e6bbe"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="themirac" supported="no">
-		<description>The Miracle Demo (NL, en)</description>
-		<year>1991</year>
-		<publisher>Gatekeeper</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="miracle demo, the (1991)(gatekeeper)(nl)(en).atr" size="133136" crc="2af63eb3" sha1="4481065dba0ecf298e1596426d39183c9093d6c6"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="133136">
-				<rom name="miracle demo, the (1991)(gatekeeper)(nl)(en)[a].atr" size="133136" crc="bc4fb569" sha1="ec82e19c69e7a8bcf16cb6cd3ac9ccf78ea1bcd2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2148,43 +1878,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="themtvde" supported="no">
-		<description>The MTV Demo (pl)</description>
-		<year>1990</year>
-		<publisher>Orko - Eagle</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A"/>
-			<dataarea name="flop" size="92176">
-				<rom name="mtv demo, the (1990)(orko - eagle)(pl)(side a).atr" size="92176" crc="58a7aaf9" sha1="6ab442238235f9b568d1ecabc833ff355f7e3d7e"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B"/>
-			<dataarea name="flop" size="183952">
-				<rom name="mtv demo, the (1990)(orko - eagle)(pl)(side b).atr" size="183952" crc="05a9315d" sha1="bee862925641852c84d3e470c4e846511a50dae7"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="themuppe" supported="no">
-		<description>The Muppet Movie (pl)</description>
-		<year>19??</year>
-		<publisher>MadTeam</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="muppet movie, the (19xx)(madteam)(pl).atr" size="133136" crc="75e30470" sha1="51dcbcf958b5f75da6248aa7ab2ca8ae60a9e3b7"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="133136">
-				<rom name="muppet movie, the (19xx)(madteam)(pl)[a].atr" size="133136" crc="f296db92" sha1="662cc5fd5690da737e3931b2ec6dbb59a189c2f2"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="music200" supported="no">
 		<description>Music 2000 (DE)</description>
 		<year>1991</year>
@@ -2197,7 +1890,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1 of 2 Side A, Alt"/>
+			<feature name="part_id" value="Disk 1 of 2 Side A, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="music 2000 (1991)(springer, stefan)(de)(disk 1 of 2 side a)[a].atr" size="133136" crc="c84ddbc0" sha1="fa113dfedc2c46617beea8177c8bba047e6e0dc1"/>
 			</dataarea>
@@ -2209,7 +1902,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1 of 2 Side B, Alt"/>
+			<feature name="part_id" value="Disk 1 of 2 Side B, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="music 2000 (1991)(springer, stefan)(de)(disk 1 of 2 side b)[a].atr" size="133136" crc="4fcdb87e" sha1="5e0abae5aef3255f291721efff4ac61881875cd7"/>
 			</dataarea>
@@ -2221,7 +1914,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop6" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 2 Side A, Alt"/>
+			<feature name="part_id" value="Disk 2 of 2 Side A, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="music 2000 (1991)(springer, stefan)(de)(disk 2 of 2 side a)[a].atr" size="133136" crc="b9833c54" sha1="669096bf17083d5c93070e3638092179039e65ab"/>
 			</dataarea>
@@ -2233,7 +1926,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop8" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 2 Side B, Alt"/>
+			<feature name="part_id" value="Disk 2 of 2 Side B, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="music 2000 (1991)(springer, stefan)(de)(disk 2 of 2 side b)[a].atr" size="133136" crc="c0e52f38" sha1="f2c6fae807f464b3175a307fcc5a946de4c988bb"/>
 			</dataarea>
@@ -2246,7 +1939,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Taquart</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Bad 1"/>
 			<dataarea name="flop" size="11664">
 				<rom name="music test (19xx)(taquart)[b].atr" size="11664" crc="9aa86741" sha1="01ce43a04c4577c4f2a29107ed248e10918a59af" status="baddump"/>
 			</dataarea>
@@ -2349,13 +2042,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, 128k, stereo"/>
+			<feature name="part_id" value="128k, stereo, Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="nonejm (1997)(tight)(pl)[a][128k][stereo].atr" size="92176" crc="e0d8f254" sha1="da781c47f17ac756617b8c244e5e72dcc3543d20"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked, 128k, stereo"/>
+			<feature name="part_id" value="128k, stereo, Hacked 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="nonejm (1997)(tight)(pl)[h][128k][stereo].atr" size="133136" crc="29d083f6" sha1="c5a4aed00a4bb750661d4af0a7ec4bc4340b4cab"/>
 			</dataarea>
@@ -2374,6 +2067,31 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="numenfin" supported="no">
+		<description>Numen - Final Version (PL, en, 2002-08-22)</description>
+		<year>2002</year>
+		<publisher>Taquart</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="One Disk, 320k"/>
+			<dataarea name="flop" size="196496">
+				<rom name="numen - final version (2002-08-22)(taquart)(pl)(en)[one disk][320k].atr" size="196496" crc="a530b67a" sha1="c0185bdbcccc88e4abbb1074c5a58efbef942634"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, 320k"/>
+			<dataarea name="flop" size="133136">
+				<rom name="numen - final version (2002-08-22)(taquart)(pl)(en)(side a)[320k].atr" size="133136" crc="d3fc9127" sha1="f13bbb8be6a9e27f83da0aff615f28374b1d5e72"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, 320k"/>
+			<dataarea name="flop" size="133136">
+				<rom name="numen - final version (2002-08-22)(taquart)(pl)(en)(side b)[320k].atr" size="133136" crc="26d1e0a3" sha1="e6bfbaced3192457a5ed0466cded988d42e9e973"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="numen" supported="no">
 		<description>Numen (PL, en, 2002-08)</description>
 		<year>2002</year>
@@ -2386,7 +2104,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt, 320k"/>
+			<feature name="part_id" value="Side A, 320k, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="numen (2002-08)(taquart)(pl)(en)(side a)[a][320k].atr" size="133136" crc="162a0996" sha1="1886f9878b58d5adc58c4998fd3114a01a930526"/>
 			</dataarea>
@@ -2398,34 +2116,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt, 320k"/>
+			<feature name="part_id" value="Side B, 320k, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="numen (2002-08)(taquart)(pl)(en)(side b)[a][320k].atr" size="133136" crc="f4817d5f" sha1="8103f0a63422b6e554386a89b70951b8a9435e25"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="numenfin" supported="no">
-		<description>Numen - Final Version (PL, en, 2002-08-22)</description>
-		<year>2002</year>
-		<publisher>Taquart</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, 320k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="numen - final version (2002-08-22)(taquart)(pl)(en)(side a)[320k].atr" size="133136" crc="d3fc9127" sha1="f13bbb8be6a9e27f83da0aff615f28374b1d5e72"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, 320k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="numen - final version (2002-08-22)(taquart)(pl)(en)(side b)[320k].atr" size="133136" crc="26d1e0a3" sha1="e6bfbaced3192457a5ed0466cded988d42e9e973"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="One Disk, 320k"/>
-			<dataarea name="flop" size="196496">
-				<rom name="numen - final version (2002-08-22)(taquart)(pl)(en)[one disk][320k].atr" size="196496" crc="a530b67a" sha1="c0185bdbcccc88e4abbb1074c5a58efbef942634"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2544,7 +2237,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="out of time - not final version (19xx)(apc)(pl)[a].atr" size="92176" crc="b3a3260e" sha1="9c5b56911b248282935e4881561adcdb876a4a74"/>
 			</dataarea>
@@ -2557,51 +2250,51 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Slight</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt 2, stereo"/>
-			<dataarea name="flop" size="133136">
-				<rom name="overmind (1995)(slight)(pl)(side a)[a2][stereo].atr" size="133136" crc="a52b9da8" sha1="a82f092ee9d73aec531d64d4626cb661f39d9c5d"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt 3, stereo"/>
-			<dataarea name="flop" size="133136">
-				<rom name="overmind (1995)(slight)(pl)(side a)[a3][stereo].atr" size="133136" crc="ec1eabbb" sha1="3085ca0a073b21a0c48a4b40629d282f802802ee"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt 4, stereo"/>
-			<dataarea name="flop" size="133136">
-				<rom name="overmind (1995)(slight)(pl)(side a)[a4][stereo].atr" size="133136" crc="9f8cd021" sha1="709d2e8d42a9e647a0812c2efdb0dd6b0a0857e8"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt, stereo"/>
-			<dataarea name="flop" size="133136">
-				<rom name="overmind (1995)(slight)(pl)(side a)[a][stereo].atr" size="133136" crc="f2a9524e" sha1="06cb3f7ec43d10635d899c03cd0bb819a2fe25d1"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
 			<feature name="part_id" value="Side A, stereo"/>
 			<dataarea name="flop" size="133136">
 				<rom name="overmind (1995)(slight)(pl)(side a)[stereo].atr" size="133136" crc="b19927fa" sha1="422e43a1f040282c89dfe5149f9afc6f42302675"/>
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt 2, stereo"/>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, stereo, Alt 1"/>
 			<dataarea name="flop" size="133136">
-				<rom name="overmind (1995)(slight)(pl)(side b)[a2][stereo].atr" size="133136" crc="f2b42d52" sha1="b0e3cdc2ab7ff62711f20c4c70c013b9cb304f17"/>
+				<rom name="overmind (1995)(slight)(pl)(side a)[a][stereo].atr" size="133136" crc="f2a9524e" sha1="06cb3f7ec43d10635d899c03cd0bb819a2fe25d1"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, stereo, Alt 2"/>
+			<dataarea name="flop" size="133136">
+				<rom name="overmind (1995)(slight)(pl)(side a)[a2][stereo].atr" size="133136" crc="a52b9da8" sha1="a82f092ee9d73aec531d64d4626cb661f39d9c5d"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, stereo, Alt 3"/>
+			<dataarea name="flop" size="133136">
+				<rom name="overmind (1995)(slight)(pl)(side a)[a3][stereo].atr" size="133136" crc="ec1eabbb" sha1="3085ca0a073b21a0c48a4b40629d282f802802ee"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, stereo, Alt 4"/>
+			<dataarea name="flop" size="133136">
+				<rom name="overmind (1995)(slight)(pl)(side a)[a4][stereo].atr" size="133136" crc="9f8cd021" sha1="709d2e8d42a9e647a0812c2efdb0dd6b0a0857e8"/>
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, stereo"/>
+			<dataarea name="flop" size="133136">
+				<rom name="overmind (1995)(slight)(pl)(side b)[stereo].atr" size="133136" crc="cd59b0d2" sha1="da333ade36b1b31217d1a7aeae8f366f99dc0903"/>
 			</dataarea>
 		</part>
 		<part name="flop7" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt, stereo"/>
+			<feature name="part_id" value="Side B, stereo, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="overmind (1995)(slight)(pl)(side b)[a][stereo].atr" size="133136" crc="e4810788" sha1="294b111e0b3d57931586f304338643ff2d0110c3"/>
 			</dataarea>
 		</part>
 		<part name="flop8" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, stereo"/>
+			<feature name="part_id" value="Side B, stereo, Alt 2"/>
 			<dataarea name="flop" size="133136">
-				<rom name="overmind (1995)(slight)(pl)(side b)[stereo].atr" size="133136" crc="cd59b0d2" sha1="da333ade36b1b31217d1a7aeae8f366f99dc0903"/>
+				<rom name="overmind (1995)(slight)(pl)(side b)[a2][stereo].atr" size="133136" crc="f2b42d52" sha1="b0e3cdc2ab7ff62711f20c4c70c013b9cb304f17"/>
 			</dataarea>
 		</part>
 		<part name="flop9" interface="floppy_5_25">
@@ -2673,7 +2366,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Bad 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="picture slideshow (19xx)(-)[b].atr" size="183952" crc="863af9d8" sha1="6eca4240ac8b3a86f931ee8991234013b214fd4e" status="baddump"/>
 			</dataarea>
@@ -2710,7 +2403,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="pokey ohrblut (2001)(foundation two)[a].atr" size="92176" crc="a27d957b" sha1="d121769be4bf1be467e8d460f43b4706102617fe"/>
 			</dataarea>
@@ -2725,18 +2418,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92176">
 				<rom name="pokey's demo (19xx)(missing link)(en-nl).atr" size="92176" crc="943f11d4" sha1="ba4348d76e7be7cb1ef76815f4ced4702e8fdfef"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thepokey" supported="no">
-		<description>The Pokey-Abbuc Meeting Demo</description>
-		<year>1992</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="pokey-abbuc meeting demo, the (1992)(-).atr" size="133136" crc="c5ad43f8" sha1="0d01c1cb2d058321098b513112ece1b2cd756bdb"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2832,7 +2513,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="quast98r_1" supported="no">
+	<software name="quast98r_a" cloneof="quast98r" supported="no">
 		<description>QuaST '98 - Realtime Text (pl, 1999-02)</description>
 		<year>1999</year>
 		<publisher>SSG</publisher>
@@ -3045,34 +2726,21 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>MEC</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, stereo"/>
-			<dataarea name="flop" size="92176">
-				<rom name="rotten juice (1996)(mec)(pl)[a][stereo].atr" size="92176" crc="b7ed62f5" sha1="0a938babdb7cf4d8c6bffe115e3bd931060458f0"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Bad, stereo"/>
-			<dataarea name="flop" size="92176">
-				<rom name="rotten juice (1996)(mec)(pl)[b][stereo].atr" size="92176" crc="391b2dd2" sha1="6bedb5e8b457f9ce5578449721acee4d2d0e960c" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="stereo"/>
 			<dataarea name="flop" size="92176">
 				<rom name="rotten juice (1996)(mec)(pl)[stereo].atr" size="92176" crc="ef10f3f7" sha1="c8d691862002f4a3e7153d34bf9268a544faa3e0"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="therunni" supported="no">
-		<description>The Running Cow (pl)</description>
-		<year>1997</year>
-		<publisher>MadTeam</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="128k"/>
-			<dataarea name="flop" size="133136">
-				<rom name="running cow, the (1997)(madteam)(pl)[128k].atr" size="133136" crc="84006a7e" sha1="4c54fe309fed4021584da7d883acb17a86989baa"/>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="stereo, Alt 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="rotten juice (1996)(mec)(pl)[a][stereo].atr" size="92176" crc="b7ed62f5" sha1="0a938babdb7cf4d8c6bffe115e3bd931060458f0"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="stereo, Bad 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="rotten juice (1996)(mec)(pl)[b][stereo].atr" size="92176" crc="391b2dd2" sha1="6bedb5e8b457f9ce5578449721acee4d2d0e960c" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3083,21 +2751,21 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>S.S.M.B.</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2, OS Rev 2"/>
+			<feature name="part_id" value="OS Rev 2"/>
 			<dataarea name="flop" size="133136">
-				<rom name="s.s.m.b.'s music kaleidoscope (1986)(s.s.m.b.)[a2][os rev 2].atr" size="133136" crc="b84db9d6" sha1="984ac8c121aa34edca2e31645deb6317f560344e"/>
+				<rom name="s.s.m.b.'s music kaleidoscope (1986)(s.s.m.b.)[os rev 2].atr" size="133136" crc="2278c22a" sha1="f516d68d8f5eec140f689c2333b99bad06763236"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, OS Rev 2"/>
+			<feature name="part_id" value="OS Rev 2, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="s.s.m.b.'s music kaleidoscope (1986)(s.s.m.b.)[a][os rev 2].atr" size="133136" crc="91950e8c" sha1="a9dac199a39e996bf0e5078b594cd425ee86c42a"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="OS Rev 2"/>
+			<feature name="part_id" value="OS Rev 2, Alt 2"/>
 			<dataarea name="flop" size="133136">
-				<rom name="s.s.m.b.'s music kaleidoscope (1986)(s.s.m.b.)[os rev 2].atr" size="133136" crc="2278c22a" sha1="f516d68d8f5eec140f689c2333b99bad06763236"/>
+				<rom name="s.s.m.b.'s music kaleidoscope (1986)(s.s.m.b.)[a2][os rev 2].atr" size="133136" crc="b84db9d6" sha1="984ac8c121aa34edca2e31645deb6317f560344e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3137,47 +2805,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="scene register 5.0 (2000)(dial - kroger)(pl)[a].atr" size="183952" crc="8f19984e" sha1="258cdcb2473943993ad51b60caa4984acc27d952"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="scenery9" supported="no">
-		<description>sceneRY '98 - Partro (pl)</description>
-		<year>1998</year>
-		<publisher>3d</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, 128k, stereo"/>
-			<dataarea name="flop" size="183952">
-				<rom name="scenery '98 - partro (1998)(3d)(pl)(side a)[128k][stereo].atr" size="183952" crc="04216b91" sha1="c70c6efa3458a6b76564943424871f152c3aa623"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, 128k, stereo"/>
-			<dataarea name="flop" size="183952">
-				<rom name="scenery '98 - partro (1998)(3d)(pl)(side b)[128k][stereo].atr" size="183952" crc="95c6b0e1" sha1="da06c79cf7a921bf7f1744c65ab6b803ae704984"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="scenery9_1" supported="no">
-		<description>sceneRY '98 - Stuff (pl)</description>
-		<year>1998</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A"/>
-			<dataarea name="flop" size="183952">
-				<rom name="scenery '98 - stuff (1998)(-)(pl)(side a).atr" size="183952" crc="de688140" sha1="91b293e5b7a5a37ec2b8a7cdd0d53a2ffe41a857"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B"/>
-			<dataarea name="flop" size="183952">
-				<rom name="scenery '98 - stuff (1998)(-)(pl)(side b).atr" size="183952" crc="649ea61d" sha1="e4fb971496a1416b7bf9a6304c177a6c5ccd9f02"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3193,7 +2823,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="sexual experiences (19xx)(bat)(pl)[a].atr" size="133136" crc="13f6d38f" sha1="a34061aad3f42595b60af85d611834df82928a3d"/>
 			</dataarea>
@@ -3248,7 +2878,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt, 256k, stereo"/>
+			<feature name="part_id" value="Side A, 256k, stereo, Alt 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="sheol (19xx)(bit busters)(side a)[a][256k][stereo].atr" size="183952" crc="e6462ab1" sha1="81cd9673a1075f125491add77085bbf0dfc19462"/>
 			</dataarea>
@@ -3260,7 +2890,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt, 256k, stereo"/>
+			<feature name="part_id" value="Side B, 256k, stereo, Alt 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="sheol (19xx)(bit busters)(side b)[a][256k][stereo].atr" size="183952" crc="ad32bb03" sha1="81b54f0b9f467dee41827cdd4076cf2efa67cb85"/>
 			</dataarea>
@@ -3329,45 +2959,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2"/>
-			<dataarea name="flop" size="133136">
-				<rom name="slideshit (19xx)(shadows)(pl)[a2].atr" size="133136" crc="13111083" sha1="8df8b6452fffb1899290063317ed884e64bb7727"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="slideshit (19xx)(shadows)(pl)[a].atr" size="133136" crc="3ac9a7d9" sha1="e1f6bc559811798dee4bda40cbd1a7f79e2089f4"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="thesmall" supported="no">
-		<description>The Small Demo Digi Bonus</description>
-		<year>1992</year>
-		<publisher>Friday</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="133136">
-				<rom name="small demo digi bonus, the (1992)(friday).atr" size="133136" crc="9361518c" sha1="0fcd3ea523683cdceca7654ab83360fe3e66cce3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thesmall_1" supported="no">
-		<description>The Small Demo</description>
-		<year>1992</year>
-		<publisher>Friday</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="small demo, the (1992)(friday).atr" size="133136" crc="bce0d5ca" sha1="bf75f6f88ab90f96a284c561c7ccd8cf396aadfd"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="133136">
-				<rom name="small demo, the (1992)(friday)[a].atr" size="133136" crc="95386290" sha1="3dd40902738fee6ea658ec24ff7169ed1dbfcf7a"/>
+				<rom name="slideshit (19xx)(shadows)(pl)[a2].atr" size="133136" crc="13111083" sha1="8df8b6452fffb1899290063317ed884e64bb7727"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3384,7 +2984,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, 128k, stereo"/>
+			<feature name="part_id" value="128k, stereo, Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="smells like a cream (19xx)(dial recordz)(pl)[a][128k][stereo].atr" size="92176" crc="1aada4e0" sha1="9d8378ed68ec03b983189be7d5523ea4a1f70925"/>
 			</dataarea>
@@ -3397,7 +2997,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Bad 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="song demo mdx (19xx)(-)[b].atr" size="183952" crc="84a68499" sha1="ac7659016b0364ef0b373043c6274982a8b56923" status="baddump"/>
 			</dataarea>
@@ -3410,7 +3010,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Bad 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="song demo tmc (19xx)(-)[b].atr" size="92176" crc="2563182c" sha1="a71a2236e01141bdf50bbc018bbce559bfc3af04" status="baddump"/>
 			</dataarea>
@@ -3520,7 +3120,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="super boink (19xx)(bob armour)[a].atr" size="92176" crc="a81c412a" sha1="0a91edbc54c4c00a5b1fe2006ed94adaa60baa2a"/>
 			</dataarea>
@@ -3539,7 +3139,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="sweet illusions (1993)(shadows)(pl)(side a)[a].atr" size="183952" crc="975bc65c" sha1="2e68960c55ccd7b1f115172afa1c96734be77d06"/>
 			</dataarea>
@@ -3551,7 +3151,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt"/>
+			<feature name="part_id" value="Side B, Alt 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="sweet illusions (1993)(shadows)(pl)(side b)[a].atr" size="183952" crc="8c52259c" sha1="c4c40040a6e6bc0c55b2fa1784e83b6d7f2059d5"/>
 			</dataarea>
@@ -3600,15 +3200,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Taquart</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, stereo"/>
-			<dataarea name="flop" size="183952">
-				<rom name="taku-ardo (1998)(taquart)(pl)[a][stereo].atr" size="183952" crc="394cec09" sha1="1321a4ba3f2d21a9ddb25e16f4554c840cc7e508"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="stereo"/>
 			<dataarea name="flop" size="183952">
 				<rom name="taku-ardo (1998)(taquart)(pl)[stereo].atr" size="183952" crc="189a6a97" sha1="16cee538fb89a12fdf0e9910c91657db9225fc34"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="stereo, Alt 1"/>
+			<dataarea name="flop" size="183952">
+				<rom name="taku-ardo (1998)(taquart)(pl)[a][stereo].atr" size="183952" crc="394cec09" sha1="1321a4ba3f2d21a9ddb25e16f4554c840cc7e508"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3621,6 +3221,442 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="183952">
 				<rom name="technicolour dream pictures (19xx)(-).atr" size="183952" crc="78d002fb" sha1="e34b37282fdeab936051e98ce2ffcd1e539ce265"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theasski" supported="no">
+		<description>The Asskicker (PL)</description>
+		<year>1996</year>
+		<publisher>Shadows</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="128k"/>
+			<dataarea name="flop" size="133136">
+				<rom name="asskicker, the (1996)(shadows)(pl)[128k].atr" size="133136" crc="ec65a87e" sha1="28e10a700a3fe86c4a424dbfe93a51450a5e9232"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="128k, Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="asskicker, the (1996)(shadows)(pl)[a][128k].atr" size="133136" crc="c5bd1f24" sha1="10e704cf0c35b0a90d6d40c3cecbe1d64abcb77c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theasski_a" cloneof="theasski" supported="no">
+		<description>The Asskicker (PL, 1997-07-18)</description>
+		<year>1997</year>
+		<publisher>Shadows</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="128k, Hacked Tamas"/>
+			<dataarea name="flop" size="133136">
+				<rom name="asskicker, the (1997-07-18)(shadows)(pl)[h tamas][128k].atr" size="133136" crc="4a2cd720" sha1="3f14f429033fab344986d70268e82f475afbf291"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theatari" supported="no">
+		<description>The Atari Expo Demo 1991 (de)</description>
+		<year>1991</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="atari expo demo 1991, the (1991)(-)(de).atr" size="133136" crc="e34bcca1" sha1="fbd4a8d961ecd63174f6e83c6eda59f7c7e3de4d"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="atari expo demo 1991, the (1991)(-)(de)[a].atr" size="133136" crc="48c5ed65" sha1="71090438d649b5a387fcfd1394276d78928439a0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theatari_1" supported="no">
+		<description>The Atari Spring 1996 Fair Demo Project</description>
+		<year>1996</year>
+		<publisher>ACE</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="133136">
+				<rom name="atari spring 1996 fair demo project, the (1996)(ace)(side a).atr" size="133136" crc="3a63ed61" sha1="27692cbf1905b304e7ee119886966e4f7bc2f048"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="133136">
+				<rom name="atari spring 1996 fair demo project, the (1996)(ace)(side b).atr" size="133136" crc="2b9329cb" sha1="49c0d2d0f7e9c04ddcac6c497dc0b5885f0af741"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thebesto" supported="no">
+		<description>The Best of YFA (pl)</description>
+		<year>1994</year>
+		<publisher>YFA</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="best of yfa, the (1994)(yfa)(pl).atr" size="133136" crc="66825375" sha1="ff4ae2ff53a6db1ab3f6d53e7d5ea75baac73009"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="best of yfa, the (1994)(yfa)(pl)[a].atr" size="133136" crc="4f5ae42f" sha1="1e9516e37d2738427e8e98fdf2667aa144cde8b0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thefirst" supported="no">
+		<description>The First Attack</description>
+		<year>1995</year>
+		<publisher>TNT</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="92176">
+				<rom name="first attack, the (1995)(tnt)(side a).atr" size="92176" crc="afd218bc" sha1="cad03f942a7a19bb35ab5ca65709392fff585ea5"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, Alt 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="first attack, the (1995)(tnt)(side a)[a].atr" size="92176" crc="c7423082" sha1="dcfff14f9454a0bdc002290e0505e35073a3479d"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="92176">
+				<rom name="first attack, the (1995)(tnt)(side b).atr" size="92176" crc="4c3ec883" sha1="f75463f02905e3b322707e57f9f8b0559b23254c"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Alt 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="first attack, the (1995)(tnt)(side b)[a].atr" size="92176" crc="24aee0bd" sha1="4be96c10c3141066e0d4f2bf4a73dade48368e91"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thefirst_1" supported="no">
+		<description>The First Explosion (pl, 1994-06-03)</description>
+		<year>1994</year>
+		<publisher>Madman Federation</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="first explosion, the (1994-06-03)(madman federation)(pl).atr" size="133136" crc="dff7f91c" sha1="ffb88af178be82aede228780af2dca8e12b4720b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thegraph" supported="no">
+		<description>The Graphic Demo</description>
+		<year>1986</year>
+		<publisher>Compy Shop</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="graphic demo, the (1986)(compy shop).atr" size="92176" crc="f985db7a" sha1="8296ffc6b70ad28433ec52a5c7628ee48e8f0160"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thegreat" supported="no">
+		<description>The Great Demo 1 (DE, en)</description>
+		<year>1991</year>
+		<publisher>Brains Software Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="great demo 1, the (1991)(brains software systems)(de)(en).atr" size="133136" crc="3a89bfe0" sha1="dbd9772139d7feec3edf408168073aabe1c88b46"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thegreat_1" supported="no">
+		<description>The Great Demo 2 (DE, en)</description>
+		<year>1991</year>
+		<publisher>Brains Software Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="great demo 2, the (1991)(brains software systems)(de)(en).atr" size="133136" crc="2db6bc07" sha1="692ddc5fe5702532a898739d9248dc850fe4a6c2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thehalle" supported="no">
+		<description>The Halle Project '94 - Beyond the Minds Eye</description>
+		<year>1994</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2"/>
+			<dataarea name="flop" size="133136">
+				<rom name="halle project '94, the - beyond the minds eye (1994)(-)(disk 1 of 2).atr" size="133136" crc="60f64a0f" sha1="4e6d8e2cc47eee0082512b874a23f7599a05a79a"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2, Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="halle project '94, the - beyond the minds eye (1994)(-)(disk 1 of 2)[a].atr" size="133136" crc="492efd55" sha1="1cf3a77635da96aacf6ce62b327e6b2f38469769"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, 256k"/>
+			<dataarea name="flop" size="133136">
+				<rom name="halle project '94, the - beyond the minds eye (1994)(-)(disk 2 of 2)[256k].atr" size="133136" crc="f0522d57" sha1="84ab33cbe88e532ac703ee50cd4641c62b711c96"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, 256k, Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="halle project '94, the - beyond the minds eye (1994)(-)(disk 2 of 2)[a][256k].atr" size="133136" crc="d98a9a0d" sha1="903ca7deecac7d699bcb63d86eda75320c892aca"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, 256k, Bad 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="halle project '94, the - beyond the minds eye (1994)(-)(disk 2 of 2)[b][256k].atr" size="92176" crc="8616275a" sha1="19eda88cbcc5a4371c9ca14a27890c854f46e14f" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thehalle_1" supported="no">
+		<description>The Halle Project 1993</description>
+		<year>1993</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 3"/>
+			<dataarea name="flop" size="133136">
+				<rom name="halle project 1993, the (1993)(-)(disk 1 of 3).atr" size="133136" crc="ee80fc2a" sha1="dc99d7a88abc758a1bf0344e7bc90948db467c26"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 3"/>
+			<dataarea name="flop" size="133136">
+				<rom name="halle project 1993, the (1993)(-)(disk 2 of 3).atr" size="133136" crc="de891405" sha1="872ef98610c3e147f20a837447aa4bb8a5718715"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 3, Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="halle project 1993, the (1993)(-)(disk 2 of 3)[a].atr" size="133136" crc="25882570" sha1="3d753ef5009464c5946977f3b2427df7be57ee8d"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 3, Alt 2"/>
+			<dataarea name="flop" size="133136">
+				<rom name="halle project 1993, the (1993)(-)(disk 2 of 3)[a2].atr" size="133136" crc="f751a35f" sha1="1b3e8d04d33f5f053921f818545294ed9e4fe191"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 3 of 3"/>
+			<dataarea name="flop" size="133136">
+				<rom name="halle project 1993, the (1993)(-)(disk 3 of 3).atr" size="133136" crc="0c50922a" sha1="da79672fb436904879e9aa74a5a37ab76445b0f9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theintel" supported="no">
+		<description>The Intel Outside Demo (pl)</description>
+		<year>19??</year>
+		<publisher>Our 5oft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="intel outside demo, the (19xx)(our 5oft)(pl).atr" size="133136" crc="49c01f32" sha1="aa6e467f201cee78ba1edf4a468520f790d087d6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="themtvde" supported="no">
+		<description>The MTV Demo (pl)</description>
+		<year>1990</year>
+		<publisher>Orko - Eagle</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="92176">
+				<rom name="mtv demo, the (1990)(orko - eagle)(pl)(side a).atr" size="92176" crc="58a7aaf9" sha1="6ab442238235f9b568d1ecabc833ff355f7e3d7e"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="183952">
+				<rom name="mtv demo, the (1990)(orko - eagle)(pl)(side b).atr" size="183952" crc="05a9315d" sha1="bee862925641852c84d3e470c4e846511a50dae7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="themirac" supported="no">
+		<description>The Miracle Demo (NL, en)</description>
+		<year>1991</year>
+		<publisher>Gatekeeper</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="miracle demo, the (1991)(gatekeeper)(nl)(en).atr" size="133136" crc="2af63eb3" sha1="4481065dba0ecf298e1596426d39183c9093d6c6"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="miracle demo, the (1991)(gatekeeper)(nl)(en)[a].atr" size="133136" crc="bc4fb569" sha1="ec82e19c69e7a8bcf16cb6cd3ac9ccf78ea1bcd2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="themuppe" supported="no">
+		<description>The Muppet Movie (pl)</description>
+		<year>19??</year>
+		<publisher>MadTeam</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="muppet movie, the (19xx)(madteam)(pl).atr" size="133136" crc="75e30470" sha1="51dcbcf958b5f75da6248aa7ab2ca8ae60a9e3b7"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="muppet movie, the (19xx)(madteam)(pl)[a].atr" size="133136" crc="f296db92" sha1="662cc5fd5690da737e3931b2ec6dbb59a189c2f2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thepokey" supported="no">
+		<description>The Pokey-Abbuc Meeting Demo</description>
+		<year>1992</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="pokey-abbuc meeting demo, the (1992)(-).atr" size="133136" crc="c5ad43f8" sha1="0d01c1cb2d058321098b513112ece1b2cd756bdb"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="therunni" supported="no">
+		<description>The Running Cow (pl)</description>
+		<year>1997</year>
+		<publisher>MadTeam</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="128k"/>
+			<dataarea name="flop" size="133136">
+				<rom name="running cow, the (1997)(madteam)(pl)[128k].atr" size="133136" crc="84006a7e" sha1="4c54fe309fed4021584da7d883acb17a86989baa"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thesmall" supported="no">
+		<description>The Small Demo Digi Bonus</description>
+		<year>1992</year>
+		<publisher>Friday</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="small demo digi bonus, the (1992)(friday).atr" size="133136" crc="9361518c" sha1="0fcd3ea523683cdceca7654ab83360fe3e66cce3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thesmall_1" supported="no">
+		<description>The Small Demo</description>
+		<year>1992</year>
+		<publisher>Friday</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="small demo, the (1992)(friday).atr" size="133136" crc="bce0d5ca" sha1="bf75f6f88ab90f96a284c561c7ccd8cf396aadfd"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="small demo, the (1992)(friday)[a].atr" size="133136" crc="95386290" sha1="3dd40902738fee6ea658ec24ff7169ed1dbfcf7a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thetop3m" supported="no">
+		<description>The Top #3 Megademo (PL, en)</description>
+		<year>1991</year>
+		<publisher>W.F.M.H.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="top #3 megademo, the (1991)(w.f.m.h.)(pl)(en).atr" size="133136" crc="21dfbe5c" sha1="42292389457952ef0e11ae0cbcfb74c8403ead08"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="top #3 megademo, the (1991)(w.f.m.h.)(pl)(en)[a].atr" size="133136" crc="08070906" sha1="974d9b6e4c188846cc1bcd0d88ccbbba91d09c20"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thewafde" supported="no">
+		<description>The WAF Demo (de)</description>
+		<year>1992</year>
+		<publisher>WAF</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="133136">
+				<rom name="waf demo, the (1992)(waf)(de)(side a).atr" size="133136" crc="9ec8de1e" sha1="a65a15fc49e44aa24e5639c11be9a170e92765d4"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="waf demo, the (1992)(waf)(de)(side a)[a].atr" size="133136" crc="ca3ca17c" sha1="0ee86849cd170b4e4f23a353ed62f490adecd6e2"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, Alt 2"/>
+			<dataarea name="flop" size="133136">
+				<rom name="waf demo, the (1992)(waf)(de)(side a)[a2].atr" size="133136" crc="b7106944" sha1="8e085905c67028bdf799d1cf20f39ac1c74477ff"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="133136">
+				<rom name="waf demo, the (1992)(waf)(de)(side b).atr" size="133136" crc="74705a2d" sha1="2938fd20b85e57521a3fa6e4b9563a08a203dbd7"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="waf demo, the (1992)(waf)(de)(side b)[a].atr" size="133136" crc="81c448b6" sha1="46d5fc1538c7182b840cfd9e0dc495037b5d3349"/>
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Alt 2"/>
+			<dataarea name="flop" size="133136">
+				<rom name="waf demo, the (1992)(waf)(de)(side b)[a2].atr" size="133136" crc="5da8ed77" sha1="9b679a4a61c95de9dacea5ee2685b0a369e9b274"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thexfile" supported="no">
+		<description>The X-Files (pl, 1988-02-01)</description>
+		<year>1988</year>
+		<publisher>SHP</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="stereo"/>
+			<dataarea name="flop" size="183952">
+				<rom name="x-files, the (1988-02-01)(shp)(pl)[stereo].atr" size="183952" crc="f23735a5" sha1="759118b96c3bc2388f9b922e76af160e9fba1255"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3644,15 +3680,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Bit Busters</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked CubE, stereo"/>
-			<dataarea name="flop" size="183952">
-				<rom name="timeless announcement (1997)(bit busters)(pl)[h cube][stereo].atr" size="183952" crc="37e44688" sha1="21e9ef92d96f5c7c672ffe84489c23ebe7ddb53b"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="stereo"/>
 			<dataarea name="flop" size="183952">
 				<rom name="timeless announcement (1997)(bit busters)(pl)[stereo].atr" size="183952" crc="9bdaf981" sha1="6fedf8313d36e47ca8441c00e799f72362092e72"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="stereo, Hacked CubE"/>
+			<dataarea name="flop" size="183952">
+				<rom name="timeless announcement (1997)(bit busters)(pl)[h cube][stereo].atr" size="183952" crc="37e44688" sha1="21e9ef92d96f5c7c672ffe84489c23ebe7ddb53b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3693,7 +3729,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="titus slideshow (19xx)(konop - cedyn)(pl)[a].atr" size="133136" crc="c86f24d2" sha1="5b48c3cb705a834fb37297af97933f9dcff76b7d"/>
 			</dataarea>
@@ -3706,15 +3742,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Animkomials</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, stereo"/>
-			<dataarea name="flop" size="92176">
-				<rom name="too hard 2 (1997)(animkomials)(pl)[a][stereo].atr" size="92176" crc="0a093797" sha1="dc0963dc360d8f4fe6dbb059cfc6ed96ce86fdf5"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="stereo"/>
 			<dataarea name="flop" size="92176">
 				<rom name="too hard 2 (1997)(animkomials)(pl)[stereo].atr" size="92176" crc="62991fa9" sha1="52c8b7ddb5266afd0883e5be8a96c7318b9c3e4a"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="stereo, Alt 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="too hard 2 (1997)(animkomials)(pl)[a][stereo].atr" size="92176" crc="0a093797" sha1="dc0963dc360d8f4fe6dbb059cfc6ed96ce86fdf5"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3751,24 +3787,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thetop3m" supported="no">
-		<description>The Top #3 Megademo (PL, en)</description>
-		<year>1991</year>
-		<publisher>W.F.M.H.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="top #3 megademo, the (1991)(w.f.m.h.)(pl)(en).atr" size="133136" crc="21dfbe5c" sha1="42292389457952ef0e11ae0cbcfb74c8403ead08"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="133136">
-				<rom name="top #3 megademo, the (1991)(w.f.m.h.)(pl)(en)[a].atr" size="133136" crc="08070906" sha1="974d9b6e4c188846cc1bcd0d88ccbbba91d09c20"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="totaldaz" supported="no">
 		<description>Total Daze (pl)</description>
 		<year>1997</year>
@@ -3781,15 +3799,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2, 128k, stereo"/>
+			<feature name="part_id" value="128k, stereo, Alt 1"/>
 			<dataarea name="flop" size="133136">
-				<rom name="total daze (1997)(tight)(pl)[a2][128k][stereo].atr" size="133136" crc="45ce3de3" sha1="c74f33e807968ae6d42c44a338ec1795d8c2a729"/>
+				<rom name="total daze (1997)(tight)(pl)[a][128k][stereo].atr" size="133136" crc="4a7d24a0" sha1="3e8d73cdf94db063d2f5dc491c0dcde1beebd194"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, 128k, stereo"/>
+			<feature name="part_id" value="128k, stereo, Alt 2"/>
 			<dataarea name="flop" size="133136">
-				<rom name="total daze (1997)(tight)(pl)[a][128k][stereo].atr" size="133136" crc="4a7d24a0" sha1="3e8d73cdf94db063d2f5dc491c0dcde1beebd194"/>
+				<rom name="total daze (1997)(tight)(pl)[a2][128k][stereo].atr" size="133136" crc="45ce3de3" sha1="c74f33e807968ae6d42c44a338ec1795d8c2a729"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3806,13 +3824,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, 128k, stereo"/>
+			<feature name="part_id" value="128k, stereo, Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="trip 6 (1997)(shadows)(pl)[a][128k][stereo].atr" size="133136" crc="2faeb0a6" sha1="7f30e27ef1e6b6140c1a00ff6ee428377645b47f"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked, 128k, stereo"/>
+			<feature name="part_id" value="128k, stereo, Hacked 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="trip 6 (1997)(shadows)(pl)[h][128k][stereo].atr" size="133136" crc="c598d772" sha1="2ee790d59be01473f053ebd4a3cfaead36a628f1"/>
 			</dataarea>
@@ -3844,49 +3862,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="voiceofs" supported="no">
-		<description>Voice of Silence (pl)</description>
-		<year>1996</year>
-		<publisher>Taquart</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="voice of silence (1996)(taquart)(pl).atr" size="133136" crc="df38ba89" sha1="4cc5192ff00594762e2ae8784cc396873a5d6f8e"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2"/>
-			<dataarea name="flop" size="133008">
-				<rom name="voice of silence (1996)(taquart)(pl)[a2].atr" size="133008" crc="8e14b767" sha1="b5a6b8965f8af39137c53272b9fdc7d52616f3c1"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="133136">
-				<rom name="voice of silence (1996)(taquart)(pl)[a].atr" size="133136" crc="3f254297" sha1="eb4ad6096fad66eb483850da90cc6a58d48f1662"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="voiceofs_1" supported="no">
 		<description>Voice of Silence III - Eclipse Day (pl)</description>
 		<year>1997</year>
 		<publisher>Taquart</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, stereo"/>
-			<dataarea name="flop" size="183952">
-				<rom name="voice of silence iii - eclipse day (1997)(taquart)(pl)[a][stereo].atr" size="183952" crc="12489bbb" sha1="b7e44acc8e36c540d782521176aa73eb5ea9636e"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="stereo"/>
 			<dataarea name="flop" size="183952">
 				<rom name="voice of silence iii - eclipse day (1997)(taquart)(pl)[stereo].atr" size="183952" crc="3d393c8e" sha1="5bfc8b4724956495745469df4cea3bd0015719da"/>
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="stereo, Alt 1"/>
+			<dataarea name="flop" size="183952">
+				<rom name="voice of silence iii - eclipse day (1997)(taquart)(pl)[a][stereo].atr" size="183952" crc="12489bbb" sha1="b7e44acc8e36c540d782521176aa73eb5ea9636e"/>
+			</dataarea>
+		</part>
 	</software>
 
-	<software name="voiceofs_2" supported="no">
+	<software name="voiceofs_1" supported="no">
 		<description>Voice of Silence IV - Tribute To... (pl)</description>
 		<year>1999</year>
 		<publisher>Taquart</publisher>
@@ -3899,6 +3893,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="voiceofs_2" supported="no">
+		<description>Voice of Silence (pl)</description>
+		<year>1996</year>
+		<publisher>Taquart</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="voice of silence (1996)(taquart)(pl).atr" size="133136" crc="df38ba89" sha1="4cc5192ff00594762e2ae8784cc396873a5d6f8e"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="133136">
+				<rom name="voice of silence (1996)(taquart)(pl)[a].atr" size="133136" crc="3f254297" sha1="eb4ad6096fad66eb483850da90cc6a58d48f1662"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
+			<dataarea name="flop" size="133008">
+				<rom name="voice of silence (1996)(taquart)(pl)[a2].atr" size="133008" crc="8e14b767" sha1="b5a6b8965f8af39137c53272b9fdc7d52616f3c1"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="voyageto" supported="no">
 		<description>Voyage to POKEY Island (DE)</description>
 		<year>1991</year>
@@ -3907,49 +3925,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="133136">
 				<rom name="voyage to pokey island (1991)(brains software systems)(de).atr" size="133136" crc="373daf18" sha1="c1d29f2ad732c08264a66783cbe79f11aa79efe3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thewafde" supported="no">
-		<description>The WAF Demo (de)</description>
-		<year>1992</year>
-		<publisher>WAF</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A"/>
-			<dataarea name="flop" size="133136">
-				<rom name="waf demo, the (1992)(waf)(de)(side a).atr" size="133136" crc="9ec8de1e" sha1="a65a15fc49e44aa24e5639c11be9a170e92765d4"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt 2"/>
-			<dataarea name="flop" size="133136">
-				<rom name="waf demo, the (1992)(waf)(de)(side a)[a2].atr" size="133136" crc="b7106944" sha1="8e085905c67028bdf799d1cf20f39ac1c74477ff"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
-			<dataarea name="flop" size="133136">
-				<rom name="waf demo, the (1992)(waf)(de)(side a)[a].atr" size="133136" crc="ca3ca17c" sha1="0ee86849cd170b4e4f23a353ed62f490adecd6e2"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B"/>
-			<dataarea name="flop" size="133136">
-				<rom name="waf demo, the (1992)(waf)(de)(side b).atr" size="133136" crc="74705a2d" sha1="2938fd20b85e57521a3fa6e4b9563a08a203dbd7"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt 2"/>
-			<dataarea name="flop" size="133136">
-				<rom name="waf demo, the (1992)(waf)(de)(side b)[a2].atr" size="133136" crc="5da8ed77" sha1="9b679a4a61c95de9dacea5ee2685b0a369e9b274"/>
-			</dataarea>
-		</part>
-		<part name="flop6" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt"/>
-			<dataarea name="flop" size="133136">
-				<rom name="waf demo, the (1992)(waf)(de)(side b)[a].atr" size="133136" crc="81c448b6" sha1="46d5fc1538c7182b840cfd9e0dc495037b5d3349"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3978,15 +3953,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt 2"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="133136">
-				<rom name="wanted megademo (1995-10)(gmg)(sk)(side a)[a2].atr" size="133136" crc="24b44c2e" sha1="1bac8e60b20dfde60204d58a4a844ba0fb650ce5"/>
+				<rom name="wanted megademo (1995-10)(gmg)(sk)(side a)[a].atr" size="133136" crc="ad964683" sha1="f13377ecb55b4fbf05b7c1e9ba39460e8072ef64"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 2"/>
 			<dataarea name="flop" size="133136">
-				<rom name="wanted megademo (1995-10)(gmg)(sk)(side a)[a].atr" size="133136" crc="ad964683" sha1="f13377ecb55b4fbf05b7c1e9ba39460e8072ef64"/>
+				<rom name="wanted megademo (1995-10)(gmg)(sk)(side a)[a2].atr" size="133136" crc="24b44c2e" sha1="1bac8e60b20dfde60204d58a4a844ba0fb650ce5"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
@@ -3996,15 +3971,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt 2"/>
+			<feature name="part_id" value="Side B, Alt 1"/>
 			<dataarea name="flop" size="133136">
-				<rom name="wanted megademo (1995-10)(gmg)(sk)(side b)[a2].atr" size="133136" crc="dc6a48f9" sha1="33f0536a8ab54a422c41386c495032658c88ae24"/>
+				<rom name="wanted megademo (1995-10)(gmg)(sk)(side b)[a].atr" size="133136" crc="492b4998" sha1="61c61f1b4ca21498e7434047a93c3a78ab332add"/>
 			</dataarea>
 		</part>
 		<part name="flop6" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt"/>
+			<feature name="part_id" value="Side B, Alt 2"/>
 			<dataarea name="flop" size="133136">
-				<rom name="wanted megademo (1995-10)(gmg)(sk)(side b)[a].atr" size="133136" crc="492b4998" sha1="61c61f1b4ca21498e7434047a93c3a78ab332add"/>
+				<rom name="wanted megademo (1995-10)(gmg)(sk)(side b)[a2].atr" size="133136" crc="dc6a48f9" sha1="33f0536a8ab54a422c41386c495032658c88ae24"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4040,6 +4015,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="xrayoldc" supported="no">
+		<description>X-Ray Old CMC Collection (pl, 1995-12-09)</description>
+		<year>1995</year>
+		<publisher>Macioos</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="x-ray old cmc collection (1995-12-09)(macioos)(pl).atr" size="133136" crc="c1d95452" sha1="a52d7b3795827eb0b1f0ec1ecb7b4b317827ecd1"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="xdemo" supported="no">
 		<description>X-demo (pl)</description>
 		<year>1998</year>
@@ -4052,34 +4039,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, 256k"/>
+			<feature name="part_id" value="256k, Alt 1"/>
 			<dataarea name="flop" size="265872">
 				<rom name="x-demo (1998)(madteam)(pl)[a][256k].atr" size="265872" crc="404e6e31" sha1="40fec783e48ae92349d4a585416eb590260acab2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thexfile" supported="no">
-		<description>The X-Files (pl, 1988-02-01)</description>
-		<year>1988</year>
-		<publisher>SHP</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="stereo"/>
-			<dataarea name="flop" size="183952">
-				<rom name="x-files, the (1988-02-01)(shp)(pl)[stereo].atr" size="183952" crc="f23735a5" sha1="759118b96c3bc2388f9b922e76af160e9fba1255"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="xrayoldc" supported="no">
-		<description>X-Ray Old CMC Collection (pl, 1995-12-09)</description>
-		<year>1995</year>
-		<publisher>Macioos</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="x-ray old cmc collection (1995-12-09)(macioos)(pl).atr" size="133136" crc="c1d95452" sha1="a52d7b3795827eb0b1f0ec1ecb7b4b317827ecd1"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4153,6 +4115,44 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="128k, stereo"/>
 			<dataarea name="flop" size="133136">
 				<rom name="zero (19xx)(ng)(pl)[128k][stereo].atr" size="133136" crc="f2e9ba59" sha1="5f32df7b1ff856b6519566387e67c5a677e7ed6b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scenery9" supported="no">
+		<description>sceneRY '98 - Partro (pl)</description>
+		<year>1998</year>
+		<publisher>3d</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, 128k, stereo"/>
+			<dataarea name="flop" size="183952">
+				<rom name="scenery '98 - partro (1998)(3d)(pl)(side a)[128k][stereo].atr" size="183952" crc="04216b91" sha1="c70c6efa3458a6b76564943424871f152c3aa623"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, 128k, stereo"/>
+			<dataarea name="flop" size="183952">
+				<rom name="scenery '98 - partro (1998)(3d)(pl)(side b)[128k][stereo].atr" size="183952" crc="95c6b0e1" sha1="da06c79cf7a921bf7f1744c65ab6b803ae704984"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scenery9_1" supported="no">
+		<description>sceneRY '98 - Stuff (pl)</description>
+		<year>1998</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="183952">
+				<rom name="scenery '98 - stuff (1998)(-)(pl)(side a).atr" size="183952" crc="de688140" sha1="91b293e5b7a5a37ec2b8a7cdd0d53a2ffe41a857"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="183952">
+				<rom name="scenery '98 - stuff (1998)(-)(pl)(side b).atr" size="183952" crc="649ea61d" sha1="e4fb971496a1416b7bf9a6304c177a6c5ccd9f02"/>
 			</dataarea>
 		</part>
 	</software>

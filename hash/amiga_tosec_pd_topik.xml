@@ -25,15 +25,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Topik Public Domain</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="topik - disk 02 - fonts and cli commands (19xx)(topik public domain)(pd)[a][wb].adf" size="901120" crc="d5fddf40" sha1="600134a7a97c9de362ade9ad1be47ad7417eb1f6"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="topik - disk 02 - fonts and cli commands (19xx)(topik public domain)(pd)[wb].adf" size="901120" crc="2e5dbcdb" sha1="f4be65e7b2605d64ac143690bb9b500d9dfa2dca"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="topik - disk 02 - fonts and cli commands (19xx)(topik public domain)(pd)[a][wb].adf" size="901120" crc="d5fddf40" sha1="600134a7a97c9de362ade9ad1be47ad7417eb1f6"/>
 			</dataarea>
 		</part>
 	</software>
@@ -83,15 +83,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Topik Public Domain</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="topik - disk 06 - graphix (19xx)(topik public domain)(pd)[a][wb].adf" size="901120" crc="3db0b031" sha1="0dd164c488d23037c6975072abe6dc40af64d117"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="topik - disk 06 - graphix (19xx)(topik public domain)(pd)[wb].adf" size="901120" crc="72438b1a" sha1="9dd6bcb5205a0ee5bbdd821daa11418c13575129"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="topik - disk 06 - graphix (19xx)(topik public domain)(pd)[a][wb].adf" size="901120" crc="3db0b031" sha1="0dd164c488d23037c6975072abe6dc40af64d117"/>
 			</dataarea>
 		</part>
 	</software>
@@ -346,7 +346,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Topik Public Domain</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Fixed Topik, WB"/>
+			<feature name="part_id" value="WB, Fixed Topik"/>
 			<dataarea name="flop" size="901120">
 				<rom name="topik - disk 26 - games 2 (1990-07-16)(topik public domain)(pd)[f topik][wb].adf" size="901120" crc="a261fa25" sha1="fe81b6aac2878a9523ffbf40b4b8fb6d7a475bb2"/>
 			</dataarea>
@@ -372,7 +372,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Topik Public Domain</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Fixed Topik, WB"/>
+			<feature name="part_id" value="WB, Fixed Topik"/>
 			<dataarea name="flop" size="901120">
 				<rom name="topik - disk 28 - clipart (1990-07-16)(topik public domain)(pd)[f topik][wb].adf" size="901120" crc="2339b9c7" sha1="429de991107dd4797194ab6df6c0c559c569debb"/>
 			</dataarea>
@@ -385,7 +385,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Topik Public Domain</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Fixed Topik, WB"/>
+			<feature name="part_id" value="WB, Fixed Topik"/>
 			<dataarea name="flop" size="901120">
 				<rom name="topik - disk 29 - icons (1990-07-12)(topik public domain)(pd)[f topik][wb].adf" size="901120" crc="ce5a346e" sha1="fbe4d74a97e7c2616c3256c81cadb132729b8a73"/>
 			</dataarea>
@@ -398,7 +398,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Topik Public Domain</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Fixed Topik, WB"/>
+			<feature name="part_id" value="WB, Fixed Topik"/>
 			<dataarea name="flop" size="901120">
 				<rom name="topik - disk 30 - digitized sounds (1990-07-16)(topik public domain)(pd)[f topik][wb].adf" size="901120" crc="d4be43b6" sha1="8b0e199864c53cce7c046c9c279626f1be81c782"/>
 			</dataarea>
@@ -463,15 +463,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Topik Public Domain</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="topik - disk 36 - archivers (19xx)(topik public domain)(pd)[a][wb].adf" size="901120" crc="3381173d" sha1="fb7f02ab884c1adf10050f635aec6648a5fed4f1"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="topik - disk 36 - archivers (19xx)(topik public domain)(pd)[wb].adf" size="901120" crc="c3cb537c" sha1="ac6e9eb0182bf664775f0017a5b922e281cd0cec"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="topik - disk 36 - archivers (19xx)(topik public domain)(pd)[a][wb].adf" size="901120" crc="3381173d" sha1="fb7f02ab884c1adf10050f635aec6648a5fed4f1"/>
 			</dataarea>
 		</part>
 	</software>
@@ -508,15 +508,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Topik Public Domain</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Alt, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="topik - disk 39 - educational (19xx)(topik public domain)(pd)[a][wb].adf" size="901120" crc="24d691fa" sha1="0cdbf15b96bcb57ae04f6b2e6deaf60dd35cb861"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="topik - disk 39 - educational (19xx)(topik public domain)(pd)[wb].adf" size="901120" crc="d9c81240" sha1="73000145d088502df734f2b7bc16376c01130ad6"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="topik - disk 39 - educational (19xx)(topik public domain)(pd)[a][wb].adf" size="901120" crc="24d691fa" sha1="0cdbf15b96bcb57ae04f6b2e6deaf60dd35cb861"/>
 			</dataarea>
 		</part>
 	</software>

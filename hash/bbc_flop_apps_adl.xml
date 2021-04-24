@@ -12,7 +12,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Beebug</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Bad, ADFS"/>
+			<feature name="part_id" value="ADFS, Bad 1"/>
 			<dataarea name="flop" size="655360">
 				<rom name="beebug masterfile (19xx)(beebug)[b][adfs].adl" size="655360" crc="22195a1c" sha1="f8bc341f193e5938d82eaf6c4b9e607eb6108238" status="baddump"/>
 			</dataarea>
@@ -25,7 +25,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked 8-Bit, ADFS"/>
+			<feature name="part_id" value="ADFS, Hacked 8-Bit"/>
 			<dataarea name="flop" size="655360">
 				<rom name="crypt paint ii (19xx)(-)[h 8-bit][adfs].adl" size="655360" crc="d25526c3" sha1="06c72fbccd19241c0d295a7ac999a61ce18c5862"/>
 			</dataarea>
@@ -71,19 +71,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="scrabble" supported="no">
-		<description>Scrabble Dictionary</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="ADFS"/>
-			<dataarea name="flop" size="655360">
-				<rom name="scrabble dictionary (19xx)(-)[adfs].adl" size="655360" crc="864bffc3" sha1="64706ec94a40531287d67d596833862de217949b"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="stddatab" supported="no">
 		<description>STD Database (v4)</description>
 		<year>19??</year>
@@ -93,6 +80,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="ADFS"/>
 			<dataarea name="flop" size="655360">
 				<rom name="std database v4 (19xx)(richardson, c.j.)[adfs].adl" size="655360" crc="d06462b0" sha1="f42a90e68e24b45546f67dd35572ffeb02e3b472"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scrabble" supported="no">
+		<description>Scrabble Dictionary</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="ADFS"/>
+			<dataarea name="flop" size="655360">
+				<rom name="scrabble dictionary (19xx)(-)[adfs].adl" size="655360" crc="864bffc3" sha1="64706ec94a40531287d67d596833862de217949b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -116,15 +116,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Colton</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked 8-Bit, Alt, ADFS"/>
+			<feature name="part_id" value="ADFS, Hacked 8-Bit"/>
 			<dataarea name="flop" size="655360">
-				<rom name="view professional v2.0 (19xx)(colton)[h 8-bit][a][adfs].adl" size="655360" crc="992e2d92" sha1="63476d4e6653c780fb6fb6dc080638b8b13d857a"/>
+				<rom name="view professional v2.0 (19xx)(colton)[h 8-bit][adfs].adl" size="655360" crc="2094b603" sha1="971d85025823e67749dad6e258903f9e0ee147e2"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked 8-Bit, ADFS"/>
+			<feature name="part_id" value="ADFS, Hacked 8-Bit, Alt 1"/>
 			<dataarea name="flop" size="655360">
-				<rom name="view professional v2.0 (19xx)(colton)[h 8-bit][adfs].adl" size="655360" crc="2094b603" sha1="971d85025823e67749dad6e258903f9e0ee147e2"/>
+				<rom name="view professional v2.0 (19xx)(colton)[h 8-bit][a][adfs].adl" size="655360" crc="992e2d92" sha1="63476d4e6653c780fb6fb6dc080638b8b13d857a"/>
 			</dataarea>
 		</part>
 	</software>

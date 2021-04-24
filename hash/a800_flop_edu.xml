@@ -6,6 +6,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 -->
 <softwarelist name="a800_flop_edu" description="Atari 800 floppy disks (Educational)">
 
+	<software name="adaytofi" supported="no">
+		<description>A Day to Find Out (US)</description>
+		<year>1983</year>
+		<publisher>Orange Cherry Media</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="day to find out, a (1983)(orange cherry media)(us)[basic].atr" size="92176" crc="9d9a6129" sha1="225559798c979a4cb72de6876ed5eec2c5f4e222"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="aecspell" supported="no">
 		<description>A.E.C. Spelling - Grade 7 (US)</description>
 		<year>1984</year>
@@ -21,37 +34,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side B, BASIC"/>
 			<dataarea name="flop" size="92176">
 				<rom name="a.e.c. spelling - grade 7 (1984)(american educational computer)(us)(side b)[basic].atr" size="92176" crc="c443248a" sha1="d1df0690fdb789a854c94b43a9722f3a6f720580"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="theabcof" supported="no">
-		<description>The ABC of CPR (US, Prototype)</description>
-		<year>1984</year>
-		<publisher>Atari</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, req OSb"/>
-			<dataarea name="flop" size="92176">
-				<rom name="abc of cpr, the (1984)(atari)(us)(proto)(side a)[req osb].atr" size="92176" crc="f52e83ad" sha1="ab377956f1191bdb9f7680972fd094e18b89589f"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, req OSb"/>
-			<dataarea name="flop" size="92176">
-				<rom name="abc of cpr, the (1984)(atari)(us)(proto)(side b)[req osb].atr" size="92176" crc="dc8e534f" sha1="0f132ae192fbdaa686d53322e7223e894c80f533"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="theaddit" supported="no">
-		<description>The Addition and Subtraction Machine (US, Public Domain)</description>
-		<year>19??</year>
-		<publisher>David Stengel</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="addition and subtraction machine, the (19xx)(stengel, david)(us)(pd).atr" size="92176" crc="089d6bb4" sha1="0c3f587ee62a561fc68c13b195760220f184bd87"/>
 			</dataarea>
 		</part>
 	</software>
@@ -253,25 +235,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="atarimus" supported="no">
-		<description>AtariMusic I (US)</description>
-		<year>1983</year>
-		<publisher>Atari</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A"/>
-			<dataarea name="flop" size="92176">
-				<rom name="atarimusic i (1983)(atari)(us)(side a).atr" size="92176" crc="2b458e16" sha1="c192674bd4402c20343259f5e32167cbe661c6f7"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B"/>
-			<dataarea name="flop" size="92176">
-				<rom name="atarimusic i (1983)(atari)(us)(side b).atr" size="92176" crc="ef0fdf1d" sha1="7231f340be859160f0b696fd565191e42a2f8946"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="atarimus_1" supported="no">
 		<description>AtariMusic II (US)</description>
 		<year>1983</year>
 		<publisher>Atari</publisher>
@@ -286,6 +249,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side B"/>
 			<dataarea name="flop" size="92176">
 				<rom name="atarimusic ii (1983)(atari)(us)(side b).atr" size="92176" crc="6e070f5b" sha1="38013e01c29def09f7d1301269c1cbc1f48584bd"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atarimus_1" supported="no">
+		<description>AtariMusic I (US)</description>
+		<year>1983</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="92176">
+				<rom name="atarimusic i (1983)(atari)(us)(side a).atr" size="92176" crc="2b458e16" sha1="c192674bd4402c20343259f5e32167cbe661c6f7"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="92176">
+				<rom name="atarimusic i (1983)(atari)(us)(side b).atr" size="92176" crc="ef0fdf1d" sha1="7231f340be859160f0b696fd565191e42a2f8946"/>
 			</dataarea>
 		</part>
 	</software>
@@ -341,7 +323,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>CBS Software</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="65552">
 				<rom name="big bird's fun house (1984)(cbs software)(us)[a].atr" size="65552" crc="7610d756" sha1="320fe96afc73404fcf540c8eb7f7312810307895"/>
 			</dataarea>
@@ -365,7 +347,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Cracked by Nova Prime, k-file"/>
+			<feature name="part_id" value="k-file, Cracked by Nova Prime"/>
 			<dataarea name="flop" size="17552">
 				<rom name="big bird's special delivery (1984)(cbs software)(us)[cr nova prime][k-file].atr" size="17552" crc="d30218ef" sha1="f789a8b6de2b5c62e91fe5803dac342c9ee66741"/>
 			</dataarea>
@@ -455,19 +437,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thecell" supported="no">
-		<description>The Cell (US, Public Domain)</description>
-		<year>1985</year>
-		<publisher>ACE</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="cell, the (1985)(ace)(us)(pd)[basic].atr" size="92176" crc="8d8f8242" sha1="dbc76a78ef82e77bee7baf88859573b25abaf7cc"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="characte" supported="no">
 		<description>Character Fun (US)</description>
 		<year>1983</year>
@@ -476,19 +445,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92176">
 				<rom name="character fun (1983)(apx)(us).atr" size="92176" crc="53bfc7f5" sha1="193146570806fdc5c3398e38aff764f683b2b538"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="lachasse" supported="no">
-		<description>La Chasse aux Fautes (FR)</description>
-		<year>1985</year>
-		<publisher>Atari</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="chasse aux fautes, la (1985)(atari)(fr)[basic].atr" size="92176" crc="4e7ced9a" sha1="0f82763cc093bec7f37b4862c3ad32cbb029d3d8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -534,19 +490,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="BASIC"/>
 			<dataarea name="flop" size="92176">
 				<rom name="chemistry lab simulations #4 (1981)(high technology software products)(us)[basic].atr" size="92176" crc="3c95f578" sha1="3d6a65160fe9b5abfbf54d092732e34032d3f622"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thechemi" supported="no">
-		<description>The Chemistry Tutor (US, 1989-12)</description>
-		<year>1989</year>
-		<publisher>Antic</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="chemistry tutor, the (1989-12)(antic)(us)[basic].atr" size="92176" crc="d4264d80" sha1="7c2febcea951ca7a46682a834137c9a65a5e5466"/>
 			</dataarea>
 		</part>
 	</software>
@@ -599,19 +542,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="BASIC"/>
 			<dataarea name="flop" size="92176">
 				<rom name="civilization part 3 - the roman world (1985)(the educators' atari club)(us)(pd)[basic].atr" size="92176" crc="299e0c39" sha1="0b77519fe6e14aed7cae7cbf9f015cb0bf45817f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thecloze" supported="no">
-		<description>The Cloze Technique for Developing Comprehension (US)</description>
-		<year>1984</year>
-		<publisher>Orange Cherry Media</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="cloze technique for developing comprehension, the (1984)(orange cherry media)(us)[basic].atr" size="92176" crc="e9b64f28" sha1="68ce9483e534048768987c760c99fb7adc32aadc"/>
 			</dataarea>
 		</part>
 	</software>
@@ -724,7 +654,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="cookiemo_1" supported="no">
+	<software name="cookiemo_a" cloneof="cookiemo" supported="no">
 		<description>Cookie Monster (CH, en, v1.1, Public Domain)</description>
 		<year>2008</year>
 		<publisher>Filippo Santellocco</publisher>
@@ -736,7 +666,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="cookiemo_2" supported="no">
+	<software name="cookiemo_b" cloneof="cookiemo" supported="no">
 		<description>Cookie Monster (CH, en, v1.2, Public Domain)</description>
 		<year>2008</year>
 		<publisher>Filippo Santellocco</publisher>
@@ -748,7 +678,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="cookiemo_3" supported="no">
+	<software name="cookiemo_c" cloneof="cookiemo" supported="no">
 		<description>Cookie Monster (CH, en, v1.3, Public Domain)</description>
 		<year>2008</year>
 		<publisher>Filippo Santellocco</publisher>
@@ -756,19 +686,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="133136">
 				<rom name="cookie monster v1.3 (2008)(santellocco, filippo)(ch)(en)(pd).atr" size="133136" crc="11761f4c" sha1="d9187401548718ab75e019e94aa6d05fa4ef0528"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="lacourse" supported="no">
-		<description>La Course aux Hapax (FR)</description>
-		<year>1985</year>
-		<publisher>Atari</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="course aux hapax, la (1985)(atari)(fr)[basic].atr" size="92176" crc="d0138321" sha1="dcfd3efeecd5a9c0581cd0fc8a25fda3d5a306cd"/>
 			</dataarea>
 		</part>
 	</software>
@@ -822,14 +739,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="d-bug (1983)(electronic arts)(ntsc)(us)[a].atr" size="92176" crc="147b722a" sha1="f582b21139d8e82d0d9faa2cf8ebc59c99f9ca0c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="dbug_1" supported="no">
+	<software name="dbug_a" cloneof="dbug" supported="no">
 		<description>D-Bug (US)</description>
 		<year>1983</year>
 		<publisher>Electronic Arts</publisher>
@@ -840,7 +757,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Bad"/>
+			<feature name="part_id" value="Bad 1"/>
 			<dataarea name="flop" size="57744">
 				<rom name="d-bug (1983)(electronic arts)(us)[b].atr" size="57744" crc="34453d5f" sha1="3533fee4025fccb893c28efa1d61e81c1fd4d3e8" status="baddump"/>
 			</dataarea>
@@ -869,19 +786,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb, k-file"/>
 			<dataarea name="flop" size="9104">
 				<rom name="dancing feats (1983)(softsync)(us)[req osb][k-file].atr" size="9104" crc="1d571f80" sha1="bbf7d197651eceaade6b1af1533e664ef18981dd"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="adaytofi" supported="no">
-		<description>A Day to Find Out (US)</description>
-		<year>1983</year>
-		<publisher>Orange Cherry Media</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="day to find out, a (1983)(orange cherry media)(us)[basic].atr" size="92176" crc="9d9a6129" sha1="225559798c979a4cb72de6876ed5eec2c5f4e222"/>
 			</dataarea>
 		</part>
 	</software>
@@ -970,15 +874,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thedrill" supported="no">
-		<description>The Drill Instructor (US, Public Domain)</description>
-		<year>1985</year>
-		<publisher>Omegasoft</publisher>
+	<software name="ekgteach" supported="no">
+		<description>EKG Teaching (US)</description>
+		<year>1986</year>
+		<publisher>Mad Scientist Software</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="BASIC"/>
 			<dataarea name="flop" size="92176">
-				<rom name="drill instructor, the (1985)(omegasoft)(us)(pd)[basic].atr" size="92176" crc="e1950849" sha1="ea1999339cd8fe769d7387bd1912dd762fc14607"/>
+				<rom name="ekg teaching (1986)(mad scientist software)(us)[basic].atr" size="92176" crc="33e1e032" sha1="3f1f207f66b411829103b1a9580947b3761b0f2d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1137,38 +1041,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="ekgteach" supported="no">
-		<description>EKG Teaching (US)</description>
-		<year>1986</year>
-		<publisher>Mad Scientist Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="ekg teaching (1986)(mad scientist software)(us)[basic].atr" size="92176" crc="33e1e032" sha1="3f1f207f66b411829103b1a9580947b3761b0f2d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="theengli" supported="no">
-		<description>The English Revision Aid (SG, en)</description>
-		<year>1984</year>
-		<publisher>Atari Center</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, BASIC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="english revision aid, the (1984)(atari center)(sg)(en)(side a)[basic].atr" size="92176" crc="3e33b2f7" sha1="0f99bf9937557061eb49cb78f7d921fe86873df1"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, BASIC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="english revision aid, the (1984)(atari center)(sg)(en)(side b)[basic].atr" size="92176" crc="17dcd0d3" sha1="90aa8e353d3f019eea1ab2ee69534f78be0743ea"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="equation" supported="no">
 		<description>Equations (US)</description>
 		<year>1982</year>
@@ -1220,19 +1092,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="fiffikus" supported="no">
-		<description>Fiffikus (DE, Public Domain)</description>
-		<year>1987</year>
-		<publisher>Gerhard Ruminski - Hans-Joachim Witt</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="fiffikus (1987)(ruminski, gerhard - witt, hans-joachim)(de)(pd)[basic].atr" size="92176" crc="3e90a879" sha1="576c6e2e6083085806d18248bfd4b1599a687299"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="fiffikus_1" supported="no">
 		<description>Fiffikus Datendiskette - Allgemeinwissen 1 (DE, Public Domain)</description>
 		<year>1987</year>
 		<publisher>Gerhard Ruminski - Hans-Joachim Witt</publisher>
@@ -1245,7 +1104,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="fiffikus_2" supported="no">
+	<software name="fiffikus_1" supported="no">
 		<description>Fiffikus Datendiskette - Allgemeinwissen 2 (DE, Public Domain)</description>
 		<year>1987</year>
 		<publisher>Gerhard Ruminski - Hans-Joachim Witt</publisher>
@@ -1258,7 +1117,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="fiffikus_3" supported="no">
+	<software name="fiffikus_2" supported="no">
 		<description>Fiffikus Datendiskette - Allgemeinwissen 3 (DE, Public Domain)</description>
 		<year>1987</year>
 		<publisher>Gerhard Ruminski - Hans-Joachim Witt</publisher>
@@ -1271,7 +1130,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="fiffikus_4" supported="no">
+	<software name="fiffikus_3" supported="no">
 		<description>Fiffikus Datendiskette - Allgemeinwissen 4 (DE, Public Domain)</description>
 		<year>1987</year>
 		<publisher>Gerhard Ruminski - Hans-Joachim Witt</publisher>
@@ -1284,7 +1143,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="fiffikus_5" supported="no">
+	<software name="fiffikus_4" supported="no">
 		<description>Fiffikus Datendiskette - Englisch 1 (DE, Public Domain)</description>
 		<year>1987</year>
 		<publisher>Gerhard Ruminski - Hans-Joachim Witt</publisher>
@@ -1297,7 +1156,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="fiffikus_6" supported="no">
+	<software name="fiffikus_5" supported="no">
 		<description>Fiffikus Datendiskette - Englisch 2 (DE, Public Domain)</description>
 		<year>1987</year>
 		<publisher>Gerhard Ruminski - Hans-Joachim Witt</publisher>
@@ -1310,7 +1169,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="fiffikus_7" supported="no">
+	<software name="fiffikus_6" supported="no">
 		<description>Fiffikus Datendiskette - Erdkunde 1 (DE, Public Domain)</description>
 		<year>1987</year>
 		<publisher>Gerhard Ruminski - Hans-Joachim Witt</publisher>
@@ -1323,7 +1182,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="fiffikus_8" supported="no">
+	<software name="fiffikus_7" supported="no">
 		<description>Fiffikus Datendiskette - Erdkunde 2 (DE, Public Domain)</description>
 		<year>1987</year>
 		<publisher>Gerhard Ruminski - Hans-Joachim Witt</publisher>
@@ -1336,7 +1195,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="fiffikus_9" supported="no">
+	<software name="fiffikus_8" supported="no">
 		<description>Fiffikus Datendiskette - Erdkunde 3 (DE, Public Domain)</description>
 		<year>1987</year>
 		<publisher>Gerhard Ruminski - Hans-Joachim Witt</publisher>
@@ -1349,7 +1208,20 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="fiffikus_10" supported="no">
+	<software name="fiffikus_9" supported="no">
+		<description>Fiffikus (DE, Public Domain)</description>
+		<year>1987</year>
+		<publisher>Gerhard Ruminski - Hans-Joachim Witt</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="fiffikus (1987)(ruminski, gerhard - witt, hans-joachim)(de)(pd)[basic].atr" size="92176" crc="3e90a879" sha1="576c6e2e6083085806d18248bfd4b1599a687299"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fiffikus_9_a" cloneof="fiffikus_9" supported="no">
 		<description>Fiffikus (DE, v2.0, Public Domain)</description>
 		<year>1987</year>
 		<publisher>Gerhard Ruminski - Hans-Joachim Witt</publisher>
@@ -1503,6 +1375,32 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="lachasse" supported="no">
+		<description>La Chasse aux Fautes (FR)</description>
+		<year>1985</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="chasse aux fautes, la (1985)(atari)(fr)[basic].atr" size="92176" crc="4e7ced9a" sha1="0f82763cc093bec7f37b4862c3ad32cbb029d3d8"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lacourse" supported="no">
+		<description>La Course aux Hapax (FR)</description>
+		<year>1985</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="course aux hapax, la (1985)(atari)(fr)[basic].atr" size="92176" crc="d0138321" sha1="dcfd3efeecd5a9c0581cd0fc8a25fda3d5a306cd"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="language" supported="no">
 		<description>Language Drills (US, Public Domain)</description>
 		<year>1985</year>
@@ -1512,19 +1410,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="BASIC"/>
 			<dataarea name="flop" size="92176">
 				<rom name="language drills (1985)(kelley, john r.)(us)(pd)[basic].atr" size="92176" crc="ffc5e63f" sha1="2d1fa66431cc75811160be42e1c244c9c8a7089e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thelingu" supported="no">
-		<description>The Linguist (US)</description>
-		<year>1986</year>
-		<publisher>Gessler Educational Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="NTSC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="linguist, the (1986)(gessler educational software)(us)(ntsc).atr" size="92176" crc="cfcbea98" sha1="1d38de1a7a8259c3cd53e9b9c818b1d88c59cc2b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1625,7 +1510,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>APX</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Cracked by Atari Sysops Alliance, k-file"/>
+			<feature name="part_id" value="k-file, Cracked by Atari Sysops Alliance"/>
 			<dataarea name="flop" size="21392">
 				<rom name="national flags (1982)(apx)(us)[cr atari sysops alliance][k-file].atr" size="21392" crc="1c5b95f2" sha1="4d967217166bd21b3c644f611f452a424004a422"/>
 			</dataarea>
@@ -1695,22 +1580,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Atari</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Trained"/>
+			<feature name="part_id" value="Trained 1"/>
 			<dataarea name="flop" size="65552">
 				<rom name="sky writer (1983)(atari)(us)[t].atr" size="65552" crc="b12b1eb6" sha1="884327a1079a7fe902841ff7352de0faf7f88483"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thesofto" supported="no">
-		<description>The Softoy (US)</description>
-		<year>1983</year>
-		<publisher>Monarch Data Systems</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Cracked by N.A.P.O., Bad, k-file"/>
-			<dataarea name="flop" size="15888">
-				<rom name="softoy, the (1983)(monarch data systems)(us)[cr n.a.p.o.][b][k-file].atr" size="15888" crc="2f2b6bc3" sha1="cecdbfe22701aec95bb677c0eea5a4b7bd7c4eb3" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1753,6 +1625,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="storymac" supported="no">
+		<description>Story Machine (NTSC, US)</description>
+		<year>1983</year>
+		<publisher>Spinnaker Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="req OSb, k-file"/>
+			<dataarea name="flop" size="16912">
+				<rom name="story machine (1983)(spinnaker software)(ntsc)(us)[req osb][k-file].atr" size="16912" crc="27243a2a" sha1="ef7e0471b1ecc0f1ea71d137ce62ca9c3a7c09b1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="storymac_a" cloneof="storymac" supported="no">
 		<description>Story Machine (US)</description>
 		<year>1982</year>
 		<publisher>Spinnaker Software</publisher>
@@ -1764,15 +1649,130 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="storymac_1" supported="no">
-		<description>Story Machine (NTSC, US)</description>
-		<year>1983</year>
-		<publisher>Spinnaker Software</publisher>
+	<software name="theabcof" supported="no">
+		<description>The ABC of CPR (US, Prototype)</description>
+		<year>1984</year>
+		<publisher>Atari</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="req OSb, k-file"/>
-			<dataarea name="flop" size="16912">
-				<rom name="story machine (1983)(spinnaker software)(ntsc)(us)[req osb][k-file].atr" size="16912" crc="27243a2a" sha1="ef7e0471b1ecc0f1ea71d137ce62ca9c3a7c09b1"/>
+			<feature name="part_id" value="Side A, req OSb"/>
+			<dataarea name="flop" size="92176">
+				<rom name="abc of cpr, the (1984)(atari)(us)(proto)(side a)[req osb].atr" size="92176" crc="f52e83ad" sha1="ab377956f1191bdb9f7680972fd094e18b89589f"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, req OSb"/>
+			<dataarea name="flop" size="92176">
+				<rom name="abc of cpr, the (1984)(atari)(us)(proto)(side b)[req osb].atr" size="92176" crc="dc8e534f" sha1="0f132ae192fbdaa686d53322e7223e894c80f533"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theaddit" supported="no">
+		<description>The Addition and Subtraction Machine (US, Public Domain)</description>
+		<year>19??</year>
+		<publisher>David Stengel</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="addition and subtraction machine, the (19xx)(stengel, david)(us)(pd).atr" size="92176" crc="089d6bb4" sha1="0c3f587ee62a561fc68c13b195760220f184bd87"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thecell" supported="no">
+		<description>The Cell (US, Public Domain)</description>
+		<year>1985</year>
+		<publisher>ACE</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="cell, the (1985)(ace)(us)(pd)[basic].atr" size="92176" crc="8d8f8242" sha1="dbc76a78ef82e77bee7baf88859573b25abaf7cc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thechemi" supported="no">
+		<description>The Chemistry Tutor (US, 1989-12)</description>
+		<year>1989</year>
+		<publisher>Antic</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="chemistry tutor, the (1989-12)(antic)(us)[basic].atr" size="92176" crc="d4264d80" sha1="7c2febcea951ca7a46682a834137c9a65a5e5466"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thecloze" supported="no">
+		<description>The Cloze Technique for Developing Comprehension (US)</description>
+		<year>1984</year>
+		<publisher>Orange Cherry Media</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="cloze technique for developing comprehension, the (1984)(orange cherry media)(us)[basic].atr" size="92176" crc="e9b64f28" sha1="68ce9483e534048768987c760c99fb7adc32aadc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thedrill" supported="no">
+		<description>The Drill Instructor (US, Public Domain)</description>
+		<year>1985</year>
+		<publisher>Omegasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="drill instructor, the (1985)(omegasoft)(us)(pd)[basic].atr" size="92176" crc="e1950849" sha1="ea1999339cd8fe769d7387bd1912dd762fc14607"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theengli" supported="no">
+		<description>The English Revision Aid (SG, en)</description>
+		<year>1984</year>
+		<publisher>Atari Center</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="english revision aid, the (1984)(atari center)(sg)(en)(side a)[basic].atr" size="92176" crc="3e33b2f7" sha1="0f99bf9937557061eb49cb78f7d921fe86873df1"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="english revision aid, the (1984)(atari center)(sg)(en)(side b)[basic].atr" size="92176" crc="17dcd0d3" sha1="90aa8e353d3f019eea1ab2ee69534f78be0743ea"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thelingu" supported="no">
+		<description>The Linguist (US)</description>
+		<year>1986</year>
+		<publisher>Gessler Educational Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="NTSC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="linguist, the (1986)(gessler educational software)(us)(ntsc).atr" size="92176" crc="cfcbea98" sha1="1d38de1a7a8259c3cd53e9b9c818b1d88c59cc2b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thesofto" supported="no">
+		<description>The Softoy (US)</description>
+		<year>1983</year>
+		<publisher>Monarch Data Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Cracked by N.A.P.O., Bad 1"/>
+			<dataarea name="flop" size="15888">
+				<rom name="softoy, the (1983)(monarch data systems)(us)[cr n.a.p.o.][b][k-file].atr" size="15888" crc="2f2b6bc3" sha1="cecdbfe22701aec95bb677c0eea5a4b7bd7c4eb3" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1788,15 +1788,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="92176">
-				<rom name="tink tonk - tonk in the land of buddy-bots (1984)(sprout)(us)[a2].atr" size="92176" crc="828641dd" sha1="6ce318ea0348ca3c9ec9dfd058ddb972993b2947"/>
+				<rom name="tink tonk - tonk in the land of buddy-bots (1984)(sprout)(us)[a].atr" size="92176" crc="ea1669e3" sha1="47be8c98cd5ae8df572f4bce36272e5a024503a9"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="92176">
-				<rom name="tink tonk - tonk in the land of buddy-bots (1984)(sprout)(us)[a].atr" size="92176" crc="ea1669e3" sha1="47be8c98cd5ae8df572f4bce36272e5a024503a9"/>
+				<rom name="tink tonk - tonk in the land of buddy-bots (1984)(sprout)(us)[a2].atr" size="92176" crc="828641dd" sha1="6ce318ea0348ca3c9ec9dfd058ddb972993b2947"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1812,7 +1812,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Translated pl, BASIC"/>
+			<feature name="part_id" value="BASIC, Translated pl"/>
 			<dataarea name="flop" size="133136">
 				<rom name="troll's tale (1984)(sierra on-line)(us)[tr pl][basic].atr" size="133136" crc="9e1c7697" sha1="057827272859a66c94b089bb1b874a310d674154"/>
 			</dataarea>
@@ -1825,15 +1825,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Atari</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, k-file"/>
-			<dataarea name="flop" size="8720">
-				<rom name="typo attack (1984)(atari)(us)[a][k-file].atr" size="8720" crc="0f29d321" sha1="d03eea45466d7d82b4a4efbb913f099532d8247b"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="k-file"/>
 			<dataarea name="flop" size="6416">
 				<rom name="typo attack (1984)(atari)(us)[k-file].atr" size="6416" crc="0bee2d36" sha1="6496fba58a4de967cc3c2985e1da80bfab10a2b9"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Alt 1"/>
+			<dataarea name="flop" size="8720">
+				<rom name="typo attack (1984)(atari)(us)[a][k-file].atr" size="8720" crc="0f29d321" sha1="d03eea45466d7d82b4a4efbb913f099532d8247b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1900,7 +1900,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="word invaders (1984)(academy software)(us)[a].atr" size="92176" crc="395d4060" sha1="f11144bfc8adeaa5757394dc7e68824210c0f441"/>
 			</dataarea>

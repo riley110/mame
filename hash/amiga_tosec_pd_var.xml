@@ -18,6 +18,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="amigavic" supported="no">
+		<description>AMIGA-VICE Nr. 100 - Grafik PD Serie (DE, Public Domain)</description>
+		<year>1991</year>
+		<publisher>AMIGA-VICE-PD Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="amiga-vice nr. 100 - grafik pd serie (1991)(amiga-vice-pd software)(de)(pd).adf" size="901120" crc="5a185f90" sha1="11c8dbc775520bb94733f17a272995b3b2e46217"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="amigabox" supported="no">
 		<description>Amiga Box #30 (1993-05)</description>
 		<year>1993</year>
@@ -66,18 +78,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="amiga box #70 (1994-01)(belier production)[wb].adf" size="901120" crc="cd096d4d" sha1="ee9f4ecd5d2c3ee023db5cb4369513815f4cb18e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="amigavic" supported="no">
-		<description>AMIGA-VICE Nr. 100 - Grafik PD Serie (DE, Public Domain)</description>
-		<year>1991</year>
-		<publisher>AMIGA-VICE-PD Software</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="amiga-vice nr. 100 - grafik pd serie (1991)(amiga-vice-pd software)(de)(pd).adf" size="901120" crc="5a185f90" sha1="11c8dbc775520bb94733f17a272995b3b2e46217"/>
 			</dataarea>
 		</part>
 	</software>

@@ -32,18 +32,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="9t9users" supported="no">
-		<description>9T9 User's Group</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92160">
-				<rom name="9t9 user's group (19xx)(-).dsk" size="92160" crc="a1720cad" sha1="a591a2b31c1f2c129e4d5c673244fb5cc2804706"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="9t9users_1" supported="no">
 		<description>9T9 User's Group Disk of the Month (Public Domain)</description>
 		<year>198?</year>
 		<publisher>9T9</publisher>
@@ -55,7 +43,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="9t9users_2" supported="no">
+	<software name="9t9users_a" cloneof="9t9users" supported="no">
 		<description>9T9 User's Group Disk of the Month (Public Domain) (1)</description>
 		<year>19??</year>
 		<publisher>9T9</publisher>
@@ -64,6 +52,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req. PHM 3026"/>
 			<dataarea name="flop" size="92160">
 				<rom name="9t9 user's group disk of the month (19xx)(9t9)(pd)[req. phm 3026].dsk" size="92160" crc="937d43a5" sha1="66cad8fbf0b222d7a0d4a99df03afbeb197f37b7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="9t9users_1" supported="no">
+		<description>9T9 User's Group</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92160">
+				<rom name="9t9 user's group (19xx)(-).dsk" size="92160" crc="a1720cad" sha1="a591a2b31c1f2c129e4d5c673244fb5cc2804706"/>
 			</dataarea>
 		</part>
 	</software>
@@ -77,6 +77,42 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="PHD 5044"/>
 			<dataarea name="flop" size="92160">
 				<rom name="ac circuit analysis library (1981)(texas instruments)[phd 5044].dsk" size="92160" crc="ea8a5977" sha1="83c3fe147d12727e82d2ec8c29a51d4dc536dca7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amsfilet" supported="no">
+		<description>AMS File Transfer (Public Domain)</description>
+		<year>1998</year>
+		<publisher>Bruce Harrison</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92160">
+				<rom name="ams file transfer (1998)(bruce harrison)(pd).dsk" size="92160" crc="4ef67eaf" sha1="625cfe06457a5bae652edc43663c9486a5fcb0a6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amsslide" supported="no">
+		<description>AMS Slideshow (Public Domain)</description>
+		<year>1997</year>
+		<publisher>Bruce Harrison</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="ams slideshow (1997)(bruce harrison)(pd).dsk" size="184320" crc="5ddf58d7" sha1="e1f81b3ad1c25ff25f81d20ff759e1dcf0c97f3f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amsvideo" supported="no">
+		<description>AMS Video Titler (Public Domain)</description>
+		<year>1997</year>
+		<publisher>Bruce Harrison</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="ams video titler (1997)(bruce harrison)(pd).dsk" size="184320" crc="9122b516" sha1="29cb804f7d18a0b1537d3f5b84d289d0087f4b33"/>
 			</dataarea>
 		</part>
 	</software>
@@ -118,42 +154,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="amsfilet" supported="no">
-		<description>AMS File Transfer (Public Domain)</description>
-		<year>1998</year>
-		<publisher>Bruce Harrison</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92160">
-				<rom name="ams file transfer (1998)(bruce harrison)(pd).dsk" size="92160" crc="4ef67eaf" sha1="625cfe06457a5bae652edc43663c9486a5fcb0a6"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="amsslide" supported="no">
-		<description>AMS Slideshow (Public Domain)</description>
-		<year>1997</year>
-		<publisher>Bruce Harrison</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184320">
-				<rom name="ams slideshow (1997)(bruce harrison)(pd).dsk" size="184320" crc="5ddf58d7" sha1="e1f81b3ad1c25ff25f81d20ff759e1dcf0c97f3f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="amsvideo" supported="no">
-		<description>AMS Video Titler (Public Domain)</description>
-		<year>1997</year>
-		<publisher>Bruce Harrison</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184320">
-				<rom name="ams video titler (1997)(bruce harrison)(pd).dsk" size="184320" crc="9122b516" sha1="29cb804f7d18a0b1537d3f5b84d289d0087f4b33"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="archiver" supported="no">
 		<description>Archiver III (v3.03)</description>
 		<year>1989</year>
@@ -179,7 +179,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="assembly_1" supported="no">
+	<software name="assembly_a" cloneof="assembly" supported="no">
 		<description>Assembly Language Games (1)</description>
 		<year>1993</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -244,19 +244,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92160">
 				<rom name="attack of the creepers v1.5 (19xx)(ian howle)(pd).dsk" size="92160" crc="c6a1f00d" sha1="83e8246a695a80896d1f075d5c860a206ba90a14"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="basketba" supported="no">
-		<description>Basketball Statistician</description>
-		<year>1981</year>
-		<publisher>Texas Instruments</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="PHD 5023, req. PHM 3026"/>
-			<dataarea name="flop" size="92160">
-				<rom name="basketball statistician (1981)(texas instruments)[phd 5023][req. phm 3026].dsk" size="92160" crc="afe659a2" sha1="6fec8a59550b105b4d9350b069ad69e67b114333"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1734,6 +1721,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="basketba" supported="no">
+		<description>Basketball Statistician</description>
+		<year>1981</year>
+		<publisher>Texas Instruments</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="PHD 5023, req. PHM 3026"/>
+			<dataarea name="flop" size="92160">
+				<rom name="basketball statistician (1981)(texas instruments)[phd 5023][req. phm 3026].dsk" size="92160" crc="afe659a2" sha1="6fec8a59550b105b4d9350b069ad69e67b114333"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="beginner" supported="no">
 		<description>Beginner's BASIC Tutor</description>
 		<year>1982</year>
@@ -1773,14 +1773,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="bridgebi" supported="no">
-		<description>Bridge Bidding I</description>
+		<description>Bridge Bidding III</description>
 		<year>1981</year>
 		<publisher>Texas Instruments</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="PHD 5026"/>
+			<feature name="part_id" value="PHD 5041"/>
 			<dataarea name="flop" size="92160">
-				<rom name="bridge bidding i (1981)(texas instruments)[phd 5026].dsk" size="92160" crc="9a12b63c" sha1="6f493b6e8f064bd827ae74adbd3997ec3c8d73e3"/>
+				<rom name="bridge bidding iii (1981)(texas instruments)[phd 5041].dsk" size="92160" crc="97fded98" sha1="4fb0d3654145576e624d06cbed5168d715b49637"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1799,14 +1799,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="bridgebi_2" supported="no">
-		<description>Bridge Bidding III</description>
+		<description>Bridge Bidding I</description>
 		<year>1981</year>
 		<publisher>Texas Instruments</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="PHD 5041"/>
+			<feature name="part_id" value="PHD 5026"/>
 			<dataarea name="flop" size="92160">
-				<rom name="bridge bidding iii (1981)(texas instruments)[phd 5041].dsk" size="92160" crc="97fded98" sha1="4fb0d3654145576e624d06cbed5168d715b49637"/>
+				<rom name="bridge bidding i (1981)(texas instruments)[phd 5026].dsk" size="92160" crc="9a12b63c" sha1="6f493b6e8f064bd827ae74adbd3997ec3c8d73e3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1819,30 +1819,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92160">
 				<rom name="busted utilities (19xx)(-).dsk" size="92160" crc="c8aab6b3" sha1="970d25d1ecb4f4084bf2b7909c70b1d9004dd3ee"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="c99sound" supported="no">
-		<description>c99 Sound List Processing (Public Domain)</description>
-		<year>1995</year>
-		<publisher>Bruce Harrison</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184320">
-				<rom name="c99 sound list processing (1995)(bruce harrison)(pd).dsk" size="184320" crc="1617f62a" sha1="9a9c567a313e0e73dc1c20188751df6613e0526f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="c99utili" supported="no">
-		<description>c99 Utilities (Public Domain)</description>
-		<year>1995</year>
-		<publisher>Bruce Harrison</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184320">
-				<rom name="c99 utilities (1995)(bruce harrison)(pd).dsk" size="184320" crc="23b04ad7" sha1="fe7c867e45e6becea7d1cef85504684633e3a380"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2035,19 +2011,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thecount" supported="no">
-		<description>The Count</description>
-		<year>1981</year>
-		<publisher>Texas Instruments</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="PHD 5049, req. PHM 3041, DSK1.COUNT"/>
-			<dataarea name="flop" size="92160">
-				<rom name="count, the (1981)(texas instruments)[phd 5049][req. phm 3041][dsk1.count].dsk" size="92160" crc="ed2543ad" sha1="f170e22a9957751b1ca4989f3b1dd0d113e21d82"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="coursede" supported="no">
 		<description>Course Designer - Authoring Package</description>
 		<year>1982</year>
@@ -2067,68 +2030,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="cshell99" supported="no">
-		<description>cSHELL99 Demo</description>
-		<year>1990</year>
-		<publisher>Joe Ross</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92160">
-				<rom name="cshell99 demo (1990)(joe ross).dsk" size="92160" crc="e74cbc92" sha1="5122baf93ae8edd3cd70353573a42bb0f0b0bc0f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cshell99_1" supported="no">
-		<description>cSHELL99 Modules</description>
-		<year>1989</year>
-		<publisher>Joe Ross</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="368640">
-				<rom name="cshell99 modules (1989)(joe ross).dsk" size="368640" crc="44e92542" sha1="eabf20deb6ceae53b515e4f3ec8053d8d5443367"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cshell99_2" supported="no">
-		<description>cSHELL99 Source Code</description>
-		<year>1990</year>
-		<publisher>Joe Ross</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="368640">
-				<rom name="cshell99 source code (1990)(joe ross).dsk" size="368640" crc="c86c10b6" sha1="d95bc5fa23f06fd7385ce612a18565d765fd4b6d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cshell99_3" supported="no">
-		<description>cSHELL99 System (v2.0)</description>
-		<year>1989</year>
-		<publisher>Joe Ross</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="368640">
-				<rom name="cshell99 system v2.0 (1989)(joe ross).dsk" size="368640" crc="eb601cfa" sha1="b255b47e303f37086a728f06ca0ff28999689c7c"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="dstation" supported="no">
-		<description>D-Station</description>
-		<year>1988</year>
-		<publisher>John Phillips</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="with source code"/>
-			<dataarea name="flop" size="184320">
-				<rom name="d-station (1988)(john phillips)[with source code].dsk" size="184320" crc="62fe6237" sha1="0488f7ceb771fb68d58f0a87d91197c7fada1dd3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dstation_1" supported="no">
 		<description>D-Station II - The Conflict Continues!</description>
 		<year>1988</year>
 		<publisher>John Phillips</publisher>
@@ -2137,6 +2039,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="with source code"/>
 			<dataarea name="flop" size="184320">
 				<rom name="d-station ii - the conflict continues (1988)(john phillips)[with source code].dsk" size="184320" crc="6c6f6e13" sha1="615a9a9cbe94d88e2409f4c442eb59715a819048"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dstation_1" supported="no">
+		<description>D-Station</description>
+		<year>1988</year>
+		<publisher>John Phillips</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="with source code"/>
+			<dataarea name="flop" size="184320">
+				<rom name="d-station (1988)(john phillips)[with source code].dsk" size="184320" crc="62fe6237" sha1="0488f7ceb771fb68d58f0a87d91197c7fada1dd3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2155,18 +2070,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="drawingp" supported="no">
-		<description>Drawing Program (Public Domain)</description>
-		<year>1995</year>
-		<publisher>Bruce Harrison</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184320">
-				<rom name="drawing program (1995)(bruce harrison)(pd).dsk" size="184320" crc="fde6ed25" sha1="4bea5f4b80dbfca3603acbee45e94b3f6bb568a5"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="drawingp_1" supported="no">
 		<description>Drawing Program for 24 Pin Printers (Public Domain)</description>
 		<year>1994</year>
 		<publisher>Bruce Harrison</publisher>
@@ -2178,7 +2081,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="drawingp_2" supported="no">
+	<software name="drawingp_1" supported="no">
 		<description>Drawing Program for Bubble Jet Printers (Public Domain)</description>
 		<year>1994</year>
 		<publisher>Bruce Harrison</publisher>
@@ -2190,7 +2093,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="drawingp_3" supported="no">
+	<software name="drawingp_2" supported="no">
 		<description>Drawing Program with Source Code (Public Domain)</description>
 		<year>1994</year>
 		<publisher>Bruce Harrison</publisher>
@@ -2198,6 +2101,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184320">
 				<rom name="drawing program with source code (1994)(bruce harrison)(pd).dsk" size="184320" crc="aa3406a4" sha1="d8409b18293c3a070292161520d3cafbaedce168"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="drawingp_3" supported="no">
+		<description>Drawing Program (Public Domain)</description>
+		<year>1995</year>
+		<publisher>Bruce Harrison</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="drawing program (1995)(bruce harrison)(pd).dsk" size="184320" crc="fde6ed25" sha1="4bea5f4b80dbfca3603acbee45e94b3f6bb568a5"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2220,15 +2135,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Texas Instruments</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, PHD 5062"/>
-			<dataarea name="flop" size="92160">
-				<rom name="editor-assembler part a (1981)(texas instruments)[a][phd 5062].dsk" size="92160" crc="6503f2a1" sha1="72864f31b2073340319c2893d592ab3d81db8c7b"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="PHD 5062"/>
 			<dataarea name="flop" size="92160">
 				<rom name="editor-assembler part a (1981)(texas instruments)[phd 5062].dsk" size="92160" crc="e379abe5" sha1="37ab0b53f2d9794ff3963650556cd06739883208"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="PHD 5062, Alt 1"/>
+			<dataarea name="flop" size="92160">
+				<rom name="editor-assembler part a (1981)(texas instruments)[a][phd 5062].dsk" size="92160" crc="6503f2a1" sha1="72864f31b2073340319c2893d592ab3d81db8c7b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2388,61 +2303,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Cracked by Hacker's Guild, req. PHM 3026"/>
+			<feature name="part_id" value="req. PHM 3026, Cracked by Hacker's Guild"/>
 			<dataarea name="flop" size="92160">
 				<rom name="funware games (19xx)(-)[cr hacker's guild][req. phm 3026].dsk" size="92160" crc="16c8b210" sha1="4d64d878244fab86719a25b92ed486ff9cbb13cb"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamesmod" supported="no">
-		<description>Games Modules</description>
-		<year>1995</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="req. PHM 3026, USGRP1090B"/>
-			<dataarea name="flop" size="92160">
-				<rom name="games modules (1995)(-)[req. phm 3026][usgrp1090b].dsk" size="92160" crc="7c0b3b65" sha1="5c42685c6875f158cbd408550eed1fe345d29597"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamesmod_1" supported="no">
-		<description>Games Modules (1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="req. PHM 3026"/>
-			<dataarea name="flop" size="92160">
-				<rom name="games modules (19xx)(-)[req. phm 3026].dsk" size="92160" crc="39aa28d7" sha1="d965489d148073b3f7f71c1e679b70324ddcfb71"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ghosttow" supported="no">
-		<description>Ghost Town</description>
-		<year>1981</year>
-		<publisher>Texas Instruments</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="PHD 5053, req. PHM 3041, DSK1.GHOSTTOWN"/>
-			<dataarea name="flop" size="92160">
-				<rom name="ghost town (1981)(texas instruments)[phd 5053][req. phm 3041][dsk1.ghosttown].dsk" size="92160" crc="be370de5" sha1="dfa72813d8d52a1b1f6d53b901dc42167890a9e9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thegolde" supported="no">
-		<description>The Golden Voyage</description>
-		<year>1981</year>
-		<publisher>Texas Instruments</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="PHD 5056, req. PHM 3041, DSK1.VOYAGE"/>
-			<dataarea name="flop" size="92160">
-				<rom name="golden voyage, the (1981)(texas instruments)[phd 5056][req. phm 3041][dsk1.voyage].dsk" size="92160" crc="444a42f9" sha1="aa6ab0a9845cba7a66928300652d695f95186051"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2461,6 +2324,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="gplassem" supported="no">
+		<description>GPL-Assembler Package Manuals</description>
+		<year>1994</year>
+		<publisher>Thierry Nouspikel</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="gpl-assembler package manuals (1994)(thierry nouspikel).dsk" size="368640" crc="18d55210" sha1="e1982a39f74a2c4db5405126019e7ca72a032750"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gplassem_1" supported="no">
 		<description>GPL-Assembler Package</description>
 		<year>1994</year>
 		<publisher>Thierry Nouspikel</publisher>
@@ -2485,14 +2360,41 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="gplassem_1" supported="no">
-		<description>GPL-Assembler Package Manuals</description>
-		<year>1994</year>
-		<publisher>Thierry Nouspikel</publisher>
+	<software name="gamesmod" supported="no">
+		<description>Games Modules</description>
+		<year>1995</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="368640">
-				<rom name="gpl-assembler package manuals (1994)(thierry nouspikel).dsk" size="368640" crc="18d55210" sha1="e1982a39f74a2c4db5405126019e7ca72a032750"/>
+			<feature name="part_id" value="req. PHM 3026, USGRP1090B"/>
+			<dataarea name="flop" size="92160">
+				<rom name="games modules (1995)(-)[req. phm 3026][usgrp1090b].dsk" size="92160" crc="7c0b3b65" sha1="5c42685c6875f158cbd408550eed1fe345d29597"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gamesmod_a" cloneof="gamesmod" supported="no">
+		<description>Games Modules (1)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="req. PHM 3026"/>
+			<dataarea name="flop" size="92160">
+				<rom name="games modules (19xx)(-)[req. phm 3026].dsk" size="92160" crc="39aa28d7" sha1="d965489d148073b3f7f71c1e679b70324ddcfb71"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghosttow" supported="no">
+		<description>Ghost Town</description>
+		<year>1981</year>
+		<publisher>Texas Instruments</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="PHD 5053, req. PHM 3041, DSK1.GHOSTTOWN"/>
+			<dataarea name="flop" size="92160">
+				<rom name="ghost town (1981)(texas instruments)[phd 5053][req. phm 3041][dsk1.ghosttown].dsk" size="92160" crc="be370de5" sha1="dfa72813d8d52a1b1f6d53b901dc42167890a9e9"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2647,6 +2549,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="mbxmodul" supported="no">
+		<description>MBX Modules</description>
+		<year>1985</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="req. PHM 3026, USGROP661A, Cracked by Hacker's Guild"/>
+			<dataarea name="flop" size="92160">
+				<rom name="mbx modules (1985)(-)[cr hacker's guild][req. phm 3026][usgrop661a].dsk" size="92160" crc="754ea2ae" sha1="5f7ab73f316c06a3be75d0503cb7c25f4343e9b1"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="mailingl" supported="no">
 		<description>Mailing List</description>
 		<year>1980</year>
@@ -2682,19 +2597,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="PHD 5006, OLD DSK1.FOURIER"/>
 			<dataarea name="flop" size="92160">
 				<rom name="math routine library (1980)(texas instruments)[phd 5006][old dsk1.fourier].dsk" size="92160" crc="76377c50" sha1="7c47100c72f8f606d83cbe0e176a2e510741bbc8"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="mbxmodul" supported="no">
-		<description>MBX Modules</description>
-		<year>1985</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Cracked by Hacker's Guild, req. PHM 3026, USGROP661A"/>
-			<dataarea name="flop" size="92160">
-				<rom name="mbx modules (1985)(-)[cr hacker's guild][req. phm 3026][usgrop661a].dsk" size="92160" crc="754ea2ae" sha1="5f7ab73f316c06a3be75d0503cb7c25f4343e9b1"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3032,19 +2934,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="munchman" supported="no">
-		<description>Munch Man</description>
-		<year>1982</year>
-		<publisher>Texas Instruments</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="PHD 5060"/>
-			<dataarea name="flop" size="92160">
-				<rom name="munch man (1982)(texas instruments)[phd 5060].dsk" size="92160" crc="071f4ab7" sha1="e334a8675f5198e1f92109a3341a209c586e256e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="munchman_1" supported="no">
 		<description>Munch Man II</description>
 		<year>1987</year>
 		<publisher>John Phillips</publisher>
@@ -3053,6 +2942,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="with source code"/>
 			<dataarea name="flop" size="184320">
 				<rom name="munch man ii (1987)(john phillips)[with source code].dsk" size="184320" crc="8c5c833b" sha1="be62d56cc319f231b7e73b455c0d04fe2b345175"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="munchman_1" supported="no">
+		<description>Munch Man</description>
+		<year>1982</year>
+		<publisher>Texas Instruments</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="PHD 5060"/>
+			<dataarea name="flop" size="92160">
+				<rom name="munch man (1982)(texas instruments)[phd 5060].dsk" size="92160" crc="071f4ab7" sha1="e334a8675f5198e1f92109a3341a209c586e256e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3134,19 +3036,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="oldiesbu" supported="no">
-		<description>Oldies But Goodies - Games I</description>
-		<year>1980</year>
-		<publisher>Texas Instruments</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="PHD 5015, OLD DSK1.WORD, NUMBER, BIORHYTHM, FACTOR, TICTACTOE"/>
-			<dataarea name="flop" size="92160">
-				<rom name="oldies but goodies - games i (1980)(texas instruments)[phd 5015][old dsk1.word, number, biorhythm, factor, tictactoe].dsk" size="92160" crc="3cc4394d" sha1="1843add07635cf3227b648b9389919ecb1365400"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="oldiesbu_1" supported="no">
 		<description>Oldies But Goodies - Games II</description>
 		<year>1980</year>
 		<publisher>Texas Instruments</publisher>
@@ -3155,6 +3044,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="PHD 5017, OLD DSK1.3DTICTAC, HAMMURABI, PAIRS, PEGJUMP, SAFARI"/>
 			<dataarea name="flop" size="92160">
 				<rom name="oldies but goodies - games ii (1980)(texas instruments)[phd 5017][old dsk1.3dtictac, hammurabi, pairs, pegjump, safari].dsk" size="92160" crc="37be3d0b" sha1="328e8563199704c01d29308fc30941f48d27e843"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="oldiesbu_1" supported="no">
+		<description>Oldies But Goodies - Games I</description>
+		<year>1980</year>
+		<publisher>Texas Instruments</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="PHD 5015, OLD DSK1.WORD, NUMBER, BIORHYTHM, FACTOR, TICTACTOE"/>
+			<dataarea name="flop" size="92160">
+				<rom name="oldies but goodies - games i (1980)(texas instruments)[phd 5015][old dsk1.word, number, biorhythm, factor, tictactoe].dsk" size="92160" crc="3cc4394d" sha1="1843add07635cf3227b648b9389919ecb1365400"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3236,15 +3138,15 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Texas Instruments</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Alt, PHD 5043, req. PHM 3041, DSK1.PIRATE"/>
-			<dataarea name="flop" size="92160">
-				<rom name="pirate adventure (1981)(texas instruments)[a][phd 5043][req. phm 3041][dsk1.pirate].dsk" size="92160" crc="3a10dde7" sha1="29ef19c6f26450bc8699d00bb2da4f96648e47c5"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="PHD 5043, req. PHM 3041, DSK1.PIRATE"/>
 			<dataarea name="flop" size="92160">
 				<rom name="pirate adventure (1981)(texas instruments)[phd 5043][req. phm 3041][dsk1.pirate].dsk" size="92160" crc="76281c6a" sha1="c32378153eb9722f8fe1481fc345667ec094b8ac"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="PHD 5043, req. PHM 3041, DSK1.PIRATE, Alt 1"/>
+			<dataarea name="flop" size="92160">
+				<rom name="pirate adventure (1981)(texas instruments)[a][phd 5043][req. phm 3041][dsk1.pirate].dsk" size="92160" crc="3a10dde7" sha1="29ef19c6f26450bc8699d00bb2da4f96648e47c5"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7034,14 +6936,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="programm" supported="no">
-		<description>Programming Aids I</description>
+		<description>Programming Aids III</description>
 		<year>1980</year>
 		<publisher>Texas Instruments</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="PHD 5004, OLD DSK1.CATALOG"/>
+			<feature name="part_id" value="PHD 5012"/>
 			<dataarea name="flop" size="92160">
-				<rom name="programming aids i (1980)(texas instruments)[phd 5004][old dsk1.catalog].dsk" size="92160" crc="113548e2" sha1="5432c7de8e9b694e96fbbe067347c61c02c66d19"/>
+				<rom name="programming aids iii (1980)(texas instruments)[phd 5012].dsk" size="92160" crc="4b8bfca9" sha1="cf2defc8722a4ef839a098ed75fda0b0a3a4978e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7060,14 +6962,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="programm_2" supported="no">
-		<description>Programming Aids III</description>
+		<description>Programming Aids I</description>
 		<year>1980</year>
 		<publisher>Texas Instruments</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="PHD 5012"/>
+			<feature name="part_id" value="PHD 5004, OLD DSK1.CATALOG"/>
 			<dataarea name="flop" size="92160">
-				<rom name="programming aids iii (1980)(texas instruments)[phd 5012].dsk" size="92160" crc="4b8bfca9" sha1="cf2defc8722a4ef839a098ed75fda0b0a3a4978e"/>
+				<rom name="programming aids i (1980)(texas instruments)[phd 5004][old dsk1.catalog].dsk" size="92160" crc="113548e2" sha1="5432c7de8e9b694e96fbbe067347c61c02c66d19"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7094,6 +6996,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="GRP183B"/>
 			<dataarea name="flop" size="92160">
 				<rom name="rewritten e-a games with built-in english docs (1989)(-)[grp183b].dsk" size="92160" crc="e5d33599" sha1="2c4441391aa88341576b57983c12ddf13a7f5b59"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scsicat1" supported="no">
+		<description>SCSI Cat (19xx)(Bruce Harrison)(PD) &amp; Spelling Teacher (19xx)(ASDD Software)(PD) (compilation)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92160">
+				<rom name="scsi cat (19xx)(bruce harrison)(pd) &amp; spelling teacher (19xx)(asdd software)(pd).dsk" size="92160" crc="40173a8a" sha1="941a6b8432488a4782aa20465f15cdbc85e53118"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7132,18 +7046,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="PHD 5054, req. PHM 3041, DSK1.SAVAGE1"/>
 			<dataarea name="flop" size="92160">
 				<rom name="savage island series (1981)(texas instruments)[phd 5054][req. phm 3041][dsk1.savage1].dsk" size="92160" crc="70d269b8" sha1="9aeca5c94ba489a091df18d6a96aab4b41c35ff1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="scsicat" supported="no">
-		<description>SCSI Cat (19xx)(Bruce Harrison)(PD) &amp; Spelling Teacher (19xx)(ASDD Software)(PD) (compilation)</description>
-		<year>????</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92160">
-				<rom name="scsi cat (19xx)(bruce harrison)(pd) &amp; spelling teacher (19xx)(asdd software)(pd).dsk" size="92160" crc="40173a8a" sha1="941a6b8432488a4782aa20465f15cdbc85e53118"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7237,19 +7139,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="stargaze" supported="no">
-		<description>Star Gazer</description>
-		<year>1984</year>
-		<publisher>Video Magic - John Phillips</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="with source code"/>
-			<dataarea name="flop" size="184320">
-				<rom name="star gazer (1984)(video magic - john phillips)[with source code].dsk" size="184320" crc="840854f0" sha1="3d7c2921c21ebfe5bb0c86df7dad29c9861917a9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="stargaze_1" supported="no">
 		<description>Star Gazer I, II &amp; III Menu</description>
 		<year>1987</year>
 		<publisher>DaTaBioTics - John Phillips</publisher>
@@ -7258,6 +7147,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="with source code"/>
 			<dataarea name="flop" size="92160">
 				<rom name="star gazer i, ii &amp; iii menu (1987)(databiotics - john phillips)[with source code].dsk" size="92160" crc="1bc91c9d" sha1="2d4c97de3493778c38141f2102b3b58323538dff"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stargaze_1" supported="no">
+		<description>Star Gazer III</description>
+		<year>1984</year>
+		<publisher>Video Magic - John Phillips</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="with source code"/>
+			<dataarea name="flop" size="184320">
+				<rom name="star gazer iii (1984)(video magic - john phillips)[with source code].dsk" size="184320" crc="38371906" sha1="123d1e6c07214e4227ff458d3316eb460996f007"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7276,14 +7178,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="stargaze_3" supported="no">
-		<description>Star Gazer III</description>
+		<description>Star Gazer</description>
 		<year>1984</year>
 		<publisher>Video Magic - John Phillips</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="with source code"/>
 			<dataarea name="flop" size="184320">
-				<rom name="star gazer iii (1984)(video magic - john phillips)[with source code].dsk" size="184320" crc="38371906" sha1="123d1e6c07214e4227ff458d3316eb460996f007"/>
+				<rom name="star gazer (1984)(video magic - john phillips)[with source code].dsk" size="184320" crc="840854f0" sha1="3d7c2921c21ebfe5bb0c86df7dad29c9861917a9"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7335,63 +7237,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="PHD 5016, OLD DSK1.MOMENT"/>
 			<dataarea name="flop" size="92160">
 				<rom name="structural engineering library (1981)(texas instruments)[phd 5016][old dsk1.moment].dsk" size="92160" crc="47f8e025" sha1="e2026465803cd0fe0cc360013b5c03b6f38cb480"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="teachyou" supported="no">
-		<description>Teach Yourself BASIC</description>
-		<year>1980</year>
-		<publisher>Texas Instruments</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1 of 2, PHD 5007, OLD DSK1.CHAPTER1, Chapters 1-5"/>
-			<dataarea name="flop" size="92160">
-				<rom name="teach yourself basic (1980)(texas instruments)(disk 1 of 2)[phd 5007][old dsk1.chapter1][chapters 1-5].dsk" size="92160" crc="7faf4a51" sha1="a2b51cc540430bf021d04aaa83c17fa1b9c77853"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 2, PHD 5007, OLD DSK1.CHAPTER6, Chapters 6-10"/>
-			<dataarea name="flop" size="92160">
-				<rom name="teach yourself basic (1980)(texas instruments)(disk 2 of 2)[phd 5007][old dsk1.chapter6][chapters 6-10].dsk" size="92160" crc="b0ccc627" sha1="d66aaaaeabb63323312b26a31f922cb6b57272dd"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="teachyou_1" supported="no">
-		<description>Teach Yourself Extended BASIC</description>
-		<year>1980</year>
-		<publisher>Texas Instruments</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="PHD 5019, OLD DSK1.CHAPTER1"/>
-			<dataarea name="flop" size="92160">
-				<rom name="teach yourself extended basic (1980)(texas instruments)[phd 5019][old dsk1.chapter1].dsk" size="92160" crc="218d505f" sha1="af160055331b068eaf1eee4e9cdb9e959ee376af"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tetristh" supported="no">
-		<description>Tetris - The Tetromino Game (v2.0, Public Domain)</description>
-		<year>1989</year>
-		<publisher>Alicomputer</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92160">
-				<rom name="tetris - the tetromino game v2.0 (1989)(alicomputer)(pd).dsk" size="92160" crc="a68e748b" sha1="447b7e6ab70a5d155d2affd9586b5333410cba2d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="texttosp" supported="no">
-		<description>Text to Speech - English</description>
-		<year>1982</year>
-		<publisher>Texas Instruments</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="PHD 5076, req. PHM 3026"/>
-			<dataarea name="flop" size="92160">
-				<rom name="text to speech - english (1982)(texas instruments)[phd 5076][req. phm 3026].dsk" size="92160" crc="476c6776" sha1="ecc490d0e07e376747536047b418fee26b9b5ebc"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7504,7 +7349,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Texas Instruments</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Bad, PHD 5092"/>
+			<feature name="part_id" value="PHD 5092, Bad 1"/>
 			<dataarea name="flop" size="92160">
 				<rom name="ti-count - general ledger (1984)(texas instruments)[b][phd 5092].dsk" size="92160" crc="b11894e1" sha1="77aa5438cfa04cc0960855fe76db43bc7aad41a1" status="baddump"/>
 			</dataarea>
@@ -7533,6 +7378,101 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="PHD 5089, Program"/>
 			<dataarea name="flop" size="92160">
 				<rom name="ti-writer word processor (1982)(texas instruments)[phd 5089][program].dsk" size="92160" crc="97dc9cf6" sha1="4b1252a521e7f1d108ffd0e03d6e71d6dedbc918"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="teachyou" supported="no">
+		<description>Teach Yourself BASIC</description>
+		<year>1980</year>
+		<publisher>Texas Instruments</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2, PHD 5007, OLD DSK1.CHAPTER1, Chapters 1-5"/>
+			<dataarea name="flop" size="92160">
+				<rom name="teach yourself basic (1980)(texas instruments)(disk 1 of 2)[phd 5007][old dsk1.chapter1][chapters 1-5].dsk" size="92160" crc="7faf4a51" sha1="a2b51cc540430bf021d04aaa83c17fa1b9c77853"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2, PHD 5007, OLD DSK1.CHAPTER6, Chapters 6-10"/>
+			<dataarea name="flop" size="92160">
+				<rom name="teach yourself basic (1980)(texas instruments)(disk 2 of 2)[phd 5007][old dsk1.chapter6][chapters 6-10].dsk" size="92160" crc="b0ccc627" sha1="d66aaaaeabb63323312b26a31f922cb6b57272dd"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="teachyou_1" supported="no">
+		<description>Teach Yourself Extended BASIC</description>
+		<year>1980</year>
+		<publisher>Texas Instruments</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="PHD 5019, OLD DSK1.CHAPTER1"/>
+			<dataarea name="flop" size="92160">
+				<rom name="teach yourself extended basic (1980)(texas instruments)[phd 5019][old dsk1.chapter1].dsk" size="92160" crc="218d505f" sha1="af160055331b068eaf1eee4e9cdb9e959ee376af"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tetristh" supported="no">
+		<description>Tetris - The Tetromino Game (v2.0, Public Domain)</description>
+		<year>1989</year>
+		<publisher>Alicomputer</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92160">
+				<rom name="tetris - the tetromino game v2.0 (1989)(alicomputer)(pd).dsk" size="92160" crc="a68e748b" sha1="447b7e6ab70a5d155d2affd9586b5333410cba2d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="texttosp" supported="no">
+		<description>Text to Speech - English</description>
+		<year>1982</year>
+		<publisher>Texas Instruments</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="PHD 5076, req. PHM 3026"/>
+			<dataarea name="flop" size="92160">
+				<rom name="text to speech - english (1982)(texas instruments)[phd 5076][req. phm 3026].dsk" size="92160" crc="476c6776" sha1="ecc490d0e07e376747536047b418fee26b9b5ebc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thecount" supported="no">
+		<description>The Count</description>
+		<year>1981</year>
+		<publisher>Texas Instruments</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="PHD 5049, req. PHM 3041, DSK1.COUNT"/>
+			<dataarea name="flop" size="92160">
+				<rom name="count, the (1981)(texas instruments)[phd 5049][req. phm 3041][dsk1.count].dsk" size="92160" crc="ed2543ad" sha1="f170e22a9957751b1ca4989f3b1dd0d113e21d82"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thegolde" supported="no">
+		<description>The Golden Voyage</description>
+		<year>1981</year>
+		<publisher>Texas Instruments</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="PHD 5056, req. PHM 3041, DSK1.VOYAGE"/>
+			<dataarea name="flop" size="92160">
+				<rom name="golden voyage, the (1981)(texas instruments)[phd 5056][req. phm 3041][dsk1.voyage].dsk" size="92160" crc="444a42f9" sha1="aa6ab0a9845cba7a66928300652d695f95186051"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thetodad" supported="no">
+		<description>The TOD Adventure Editor</description>
+		<year>1985</year>
+		<publisher>Asgard</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92160">
+				<rom name="tod adventure editor, the (1985)(asgard).dsk" size="92160" crc="1064c95b" sha1="72da4a9d627b913a0529039728c2bc8a6df98184"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8229,18 +8169,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="tigercub_57" supported="no">
-		<description>Tigercub 0662 - Six Sonatas Opus Xvii (Public Domain)</description>
-		<year>19??</year>
-		<publisher>Tigercub Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184320">
-				<rom name="tigercub 0662 - six sonatas opus xvii (19xx)(tigercub software)(pd).dsk" size="184320" crc="353438b2" sha1="5f485287f9aaee0166a79b99190aa1845071a821"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tigercub_58" supported="no">
 		<description>Tigercub 0662 - Six Sonatas Opus XVII (Public Domain)</description>
 		<year>19??</year>
 		<publisher>Tigercub Software</publisher>
@@ -8255,6 +8183,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2"/>
 			<dataarea name="flop" size="92160">
 				<rom name="tigercub 0662 - six sonatas opus xvii (19xx)(tigercub software)(pd)(disk 2 of 2).dsk" size="92160" crc="e5a66f55" sha1="2a5e31e3c57e4c9fbc7c518b631fd079c72148bd"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tigercub_58" supported="no">
+		<description>Tigercub 0662 - Six Sonatas Opus Xvii (Public Domain)</description>
+		<year>19??</year>
+		<publisher>Tigercub Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="tigercub 0662 - six sonatas opus xvii (19xx)(tigercub software)(pd).dsk" size="184320" crc="353438b2" sha1="5f485287f9aaee0166a79b99190aa1845071a821"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9181,18 +9121,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="tigercub_134" supported="no">
-		<description>Tigercub 0780 - Preschool Math (Public Domain)</description>
-		<year>19??</year>
-		<publisher>Tigercub Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92160">
-				<rom name="tigercub 0780 - preschool math (19xx)(tigercub software)(pd).dsk" size="92160" crc="b8e053d3" sha1="a63a4ef9d2ab376593fffb526911de19900a3ae4"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tigercub_135" supported="no">
 		<description>Tigercub 0780 - Preschool Math 2 (Public Domain)</description>
 		<year>19??</year>
 		<publisher>Tigercub Software</publisher>
@@ -9200,6 +9128,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92160">
 				<rom name="tigercub 0780 - preschool math 2 (19xx)(tigercub software)(pd).dsk" size="92160" crc="a7a5a55d" sha1="83702388b681a118778c4a21759c82c565a00016"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tigercub_135" supported="no">
+		<description>Tigercub 0780 - Preschool Math (Public Domain)</description>
+		<year>19??</year>
+		<publisher>Tigercub Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92160">
+				<rom name="tigercub 0780 - preschool math (19xx)(tigercub software)(pd).dsk" size="92160" crc="b8e053d3" sha1="a63a4ef9d2ab376593fffb526911de19900a3ae4"/>
 			</dataarea>
 		</part>
 	</software>
@@ -13934,18 +13874,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="tigercub_529" supported="no">
-		<description>Tigercub 1482 (Public Domain)</description>
-		<year>19??</year>
-		<publisher>Tigercub Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92160">
-				<rom name="tigercub 1482 (19xx)(tigercub software)(pd).dsk" size="92160" crc="e1fb73c9" sha1="624e95e32d553bc34d0105e66e9b3e50eb15ce0e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tigercub_530" supported="no">
 		<description>Tigercub 1482 - More Fine Games (Public Domain)</description>
 		<year>19??</year>
 		<publisher>Tigercub Software</publisher>
@@ -13953,6 +13881,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92160">
 				<rom name="tigercub 1482 - more fine games (19xx)(tigercub software)(pd).dsk" size="92160" crc="1e22b9a0" sha1="4d36e07dc6e036882b235cd4d0e6a4d4ee3c1641"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tigercub_530" supported="no">
+		<description>Tigercub 1482 (Public Domain)</description>
+		<year>19??</year>
+		<publisher>Tigercub Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92160">
+				<rom name="tigercub 1482 (19xx)(tigercub software)(pd).dsk" size="92160" crc="e1fb73c9" sha1="624e95e32d553bc34d0105e66e9b3e50eb15ce0e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -14161,18 +14101,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thetodad" supported="no">
-		<description>The TOD Adventure Editor</description>
-		<year>1985</year>
-		<publisher>Asgard</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92160">
-				<rom name="tod adventure editor, the (1985)(asgard).dsk" size="92160" crc="1064c95b" sha1="72da4a9d627b913a0529039728c2bc8a6df98184"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="tombston" supported="no">
 		<description>Tombstone City - 21st Century</description>
 		<year>1981</year>
@@ -14338,6 +14266,78 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92160">
 				<rom name="xb utilities volume 1 (1991)(harrison software)(pd).dsk" size="92160" crc="ea85c72e" sha1="7b31a9490525dfaf7aed765a96bacde9bca37aaf"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="c99sound" supported="no">
+		<description>c99 Sound List Processing (Public Domain)</description>
+		<year>1995</year>
+		<publisher>Bruce Harrison</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="c99 sound list processing (1995)(bruce harrison)(pd).dsk" size="184320" crc="1617f62a" sha1="9a9c567a313e0e73dc1c20188751df6613e0526f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="c99utili" supported="no">
+		<description>c99 Utilities (Public Domain)</description>
+		<year>1995</year>
+		<publisher>Bruce Harrison</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="c99 utilities (1995)(bruce harrison)(pd).dsk" size="184320" crc="23b04ad7" sha1="fe7c867e45e6becea7d1cef85504684633e3a380"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cshell99" supported="no">
+		<description>cSHELL99 Demo</description>
+		<year>1990</year>
+		<publisher>Joe Ross</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92160">
+				<rom name="cshell99 demo (1990)(joe ross).dsk" size="92160" crc="e74cbc92" sha1="5122baf93ae8edd3cd70353573a42bb0f0b0bc0f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cshell99_1" supported="no">
+		<description>cSHELL99 Modules</description>
+		<year>1989</year>
+		<publisher>Joe Ross</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="cshell99 modules (1989)(joe ross).dsk" size="368640" crc="44e92542" sha1="eabf20deb6ceae53b515e4f3ec8053d8d5443367"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cshell99_2" supported="no">
+		<description>cSHELL99 Source Code</description>
+		<year>1990</year>
+		<publisher>Joe Ross</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="cshell99 source code (1990)(joe ross).dsk" size="368640" crc="c86c10b6" sha1="d95bc5fa23f06fd7385ce612a18565d765fd4b6d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cshell99_3" supported="no">
+		<description>cSHELL99 System (v2.0)</description>
+		<year>1989</year>
+		<publisher>Joe Ross</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="cshell99 system v2.0 (1989)(joe ross).dsk" size="368640" crc="eb601cfa" sha1="b255b47e303f37086a728f06ca0ff28999689c7c"/>
 			</dataarea>
 		</part>
 	</software>

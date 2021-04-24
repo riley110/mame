@@ -6,18 +6,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 -->
 <softwarelist name="c64_flop_app_d81" description="Commodore 64 floppy disks (Applications - D81)">
 
-	<software name="thecompl" supported="no">
-		<description>The Compleat Programmer</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="compleat programmer, the (19xx)(-).d81" size="819200" crc="0149ac52" sha1="1e7e7173e42bd92e108e24be0b7ad25a1d675cb8"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="crazylig" supported="no">
 		<description>Crazy Light Construction Kit (v3.0, 2008-11-19)</description>
 		<year>2008</year>
@@ -48,14 +36,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>Ian Coog</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Underdumped"/>
+			<feature name="part_id" value="Underdumped 1"/>
 			<dataarea name="flop" size="278528">
 				<rom name="modplay 64 v1.2b (2007-12-02)(ian coog)[u].d81" size="278528" crc="8a87382d" sha1="4344dc13cf9fc36e0373398c46b74b61ebe543c5" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="modplay6_1" supported="no">
+	<software name="modplay6_a" cloneof="modplay6" supported="no">
 		<description>MODPlay 64 (v1.2c, 2007-12-03)</description>
 		<year>2007</year>
 		<publisher>Ian Coog</publisher>
@@ -67,7 +55,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="modplay6_2" supported="no">
+	<software name="modplay6_b" cloneof="modplay6" supported="no">
 		<description>MODPlay 64 (v1.2d, 2007-12-06)</description>
 		<year>2007</year>
 		<publisher>Ian Coog</publisher>
@@ -79,7 +67,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="modplay6_3" supported="no">
+	<software name="modplay6_c" cloneof="modplay6" supported="no">
 		<description>MODPlay 64 (v1.2e, 2007-12-10)</description>
 		<year>2007</year>
 		<publisher>Ian Coog</publisher>
@@ -87,6 +75,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="819200">
 				<rom name="modplay 64 v1.2e (2007-12-10)(ian coog).d81" size="819200" crc="f0727880" sha1="1806bd417524aa54a585b34a8045ac5954f57f21"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thecompl" supported="no">
+		<description>The Compleat Programmer</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="compleat programmer, the (19xx)(-).d81" size="819200" crc="0149ac52" sha1="1e7e7173e42bd92e108e24be0b7ad25a1d675cb8"/>
 			</dataarea>
 		</part>
 	</software>

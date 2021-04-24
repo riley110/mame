@@ -17,7 +17,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="333744">
 				<rom name="26kg (2000)(triad)[a].g64" size="333744" crc="37301956" sha1="8ae0f2e0eabfb7c615bfb81b4ffc9f703043e6da"/>
 			</dataarea>
@@ -42,7 +42,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<publisher>The Ancient Temple</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Overdumped"/>
+			<feature name="part_id" value="Side A, Overdumped 1"/>
 			<dataarea name="flop" size="333744">
 				<rom name="awakening 100 (1992)(the ancient temple)(side a)[o].g64" size="333744" crc="f9c8b0f9" sha1="4818e2fd544cd6038b8fa789053338074d146670" status="baddump"/>
 			</dataarea>
@@ -91,7 +91,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="333744">
 				<rom name="digital world (19xx)(samar)(side a)[a].g64" size="333744" crc="eb6ac8d1" sha1="4e1f20d6af8b0e6128b64bc565fb1dffe37320a2"/>
 			</dataarea>
@@ -103,7 +103,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt"/>
+			<feature name="part_id" value="Side B, Alt 1"/>
 			<dataarea name="flop" size="333744">
 				<rom name="digital world (19xx)(samar)(side b)[a].g64" size="333744" crc="7b7be0b3" sha1="5e0a2a24e67d0821075f2adef7cf630dd6312629"/>
 			</dataarea>
@@ -121,21 +121,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="333744">
 				<rom name="elysion - the requiem (1992-04-19)(origo dreamline)[a].g64" size="333744" crc="4ca9eb57" sha1="27e7a53e48beae882e854a5e8760e85a94bc8c6f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thehilar" supported="no">
-		<description>The Hilarious Alf</description>
-		<year>1988</year>
-		<publisher>The 2nd Society</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
-				<rom name="hilarious alf, the (1988)(the 2nd society).g64" size="333744" crc="cab0a536" sha1="643734493822d0f64d0e0fae6f733214063b4ac2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -151,7 +139,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="333744">
 				<rom name="horsing around (1999)(triad)[a].g64" size="333744" crc="33d9a6d4" sha1="e624149a4691b4c8c2bfd1abfe430a9b9dcca096"/>
 			</dataarea>
@@ -169,7 +157,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="333744">
 				<rom name="hubbard track 3 (1987)(judges)[a].g64" size="333744" crc="3e32df29" sha1="843116dde0a9973ea2073ffc2ec62053c3f39fed"/>
 			</dataarea>
@@ -188,7 +176,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Bad"/>
+			<feature name="part_id" value="Side A, Bad 1"/>
 			<dataarea name="flop" size="333744">
 				<rom name="krestology 100 (1996)(crest)(side a)[b].g64" size="333744" crc="04c4a350" sha1="1108cd5d4df68f2f2bd78cfa41332ca596f1f43d" status="baddump"/>
 			</dataarea>
@@ -213,7 +201,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt"/>
+			<feature name="part_id" value="Side B, Alt 1"/>
 			<dataarea name="flop" size="333744">
 				<rom name="legoland 3 (1993-12-29)(fairlight)(side b)[a].g64" size="333744" crc="b427ab7f" sha1="f0938f6812d85542758ede6bdf4d259b29e2aba7"/>
 			</dataarea>
@@ -245,6 +233,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="thehilar" supported="no">
+		<description>The Hilarious Alf</description>
+		<year>1988</year>
+		<publisher>The 2nd Society</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="333744">
+				<rom name="hilarious alf, the (1988)(the 2nd society).g64" size="333744" crc="cab0a536" sha1="643734493822d0f64d0e0fae6f733214063b4ac2"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="worldofc" supported="no">
 		<description>World of Code 1 (1994-05)</description>
 		<year>1994</year>
@@ -256,7 +256,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="333744">
 				<rom name="world of code 1 (1994-05)(byterapers)[a].g64" size="333744" crc="b4531da0" sha1="9835a28d119aa28364d836e87b987e41d015dd7c"/>
 			</dataarea>

@@ -53,7 +53,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="7 years (1995-08-13)(beyond force)[a].d64" size="174848" crc="ebab7465" sha1="59d786e9612c8355b4741c9e7741989a91b01f37"/>
 			</dataarea>
@@ -101,7 +101,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="apidya pack 1 (19xx)(apidya)[a].d64" size="174848" crc="07ec455b" sha1="ee20d3ffae1fff348917cbad4b86edec43477e3f"/>
 			</dataarea>
@@ -143,7 +143,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="aural mystery 1-3 (19xx)(antitrack)[a].d64" size="174848" crc="f9df6af6" sha1="94ef73aacceae000316fa88bafe27e0b7bf401b5"/>
 			</dataarea>
@@ -167,7 +167,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="beat dis (1989-10-07)(vision)[a].d64" size="174848" crc="d5be9f73" sha1="bb95c5c816dd0f7707816c517b5ed9600cd168dd"/>
 			</dataarea>
@@ -604,7 +604,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="creators demos vol. 1 (1995)(creators)[a].d64" size="174848" crc="151bc5eb" sha1="ecf7b4d5ae567d960333769e3fb728ca339053b8"/>
 			</dataarea>
@@ -634,7 +634,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="creators demos vol. 3 (1994)(creators)[a].d64" size="174848" crc="199916b4" sha1="50a3af84ae293583b8de68e681da2c94ecde8053"/>
 			</dataarea>
@@ -664,7 +664,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="creators demos vol. 5 (1995)(creators)[a].d64" size="174848" crc="68c25900" sha1="af26f58053e56205ec8a4023b3a68612383caf1f"/>
 			</dataarea>
@@ -683,7 +683,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="crest demo disk (1988)(crest)(side a)[a].d64" size="174848" crc="a063fb33" sha1="7fa83a3b0ffd49031ca64d66f4e3679e0b699f0b"/>
 			</dataarea>
@@ -695,7 +695,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt"/>
+			<feature name="part_id" value="Side B, Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="crest demo disk (1988)(crest)(side b)[a].d64" size="174848" crc="7227a637" sha1="14abd0122b99d64fa63dfe54e31d5d309e3e907a"/>
 			</dataarea>
@@ -703,6 +703,96 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="democoll" supported="no">
+		<description>Demo Collection 1</description>
+		<year>19??</year>
+		<publisher>Impulse</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="demo collection 1 (19xx)(impulse).d64" size="174848" crc="c26541c9" sha1="d7f895c8ffcc7d64ee5634062021b1defe8b7ca4"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="democoll_1" supported="no">
+		<description>Demo Collection 2</description>
+		<year>19??</year>
+		<publisher>Impulse</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="demo collection 2 (19xx)(impulse).d64" size="174848" crc="2c65ee0e" sha1="fe258b07ac06bd772ae3bfcf4f753316efbb6760"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="democoll_2" supported="no">
+		<description>Demo Collection 3</description>
+		<year>19??</year>
+		<publisher>Impulse</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="demo collection 3 (19xx)(impulse).d64" size="174848" crc="496afe55" sha1="8f8fc4c4d8eb1d0f68a66b87729f66cdabc56cdd"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Sausage Hell &amp; IPS+Pride &amp; United'n Cool &amp; Solostyle"/>
+			<dataarea name="flop" size="174848">
+				<rom name="demo collection 3 (19xx)(impulse)[sausage hell &amp; ips+pride &amp; united'n cool &amp; solostyle].d64" size="174848" crc="a3e4c15d" sha1="e2c4c60ecbbd1f887f33d0c564414c9ee6dc1d2b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="democoll_3" supported="no">
+		<description>Demo Collection 4</description>
+		<year>19??</year>
+		<publisher>Impulse</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="demo collection 4 (19xx)(impulse).d64" size="174848" crc="549ab3d6" sha1="13df540002625b7d84d851f6b53d3b0a9c1f5b86"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="democoll_4" supported="no">
+		<description>Demo Collection 5</description>
+		<year>19??</year>
+		<publisher>Impulse</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="demo collection 5 (19xx)(impulse).d64" size="174848" crc="912edc79" sha1="2fd2cd5e51b084cf257839b9dc59f4f7d672c0e5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="democoll_5" supported="no">
+		<description>Demo Collection 6 - Partydemos</description>
+		<year>19??</year>
+		<publisher>Impulse</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="demo collection 6 - partydemos (19xx)(impulse).d64" size="174848" crc="d1f559ff" sha1="c10118d88c29d0b4af71e345d40a087e91a3d012"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="democoll_6" supported="no">
+		<description>Demo Collection 7</description>
+		<year>19??</year>
+		<publisher>Impulse</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="demo collection 7 (19xx)(impulse).d64" size="174848" crc="a2e0a809" sha1="0beb678bf39c42b96b0b57d556e6d6181974ed5c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="democoll_7" supported="no">
 		<description>Demo Collection</description>
 		<year>1988</year>
 		<publisher>Jewels</publisher>
@@ -713,7 +803,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="demo collection (1988)(jewels)[a].d64" size="174848" crc="02fdb09e" sha1="33d4eafd75f2257c1d27cf11f0d36a51d8cf5293"/>
 			</dataarea>
@@ -738,97 +828,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="democoll_1" supported="no">
-		<description>Demo Collection 1</description>
-		<year>19??</year>
-		<publisher>Impulse</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="demo collection 1 (19xx)(impulse).d64" size="174848" crc="c26541c9" sha1="d7f895c8ffcc7d64ee5634062021b1defe8b7ca4"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="democoll_2" supported="no">
-		<description>Demo Collection 2</description>
-		<year>19??</year>
-		<publisher>Impulse</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="demo collection 2 (19xx)(impulse).d64" size="174848" crc="2c65ee0e" sha1="fe258b07ac06bd772ae3bfcf4f753316efbb6760"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="democoll_3" supported="no">
-		<description>Demo Collection 3</description>
-		<year>19??</year>
-		<publisher>Impulse</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="demo collection 3 (19xx)(impulse).d64" size="174848" crc="496afe55" sha1="8f8fc4c4d8eb1d0f68a66b87729f66cdabc56cdd"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Sausage Hell &amp; IPS+Pride &amp; United'n Cool &amp; Solostyle"/>
-			<dataarea name="flop" size="174848">
-				<rom name="demo collection 3 (19xx)(impulse)[sausage hell &amp; ips+pride &amp; united'n cool &amp; solostyle].d64" size="174848" crc="a3e4c15d" sha1="e2c4c60ecbbd1f887f33d0c564414c9ee6dc1d2b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="democoll_4" supported="no">
-		<description>Demo Collection 4</description>
-		<year>19??</year>
-		<publisher>Impulse</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="demo collection 4 (19xx)(impulse).d64" size="174848" crc="549ab3d6" sha1="13df540002625b7d84d851f6b53d3b0a9c1f5b86"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="democoll_5" supported="no">
-		<description>Demo Collection 5</description>
-		<year>19??</year>
-		<publisher>Impulse</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="demo collection 5 (19xx)(impulse).d64" size="174848" crc="912edc79" sha1="2fd2cd5e51b084cf257839b9dc59f4f7d672c0e5"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="democoll_6" supported="no">
-		<description>Demo Collection 6 - Partydemos</description>
-		<year>19??</year>
-		<publisher>Impulse</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="demo collection 6 - partydemos (19xx)(impulse).d64" size="174848" crc="d1f559ff" sha1="c10118d88c29d0b4af71e345d40a087e91a3d012"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="democoll_7" supported="no">
-		<description>Demo Collection 7</description>
-		<year>19??</year>
-		<publisher>Impulse</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="demo collection 7 (19xx)(impulse).d64" size="174848" crc="a2e0a809" sha1="0beb678bf39c42b96b0b57d556e6d6181974ed5c"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="demodisk" supported="no">
+		<description>Demo Disk 2</description>
+		<year>19??</year>
+		<publisher>Ian &amp; Mic</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="demo disk 2 (19xx)(ian &amp; mic).d64" size="174848" crc="7bb2a888" sha1="bdb40723c429002a2a4e84491be89e5299be4fa5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="demodisk_1" supported="no">
 		<description>Demo Disk</description>
 		<year>1987</year>
 		<publisher>Alpha Flight 1970</publisher>
@@ -839,7 +851,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="demo disk (1987)(alpha flight 1970)[a].d64" size="174848" crc="9ecf58f3" sha1="113a4838e487de469657611fcdc23c90201c942b"/>
 			</dataarea>
@@ -888,18 +900,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="demodisk_1" supported="no">
-		<description>Demo Disk 2</description>
-		<year>19??</year>
-		<publisher>Ian &amp; Mic</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="demo disk 2 (19xx)(ian &amp; mic).d64" size="174848" crc="7bb2a888" sha1="bdb40723c429002a2a4e84491be89e5299be4fa5"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="dexionme" supported="no">
 		<description>Dexion Meeting Demo Disk</description>
 		<year>1988</year>
@@ -912,7 +912,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt"/>
+			<feature name="part_id" value="Side A, Alt 1"/>
 			<dataarea name="flop" size="175531">
 				<rom name="dexion meeting demo disk (1988)(dexion)(side a)[a].d64" size="175531" crc="6beb7be6" sha1="764565831ac5fadfea89f7dd9825c61378230ab7"/>
 			</dataarea>
@@ -937,19 +937,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked Remix of Clique, Alt"/>
+			<feature name="part_id" value="Hacked Remix of Clique, Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="ecstasy &amp; other stuff (199x)(msa+aids)[h remix of clique][a].d64" size="174848" crc="70d112f1" sha1="689d71318e6bba963ce52359e59dbdeb1bb25673"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked Remix of Clique, LNX"/>
+			<feature name="part_id" value="LNX, Hacked Remix of Clique"/>
 			<dataarea name="flop" size="174848">
 				<rom name="ecstasy &amp; other stuff (199x)(msa+aids)[h remix of clique][lnx].d64" size="174848" crc="70a9d61d" sha1="28844cd204d4f892886eaa38db5bb65950ac6dbe"/>
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked Remix of Clique, Z64 Part 1-4"/>
+			<feature name="part_id" value="Z64 Part 1-4, Hacked Remix of Clique"/>
 			<dataarea name="flop" size="174848">
 				<rom name="ecstasy &amp; other stuff (199x)(msa+aids)[h remix of clique][z64 part 1-4].d64" size="174848" crc="3967d8e5" sha1="86be6407b771dd1c2c9e23b32f93eaad9efb6784"/>
 			</dataarea>
@@ -967,7 +967,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="eye damage &amp; other stuff (1990)(censor design - fairlight)[a].d64" size="174848" crc="504a77ec" sha1="3067f7584f8ce4f374296bd3113423d860c8d901"/>
 			</dataarea>
@@ -985,7 +985,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="fantasia 2 &amp; other stuff (1992-10-26)(oxyron)[a].d64" size="174848" crc="5d714f20" sha1="0259526cdbdbd5d7115aeaeb3b01e4de27f0e78c"/>
 			</dataarea>
@@ -1076,7 +1076,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="high technique (1989)(digital excess)[a].d64" size="174848" crc="87810248" sha1="c1386e0b35de560abfb0b311c5014bddc82912ab"/>
 			</dataarea>
@@ -1118,7 +1118,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="horizon demos (1989-02-15)(horizon)[a].d64" size="174848" crc="cad46318" sha1="77e8583966a46cc19713823fb2a85b598a59e156"/>
 			</dataarea>
@@ -1214,7 +1214,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="ian &amp; mic demo disk compilation 2 (1988)(ian &amp; mic)[a].d64" size="174848" crc="397066e5" sha1="dee821a780f76b98141dc6e36c8c168ebd97e408"/>
 			</dataarea>
@@ -1232,7 +1232,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="ikon delight &amp; other stuff (1990)(ikon visual)[a].d64" size="174848" crc="34fe58f0" sha1="82fad0b81339a6051f6e765db51ed23f77f82df6"/>
 			</dataarea>
@@ -1251,24 +1251,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thejacka" supported="no">
-		<description>The Jackal Demo Disk 2 (1986-04)</description>
-		<year>1986</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="jackal demo disk 2, the (1986-04)(-).d64" size="174848" crc="8d0486e9" sha1="b80b6e539d4e1afc516ca4778253c927b5bc25d7"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="174848">
-				<rom name="jackal demo disk 2, the (1986-04)(-)[a].d64" size="174848" crc="b84f0c0b" sha1="9aad7b1b0efed4f5f473881288c2d8b2813cb0a7"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="kotzeins" supported="no">
 		<description>Kotze Inside &amp; Less Other Stuff</description>
 		<year>1997</year>
@@ -1280,7 +1262,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="kotze inside &amp; less other stuff (1997)(metalvotze)[a].d64" size="174848" crc="d60d6d3d" sha1="5d07bd5782f97ee55d6000da000a341c033b2d0d"/>
 			</dataarea>
@@ -1310,7 +1292,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="kotze inside &amp; other stuff (1997)(metalvotze)[a].d64" size="174848" crc="5338df6d" sha1="b5b795499afee072cb7c51950c7b746574007456"/>
 			</dataarea>
@@ -1358,7 +1340,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="old fbi crew warez (19xx)(fbi crew)[a].d64" size="174848" crc="631c50d7" sha1="69990a2894e83992d5dd88e18d5fc1ee637c9d7a"/>
 			</dataarea>
@@ -1394,7 +1376,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="piece of cake 3 &amp; other stuff (1990)(megastyle)[a].d64" size="174848" crc="b5e84c27" sha1="cd6a82d96facb4da9f252d3c03fe21e37888ac42"/>
 			</dataarea>
@@ -1431,21 +1413,9 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt"/>
+			<feature name="part_id" value="Side B, Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="prime time &amp; other stuff (1993)(black code design)(side b)[a].d64" size="174848" crc="17f60794" sha1="6887104be5e5912a258b40e71c9b24582f1c0354"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thescac6" supported="no">
-		<description>The SCA C64 Software Anthology - Demo Collection</description>
-		<year>1983</year>
-		<publisher>SCA</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="sca c64 software anthology, the - demo collection (1983)(sca).d64" size="174848" crc="f581ab32" sha1="de0e9e1fe68433fdd0cb01561e70e9848b34f517"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1458,6 +1428,186 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="skylight pack (1991)(monsoon of skylight).d64" size="174848" crc="6c5ce485" sha1="6c3721bf343c43a3d2da2b8a719039f858f552df"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="symposiu" supported="no">
+		<description>Symposium &amp; Mekka Demo Compo</description>
+		<year>1988</year>
+		<publisher>Various</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="symposium &amp; mekka demo compo (1988)(various).d64" size="174848" crc="89563e73" sha1="35de45d241a88331a2813c7a6714b039bda1d88f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tstdemoc" supported="no">
+		<description>TST Demo Collection 1</description>
+		<year>19??</year>
+		<publisher>The Supply Team</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="tst demo collection 1 (19xx)(the supply team).d64" size="174848" crc="d22740b9" sha1="dcd99fa37c97ebb333d06945c684b8bd2ee279ef"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tstdemoc_1" supported="no">
+		<description>TST Demo Collection 2</description>
+		<year>19??</year>
+		<publisher>The Supply Team</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="tst demo collection 2 (19xx)(the supply team).d64" size="174848" crc="7f10ab2e" sha1="312788a01d75776eafbeb9d3ca99ae5e583392f1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tstdemoc_2" supported="no">
+		<description>TST Demo Collection 3</description>
+		<year>19??</year>
+		<publisher>The Supply Team</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="tst demo collection 3 (19xx)(the supply team).d64" size="174848" crc="6112c4e9" sha1="703a42da78b1952d7f7025ecc7616122f0323f8a"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="tst demo collection 3 (19xx)(the supply team)[a].d64" size="174848" crc="710560ee" sha1="684ffc507abf6e59ab12c297987d9e070e8e1fbe"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tstdemoc_3" supported="no">
+		<description>TST Demo Collection 4</description>
+		<year>19??</year>
+		<publisher>The Supply Team</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="tst demo collection 4 (19xx)(the supply team).d64" size="174848" crc="713c2a5e" sha1="2a9f7f1cf65c74dbd8f31e72f783151c369a0a5a"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="tst demo collection 4 (19xx)(the supply team)[a].d64" size="174848" crc="612b8e59" sha1="55dfea224738f6e06fb021e407c1e1f7b86e29ce"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tstdemoc_4" supported="no">
+		<description>TST Demo Collection 5</description>
+		<year>19??</year>
+		<publisher>The Supply Team</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="tst demo collection 5 (19xx)(the supply team).d64" size="174848" crc="549660a5" sha1="53a32cb92c4645fb425f45d0e125d5be273a69e1"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="tst demo collection 5 (19xx)(the supply team)[a].d64" size="174848" crc="4481c4a2" sha1="ee48b39a98a731176b94c12411ad0684b8aef449"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tstdemoc_5" supported="no">
+		<description>TST Demo Collection 6</description>
+		<year>19??</year>
+		<publisher>The Supply Team</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="tst demo collection 6 (19xx)(the supply team).d64" size="174848" crc="034abe65" sha1="867b6ef87747d00212d63be78692ceb4fbc93a96"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tstdemoc_6" supported="no">
+		<description>TST Demo Collection 7</description>
+		<year>19??</year>
+		<publisher>The Supply Team</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="tst demo collection 7 (19xx)(the supply team).d64" size="174848" crc="acc2d064" sha1="6a687415f0d6fb70141d9087f495f1fe4b861d8b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tstdemoc_7" supported="no">
+		<description>TST Demo Collection 8</description>
+		<year>19??</year>
+		<publisher>The Supply Team</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="tst demo collection 8 (19xx)(the supply team).d64" size="174848" crc="a4cf01a6" sha1="648f2440e9f8116095dfda17e2fbada808bb8012"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="tst demo collection 8 (19xx)(the supply team)[a].d64" size="174848" crc="3f4c3cb9" sha1="c05588debf02164fc831063c628bf5819e696a83"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tstdemoc_8" supported="no">
+		<description>TST Demo Collection 9</description>
+		<year>1996</year>
+		<publisher>The Supply Team</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="tst demo collection 9 (1996)(the supply team).d64" size="174848" crc="8fc7328a" sha1="69ae2b32b59b0d3e0c56cf7542974ae2fba53fb3"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="tst demo collection 9 (1996)(the supply team)[a].d64" size="174848" crc="9fd0968d" sha1="0889023bf5485b595c50ad4c343f94483b549ad6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thejacka" supported="no">
+		<description>The Jackal Demo Disk 2 (1986-04)</description>
+		<year>1986</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="jackal demo disk 2, the (1986-04)(-).d64" size="174848" crc="8d0486e9" sha1="b80b6e539d4e1afc516ca4778253c927b5bc25d7"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="jackal demo disk 2, the (1986-04)(-)[a].d64" size="174848" crc="b84f0c0b" sha1="9aad7b1b0efed4f5f473881288c2d8b2813cb0a7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thescac6" supported="no">
+		<description>The SCA C64 Software Anthology - Demo Collection</description>
+		<year>1983</year>
+		<publisher>SCA</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="sca c64 software anthology, the - demo collection (1983)(sca).d64" size="174848" crc="f581ab32" sha1="de0e9e1fe68433fdd0cb01561e70e9848b34f517"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1581,7 +1731,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="squirrel's nest, the - c64 file collection disk #10 (19xx)(squirrel's nest)[a].d64" size="174848" crc="89417da6" sha1="4095a9c9dde1f216bed2009b4f2704af460be3fe"/>
 			</dataarea>
@@ -1596,156 +1746,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="squirrel's nest, the - c64 file collection disk #11 (19xx)(squirrel's nest).d64" size="174848" crc="8b974323" sha1="3fa9b9c9f78fb8e4810f6e1e16da4be098d37ec9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="symposiu" supported="no">
-		<description>Symposium &amp; Mekka Demo Compo</description>
-		<year>1988</year>
-		<publisher>Various</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="symposium &amp; mekka demo compo (1988)(various).d64" size="174848" crc="89563e73" sha1="35de45d241a88331a2813c7a6714b039bda1d88f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tstdemoc" supported="no">
-		<description>TST Demo Collection 1</description>
-		<year>19??</year>
-		<publisher>The Supply Team</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="tst demo collection 1 (19xx)(the supply team).d64" size="174848" crc="d22740b9" sha1="dcd99fa37c97ebb333d06945c684b8bd2ee279ef"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tstdemoc_1" supported="no">
-		<description>TST Demo Collection 2</description>
-		<year>19??</year>
-		<publisher>The Supply Team</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="tst demo collection 2 (19xx)(the supply team).d64" size="174848" crc="7f10ab2e" sha1="312788a01d75776eafbeb9d3ca99ae5e583392f1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tstdemoc_2" supported="no">
-		<description>TST Demo Collection 3</description>
-		<year>19??</year>
-		<publisher>The Supply Team</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="tst demo collection 3 (19xx)(the supply team).d64" size="174848" crc="6112c4e9" sha1="703a42da78b1952d7f7025ecc7616122f0323f8a"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="174848">
-				<rom name="tst demo collection 3 (19xx)(the supply team)[a].d64" size="174848" crc="710560ee" sha1="684ffc507abf6e59ab12c297987d9e070e8e1fbe"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tstdemoc_3" supported="no">
-		<description>TST Demo Collection 4</description>
-		<year>19??</year>
-		<publisher>The Supply Team</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="tst demo collection 4 (19xx)(the supply team).d64" size="174848" crc="713c2a5e" sha1="2a9f7f1cf65c74dbd8f31e72f783151c369a0a5a"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="174848">
-				<rom name="tst demo collection 4 (19xx)(the supply team)[a].d64" size="174848" crc="612b8e59" sha1="55dfea224738f6e06fb021e407c1e1f7b86e29ce"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tstdemoc_4" supported="no">
-		<description>TST Demo Collection 5</description>
-		<year>19??</year>
-		<publisher>The Supply Team</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="tst demo collection 5 (19xx)(the supply team).d64" size="174848" crc="549660a5" sha1="53a32cb92c4645fb425f45d0e125d5be273a69e1"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="174848">
-				<rom name="tst demo collection 5 (19xx)(the supply team)[a].d64" size="174848" crc="4481c4a2" sha1="ee48b39a98a731176b94c12411ad0684b8aef449"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tstdemoc_5" supported="no">
-		<description>TST Demo Collection 6</description>
-		<year>19??</year>
-		<publisher>The Supply Team</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="tst demo collection 6 (19xx)(the supply team).d64" size="174848" crc="034abe65" sha1="867b6ef87747d00212d63be78692ceb4fbc93a96"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tstdemoc_6" supported="no">
-		<description>TST Demo Collection 7</description>
-		<year>19??</year>
-		<publisher>The Supply Team</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="tst demo collection 7 (19xx)(the supply team).d64" size="174848" crc="acc2d064" sha1="6a687415f0d6fb70141d9087f495f1fe4b861d8b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tstdemoc_7" supported="no">
-		<description>TST Demo Collection 8</description>
-		<year>19??</year>
-		<publisher>The Supply Team</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="tst demo collection 8 (19xx)(the supply team).d64" size="174848" crc="a4cf01a6" sha1="648f2440e9f8116095dfda17e2fbada808bb8012"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="174848">
-				<rom name="tst demo collection 8 (19xx)(the supply team)[a].d64" size="174848" crc="3f4c3cb9" sha1="c05588debf02164fc831063c628bf5819e696a83"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tstdemoc_8" supported="no">
-		<description>TST Demo Collection 9</description>
-		<year>1996</year>
-		<publisher>The Supply Team</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="tst demo collection 9 (1996)(the supply team).d64" size="174848" crc="8fc7328a" sha1="69ae2b32b59b0d3e0c56cf7542974ae2fba53fb3"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt"/>
-			<dataarea name="flop" size="174848">
-				<rom name="tst demo collection 9 (1996)(the supply team)[a].d64" size="174848" crc="9fd0968d" sha1="0889023bf5485b595c50ad4c343f94483b549ad6"/>
 			</dataarea>
 		</part>
 	</software>

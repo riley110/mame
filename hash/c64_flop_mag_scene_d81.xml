@@ -30,18 +30,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thebeerg" supported="no">
-		<description>The Beergarden 10 (2015-11-19)</description>
-		<year>2015</year>
-		<publisher>Tide</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="beergarden 10, the (2015-11-19)(tide).d81" size="819200" crc="e6550f5e" sha1="15d84567296466e6d0c7a0c48a293f28a8ccbe4b"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="commodor" supported="no">
 		<description>Commodore Scene CoverDisk #51 (2006-02-24)</description>
 		<year>2006</year>
@@ -53,7 +41,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="819200">
 				<rom name="commodore scene coverdisk #51 (2006-02-24)(commodore scene staff)[a].d81" size="819200" crc="319305e3" sha1="be556034fa7190ace9f2b9d696334831111e54c8"/>
 			</dataarea>
@@ -83,7 +71,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt"/>
+			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="819200">
 				<rom name="recollection issue #2 (2006-10-28)(onslaught)[a].d81" size="819200" crc="8a9e0d2e" sha1="79f680211c94639728a86edebfeeaf41bf164143"/>
 			</dataarea>
@@ -318,6 +306,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="thebeerg" supported="no">
+		<description>The Beergarden 10 (2015-11-19)</description>
+		<year>2015</year>
+		<publisher>Tide</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="beergarden 10, the (2015-11-19)(tide).d81" size="819200" crc="e6550f5e" sha1="15d84567296466e6d0c7a0c48a293f28a8ccbe4b"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="vandalis" supported="no">
 		<description>Vandalism News #64 (2015-06-07)</description>
 		<year>2015</year>
@@ -402,13 +402,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="vandalis_7" supported="no">
+	<software name="vandalis_6_a" cloneof="vandalis_6" supported="no">
 		<description>Vandalism News #70 (2019-11-05)</description>
 		<year>2019</year>
 		<publisher>Offence - Onslaught - Vandalism News Staff</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Fixed"/>
+			<feature name="part_id" value="Fixed 1"/>
 			<dataarea name="flop" size="819200">
 				<rom name="vandalism news #70 (2019-11-05)(offence - onslaught - vandalism news staff)[f].d81" size="819200" crc="2a26425f" sha1="530a8600a1c130982ae1a032742bb80834c2e8ee"/>
 			</dataarea>
