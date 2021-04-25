@@ -637,18 +637,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="atlantis" supported="no">
-		<description>Atlantis Boulder</description>
-		<year>1991</year>
-		<publisher>P. &amp; The Blockheads Liepa</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="atlantis boulder (1991)(liepa, p. &amp; the blockheads).d64" size="174848" crc="e4d8f3e6" sha1="8e1d9ff5b3faa0a00bd799fb6df0493627582240"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="atlantis_1" supported="no">
 		<description>Atlantis Boulder (1)</description>
 		<year>19??</year>
 		<publisher>Blockheads</publisher>
@@ -656,6 +644,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="atlantis boulder (19xx)(blockheads).d64" size="174848" crc="62c7dca0" sha1="1f4cb92b4e467df12c58baff98dbdd8f75c42d0d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atlantis_1" supported="no">
+		<description>Atlantis Boulder</description>
+		<year>1991</year>
+		<publisher>P. &amp; The Blockheads Liepa</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="atlantis boulder (1991)(liepa, p. &amp; the blockheads).d64" size="174848" crc="e4d8f3e6" sha1="8e1d9ff5b3faa0a00bd799fb6df0493627582240"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4827,30 +4827,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="boulderd_18" supported="no">
-		<description>Boulder Dash 12 (2)</description>
-		<year>1987</year>
-		<publisher>Papis</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="boulder dash 12 (1987)(papis).d64" size="174848" crc="9c8a74c3" sha1="5065158bca0ae1df1b6d0766acd149b90bdbaf6b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="boulderd_19" supported="no">
-		<description>Boulder Dash 12 (1)</description>
-		<year>1987</year>
-		<publisher>Peter Liepa</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="boulder dash 12 (1987)(liepa, peter).d64" size="174848" crc="d80c318f" sha1="a4d84802f033b421e47a9fd405ad17c9d40fd57d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="boulderd_20" supported="no">
 		<description>Boulder Dash 12 (3)</description>
 		<year>1990</year>
 		<publisher>Mr. Rockford</publisher>
@@ -4862,7 +4838,43 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="boulderd_19" supported="no">
+		<description>Boulder Dash 12 (2)</description>
+		<year>1987</year>
+		<publisher>Papis</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="boulder dash 12 (1987)(papis).d64" size="174848" crc="9c8a74c3" sha1="5065158bca0ae1df1b6d0766acd149b90bdbaf6b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boulderd_20" supported="no">
+		<description>Boulder Dash 12 (1)</description>
+		<year>1987</year>
+		<publisher>Peter Liepa</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="boulder dash 12 (1987)(liepa, peter).d64" size="174848" crc="d80c318f" sha1="a4d84802f033b421e47a9fd405ad17c9d40fd57d"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="boulderd_21" supported="no">
+		<description>Boulder Dash 13 (3)</description>
+		<year>1991</year>
+		<publisher>Mr. Rockford</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="boulder dash 13 (1991)(mr. rockford).d64" size="174848" crc="bb30fac5" sha1="63cdfc2baffe5f78e9377e060776e697df0c9251"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boulderd_22" supported="no">
 		<description>Boulder Dash 13</description>
 		<year>1987</year>
 		<publisher>P. &amp; The Blockheads Liepa</publisher>
@@ -4880,7 +4892,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="boulderd_22" supported="no">
+	<software name="boulderd_23" supported="no">
 		<description>Boulder Dash 13 (1)</description>
 		<year>1987</year>
 		<publisher>P. &amp; The Softkiller Liepa</publisher>
@@ -4892,7 +4904,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="boulderd_23" supported="no">
+	<software name="boulderd_24" supported="no">
 		<description>Boulder Dash 13 (2)</description>
 		<year>1987</year>
 		<publisher>Papis</publisher>
@@ -4900,18 +4912,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="boulder dash 13 (1987)(papis).d64" size="174848" crc="3738037a" sha1="6c005dc8a196e94b090642d40e1494526d887641"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="boulderd_24" supported="no">
-		<description>Boulder Dash 13 (3)</description>
-		<year>1991</year>
-		<publisher>Mr. Rockford</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="boulder dash 13 (1991)(mr. rockford).d64" size="174848" crc="bb30fac5" sha1="63cdfc2baffe5f78e9377e060776e697df0c9251"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5248,18 +5248,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="boulderd_48" supported="no">
-		<description>Boulder Dash 27</description>
-		<year>1987</year>
-		<publisher>P. &amp; The Blockheads Liepa</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="boulder dash 27 (1987)(liepa, p. &amp; the blockheads).d64" size="174848" crc="ac6031a4" sha1="1d99dbc6da4341ad6b5e4cfc7b059ea025d7c961"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="boulderd_49" supported="no">
 		<description>Boulder Dash 27 (1987-11-14)</description>
 		<year>1987</year>
 		<publisher>Blockheads</publisher>
@@ -5267,6 +5255,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="boulder dash 27 (1987-11-14)(blockheads).d64" size="174848" crc="40b317f9" sha1="b24200879a6b376160af1e183507ebf0f82c7bc2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boulderd_49" supported="no">
+		<description>Boulder Dash 27</description>
+		<year>1987</year>
+		<publisher>P. &amp; The Blockheads Liepa</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="boulder dash 27 (1987)(liepa, p. &amp; the blockheads).d64" size="174848" crc="ac6031a4" sha1="1d99dbc6da4341ad6b5e4cfc7b059ea025d7c961"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5320,18 +5320,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="boulderd_54" supported="no">
-		<description>Boulder Dash 30</description>
-		<year>198?</year>
-		<publisher>P. &amp; The Blockheads Liepa</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="boulder dash 30 (198x)(liepa, p. &amp; the blockheads).d64" size="174848" crc="2ba4004c" sha1="fd05524fb5e8b399b2da1da7d2313f17fb54bc3f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="boulderd_55" supported="no">
 		<description>Boulder Dash 30 (1)</description>
 		<year>19??</year>
 		<publisher>Blockheads</publisher>
@@ -5343,19 +5331,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="boulderd_56" supported="no">
-		<description>Boulder Dash 31</description>
+	<software name="boulderd_55" supported="no">
+		<description>Boulder Dash 30</description>
 		<year>198?</year>
 		<publisher>P. &amp; The Blockheads Liepa</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="boulder dash 31 (198x)(liepa, p. &amp; the blockheads).d64" size="174848" crc="abe03539" sha1="b85552cf17759bc23358905532072285cac78e7b"/>
+				<rom name="boulder dash 30 (198x)(liepa, p. &amp; the blockheads).d64" size="174848" crc="2ba4004c" sha1="fd05524fb5e8b399b2da1da7d2313f17fb54bc3f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="boulderd_57" supported="no">
+	<software name="boulderd_56" supported="no">
 		<description>Boulder Dash 31 (1)</description>
 		<year>19??</year>
 		<publisher>Blockheads</publisher>
@@ -5367,19 +5355,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="boulderd_58" supported="no">
-		<description>Boulder Dash 32</description>
+	<software name="boulderd_57" supported="no">
+		<description>Boulder Dash 31</description>
 		<year>198?</year>
 		<publisher>P. &amp; The Blockheads Liepa</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="boulder dash 32 (198x)(liepa, p. &amp; the blockheads).d64" size="174848" crc="586c4068" sha1="f28f75f8fd07d3fc0476a4425b9cb6382a50543a"/>
+				<rom name="boulder dash 31 (198x)(liepa, p. &amp; the blockheads).d64" size="174848" crc="abe03539" sha1="b85552cf17759bc23358905532072285cac78e7b"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="boulderd_59" supported="no">
+	<software name="boulderd_58" supported="no">
 		<description>Boulder Dash 32 (1)</description>
 		<year>19??</year>
 		<publisher>Blockheads</publisher>
@@ -5387,6 +5375,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="boulder dash 32 (19xx)(blockheads).d64" size="174848" crc="b2f6b9bf" sha1="09f6d3409341942409ccf61dee0158273fd15a70"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boulderd_59" supported="no">
+		<description>Boulder Dash 32</description>
+		<year>198?</year>
+		<publisher>P. &amp; The Blockheads Liepa</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="boulder dash 32 (198x)(liepa, p. &amp; the blockheads).d64" size="174848" crc="586c4068" sha1="f28f75f8fd07d3fc0476a4425b9cb6382a50543a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5440,18 +5440,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="boulderd_64" supported="no">
-		<description>Boulder Dash 38</description>
-		<year>1987</year>
-		<publisher>Papis</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="boulder dash 38 (1987)(papis).d64" size="174848" crc="95a712bf" sha1="8c31a9b4139dd3ef0de3bd23488a98501cb71285"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="boulderd_65" supported="no">
 		<description>Boulder Dash 38 (1)</description>
 		<year>1988</year>
 		<publisher>Blockheads</publisher>
@@ -5463,7 +5451,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="boulderd_66" supported="no">
+	<software name="boulderd_65" supported="no">
 		<description>Boulder Dash 38 (2)</description>
 		<year>1988</year>
 		<publisher>P. &amp; The Blockheads Liepa</publisher>
@@ -5475,19 +5463,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="boulderd_67" supported="no">
-		<description>Boulder Dash 39</description>
+	<software name="boulderd_66" supported="no">
+		<description>Boulder Dash 38</description>
 		<year>1987</year>
 		<publisher>Papis</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="boulder dash 39 (1987)(papis).d64" size="174848" crc="6526882f" sha1="3f08bbdfcb726a74ba165065bde1d537ab88ed62"/>
+				<rom name="boulder dash 38 (1987)(papis).d64" size="174848" crc="95a712bf" sha1="8c31a9b4139dd3ef0de3bd23488a98501cb71285"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="boulderd_68" supported="no">
+	<software name="boulderd_67" supported="no">
 		<description>Boulder Dash 39 (1)</description>
 		<year>1988</year>
 		<publisher>Blockheads</publisher>
@@ -5499,7 +5487,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="boulderd_69" supported="no">
+	<software name="boulderd_68" supported="no">
 		<description>Boulder Dash 39 (2)</description>
 		<year>1988</year>
 		<publisher>P. &amp; The Blockheads Liepa</publisher>
@@ -5507,6 +5495,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="boulder dash 39 (1988)(liepa, p. &amp; the blockheads).d64" size="174848" crc="4c02b754" sha1="790f64132a03333692cd459c97b28aee2ead4cf1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boulderd_69" supported="no">
+		<description>Boulder Dash 39</description>
+		<year>1987</year>
+		<publisher>Papis</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="boulder dash 39 (1987)(papis).d64" size="174848" crc="6526882f" sha1="3f08bbdfcb726a74ba165065bde1d537ab88ed62"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5663,18 +5663,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="boulderd_82" supported="no">
-		<description>Boulder Dash 50 (1)</description>
-		<year>19??</year>
-		<publisher>Posocopi Waldkirch</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="boulder dash 50 (19xx)(posocopi waldkirch).d64" size="174848" crc="734071a7" sha1="5168f1f30dc6fa6b4fe98a7d1da1db71791a3c10"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="boulderd_83" supported="no">
 		<description>Boulder Dash 50 (2)</description>
 		<year>2001</year>
 		<publisher>Liepa, Peter &amp; Spaans, Ruben</publisher>
@@ -5700,6 +5688,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 3"/>
 			<dataarea name="flop" size="174848">
 				<rom name="boulder dash 50 (2001)(liepa, peter &amp; spaans, ruben)[a3].d64" size="174848" crc="bf02ea80" sha1="fe8f2daede6fd14397759ca7dcd6cb4d98e4fdf8"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boulderd_83" supported="no">
+		<description>Boulder Dash 50 (1)</description>
+		<year>19??</year>
+		<publisher>Posocopi Waldkirch</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="boulder dash 50 (19xx)(posocopi waldkirch).d64" size="174848" crc="734071a7" sha1="5168f1f30dc6fa6b4fe98a7d1da1db71791a3c10"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6140,6 +6140,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="boulderd_106" supported="no">
+		<description>Boulder Dash II - Rockford's Revenge</description>
+		<year>1985</year>
+		<publisher>First Star Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by Rockford"/>
+			<dataarea name="flop" size="174848">
+				<rom name="boulder dash ii - rockford's revenge (1985)(first star software)[cr rockford].d64" size="174848" crc="42248c3d" sha1="bf4e0073f1216101182e77c3c12d5e8e72181046"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boulderd_107" supported="no">
 		<description>Boulder Dash II - Rockford's Revenge (1)</description>
 		<year>1985</year>
 		<publisher>First Star</publisher>
@@ -6309,19 +6322,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked Megabyte, Alt 8"/>
 			<dataarea name="flop" size="174848">
 				<rom name="boulder dash ii - rockford's revenge (1985)(first star)[h megabyte][a8].d64" size="174848" crc="043338b1" sha1="79a9f8226d50e855945f850d452989f04cdd6f6e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="boulderd_107" supported="no">
-		<description>Boulder Dash II - Rockford's Revenge</description>
-		<year>1985</year>
-		<publisher>First Star Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Cracked by Rockford"/>
-			<dataarea name="flop" size="174848">
-				<rom name="boulder dash ii - rockford's revenge (1985)(first star software)[cr rockford].d64" size="174848" crc="42248c3d" sha1="bf4e0073f1216101182e77c3c12d5e8e72181046"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8255,19 +8255,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="crystalf" supported="no">
-		<description>Crystal Fever (1)</description>
-		<year>1990</year>
-		<publisher>CP Verlag</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Cracked by WDR, Trained +3"/>
-			<dataarea name="flop" size="174848">
-				<rom name="crystal fever (1990)(cp verlag)[cr wdr][t +3].d64" size="174848" crc="4724e942" sha1="e6ef1fe20b20caebc5bd839ca73c1c10499ae5cc"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="crystalf_1" supported="no">
 		<description>Crystal Fever</description>
 		<year>1990</year>
 		<publisher>CP Verlag - Golden Disk 64</publisher>
@@ -8276,6 +8263,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side B, Cracked by WDR"/>
 			<dataarea name="flop" size="174848">
 				<rom name="crystal fever (1990)(cp verlag - golden disk 64)(side b)[cr wdr].d64" size="174848" crc="d003f6cd" sha1="66b96e58c3dad22305ea8169e9ef60a3b9621f0b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crystalf_1" supported="no">
+		<description>Crystal Fever (1)</description>
+		<year>1990</year>
+		<publisher>CP Verlag</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by WDR, Trained +3"/>
+			<dataarea name="flop" size="174848">
+				<rom name="crystal fever (1990)(cp verlag)[cr wdr][t +3].d64" size="174848" crc="4724e942" sha1="e6ef1fe20b20caebc5bd839ca73c1c10499ae5cc"/>
 			</dataarea>
 		</part>
 	</software>
@@ -13757,18 +13757,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="frettche" supported="no">
-		<description>Frettchen Dash 01</description>
-		<year>1988</year>
-		<publisher>Peter &amp; Karlchen Liepa</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="frettchen dash 01 (1988)(liepa, peter &amp; karlchen).d64" size="174848" crc="6bcd7fc0" sha1="b3e8f48a27355d33465afa2fb942e1156c77ab03"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="frettche_1" supported="no">
 		<description>Frettchen Dash 01 (1)</description>
 		<year>19??</year>
 		<publisher>Karlchen</publisher>
@@ -13776,6 +13764,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="frettchen dash 01 (19xx)(karlchen).d64" size="174848" crc="66965370" sha1="af728ad31b11b65c4c50865125af04533adad068"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frettche_1" supported="no">
+		<description>Frettchen Dash 01</description>
+		<year>1988</year>
+		<publisher>Peter &amp; Karlchen Liepa</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="frettchen dash 01 (1988)(liepa, peter &amp; karlchen).d64" size="174848" crc="6bcd7fc0" sha1="b3e8f48a27355d33465afa2fb942e1156c77ab03"/>
 			</dataarea>
 		</part>
 	</software>
@@ -14141,18 +14141,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="fundash0_6" supported="no">
-		<description>Fun Dash 09</description>
-		<year>1988</year>
-		<publisher>Peter Liepa</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="fun dash 09 (1988)(liepa, peter).d64" size="174848" crc="9909dd6a" sha1="55e4b3bafce05ffef640708eb915bf29f3b47f9a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="fundash0_7" supported="no">
 		<description>Fun Dash 09 (1)</description>
 		<year>19??</year>
 		<publisher>Peter &amp; Phoenix Liepa</publisher>
@@ -14166,6 +14154,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="fun dash 09 (19xx)(liepa, peter &amp; phoenix)[a].d64" size="174848" crc="ea1999a8" sha1="297fb7c98ef47073fefea0c71d61916e3fbfb3ab"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fundash0_7" supported="no">
+		<description>Fun Dash 09</description>
+		<year>1988</year>
+		<publisher>Peter Liepa</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="fun dash 09 (1988)(liepa, peter).d64" size="174848" crc="9909dd6a" sha1="55e4b3bafce05ffef640708eb915bf29f3b47f9a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -15389,24 +15389,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="goldened" supported="no">
-		<description>Golden Edition 01</description>
-		<year>19??</year>
-		<publisher>Prof. Knibble</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="golden edition 01 (19xx)(prof. knibble).d64" size="174848" crc="b70c692c" sha1="1c35613661dcf83af3fdc64db77c8b69dda07573"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="golden edition 01 (19xx)(prof. knibble)[a].d64" size="174848" crc="8a0e3a4a" sha1="9143f4a5eefd994a67739bf607b24388397686cf"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="goldened_1" supported="no">
 		<description>Golden Edition 01 (1)</description>
 		<year>2002</year>
 		<publisher>Peter Liepa - Zoltán Scserbin</publisher>
@@ -15424,19 +15406,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="goldened_2" supported="no">
-		<description>Golden Edition 02</description>
+	<software name="goldened_1" supported="no">
+		<description>Golden Edition 01</description>
 		<year>19??</year>
 		<publisher>Prof. Knibble</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="golden edition 02 (19xx)(prof. knibble).d64" size="174848" crc="c7681fd3" sha1="f69104a0ab86cc2d200b869eccf33f485fec1ad1"/>
+				<rom name="golden edition 01 (19xx)(prof. knibble).d64" size="174848" crc="b70c692c" sha1="1c35613661dcf83af3fdc64db77c8b69dda07573"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="golden edition 01 (19xx)(prof. knibble)[a].d64" size="174848" crc="8a0e3a4a" sha1="9143f4a5eefd994a67739bf607b24388397686cf"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="goldened_3" supported="no">
+	<software name="goldened_2" supported="no">
 		<description>Golden Edition 02 (1)</description>
 		<year>2002</year>
 		<publisher>Peter Liepa - Zoltán Scserbin</publisher>
@@ -15454,19 +15442,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="goldened_4" supported="no">
-		<description>Golden Edition 04</description>
+	<software name="goldened_3" supported="no">
+		<description>Golden Edition 02</description>
 		<year>19??</year>
 		<publisher>Prof. Knibble</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="golden edition 04 (19xx)(prof. knibble).d64" size="174848" crc="e43debff" sha1="e73b8572d0578a8299a3ffe23237b346dca53e12"/>
+				<rom name="golden edition 02 (19xx)(prof. knibble).d64" size="174848" crc="c7681fd3" sha1="f69104a0ab86cc2d200b869eccf33f485fec1ad1"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="goldened_5" supported="no">
+	<software name="goldened_4" supported="no">
 		<description>Golden Edition 04 (1)</description>
 		<year>2002</year>
 		<publisher>Peter Liepa - Zoltán Scserbin</publisher>
@@ -15480,6 +15468,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="golden edition 04 (2002)(liepa, peter - scserbin, zoltn)[a].d64" size="174848" crc="d5583c92" sha1="8903bdadb57fb6557ad2cf01821c6996f29b9876"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldened_5" supported="no">
+		<description>Golden Edition 04</description>
+		<year>19??</year>
+		<publisher>Prof. Knibble</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="golden edition 04 (19xx)(prof. knibble).d64" size="174848" crc="e43debff" sha1="e73b8572d0578a8299a3ffe23237b346dca53e12"/>
 			</dataarea>
 		</part>
 	</software>
@@ -16465,6 +16465,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="knibbled_5" supported="no">
+		<description>Knibble Dash 7 (1)</description>
+		<year>19??</year>
+		<publisher>Peter Liepa - Prof. Knibble</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="knibble dash 7 (19xx)(liepa, peter - prof. knibble).d64" size="174848" crc="079b0813" sha1="e28fe61fb77e1c9bffb98075a7332bc2bf7fcf19"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="knibbled_6" supported="no">
 		<description>Knibble Dash 7</description>
 		<year>1987</year>
 		<publisher>Prof. Knibble</publisher>
@@ -16482,19 +16494,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="knibbled_6" supported="no">
-		<description>Knibble Dash 7 (1)</description>
+	<software name="knibbled_7" supported="no">
+		<description>Knibble Dash 8 (1)</description>
 		<year>19??</year>
 		<publisher>Peter Liepa - Prof. Knibble</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="knibble dash 7 (19xx)(liepa, peter - prof. knibble).d64" size="174848" crc="079b0813" sha1="e28fe61fb77e1c9bffb98075a7332bc2bf7fcf19"/>
+				<rom name="knibble dash 8 (19xx)(liepa, peter - prof. knibble).d64" size="174848" crc="f39ddd2d" sha1="b4682e9227086123b5ff73531e1cac10d4890ee5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="knibbled_7" supported="no">
+	<software name="knibbled_8" supported="no">
 		<description>Knibble Dash 8</description>
 		<year>1987</year>
 		<publisher>Prof. Knibble</publisher>
@@ -16508,18 +16520,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="knibble dash 8 (1987)(prof. knibble)[a].d64" size="174848" crc="d5ed494b" sha1="ebab607f6c67fd5c5ea96706f7743152564f281c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="knibbled_8" supported="no">
-		<description>Knibble Dash 8 (1)</description>
-		<year>19??</year>
-		<publisher>Peter Liepa - Prof. Knibble</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="knibble dash 8 (19xx)(liepa, peter - prof. knibble).d64" size="174848" crc="f39ddd2d" sha1="b4682e9227086123b5ff73531e1cac10d4890ee5"/>
 			</dataarea>
 		</part>
 	</software>
@@ -17259,6 +17259,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="megaboul_6" supported="no">
+		<description>Mega Boulder 6 (de)</description>
+		<year>1993</year>
+		<publisher>Peter Liepa - Skeletor Liepa</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="mega boulder 6 (1993)(liepa, peter - liepa, skeletor)(de).d64" size="174848" crc="0d34d94e" sha1="4d5e6e5e738e16c179dd82a2651d4a11acd94363"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megaboul_7" supported="no">
 		<description>Mega Boulder 6 (de) (1)</description>
 		<year>1993</year>
 		<publisher>Peter Liepa</publisher>
@@ -17272,18 +17284,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="mega boulder 6 (1993)(liepa, peter)(de)[a].d64" size="174848" crc="b2efc1df" sha1="ac4232cc492f48594f7fbd839cc5396bea1979b2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megaboul_7" supported="no">
-		<description>Mega Boulder 6 (de)</description>
-		<year>1993</year>
-		<publisher>Peter Liepa - Skeletor Liepa</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="mega boulder 6 (1993)(liepa, peter - liepa, skeletor)(de).d64" size="174848" crc="0d34d94e" sha1="4d5e6e5e738e16c179dd82a2651d4a11acd94363"/>
 			</dataarea>
 		</part>
 	</software>
@@ -23381,18 +23381,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="quolderd" supported="no">
-		<description>Quolder Dash 01</description>
-		<year>1989</year>
-		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="quolder dash 01 (1989)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="347d70c8" sha1="733d0cafa5a31103f2843411d61c4365cf3a3446"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="quolderd_1" supported="no">
 		<description>Quolder Dash 01 (1)</description>
 		<year>1995</year>
 		<publisher>Peter &amp; Klaus Quindt Liepa</publisher>
@@ -23404,7 +23392,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="quolderd_a" cloneof="quolderd" supported="no">
+	<software name="quolderd_1" supported="no">
+		<description>Quolder Dash 01</description>
+		<year>1989</year>
+		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="quolder dash 01 (1989)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="347d70c8" sha1="733d0cafa5a31103f2843411d61c4365cf3a3446"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quolderd_1_a" cloneof="quolderd_1" supported="no">
 		<description>Quolder Dash 01 (2)</description>
 		<year>19??</year>
 		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
@@ -23489,18 +23489,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="quolderd_5" supported="no">
-		<description>Quolder Dash 05</description>
-		<year>1989</year>
-		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="quolder dash 05 (1989)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="b3a7cfdb" sha1="8dab5ba37745f895c2ea42dc5258590d379cb931"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="quolderd_6" supported="no">
 		<description>Quolder Dash 05 (1)</description>
 		<year>1995</year>
 		<publisher>Peter &amp; Klaus Quindt Liepa</publisher>
@@ -23518,7 +23506,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="quolderd_5_a" cloneof="quolderd_5" supported="no">
+	<software name="quolderd_6" supported="no">
+		<description>Quolder Dash 05</description>
+		<year>1989</year>
+		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="quolder dash 05 (1989)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="b3a7cfdb" sha1="8dab5ba37745f895c2ea42dc5258590d379cb931"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quolderd_6_a" cloneof="quolderd_6" supported="no">
 		<description>Quolder Dash 05 (2)</description>
 		<year>19??</year>
 		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
@@ -23531,18 +23531,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="quolderd_7" supported="no">
-		<description>Quolder Dash 06</description>
-		<year>1989</year>
-		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="quolder dash 06 (1989)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="fccc6e00" sha1="8dde0d064b47021a4de7c43d69696525b9c6d662"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="quolderd_8" supported="no">
 		<description>Quolder Dash 06 (1)</description>
 		<year>1995</year>
 		<publisher>Peter &amp; Klaus Quindt Liepa</publisher>
@@ -23560,7 +23548,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="quolderd_7_a" cloneof="quolderd_7" supported="no">
+	<software name="quolderd_8" supported="no">
+		<description>Quolder Dash 06</description>
+		<year>1989</year>
+		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="quolder dash 06 (1989)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="fccc6e00" sha1="8dde0d064b47021a4de7c43d69696525b9c6d662"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quolderd_8_a" cloneof="quolderd_8" supported="no">
 		<description>Quolder Dash 06 (2)</description>
 		<year>19??</year>
 		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
@@ -23573,18 +23573,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="quolderd_9" supported="no">
-		<description>Quolder Dash 07</description>
-		<year>1989</year>
-		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="quolder dash 07 (1989)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="071e4625" sha1="2166a76ab5bb770578ab30c1995eae20aedae5db"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="quolderd_10" supported="no">
 		<description>Quolder Dash 07 (1)</description>
 		<year>1995</year>
 		<publisher>Peter &amp; Klaus Quindt Liepa</publisher>
@@ -23596,7 +23584,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="quolderd_9_a" cloneof="quolderd_9" supported="no">
+	<software name="quolderd_10" supported="no">
+		<description>Quolder Dash 07</description>
+		<year>1989</year>
+		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="quolder dash 07 (1989)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="071e4625" sha1="2166a76ab5bb770578ab30c1995eae20aedae5db"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quolderd_10_a" cloneof="quolderd_10" supported="no">
 		<description>Quolder Dash 07 (2)</description>
 		<year>19??</year>
 		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
@@ -23609,18 +23609,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="quolderd_11" supported="no">
-		<description>Quolder Dash 08</description>
-		<year>1989</year>
-		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="quolder dash 08 (1989)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="63bd05fe" sha1="d5294767400301b4a9981b5e1002d56491e7a616"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="quolderd_12" supported="no">
 		<description>Quolder Dash 08 (1)</description>
 		<year>1995</year>
 		<publisher>Peter &amp; Klaus Quindt Liepa</publisher>
@@ -23632,7 +23620,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="quolderd_11_a" cloneof="quolderd_11" supported="no">
+	<software name="quolderd_12" supported="no">
+		<description>Quolder Dash 08</description>
+		<year>1989</year>
+		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="quolder dash 08 (1989)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="63bd05fe" sha1="d5294767400301b4a9981b5e1002d56491e7a616"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quolderd_12_a" cloneof="quolderd_12" supported="no">
 		<description>Quolder Dash 08 (2)</description>
 		<year>19??</year>
 		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
@@ -23783,18 +23783,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="quolderd_19" supported="no">
-		<description>Quolder Dash 15</description>
-		<year>1990</year>
-		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="quolder dash 15 (1990)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="69a86a03" sha1="9af8458ea4ca56233f0c032811d95f66efd1a35d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="quolderd_20" supported="no">
 		<description>Quolder Dash 15 (1)</description>
 		<year>1995</year>
 		<publisher>Peter &amp; Klaus Quindt Liepa</publisher>
@@ -23806,7 +23794,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="quolderd_19_a" cloneof="quolderd_19" supported="no">
+	<software name="quolderd_20" supported="no">
+		<description>Quolder Dash 15</description>
+		<year>1990</year>
+		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="quolder dash 15 (1990)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="69a86a03" sha1="9af8458ea4ca56233f0c032811d95f66efd1a35d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quolderd_20_a" cloneof="quolderd_20" supported="no">
 		<description>Quolder Dash 15 (2)</description>
 		<year>19??</year>
 		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
@@ -23819,18 +23819,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="quolderd_21" supported="no">
-		<description>Quolder Dash 16</description>
-		<year>1990</year>
-		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="quolder dash 16 (1990)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="2cae5eca" sha1="ab85c247674480eb2ad8c1b4ca0f1e6f1aa28620"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="quolderd_22" supported="no">
 		<description>Quolder Dash 16 (1)</description>
 		<year>1995</year>
 		<publisher>Peter &amp; Klaus Quindt Liepa</publisher>
@@ -23842,7 +23830,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="quolderd_21_a" cloneof="quolderd_21" supported="no">
+	<software name="quolderd_22" supported="no">
+		<description>Quolder Dash 16</description>
+		<year>1990</year>
+		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="quolder dash 16 (1990)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="2cae5eca" sha1="ab85c247674480eb2ad8c1b4ca0f1e6f1aa28620"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quolderd_22_a" cloneof="quolderd_22" supported="no">
 		<description>Quolder Dash 16 (2)</description>
 		<year>19??</year>
 		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
@@ -24041,18 +24041,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="quolderd_31" supported="no">
-		<description>Quolder Dash 25</description>
-		<year>1991</year>
-		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="quolder dash 25 (1991)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="4caea4d8" sha1="ad2bd3f1aad6fe30d236bf89964e8e81b77ed551"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="quolderd_32" supported="no">
 		<description>Quolder Dash 25 (1)</description>
 		<year>1995</year>
 		<publisher>Peter &amp; Klaus Quindt Liepa</publisher>
@@ -24076,7 +24064,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="quolderd_31_a" cloneof="quolderd_31" supported="no">
+	<software name="quolderd_32" supported="no">
+		<description>Quolder Dash 25</description>
+		<year>1991</year>
+		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="quolder dash 25 (1991)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="4caea4d8" sha1="ad2bd3f1aad6fe30d236bf89964e8e81b77ed551"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quolderd_32_a" cloneof="quolderd_32" supported="no">
 		<description>Quolder Dash 25 (2)</description>
 		<year>19??</year>
 		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
@@ -24089,18 +24089,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="quolderd_33" supported="no">
-		<description>Quolder Dash 26</description>
-		<year>1991</year>
-		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="quolder dash 26 (1991)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="8eb8c70b" sha1="cd1675bb565bc153e6ee407a27e910dbd0ac87e6"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="quolderd_34" supported="no">
 		<description>Quolder Dash 26 (1)</description>
 		<year>19??</year>
 		<publisher>Coolshaker Union Gang K.G.</publisher>
@@ -24112,19 +24100,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="quolderd_35" supported="no">
-		<description>Quolder Dash 27</description>
+	<software name="quolderd_34" supported="no">
+		<description>Quolder Dash 26</description>
 		<year>1991</year>
 		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="quolder dash 27 (1991)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="732bfc41" sha1="f6a6a141c8caf9b773503ab30a6f807b83517577"/>
+				<rom name="quolder dash 26 (1991)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="8eb8c70b" sha1="cd1675bb565bc153e6ee407a27e910dbd0ac87e6"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="quolderd_36" supported="no">
+	<software name="quolderd_35" supported="no">
 		<description>Quolder Dash 27 (1)</description>
 		<year>19??</year>
 		<publisher>Coolshaker Union Gang K.G.</publisher>
@@ -24136,19 +24124,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="quolderd_37" supported="no">
-		<description>Quolder Dash 28</description>
-		<year>1992</year>
+	<software name="quolderd_36" supported="no">
+		<description>Quolder Dash 27</description>
+		<year>1991</year>
 		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="quolder dash 28 (1992)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="076e7b44" sha1="b7d4f1bffb5fbd2dc893e6a0ca6723ab7f0117c3"/>
+				<rom name="quolder dash 27 (1991)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="732bfc41" sha1="f6a6a141c8caf9b773503ab30a6f807b83517577"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="quolderd_38" supported="no">
+	<software name="quolderd_37" supported="no">
 		<description>Quolder Dash 28 (1)</description>
 		<year>19??</year>
 		<publisher>Coolshaker Union Gang K.G.</publisher>
@@ -24160,19 +24148,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="quolderd_39" supported="no">
-		<description>Quolder Dash 29</description>
+	<software name="quolderd_38" supported="no">
+		<description>Quolder Dash 28</description>
 		<year>1992</year>
 		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="quolder dash 29 (1992)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="27f98a14" sha1="70118de599448c1cae1ad2580cd3c09ec05c6d10"/>
+				<rom name="quolder dash 28 (1992)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="076e7b44" sha1="b7d4f1bffb5fbd2dc893e6a0ca6723ab7f0117c3"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="quolderd_40" supported="no">
+	<software name="quolderd_39" supported="no">
 		<description>Quolder Dash 29 (1)</description>
 		<year>19??</year>
 		<publisher>Coolshaker Union Gang K.G.</publisher>
@@ -24184,19 +24172,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="quolderd_41" supported="no">
-		<description>Quolder Dash 30</description>
+	<software name="quolderd_40" supported="no">
+		<description>Quolder Dash 29</description>
 		<year>1992</year>
 		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="quolder dash 30 (1992)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="57319542" sha1="1db9629e75b777008b22550c0501ca9b70037fe5"/>
+				<rom name="quolder dash 29 (1992)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="27f98a14" sha1="70118de599448c1cae1ad2580cd3c09ec05c6d10"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="quolderd_42" supported="no">
+	<software name="quolderd_41" supported="no">
 		<description>Quolder Dash 30 (1)</description>
 		<year>19??</year>
 		<publisher>Coolshaker Union Gang K.G.</publisher>
@@ -24208,19 +24196,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="quolderd_43" supported="no">
-		<description>Quolder Dash 31</description>
+	<software name="quolderd_42" supported="no">
+		<description>Quolder Dash 30</description>
 		<year>1992</year>
 		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="quolder dash 31 (1992)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="1d711cf1" sha1="484098a5787000542152fa1f08f110c0d20d29cc"/>
+				<rom name="quolder dash 30 (1992)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="57319542" sha1="1db9629e75b777008b22550c0501ca9b70037fe5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="quolderd_44" supported="no">
+	<software name="quolderd_43" supported="no">
 		<description>Quolder Dash 31 (1)</description>
 		<year>19??</year>
 		<publisher>Coolshaker Union Gang K.G.</publisher>
@@ -24228,6 +24216,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="quolder dash 31 (19xx)(coolshaker union gang k.g.).d64" size="174848" crc="cddd7aa1" sha1="4ef50c0cabca0ee9ff7c2119902e55e60e7edde9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quolderd_44" supported="no">
+		<description>Quolder Dash 31</description>
+		<year>1992</year>
+		<publisher>Peter Liepa - The Coolshaker Union Gang K.G.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="quolder dash 31 (1992)(liepa, peter - k.g., the coolshaker union gang).d64" size="174848" crc="1d711cf1" sha1="484098a5787000542152fa1f08f110c0d20d29cc"/>
 			</dataarea>
 		</part>
 	</software>
@@ -25365,6 +25365,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="runfordi_1" supported="no">
+		<description>Run for Diamonds (fr)</description>
+		<year>1987</year>
+		<publisher>Felix Schmüser - Yakoul Schmüser</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="run for diamonds (1987)(schmser, felix - schmser, yakoul)(fr).d64" size="174848" crc="10b9946b" sha1="847454f6fd1af2f6cf5e0fd0f59e436fee380839"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="runfordi_2" supported="no">
 		<description>Run for Diamonds</description>
 		<year>1987</year>
 		<publisher>Felix Schmüser</publisher>
@@ -25379,18 +25391,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Cracked by AFL, Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="run for diamonds (1987)(schmser, felix)[cr afl][a].d64" size="174848" crc="3c835135" sha1="4a7eeba1399267fd3dce7d19394d2d68bddd0c20"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="runfordi_2" supported="no">
-		<description>Run for Diamonds (fr)</description>
-		<year>1987</year>
-		<publisher>Felix Schmüser - Yakoul Schmüser</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="run for diamonds (1987)(schmser, felix - schmser, yakoul)(fr).d64" size="174848" crc="10b9946b" sha1="847454f6fd1af2f6cf5e0fd0f59e436fee380839"/>
 			</dataarea>
 		</part>
 	</software>
@@ -27856,18 +27856,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="tattadas" supported="no">
-		<description>Tatta-Dash 1</description>
-		<year>1994</year>
-		<publisher>Peter Liepa - Heinz Trümpelmann</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="tatta-dash 1 (1994)(liepa, peter - trmpelmann, heinz).d64" size="174848" crc="ed6d0264" sha1="affdf954b8a06144e353abbead70742a6aa8d136"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tattadas_1" supported="no">
 		<description>Tatta-Dash 1 (1)</description>
 		<year>199?</year>
 		<publisher>Heinz Trumpelmann</publisher>
@@ -27875,6 +27863,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="tatta-dash 1 (199x)(trumpelmann, heinz).d64" size="174848" crc="8f01dc6f" sha1="0049f9e4c5662494304db887ed45c92df5e47afe"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tattadas_1" supported="no">
+		<description>Tatta-Dash 1</description>
+		<year>1994</year>
+		<publisher>Peter Liepa - Heinz Trümpelmann</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="tatta-dash 1 (1994)(liepa, peter - trmpelmann, heinz).d64" size="174848" crc="ed6d0264" sha1="affdf954b8a06144e353abbead70742a6aa8d136"/>
 			</dataarea>
 		</part>
 	</software>

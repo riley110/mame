@@ -2398,18 +2398,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="datadivi" supported="no">
-		<description>Data Division Dox Disk No.1 (AGA)</description>
-		<year>1995</year>
-		<publisher>The Data Division</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="data division dox disk no.1 (1995)(the data division)(aga).adf" size="901120" crc="bddd8901" sha1="0aa081b32d27047993bd032f0bc6d37229a59d9a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="datadivi_1" supported="no">
 		<description>Data Division Dox Disk No.1 (AGA, 1996-03-17)</description>
 		<year>1996</year>
 		<publisher>The Data Division - Ultima</publisher>
@@ -2418,6 +2406,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="updated"/>
 			<dataarea name="flop" size="901120">
 				<rom name="data division dox disk no.1 (1996-03-17)(the data division - ultima)(aga)[updated].adf" size="901120" crc="9f853698" sha1="75768761a0c7f72700a454288f7911edfdb37e4e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="datadivi_1" supported="no">
+		<description>Data Division Dox Disk No.1 (AGA)</description>
+		<year>1995</year>
+		<publisher>The Data Division</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="data division dox disk no.1 (1995)(the data division)(aga).adf" size="901120" crc="bddd8901" sha1="0aa081b32d27047993bd032f0bc6d37229a59d9a"/>
 			</dataarea>
 		</part>
 	</software>

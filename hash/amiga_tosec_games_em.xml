@@ -3406,25 +3406,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="emeraldm_22" supported="no">
-		<description>Emerald Mine Tools (AGA, v6.03, 1998-05-08)</description>
-		<year>1998</year>
-		<publisher>No One Inc</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald mine tools v6.03 (1998-05-08)(no one inc)(aga)(disk 1 of 2).adf" size="901120" crc="b5e1676b" sha1="af4cec6a21ca7567519a11395c30e20c0373d715"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="emerald mine tools v6.03 (1998-05-08)(no one inc)(aga)(disk 2 of 2).adf" size="901120" crc="b02ca17c" sha1="a5c18eb954d50db610be5d7f0f545f9eae776e0a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="emeraldm_22_a" cloneof="emeraldm_22" supported="no">
 		<description>Emerald Mine Tools (v3.1, 1991-01-20)</description>
 		<year>1991</year>
 		<publisher>No One Inc</publisher>
@@ -3443,7 +3424,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_22_b" cloneof="emeraldm_22" supported="no">
+	<software name="emeraldm_22_a" cloneof="emeraldm_22" supported="no">
 		<description>Emerald Mine Tools (v3.51, 1992-06-03)</description>
 		<year>1992</year>
 		<publisher>No One Inc</publisher>
@@ -3474,7 +3455,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_22_c" cloneof="emeraldm_22" supported="no">
+	<software name="emeraldm_22_b" cloneof="emeraldm_22" supported="no">
 		<description>Emerald Mine Tools (v4.20, 1993-01-30)</description>
 		<year>1993</year>
 		<publisher>No One Inc</publisher>
@@ -3493,7 +3474,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_22_d" cloneof="emeraldm_22" supported="no">
+	<software name="emeraldm_22_c" cloneof="emeraldm_22" supported="no">
 		<description>Emerald Mine Tools (v4.60, 1993-04-24)</description>
 		<year>1993</year>
 		<publisher>No One Inc</publisher>
@@ -3524,7 +3505,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="emeraldm_22_e" cloneof="emeraldm_22" supported="no">
+	<software name="emeraldm_22_d" cloneof="emeraldm_22" supported="no">
 		<description>Emerald Mine Tools (v5.00, 1994-04-09)</description>
 		<year>1994</year>
 		<publisher>No One Inc</publisher>
@@ -3551,6 +3532,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="emerald mine tools v5.00 (1994-04-09)(no one inc)(disk 2 of 2).adf" size="901120" crc="fc870675" sha1="ec7363e408f6abaf3e94e159171f448a7e5c3cbc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="emeraldm_22_e" cloneof="emeraldm_22" supported="no">
+		<description>Emerald Mine Tools (AGA, v6.03, 1998-05-08)</description>
+		<year>1998</year>
+		<publisher>No One Inc</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald mine tools v6.03 (1998-05-08)(no one inc)(aga)(disk 1 of 2).adf" size="901120" crc="b5e1676b" sha1="af4cec6a21ca7567519a11395c30e20c0373d715"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="emerald mine tools v6.03 (1998-05-08)(no one inc)(aga)(disk 2 of 2).adf" size="901120" crc="b02ca17c" sha1="a5c18eb954d50db610be5d7f0f545f9eae776e0a"/>
 			</dataarea>
 		</part>
 	</software>

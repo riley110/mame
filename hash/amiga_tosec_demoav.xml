@@ -8025,6 +8025,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thedatin" supported="no">
+		<description>The Dating Game - Starring Flip the Frog</description>
+		<year>1991</year>
+		<publisher>Eric W. Schwartz - 17 Bit</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2, WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="dating game, the - starring flip the frog (1991)(schwartz, eric w. - 17 bit)(disk 1 of 2)[wb].adf" size="901120" crc="c6633818" sha1="a9d27cfc8e2b94c02d2c89a74974481d4bac6795"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2, WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="dating game, the - starring flip the frog (1991)(schwartz, eric w. - 17 bit)(disk 2 of 2)[wb].adf" size="901120" crc="5606b83a" sha1="bbacd5f26c9622e10f80c74570ceb196b7bfbc8c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thedatin_1" supported="no">
 		<description>The Dating Game - Starring Flip the Frog (1)</description>
 		<year>1991</year>
 		<publisher>Eric W. Schwartz</publisher>
@@ -8051,25 +8070,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2, WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="dating game, the - starring flip the frog (1991)(schwartz, eric w.)(disk 2 of 2)[wb].adf" size="901120" crc="f8d1d73a" sha1="a5c8768a04381d401d9f1f868bf8257eb64829b4"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thedatin_1" supported="no">
-		<description>The Dating Game - Starring Flip the Frog</description>
-		<year>1991</year>
-		<publisher>Eric W. Schwartz - 17 Bit</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="dating game, the - starring flip the frog (1991)(schwartz, eric w. - 17 bit)(disk 1 of 2)[wb].adf" size="901120" crc="c6633818" sha1="a9d27cfc8e2b94c02d2c89a74974481d4bac6795"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 2, WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="dating game, the - starring flip the frog (1991)(schwartz, eric w. - 17 bit)(disk 2 of 2)[wb].adf" size="901120" crc="5606b83a" sha1="bbacd5f26c9622e10f80c74570ceb196b7bfbc8c"/>
 			</dataarea>
 		</part>
 	</software>

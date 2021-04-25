@@ -63,6 +63,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="blackgol" supported="no">
+		<description>Black Gold (de)</description>
+		<year>1992</year>
+		<publisher>Starbyte Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="black gold (1992)(starbyte software)(de).d81" size="819200" crc="6e5f8695" sha1="c10bd5a667251cfcc2765a816ce3b63069381aac"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blackgol_1" supported="no">
 		<description>Black Gold</description>
 		<year>1989</year>
 		<publisher>reLine Software</publisher>
@@ -71,18 +83,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="docs, ide64, reu, Cracked by Nostalgia, Fixed 1, Trained +9"/>
 			<dataarea name="flop" size="819200">
 				<rom name="black gold (1989)(reline software)[cr nostalgia][f][t +9][docs][ide64][reu].d81" size="819200" crc="82f7a6a4" sha1="c77bd25b425c695102a592ff8625c95579090587"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="blackgol_1" supported="no">
-		<description>Black Gold (de)</description>
-		<year>1992</year>
-		<publisher>Starbyte Software</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="black gold (1992)(starbyte software)(de).d81" size="819200" crc="6e5f8695" sha1="c10bd5a667251cfcc2765a816ce3b63069381aac"/>
 			</dataarea>
 		</part>
 	</software>

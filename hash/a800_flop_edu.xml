@@ -1625,6 +1625,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="storymac" supported="no">
+		<description>Story Machine (US)</description>
+		<year>1982</year>
+		<publisher>Spinnaker Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="story machine (1982)(spinnaker software)(us).atr" size="92176" crc="334653ce" sha1="31865ee7e3b2924b9a05d8f21367690c6dfbd791"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="storymac_a" cloneof="storymac" supported="no">
 		<description>Story Machine (NTSC, US)</description>
 		<year>1983</year>
 		<publisher>Spinnaker Software</publisher>
@@ -1633,18 +1645,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb, k-file"/>
 			<dataarea name="flop" size="16912">
 				<rom name="story machine (1983)(spinnaker software)(ntsc)(us)[req osb][k-file].atr" size="16912" crc="27243a2a" sha1="ef7e0471b1ecc0f1ea71d137ce62ca9c3a7c09b1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="storymac_a" cloneof="storymac" supported="no">
-		<description>Story Machine (US)</description>
-		<year>1982</year>
-		<publisher>Spinnaker Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="story machine (1982)(spinnaker software)(us).atr" size="92176" crc="334653ce" sha1="31865ee7e3b2924b9a05d8f21367690c6dfbd791"/>
 			</dataarea>
 		</part>
 	</software>

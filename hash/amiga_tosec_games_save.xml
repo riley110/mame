@@ -70,19 +70,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="ambermoo" supported="no">
-		<description>Ambermoon</description>
-		<year>1994</year>
-		<publisher>Thalion</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="J, save disk"/>
-			<dataarea name="flop" size="901120">
-				<rom name="ambermoon (1994)(thalion)(j)[save disk].adf" size="901120" crc="414b8cd8" sha1="f6a5a224368a0eeee406d0273e95619a0673ea9d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ambermoo_a" cloneof="ambermoo" supported="no">
 		<description>Ambermoon (DE)</description>
 		<year>1993</year>
 		<publisher>Thalion</publisher>
@@ -121,6 +108,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="J, save disk, Alt 5"/>
 			<dataarea name="flop" size="901120">
 				<rom name="ambermoon (1993)(thalion)(de)(j)[a5][save disk].adf" size="901120" crc="30fccad1" sha1="eec9d4374981f58772e3bbee4bc6fa6867294ad9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ambermoo_a" cloneof="ambermoo" supported="no">
+		<description>Ambermoon</description>
+		<year>1994</year>
+		<publisher>Thalion</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="J, save disk"/>
+			<dataarea name="flop" size="901120">
+				<rom name="ambermoon (1994)(thalion)(j)[save disk].adf" size="901120" crc="414b8cd8" sha1="f6a5a224368a0eeee406d0273e95619a0673ea9d"/>
 			</dataarea>
 		</part>
 	</software>

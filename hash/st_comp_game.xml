@@ -2010,24 +2010,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="automati" supported="no">
-		<description>Automation Menu Disk 000</description>
-		<year>19??</year>
-		<publisher>LSD - Was -Not Was</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="435200">
-				<rom name="automation menu disk 000 (19xx)(lsd - was -not was-).st" size="435200" crc="f397dfd5" sha1="3770109da5e2f073485bc32ad59d72fa414de7a8"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="440320">
-				<rom name="automation menu disk 000 (19xx)(lsd - was -not was-)[a].st" size="440320" crc="3685b011" sha1="45e0d74fa868d79352b09c9068efe5e7d8811d9c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="automati_1" supported="no">
 		<description>Automation Menu Disk 000 (v2.0)</description>
 		<year>19??</year>
 		<publisher>Automation</publisher>
@@ -2057,31 +2039,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="automati_2" supported="no">
-		<description>Automation Menu Disk 001</description>
+	<software name="automati_1" supported="no">
+		<description>Automation Menu Disk 000</description>
 		<year>19??</year>
 		<publisher>LSD - Was -Not Was</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="automation menu disk 001 (19xx)(lsd - was -not was-).st" size="737280" crc="9fdae971" sha1="72b9154771846187c8bdab330af8faed6bf57f89"/>
+			<dataarea name="flop" size="435200">
+				<rom name="automation menu disk 000 (19xx)(lsd - was -not was-).st" size="435200" crc="f397dfd5" sha1="3770109da5e2f073485bc32ad59d72fa414de7a8"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="839680">
-				<rom name="automation menu disk 001 (19xx)(lsd - was -not was-)[a].st" size="839680" crc="0f0d783d" sha1="5183967ef9d2a8bf9a0567c0fbb7726315faae40"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Bad 1"/>
-			<dataarea name="flop" size="755712">
-				<rom name="automation menu disk 001 (19xx)(lsd - was -not was-)[b].st" size="755712" crc="9a4afc4b" sha1="df02563898968c699965e813d925e52eec733acd" status="baddump"/>
+			<dataarea name="flop" size="440320">
+				<rom name="automation menu disk 000 (19xx)(lsd - was -not was-)[a].st" size="440320" crc="3685b011" sha1="45e0d74fa868d79352b09c9068efe5e7d8811d9c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="automati_3" supported="no">
+	<software name="automati_2" supported="no">
 		<description>Automation Menu Disk 001 (v2.0)</description>
 		<year>19??</year>
 		<publisher>Automation</publisher>
@@ -2101,6 +2077,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Modified LGD"/>
 			<dataarea name="flop" size="839680">
 				<rom name="automation menu disk 001 v2.0 (19xx)(automation)[m lgd].st" size="839680" crc="9b6c3263" sha1="bccb17d49008182b32f59e1869d19a01ce0fe1b7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="automati_3" supported="no">
+		<description>Automation Menu Disk 001</description>
+		<year>19??</year>
+		<publisher>LSD - Was -Not Was</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="automation menu disk 001 (19xx)(lsd - was -not was-).st" size="737280" crc="9fdae971" sha1="72b9154771846187c8bdab330af8faed6bf57f89"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="839680">
+				<rom name="automation menu disk 001 (19xx)(lsd - was -not was-)[a].st" size="839680" crc="0f0d783d" sha1="5183967ef9d2a8bf9a0567c0fbb7726315faae40"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Bad 1"/>
+			<dataarea name="flop" size="755712">
+				<rom name="automation menu disk 001 (19xx)(lsd - was -not was-)[b].st" size="755712" crc="9a4afc4b" sha1="df02563898968c699965e813d925e52eec733acd" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2364,18 +2364,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="automati_11" supported="no">
-		<description>Automation Menu Disk 009</description>
-		<year>19??</year>
-		<publisher>LSD - Was -Not Was</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="automation menu disk 009 (19xx)(lsd - was -not was-).st" size="737280" crc="878e124d" sha1="fa59a9e05d8bb2a46a590739807e653b86e6c3f6"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="automati_12" supported="no">
 		<description>Automation Menu Disk 009 (v2.0)</description>
 		<year>19??</year>
 		<publisher>Automation</publisher>
@@ -2401,6 +2389,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Modified LGD"/>
 			<dataarea name="flop" size="839680">
 				<rom name="automation menu disk 009 v2.0 (19xx)(automation)[m lgd].st" size="839680" crc="6766e1ce" sha1="8efacd78ec52c1db9ad27026b31579ffd87fbd93"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="automati_12" supported="no">
+		<description>Automation Menu Disk 009</description>
+		<year>19??</year>
+		<publisher>LSD - Was -Not Was</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="automation menu disk 009 (19xx)(lsd - was -not was-).st" size="737280" crc="878e124d" sha1="fa59a9e05d8bb2a46a590739807e653b86e6c3f6"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2580,30 +2580,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="automati_17" supported="no">
-		<description>Automation Menu Disk 014</description>
-		<year>19??</year>
-		<publisher>LSD - Was -Not Was</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="automation menu disk 014 (19xx)(lsd - was -not was-).st" size="737280" crc="f8ee8020" sha1="1457731d9d7f9cba1da943f585061ad5e4b38509"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="839680">
-				<rom name="automation menu disk 014 (19xx)(lsd - was -not was-)[a].st" size="839680" crc="1fa07961" sha1="08ced120af7fe70d22c48f657724e46d117d88a4"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 2, Part B"/>
-			<dataarea name="flop" size="839680">
-				<rom name="automation menu disk 014 (19xx)(lsd - was -not was-)(disk 2 of 2)(part b).st" size="839680" crc="6fa257a5" sha1="91de5030b7cc7ad0647d11f3cd399f4cb26e6272"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="automati_18" supported="no">
 		<description>Automation Menu Disk 014 (v2.0)</description>
 		<year>19??</year>
 		<publisher>Automation</publisher>
@@ -2623,6 +2599,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Modified LGD"/>
 			<dataarea name="flop" size="839680">
 				<rom name="automation menu disk 014 v2.0 (19xx)(automation)[m lgd].st" size="839680" crc="30d35869" sha1="a0c4fd04c3e5a6bb7a02ffd3d72a63307d532ca8"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="automati_18" supported="no">
+		<description>Automation Menu Disk 014</description>
+		<year>19??</year>
+		<publisher>LSD - Was -Not Was</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="automation menu disk 014 (19xx)(lsd - was -not was-).st" size="737280" crc="f8ee8020" sha1="1457731d9d7f9cba1da943f585061ad5e4b38509"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="839680">
+				<rom name="automation menu disk 014 (19xx)(lsd - was -not was-)[a].st" size="839680" crc="1fa07961" sha1="08ced120af7fe70d22c48f657724e46d117d88a4"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2, Part B"/>
+			<dataarea name="flop" size="839680">
+				<rom name="automation menu disk 014 (19xx)(lsd - was -not was-)(disk 2 of 2)(part b).st" size="839680" crc="6fa257a5" sha1="91de5030b7cc7ad0647d11f3cd399f4cb26e6272"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2748,18 +2748,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="automati_22" supported="no">
-		<description>Automation Menu Disk 018</description>
-		<year>19??</year>
-		<publisher>LSD - Was -Not Was</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="automation menu disk 018 (19xx)(lsd - was -not was-).st" size="737280" crc="43f47de8" sha1="4958ab185eb28b8e228aad3bcfc41f75d3f7e94e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="automati_23" supported="no">
 		<description>Automation Menu Disk 018 (v2.0)</description>
 		<year>19??</year>
 		<publisher>Automation</publisher>
@@ -2797,6 +2785,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Modified LGD"/>
 			<dataarea name="flop" size="849920">
 				<rom name="automation menu disk 018 v2.0 (19xx)(automation)[m lgd].st" size="849920" crc="d3904505" sha1="92b18cb13bdcba002d13486f57bd4176e6739798"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="automati_23" supported="no">
+		<description>Automation Menu Disk 018</description>
+		<year>19??</year>
+		<publisher>LSD - Was -Not Was</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="automation menu disk 018 (19xx)(lsd - was -not was-).st" size="737280" crc="43f47de8" sha1="4958ab185eb28b8e228aad3bcfc41f75d3f7e94e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2934,36 +2934,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="automati_28" supported="no">
-		<description>Automation Menu Disk 023</description>
-		<year>1989</year>
-		<publisher>LSD - Was -Not Was</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="automation menu disk 023 (1989)(lsd - was -not was-).st" size="737280" crc="7f02d5f9" sha1="f5a8d7d007417b8db853a003d171249af255a11b"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="737280">
-				<rom name="automation menu disk 023 (1989)(lsd - was -not was-)[a].st" size="737280" crc="0181f21d" sha1="1101e6dc91a1babd8c321b157a9e2facf2ea7eff"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 2"/>
-			<dataarea name="flop" size="737280">
-				<rom name="automation menu disk 023 (1989)(lsd - was -not was-)[a2].st" size="737280" crc="db6a3fab" sha1="4a95a4ea91d9db3ce2fb890e0b3ffb478c695a06"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 3"/>
-			<dataarea name="flop" size="755712">
-				<rom name="automation menu disk 023 (1989)(lsd - was -not was-)[a3].st" size="755712" crc="3535ca5c" sha1="6e3aa5e89bb8fa8f13d88a81a6d40c1d9e420ce7"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="automati_29" supported="no">
 		<description>Automation Menu Disk 023 (v2.0)</description>
 		<year>19??</year>
 		<publisher>Automation</publisher>
@@ -2989,6 +2959,36 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Modified LGD"/>
 			<dataarea name="flop" size="839680">
 				<rom name="automation menu disk 023 v2.0 (19xx)(automation)[m lgd].st" size="839680" crc="4fe85db3" sha1="dacd9c6a3856cce572806d7e173780a8da3146f3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="automati_29" supported="no">
+		<description>Automation Menu Disk 023</description>
+		<year>1989</year>
+		<publisher>LSD - Was -Not Was</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="automation menu disk 023 (1989)(lsd - was -not was-).st" size="737280" crc="7f02d5f9" sha1="f5a8d7d007417b8db853a003d171249af255a11b"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="automation menu disk 023 (1989)(lsd - was -not was-)[a].st" size="737280" crc="0181f21d" sha1="1101e6dc91a1babd8c321b157a9e2facf2ea7eff"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="automation menu disk 023 (1989)(lsd - was -not was-)[a2].st" size="737280" crc="db6a3fab" sha1="4a95a4ea91d9db3ce2fb890e0b3ffb478c695a06"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 3"/>
+			<dataarea name="flop" size="755712">
+				<rom name="automation menu disk 023 (1989)(lsd - was -not was-)[a3].st" size="755712" crc="3535ca5c" sha1="6e3aa5e89bb8fa8f13d88a81a6d40c1d9e420ce7"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3282,6 +3282,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="automati_39" supported="no">
+		<description>Automation Menu Disk 033 (v2.0)</description>
+		<year>19??</year>
+		<publisher>Automation</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="automation menu disk 033 v2.0 (19xx)(automation).st" size="839680" crc="7cb7c26f" sha1="fa37579f45586c964c1a7894a8d5c3957bbe200c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="automati_40" supported="no">
 		<description>Automation Menu Disk 033</description>
 		<year>1989</year>
 		<publisher>LSD - Was -Not Was</publisher>
@@ -3307,18 +3319,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Modified LGD"/>
 			<dataarea name="flop" size="737280">
 				<rom name="automation menu disk 033 (1989)(lsd - was -not was-)[m lgd].st" size="737280" crc="43dfd0b0" sha1="0c23f8ad5b1bd4628420d37200bc23198326da48"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="automati_40" supported="no">
-		<description>Automation Menu Disk 033 (v2.0)</description>
-		<year>19??</year>
-		<publisher>Automation</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="839680">
-				<rom name="automation menu disk 033 v2.0 (19xx)(automation).st" size="839680" crc="7cb7c26f" sha1="fa37579f45586c964c1a7894a8d5c3957bbe200c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -37985,6 +37985,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="klapauzi_2_a" cloneof="klapauzi_2" supported="no">
+		<description>Klapauzius Menu Disk 03 (v2.0)</description>
+		<year>2004</year>
+		<publisher>Klapauzius</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="934912">
+				<rom name="klapauzius menu disk 03 v2.0 (2004)(klapauzius).st" size="934912" crc="8ba0c478" sha1="20d39e7507bf18ec12aabc5df4d8d85b2f468bb1"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="klapauzi_3" supported="no">
 		<description>Klapauzius Menu Disk 03 (1)</description>
 		<year>19??</year>
@@ -37994,18 +38006,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Bad 1"/>
 			<dataarea name="flop" size="615424">
 				<rom name="klapauzius menu disk 03 (19xx)(klapazius)[b].st" size="615424" crc="16ee7e19" sha1="3ff731fb7f649393919e6e86485235178bf5644d" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="klapauzi_2_a" cloneof="klapauzi_2" supported="no">
-		<description>Klapauzius Menu Disk 03 (v2.0)</description>
-		<year>2004</year>
-		<publisher>Klapauzius</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="934912">
-				<rom name="klapauzius menu disk 03 v2.0 (2004)(klapauzius).st" size="934912" crc="8ba0c478" sha1="20d39e7507bf18ec12aabc5df4d8d85b2f468bb1"/>
 			</dataarea>
 		</part>
 	</software>

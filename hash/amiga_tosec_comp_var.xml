@@ -354,18 +354,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="anotherc_2" supported="no">
-		<description>Another Compacting Disk</description>
-		<year>1988</year>
-		<publisher>Tristar</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="another compacting disk (1988)(tristar).adf" size="901120" crc="5f394353" sha1="fb9cacb3b92572d5b78311ae9165bdb7e2bedaa9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="anotherc_3" supported="no">
 		<description>Another Compacting Disk (1)</description>
 		<year>1989</year>
 		<publisher>Kefrens</publisher>
@@ -373,6 +361,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="another compacting disk (1989)(kefrens).adf" size="901120" crc="6022f76d" sha1="caa65cac9bc59222d297a861d4904aa9eb4c1177"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anotherc_3" supported="no">
+		<description>Another Compacting Disk</description>
+		<year>1988</year>
+		<publisher>Tristar</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="another compacting disk (1988)(tristar).adf" size="901120" crc="5f394353" sha1="fb9cacb3b92572d5b78311ae9165bdb7e2bedaa9"/>
 			</dataarea>
 		</part>
 	</software>

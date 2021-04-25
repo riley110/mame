@@ -715,18 +715,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thecommo_30" supported="no">
-		<description>The Commodore Format PowerPacks #31 (GB)</description>
-		<year>19??</year>
-		<publisher>Future</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="commodore format powerpacks, the #31 (19xx)(future)(gb).d64" size="174848" crc="23ab9808" sha1="cc280895089267b5fb72721f9724a1a58507dd2a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thecommo_30_a" cloneof="thecommo_30" supported="no">
 		<description>The Commodore Format PowerPacks #31 (GB, 1994-04)</description>
 		<year>1994</year>
 		<publisher>Future</publisher>
@@ -734,6 +722,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="commodore format powerpacks, the #31 (1994-04)(future)(gb).d64" size="174848" crc="2ee028f4" sha1="487c7b650785c41a1f7325a658ca0e8ac294532e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thecommo_30_a" cloneof="thecommo_30" supported="no">
+		<description>The Commodore Format PowerPacks #31 (GB)</description>
+		<year>19??</year>
+		<publisher>Future</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="commodore format powerpacks, the #31 (19xx)(future)(gb).d64" size="174848" crc="23ab9808" sha1="cc280895089267b5fb72721f9724a1a58507dd2a"/>
 			</dataarea>
 		</part>
 	</software>

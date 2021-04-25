@@ -3001,19 +3001,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="copymate_1" supported="no">
-		<description>Copymate XE</description>
-		<year>19??</year>
-		<publisher>Mike Palmer</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="128k, k-file, Modified Mike Long - Peter Nicholls"/>
-			<dataarea name="flop" size="2576">
-				<rom name="copymate xe (19xx)(palmer, mike)[m mike long - peter nicholls][128k][k-file].atr" size="2576" crc="730eea32" sha1="f1ddcabcf8f2c921206b19f3b1c25533b333ebf7"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="copymate_2" supported="no">
 		<description>Copymate XE (v3.7, 1997-11-03)</description>
 		<year>1997</year>
 		<publisher>Jason Kay</publisher>
@@ -3026,7 +3013,44 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="copymate_2" supported="no">
+		<description>Copymate XE</description>
+		<year>19??</year>
+		<publisher>Mike Palmer</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="128k, k-file, Modified Mike Long - Peter Nicholls"/>
+			<dataarea name="flop" size="2576">
+				<rom name="copymate xe (19xx)(palmer, mike)[m mike long - peter nicholls][128k][k-file].atr" size="2576" crc="730eea32" sha1="f1ddcabcf8f2c921206b19f3b1c25533b333ebf7"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="copymate_3" supported="no">
+		<description>Copymate (US, v4.3)</description>
+		<year>1987</year>
+		<publisher>Mike Palmer - R. Hillery</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="copymate v4.3 (1987)(palmer, mike - hillery, r.)(us).atr" size="92176" crc="e4fad1ed" sha1="26772810e76b4d6d4ba4e394c0dae4c017bd9d4c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="copymate_3_a" cloneof="copymate_3" supported="no">
+		<description>Copymate (US, v4.4)</description>
+		<year>1987</year>
+		<publisher>Mike Palmer - R. Hillery</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="copymate v4.4 (1987)(palmer, mike - hillery, r.)(us).atr" size="92176" crc="36ea5de4" sha1="3b346b328d39fd19689f93a8f38c66d0eda10782"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="copymate_4" supported="no">
 		<description>Copymate (US, v1.4)</description>
 		<year>198?</year>
 		<publisher>Mike Palmer</publisher>
@@ -3041,30 +3065,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb, Alt 1"/>
 			<dataarea name="flop" size="65552">
 				<rom name="copymate v1.4 (198x)(palmer, mike)(us)[a][req osb].atr" size="65552" crc="305a389f" sha1="38d1bbf12f7beda824da10301b4ee91a9eada06b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="copymate_4" supported="no">
-		<description>Copymate (US, v4.3)</description>
-		<year>1987</year>
-		<publisher>Mike Palmer - R. Hillery</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="copymate v4.3 (1987)(palmer, mike - hillery, r.)(us).atr" size="92176" crc="e4fad1ed" sha1="26772810e76b4d6d4ba4e394c0dae4c017bd9d4c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="copymate_4_a" cloneof="copymate_4" supported="no">
-		<description>Copymate (US, v4.4)</description>
-		<year>1987</year>
-		<publisher>Mike Palmer - R. Hillery</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="copymate v4.4 (1987)(palmer, mike - hillery, r.)(us).atr" size="92176" crc="36ea5de4" sha1="3b346b328d39fd19689f93a8f38c66d0eda10782"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3224,24 +3224,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="doscontr_a" cloneof="doscontr" supported="no">
-		<description>DOS Control (pl, Demo, v2.5, 2002-08-01)</description>
-		<year>2002</year>
-		<publisher>Dial</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="183952">
-				<rom name="dos control v2.5 (demo) (2002-08-01)(dial)(pl).atr" size="183952" crc="c7900b48" sha1="e48af3923a933fc5d8689397ce3c4a3d9274fe08"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="183952">
-				<rom name="dos control v2.5 (demo) (2002-08-01)(dial)(pl)[a].atr" size="183952" crc="2e4a64b0" sha1="2c0bd58e6b343a43e963556e7a00f09f6c62d3dd"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="doscontr_b" cloneof="doscontr" supported="no">
 		<description>DOS Control (pl, v1.3, 2000-12-12)</description>
 		<year>2000</year>
 		<publisher>Dial</publisher>
@@ -3255,6 +3237,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="183952">
 				<rom name="dos control v1.3 (2000-12-12)(dial)(pl)[a].atr" size="183952" crc="fd4897d1" sha1="ffbb5ab9e1a1712c73dd190c56feb2114340486e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="doscontr_b" cloneof="doscontr" supported="no">
+		<description>DOS Control (pl, Demo, v2.5, 2002-08-01)</description>
+		<year>2002</year>
+		<publisher>Dial</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="183952">
+				<rom name="dos control v2.5 (demo) (2002-08-01)(dial)(pl).atr" size="183952" crc="c7900b48" sha1="e48af3923a933fc5d8689397ce3c4a3d9274fe08"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="183952">
+				<rom name="dos control v2.5 (demo) (2002-08-01)(dial)(pl)[a].atr" size="183952" crc="2e4a64b0" sha1="2c0bd58e6b343a43e963556e7a00f09f6c62d3dd"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3386,6 +3386,57 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="dos_d" cloneof="dos" supported="no">
+		<description>DOS (v2.5f)</description>
+		<year>1983</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Modified L.J. Silver"/>
+			<dataarea name="flop" size="92176">
+				<rom name="dos v2.5f (1983)(atari)[m l.j. silver].atr" size="92176" crc="cc422781" sha1="e9447087a820384a857d5c26d49692ecc4c1cec9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dos_e" cloneof="dos" supported="no">
+		<description>DOS (v2.6f)</description>
+		<year>1983</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Modified 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="dos v2.6f (1983)(atari)[m].atr" size="92176" crc="d48548b9" sha1="e8563350d45f694e0bac3e6feefc37c5fd165b38"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dos_f" cloneof="dos" supported="no">
+		<description>DOS (v2.8f)</description>
+		<year>1983</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Modified E.T. Horst"/>
+			<dataarea name="flop" size="92176">
+				<rom name="dos v2.8f (1983)(atari)[m e.t. horst].atr" size="92176" crc="84020f4c" sha1="d3ac0df5a378ea91ca41d641f65108205080cf3b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dos_g" cloneof="dos" supported="no">
+		<description>DOS (v3)</description>
+		<year>1983</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="dos v3 (1983)(atari).atr" size="92176" crc="cfccde6b" sha1="5d19788e08250cfd15a68d83b43d59ea302b5997"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dos_h" cloneof="dos" supported="no">
 		<description>DOS (v2.5)</description>
 		<year>1984</year>
 		<publisher>Atari</publisher>
@@ -3411,57 +3462,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Bad 2"/>
 			<dataarea name="flop" size="184336">
 				<rom name="dos v2.5 (1984)(atari)[b2].atr" size="184336" crc="d9c44f14" sha1="91fd09bc5f8bdda1398bfeff2f553c2eba0867d7" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dos_e" cloneof="dos" supported="no">
-		<description>DOS (v2.5f)</description>
-		<year>1983</year>
-		<publisher>Atari</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Modified L.J. Silver"/>
-			<dataarea name="flop" size="92176">
-				<rom name="dos v2.5f (1983)(atari)[m l.j. silver].atr" size="92176" crc="cc422781" sha1="e9447087a820384a857d5c26d49692ecc4c1cec9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dos_f" cloneof="dos" supported="no">
-		<description>DOS (v2.6f)</description>
-		<year>1983</year>
-		<publisher>Atari</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Modified 1"/>
-			<dataarea name="flop" size="92176">
-				<rom name="dos v2.6f (1983)(atari)[m].atr" size="92176" crc="d48548b9" sha1="e8563350d45f694e0bac3e6feefc37c5fd165b38"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dos_g" cloneof="dos" supported="no">
-		<description>DOS (v2.8f)</description>
-		<year>1983</year>
-		<publisher>Atari</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Modified E.T. Horst"/>
-			<dataarea name="flop" size="92176">
-				<rom name="dos v2.8f (1983)(atari)[m e.t. horst].atr" size="92176" crc="84020f4c" sha1="d3ac0df5a378ea91ca41d641f65108205080cf3b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dos_h" cloneof="dos" supported="no">
-		<description>DOS (v3)</description>
-		<year>1983</year>
-		<publisher>Atari</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="dos v3 (1983)(atari).atr" size="92176" crc="cfccde6b" sha1="5d19788e08250cfd15a68d83b43d59ea302b5997"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5773,18 +5773,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="iankmenu_1" supported="no">
-		<description>Ian.K Menu Creator</description>
-		<year>19??</year>
-		<publisher>Jolly Roger Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="65552">
-				<rom name="ian.k menu creator (19xx)(jolly roger software).atr" size="65552" crc="b4dc7151" sha1="4083d0f68cd85f3366206f47f5b3ce0ed9369ac2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="iankmenu_1_a" cloneof="iankmenu_1" supported="no">
 		<description>Ian.K Menu Creator (v1.9, 1987-04-06)</description>
 		<year>1987</year>
 		<publisher>Jolly Roger Software</publisher>
@@ -5792,6 +5780,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="65552">
 				<rom name="ian.k menu creator v1.9 (1987-04-06)(jolly roger software).atr" size="65552" crc="c7def772" sha1="1ea7fffeecd5af057342c2add254fa8f4be01b9a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="iankmenu_1_a" cloneof="iankmenu_1" supported="no">
+		<description>Ian.K Menu Creator</description>
+		<year>19??</year>
+		<publisher>Jolly Roger Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="65552">
+				<rom name="ian.k menu creator (19xx)(jolly roger software).atr" size="65552" crc="b4dc7151" sha1="4083d0f68cd85f3366206f47f5b3ce0ed9369ac2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7220,45 +7220,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musicpro" supported="no">
-		<description>Music ProTracker (pl, v2.0)</description>
-		<year>19??</year>
-		<publisher>Adam Bienias</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="14480">
-				<rom name="music protracker v2.0 (19xx)(bienias, adam)(pl)[k-file].atr" size="14480" crc="94cda799" sha1="4cc9dafd50f53819ba3ddec53dc3586ff3f02942"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicpro_a" cloneof="musicpro" supported="no">
-		<description>Music ProTracker (pl, v2.1c)</description>
-		<year>19??</year>
-		<publisher>Adam Bienias</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="14992">
-				<rom name="music protracker v2.1c (19xx)(bienias, adam)(pl)[k-file].atr" size="14992" crc="5e20dea5" sha1="4d1eef0b6212b056e6436a707d7a3adf87623b50"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicpro_b" cloneof="musicpro" supported="no">
-		<description>Music ProTracker (pl, v2.4)</description>
-		<year>19??</year>
-		<publisher>Adam Bienias</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="15376">
-				<rom name="music protracker v2.4 (19xx)(bienias, adam)(pl)[k-file].atr" size="15376" crc="847350b7" sha1="9cf696a09ca01f0590187ab430a2200420896ca8"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicpro_c" cloneof="musicpro" supported="no">
 		<description>Music ProTracker (pl, v2.4s+)</description>
 		<year>1996</year>
 		<publisher>Adam Bienias</publisher>
@@ -7279,6 +7240,45 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Hacked Tight"/>
 			<dataarea name="flop" size="15504">
 				<rom name="music protracker v2.4s+ (1996)(bienias, adam)(pl)[h tight][k-file].atr" size="15504" crc="a0f92101" sha1="2bae99e6f2c56a993215140a35ce4fa5f05db098"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicpro_a" cloneof="musicpro" supported="no">
+		<description>Music ProTracker (pl, v2.0)</description>
+		<year>19??</year>
+		<publisher>Adam Bienias</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="14480">
+				<rom name="music protracker v2.0 (19xx)(bienias, adam)(pl)[k-file].atr" size="14480" crc="94cda799" sha1="4cc9dafd50f53819ba3ddec53dc3586ff3f02942"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicpro_b" cloneof="musicpro" supported="no">
+		<description>Music ProTracker (pl, v2.1c)</description>
+		<year>19??</year>
+		<publisher>Adam Bienias</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="14992">
+				<rom name="music protracker v2.1c (19xx)(bienias, adam)(pl)[k-file].atr" size="14992" crc="5e20dea5" sha1="4d1eef0b6212b056e6436a707d7a3adf87623b50"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicpro_c" cloneof="musicpro" supported="no">
+		<description>Music ProTracker (pl, v2.4)</description>
+		<year>19??</year>
+		<publisher>Adam Bienias</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="15376">
+				<rom name="music protracker v2.4 (19xx)(bienias, adam)(pl)[k-file].atr" size="15376" crc="847350b7" sha1="9cf696a09ca01f0590187ab430a2200420896ca8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9189,19 +9189,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="soundtra_2" supported="no">
-		<description>SoundTracker Player (pl, 1991-06-30)</description>
-		<year>1991</year>
-		<publisher>Tomasz Pecko - Karol Komorowski</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="HImem"/>
-			<dataarea name="flop" size="133136">
-				<rom name="soundtracker player (1991-06-30)(pecko, tomasz - komorowski, karol)(pl)[himem].atr" size="133136" crc="e76cc2e4" sha1="84404fd37bb6c213ca7f0c1528c4a988b3126e09"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="soundtra_3" supported="no">
 		<description>SoundTracker Player (pl, v2.00)</description>
 		<year>19??</year>
 		<publisher>Mirage - New Generation Software</publisher>
@@ -9213,7 +9200,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="soundtra_4" supported="no">
+	<software name="soundtra_3" supported="no">
 		<description>SoundTracker Player (pl, v2.1)</description>
 		<year>1992</year>
 		<publisher>Mirage</publisher>
@@ -9222,6 +9209,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Cracked by Vulture"/>
 			<dataarea name="flop" size="133136">
 				<rom name="soundtracker player v2.1 (1992)(mirage)(pl)[cr vulture].atr" size="133136" crc="a677df65" sha1="f9ab42fd1492ef17e4c4f39b1061a98e33a4890d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="soundtra_4" supported="no">
+		<description>SoundTracker Player (pl, 1991-06-30)</description>
+		<year>1991</year>
+		<publisher>Tomasz Pecko - Karol Komorowski</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="HImem"/>
+			<dataarea name="flop" size="133136">
+				<rom name="soundtracker player (1991-06-30)(pecko, tomasz - komorowski, karol)(pl)[himem].atr" size="133136" crc="e76cc2e4" sha1="84404fd37bb6c213ca7f0c1528c4a988b3126e09"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9315,25 +9315,26 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="spartado_6" supported="no">
-		<description>SpartaDOS (v3.2d, 1986-02-17)</description>
-		<year>1986</year>
-		<publisher>ICD</publisher>
+		<description>SpartaDOS (v3.2x)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92176">
-				<rom name="spartados v3.2d (1986-02-17)(icd).atr" size="92176" crc="06948b83" sha1="8f860910d03cc875252b014b11f70c5a43d76461"/>
+				<rom name="spartados v3.2x (198x)(-).atr" size="92176" crc="55ead337" sha1="fed0dbe514a59b13701557516530e23df1a8bdd8"/>
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="92176">
-				<rom name="spartados v3.2d (1986-02-17)(icd)[a].atr" size="92176" crc="76573e8c" sha1="4f7d52d9ab18ff4281f6b3d0c377356f998a1759"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2"/>
-			<dataarea name="flop" size="92176">
-				<rom name="spartados v3.2d (1986-02-17)(icd)[a2].atr" size="92176" crc="52f20dba" sha1="98d9fdce7ad35c55011bc62d51a6e39ecda128be"/>
+	</software>
+
+	<software name="spartado_6_a" cloneof="spartado_6" supported="no">
+		<description>SpartaDOS (v3.3b)</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Modified OS Ram"/>
+			<dataarea name="flop" size="183952">
+				<rom name="spartados v3.3b (199x)(-)[m os ram].atr" size="183952" crc="3ca350c0" sha1="571ef1894fd91325b7ed02ede23c5fbb12c1607f"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9399,26 +9400,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="spartado_8" supported="no">
-		<description>SpartaDOS (v3.2x)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>SpartaDOS (v3.2d, 1986-02-17)</description>
+		<year>1986</year>
+		<publisher>ICD</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92176">
-				<rom name="spartados v3.2x (198x)(-).atr" size="92176" crc="55ead337" sha1="fed0dbe514a59b13701557516530e23df1a8bdd8"/>
+				<rom name="spartados v3.2d (1986-02-17)(icd).atr" size="92176" crc="06948b83" sha1="8f860910d03cc875252b014b11f70c5a43d76461"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="spartado_8_a" cloneof="spartado_8" supported="no">
-		<description>SpartaDOS (v3.3b)</description>
-		<year>199?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Modified OS Ram"/>
-			<dataarea name="flop" size="183952">
-				<rom name="spartados v3.3b (199x)(-)[m os ram].atr" size="183952" crc="3ca350c0" sha1="571ef1894fd91325b7ed02ede23c5fbb12c1607f"/>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="spartados v3.2d (1986-02-17)(icd)[a].atr" size="92176" crc="76573e8c" sha1="4f7d52d9ab18ff4281f6b3d0c377356f998a1759"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
+			<dataarea name="flop" size="92176">
+				<rom name="spartados v3.2d (1986-02-17)(icd)[a2].atr" size="92176" crc="52f20dba" sha1="98d9fdce7ad35c55011bc62d51a6e39ecda128be"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9773,19 +9773,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="sysinfo" supported="no">
-		<description>SysInfo (pl, v1.8, 1995-02-13, Beta)</description>
-		<year>1995</year>
-		<publisher>KMK Soft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="5392">
-				<rom name="sysinfo v1.8 (1995-02-13)(kmk soft)(pl)(beta)[k-file].atr" size="5392" crc="f5c06e5a" sha1="aa1d63f7e9560d224b14785be011140c092c8ed9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="sysinfo_1" supported="no">
 		<description>SysInfo (pl, v2.02, 1996-12-31, Freeware)</description>
 		<year>1996</year>
 		<publisher>Draco</publisher>
@@ -9797,7 +9784,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sysinfo_1_a" cloneof="sysinfo_1" supported="no">
+	<software name="sysinfo_a" cloneof="sysinfo" supported="no">
 		<description>SysInfo (pl, v2.03, 1997-07-22, Freeware)</description>
 		<year>1997</year>
 		<publisher>Draco</publisher>
@@ -9805,6 +9792,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92176">
 				<rom name="sysinfo v2.03 (1997-07-22)(draco)(pl)(fw).atr" size="92176" crc="25c91a53" sha1="a3fb49a233b2ffcce7acab0a27d9c2dcac4bd08a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sysinfo_1" supported="no">
+		<description>SysInfo (pl, v1.8, 1995-02-13, Beta)</description>
+		<year>1995</year>
+		<publisher>KMK Soft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="5392">
+				<rom name="sysinfo v1.8 (1995-02-13)(kmk soft)(pl)(beta)[k-file].atr" size="5392" crc="f5c06e5a" sha1="aa1d63f7e9560d224b14785be011140c092c8ed9"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9974,6 +9974,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thearchi_a" cloneof="thearchi" supported="no">
+		<description>The Archiver (v3.02)</description>
+		<year>1984</year>
+		<publisher>Spartan Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="65552">
+				<rom name="archiver, the v3.02 (1984)(spartan software).atr" size="65552" crc="e0cb9526" sha1="2574b6a42dd5157997a00261e6dad73f82a0a0d3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thearchi_b" cloneof="thearchi" supported="no">
 		<description>The Archiver (v1.1)</description>
 		<year>198?</year>
 		<publisher>Spartan Software</publisher>
@@ -9985,7 +9997,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="thearchi_b" cloneof="thearchi" supported="no">
+	<software name="thearchi_c" cloneof="thearchi" supported="no">
 		<description>The Archiver (v1.2)</description>
 		<year>198?</year>
 		<publisher>Spartan Software</publisher>
@@ -9993,18 +10005,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="65552">
 				<rom name="archiver, the v1.2 (198x)(spartan software).atr" size="65552" crc="cae21f0c" sha1="836cbcbe56a59b97d9352836307b0dcc05031906"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thearchi_c" cloneof="thearchi" supported="no">
-		<description>The Archiver (v3.02)</description>
-		<year>1984</year>
-		<publisher>Spartan Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="65552">
-				<rom name="archiver, the v3.02 (1984)(spartan software).atr" size="65552" crc="e0cb9526" sha1="2574b6a42dd5157997a00261e6dad73f82a0a0d3"/>
 			</dataarea>
 		</part>
 	</software>

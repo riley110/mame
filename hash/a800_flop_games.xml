@@ -45,6 +45,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="007theli" supported="no">
+		<description>007 - The Living Daylights (NL, en)</description>
+		<year>1994</year>
+		<publisher>ANG Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="007 - the living daylights (1994)(ang software)(nl)(en).atr" size="92176" crc="13c9365f" sha1="9c374a09e1457fedd8bda380c750996d1b2cabe2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="007theli_1" supported="no">
 		<description>007 - The Living Daylights (GB)</description>
 		<year>1987</year>
 		<publisher>Domark</publisher>
@@ -76,18 +88,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file"/>
 			<dataarea name="flop" size="30224">
 				<rom name="007 - the living daylights (1987)(domark)(gb)[k-file].atr" size="30224" crc="40f74ba8" sha1="7193e3d75e077106e46a16a02b874f3c46d68056"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="007theli_1" supported="no">
-		<description>007 - The Living Daylights (NL, en)</description>
-		<year>1994</year>
-		<publisher>ANG Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="007 - the living daylights (1994)(ang software)(nl)(en).atr" size="92176" crc="13c9365f" sha1="9c374a09e1457fedd8bda380c750996d1b2cabe2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -739,18 +739,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="aceoface" supported="no">
-		<description>Ace of Aces (GB)</description>
-		<year>1987</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="ace of aces (1987)(u.s. gold)(gb).atr" size="92176" crc="4df3d972" sha1="79d96a1ed0b24173ff3f1a3dba036b5f7f92cb3a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="aceoface_1" supported="no">
 		<description>Ace of Aces (US)</description>
 		<year>1987</year>
 		<publisher>Accolade</publisher>
@@ -768,7 +756,32 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="aceoface_1" supported="no">
+		<description>Ace of Aces (GB)</description>
+		<year>1987</year>
+		<publisher>U.S. Gold</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="ace of aces (1987)(u.s. gold)(gb).atr" size="92176" crc="4df3d972" sha1="79d96a1ed0b24173ff3f1a3dba036b5f7f92cb3a"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="aceydeuc" supported="no">
+		<description>Acey-Deucey (US) (1)</description>
+		<year>19??</year>
+		<publisher>Creative Computing</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="92176">
+				<rom name="acey-deucey (19xx)(creative computing)(us)[k-file].atr" size="92176" crc="6dd7304a" sha1="2fd841184a6dbe5b7d22ca4f434a42bf2cade68b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aceydeuc_1" supported="no">
 		<description>Acey-Deucey (US)</description>
 		<year>1982</year>
 		<publisher>L&amp;S Computerware</publisher>
@@ -783,19 +796,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb, k-file, Alt 1"/>
 			<dataarea name="flop" size="15888">
 				<rom name="acey-deucey (1982)(l&amp;s computerware)(us)[a][req osb][k-file].atr" size="15888" crc="2746d1a0" sha1="e978f8924352eb5a3c6a2356c5b8fd981a5db34a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="aceydeuc_1" supported="no">
-		<description>Acey-Deucey (US) (1)</description>
-		<year>19??</year>
-		<publisher>Creative Computing</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="92176">
-				<rom name="acey-deucey (19xx)(creative computing)(us)[k-file].atr" size="92176" crc="6dd7304a" sha1="2fd841184a6dbe5b7d22ca4f434a42bf2cade68b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1376,18 +1376,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="adventur_25" supported="no">
-		<description>AdventureWriter (FR)</description>
-		<year>1985</year>
-		<publisher>Sofitec</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="adventurewriter (1985)(sofitec)(fr).atr" size="92176" crc="bcb59dc0" sha1="06d914b8db13e6d66ab0c164bd47a318e11475f0"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="adventur_26" supported="no">
 		<description>AdventureWriter (US)</description>
 		<year>1984</year>
 		<publisher>CodeWriter</publisher>
@@ -1401,6 +1389,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file"/>
 			<dataarea name="flop" size="17168">
 				<rom name="adventurewriter (1984)(codewriter)(us)[k-file].atr" size="17168" crc="5549a01c" sha1="db2939790444ec916ba150452aa241f752627776"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="adventur_26" supported="no">
+		<description>AdventureWriter (FR)</description>
+		<year>1985</year>
+		<publisher>Sofitec</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="adventurewriter (1985)(sofitec)(fr).atr" size="92176" crc="bcb59dc0" sha1="06d914b8db13e6d66ab0c164bd47a318e11475f0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1727,6 +1727,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="airline" supported="no">
+		<description>Airline (US)</description>
+		<year>1982</year>
+		<publisher>Adventure International</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="req OSb"/>
+			<dataarea name="flop" size="92176">
+				<rom name="airline (1982)(adventure international)(us)[req osb].atr" size="92176" crc="0026f308" sha1="25ad179a1547a15a3b8e255746a3be8b6e6a08b0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="airline_1" supported="no">
 		<description>Airline (DE)</description>
 		<year>1985</year>
 		<publisher>Ariolasoft</publisher>
@@ -1740,19 +1753,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="airline (1985)(ariolasoft)(de)[a].atr" size="133136" crc="3f91647c" sha1="d311c0b60e94ba66b24d2dc8a1623ecd2542afd7"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="airline_1" supported="no">
-		<description>Airline (US)</description>
-		<year>1982</year>
-		<publisher>Adventure International</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="req OSb"/>
-			<dataarea name="flop" size="92176">
-				<rom name="airline (1982)(adventure international)(us)[req osb].atr" size="92176" crc="0026f308" sha1="25ad179a1547a15a3b8e255746a3be8b6e6a08b0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1907,18 +1907,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="alexrobb" supported="no">
-		<description>Alex - Robbo 3</description>
-		<year>1992</year>
-		<publisher>Robo-Soft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="65552">
-				<rom name="alex - robbo 3 (1992)(robo-soft).atr" size="65552" crc="f3464846" sha1="53b35a7a9d3c837846a3cb7754584ab42bec7bbe"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="alexrobb_1" supported="no">
 		<description>Alex - Robbo 3 (pl)</description>
 		<year>1992</year>
 		<publisher>L.K. Avalon</publisher>
@@ -1933,6 +1921,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="noATR, k-file"/>
 			<dataarea name="flop" size="55952">
 				<rom name="alex - robbo 3 (1992)(l.k. avalon)(pl)[noatr][k-file].atr" size="55952" crc="daa0a298" sha1="9c3bb9e36693449bc47ff505032a072711112d06"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="alexrobb_1" supported="no">
+		<description>Alex - Robbo 3</description>
+		<year>1992</year>
+		<publisher>Robo-Soft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="65552">
+				<rom name="alex - robbo 3 (1992)(robo-soft).atr" size="65552" crc="f3464846" sha1="53b35a7a9d3c837846a3cb7754584ab42bec7bbe"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3382,32 +3382,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="arena300" supported="no">
-		<description>Arena 3000 (GB)</description>
-		<year>1984</year>
-		<publisher>Microdeal</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="5904">
-				<rom name="arena 3000 (1984)(microdeal)(gb)[k-file].atr" size="5904" crc="d30c5515" sha1="d711374e6c7933bd3dfc3b7f871d6db025143a45"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="arena300_a" cloneof="arena300" supported="no">
-		<description>Arena 3000 (PAL, GB)</description>
-		<year>1984</year>
-		<publisher>Microdeal</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="no SIO patch"/>
-			<dataarea name="flop" size="92176">
-				<rom name="arena 3000 (1984)(microdeal)(pal)(gb)[no sio patch].atr" size="92176" crc="239405a5" sha1="f0946bdff84b45c80f76affd1678f6be4c207d9e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="arena300_1" supported="no">
 		<description>Arena 3000 (US)</description>
 		<year>1982</year>
 		<publisher>Med Systems</publisher>
@@ -3422,6 +3396,32 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Alt 1"/>
 			<dataarea name="flop" size="8464">
 				<rom name="arena 3000 (1982)(med systems)(us)[a][k-file].atr" size="8464" crc="4ac2c0cf" sha1="fb1af4dd2d5c7d9898af61be50c31437fdfbb35a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arena300_1" supported="no">
+		<description>Arena 3000 (GB)</description>
+		<year>1984</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="5904">
+				<rom name="arena 3000 (1984)(microdeal)(gb)[k-file].atr" size="5904" crc="d30c5515" sha1="d711374e6c7933bd3dfc3b7f871d6db025143a45"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arena300_1_a" cloneof="arena300_1" supported="no">
+		<description>Arena 3000 (PAL, GB)</description>
+		<year>1984</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="no SIO patch"/>
+			<dataarea name="flop" size="92176">
+				<rom name="arena 3000 (1984)(microdeal)(pal)(gb)[no sio patch].atr" size="92176" crc="239405a5" sha1="f0946bdff84b45c80f76affd1678f6be4c207d9e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3470,14 +3470,20 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="arkanoid" supported="no">
-		<description>Arkanoid II (NL, Public Domain)</description>
-		<year>1987</year>
-		<publisher>Prof Soft</publisher>
+		<description>Arkanoid II (Public Domain)</description>
+		<year>1988</year>
+		<publisher>KGBisoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="compressed, k-file, Trained 1"/>
+			<dataarea name="flop" size="25872">
+				<rom name="arkanoid ii (1988)(kgbisoft)(pd)[t][compressed][k-file].atr" size="25872" crc="d53bbcfc" sha1="d744ab6052b361fece5f446ccbe72cae9bf702a1"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="k-file, Trained 1"/>
-			<dataarea name="flop" size="39312">
-				<rom name="arkanoid ii (1987)(prof soft)(nl)(pd)[t][k-file].atr" size="39312" crc="034587ac" sha1="9b20fa4162ef21d43ffa608d9b0f080181743292"/>
+			<dataarea name="flop" size="38160">
+				<rom name="arkanoid ii (1988)(kgbisoft)(pd)[t][k-file].atr" size="38160" crc="c47db6b4" sha1="32cc4961af31dbb3374a4e9e6a26175b4aa54f57"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3496,20 +3502,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="arkanoid_2" supported="no">
-		<description>Arkanoid II (Public Domain)</description>
-		<year>1988</year>
-		<publisher>KGBisoft</publisher>
+		<description>Arkanoid II (NL, Public Domain)</description>
+		<year>1987</year>
+		<publisher>Prof Soft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="compressed, k-file, Trained 1"/>
-			<dataarea name="flop" size="25872">
-				<rom name="arkanoid ii (1988)(kgbisoft)(pd)[t][compressed][k-file].atr" size="25872" crc="d53bbcfc" sha1="d744ab6052b361fece5f446ccbe72cae9bf702a1"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="k-file, Trained 1"/>
-			<dataarea name="flop" size="38160">
-				<rom name="arkanoid ii (1988)(kgbisoft)(pd)[t][k-file].atr" size="38160" crc="c47db6b4" sha1="32cc4961af31dbb3374a4e9e6a26175b4aa54f57"/>
+			<dataarea name="flop" size="39312">
+				<rom name="arkanoid ii (1987)(prof soft)(nl)(pd)[t][k-file].atr" size="39312" crc="034587ac" sha1="9b20fa4162ef21d43ffa608d9b0f080181743292"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4415,6 +4415,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="attackof_1" supported="no">
+		<description>Attack of the Mutant Camels (US)</description>
+		<year>1983</year>
+		<publisher>Human Engineered Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="aka Gridrunner II, k-file"/>
+			<dataarea name="flop" size="8848">
+				<rom name="attack of the mutant camels (1983)(human engineered software)(us)[aka gridrunner ii][k-file].atr" size="8848" crc="a5145278" sha1="5748c92f0345197780d53080dfd478c6aacd0d3e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="attackof_2" supported="no">
 		<description>Attack of the Mutant Camels (GB)</description>
 		<year>1984</year>
 		<publisher>Llamasoft</publisher>
@@ -4441,19 +4454,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Alt 2"/>
 			<dataarea name="flop" size="10768">
 				<rom name="attack of the mutant camels (1984)(llamasoft)(gb)[a2][k-file].atr" size="10768" crc="fcbf285f" sha1="cf5556659c64372005fb55a90b957a1d851a6588"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="attackof_2" supported="no">
-		<description>Attack of the Mutant Camels (US)</description>
-		<year>1983</year>
-		<publisher>Human Engineered Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="aka Gridrunner II, k-file"/>
-			<dataarea name="flop" size="8848">
-				<rom name="attack of the mutant camels (1983)(human engineered software)(us)[aka gridrunner ii][k-file].atr" size="8848" crc="a5145278" sha1="5748c92f0345197780d53080dfd478c6aacd0d3e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4663,6 +4663,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="avalanch" supported="no">
+		<description>Avalanche (US)</description>
+		<year>1984</year>
+		<publisher>ANALOG Computing</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="5648">
+				<rom name="avalanche (1984)(analog computing)(us)[k-file].atr" size="5648" crc="85763392" sha1="bf89682e8261a462ccbfbaa7762985f834933462"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="avalanch_1" supported="no">
 		<description>Avalanche</description>
 		<year>1982</year>
 		<publisher>Atari</publisher>
@@ -4676,19 +4689,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="noATR, k-file"/>
 			<dataarea name="flop" size="7440">
 				<rom name="avalanche (1982)(atari)[noatr][k-file].atr" size="7440" crc="48fd62dd" sha1="0653f5dca173c9a05b8e2aa1c4fecf781bbb29fb"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="avalanch_1" supported="no">
-		<description>Avalanche (US)</description>
-		<year>1984</year>
-		<publisher>ANALOG Computing</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="5648">
-				<rom name="avalanche (1984)(analog computing)(us)[k-file].atr" size="5648" crc="85763392" sha1="bf89682e8261a462ccbfbaa7762985f834933462"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4879,6 +4879,31 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="b1nuclea" supported="no">
+		<description>B-1 Nuclear Bomber (US)</description>
+		<year>1981</year>
+		<publisher>Avalon Hill</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="65552">
+				<rom name="b-1 nuclear bomber (1981)(avalon hill)(us)[basic].atr" size="65552" crc="62e1db84" sha1="61d2d87fff67f92e0f5d18dc29c32d07fc860187"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="b1nuclea_a" cloneof="b1nuclea" supported="no">
+		<description>B-1 Nuclear Bomber (US) (1)</description>
+		<year>1983</year>
+		<publisher>Avalon Hill</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="b-1 nuclear bomber (1983)(avalon hill)(us).atr" size="92176" crc="1d4a3876" sha1="aba9f4e932cf0d15d9752b385e016c795c8411ba"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="b1nuclea_1" supported="no">
 		<description>B-1 Nuclear Bomber</description>
 		<year>1981</year>
 		<publisher>Powersoft</publisher>
@@ -4892,31 +4917,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file"/>
 			<dataarea name="flop" size="19088">
 				<rom name="b-1 nuclear bomber (1981)(powersoft)[k-file].atr" size="19088" crc="491f7472" sha1="05b5c9222806a1617aa36018053c7ed7a96e253e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="b1nuclea_1" supported="no">
-		<description>B-1 Nuclear Bomber (US)</description>
-		<year>1981</year>
-		<publisher>Avalon Hill</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="65552">
-				<rom name="b-1 nuclear bomber (1981)(avalon hill)(us)[basic].atr" size="65552" crc="62e1db84" sha1="61d2d87fff67f92e0f5d18dc29c32d07fc860187"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="b1nuclea_1_a" cloneof="b1nuclea_1" supported="no">
-		<description>B-1 Nuclear Bomber (US) (1)</description>
-		<year>1983</year>
-		<publisher>Avalon Hill</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="b-1 nuclear bomber (1983)(avalon hill)(us).atr" size="92176" crc="1d4a3876" sha1="aba9f4e932cf0d15d9752b385e016c795c8411ba"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5207,6 +5207,32 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="ballblaz" supported="no">
+		<description>Ballblazer (US)</description>
+		<year>1985</year>
+		<publisher>Epyx</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Tournament Certified"/>
+			<dataarea name="flop" size="92176">
+				<rom name="ballblazer (1985)(epyx)(us)[tournament certified].atr" size="92176" crc="f54d2a6d" sha1="7663364b575c4595f965269153feed4fbf37d8c4"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ballblaz_1" supported="no">
+		<description>Ballblazer (US, Beta)</description>
+		<year>1983</year>
+		<publisher>Lucasfilm Games</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="unreleased, k-file"/>
+			<dataarea name="flop" size="31248">
+				<rom name="ballblazer (1983)(lucasfilm games)(us)(beta)[unreleased][k-file].atr" size="31248" crc="073a9e9a" sha1="e1c1e850c5b203f487266c7e6961f1483b9d5e5e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ballblaz_1_a" cloneof="ballblaz_1" supported="no">
 		<description>Ballblazer</description>
 		<year>1985</year>
 		<publisher>Lucasfilm Games</publisher>
@@ -5221,32 +5247,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Regulation Certified, k-file, Alt 1"/>
 			<dataarea name="flop" size="35344">
 				<rom name="ballblazer (1985)(lucasfilm games)[a][regulation certified][k-file].atr" size="35344" crc="245f8118" sha1="e3bb633690b917b7297a7ef92d2117881041abed"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ballblaz_1" supported="no">
-		<description>Ballblazer (US)</description>
-		<year>1985</year>
-		<publisher>Epyx</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Tournament Certified"/>
-			<dataarea name="flop" size="92176">
-				<rom name="ballblazer (1985)(epyx)(us)[tournament certified].atr" size="92176" crc="f54d2a6d" sha1="7663364b575c4595f965269153feed4fbf37d8c4"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ballblaz_a" cloneof="ballblaz" supported="no">
-		<description>Ballblazer (US, Beta)</description>
-		<year>1983</year>
-		<publisher>Lucasfilm Games</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="unreleased, k-file"/>
-			<dataarea name="flop" size="31248">
-				<rom name="ballblazer (1983)(lucasfilm games)(us)(beta)[unreleased][k-file].atr" size="31248" crc="073a9e9a" sha1="e1c1e850c5b203f487266c7e6961f1483b9d5e5e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6069,19 +6069,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="battlesh" supported="no">
-		<description>Battle Ships (GB)</description>
-		<year>1996</year>
-		<publisher>TWAUG Newsletter</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="65552">
-				<rom name="battle ships (1996)(twaug newsletter)(gb)[basic].atr" size="65552" crc="2544db2a" sha1="91455cb86ec55459c08992b10e59d409176c0b0e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="battlesh_1" supported="no">
 		<description>Battle Ships (PL, en, 1989-04-01)</description>
 		<year>1989</year>
 		<publisher>Mirage</publisher>
@@ -6138,6 +6125,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file"/>
 			<dataarea name="flop" size="37008">
 				<rom name="battle ships (1989-04-01)(mirage)(pl)(en)[k-file].atr" size="37008" crc="a4545cb4" sha1="036bf2f5ee1bf84dbaf32a30a4febd58e8fab00e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="battlesh_1" supported="no">
+		<description>Battle Ships (GB)</description>
+		<year>1996</year>
+		<publisher>TWAUG Newsletter</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="65552">
+				<rom name="battle ships (1996)(twaug newsletter)(gb)[basic].atr" size="65552" crc="2544db2a" sha1="91455cb86ec55459c08992b10e59d409176c0b0e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6675,31 +6675,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="berzerk" supported="no">
-		<description>Berzerk (DE, en, 1992-10)</description>
-		<year>1992</year>
-		<publisher>Zong</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="berzerk (1992-10)(zong)(de)(en).atr" size="92176" crc="00eae7f7" sha1="52cb2ad5dd3bfce2980b0fc0e01d2697f6e3dc74"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="berzerk_1" supported="no">
-		<description>Berzerk (DE, en, Public Domain)</description>
-		<year>1986</year>
-		<publisher>Star-Soft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="133136">
-				<rom name="berzerk (1986)(star-soft)(de)(en)(pd)[basic].atr" size="133136" crc="906ab9e3" sha1="38b765d473914b4290458806968150cb7a0b609a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="berzerk_2" supported="no">
 		<description>Berzerk (US, Prototype)</description>
 		<year>1983</year>
 		<publisher>Atari</publisher>
@@ -6731,6 +6706,31 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb, Trained by Wizard, Bad gfx"/>
 			<dataarea name="flop" size="65552">
 				<rom name="berzerk (1983)(atari)(us)(proto)[t wizard][b gfx][req osb].atr" size="65552" crc="53ea273c" sha1="c1fcfdd734679db176b865373c2f9bebe91fa075" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="berzerk_1" supported="no">
+		<description>Berzerk (DE, en, Public Domain)</description>
+		<year>1986</year>
+		<publisher>Star-Soft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="133136">
+				<rom name="berzerk (1986)(star-soft)(de)(en)(pd)[basic].atr" size="133136" crc="906ab9e3" sha1="38b765d473914b4290458806968150cb7a0b609a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="berzerk_2" supported="no">
+		<description>Berzerk (DE, en, 1992-10)</description>
+		<year>1992</year>
+		<publisher>Zong</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="berzerk (1992-10)(zong)(de)(en).atr" size="92176" crc="00eae7f7" sha1="52cb2ad5dd3bfce2980b0fc0e01d2697f6e3dc74"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7155,19 +7155,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="blackjac_1" supported="no">
-		<description>Blackjack</description>
-		<year>1981</year>
-		<publisher>Mag-Mar</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="bas2boot"/>
-			<dataarea name="flop" size="7952">
-				<rom name="blackjack (1981)(mag-mar)[bas2boot].atr" size="7952" crc="1cd4819c" sha1="5aa21d7e20b75091bd6595af288386e2cabec7b3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="blackjac_2" supported="no">
 		<description>Blackjack (1)</description>
 		<year>1984</year>
 		<publisher>Andrew Davie</publisher>
@@ -7176,6 +7163,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb"/>
 			<dataarea name="flop" size="65552">
 				<rom name="blackjack (1984)(davie, andrew)[req osb].atr" size="65552" crc="6b48ee43" sha1="de3cc84741f104a326a8c2f307d6f1423098a354"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blackjac_2" supported="no">
+		<description>Blackjack</description>
+		<year>1981</year>
+		<publisher>Mag-Mar</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="bas2boot"/>
+			<dataarea name="flop" size="7952">
+				<rom name="blackjack (1981)(mag-mar)[bas2boot].atr" size="7952" crc="1cd4819c" sha1="5aa21d7e20b75091bd6595af288386e2cabec7b3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7367,18 +7367,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="blockbus" supported="no">
-		<description>Blockbuster</description>
-		<year>19??</year>
-		<publisher>D.Knowles</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="blockbuster (19xx)(d.knowles).atr" size="92176" crc="b97247e8" sha1="b73f81fe98928215d17878d788d85463168edd1c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="blockbus_1" supported="no">
 		<description>Blockbuster (US)</description>
 		<year>1981</year>
 		<publisher>APX</publisher>
@@ -7387,6 +7375,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb, k-file"/>
 			<dataarea name="flop" size="27024">
 				<rom name="blockbuster (1981)(apx)(us)[req osb][k-file].atr" size="27024" crc="5d280c55" sha1="c693d0ad418fe32073f2af0138fdda373655ef60"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blockbus_1" supported="no">
+		<description>Blockbuster</description>
+		<year>19??</year>
+		<publisher>D.Knowles</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="blockbuster (19xx)(d.knowles).atr" size="92176" crc="b97247e8" sha1="b73f81fe98928215d17878d788d85463168edd1c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7958,6 +7958,31 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="boulderd_1" supported="no">
+		<description>Boulder Dash Construction Kit (US)</description>
+		<year>1986</year>
+		<publisher>Epyx</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="133136">
+				<rom name="boulder dash construction kit (1986)(epyx)(us)(side a).atr" size="133136" crc="e9cdd91d" sha1="f4cfa506978ed10e78c5f76e91656be579031f4d"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, Alt 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="boulder dash construction kit (1986)(epyx)(us)(side a)[a].atr" size="92176" crc="6b6e82bd" sha1="95e3cc7c6a5956a23617cf70600e821b7270d93e"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, Cracked by The Fox, Trained 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="boulder dash construction kit (1986)(epyx)(us)(side a)[cr the fox][t].atr" size="92176" crc="b85b65b9" sha1="f7a96e48ae7fc9031a92f2866ddd83d420cd3261"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boulderd_2" supported="no">
 		<description>Boulder Dash Construction Kit</description>
 		<year>1986</year>
 		<publisher>First Star Software</publisher>
@@ -8001,31 +8026,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Alt 1"/>
 			<dataarea name="flop" size="22288">
 				<rom name="boulder dash construction kit (1986)(first star software)[a][k-file].atr" size="22288" crc="da2008c8" sha1="7b11c57be915f1f941458f6e4bd56c825475d4b5"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="boulderd_2" supported="no">
-		<description>Boulder Dash Construction Kit (US)</description>
-		<year>1986</year>
-		<publisher>Epyx</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A"/>
-			<dataarea name="flop" size="133136">
-				<rom name="boulder dash construction kit (1986)(epyx)(us)(side a).atr" size="133136" crc="e9cdd91d" sha1="f4cfa506978ed10e78c5f76e91656be579031f4d"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt 1"/>
-			<dataarea name="flop" size="92176">
-				<rom name="boulder dash construction kit (1986)(epyx)(us)(side a)[a].atr" size="92176" crc="6b6e82bd" sha1="95e3cc7c6a5956a23617cf70600e821b7270d93e"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Cracked by The Fox, Trained 1"/>
-			<dataarea name="flop" size="92176">
-				<rom name="boulder dash construction kit (1986)(epyx)(us)(side a)[cr the fox][t].atr" size="92176" crc="b85b65b9" sha1="f7a96e48ae7fc9031a92f2866ddd83d420cd3261"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8110,37 +8110,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="boulderd_6" supported="no">
-		<description>Boulder Dash (DE)</description>
-		<year>1986</year>
-		<publisher>Oliver Cyranka</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="16912">
-				<rom name="boulder dash (1986)(cyranka, oliver)(de).atr" size="16912" crc="ae58e222" sha1="903422531a90e37fc64dba7d858067bb016cf283"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="17168">
-				<rom name="boulder dash (1986)(cyranka, oliver)(de)[k-file].atr" size="17168" crc="fd19ca68" sha1="788253c117d267deca333063f5e3187ab6dcb0e2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="boulderd_7" supported="no">
-		<description>Boulder Dash (PL, Public Domain)</description>
-		<year>1987</year>
-		<publisher>Iron Soft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="13200">
-				<rom name="boulder dash (1987)(iron soft)(pl)(pd)[k-file].atr" size="13200" crc="c6aac107" sha1="6fc4786075e431e5f227dd082d8adf306e881a79"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="boulderd_8" supported="no">
 		<description>Boulder Dash (US)</description>
 		<year>1984</year>
 		<publisher>First Star Software</publisher>
@@ -8242,7 +8211,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="boulderd_8_a" cloneof="boulderd_8" supported="no">
+	<software name="boulderd_6_a" cloneof="boulderd_6" supported="no">
 		<description>Boulder Dash (US) (1)</description>
 		<year>1986</year>
 		<publisher>First Star Software</publisher>
@@ -8251,6 +8220,37 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="tape version"/>
 			<dataarea name="flop" size="65552">
 				<rom name="boulder dash (1986)(first star software)(us)[tape version].atr" size="65552" crc="b35e863b" sha1="6f7786e68d43391f1fc724b06f525601933bcccc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boulderd_7" supported="no">
+		<description>Boulder Dash (PL, Public Domain)</description>
+		<year>1987</year>
+		<publisher>Iron Soft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="13200">
+				<rom name="boulder dash (1987)(iron soft)(pl)(pd)[k-file].atr" size="13200" crc="c6aac107" sha1="6fc4786075e431e5f227dd082d8adf306e881a79"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boulderd_8" supported="no">
+		<description>Boulder Dash (DE)</description>
+		<year>1986</year>
+		<publisher>Oliver Cyranka</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="16912">
+				<rom name="boulder dash (1986)(cyranka, oliver)(de).atr" size="16912" crc="ae58e222" sha1="903422531a90e37fc64dba7d858067bb016cf283"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="17168">
+				<rom name="boulder dash (1986)(cyranka, oliver)(de)[k-file].atr" size="17168" crc="fd19ca68" sha1="788253c117d267deca333063f5e3187ab6dcb0e2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8293,19 +8293,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bountybo_1" supported="no">
-		<description>Bounty Bob Strikes Back! (PAL, GB)</description>
-		<year>1985</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked Hack-A-tari"/>
-			<dataarea name="flop" size="92176">
-				<rom name="bounty bob strikes back (1985)(u.s. gold)(pal)(gb)[h hack-a-tari].atr" size="92176" crc="334660f2" sha1="2cf4a89c5fd91a9f93310750d24e3baf24516336"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="bountybo_a" cloneof="bountybo" supported="no">
 		<description>Bounty Bob Strikes Back! (PAL, NL, en)</description>
 		<year>1985</year>
@@ -8338,6 +8325,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Trained 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="bounty bob strikes back (1985)(aackosoft)(pal)(nl)(en)[t].atr" size="92176" crc="4eb7c346" sha1="56aa80d89235fbc63edfd79f7607f2f9f61ca7b1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bountybo_1" supported="no">
+		<description>Bounty Bob Strikes Back! (PAL, GB)</description>
+		<year>1985</year>
+		<publisher>U.S. Gold</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked Hack-A-tari"/>
+			<dataarea name="flop" size="92176">
+				<rom name="bounty bob strikes back (1985)(u.s. gold)(pal)(gb)[h hack-a-tari].atr" size="92176" crc="334660f2" sha1="2cf4a89c5fd91a9f93310750d24e3baf24516336"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8760,6 +8760,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="brutalre" supported="no">
+		<description>Brutal Recall (CZ, Demo)</description>
+		<year>1992</year>
+		<publisher>K-Soft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="21648">
+				<rom name="brutal recall (demo) (1992)(k-soft)(cz)[k-file].atr" size="21648" crc="6d2f6eeb" sha1="ea4e7fad76fb7a19d1271d336d251b383c51fecc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="brutalre_a" cloneof="brutalre" supported="no">
 		<description>Brutal Recall (CZ)</description>
 		<year>1993</year>
 		<publisher>K-Soft</publisher>
@@ -8773,19 +8786,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="brutal recall (1993)(k-soft)(cz)[a].atr" size="92176" crc="773627bd" sha1="23fecd1435cfd460a404f13ecacc7bfd56e8bd3d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="brutalre_a" cloneof="brutalre" supported="no">
-		<description>Brutal Recall (CZ, Demo)</description>
-		<year>1992</year>
-		<publisher>K-Soft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="21648">
-				<rom name="brutal recall (demo) (1992)(k-soft)(cz)[k-file].atr" size="21648" crc="6d2f6eeb" sha1="ea4e7fad76fb7a19d1271d336d251b383c51fecc"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9630,6 +9630,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="capturet" supported="no">
+		<description>Capture the Flag (US) (1)</description>
+		<year>19??</year>
+		<publisher>ANALOG Computing</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="65552">
+				<rom name="capture the flag (19xx)(analog computing)(us).atr" size="65552" crc="02ae965b" sha1="e201c9fd3133f5e39180448eb22093efe148f1b8"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Alt 1"/>
+			<dataarea name="flop" size="5520">
+				<rom name="capture the flag (19xx)(analog computing)(us)[a][k-file].atr" size="5520" crc="44107c2d" sha1="98c93e53f4605375356566c7d4bc5797eb1205fc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="capturet_1" supported="no">
 		<description>Capture the Flag (US)</description>
 		<year>1983</year>
 		<publisher>Sirius Software</publisher>
@@ -9650,24 +9668,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="no SIO patch"/>
 			<dataarea name="flop" size="92176">
 				<rom name="capture the flag (1983)(sirius software)(us)[no sio patch].atr" size="92176" crc="1b4f6a7c" sha1="0dbe74b11faa464b8f9ed16ef2433c4caf924e7a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="capturet_1" supported="no">
-		<description>Capture the Flag (US) (1)</description>
-		<year>19??</year>
-		<publisher>ANALOG Computing</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="65552">
-				<rom name="capture the flag (19xx)(analog computing)(us).atr" size="65552" crc="02ae965b" sha1="e201c9fd3133f5e39180448eb22093efe148f1b8"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="k-file, Alt 1"/>
-			<dataarea name="flop" size="5520">
-				<rom name="capture the flag (19xx)(analog computing)(us)[a][k-file].atr" size="5520" crc="44107c2d" sha1="98c93e53f4605375356566c7d4bc5797eb1205fc"/>
 			</dataarea>
 		</part>
 	</software>
@@ -10073,18 +10073,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="cavelord" supported="no">
-		<description>Cavelord</description>
-		<year>1985</year>
-		<publisher>Axis Komputerkunst</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="cavelord (1985)(axis komputerkunst).atr" size="92176" crc="d955e54b" sha1="296c2515759a58ec9a68245a02b76fbc89b8e623"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cavelord_1" supported="no">
 		<description>Cavelord (DE)</description>
 		<year>1985</year>
 		<publisher>Ariolasoft - Axis Komputerkunst</publisher>
@@ -10128,6 +10116,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Translated en"/>
 			<dataarea name="flop" size="25360">
 				<rom name="cavelord (1985)(ariolasoft - axis komputerkunst)(de)[tr en][k-file].atr" size="25360" crc="4635fcc6" sha1="f094fd576a360b3dead35a9b9b2f6171808935b6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cavelord_1" supported="no">
+		<description>Cavelord</description>
+		<year>1985</year>
+		<publisher>Axis Komputerkunst</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="cavelord (1985)(axis komputerkunst).atr" size="92176" crc="d955e54b" sha1="296c2515759a58ec9a68245a02b76fbc89b8e623"/>
 			</dataarea>
 		</part>
 	</software>
@@ -10201,6 +10201,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="cavernia" supported="no">
+		<description>Cavernia (GB) (1)</description>
+		<year>199?</year>
+		<publisher>Micro Discount</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="cavernia (199x)(micro discount)(gb).atr" size="92176" crc="ac110fd7" sha1="da535dcf644c05e857bdc45cc64db71a90a38f17"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cavernia_1" supported="no">
 		<description>Cavernia (GB)</description>
 		<year>1990</year>
 		<publisher>Zeppelin Games</publisher>
@@ -10238,18 +10250,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Hacked Mr. Bacardi"/>
 			<dataarea name="flop" size="36752">
 				<rom name="cavernia (1990)(zeppelin games)(gb)[h mr. bacardi][k-file].atr" size="36752" crc="8c8fd043" sha1="6512bc1d6ac6dfda7ef2b6bf21caf024d5600609"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cavernia_1" supported="no">
-		<description>Cavernia (GB) (1)</description>
-		<year>199?</year>
-		<publisher>Micro Discount</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="cavernia (199x)(micro discount)(gb).atr" size="92176" crc="ac110fd7" sha1="da535dcf644c05e857bdc45cc64db71a90a38f17"/>
 			</dataarea>
 		</part>
 	</software>
@@ -10458,6 +10458,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="centiped" supported="no">
+		<description>Centipede (US, Prototype)</description>
+		<year>1981</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="6032">
+				<rom name="centipede (1981)(atari)(us)(proto)[k-file].atr" size="6032" crc="52f753cc" sha1="3932e21d588939e823a4eb8e2586bf6045001116"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Alt 1"/>
+			<dataarea name="flop" size="8720">
+				<rom name="centipede (1981)(atari)(us)(proto)[a][k-file].atr" size="8720" crc="de028cd2" sha1="4ab93c69d11f7255745e7f7934c0a77049a7eb29"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="centiped_a" cloneof="centiped" supported="no">
 		<description>Centipede (US)</description>
 		<year>1982</year>
 		<publisher>Atari</publisher>
@@ -10476,7 +10495,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="centiped_a" cloneof="centiped" supported="no">
+	<software name="centiped_b" cloneof="centiped" supported="no">
 		<description>Centipede (US) (1)</description>
 		<year>198?</year>
 		<publisher>Atari</publisher>
@@ -10515,25 +10534,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="5200, k-file, Hacked Glenn, Alt 1"/>
 			<dataarea name="flop" size="15888">
 				<rom name="centipede (198x)(atari)(us)[h glenn][a][5200][k-file].atr" size="15888" crc="ab8f04b8" sha1="7dcfc55fba3d9c4fe78ac6e16f12e1039cba63d3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="centiped_b" cloneof="centiped" supported="no">
-		<description>Centipede (US, Prototype)</description>
-		<year>1981</year>
-		<publisher>Atari</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="6032">
-				<rom name="centipede (1981)(atari)(us)(proto)[k-file].atr" size="6032" crc="52f753cc" sha1="3932e21d588939e823a4eb8e2586bf6045001116"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="k-file, Alt 1"/>
-			<dataarea name="flop" size="8720">
-				<rom name="centipede (1981)(atari)(us)(proto)[a][k-file].atr" size="8720" crc="de028cd2" sha1="4ab93c69d11f7255745e7f7934c0a77049a7eb29"/>
 			</dataarea>
 		</part>
 	</software>
@@ -10728,36 +10728,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="checkers" supported="no">
-		<description>Checkers (US)</description>
-		<year>19??</year>
-		<publisher>Silicon Valley Systems</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="checkers (19xx)(silicon valley systems)(us).atr" size="92176" crc="a297e014" sha1="25c7dba7d74b2e4e70bda028f6d0dd405dbde389"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="7696">
-				<rom name="checkers (19xx)(silicon valley systems)(us)[k-file].atr" size="7696" crc="80a9d1c4" sha1="7b6d03bfa8fed4750d0a6baccb6d49b5fb556846"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="k-file, Alt 1"/>
-			<dataarea name="flop" size="7696">
-				<rom name="checkers (19xx)(silicon valley systems)(us)[a][k-file].atr" size="7696" crc="ab6a3c0d" sha1="acd5eb7ee0d15629bd09a6d1ca9fceaa08d0432d"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="k-file, Alt 2"/>
-			<dataarea name="flop" size="7696">
-				<rom name="checkers (19xx)(silicon valley systems)(us)[a2][k-file].atr" size="7696" crc="67ae231b" sha1="43a3873b8a99e2cb1b3be41a4d360572e440edcf"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="checkers_1" supported="no">
 		<description>Checkers (US, v2.1)</description>
 		<year>1982</year>
 		<publisher>Odesta</publisher>
@@ -10784,6 +10754,36 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb, k-file, Cracked by Pirateware"/>
 			<dataarea name="flop" size="14224">
 				<rom name="checkers v2.1 (1982)(odesta)(us)[cr pirateware][req osb][k-file].atr" size="14224" crc="2589466f" sha1="a9d561f33b3224707bdcaa908ad8caf6bab42339"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="checkers_1" supported="no">
+		<description>Checkers (US)</description>
+		<year>19??</year>
+		<publisher>Silicon Valley Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="checkers (19xx)(silicon valley systems)(us).atr" size="92176" crc="a297e014" sha1="25c7dba7d74b2e4e70bda028f6d0dd405dbde389"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="7696">
+				<rom name="checkers (19xx)(silicon valley systems)(us)[k-file].atr" size="7696" crc="80a9d1c4" sha1="7b6d03bfa8fed4750d0a6baccb6d49b5fb556846"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Alt 1"/>
+			<dataarea name="flop" size="7696">
+				<rom name="checkers (19xx)(silicon valley systems)(us)[a][k-file].atr" size="7696" crc="ab6a3c0d" sha1="acd5eb7ee0d15629bd09a6d1ca9fceaa08d0432d"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Alt 2"/>
+			<dataarea name="flop" size="7696">
+				<rom name="checkers (19xx)(silicon valley systems)(us)[a2][k-file].atr" size="7696" crc="67ae231b" sha1="43a3873b8a99e2cb1b3be41a4d360572e440edcf"/>
 			</dataarea>
 		</part>
 	</software>
@@ -10819,19 +10819,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="chess" supported="no">
-		<description>Chess (US)</description>
-		<year>1983</year>
-		<publisher>Parker Brothers</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="8720">
-				<rom name="chess (1983)(parker brothers)(us)[k-file].atr" size="8720" crc="2be20460" sha1="66e254e099eb5cb37857d1bc0a7faa2a828d6990"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="chess_1" supported="no">
 		<description>Chess (US) (1)</description>
 		<year>19??</year>
 		<publisher>Compute!</publisher>
@@ -10840,6 +10827,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="BASIC"/>
 			<dataarea name="flop" size="92176">
 				<rom name="chess (19xx)(compute)(us)[basic].atr" size="92176" crc="d4ba7a54" sha1="d5d7b4cd27ff37beffb88bf3c8378666479c5fc7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chess_1" supported="no">
+		<description>Chess (US)</description>
+		<year>1983</year>
+		<publisher>Parker Brothers</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="8720">
+				<rom name="chess (1983)(parker brothers)(us)[k-file].atr" size="8720" crc="2be20460" sha1="66e254e099eb5cb37857d1bc0a7faa2a828d6990"/>
 			</dataarea>
 		</part>
 	</software>
@@ -12650,18 +12650,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="countdow_1" supported="no">
-		<description>Countdown</description>
-		<year>1984</year>
-		<publisher>Synapse</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="countdown (1984)(synapse).atr" size="92176" crc="0471796a" sha1="d02b8ad67b2f1f27b340e6fa94aa0c9bc03d2ad7"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="countdow_2" supported="no">
 		<description>Countdown (US)</description>
 		<year>1984</year>
 		<publisher>Synapse Software</publisher>
@@ -12694,6 +12682,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Hacked Homesoft"/>
 			<dataarea name="flop" size="45584">
 				<rom name="countdown (1984)(synapse software)(us)[h homesoft][k-file].atr" size="45584" crc="79de256d" sha1="5dba815aba0361fdd119613de0b6d8a271820327"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="countdow_2" supported="no">
+		<description>Countdown</description>
+		<year>1984</year>
+		<publisher>Synapse</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="countdown (1984)(synapse).atr" size="92176" crc="0471796a" sha1="d02b8ad67b2f1f27b340e6fa94aa0c9bc03d2ad7"/>
 			</dataarea>
 		</part>
 	</software>
@@ -13103,6 +13103,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="crosswor" supported="no">
+		<description>Crossword Magic (US, v4.0)</description>
+		<year>1985</year>
+		<publisher>Mindscape</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="crossword magic v4.0 (1985)(mindscape)(us).atr" size="92176" crc="2d1c6a2d" sha1="3e89319f106b3c03cd0b96c21d098a9d2f710dec"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crosswor_1" supported="no">
 		<description>Crossword Magic (US)</description>
 		<year>1982</year>
 		<publisher>Softsmith</publisher>
@@ -13111,18 +13123,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb, k-file, Cracked by Masters of Software"/>
 			<dataarea name="flop" size="33168">
 				<rom name="crossword magic (1982)(softsmith)(us)[cr masters of software][req osb][k-file].atr" size="33168" crc="9c066cbb" sha1="766991e8bd366cec6a156b7820708ee34028319a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="crosswor_1" supported="no">
-		<description>Crossword Magic (US, v4.0)</description>
-		<year>1985</year>
-		<publisher>Mindscape</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="crossword magic v4.0 (1985)(mindscape)(us).atr" size="92176" crc="2d1c6a2d" sha1="3e89319f106b3c03cd0b96c21d098a9d2f710dec"/>
 			</dataarea>
 		</part>
 	</software>
@@ -13549,18 +13549,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="cyborg" supported="no">
-		<description>Cyborg (PL)</description>
-		<year>1994</year>
-		<publisher>Sikor Soft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="cyborg (1994)(sikor soft)(pl).atr" size="133136" crc="563d0a55" sha1="9a4a9483aee725947b90fcea1d28fdbe11273eda"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cyborg_1" supported="no">
 		<description>Cyborg (US)</description>
 		<year>1982</year>
 		<publisher>Sentient Software</publisher>
@@ -13581,6 +13569,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side B"/>
 			<dataarea name="flop" size="92176">
 				<rom name="cyborg (1982)(sentient software)(us)(side b).atr" size="92176" crc="e8e40858" sha1="1c8a512b950c7ae2849c61a0a645a43771b5662d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cyborg_1" supported="no">
+		<description>Cyborg (PL)</description>
+		<year>1994</year>
+		<publisher>Sikor Soft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="cyborg (1994)(sikor soft)(pl).atr" size="133136" crc="563d0a55" sha1="9a4a9483aee725947b90fcea1d28fdbe11273eda"/>
 			</dataarea>
 		</part>
 	</software>
@@ -15435,6 +15435,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="digdug_a" cloneof="digdug" supported="no">
+		<description>Dig Dug (US, Prototype)</description>
+		<year>1982</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="18064">
+				<rom name="dig dug (1982)(atari)(us)(proto)[k-file].atr" size="18064" crc="25582ac0" sha1="2773ce85850c4e3ff994fdddbb4f7f348a71799a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="digdug_b" cloneof="digdug" supported="no">
 		<description>Dig Dug (US) (1)</description>
 		<year>1983</year>
 		<publisher>Atari</publisher>
@@ -15449,19 +15462,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb, k-file"/>
 			<dataarea name="flop" size="17296">
 				<rom name="dig dug (1983)(atari)(us)[req osb][k-file].atr" size="17296" crc="124e21a8" sha1="2c1bb79caaacda8ece2cadfb1a6c366604a5b1d7"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="digdug_b" cloneof="digdug" supported="no">
-		<description>Dig Dug (US, Prototype)</description>
-		<year>1982</year>
-		<publisher>Atari</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="18064">
-				<rom name="dig dug (1982)(atari)(us)(proto)[k-file].atr" size="18064" crc="25582ac0" sha1="2773ce85850c4e3ff994fdddbb4f7f348a71799a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -16282,25 +16282,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="dragonqu" supported="no">
-		<description>Dragon Quest or a Twist in the Tail (US, v2.0)</description>
-		<year>1985</year>
-		<publisher>Antic Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, BASIC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="dragon quest or a twist in the tail v2.0 (1985)(antic software)(us)(side a)[basic].atr" size="92176" crc="98aad4c8" sha1="405ee060c74b7ffc4c6ef31e0f1af2879a401f21"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B"/>
-			<dataarea name="flop" size="92176">
-				<rom name="dragon quest or a twist in the tail v2.0 (1985)(antic software)(us)(side b).atr" size="92176" crc="23e72c3a" sha1="0e11e2c56ae1d517ba5932c0f0da93370589a50f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dragonqu_1" supported="no">
 		<description>Dragon Quest or a Twist in the Tail (US, v2.1)</description>
 		<year>1985</year>
 		<publisher>Antic Magazine</publisher>
@@ -16315,6 +16296,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side B, Documentation"/>
 			<dataarea name="flop" size="92176">
 				<rom name="dragon quest or a twist in the tail v2.1 (1985)(antic magazine)(us)(side b)[documentation].atr" size="92176" crc="ffe7c1e4" sha1="25579c99bb95abf8021872ee294c12bdab2dcd61"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dragonqu_1" supported="no">
+		<description>Dragon Quest or a Twist in the Tail (US, v2.0)</description>
+		<year>1985</year>
+		<publisher>Antic Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="dragon quest or a twist in the tail v2.0 (1985)(antic software)(us)(side a)[basic].atr" size="92176" crc="98aad4c8" sha1="405ee060c74b7ffc4c6ef31e0f1af2879a401f21"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="92176">
+				<rom name="dragon quest or a twist in the tail v2.0 (1985)(antic software)(us)(side b).atr" size="92176" crc="23e72c3a" sha1="0e11e2c56ae1d517ba5932c0f0da93370589a50f"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18426,6 +18426,37 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="freefunn" supported="no">
+		<description>FREE - Funny Risky Evil Escape (FR, v1.1)</description>
+		<year>1985</year>
+		<publisher>Epsilon Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2 Side A"/>
+			<dataarea name="flop" size="92176">
+				<rom name="free - funny risky evil escape v1.1 (1985)(epsilon software)(fr)(disk 1 of 2 side a).atr" size="92176" crc="e342f98a" sha1="3a72c462eefc76fa5df32d647b1146ee3e39de93"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2 Side B"/>
+			<dataarea name="flop" size="92176">
+				<rom name="free - funny risky evil escape v1.1 (1985)(epsilon software)(fr)(disk 1 of 2 side b).atr" size="92176" crc="9410966b" sha1="4110b63596ba72124f7dbb747c4036567b10d1a8"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2 Side A"/>
+			<dataarea name="flop" size="92176">
+				<rom name="free - funny risky evil escape v1.1 (1985)(epsilon software)(fr)(disk 2 of 2 side a).atr" size="92176" crc="ff2207c7" sha1="c399d60ff7a5ff223d2612a72a6785836a403912"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2 Side B"/>
+			<dataarea name="flop" size="92176">
+				<rom name="free - funny risky evil escape v1.1 (1985)(epsilon software)(fr)(disk 2 of 2 side b).atr" size="92176" crc="bc9cf21f" sha1="f6b40b16f144cfbf8d603ec78ef34755c6e8f34a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="freefunn_a" cloneof="freefunn" supported="no">
 		<description>FREE - Funny Risky Evil Escape (FR)</description>
 		<year>1995</year>
 		<publisher>Epsilon Software</publisher>
@@ -18462,7 +18493,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="freefunn_a" cloneof="freefunn" supported="no">
+	<software name="freefunn_b" cloneof="freefunn" supported="no">
 		<description>FREE - Funny Risky Evil Escape (FR, Demo)</description>
 		<year>1995</year>
 		<publisher>Epsilon Software</publisher>
@@ -18471,37 +18502,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side A"/>
 			<dataarea name="flop" size="92176">
 				<rom name="free - funny risky evil escape (demo) (1995)(epsilon software)(fr)(side a).atr" size="92176" crc="43c8a5ef" sha1="2e68a051de96cff9c9962cb5248b1a118f58abbc"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="freefunn_b" cloneof="freefunn" supported="no">
-		<description>FREE - Funny Risky Evil Escape (FR, v1.1)</description>
-		<year>1985</year>
-		<publisher>Epsilon Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1 of 2 Side A"/>
-			<dataarea name="flop" size="92176">
-				<rom name="free - funny risky evil escape v1.1 (1985)(epsilon software)(fr)(disk 1 of 2 side a).atr" size="92176" crc="e342f98a" sha1="3a72c462eefc76fa5df32d647b1146ee3e39de93"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1 of 2 Side B"/>
-			<dataarea name="flop" size="92176">
-				<rom name="free - funny risky evil escape v1.1 (1985)(epsilon software)(fr)(disk 1 of 2 side b).atr" size="92176" crc="9410966b" sha1="4110b63596ba72124f7dbb747c4036567b10d1a8"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 2 Side A"/>
-			<dataarea name="flop" size="92176">
-				<rom name="free - funny risky evil escape v1.1 (1985)(epsilon software)(fr)(disk 2 of 2 side a).atr" size="92176" crc="ff2207c7" sha1="c399d60ff7a5ff223d2612a72a6785836a403912"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 2 Side B"/>
-			<dataarea name="flop" size="92176">
-				<rom name="free - funny risky evil escape v1.1 (1985)(epsilon software)(fr)(disk 2 of 2 side b).atr" size="92176" crc="bc9cf21f" sha1="f6b40b16f144cfbf8d603ec78ef34755c6e8f34a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18955,19 +18955,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="fighterp" supported="no">
-		<description>Fighter Pilot (GB)</description>
-		<year>1983</year>
-		<publisher>Interceptor Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="noATR, k-file"/>
-			<dataarea name="flop" size="13072">
-				<rom name="fighter pilot (1983)(interceptor software)(gb)[noatr][k-file].atr" size="13072" crc="cf8651cb" sha1="58ac05c45d0437816929cc4e2829aa2cc99f9c76"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="fighterp_1" supported="no">
 		<description>Fighter Pilot (GB) (1)</description>
 		<year>1985</year>
 		<publisher>Digital Integration</publisher>
@@ -18993,6 +18980,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Cracked by Sea, Hacked Bit Cruncher, Alt 1"/>
 			<dataarea name="flop" size="39440">
 				<rom name="fighter pilot (1985)(digital integration)(gb)[cr sea][h bit cruncher][a][k-file].atr" size="39440" crc="26c50051" sha1="ceaf33ce995e6b2fc066fe408a7df5877942a736"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fighterp_1" supported="no">
+		<description>Fighter Pilot (GB)</description>
+		<year>1983</year>
+		<publisher>Interceptor Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="noATR, k-file"/>
+			<dataarea name="flop" size="13072">
+				<rom name="fighter pilot (1983)(interceptor software)(gb)[noatr][k-file].atr" size="13072" crc="cf8651cb" sha1="58ac05c45d0437816929cc4e2829aa2cc99f9c76"/>
 			</dataarea>
 		</part>
 	</software>
@@ -19925,31 +19925,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="fred" supported="no">
-		<description>Fred</description>
-		<year>1991</year>
-		<publisher>Querope Agency</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="fred (1991)(querope agency).atr" size="133136" crc="f3215582" sha1="6bd46a68e99cd4d8ba0e2b71037a7d32e976e872"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="fred_1" supported="no">
-		<description>Fred (1)</description>
-		<year>1991</year>
-		<publisher>Queurope Agency</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="39312">
-				<rom name="fred (1991)(queurope agency)[k-file].atr" size="39312" crc="2b7d300a" sha1="8d65c4d1cfe07e084252151bd21fdae560f54b6d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="fred_2" supported="no">
 		<description>Fred (PL)</description>
 		<year>1991</year>
 		<publisher>L.K. Avalon</publisher>
@@ -19976,6 +19951,31 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Hacked Seban, Trained +2 by Seban, Alt 2"/>
 			<dataarea name="flop" size="30224">
 				<rom name="fred (1991)(l.k. avalon)(pl)[h seban][t +2 seban][a2][k-file].atr" size="30224" crc="06431de8" sha1="53fd6235c8e050cb742d6ed5cfad402ff385d253"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fred_1" supported="no">
+		<description>Fred</description>
+		<year>1991</year>
+		<publisher>Querope Agency</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="fred (1991)(querope agency).atr" size="133136" crc="f3215582" sha1="6bd46a68e99cd4d8ba0e2b71037a7d32e976e872"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fred_2" supported="no">
+		<description>Fred (1)</description>
+		<year>1991</year>
+		<publisher>Queurope Agency</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="39312">
+				<rom name="fred (1991)(queurope agency)[k-file].atr" size="39312" crc="2b7d300a" sha1="8d65c4d1cfe07e084252151bd21fdae560f54b6d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20555,18 +20555,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="galahada" supported="no">
-		<description>Galahad and the Holy Grail</description>
-		<year>1982</year>
-		<publisher>Atari Program Exchange</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="galahad and the holy grail (1982)(atari program exchange).atr" size="92176" crc="d575a0bb" sha1="9f03ddbd745919e93113daed1117a59751f22ae5"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="galahada_1" supported="no">
 		<description>Galahad and the Holy Grail (US)</description>
 		<year>1982</year>
 		<publisher>APX</publisher>
@@ -20596,7 +20584,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="galahada_2" supported="no">
+	<software name="galahada_1" supported="no">
 		<description>Galahad and the Holy Grail (US) (1)</description>
 		<year>19??</year>
 		<publisher>Antic Software</publisher>
@@ -20615,19 +20603,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="galaxiba" supported="no">
-		<description>Galaxi Barkonid (DE, en) (1)</description>
-		<year>1991</year>
-		<publisher>MHS</publisher>
+	<software name="galahada_2" supported="no">
+		<description>Galahad and the Holy Grail</description>
+		<year>1982</year>
+		<publisher>Atari Program Exchange</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="galaxi barkonid (1991)(mhs)(de)(en).atr" size="133136" crc="974adbf5" sha1="1b79a8923e6e03a4b524628c651b4dead4398b61"/>
+			<dataarea name="flop" size="92176">
+				<rom name="galahad and the holy grail (1982)(atari program exchange).atr" size="92176" crc="d575a0bb" sha1="9f03ddbd745919e93113daed1117a59751f22ae5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="galaxiba_1" supported="no">
+	<software name="galaxiba" supported="no">
 		<description>Galaxi Barkonid (DE, en)</description>
 		<year>1991</year>
 		<publisher>MHS Studio</publisher>
@@ -20636,6 +20624,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb"/>
 			<dataarea name="flop" size="133136">
 				<rom name="galaxi barkonid (1991)(mhs studio)(de)(en)[req osb].atr" size="133136" crc="5e3ee2d7" sha1="7c46a477d3ed8702fb5ba51acd6c62467723ba9c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galaxiba_1" supported="no">
+		<description>Galaxi Barkonid (DE, en) (1)</description>
+		<year>1991</year>
+		<publisher>MHS</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="galaxi barkonid (1991)(mhs)(de)(en).atr" size="133136" crc="974adbf5" sha1="1b79a8923e6e03a4b524628c651b4dead4398b61"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20841,6 +20841,56 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="gauntlet" supported="no">
+		<description>Gauntlet (US, Public Domain)</description>
+		<year>1984</year>
+		<publisher>Donald R. Lebeau</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="27152">
+				<rom name="gauntlet (1984)(lebeau, donald r.)(us)(pd)[k-file].atr" size="27152" crc="ea53598a" sha1="b2a9609d15441a80cbd68ea1e168eeb6c133d60c"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Alt 1"/>
+			<dataarea name="flop" size="29712">
+				<rom name="gauntlet (1984)(lebeau, donald r.)(us)(pd)[a][k-file].atr" size="29712" crc="d1cdb381" sha1="2220569be81c4a70b71d2c86ae539a90f66912f5"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Alt 2"/>
+			<dataarea name="flop" size="27152">
+				<rom name="gauntlet (1984)(lebeau, donald r.)(us)(pd)[a2][k-file].atr" size="27152" crc="741110ba" sha1="7b87d53f505e628c880ed53029fd99ee43b2a995"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Alt 3"/>
+			<dataarea name="flop" size="29712">
+				<rom name="gauntlet (1984)(lebeau, donald r.)(us)(pd)[a3][k-file].atr" size="29712" crc="25f46452" sha1="5dbf998b6de2e98efe1d06246c2642a856dd47b5"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Alt 4"/>
+			<dataarea name="flop" size="29840">
+				<rom name="gauntlet (1984)(lebeau, donald r.)(us)(pd)[a4][k-file].atr" size="29840" crc="90b0a893" sha1="016fd5d397845ad850dc9f8454c5a41f2a3d6322"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gauntlet_1" supported="no">
+		<description>Gauntlet (US)</description>
+		<year>1988</year>
+		<publisher>Mindscape</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="92176">
+				<rom name="gauntlet (1988)(mindscape)(us)(side b).atr" size="92176" crc="4fb6a4aa" sha1="2be1247b7392608d89dac2bfefcf535a437eac53"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gauntlet_2" supported="no">
 		<description>Gauntlet (GB)</description>
 		<year>1985</year>
 		<publisher>US Gold</publisher>
@@ -20903,56 +20953,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side B, Cracked by The Fox, Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="gauntlet (1985)(us gold)(gb)(side b)[cr the fox][a].atr" size="92176" crc="f6f1527d" sha1="ae1fca5536e6f9837840a7d5b45fe60b8626173a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gauntlet_1" supported="no">
-		<description>Gauntlet (US)</description>
-		<year>1988</year>
-		<publisher>Mindscape</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side B"/>
-			<dataarea name="flop" size="92176">
-				<rom name="gauntlet (1988)(mindscape)(us)(side b).atr" size="92176" crc="4fb6a4aa" sha1="2be1247b7392608d89dac2bfefcf535a437eac53"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gauntlet_2" supported="no">
-		<description>Gauntlet (US, Public Domain)</description>
-		<year>1984</year>
-		<publisher>Donald R. Lebeau</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="27152">
-				<rom name="gauntlet (1984)(lebeau, donald r.)(us)(pd)[k-file].atr" size="27152" crc="ea53598a" sha1="b2a9609d15441a80cbd68ea1e168eeb6c133d60c"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="k-file, Alt 1"/>
-			<dataarea name="flop" size="29712">
-				<rom name="gauntlet (1984)(lebeau, donald r.)(us)(pd)[a][k-file].atr" size="29712" crc="d1cdb381" sha1="2220569be81c4a70b71d2c86ae539a90f66912f5"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="k-file, Alt 2"/>
-			<dataarea name="flop" size="27152">
-				<rom name="gauntlet (1984)(lebeau, donald r.)(us)(pd)[a2][k-file].atr" size="27152" crc="741110ba" sha1="7b87d53f505e628c880ed53029fd99ee43b2a995"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="k-file, Alt 3"/>
-			<dataarea name="flop" size="29712">
-				<rom name="gauntlet (1984)(lebeau, donald r.)(us)(pd)[a3][k-file].atr" size="29712" crc="25f46452" sha1="5dbf998b6de2e98efe1d06246c2642a856dd47b5"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="k-file, Alt 4"/>
-			<dataarea name="flop" size="29840">
-				<rom name="gauntlet (1984)(lebeau, donald r.)(us)(pd)[a4][k-file].atr" size="29840" crc="90b0a893" sha1="016fd5d397845ad850dc9f8454c5a41f2a3d6322"/>
 			</dataarea>
 		</part>
 	</software>
@@ -22114,6 +22114,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="gridrunn" supported="no">
+		<description>Gridrunner (US)</description>
+		<year>1983</year>
+		<publisher>Human Engineered Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="4624">
+				<rom name="gridrunner (1983)(human engineered software)(us)[k-file].atr" size="4624" crc="f0cbeee5" sha1="fefcc4f8c95196d6937cadbdece89fd0ff94c7cd"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gridrunn_1" supported="no">
 		<description>Gridrunner (GB)</description>
 		<year>1983</year>
 		<publisher>Llamasoft</publisher>
@@ -22128,19 +22141,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Alt 1"/>
 			<dataarea name="flop" size="4112">
 				<rom name="gridrunner (1983)(llamasoft)(gb)[a][k-file].atr" size="4112" crc="f9a63fe6" sha1="3bd12aa4bee49a26bdef4ddf59f1e3c317a3ec4f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gridrunn_1" supported="no">
-		<description>Gridrunner (US)</description>
-		<year>1983</year>
-		<publisher>Human Engineered Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="4624">
-				<rom name="gridrunner (1983)(human engineered software)(us)[k-file].atr" size="4624" crc="f0cbeee5" sha1="fefcc4f8c95196d6937cadbdece89fd0ff94c7cd"/>
 			</dataarea>
 		</part>
 	</software>
@@ -22444,6 +22444,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="gunfight" supported="no">
+		<description>Gunfight (1)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="gunfight (19xx)(-)[basic].atr" size="92176" crc="7c151bda" sha1="b2da2ce3f93702d9838040108864bc65c96eb491"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="bas2boot"/>
+			<dataarea name="flop" size="6288">
+				<rom name="gunfight (19xx)(-)[bas2boot].atr" size="6288" crc="02c21117" sha1="3e1cdb5089d1e7268cd059d31d9379ef02bb6e7b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gunfight_1" supported="no">
 		<description>Gunfight</description>
 		<year>1983</year>
 		<publisher>Epyx</publisher>
@@ -22470,25 +22489,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb, k-file, Hacked DOS-File"/>
 			<dataarea name="flop" size="10256">
 				<rom name="gunfight (1983)(epyx)[h dos-file][req osb][k-file].atr" size="10256" crc="79eb05af" sha1="a93bd75c52675a5b040010a3012a9b47d248f91c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gunfight_1" supported="no">
-		<description>Gunfight (1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="gunfight (19xx)(-)[basic].atr" size="92176" crc="7c151bda" sha1="b2da2ce3f93702d9838040108864bc65c96eb491"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="bas2boot"/>
-			<dataarea name="flop" size="6288">
-				<rom name="gunfight (19xx)(-)[bas2boot].atr" size="6288" crc="02c21117" sha1="3e1cdb5089d1e7268cd059d31d9379ef02bb6e7b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -22594,19 +22594,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="gypsy" supported="no">
-		<description>Gypsy (Public Domain)</description>
-		<year>19??</year>
-		<publisher>B. Cunningham</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="gypsy (19xx)(cunningham, b.)(pd)[basic].atr" size="92176" crc="4be72eee" sha1="be812a28fb57dd7ff6bd69f0185f520773ff5642"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gypsy_1" supported="no">
 		<description>Gypsy (US)</description>
 		<year>1982</year>
 		<publisher>Avalon Hill</publisher>
@@ -22621,6 +22608,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file"/>
 			<dataarea name="flop" size="15376">
 				<rom name="gypsy (1982)(avalon hill)(us)[k-file].atr" size="15376" crc="fad5f8f5" sha1="93a07a74ee0da5d165f5699bad1467d3193d9298"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gypsy_1" supported="no">
+		<description>Gypsy (Public Domain)</description>
+		<year>19??</year>
+		<publisher>B. Cunningham</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="gypsy (19xx)(cunningham, b.)(pd)[basic].atr" size="92176" crc="4be72eee" sha1="be812a28fb57dd7ff6bd69f0185f520773ff5642"/>
 			</dataarea>
 		</part>
 	</software>
@@ -24805,24 +24805,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="internat_a" cloneof="internat" supported="no">
-		<description>International Karate (GB, Beta)</description>
-		<year>198?</year>
-		<publisher>System 3 Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="international karate (198x)(system 3 software)(gb)(beta).atr" size="92176" crc="1c8694f4" sha1="149f2a2475ce670f433717f258611f668d211699"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="41488">
-				<rom name="international karate (198x)(system 3 software)(gb)(beta)[k-file].atr" size="41488" crc="9ae2e586" sha1="71911d6f7e26c045c080519308a3b7325c961347"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="internat_b" cloneof="internat" supported="no">
 		<description>International Karate (PAL, GB)</description>
 		<year>1986</year>
 		<publisher>System 3 Software</publisher>
@@ -24842,6 +24824,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="tape version"/>
 			<dataarea name="flop" size="92176">
 				<rom name="international karate (1986)(system 3 software)(pal)(gb)[tape version].atr" size="92176" crc="60eac212" sha1="730d1434a4f9a89f6181b25fd5231abd79b93061"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="internat_b" cloneof="internat" supported="no">
+		<description>International Karate (GB, Beta)</description>
+		<year>198?</year>
+		<publisher>System 3 Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="international karate (198x)(system 3 software)(gb)(beta).atr" size="92176" crc="1c8694f4" sha1="149f2a2475ce670f433717f258611f668d211699"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="41488">
+				<rom name="international karate (198x)(system 3 software)(gb)(beta)[k-file].atr" size="41488" crc="9ae2e586" sha1="71911d6f7e26c045c080519308a3b7325c961347"/>
 			</dataarea>
 		</part>
 	</software>
@@ -24915,19 +24915,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="invasion" supported="no">
-		<description>Invasion (DE, en)</description>
-		<year>1989</year>
-		<publisher>Power Per Post</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file, Cracked by Lord of Darkness"/>
-			<dataarea name="flop" size="43664">
-				<rom name="invasion (1989)(power per post)(de)(en)[cr lord of darkness][k-file].atr" size="43664" crc="12006523" sha1="ece00dcee8296f71c9d6d7eec2e1ce7d55f1eb1f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="invasion_1" supported="no">
 		<description>Invasion (GB)</description>
 		<year>1987</year>
 		<publisher>Bulldog Software</publisher>
@@ -24954,6 +24941,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Cracked by Mr. Bacardi"/>
 			<dataarea name="flop" size="19472">
 				<rom name="invasion (1987)(bulldog software)(gb)[cr mr. bacardi][k-file].atr" size="19472" crc="55391e44" sha1="93c6ff7a96ed43724788ba75fb0d6dad33f5351c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="invasion_1" supported="no">
+		<description>Invasion (DE, en)</description>
+		<year>1989</year>
+		<publisher>Power Per Post</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Cracked by Lord of Darkness"/>
+			<dataarea name="flop" size="43664">
+				<rom name="invasion (1989)(power per post)(de)(en)[cr lord of darkness][k-file].atr" size="43664" crc="12006523" sha1="ece00dcee8296f71c9d6d7eec2e1ce7d55f1eb1f"/>
 			</dataarea>
 		</part>
 	</software>
@@ -27456,18 +27456,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="labyrint_1" supported="no">
-		<description>Labyrinth (DE)</description>
-		<year>19??</year>
-		<publisher>Jens Woehrmann</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="65552">
-				<rom name="labyrinth (19xx)(jens woehrmann)(de).atr" size="65552" crc="45734bc4" sha1="9dd47c55afc44a5b0ca005b9bbf733c9a979c9e3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="labyrint_2" supported="no">
 		<description>Labyrinth (US)</description>
 		<year>1982</year>
 		<publisher>Broderbund</publisher>
@@ -27480,7 +27468,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="labyrint_3" supported="no">
+	<software name="labyrint_2" supported="no">
 		<description>Labyrinth (US, Public Domain)</description>
 		<year>1986</year>
 		<publisher>Dave Oblad</publisher>
@@ -27501,6 +27489,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Alt 2"/>
 			<dataarea name="flop" size="23696">
 				<rom name="labyrinth (1986)(dave oblad)(us)(pd)[a2][k-file].atr" size="23696" crc="906a73a1" sha1="ca73146795447f164aeaa2e733bbd258f5319520"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="labyrint_3" supported="no">
+		<description>Labyrinth (DE)</description>
+		<year>19??</year>
+		<publisher>Jens Woehrmann</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="65552">
+				<rom name="labyrinth (19xx)(jens woehrmann)(de).atr" size="65552" crc="45734bc4" sha1="9dd47c55afc44a5b0ca005b9bbf733c9a979c9e3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -28053,19 +28053,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="lemmingi_a" cloneof="lemmingi" supported="no">
-		<description>Lemmingi (PL, Demo, Public Domain, Preview) (1)</description>
-		<year>199?</year>
-		<publisher>Orion Development</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="with intro"/>
-			<dataarea name="flop" size="65552">
-				<rom name="lemmingi (demo) (199x)(orion development)(pl)(pd)(preview)[with intro].atr" size="65552" crc="0190de3b" sha1="0c51e3644559043ff5702e1fd9d2e6058a76774f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="lemmingi_b" cloneof="lemmingi" supported="no">
 		<description>Lemmingi (PL, Public Domain)</description>
 		<year>1997</year>
 		<publisher>Orion Development</publisher>
@@ -28074,6 +28061,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Pirated 1"/>
 			<dataarea name="flop" size="133136">
 				<rom name="lemmingi (1997)(orion development)(pl)(pd)[p].atr" size="133136" crc="19d4d14c" sha1="f74c07b34b7d229ac09d0ae5f3042c4f18e4a1a7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lemmingi_b" cloneof="lemmingi" supported="no">
+		<description>Lemmingi (PL, Demo, Public Domain, Preview) (1)</description>
+		<year>199?</year>
+		<publisher>Orion Development</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="with intro"/>
+			<dataarea name="flop" size="65552">
+				<rom name="lemmingi (demo) (199x)(orion development)(pl)(pd)(preview)[with intro].atr" size="65552" crc="0190de3b" sha1="0c51e3644559043ff5702e1fd9d2e6058a76774f"/>
 			</dataarea>
 		</part>
 	</software>
@@ -28725,19 +28725,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="losangel" supported="no">
-		<description>Los Angeles 1984 Games</description>
-		<year>1983</year>
-		<publisher>Konami</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="16912">
-				<rom name="los angeles 1984 games (1983)(konami)[k-file].atr" size="16912" crc="125f0cd0" sha1="2634257c8643dac833492cf8e9b42addbe91d6bb"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="losangel_1" supported="no">
 		<description>Los Angeles 1984 Games (1)</description>
 		<year>1984</year>
 		<publisher>Atari</publisher>
@@ -28757,6 +28744,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Hacked US Pirates BBS"/>
 			<dataarea name="flop" size="17168">
 				<rom name="los angeles 1984 games (1984)(atari)[h us pirates bbs][k-file].atr" size="17168" crc="72f584ae" sha1="0bc427178023ab5d57f192591b5c18592e8c400f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="losangel_1" supported="no">
+		<description>Los Angeles 1984 Games</description>
+		<year>1983</year>
+		<publisher>Konami</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="16912">
+				<rom name="los angeles 1984 games (1983)(konami)[k-file].atr" size="16912" crc="125f0cd0" sha1="2634257c8643dac833492cf8e9b42addbe91d6bb"/>
 			</dataarea>
 		</part>
 	</software>
@@ -28843,19 +28843,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="lucifers" supported="no">
-		<description>Lucifer's Realm (US)</description>
-		<year>1981</year>
-		<publisher>Med Systems</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="req OSb, k-file"/>
-			<dataarea name="flop" size="14864">
-				<rom name="lucifer's realm (1981)(med systems)(us)[req osb][k-file].atr" size="14864" crc="f3fc6e77" sha1="2e02b81bd42fed741932653d8ee68d76f800f156"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="lucifers_1" supported="no">
 		<description>Lucifer's Realm (US) (1)</description>
 		<year>1984</year>
 		<publisher>American Eagle Software</publisher>
@@ -28876,6 +28863,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2"/>
 			<dataarea name="flop" size="92176">
 				<rom name="lucifer's realm (1984)(american eagle software)(us)(disk 2 of 2).atr" size="92176" crc="f8ea5f24" sha1="89e16366b3218fd7a2b1e58cb12e25b8a94f4558"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lucifers_1" supported="no">
+		<description>Lucifer's Realm (US)</description>
+		<year>1981</year>
+		<publisher>Med Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="req OSb, k-file"/>
+			<dataarea name="flop" size="14864">
+				<rom name="lucifer's realm (1981)(med systems)(us)[req osb][k-file].atr" size="14864" crc="f3fc6e77" sha1="2e02b81bd42fed741932653d8ee68d76f800f156"/>
 			</dataarea>
 		</part>
 	</software>
@@ -29035,19 +29035,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="migalley" supported="no">
-		<description>MIG Alley Ace (GB)</description>
-		<year>1985</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file, Cracked by Bubble Soft"/>
-			<dataarea name="flop" size="27920">
-				<rom name="mig alley ace (1985)(u.s. gold)(gb)[cr bubble soft][k-file].atr" size="27920" crc="16b2fc43" sha1="1120c4be73d6a3a279e4fd77e99347eb3a4e1fd3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="migalley_1" supported="no">
 		<description>MIG Alley Ace (US)</description>
 		<year>1983</year>
 		<publisher>MicroProse</publisher>
@@ -29056,6 +29043,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Cracked by Byte Breaker"/>
 			<dataarea name="flop" size="92176">
 				<rom name="mig alley ace (1983)(microprose)(us)[cr byte breaker].atr" size="92176" crc="135caa27" sha1="f22abc921f42bf1563470c5f1e77b13bc42c723e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="migalley_1" supported="no">
+		<description>MIG Alley Ace (GB)</description>
+		<year>1985</year>
+		<publisher>U.S. Gold</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Cracked by Bubble Soft"/>
+			<dataarea name="flop" size="27920">
+				<rom name="mig alley ace (1985)(u.s. gold)(gb)[cr bubble soft][k-file].atr" size="27920" crc="16b2fc43" sha1="1120c4be73d6a3a279e4fd77e99347eb3a4e1fd3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -30380,19 +30380,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="meteor" supported="no">
-		<description>Meteor</description>
-		<year>1984</year>
-		<publisher>Russell Payne</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="5904">
-				<rom name="meteor (1984)(russell payne)[k-file].atr" size="5904" crc="ed901ee6" sha1="ae0c43b5310ca939474500c64b1297a2263b8f76"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="meteor_1" supported="no">
 		<description>Meteor (de)</description>
 		<year>19??</year>
 		<publisher>Germ-Soft</publisher>
@@ -30401,6 +30388,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file"/>
 			<dataarea name="flop" size="8720">
 				<rom name="meteor (19xx)(germ-soft)(de)[k-file].atr" size="8720" crc="9eb88d1f" sha1="961b4b17484dbf7b0749f1b2b34d41a6f8990af1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="meteor_1" supported="no">
+		<description>Meteor</description>
+		<year>1984</year>
+		<publisher>Russell Payne</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="5904">
+				<rom name="meteor (1984)(russell payne)[k-file].atr" size="5904" crc="ed901ee6" sha1="ae0c43b5310ca939474500c64b1297a2263b8f76"/>
 			</dataarea>
 		</part>
 	</software>
@@ -30935,6 +30935,36 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="miraxfor" supported="no">
+		<description>Mirax Force (NL, en)</description>
+		<year>1994</year>
+		<publisher>ANG Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="mirax force (1994)(ang software)(nl)(en).atr" size="133136" crc="bf66a9e4" sha1="6203d2443b1f22e25486da8dfde4ed258e78635e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="miraxfor_1" supported="no">
+		<description>Mirax Force (GB) (2)</description>
+		<year>19??</year>
+		<publisher>Micro Discount</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="mirax force (19xx)(micro discount)(gb).atr" size="92176" crc="8c3d9484" sha1="d3c21e834b7a37c40ac3fc7241816d683443004d"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by Kiwi Systems New Zealand"/>
+			<dataarea name="flop" size="92176">
+				<rom name="mirax force (19xx)(micro discount)(gb)[cr kiwi systems new zealand].atr" size="92176" crc="eb7f7889" sha1="6d5023eb5e9e04927d9d3733e06438ce7fb1918b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="miraxfor_2" supported="no">
 		<description>Mirax Force (GB)</description>
 		<year>1987</year>
 		<publisher>Tynesoft</publisher>
@@ -30958,7 +30988,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="miraxfor_1" supported="no">
+	<software name="miraxfor_3" supported="no">
 		<description>Mirax Force (GB) (1)</description>
 		<year>1989</year>
 		<publisher>Zeppelin Games</publisher>
@@ -30973,36 +31003,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="no loading screen, k-file"/>
 			<dataarea name="flop" size="25872">
 				<rom name="mirax force (1989)(zeppelin games)(gb)[no loading screen][k-file].atr" size="25872" crc="cc5d52ed" sha1="b68b2a63c19c19387ade12f7d5f9432845223f84"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="miraxfor_2" supported="no">
-		<description>Mirax Force (GB) (2)</description>
-		<year>19??</year>
-		<publisher>Micro Discount</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="mirax force (19xx)(micro discount)(gb).atr" size="92176" crc="8c3d9484" sha1="d3c21e834b7a37c40ac3fc7241816d683443004d"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Cracked by Kiwi Systems New Zealand"/>
-			<dataarea name="flop" size="92176">
-				<rom name="mirax force (19xx)(micro discount)(gb)[cr kiwi systems new zealand].atr" size="92176" crc="eb7f7889" sha1="6d5023eb5e9e04927d9d3733e06438ce7fb1918b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="miraxfor_3" supported="no">
-		<description>Mirax Force (NL, en)</description>
-		<year>1994</year>
-		<publisher>ANG Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="mirax force (1994)(ang software)(nl)(en).atr" size="133136" crc="bf66a9e4" sha1="6203d2443b1f22e25486da8dfde4ed258e78635e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -31331,19 +31331,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="monopoly" supported="no">
-		<description>Monopoly (DE)</description>
-		<year>19??</year>
-		<publisher>J. Seehaus</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="13840">
-				<rom name="monopoly (19xx)(j. seehaus)(de)[k-file].atr" size="13840" crc="a2677475" sha1="fcfebc80463451a4bd6d496d9bc872fe9ce4adea"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="monopoly_1" supported="no">
 		<description>Monopoly (Public Domain)</description>
 		<year>19??</year>
 		<publisher>Atari Star BBS</publisher>
@@ -31358,6 +31345,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Fixed Phantom, Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="monopoly (19xx)(atari star bbs)(pd)[f phantom][a].atr" size="92176" crc="ca20a91b" sha1="6f61421bb6f8e4ec9fe2ee68471c97b37599895f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="monopoly_1" supported="no">
+		<description>Monopoly (DE)</description>
+		<year>19??</year>
+		<publisher>J. Seehaus</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="13840">
+				<rom name="monopoly (19xx)(j. seehaus)(de)[k-file].atr" size="13840" crc="a2677475" sha1="fcfebc80463451a4bd6d496d9bc872fe9ce4adea"/>
 			</dataarea>
 		</part>
 	</software>
@@ -32156,18 +32156,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="mrrobota" supported="no">
-		<description>Mr. Robot and His Robot Factory</description>
-		<year>1983</year>
-		<publisher>Datamost</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="mr. robot and his robot factory (1983)(datamost).atr" size="92176" crc="36f3bdb0" sha1="8bb1f04783e883bb20aec5b83e3493632d9dd0bd"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="mrrobota_1" supported="no">
 		<description>Mr. Robot and His Robot Factory (GB)</description>
 		<year>1983</year>
 		<publisher>Databyte</publisher>
@@ -32186,7 +32174,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="mrrobota_1_a" cloneof="mrrobota_1" supported="no">
+	<software name="mrrobota_a" cloneof="mrrobota" supported="no">
 		<description>Mr. Robot and His Robot Factory (GB) (1)</description>
 		<year>1986</year>
 		<publisher>Databyte</publisher>
@@ -32199,7 +32187,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="mrrobota_a" cloneof="mrrobota" supported="no">
+	<software name="mrrobota_1" supported="no">
+		<description>Mr. Robot and His Robot Factory</description>
+		<year>1983</year>
+		<publisher>Datamost</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="mr. robot and his robot factory (1983)(datamost).atr" size="92176" crc="36f3bdb0" sha1="8bb1f04783e883bb20aec5b83e3493632d9dd0bd"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mrrobota_1_a" cloneof="mrrobota_1" supported="no">
 		<description>Mr. Robot and His Robot Factory (US)</description>
 		<year>1983</year>
 		<publisher>Datamost</publisher>
@@ -32811,18 +32811,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="necroman" supported="no">
-		<description>Necromancer</description>
-		<year>1982</year>
-		<publisher>Synapse</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="necromancer (1982)(synapse).atr" size="92176" crc="e88a29c6" sha1="2445a652bb2980b7def4b189718332997f9fa584"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="necroman_1" supported="no">
 		<description>Necromancer (US)</description>
 		<year>1982</year>
 		<publisher>Synapse Software</publisher>
@@ -32843,6 +32831,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Alt 2"/>
 			<dataarea name="flop" size="17552">
 				<rom name="necromancer (1982)(synapse software)(us)[a2][k-file].atr" size="17552" crc="5a9cfd1f" sha1="829c2566087917f43513c0e65ef6ce206f641424"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="necroman_1" supported="no">
+		<description>Necromancer</description>
+		<year>1982</year>
+		<publisher>Synapse</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="necromancer (1982)(synapse).atr" size="92176" crc="e88a29c6" sha1="2445a652bb2980b7def4b189718332997f9fa584"/>
 			</dataarea>
 		</part>
 	</software>
@@ -33983,19 +33983,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="othello" supported="no">
-		<description>Othello</description>
-		<year>1981</year>
-		<publisher>Russ Segal</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="4624">
-				<rom name="othello (1981)(russ segal)[k-file].atr" size="4624" crc="68e4daa9" sha1="ecdced9be89dd94a9c6d061a55de166ed6a32de2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="othello_1" supported="no">
 		<description>Othello (1)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -34009,6 +33996,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="bas2boot"/>
 			<dataarea name="flop" size="5008">
 				<rom name="othello (19xx)(-)[bas2boot].atr" size="5008" crc="91d59b0b" sha1="ee2e91d5ce14dc105046b5a0cab0274b8fc415be"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="othello_1" supported="no">
+		<description>Othello</description>
+		<year>1981</year>
+		<publisher>Russ Segal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="4624">
+				<rom name="othello (1981)(russ segal)[k-file].atr" size="4624" crc="68e4daa9" sha1="ecdced9be89dd94a9c6d061a55de166ed6a32de2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -34053,19 +34053,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="otherven_2" supported="no">
-		<description>Other Ventures #3 - Escape From Traam (GB)</description>
-		<year>1982</year>
-		<publisher>Adventure International</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="19344">
-				<rom name="other ventures #3 - escape from traam (1982)(adventure international)(gb)[k-file].atr" size="19344" crc="2babcc16" sha1="6564e93d7479fa22572914193f63a36dfe2335f9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="otherven_2_a" cloneof="otherven_2" supported="no">
 		<description>Other Ventures #3 - Escape From Traam (US)</description>
 		<year>1981</year>
 		<publisher>Adventure International</publisher>
@@ -34078,7 +34065,32 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="otherven_2_a" cloneof="otherven_2" supported="no">
+		<description>Other Ventures #3 - Escape From Traam (GB)</description>
+		<year>1982</year>
+		<publisher>Adventure International</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="19344">
+				<rom name="other ventures #3 - escape from traam (1982)(adventure international)(gb)[k-file].atr" size="19344" crc="2babcc16" sha1="6564e93d7479fa22572914193f63a36dfe2335f9"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="otherven_3" supported="no">
+		<description>Other Ventures #4 - San Francisco 1906 (US)</description>
+		<year>1981</year>
+		<publisher>Adventure International</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="other ventures #4 - san francisco 1906 (1981)(adventure international)(us).atr" size="92176" crc="ca6f9684" sha1="4095f65f11f467b7c39b47d521ac0cbd18b57c65"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="otherven_3_a" cloneof="otherven_3" supported="no">
 		<description>Other Ventures #4 - San Francisco 1906 (GB)</description>
 		<year>1982</year>
 		<publisher>Adventure International</publisher>
@@ -34087,18 +34099,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Hacked Mergatroid"/>
 			<dataarea name="flop" size="19472">
 				<rom name="other ventures #4 - san francisco 1906 (1982)(adventure international)(gb)[h mergatroid][k-file].atr" size="19472" crc="dbccc585" sha1="5d157fea4bebb6e3e51974e88c80bef43aea3ba9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="otherven_3_a" cloneof="otherven_3" supported="no">
-		<description>Other Ventures #4 - San Francisco 1906 (US)</description>
-		<year>1981</year>
-		<publisher>Adventure International</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="other ventures #4 - san francisco 1906 (1981)(adventure international)(us).atr" size="92176" crc="ca6f9684" sha1="4095f65f11f467b7c39b47d521ac0cbd18b57c65"/>
 			</dataarea>
 		</part>
 	</software>
@@ -34260,6 +34260,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="pacman_2" supported="no">
+		<description>Pac-Man (US) (2)</description>
+		<year>1984</year>
+		<publisher>Datasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="pac-man (1984)(datasoft)(us).atr" size="92176" crc="1e17f5d0" sha1="2953e1e91501aa95598098a078e2e89dc274f238"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pacman_3" supported="no">
 		<description>Pac-Man (US) (1)</description>
 		<year>1982</year>
 		<publisher>Sar-An Computer Products</publisher>
@@ -34274,18 +34286,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb, k-file, Alt 1"/>
 			<dataarea name="flop" size="13328">
 				<rom name="pac-man (1982)(sar-an computer products)(us)[a][req osb][k-file].atr" size="13328" crc="b9723b73" sha1="b3a181abe994148e9b7948a24d45cbe68e59b5c1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pacman_3" supported="no">
-		<description>Pac-Man (US) (2)</description>
-		<year>1984</year>
-		<publisher>Datasoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="pac-man (1984)(datasoft)(us).atr" size="92176" crc="1e17f5d0" sha1="2953e1e91501aa95598098a078e2e89dc274f238"/>
 			</dataarea>
 		</part>
 	</software>
@@ -35976,14 +35976,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="pong_1" supported="no">
-		<description>Pong (1)</description>
+		<description>Pong (US)</description>
 		<year>19??</year>
-		<publisher>Robert Champagne</publisher>
+		<publisher>ANALOG Computing</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="2576">
-				<rom name="pong (19xx)(robert champagne)[k-file].atr" size="2576" crc="cbac14e9" sha1="e2474941386fb4a9d365016955668628a0bf3fd8"/>
+			<dataarea name="flop" size="2832">
+				<rom name="pong (19xx)(analog computing)(us)[k-file].atr" size="2832" crc="4879e6fc" sha1="1a12cf990cc09f55ab798ca6f6a037f00635ade2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -36001,14 +36001,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="pong_3" supported="no">
-		<description>Pong (US)</description>
+		<description>Pong (1)</description>
 		<year>19??</year>
-		<publisher>ANALOG Computing</publisher>
+		<publisher>Robert Champagne</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="2832">
-				<rom name="pong (19xx)(analog computing)(us)[k-file].atr" size="2832" crc="4879e6fc" sha1="1a12cf990cc09f55ab798ca6f6a037f00635ade2"/>
+			<dataarea name="flop" size="2576">
+				<rom name="pong (19xx)(robert champagne)[k-file].atr" size="2576" crc="cbac14e9" sha1="e2474941386fb4a9d365016955668628a0bf3fd8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -36455,6 +36455,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="protecto_1" supported="no">
+		<description>Protector (US)</description>
+		<year>1981</year>
+		<publisher>Crystalware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="protector (1981)(crystalware)(us).atr" size="92176" crc="683077db" sha1="ae321076ceb0377b8d6951befe436d5498f57737"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="protecto_2" supported="no">
 		<description>Protector (GB)</description>
 		<year>1989</year>
 		<publisher>Mastertronic</publisher>
@@ -36469,18 +36481,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Cracked by Mr. Bacardi"/>
 			<dataarea name="flop" size="16016">
 				<rom name="protector (1989)(mastertronic)(gb)[cr mr. bacardi][k-file].atr" size="16016" crc="b0af5f41" sha1="fa56592e85d7dfe2ee2ac129ac6f31c21329d0a8"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="protecto_2" supported="no">
-		<description>Protector (US)</description>
-		<year>1981</year>
-		<publisher>Crystalware</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="protector (1981)(crystalware)(us).atr" size="92176" crc="683077db" sha1="ae321076ceb0377b8d6951befe436d5498f57737"/>
 			</dataarea>
 		</part>
 	</software>
@@ -37192,24 +37192,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="raceinsp" supported="no">
-		<description>Race in Space (US)</description>
-		<year>1981</year>
-		<publisher>ANALOG Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="race in space (1981)(analog software)(us).atr" size="92176" crc="5720b96a" sha1="e91f196480334c5dd734172563b6487a30653c69"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="5264">
-				<rom name="race in space (1981)(analog software)(us)[k-file].atr" size="5264" crc="e9499300" sha1="106c586c2ca41035ae82ed7dab5a6b416916e843"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="raceinsp_1" supported="no">
 		<description>Race in Space (US) (1)</description>
 		<year>1984</year>
 		<publisher>ANALOG Computing</publisher>
@@ -37224,6 +37206,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Alt 1"/>
 			<dataarea name="flop" size="4624">
 				<rom name="race in space (1984)(analog computing)(us)[a][k-file].atr" size="4624" crc="01d9dd48" sha1="63f384736e9d484733bf3bc99219038becc558dd"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="raceinsp_1" supported="no">
+		<description>Race in Space (US)</description>
+		<year>1981</year>
+		<publisher>ANALOG Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="race in space (1981)(analog software)(us).atr" size="92176" crc="5720b96a" sha1="e91f196480334c5dd734172563b6487a30653c69"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="5264">
+				<rom name="race in space (1981)(analog software)(us)[k-file].atr" size="5264" crc="e9499300" sha1="106c586c2ca41035ae82ed7dab5a6b416916e843"/>
 			</dataarea>
 		</part>
 	</software>
@@ -38512,6 +38512,51 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="robbo" supported="no">
+		<description>Robbo (pl) (1)</description>
+		<year>199?</year>
+		<publisher>Antic-Soft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="17808">
+				<rom name="robbo (199x)(antic-soft)(pl)[k-file].atr" size="17808" crc="4caeef4f" sha1="b2b28bef546e239a55bb7f0444631bb2670fcacc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="robbo_1" supported="no">
+		<description>Robbo (pl)</description>
+		<year>1993</year>
+		<publisher>JanuSoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="20880">
+				<rom name="robbo (1993)(janusoft)(pl)[k-file].atr" size="20880" crc="3cbf82d5" sha1="36360ae2e31772b92260b96348d9d180be161d21"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="robbo_1_a" cloneof="robbo_1" supported="no">
+		<description>Robbo (pl) (2)</description>
+		<year>199?</year>
+		<publisher>JanuSoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="32 planets, k-file"/>
+			<dataarea name="flop" size="17680">
+				<rom name="robbo (199x)(janusoft)(pl)[32 planets][k-file].atr" size="17680" crc="deccdb6e" sha1="74417ae0fe856b7ec2c682953b7ac04675d58f64"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="17808">
+				<rom name="robbo (199x)(janusoft)(pl)[k-file].atr" size="17808" crc="289f6a43" sha1="c770dbd101cea48e512df9abf172cf0441bf429c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="robbo_2" supported="no">
 		<description>Robbo (PL)</description>
 		<year>1989</year>
 		<publisher>L.K. Avalon</publisher>
@@ -38548,7 +38593,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="robbo_a" cloneof="robbo" supported="no">
+	<software name="robbo_2_a" cloneof="robbo_2" supported="no">
 		<description>Robbo (PL, Demo)</description>
 		<year>1989</year>
 		<publisher>L.K. Avalon</publisher>
@@ -38562,51 +38607,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file"/>
 			<dataarea name="flop" size="10640">
 				<rom name="robbo (demo) (1989)(l.k. avalon)(pl)[k-file].atr" size="10640" crc="67496977" sha1="866b20e50bde0303c8d6c487c5440513c4bd31c7"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="robbo_1" supported="no">
-		<description>Robbo (pl)</description>
-		<year>1993</year>
-		<publisher>JanuSoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="20880">
-				<rom name="robbo (1993)(janusoft)(pl)[k-file].atr" size="20880" crc="3cbf82d5" sha1="36360ae2e31772b92260b96348d9d180be161d21"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="robbo_2" supported="no">
-		<description>Robbo (pl) (1)</description>
-		<year>199?</year>
-		<publisher>Antic-Soft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="17808">
-				<rom name="robbo (199x)(antic-soft)(pl)[k-file].atr" size="17808" crc="4caeef4f" sha1="b2b28bef546e239a55bb7f0444631bb2670fcacc"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="robbo_1_a" cloneof="robbo_1" supported="no">
-		<description>Robbo (pl) (2)</description>
-		<year>199?</year>
-		<publisher>JanuSoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="32 planets, k-file"/>
-			<dataarea name="flop" size="17680">
-				<rom name="robbo (199x)(janusoft)(pl)[32 planets][k-file].atr" size="17680" crc="deccdb6e" sha1="74417ae0fe856b7ec2c682953b7ac04675d58f64"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="17808">
-				<rom name="robbo (199x)(janusoft)(pl)[k-file].atr" size="17808" crc="289f6a43" sha1="c770dbd101cea48e512df9abf172cf0441bf429c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -40491,18 +40491,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="shit" supported="no">
-		<description>Shit (DE, en)</description>
-		<year>1988</year>
-		<publisher>KE-Soft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="133136">
-				<rom name="shit (1988)(ke-soft)(de)(en).atr" size="133136" crc="06478f45" sha1="7de9cb96f3d40de05fc9bc286c2536a4fccb1855"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="shit_1" supported="no">
 		<description>Shit (NL, en, Freeware)</description>
 		<year>1993</year>
 		<publisher>ANG Software</publisher>
@@ -40511,6 +40499,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Cracked by Aura"/>
 			<dataarea name="flop" size="13584">
 				<rom name="shit (1993)(ang software)(nl)(en)(fw)[cr aura][k-file].atr" size="13584" crc="63dc304a" sha1="c23075e522403ad669b9a7256600200f84e8641a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="shit_1" supported="no">
+		<description>Shit (DE, en)</description>
+		<year>1988</year>
+		<publisher>KE-Soft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133136">
+				<rom name="shit (1988)(ke-soft)(de)(en).atr" size="133136" crc="06478f45" sha1="7de9cb96f3d40de05fc9bc286c2536a4fccb1855"/>
 			</dataarea>
 		</part>
 	</software>
@@ -41266,6 +41266,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="snowball_1" supported="no">
+		<description>Snowball (PL)</description>
+		<year>1993</year>
+		<publisher>L.K. Avalon</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="36880">
+				<rom name="snowball (1993)(l.k. avalon)(pl)[k-file].atr" size="36880" crc="8f3b68a9" sha1="2a00ac032fe47c754e4c534b21107a105a8dd729"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Alt 1"/>
+			<dataarea name="flop" size="37008">
+				<rom name="snowball (1993)(l.k. avalon)(pl)[a][k-file].atr" size="37008" crc="44c13f52" sha1="965937e4a5cb9cafe62604733efc24fd2865caef"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="snowball_2" supported="no">
 		<description>Snowball (GB)</description>
 		<year>1983</year>
 		<publisher>Level 9 Computing</publisher>
@@ -41286,25 +41305,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="text version"/>
 			<dataarea name="flop" size="65552">
 				<rom name="snowball (1983)(level 9 computing)(gb)[text version].atr" size="65552" crc="74b82357" sha1="dfb2e0d8ffa0a00f3e7b36c11f97726d76f659b4"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="snowball_2" supported="no">
-		<description>Snowball (PL)</description>
-		<year>1993</year>
-		<publisher>L.K. Avalon</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="36880">
-				<rom name="snowball (1993)(l.k. avalon)(pl)[k-file].atr" size="36880" crc="8f3b68a9" sha1="2a00ac032fe47c754e4c534b21107a105a8dd729"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="k-file, Alt 1"/>
-			<dataarea name="flop" size="37008">
-				<rom name="snowball (1993)(l.k. avalon)(pl)[a][k-file].atr" size="37008" crc="44c13f52" sha1="965937e4a5cb9cafe62604733efc24fd2865caef"/>
 			</dataarea>
 		</part>
 	</software>
@@ -41336,6 +41336,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="soccer_1" supported="no">
+		<description>Soccer (US)</description>
+		<year>1982</year>
+		<publisher>Gamma Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="10256">
+				<rom name="soccer (1982)(gamma software)(us)[k-file].atr" size="10256" crc="30614a35" sha1="51964da944385c0b565337e5d29e0c621863e478"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="soccer_2" supported="no">
 		<description>Soccer (GB)</description>
 		<year>1982</year>
 		<publisher>Thorn EMI</publisher>
@@ -41350,19 +41363,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb, k-file"/>
 			<dataarea name="flop" size="16912">
 				<rom name="soccer (1982)(thorn emi)(gb)[req osb][k-file].atr" size="16912" crc="6b8618c1" sha1="e9317bd025a200a761db74cbeaa02c59219a60fa"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="soccer_2" supported="no">
-		<description>Soccer (US)</description>
-		<year>1982</year>
-		<publisher>Gamma Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="10256">
-				<rom name="soccer (1982)(gamma software)(us)[k-file].atr" size="10256" crc="30614a35" sha1="51964da944385c0b565337e5d29e0c621863e478"/>
 			</dataarea>
 		</part>
 	</software>
@@ -42342,19 +42342,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="spelunke" supported="no">
-		<description>Spelunker (US)</description>
-		<year>1983</year>
-		<publisher>Micro GraphicImage</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Bad lvl3"/>
-			<dataarea name="flop" size="92176">
-				<rom name="spelunker (1983)(micro graphicimage)(us)[b lvl3].atr" size="92176" crc="19cd4491" sha1="925fe45c46949f1228b6ae9f9c45f1f063317040" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="spelunke_1" supported="no">
 		<description>Spelunker (US) (1)</description>
 		<year>1984</year>
 		<publisher>Broderbund</publisher>
@@ -42368,6 +42355,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="spelunker (1984)(broderbund)(us)[a].atr" size="92176" crc="49a88202" sha1="cf035b9befa07ed783af7a471555f57d7cf25585"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spelunke_1" supported="no">
+		<description>Spelunker (US)</description>
+		<year>1983</year>
+		<publisher>Micro GraphicImage</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Bad lvl3"/>
+			<dataarea name="flop" size="92176">
+				<rom name="spelunker (1983)(micro graphicimage)(us)[b lvl3].atr" size="92176" crc="19cd4491" sha1="925fe45c46949f1228b6ae9f9c45f1f063317040" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -42504,6 +42504,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="spitfire" supported="no">
+		<description>Spitfire 40 (US)</description>
+		<year>1986</year>
+		<publisher>Avalon Hill</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="spitfire 40 (1986)(avalon hill)(us).atr" size="92176" crc="efca6871" sha1="ea12075e88fd249aa522955e38acd304e9931426"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spitfire_1" supported="no">
 		<description>Spitfire 40 (PAL, GB)</description>
 		<year>1986</year>
 		<publisher>Mirrorsoft</publisher>
@@ -42521,19 +42533,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="spitfire_1" supported="no">
-		<description>Spitfire 40 (US)</description>
-		<year>1986</year>
-		<publisher>Avalon Hill</publisher>
+	<software name="spitfire_2" supported="no">
+		<description>Spitfire Ace (US)</description>
+		<year>1982</year>
+		<publisher>MicroProse Software</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="92176">
-				<rom name="spitfire 40 (1986)(avalon hill)(us).atr" size="92176" crc="efca6871" sha1="ea12075e88fd249aa522955e38acd304e9931426"/>
+				<rom name="spitfire ace (1982)(microprose software)(us).atr" size="92176" crc="2a94326d" sha1="220c25d950510e8775dec3f581099ea809de6372"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="spitfire_2" supported="no">
+	<software name="spitfire_3" supported="no">
 		<description>Spitfire Ace (GB)</description>
 		<year>19??</year>
 		<publisher>U.S. Gold</publisher>
@@ -42542,18 +42554,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb, BASIC"/>
 			<dataarea name="flop" size="92176">
 				<rom name="spitfire ace (19xx)(u.s. gold)(gb)[req osb][basic].atr" size="92176" crc="6a242d22" sha1="c04d134cae46a144ab04f800d01d2c63267bb5b6"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="spitfire_3" supported="no">
-		<description>Spitfire Ace (US)</description>
-		<year>1982</year>
-		<publisher>MicroProse Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="spitfire ace (1982)(microprose software)(us).atr" size="92176" crc="2a94326d" sha1="220c25d950510e8775dec3f581099ea809de6372"/>
 			</dataarea>
 		</part>
 	</software>
@@ -43110,18 +43110,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="starraid_1" supported="no">
-		<description>Star Raiders (GB)</description>
-		<year>19??</year>
-		<publisher>Atari</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="star raiders (19xx)(atari)(gb).atr" size="92176" crc="2fe7880a" sha1="70db874ed7fdc2b67e323a1e67376629864fbec1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="starraid_1_a" cloneof="starraid_1" supported="no">
 		<description>Star Raiders (US)</description>
 		<year>1979</year>
 		<publisher>Atari</publisher>
@@ -43130,6 +43118,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file"/>
 			<dataarea name="flop" size="8720">
 				<rom name="star raiders (1979)(atari)(us)[k-file].atr" size="8720" crc="f540ab2f" sha1="5b1c1971ead885c327f071ea5f675f5bb56ca05f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="starraid_1_a" cloneof="starraid_1" supported="no">
+		<description>Star Raiders (GB)</description>
+		<year>19??</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="star raiders (19xx)(atari)(gb).atr" size="92176" crc="2fe7880a" sha1="70db874ed7fdc2b67e323a1e67376629864fbec1"/>
 			</dataarea>
 		</part>
 	</software>
@@ -43274,6 +43274,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="starwars_2" supported="no">
+		<description>Star Wars - The Empire Strikes Back (DE, en)</description>
+		<year>1983</year>
+		<publisher>Harald Siegmund</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="65552">
+				<rom name="star wars - the empire strikes back (1983)(siegmund, harald)(de)(en).atr" size="65552" crc="b54740be" sha1="775a4a9c3b774e08a93966f24faa4c50bb837431"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="starwars_3" supported="no">
 		<description>Star Wars - The Empire Strikes Back</description>
 		<year>19??</year>
 		<publisher>Power Pack</publisher>
@@ -43282,18 +43294,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file"/>
 			<dataarea name="flop" size="17296">
 				<rom name="star wars - the empire strikes back (19xx)(power pack)[k-file].atr" size="17296" crc="fa2a510c" sha1="ddbb75999c25b41a42cdaaf6da94d8087507405e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="starwars_3" supported="no">
-		<description>Star Wars - The Empire Strikes Back (DE, en)</description>
-		<year>1983</year>
-		<publisher>Harald Siegmund</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="65552">
-				<rom name="star wars - the empire strikes back (1983)(siegmund, harald)(de)(en).atr" size="65552" crc="b54740be" sha1="775a4a9c3b774e08a93966f24faa4c50bb837431"/>
 			</dataarea>
 		</part>
 	</software>
@@ -44997,6 +44997,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="tankbatt" supported="no">
+		<description>Tank Battle (US)</description>
+		<year>1984</year>
+		<publisher>Arrays</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="65552">
+				<rom name="tank battle (1984)(arrays)(us).atr" size="65552" crc="1b87ed41" sha1="1e555186e1f6935dc4b4c2dac8bdee856801f639"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tankbatt_1" supported="no">
 		<description>Tank Battle (DE)</description>
 		<year>1983</year>
 		<publisher>Harald Siegmund</publisher>
@@ -45005,18 +45017,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="req OSb, k-file"/>
 			<dataarea name="flop" size="5776">
 				<rom name="tank battle (1983)(siegmund, harald)(de)[req osb][k-file].atr" size="5776" crc="6e8be66d" sha1="9b81344aa56dc4b6554bbd5953313adcdc276c80"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tankbatt_1" supported="no">
-		<description>Tank Battle (US)</description>
-		<year>1984</year>
-		<publisher>Arrays</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="65552">
-				<rom name="tank battle (1984)(arrays)(us).atr" size="65552" crc="1b87ed41" sha1="1e555186e1f6935dc4b4c2dac8bdee856801f639"/>
 			</dataarea>
 		</part>
 	</software>
@@ -45084,6 +45084,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="tapper" supported="no">
+		<description>Tapper (US)</description>
+		<year>1984</year>
+		<publisher>Sega</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="65552">
+				<rom name="tapper (1984)(sega)(us).atr" size="65552" crc="4bca4578" sha1="70d0c21c8cd728567380818f8eb1eb82032d5aec"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Cracked by Wastedwares"/>
+			<dataarea name="flop" size="27408">
+				<rom name="tapper (1984)(sega)(us)[cr wastedwares][k-file].atr" size="27408" crc="742e18e5" sha1="1b052a8bdbe28611500d22aa3dad97e13d8f8431"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tapper_1" supported="no">
 		<description>Tapper (GB)</description>
 		<year>1985</year>
 		<publisher>U.S. Gold</publisher>
@@ -45104,24 +45122,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Cracked by Phlegm Hacker, Alt 2"/>
 			<dataarea name="flop" size="27408">
 				<rom name="tapper (1985)(u.s. gold)(gb)[cr phlegm hacker][a2][k-file].atr" size="27408" crc="837c6d9b" sha1="82809eb672ffac14709394632e2b4fb18735553b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tapper_1" supported="no">
-		<description>Tapper (US)</description>
-		<year>1984</year>
-		<publisher>Sega</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="65552">
-				<rom name="tapper (1984)(sega)(us).atr" size="65552" crc="4bca4578" sha1="70d0c21c8cd728567380818f8eb1eb82032d5aec"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="k-file, Cracked by Wastedwares"/>
-			<dataarea name="flop" size="27408">
-				<rom name="tapper (1984)(sega)(us)[cr wastedwares][k-file].atr" size="27408" crc="742e18e5" sha1="1b052a8bdbe28611500d22aa3dad97e13d8f8431"/>
 			</dataarea>
 		</part>
 	</software>
@@ -45448,18 +45448,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="tetris" supported="no">
-		<description>Tetris</description>
-		<year>1989</year>
-		<publisher>Hero Music</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="9872">
-				<rom name="tetris (1989)(hero music).atr" size="9872" crc="4884b99f" sha1="3f63becc6cae476b79372b3bcf03628072a3304a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tetris_1" supported="no">
 		<description>Tetris (1)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -45472,20 +45460,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="tetrix" supported="no">
-		<description>Tetrix</description>
-		<year>1988</year>
-		<publisher>Parker</publisher>
+	<software name="tetris_1" supported="no">
+		<description>Tetris</description>
+		<year>1989</year>
+		<publisher>Hero Music</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BASIC"/>
-			<dataarea name="flop" size="92176">
-				<rom name="tetrix (1988)(parker)[basic].atr" size="92176" crc="4d805375" sha1="e7d4959910b856b3b88d8e9fa161f68571817150"/>
+			<dataarea name="flop" size="9872">
+				<rom name="tetris (1989)(hero music).atr" size="9872" crc="4884b99f" sha1="3f63becc6cae476b79372b3bcf03628072a3304a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="tetrix_1" supported="no">
+	<software name="tetrix" supported="no">
 		<description>Tetrix (US, Public Domain)</description>
 		<year>1989</year>
 		<publisher>Darryl Yong</publisher>
@@ -45523,6 +45510,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Alt 3"/>
 			<dataarea name="flop" size="16912">
 				<rom name="tetrix (1989)(darryl yong)(us)(pd)[a3][k-file].atr" size="16912" crc="5123385b" sha1="6b58189d77082d45fd1e017866ae6a52ab1fed35"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tetrix_1" supported="no">
+		<description>Tetrix</description>
+		<year>1988</year>
+		<publisher>Parker</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BASIC"/>
+			<dataarea name="flop" size="92176">
+				<rom name="tetrix (1988)(parker)[basic].atr" size="92176" crc="4d805375" sha1="e7d4959910b856b3b88d8e9fa161f68571817150"/>
 			</dataarea>
 		</part>
 	</software>
@@ -45992,6 +45992,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thecave" supported="no">
+		<description>The Cave (GB, Public Domain)</description>
+		<year>1993</year>
+		<publisher>John Foskett</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="cave, the (1993)(foskett, john)(gb)(pd).atr" size="92176" crc="98caf37a" sha1="a5c3868d9d473273c961f8ab5dab0c533cf19a75"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thecave_1" supported="no">
 		<description>The Cave</description>
 		<year>19??</year>
 		<publisher>Tim Robison</publisher>
@@ -46000,18 +46012,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="BASIC"/>
 			<dataarea name="flop" size="92176">
 				<rom name="cave, the (19xx)(robison, tim)[basic].atr" size="92176" crc="70d30cdb" sha1="97050228854abcbbe4152588e05d4ad758fa2e8e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thecave_1" supported="no">
-		<description>The Cave (GB, Public Domain)</description>
-		<year>1993</year>
-		<publisher>John Foskett</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="cave, the (1993)(foskett, john)(gb)(pd).atr" size="92176" crc="98caf37a" sha1="a5c3868d9d473273c961f8ab5dab0c533cf19a75"/>
 			</dataarea>
 		</part>
 	</software>
@@ -47075,18 +47075,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thelastg" supported="no">
-		<description>The Last Guardian (GB)</description>
-		<year>1988</year>
-		<publisher>Tynesoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="last guardian, the (1988)(tynesoft)(gb).atr" size="92176" crc="406a6cac" sha1="6120418f66d7cedbcf1632a21296772dee257941"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thelastg_1" supported="no">
 		<description>The Last Guardian (PL)</description>
 		<year>1993</year>
 		<publisher>L.K. Avalon</publisher>
@@ -47107,6 +47095,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Cracked by GSL - KSL, Trained +3 by GSL"/>
 			<dataarea name="flop" size="34064">
 				<rom name="last guardian, the (1993)(l.k. avalon)(pl)[cr gsl - ksl][t +3 gsl - ksl][k-file].atr" size="34064" crc="86c135c0" sha1="b6a1307e86f29a7439f5c3ba07d1016c5301babb"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thelastg_1" supported="no">
+		<description>The Last Guardian (GB)</description>
+		<year>1988</year>
+		<publisher>Tynesoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="last guardian, the (1988)(tynesoft)(gb).atr" size="92176" crc="406a6cac" sha1="6120418f66d7cedbcf1632a21296772dee257941"/>
 			</dataarea>
 		</part>
 	</software>
@@ -48514,6 +48514,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="tomahawk" supported="no">
+		<description>Tomahawk (US)</description>
+		<year>1987</year>
+		<publisher>Datasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by Ripper"/>
+			<dataarea name="flop" size="92176">
+				<rom name="tomahawk (1987)(datasoft)(us)[cr ripper].atr" size="92176" crc="0a27fb07" sha1="f3a03f0f76f65cdb90af8085e2bed56b76e09283"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by Ripper, Alt 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="tomahawk (1987)(datasoft)(us)[cr ripper][a].atr" size="92176" crc="62b7d339" sha1="3014a3b3585b447b101a63b1ce1211809e7f3e3f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tomahawk_1" supported="no">
 		<description>Tomahawk (GB, 3 Languages)</description>
 		<year>1986</year>
 		<publisher>Digital Integration</publisher>
@@ -48563,25 +48582,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Cracked by Spider Man"/>
 			<dataarea name="flop" size="55184">
 				<rom name="tomahawk (1986)(digital integration)(gb)(m3)[cr spider man][k-file].atr" size="55184" crc="11b29db0" sha1="f05ce36f1767fd7571a4ebe604934758d4412e2b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tomahawk_1" supported="no">
-		<description>Tomahawk (US)</description>
-		<year>1987</year>
-		<publisher>Datasoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Cracked by Ripper"/>
-			<dataarea name="flop" size="92176">
-				<rom name="tomahawk (1987)(datasoft)(us)[cr ripper].atr" size="92176" crc="0a27fb07" sha1="f3a03f0f76f65cdb90af8085e2bed56b76e09283"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Cracked by Ripper, Alt 1"/>
-			<dataarea name="flop" size="92176">
-				<rom name="tomahawk (1987)(datasoft)(us)[cr ripper][a].atr" size="92176" crc="62b7d339" sha1="3014a3b3585b447b101a63b1ce1211809e7f3e3f"/>
 			</dataarea>
 		</part>
 	</software>
@@ -48824,6 +48824,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="transylv" supported="no">
+		<description>Transylvania (US)</description>
+		<year>1984</year>
+		<publisher>Penguin Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="transylvania (1984)(penguin software)(us).atr" size="92176" crc="5c50f3b3" sha1="c738eb3d7d48c2093cfdfa7a9ccba3b096418884"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="transylv_1" supported="no">
 		<description>Transylvania</description>
 		<year>1988</year>
 		<publisher>Scott Smith - Shane Holtman</publisher>
@@ -48838,18 +48850,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked 1, Alt 1"/>
 			<dataarea name="flop" size="92176">
 				<rom name="transylvania (1988)(smith, scott - holtman, shane)[h][a].atr" size="92176" crc="276474ce" sha1="09a0307b7c4f2f9cd92a0f11129515b358416e9d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="transylv_1" supported="no">
-		<description>Transylvania (US)</description>
-		<year>1984</year>
-		<publisher>Penguin Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="transylvania (1984)(penguin software)(us).atr" size="92176" crc="5c50f3b3" sha1="c738eb3d7d48c2093cfdfa7a9ccba3b096418884"/>
 			</dataarea>
 		</part>
 	</software>
@@ -49038,6 +49038,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="triviaqu_1" supported="no">
+		<description>Trivia Quiz (US, Public Domain)</description>
+		<year>19??</year>
+		<publisher>ACAOC</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="req OSb"/>
+			<dataarea name="flop" size="92176">
+				<rom name="trivia quiz (19xx)(acaoc)(us)(pd)[req osb].atr" size="92176" crc="30bccc24" sha1="e28298d18b8d9de7a4a1b43bd3ed8fbd3cf62112"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="triviaqu_2" supported="no">
 		<description>Trivia Quiz</description>
 		<year>19??</year>
 		<publisher>Clinton Branch</publisher>
@@ -49052,19 +49065,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2"/>
 			<dataarea name="flop" size="92176">
 				<rom name="trivia quiz (19xx)(clinton branch)(disk 2 of 2).atr" size="92176" crc="4d6f524f" sha1="fb692a64a478f3f490b49303ac2afca92ac53aec"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="triviaqu_2" supported="no">
-		<description>Trivia Quiz (US, Public Domain)</description>
-		<year>19??</year>
-		<publisher>ACAOC</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="req OSb"/>
-			<dataarea name="flop" size="92176">
-				<rom name="trivia quiz (19xx)(acaoc)(us)(pd)[req osb].atr" size="92176" crc="30bccc24" sha1="e28298d18b8d9de7a4a1b43bd3ed8fbd3cf62112"/>
 			</dataarea>
 		</part>
 	</software>
@@ -51298,19 +51298,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="wladca" supported="no">
-		<description>Wladca (PL)</description>
-		<year>1992</year>
-		<publisher>P.PietroniGB</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="16784">
-				<rom name="wladca (1992)(p.pietronigb)(pl)[k-file].atr" size="16784" crc="04915d44" sha1="cfe6a97ccec6cae8a0e644e629bfc31ee25847ba"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="wladca_1" supported="no">
 		<description>Wladca (PL) (1)</description>
 		<year>1993</year>
 		<publisher>Mirage</publisher>
@@ -51331,6 +51318,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="noATR, k-file"/>
 			<dataarea name="flop" size="55312">
 				<rom name="wladca (1993)(mirage)(pl)[noatr][k-file].atr" size="55312" crc="f1d35f22" sha1="22403c00325faa777e814982d6d4531c162c05bb"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wladca_1" supported="no">
+		<description>Wladca (PL)</description>
+		<year>1992</year>
+		<publisher>P.PietroniGB</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="16784">
+				<rom name="wladca (1992)(p.pietronigb)(pl)[k-file].atr" size="16784" crc="04915d44" sha1="cfe6a97ccec6cae8a0e644e629bfc31ee25847ba"/>
 			</dataarea>
 		</part>
 	</software>
@@ -51459,6 +51459,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="worldsoc" supported="no">
+		<description>World Soccer (NL, en)</description>
+		<year>19??</year>
+		<publisher>ANG Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="world soccer (19xx)(ang software)(nl)(en).atr" size="92176" crc="fa1ccfab" sha1="5452a44b32ae719978263a4119aa3d98c73777ee"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="worldsoc_1" supported="no">
+		<description>World Soccer (GB) (1)</description>
+		<year>19??</year>
+		<publisher>Micro Discount</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="world soccer (19xx)(micro discount)(gb).atr" size="92176" crc="ac659d7a" sha1="4cfffdd8d2b044e6ba1920437f2a8ec442d0e592"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="worldsoc_2" supported="no">
 		<description>World Soccer (GB)</description>
 		<year>1990</year>
 		<publisher>Zeppelin Games</publisher>
@@ -51478,30 +51502,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file, Hacked Tip Top Software"/>
 			<dataarea name="flop" size="39824">
 				<rom name="world soccer (1990)(zeppelin games)(gb)[h tip top software][k-file].atr" size="39824" crc="60cf26a4" sha1="44f6ebf02f115b42ff45acce53a200a848f8e109"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="worldsoc_1" supported="no">
-		<description>World Soccer (GB) (1)</description>
-		<year>19??</year>
-		<publisher>Micro Discount</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="world soccer (19xx)(micro discount)(gb).atr" size="92176" crc="ac659d7a" sha1="4cfffdd8d2b044e6ba1920437f2a8ec442d0e592"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="worldsoc_2" supported="no">
-		<description>World Soccer (NL, en)</description>
-		<year>19??</year>
-		<publisher>ANG Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="world soccer (19xx)(ang software)(nl)(en).atr" size="92176" crc="fa1ccfab" sha1="5452a44b32ae719978263a4119aa3d98c73777ee"/>
 			</dataarea>
 		</part>
 	</software>
@@ -52434,30 +52434,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="zorro" supported="no">
-		<description>Zorro (GB)</description>
-		<year>1985</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="zorro (1985)(u.s. gold)(gb).atr" size="92176" crc="df552763" sha1="c219f6eb373df61e620b40d19aef66f8f03e7356"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="k-file"/>
-			<dataarea name="flop" size="33296">
-				<rom name="zorro (1985)(u.s. gold)(gb)[k-file].atr" size="33296" crc="cfbbc620" sha1="5b2571551afd062dafa942241f5eab53e329fcba"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="k-file, Alt 1"/>
-			<dataarea name="flop" size="32912">
-				<rom name="zorro (1985)(u.s. gold)(gb)[a][k-file].atr" size="32912" crc="fceb7e8a" sha1="00da764c82a714707feeec1be3c85756eaa38f39"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="zorro_1" supported="no">
 		<description>Zorro (US)</description>
 		<year>1985</year>
 		<publisher>Datasoft</publisher>
@@ -52488,7 +52464,44 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="zorro_1" supported="no">
+		<description>Zorro (GB)</description>
+		<year>1985</year>
+		<publisher>U.S. Gold</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="zorro (1985)(u.s. gold)(gb).atr" size="92176" crc="df552763" sha1="c219f6eb373df61e620b40d19aef66f8f03e7356"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="k-file"/>
+			<dataarea name="flop" size="33296">
+				<rom name="zorro (1985)(u.s. gold)(gb)[k-file].atr" size="33296" crc="cfbbc620" sha1="5b2571551afd062dafa942241f5eab53e329fcba"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Alt 1"/>
+			<dataarea name="flop" size="32912">
+				<rom name="zorro (1985)(u.s. gold)(gb)[a][k-file].atr" size="32912" crc="fceb7e8a" sha1="00da764c82a714707feeec1be3c85756eaa38f39"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="zumbaja" supported="no">
+		<description>Zumbaja (PL, Demo)</description>
+		<year>1993</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="k-file, Bad 1"/>
+			<dataarea name="flop" size="22800">
+				<rom name="zumbaja (demo) (1993)(-)(pl)[b][k-file].atr" size="22800" crc="e2917a52" sha1="e97e81a772dd6f288dd060c148bf0a5578af86c8" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zumbaja_1" supported="no">
 		<description>Zumbaja (PL)</description>
 		<year>1993</year>
 		<publisher>Krysal Software</publisher>
@@ -52502,19 +52515,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="k-file"/>
 			<dataarea name="flop" size="26256">
 				<rom name="zumbaja (1993)(krysal software)(pl)[k-file].atr" size="26256" crc="98a36c41" sha1="7c7f74cb27563276dd116ff6a1ee8622ba66fc6c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="zumbaja_1" supported="no">
-		<description>Zumbaja (PL, Demo)</description>
-		<year>1993</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="k-file, Bad 1"/>
-			<dataarea name="flop" size="22800">
-				<rom name="zumbaja (demo) (1993)(-)(pl)[b][k-file].atr" size="22800" crc="e2917a52" sha1="e97e81a772dd6f288dd060c148bf0a5578af86c8" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -52546,30 +52546,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="zybex_1" supported="no">
-		<description>Zybex (GB)</description>
-		<year>1988</year>
-		<publisher>Zeppelin Games</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="zybex (1988)(zeppelin games)(gb).atr" size="92176" crc="cbba692a" sha1="4314f60e12785f8bccb0aef1cc860195543e81f9"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Cracked by Kiwi Systems New Zealand, Trained 1"/>
-			<dataarea name="flop" size="92176">
-				<rom name="zybex (1988)(zeppelin games)(gb)[cr kiwi systems new zealand][t].atr" size="92176" crc="9d5e1f2c" sha1="29636afbf15ddf8c1921c228c025882da1020429"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Cracked by Kiwi Systems New Zealand, Trained 1, Alt 1"/>
-			<dataarea name="flop" size="92176">
-				<rom name="zybex (1988)(zeppelin games)(gb)[cr kiwi systems new zealand][t][a].atr" size="92176" crc="b951daec" sha1="3a39b1842ca9e0bc0f10baab88d84a843df2e5a1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="zybex_2" supported="no">
 		<description>Zybex (GB) (1)</description>
 		<year>19??</year>
 		<publisher>Callisto Computers</publisher>
@@ -52631,6 +52607,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="stereo"/>
 			<dataarea name="flop" size="92176">
 				<rom name="zybex (19xx)(callisto computers)(gb)[stereo].atr" size="92176" crc="f3774dfc" sha1="17740e3bc981d5eee8c52840db830c8e41de5175"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zybex_2" supported="no">
+		<description>Zybex (GB)</description>
+		<year>1988</year>
+		<publisher>Zeppelin Games</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="zybex (1988)(zeppelin games)(gb).atr" size="92176" crc="cbba692a" sha1="4314f60e12785f8bccb0aef1cc860195543e81f9"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by Kiwi Systems New Zealand, Trained 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="zybex (1988)(zeppelin games)(gb)[cr kiwi systems new zealand][t].atr" size="92176" crc="9d5e1f2c" sha1="29636afbf15ddf8c1921c228c025882da1020429"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by Kiwi Systems New Zealand, Trained 1, Alt 1"/>
+			<dataarea name="flop" size="92176">
+				<rom name="zybex (1988)(zeppelin games)(gb)[cr kiwi systems new zealand][t][a].atr" size="92176" crc="b951daec" sha1="3a39b1842ca9e0bc0f10baab88d84a843df2e5a1"/>
 			</dataarea>
 		</part>
 	</software>

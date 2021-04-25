@@ -7,18 +7,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 <softwarelist name="c64_flop_crack" description="Commodore 64 floppy disks (Cracktros)">
 
 	<software name="2intros" supported="no">
-		<description>2 Intros</description>
-		<year>1988</year>
-		<publisher>Welfare Software Boys</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="2 intros (1988)(welfare software boys).d64" size="174848" crc="21aa004f" sha1="a82c7cb41a3671e6b246ab6d52e5794bea6dcfbf"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="2intros_1" supported="no">
 		<description>2 Intros (1)</description>
 		<year>1989</year>
 		<publisher>Elect - X-Rated</publisher>
@@ -36,19 +24,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="2newintr" supported="no">
-		<description>2 New Intros</description>
+	<software name="2intros_1" supported="no">
+		<description>2 Intros</description>
 		<year>1988</year>
-		<publisher>Strike Force - The Movers</publisher>
+		<publisher>Welfare Software Boys</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="2 new intros (1988)(strike force - the movers).d64" size="174848" crc="fdb36f8e" sha1="77b07cdad48f45de27652e096797a68ca9f7f644"/>
+				<rom name="2 intros (1988)(welfare software boys).d64" size="174848" crc="21aa004f" sha1="a82c7cb41a3671e6b246ab6d52e5794bea6dcfbf"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="2newintr_1" supported="no">
+	<software name="2newintr" supported="no">
 		<description>2 New Intros (1)</description>
 		<year>1989</year>
 		<publisher>Alabama</publisher>
@@ -66,7 +54,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="2newintr_2" supported="no">
+	<software name="2newintr_1" supported="no">
 		<description>2 New Intros (2)</description>
 		<year>1991</year>
 		<publisher>Duplex</publisher>
@@ -74,6 +62,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="2 new intros (1991)(duplex).d64" size="174848" crc="88ee9494" sha1="045f4c9a29c9911752b1fb088c4a54b6fbc78bf4"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="2newintr_2" supported="no">
+		<description>2 New Intros</description>
+		<year>1988</year>
+		<publisher>Strike Force - The Movers</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="2 new intros (1988)(strike force - the movers).d64" size="174848" crc="fdb36f8e" sha1="77b07cdad48f45de27652e096797a68ca9f7f644"/>
 			</dataarea>
 		</part>
 	</software>
@@ -211,18 +211,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="anotheri" supported="no">
-		<description>Another Intro</description>
-		<year>1988</year>
-		<publisher>Bytestar</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="another intro (1988)(bytestar).d64" size="174848" crc="0b5755aa" sha1="a2a8fa243154889a150d919ccca8a83b5f2f56e3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="anotheri_1" supported="no">
 		<description>Another Intro (1)</description>
 		<year>19??</year>
 		<publisher>Accuracy</publisher>
@@ -242,6 +230,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="174848">
 				<rom name="another intro (19xx)(accuracy)[a2].d64" size="174848" crc="4e91ed55" sha1="74170ccb861cb5c881e8a5163dcb4a26b73d18ae"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anotheri_1" supported="no">
+		<description>Another Intro</description>
+		<year>1988</year>
+		<publisher>Bytestar</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="another intro (1988)(bytestar).d64" size="174848" crc="0b5755aa" sha1="a2a8fa243154889a150d919ccca8a83b5f2f56e3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1858,6 +1858,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="intro1" supported="no">
+		<description>Intro 1 (1990-10-30)</description>
+		<year>1990</year>
+		<publisher>Antimon</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro 1 (1990-10-30)(antimon).d64" size="174848" crc="53e0c8f5" sha1="d714a90ecb60c72574d9e242a1adb2af96977c6c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="intro1_1" supported="no">
 		<description>Intro 1</description>
 		<year>1988</year>
 		<publisher>Aron Cracker Crew</publisher>
@@ -1875,7 +1887,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="intro1_1" supported="no">
+	<software name="intro1_2" supported="no">
 		<description>Intro 1 (1)</description>
 		<year>19??</year>
 		<publisher>Megastyle</publisher>
@@ -1911,7 +1923,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="intro1_2" supported="no">
+	<software name="intro1_3" supported="no">
 		<description>Intro 1 (1987-02-28)</description>
 		<year>1987</year>
 		<publisher>Trivial</publisher>
@@ -1923,7 +1935,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="intro1_3" supported="no">
+	<software name="intro1_4" supported="no">
 		<description>Intro 1 (1989-08-01)</description>
 		<year>1989</year>
 		<publisher>U2</publisher>
@@ -1931,18 +1943,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="intro 1 (1989-08-01)(u2).d64" size="174848" crc="7254c1b6" sha1="00ecff25600cc0042b0d529f07c88bfc4c3bf112"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="intro1_4" supported="no">
-		<description>Intro 1 (1990-10-30)</description>
-		<year>1990</year>
-		<publisher>Antimon</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro 1 (1990-10-30)(antimon).d64" size="174848" crc="53e0c8f5" sha1="d714a90ecb60c72574d9e242a1adb2af96977c6c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2140,6 +2140,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="introcol_3" supported="no">
+		<description>Intro Collection 1 (1995-01-30)</description>
+		<year>1995</year>
+		<publisher>Art Design</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection 1 (1995-01-30)(art design).d64" size="174848" crc="2dd537cb" sha1="9d4c734265778501ab72c37e4389d7a8c59b863d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_4" supported="no">
 		<description>Intro Collection 1</description>
 		<year>1989</year>
 		<publisher>Exult</publisher>
@@ -2163,55 +2175,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="introcol_4" supported="no">
-		<description>Intro Collection 1 (1)</description>
-		<year>1989</year>
-		<publisher>TERA - Tour de Future</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection 1 (1989)(tera - tour de future).d64" size="174848" crc="9365dd58" sha1="5a4e7de5a9d5c78ed10d5c9c3111ca3adb12fd6b"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="introcol_5" supported="no">
-		<description>Intro Collection 1 (2)</description>
-		<year>19??</year>
-		<publisher>The New Patriots</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection 1 (19xx)(the new patriots).d64" size="174848" crc="ccc8b6d8" sha1="5a369ca72ec7de239e7afdff0884593ab4db517f"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection 1 (19xx)(the new patriots)[a].d64" size="174848" crc="5eddff31" sha1="7804cb5f3b875bd807cdec46e2006e719878ce2d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_6" supported="no">
-		<description>Intro Collection 1 (1987-11-01)</description>
-		<year>1987</year>
-		<publisher>Shield</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection 1 (1987-11-01)(shield).d64" size="174848" crc="3b3f697b" sha1="a915102ed5a4d4309a0ea8fdd8e9ee7053bcda92"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection 1 (1987-11-01)(shield)[a].d64" size="174848" crc="7bd9542f" sha1="5b6f2b1870b73b8c75e364048ad44427f26ff02d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_7" supported="no">
 		<description>Intro Collection 1 (1988-07)</description>
 		<year>1988</year>
 		<publisher>Lazer - The Crack Machines</publisher>
@@ -2235,31 +2199,55 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="introcol_8" supported="no">
-		<description>Intro Collection 1 (1995-01-30)</description>
-		<year>1995</year>
-		<publisher>Art Design</publisher>
+	<software name="introcol_6" supported="no">
+		<description>Intro Collection 1 (1987-11-01)</description>
+		<year>1987</year>
+		<publisher>Shield</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="intro collection 1 (1995-01-30)(art design).d64" size="174848" crc="2dd537cb" sha1="9d4c734265778501ab72c37e4389d7a8c59b863d"/>
+				<rom name="intro collection 1 (1987-11-01)(shield).d64" size="174848" crc="3b3f697b" sha1="a915102ed5a4d4309a0ea8fdd8e9ee7053bcda92"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection 1 (1987-11-01)(shield)[a].d64" size="174848" crc="7bd9542f" sha1="5b6f2b1870b73b8c75e364048ad44427f26ff02d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_7" supported="no">
+		<description>Intro Collection 1 (1)</description>
+		<year>1989</year>
+		<publisher>TERA - Tour de Future</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection 1 (1989)(tera - tour de future).d64" size="174848" crc="9365dd58" sha1="5a4e7de5a9d5c78ed10d5c9c3111ca3adb12fd6b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_8" supported="no">
+		<description>Intro Collection 1 (2)</description>
+		<year>19??</year>
+		<publisher>The New Patriots</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection 1 (19xx)(the new patriots).d64" size="174848" crc="ccc8b6d8" sha1="5a369ca72ec7de239e7afdff0884593ab4db517f"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection 1 (19xx)(the new patriots)[a].d64" size="174848" crc="5eddff31" sha1="7804cb5f3b875bd807cdec46e2006e719878ce2d"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="introcol_9" supported="no">
-		<description>Intro Collection II</description>
-		<year>1991</year>
-		<publisher>Sabian</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection ii (1991)(sabian).d64" size="174848" crc="59bf6eca" sha1="8803220217fff2c76f6c5f1d0cf398d4996f853f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_10" supported="no">
 		<description>Intro Collection II (1988-10-04)</description>
 		<year>1988</year>
 		<publisher>Hotline</publisher>
@@ -2273,6 +2261,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="intro collection ii (1988-10-04)(hotline)[a].d64" size="174848" crc="ec7c0c2a" sha1="ac1df5dd4dc5b4e4542ccccd87241f3a9342a85d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_10" supported="no">
+		<description>Intro Collection II</description>
+		<year>1991</year>
+		<publisher>Sabian</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection ii (1991)(sabian).d64" size="174848" crc="59bf6eca" sha1="8803220217fff2c76f6c5f1d0cf398d4996f853f"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2332,6 +2332,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="introcol_15" supported="no">
+		<description>Intro Collection (19)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (19xx)(-).d64" size="174848" crc="5e60279c" sha1="aaf703b30ad369f8b8358c94c3149c28eff2d0dc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_16" supported="no">
 		<description>Intro Collection</description>
 		<year>1986</year>
 		<publisher>1001 Crew</publisher>
@@ -2355,7 +2367,187 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="introcol_16" supported="no">
+	<software name="introcol_17" supported="no">
+		<description>Intro Collection (1988-07-16)</description>
+		<year>1988</year>
+		<publisher>2000 A.D.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1988-07-16)(2000 a.d.).d64" size="174848" crc="ba7f1454" sha1="10e2184cde7e284528ae60cfdea9b47e8fa00c79"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_18" supported="no">
+		<description>Intro Collection (6)</description>
+		<year>1989</year>
+		<publisher>Abnormal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989)(abnormal).d64" size="174848" crc="a131a98d" sha1="a4b8d50b5331583f53789b37c76a7d89b161558b"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989)(abnormal)[a].d64" size="174848" crc="44248a97" sha1="6db6f70ad9eef5d74d9b08079692214ff8af0cd1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_18_a" cloneof="introcol_18" supported="no">
+		<description>Intro Collection (1989-02-18)</description>
+		<year>1989</year>
+		<publisher>Abnormal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-02-18)(abnormal).d64" size="174848" crc="5bf926bc" sha1="6e93fbcebfce50f1dc37c1391dfa240abcae6222"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-02-18)(abnormal)[a].d64" size="174848" crc="94960b8b" sha1="9a7e6f22d37b5553fa9c4d4105f2d6b03417cf70"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_19" supported="no">
+		<description>Intro Collection (1988-06-16)</description>
+		<year>1988</year>
+		<publisher>Agile</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1988-06-16)(agile).d64" size="174848" crc="c2a5e139" sha1="a34fb9df5d6b0b7ca4a57a7f5919eec2327bba6f"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1988-06-16)(agile)[a].d64" size="174848" crc="93946fb3" sha1="dd45021da13b785c89bcd408b12e9949a3867004"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_20" supported="no">
+		<description>Intro Collection (2)</description>
+		<year>1988</year>
+		<publisher>Alpha Flight - The Danse Society</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1988)(alpha flight - the danse society).d64" size="174848" crc="bfb68baf" sha1="34c4e27ec9c6c77b501aef7a52ef977d5e263793"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_21" supported="no">
+		<description>Intro Collection (1989-01-17)</description>
+		<year>1989</year>
+		<publisher>Antiriad</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-01-17)(antiriad).d64" size="174848" crc="e6905379" sha1="514f4b585a4547ce7b62d437a7ac710c3e4948bc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_22" supported="no">
+		<description>Intro Collection (20)</description>
+		<year>19??</year>
+		<publisher>Ascraeus</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (19xx)(ascraeus).d64" size="174848" crc="b036d329" sha1="e274994c820b8159655e6e57066aad28fb32dac1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_23" supported="no">
+		<description>Intro Collection (21)</description>
+		<year>19??</year>
+		<publisher>Beyond Force</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (19xx)(beyond force).d64" size="174848" crc="2a97bfa1" sha1="6402a1fe85fb883a8f17173487afd83f7bdc7903"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_24" supported="no">
+		<description>Intro Collection (2009-11-20)</description>
+		<year>2009</year>
+		<publisher>Booze Design</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (2009-11-20)(booze design).d64" size="174848" crc="1386753c" sha1="86e862b543d737b54fcdc2b012b3a6007d69ffb8"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_25" supported="no">
+		<description>Intro Collection (1989-02)</description>
+		<year>1989</year>
+		<publisher>Byterapers</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-02)(byterapers).d64" size="174848" crc="f15dc85c" sha1="a0270b55ee040d4b544af6ad722bfeb178bbdb17"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-02)(byterapers)[a].d64" size="174848" crc="5124112d" sha1="2d5084a1000d345993564a7d1f4bcc78c8b3a9c5"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-02)(byterapers)[a2].d64" size="174848" crc="4559295a" sha1="695064ede1fad43255e19825825071306e26ae5d"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 3"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-02)(byterapers)[a3].d64" size="174848" crc="64cb894a" sha1="02ba45099d4c427d3596401e2177f716e0ff5c3e"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 4"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-02)(byterapers)[a4].d64" size="174848" crc="a0d60aa8" sha1="a30f3a0846cd6426f7e9b356c53dc0bbe2f1338b"/>
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 5"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-02)(byterapers)[a5].d64" size="174848" crc="c73ed73d" sha1="6dca6f27cde5d9694c3d82a3df00742dbd47efa9"/>
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 6"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-02)(byterapers)[a6].d64" size="174848" crc="194e81b3" sha1="047643054314949ab0296bd2fb06c3132209cc85"/>
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 7"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-02)(byterapers)[a7].d64" size="174848" crc="9cd88967" sha1="ac727cfaeb3fefc6e5f5a7d22af674e91d6d3339"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_26" supported="no">
 		<description>Intro Collection (1)</description>
 		<year>1987</year>
 		<publisher>CrackForce Omega</publisher>
@@ -2373,19 +2565,229 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="introcol_17" supported="no">
-		<description>Intro Collection (2)</description>
-		<year>1988</year>
-		<publisher>Alpha Flight - The Danse Society</publisher>
+	<software name="introcol_27" supported="no">
+		<description>Intro Collection (1990-05)</description>
+		<year>1990</year>
+		<publisher>Duplex - Oracle</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1988)(alpha flight - the danse society).d64" size="174848" crc="bfb68baf" sha1="34c4e27ec9c6c77b501aef7a52ef977d5e263793"/>
+				<rom name="intro collection (1990-05)(duplex - oracle).d64" size="174848" crc="578e533a" sha1="eccd006b5f02407ba0706fcc0892885385901f84"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="introcol_18" supported="no">
+	<software name="introcol_28" supported="no">
+		<description>Intro Collection (1995-10-23)</description>
+		<year>1995</year>
+		<publisher>Dytec - Laxity</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1995-10-23)(dytec - laxity).d64" size="174848" crc="cc09a7de" sha1="1bcdfdf47da0716119781d587433a47d33fea869"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_29" supported="no">
+		<description>Intro Collection (v1, 1989-03-25)</description>
+		<year>1989</year>
+		<publisher>Exult</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection v1 (1989-03-25)(exult).d64" size="174848" crc="3456d06b" sha1="b8c348c7c18b89ac1a038870db30e445397d36f2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_30" supported="no">
+		<description>Intro Collection (1989-01)</description>
+		<year>1989</year>
+		<publisher>Funtex</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-01)(funtex).d64" size="174848" crc="bf964931" sha1="9346bb773acefb0ea36a1a9a598076836a7bb55d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_31" supported="no">
+		<description>Intro Collection (7)</description>
+		<year>1989</year>
+		<publisher>Genie</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989)(genie).d64" size="174848" crc="9f4f2271" sha1="c3caa1f08426eb357dd55b1a58af9a516a6ff660"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_32" supported="no">
+		<description>Intro Collection (16)</description>
+		<year>1996</year>
+		<publisher>Hardcore</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1996)(hardcore).d64" size="174848" crc="53c1f729" sha1="892323c0dc1e9c9b90095d9db8379065a3324424"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_33" supported="no">
+		<description>Intro Collection (22)</description>
+		<year>19??</year>
+		<publisher>Hitmen</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (19xx)(hitmen).d64" size="174848" crc="fb0e457d" sha1="79638e1d13f6278e9c67a6b733f7a3357403bff1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_34" supported="no">
+		<description>Intro Collection (1987-05-15)</description>
+		<year>1987</year>
+		<publisher>Hotline</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1987-05-15)(hotline).d64" size="174848" crc="0cbe1a43" sha1="a8b399fbdaa870500b56165eb97773339afac738"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1987-05-15)(hotline)[a].d64" size="174848" crc="c2dcfc9f" sha1="f401fe55d0980d9fad87243f5da3c84dbc4ee8ea"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_35" supported="no">
+		<description>Intro Collection (23)</description>
+		<year>19??</year>
+		<publisher>Jewels</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (19xx)(jewels).d64" size="174848" crc="8582693a" sha1="cc95f9ffeca682df957511c52b00130366104ae0"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (19xx)(jewels)[a].d64" size="174848" crc="9ef7220f" sha1="9fac6e4dffac74789ec9f5fa7e6223c52f9e21e3"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (19xx)(jewels)[a2].d64" size="174848" crc="3a0e0772" sha1="027c087a52970df252c8ec39714d0042a9a197de"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 3"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (19xx)(jewels)[a3].d64" size="174848" crc="190f853c" sha1="fd4ec3e357b44c4767b3dcd552cdbe2f1e32a477"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 4"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (19xx)(jewels)[a4].d64" size="174848" crc="dfa1b69d" sha1="a8328c79413c1fa680b55529ed501c696d103a14"/>
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 5"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (19xx)(jewels)[a5].d64" size="174848" crc="5a2acbcb" sha1="b6d0b379117dc65100a59911bc2608b4ae5d1f00"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_36" supported="no">
+		<description>Intro Collection (14)</description>
+		<year>1994</year>
+		<publisher>KGB</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1994)(kgb).d64" size="174848" crc="b0e224cd" sha1="305af671b5807d274e8ae051a794c7f40a3aa280"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_37" supported="no">
+		<description>Intro Collection (17)</description>
+		<year>1996</year>
+		<publisher>Laxity</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1996)(laxity).d64" size="174848" crc="af15afe9" sha1="e55eec9f3fd0b26a9361bb85a29836a02cf625ff"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1996)(laxity)[a].d64" size="174848" crc="8fb71c6e" sha1="f37c7b59d58fbf7cd7b9fe720993320b000db609"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_38" supported="no">
+		<description>Intro Collection (8)</description>
+		<year>1989</year>
+		<publisher>Moonlight</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989)(moonlight).d64" size="174848" crc="d83dffcd" sha1="f077f3495d08cb11b62a9877b398092cd601ebf6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_39" supported="no">
+		<description>Intro Collection (1989-01-10)</description>
+		<year>1989</year>
+		<publisher>Opal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-01-10)(opal).d64" size="174848" crc="560002c6" sha1="93f4a95fe90f929d35fa1860bd0f1ebb78722081"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-01-10)(opal)[a].d64" size="174848" crc="f9c5e711" sha1="f466062bb1997e5aaf66672ea8276e3f8e1dcc3b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_40" supported="no">
+		<description>Intro Collection (24)</description>
+		<year>19??</year>
+		<publisher>Parados</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (19xx)(parados).d64" size="174848" crc="daa668df" sha1="e36f6232c4c2c2559e37dbd909a608b1c2b1ebd1"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (19xx)(parados)[a].d64" size="174848" crc="1dc06183" sha1="f471167071bb8681d33156c08bf7a1acc55d5c80"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_41" supported="no">
 		<description>Intro Collection (4)</description>
 		<year>1988</year>
 		<publisher>S-Xpress</publisher>
@@ -2397,7 +2799,61 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="introcol_19" supported="no">
+	<software name="introcol_42" supported="no">
+		<description>Intro Collection (25)</description>
+		<year>19??</year>
+		<publisher>SGS</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (19xx)(sgs).d64" size="174848" crc="14f2a042" sha1="fc4d8f2d58651271f02403f993eee52e075225a0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_43" supported="no">
+		<description>Intro Collection (13)</description>
+		<year>1991</year>
+		<publisher>Sabian</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1991)(sabian).d64" size="174848" crc="60b25f18" sha1="edc24d6a21d283625b799f5f108f6ef7a58e4b84"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_44" supported="no">
+		<description>Intro Collection (15)</description>
+		<year>1994</year>
+		<publisher>Sat</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1994)(sat).d64" size="174848" crc="08fa9293" sha1="cf57bee76bd7513847aece2126286a1d03d428e4"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1994)(sat)[a].d64" size="174848" crc="6317c7c9" sha1="e694ef366291650f81dd07302ddb9eecaf83677b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_45" supported="no">
+		<description>Intro Collection (9)</description>
+		<year>1989</year>
+		<publisher>Stardom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989)(stardom).d64" size="174848" crc="e1b8c939" sha1="12cb4b98b19be4b78f432b57af086a89f6713d62"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_46" supported="no">
 		<description>Intro Collection (3)</description>
 		<year>1988</year>
 		<publisher>Sub-Zero</publisher>
@@ -2409,7 +2865,97 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="introcol_20" supported="no">
+	<software name="introcol_47" supported="no">
+		<description>Intro Collection (12)</description>
+		<year>1990</year>
+		<publisher>Tera</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1990)(tera).d64" size="174848" crc="cb564288" sha1="1c386117df88f29eaa33cad94eb4a5ee960e57d9"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1990)(tera)[a].d64" size="174848" crc="bb7004a9" sha1="751653d91240bbc629cb4a2d7491f38a61d07e75"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_48" supported="no">
+		<description>Intro Collection (1990-01)</description>
+		<year>1990</year>
+		<publisher>Tetragon</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1990-01)(tetragon).d64" size="174848" crc="f1a8b9fb" sha1="0b458bf461ae1b657bffd60cd0fbddd757d5f74d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_49" supported="no">
+		<description>Intro Collection (1987-04-17)</description>
+		<year>1987</year>
+		<publisher>The Disguised Underworld Association</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1987-04-17)(the disguised underworld association).d64" size="174848" crc="3fb5c400" sha1="17bf759e406124dfd42faf0a7c14c44eb8ecf0c7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_50" supported="no">
+		<description>Intro Collection (10)</description>
+		<year>1989</year>
+		<publisher>The Future Boys</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989)(the future boys).d64" size="174848" crc="3bbc5b71" sha1="80d4d42da1388057a1641d52017c4868cf5c31b2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_51" supported="no">
+		<description>Intro Collection (1988-08-01)</description>
+		<year>1988</year>
+		<publisher>The Lions</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1988-08-01)(the lions).d64" size="174848" crc="fed9c465" sha1="3acf5a876a7e192e4d067a479c3dd3cfedd8f6de"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_52" supported="no">
+		<description>Intro Collection (1989-04-16)</description>
+		<year>1989</year>
+		<publisher>The Lost Heroes</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-04-16)(the lost heroes).d64" size="174848" crc="fc525b81" sha1="584d7977d8627f5a754535cb9c02e1cc152a6a08"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-04-16)(the lost heroes)[a].d64" size="174848" crc="d7151d11" sha1="5ba41493bd9c276df45d7f943dd8a1496278caf9"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-04-16)(the lost heroes)[a2].d64" size="174848" crc="ea34842a" sha1="c5dcba726bb052a2c1711ef6176a5717989af55f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_53" supported="no">
 		<description>Intro Collection (5)</description>
 		<year>1988</year>
 		<publisher>The Sharks</publisher>
@@ -2469,511 +3015,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="introcol_21" supported="no">
-		<description>Intro Collection (6)</description>
-		<year>1989</year>
-		<publisher>Abnormal</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989)(abnormal).d64" size="174848" crc="a131a98d" sha1="a4b8d50b5331583f53789b37c76a7d89b161558b"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989)(abnormal)[a].d64" size="174848" crc="44248a97" sha1="6db6f70ad9eef5d74d9b08079692214ff8af0cd1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_22" supported="no">
-		<description>Intro Collection (7)</description>
-		<year>1989</year>
-		<publisher>Genie</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989)(genie).d64" size="174848" crc="9f4f2271" sha1="c3caa1f08426eb357dd55b1a58af9a516a6ff660"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_23" supported="no">
-		<description>Intro Collection (8)</description>
-		<year>1989</year>
-		<publisher>Moonlight</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989)(moonlight).d64" size="174848" crc="d83dffcd" sha1="f077f3495d08cb11b62a9877b398092cd601ebf6"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_24" supported="no">
-		<description>Intro Collection (9)</description>
-		<year>1989</year>
-		<publisher>Stardom</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989)(stardom).d64" size="174848" crc="e1b8c939" sha1="12cb4b98b19be4b78f432b57af086a89f6713d62"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_25" supported="no">
-		<description>Intro Collection (10)</description>
-		<year>1989</year>
-		<publisher>The Future Boys</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989)(the future boys).d64" size="174848" crc="3bbc5b71" sha1="80d4d42da1388057a1641d52017c4868cf5c31b2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_26" supported="no">
-		<description>Intro Collection (11)</description>
-		<year>1989</year>
-		<publisher>Tristar</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989)(tristar).d64" size="174848" crc="c31f497d" sha1="70773f0324832059a6a6955b0bcfd74fe693e3e2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_27" supported="no">
-		<description>Intro Collection (12)</description>
-		<year>1990</year>
-		<publisher>Tera</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1990)(tera).d64" size="174848" crc="cb564288" sha1="1c386117df88f29eaa33cad94eb4a5ee960e57d9"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1990)(tera)[a].d64" size="174848" crc="bb7004a9" sha1="751653d91240bbc629cb4a2d7491f38a61d07e75"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_28" supported="no">
-		<description>Intro Collection (13)</description>
-		<year>1991</year>
-		<publisher>Sabian</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1991)(sabian).d64" size="174848" crc="60b25f18" sha1="edc24d6a21d283625b799f5f108f6ef7a58e4b84"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_29" supported="no">
-		<description>Intro Collection (14)</description>
-		<year>1994</year>
-		<publisher>KGB</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1994)(kgb).d64" size="174848" crc="b0e224cd" sha1="305af671b5807d274e8ae051a794c7f40a3aa280"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_30" supported="no">
-		<description>Intro Collection (15)</description>
-		<year>1994</year>
-		<publisher>Sat</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1994)(sat).d64" size="174848" crc="08fa9293" sha1="cf57bee76bd7513847aece2126286a1d03d428e4"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1994)(sat)[a].d64" size="174848" crc="6317c7c9" sha1="e694ef366291650f81dd07302ddb9eecaf83677b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_31" supported="no">
-		<description>Intro Collection (16)</description>
-		<year>1996</year>
-		<publisher>Hardcore</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1996)(hardcore).d64" size="174848" crc="53c1f729" sha1="892323c0dc1e9c9b90095d9db8379065a3324424"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_32" supported="no">
-		<description>Intro Collection (17)</description>
-		<year>1996</year>
-		<publisher>Laxity</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1996)(laxity).d64" size="174848" crc="af15afe9" sha1="e55eec9f3fd0b26a9361bb85a29836a02cf625ff"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1996)(laxity)[a].d64" size="174848" crc="8fb71c6e" sha1="f37c7b59d58fbf7cd7b9fe720993320b000db609"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_33" supported="no">
-		<description>Intro Collection (18)</description>
-		<year>1997</year>
-		<publisher>U-Turn</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1997)(u-turn).d64" size="174848" crc="a2d73405" sha1="bccf87dfb44388c12f796651d1b8ab5b9df20623"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_34" supported="no">
-		<description>Intro Collection (19)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (19xx)(-).d64" size="174848" crc="5e60279c" sha1="aaf703b30ad369f8b8358c94c3149c28eff2d0dc"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_35" supported="no">
-		<description>Intro Collection (20)</description>
-		<year>19??</year>
-		<publisher>Ascraeus</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (19xx)(ascraeus).d64" size="174848" crc="b036d329" sha1="e274994c820b8159655e6e57066aad28fb32dac1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_36" supported="no">
-		<description>Intro Collection (21)</description>
-		<year>19??</year>
-		<publisher>Beyond Force</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (19xx)(beyond force).d64" size="174848" crc="2a97bfa1" sha1="6402a1fe85fb883a8f17173487afd83f7bdc7903"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_37" supported="no">
-		<description>Intro Collection (22)</description>
-		<year>19??</year>
-		<publisher>Hitmen</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (19xx)(hitmen).d64" size="174848" crc="fb0e457d" sha1="79638e1d13f6278e9c67a6b733f7a3357403bff1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_38" supported="no">
-		<description>Intro Collection (23)</description>
-		<year>19??</year>
-		<publisher>Jewels</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (19xx)(jewels).d64" size="174848" crc="8582693a" sha1="cc95f9ffeca682df957511c52b00130366104ae0"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (19xx)(jewels)[a].d64" size="174848" crc="9ef7220f" sha1="9fac6e4dffac74789ec9f5fa7e6223c52f9e21e3"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (19xx)(jewels)[a2].d64" size="174848" crc="3a0e0772" sha1="027c087a52970df252c8ec39714d0042a9a197de"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 3"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (19xx)(jewels)[a3].d64" size="174848" crc="190f853c" sha1="fd4ec3e357b44c4767b3dcd552cdbe2f1e32a477"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 4"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (19xx)(jewels)[a4].d64" size="174848" crc="dfa1b69d" sha1="a8328c79413c1fa680b55529ed501c696d103a14"/>
-			</dataarea>
-		</part>
-		<part name="flop6" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 5"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (19xx)(jewels)[a5].d64" size="174848" crc="5a2acbcb" sha1="b6d0b379117dc65100a59911bc2608b4ae5d1f00"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_39" supported="no">
-		<description>Intro Collection (24)</description>
-		<year>19??</year>
-		<publisher>Parados</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (19xx)(parados).d64" size="174848" crc="daa668df" sha1="e36f6232c4c2c2559e37dbd909a608b1c2b1ebd1"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (19xx)(parados)[a].d64" size="174848" crc="1dc06183" sha1="f471167071bb8681d33156c08bf7a1acc55d5c80"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_40" supported="no">
-		<description>Intro Collection (25)</description>
-		<year>19??</year>
-		<publisher>SGS</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (19xx)(sgs).d64" size="174848" crc="14f2a042" sha1="fc4d8f2d58651271f02403f993eee52e075225a0"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_41" supported="no">
-		<description>Intro Collection (1987-04-17)</description>
-		<year>1987</year>
-		<publisher>The Disguised Underworld Association</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1987-04-17)(the disguised underworld association).d64" size="174848" crc="3fb5c400" sha1="17bf759e406124dfd42faf0a7c14c44eb8ecf0c7"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_42" supported="no">
-		<description>Intro Collection (1987-05-15)</description>
-		<year>1987</year>
-		<publisher>Hotline</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1987-05-15)(hotline).d64" size="174848" crc="0cbe1a43" sha1="a8b399fbdaa870500b56165eb97773339afac738"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1987-05-15)(hotline)[a].d64" size="174848" crc="c2dcfc9f" sha1="f401fe55d0980d9fad87243f5da3c84dbc4ee8ea"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_43" supported="no">
-		<description>Intro Collection (1988-06-16)</description>
-		<year>1988</year>
-		<publisher>Agile</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1988-06-16)(agile).d64" size="174848" crc="c2a5e139" sha1="a34fb9df5d6b0b7ca4a57a7f5919eec2327bba6f"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1988-06-16)(agile)[a].d64" size="174848" crc="93946fb3" sha1="dd45021da13b785c89bcd408b12e9949a3867004"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_44" supported="no">
-		<description>Intro Collection (1988-07-16)</description>
-		<year>1988</year>
-		<publisher>2000 A.D.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1988-07-16)(2000 a.d.).d64" size="174848" crc="ba7f1454" sha1="10e2184cde7e284528ae60cfdea9b47e8fa00c79"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_45" supported="no">
-		<description>Intro Collection (1988-08-01)</description>
-		<year>1988</year>
-		<publisher>The Lions</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1988-08-01)(the lions).d64" size="174848" crc="fed9c465" sha1="3acf5a876a7e192e4d067a479c3dd3cfedd8f6de"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_46" supported="no">
-		<description>Intro Collection (1989-01)</description>
-		<year>1989</year>
-		<publisher>Funtex</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-01)(funtex).d64" size="174848" crc="bf964931" sha1="9346bb773acefb0ea36a1a9a598076836a7bb55d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_47" supported="no">
-		<description>Intro Collection (1989-01-10)</description>
-		<year>1989</year>
-		<publisher>Opal</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-01-10)(opal).d64" size="174848" crc="560002c6" sha1="93f4a95fe90f929d35fa1860bd0f1ebb78722081"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-01-10)(opal)[a].d64" size="174848" crc="f9c5e711" sha1="f466062bb1997e5aaf66672ea8276e3f8e1dcc3b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_48" supported="no">
-		<description>Intro Collection (1989-01-17)</description>
-		<year>1989</year>
-		<publisher>Antiriad</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-01-17)(antiriad).d64" size="174848" crc="e6905379" sha1="514f4b585a4547ce7b62d437a7ac710c3e4948bc"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_49" supported="no">
-		<description>Intro Collection (1989-02)</description>
-		<year>1989</year>
-		<publisher>Byterapers</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-02)(byterapers).d64" size="174848" crc="f15dc85c" sha1="a0270b55ee040d4b544af6ad722bfeb178bbdb17"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-02)(byterapers)[a].d64" size="174848" crc="5124112d" sha1="2d5084a1000d345993564a7d1f4bcc78c8b3a9c5"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-02)(byterapers)[a2].d64" size="174848" crc="4559295a" sha1="695064ede1fad43255e19825825071306e26ae5d"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 3"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-02)(byterapers)[a3].d64" size="174848" crc="64cb894a" sha1="02ba45099d4c427d3596401e2177f716e0ff5c3e"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 4"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-02)(byterapers)[a4].d64" size="174848" crc="a0d60aa8" sha1="a30f3a0846cd6426f7e9b356c53dc0bbe2f1338b"/>
-			</dataarea>
-		</part>
-		<part name="flop6" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 5"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-02)(byterapers)[a5].d64" size="174848" crc="c73ed73d" sha1="6dca6f27cde5d9694c3d82a3df00742dbd47efa9"/>
-			</dataarea>
-		</part>
-		<part name="flop7" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 6"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-02)(byterapers)[a6].d64" size="174848" crc="194e81b3" sha1="047643054314949ab0296bd2fb06c3132209cc85"/>
-			</dataarea>
-		</part>
-		<part name="flop8" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 7"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-02)(byterapers)[a7].d64" size="174848" crc="9cd88967" sha1="ac727cfaeb3fefc6e5f5a7d22af674e91d6d3339"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_21_a" cloneof="introcol_21" supported="no">
-		<description>Intro Collection (1989-02-18)</description>
-		<year>1989</year>
-		<publisher>Abnormal</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-02-18)(abnormal).d64" size="174848" crc="5bf926bc" sha1="6e93fbcebfce50f1dc37c1391dfa240abcae6222"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-02-18)(abnormal)[a].d64" size="174848" crc="94960b8b" sha1="9a7e6f22d37b5553fa9c4d4105f2d6b03417cf70"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_50" supported="no">
-		<description>Intro Collection (1989-03-03)</description>
-		<year>1989</year>
-		<publisher>Unit 5</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-03-03)(unit 5).d64" size="174848" crc="72b97565" sha1="5b3775ec0d1f7eb2781b18ed1a9ded43802b2daa"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-03-03)(unit 5)[a].d64" size="174848" crc="e0621be1" sha1="a79ce1a59ad8c903c75b46cd18d0c543e0659d1d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_51" supported="no">
+	<software name="introcol_54" supported="no">
 		<description>Intro Collection (1989-03-21)</description>
 		<year>1989</year>
 		<publisher>The Spench</publisher>
@@ -2981,54 +3023,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="intro collection (1989-03-21)(the spench).d64" size="174848" crc="396cc863" sha1="67b89895afc7dfcecd048d8666d973fb55838730"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_52" supported="no">
-		<description>Intro Collection (1989-03-29)</description>
-		<year>1989</year>
-		<publisher>Weird Science 2662</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-03-29)(weird science 2662).d64" size="174848" crc="0db9c08a" sha1="f7523fcab14758423b5a929d093b4c454e01caa5"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_53" supported="no">
-		<description>Intro Collection (1989-04-16)</description>
-		<year>1989</year>
-		<publisher>The Lost Heroes</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-04-16)(the lost heroes).d64" size="174848" crc="fc525b81" sha1="584d7977d8627f5a754535cb9c02e1cc152a6a08"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-04-16)(the lost heroes)[a].d64" size="174848" crc="d7151d11" sha1="5ba41493bd9c276df45d7f943dd8a1496278caf9"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1989-04-16)(the lost heroes)[a2].d64" size="174848" crc="ea34842a" sha1="c5dcba726bb052a2c1711ef6176a5717989af55f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_54" supported="no">
-		<description>Intro Collection (1990-01)</description>
-		<year>1990</year>
-		<publisher>Tetragon</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1990-01)(tetragon).d64" size="174848" crc="f1a8b9fb" sha1="0b458bf461ae1b657bffd60cd0fbddd757d5f74d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3046,6 +3040,60 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="introcol_56" supported="no">
+		<description>Intro Collection (11)</description>
+		<year>1989</year>
+		<publisher>Tristar</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989)(tristar).d64" size="174848" crc="c31f497d" sha1="70773f0324832059a6a6955b0bcfd74fe693e3e2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_57" supported="no">
+		<description>Intro Collection (18)</description>
+		<year>1997</year>
+		<publisher>U-Turn</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1997)(u-turn).d64" size="174848" crc="a2d73405" sha1="bccf87dfb44388c12f796651d1b8ab5b9df20623"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_58" supported="no">
+		<description>Intro Collection (1989-03-03)</description>
+		<year>1989</year>
+		<publisher>Unit 5</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-03-03)(unit 5).d64" size="174848" crc="72b97565" sha1="5b3775ec0d1f7eb2781b18ed1a9ded43802b2daa"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-03-03)(unit 5)[a].d64" size="174848" crc="e0621be1" sha1="a79ce1a59ad8c903c75b46cd18d0c543e0659d1d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_59" supported="no">
+		<description>Intro Collection (1989-03-29)</description>
+		<year>1989</year>
+		<publisher>Weird Science 2662</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro collection (1989-03-29)(weird science 2662).d64" size="174848" crc="0db9c08a" sha1="f7523fcab14758423b5a929d093b4c454e01caa5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introcol_60" supported="no">
 		<description>Intro Collection (1990-04-09)</description>
 		<year>1990</year>
 		<publisher>X-Out</publisher>
@@ -3053,54 +3101,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="intro collection (1990-04-09)(x-out).d64" size="174848" crc="2d3fa376" sha1="46957af2f982a28fb09f8cba405e6eab0ea3e689"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_57" supported="no">
-		<description>Intro Collection (1990-05)</description>
-		<year>1990</year>
-		<publisher>Duplex - Oracle</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1990-05)(duplex - oracle).d64" size="174848" crc="578e533a" sha1="eccd006b5f02407ba0706fcc0892885385901f84"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_58" supported="no">
-		<description>Intro Collection (1995-10-23)</description>
-		<year>1995</year>
-		<publisher>Dytec - Laxity</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (1995-10-23)(dytec - laxity).d64" size="174848" crc="cc09a7de" sha1="1bcdfdf47da0716119781d587433a47d33fea869"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_59" supported="no">
-		<description>Intro Collection (2009-11-20)</description>
-		<year>2009</year>
-		<publisher>Booze Design</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection (2009-11-20)(booze design).d64" size="174848" crc="1386753c" sha1="86e862b543d737b54fcdc2b012b3a6007d69ffb8"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introcol_60" supported="no">
-		<description>Intro Collection (v1, 1989-03-25)</description>
-		<year>1989</year>
-		<publisher>Exult</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro collection v1 (1989-03-25)(exult).d64" size="174848" crc="3456d06b" sha1="b8c348c7c18b89ac1a038870db30e445397d36f2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3310,6 +3310,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="intropre" supported="no">
+		<description>Intro Preview (1988-09-05)</description>
+		<year>1988</year>
+		<publisher>Digitize Design Group</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro preview (1988-09-05)(digitize design group).d64" size="174848" crc="dec5d4b1" sha1="4d7be31d454021a9c9c4f117add4ef667d2fae34"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="intropre_1" supported="no">
 		<description>Intro Preview</description>
 		<year>19??</year>
 		<publisher>FBI Crew</publisher>
@@ -3321,7 +3333,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="intropre_1" supported="no">
+	<software name="intropre_2" supported="no">
 		<description>Intro Preview (1)</description>
 		<year>19??</year>
 		<publisher>Rape</publisher>
@@ -3333,7 +3345,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="intropre_2" supported="no">
+	<software name="intropre_3" supported="no">
 		<description>Intro Preview (2)</description>
 		<year>19??</year>
 		<publisher>Success</publisher>
@@ -3347,18 +3359,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="intro preview (19xx)(success)[a].d64" size="174848" crc="12b9cc99" sha1="f37be89aaecd235f857f665fcedcae7d2037ae2f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="intropre_3" supported="no">
-		<description>Intro Preview (1988-09-05)</description>
-		<year>1988</year>
-		<publisher>Digitize Design Group</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro preview (1988-09-05)(digitize design group).d64" size="174848" crc="dec5d4b1" sha1="4d7be31d454021a9c9c4f117add4ef667d2fae34"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3676,24 +3676,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="introfor_7" supported="no">
-		<description>Intro for Ikari</description>
-		<year>1987</year>
-		<publisher>The Great Human</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro for ikari (1987)(the great human).d64" size="174848" crc="e17d6a8b" sha1="5a85d5f1ef887af301205f4c12e7ed686d97fbb9"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro for ikari (1987)(the great human)[a].d64" size="174848" crc="5fd6448b" sha1="227ae90b5c3f5d7c7aa7fd86105d5630ff11eb61"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="introfor_8" supported="no">
 		<description>Intro for Ikari (v2)</description>
 		<year>19??</year>
 		<publisher>FBI Crew</publisher>
@@ -3731,6 +3713,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="LNX, Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="intro for ikari v2 (19xx)(fbi crew)[a][lnx].d64" size="174848" crc="8a27e64a" sha1="f45316dd6d4b7e4d0de6b081775558ff45f9e5b1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="introfor_8" supported="no">
+		<description>Intro for Ikari</description>
+		<year>1987</year>
+		<publisher>The Great Human</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro for ikari (1987)(the great human).d64" size="174848" crc="e17d6a8b" sha1="5a85d5f1ef887af301205f4c12e7ed686d97fbb9"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro for ikari (1987)(the great human)[a].d64" size="174848" crc="5fd6448b" sha1="227ae90b5c3f5d7c7aa7fd86105d5630ff11eb61"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3904,18 +3904,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="intro" supported="no">
-		<description>Intro</description>
-		<year>1988</year>
-		<publisher>Nukebusters</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro (1988)(nukebusters).d64" size="174848" crc="c297c245" sha1="bc99141b628dd55bc4ac5a596bf5650500b15beb"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="intro_1" supported="no">
 		<description>Intro (1)</description>
 		<year>19??</year>
 		<publisher>Amnesty</publisher>
@@ -3927,7 +3915,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="intro_2" supported="no">
+	<software name="intro_1" supported="no">
 		<description>Intro (2)</description>
 		<year>19??</year>
 		<publisher>Bytestar</publisher>
@@ -3939,7 +3927,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="intro_3" supported="no">
+	<software name="intro_2" supported="no">
 		<description>Intro (3)</description>
 		<year>19??</year>
 		<publisher>Censure</publisher>
@@ -3963,25 +3951,67 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="intro_4" supported="no">
-		<description>Intro (4)</description>
-		<year>19??</year>
-		<publisher>Verdict</publisher>
+	<software name="intro_3" supported="no">
+		<description>Intro (1996-06-01)</description>
+		<year>1996</year>
+		<publisher>Cobal</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="intro (19xx)(verdict).d64" size="174848" crc="1475e34e" sha1="18fdb499e53e862b1a4c2d3f510a118e12bb1ef5"/>
+				<rom name="intro (1996-06-01)(cobal).d64" size="174848" crc="ce7de0ce" sha1="0c197a45f7962fac5a8a58f328ad29593cca3ac7"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
-				<rom name="intro (19xx)(verdict)[a].d64" size="174848" crc="d2dbd0ef" sha1="fd4185951fea2c4be0f9c18865a614fda2d4f64d"/>
+				<rom name="intro (1996-06-01)(cobal)[a].d64" size="174848" crc="359d535a" sha1="fda0d6516caedb609ffa74e31275d06608d8cf2d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="intro_4" supported="no">
+		<description>Intro (v1.0)</description>
+		<year>19??</year>
+		<publisher>Flash</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro v1.0 (19xx)(flash).d64" size="174848" crc="c6f390ec" sha1="621beffa4fd05b3decc646f79400680c9ed7e0d9"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="intro v1.0 (19xx)(flash)[a].d64" size="174848" crc="005da34d" sha1="3e0086b8350840bd9ee1b2517a5fcd3efb533072"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="intro_5" supported="no">
+		<description>Intro (2006-02)</description>
+		<year>2006</year>
+		<publisher>Myth</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro (2006-02)(myth).d64" size="174848" crc="5ced8962" sha1="26ef19211883dde7e3feb66b17dc4d54f7b9293c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="intro_6" supported="no">
+		<description>Intro</description>
+		<year>1988</year>
+		<publisher>Nukebusters</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="intro (1988)(nukebusters).d64" size="174848" crc="c297c245" sha1="bc99141b628dd55bc4ac5a596bf5650500b15beb"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="intro_7" supported="no">
 		<description>Intro (1988-06-27)</description>
 		<year>1988</year>
 		<publisher>Quartet</publisher>
@@ -4011,50 +4041,20 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="intro_6" supported="no">
-		<description>Intro (1996-06-01)</description>
-		<year>1996</year>
-		<publisher>Cobal</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro (1996-06-01)(cobal).d64" size="174848" crc="ce7de0ce" sha1="0c197a45f7962fac5a8a58f328ad29593cca3ac7"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="intro (1996-06-01)(cobal)[a].d64" size="174848" crc="359d535a" sha1="fda0d6516caedb609ffa74e31275d06608d8cf2d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="intro_7" supported="no">
-		<description>Intro (2006-02)</description>
-		<year>2006</year>
-		<publisher>Myth</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="intro (2006-02)(myth).d64" size="174848" crc="5ced8962" sha1="26ef19211883dde7e3feb66b17dc4d54f7b9293c"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="intro_8" supported="no">
-		<description>Intro (v1.0)</description>
+		<description>Intro (4)</description>
 		<year>19??</year>
-		<publisher>Flash</publisher>
+		<publisher>Verdict</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="intro v1.0 (19xx)(flash).d64" size="174848" crc="c6f390ec" sha1="621beffa4fd05b3decc646f79400680c9ed7e0d9"/>
+				<rom name="intro (19xx)(verdict).d64" size="174848" crc="1475e34e" sha1="18fdb499e53e862b1a4c2d3f510a118e12bb1ef5"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
-				<rom name="intro v1.0 (19xx)(flash)[a].d64" size="174848" crc="005da34d" sha1="3e0086b8350840bd9ee1b2517a5fcd3efb533072"/>
+				<rom name="intro (19xx)(verdict)[a].d64" size="174848" crc="d2dbd0ef" sha1="fd4185951fea2c4be0f9c18865a614fda2d4f64d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4451,18 +4451,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="magicint" supported="no">
-		<description>Magic Intro</description>
-		<year>1993</year>
-		<publisher>Device</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="magic intro (1993)(device).d64" size="174848" crc="94ac5305" sha1="a5a7ebd4da45d45ab8b19dc9fb39eee866914085"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magicint_1" supported="no">
 		<description>Magic Intro (Demo, v1.1)</description>
 		<year>19??</year>
 		<publisher>Chromance</publisher>
@@ -4498,7 +4486,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="magicint_1_a" cloneof="magicint_1" supported="no">
+	<software name="magicint_a" cloneof="magicint" supported="no">
 		<description>Magic Intro (v1.1)</description>
 		<year>19??</year>
 		<publisher>Chromance</publisher>
@@ -4506,6 +4494,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="magic intro v1.1 (19xx)(chromance).d64" size="174848" crc="2785bde9" sha1="b982f1b9c1eee245ffa0e1cba1d97b4888079497"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magicint_1" supported="no">
+		<description>Magic Intro</description>
+		<year>1993</year>
+		<publisher>Device</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="magic intro (1993)(device).d64" size="174848" crc="94ac5305" sha1="a5a7ebd4da45d45ab8b19dc9fb39eee866914085"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4859,13 +4859,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="newintro_9" supported="no">
-		<description>New Intros</description>
-		<year>1991</year>
-		<publisher>Wrath Designs</publisher>
+		<description>New Intros (1988-10-25)</description>
+		<year>1988</year>
+		<publisher>Beyond Force</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="new intros (1991)(wrath designs).d64" size="174848" crc="5025ddea" sha1="43897ab2b44fff61b135df3a59f5ca6612e0ea85"/>
+				<rom name="new intros (1988-10-25)(beyond force).d64" size="174848" crc="94cf47d9" sha1="7d59ee8cd636535791303ca6e4e71bad5b8fa8da"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4883,13 +4883,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="newintro_11" supported="no">
-		<description>New Intros (1988-10-25)</description>
-		<year>1988</year>
-		<publisher>Beyond Force</publisher>
+		<description>New Intros</description>
+		<year>1991</year>
+		<publisher>Wrath Designs</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="new intros (1988-10-25)(beyond force).d64" size="174848" crc="94cf47d9" sha1="7d59ee8cd636535791303ca6e4e71bad5b8fa8da"/>
+				<rom name="new intros (1991)(wrath designs).d64" size="174848" crc="5025ddea" sha1="43897ab2b44fff61b135df3a59f5ca6612e0ea85"/>
 			</dataarea>
 		</part>
 	</software>

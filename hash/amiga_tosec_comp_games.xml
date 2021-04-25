@@ -5528,6 +5528,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="compacte" supported="no">
+		<description>Compacted Disk (1)</description>
+		<year>1989</year>
+		<publisher>Megadeth</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="KS 1.2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="compacted disk (1989)(megadeth)[ks 1.2].adf" size="901120" crc="0796aa8a" sha1="ebd20c929ed7f8f3b4d6257dc8b9f8f6e5d462bc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="compacte_1" supported="no">
 		<description>Compacted Disk</description>
 		<year>1988</year>
 		<publisher>Random Access</publisher>
@@ -5541,19 +5554,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
 				<rom name="compacted disk (1988)(random access)[m bamcopy].adf" size="901120" crc="b8ed255a" sha1="4a538652e2d71abc0c9e64ebc2db4f5d30691c66"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="compacte_1" supported="no">
-		<description>Compacted Disk (1)</description>
-		<year>1989</year>
-		<publisher>Megadeth</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="KS 1.2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="compacted disk (1989)(megadeth)[ks 1.2].adf" size="901120" crc="0796aa8a" sha1="ebd20c929ed7f8f3b4d6257dc8b9f8f6e5d462bc"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5820,6 +5820,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="crashdis" supported="no">
+		<description>Crash Disc X (1988-07-25)</description>
+		<year>1988</year>
+		<publisher>Hagar</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Virus SystemZ v5.0"/>
+			<dataarea name="flop" size="901120">
+				<rom name="crash disc x (1988-07-25)(hagar)[v systemz v5.0].adf" size="901120" crc="eafd384f" sha1="66958d417c92d99ed975a9fd0f90495a86e9aa90" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crashdis_1" supported="no">
 		<description>Crash Disc X</description>
 		<year>19??</year>
 		<publisher>The Connection</publisher>
@@ -5839,19 +5852,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
 				<rom name="crash disc x (19xx)(connection, the)[m bamcopy].adf" size="901120" crc="51aa562d" sha1="fee09a645dcf14de5fe3f6f64ef62b5359141a70"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="crashdis_1" supported="no">
-		<description>Crash Disc X (1988-07-25)</description>
-		<year>1988</year>
-		<publisher>Hagar</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Virus SystemZ v5.0"/>
-			<dataarea name="flop" size="901120">
-				<rom name="crash disc x (1988-07-25)(hagar)[v systemz v5.0].adf" size="901120" crc="eafd384f" sha1="66958d417c92d99ed975a9fd0f90495a86e9aa90" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7924,18 +7924,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="gamesgal" supported="no">
-		<description>Games Galore 01 (1990-09-24, Public Domain)</description>
-		<year>1990</year>
-		<publisher>Gary Henderson</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="games galore 01 (1990-09-24)(henderson, gary)(pd).adf" size="901120" crc="96c0d584" sha1="f89f45de2204c86dfd94e33cc2f16c03e382f9c3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamesgal_1" supported="no">
 		<description>Games Galore 01 (Public Domain)</description>
 		<year>1992</year>
 		<publisher>Gary Henderson - 17-Bit Software</publisher>
@@ -7960,19 +7948,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="gamesgal_2" supported="no">
-		<description>Games Galore 02 (1990-10-15, Public Domain)</description>
+	<software name="gamesgal_1" supported="no">
+		<description>Games Galore 01 (1990-09-24, Public Domain)</description>
 		<year>1990</year>
 		<publisher>Gary Henderson</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="games galore 02 (1990-10-15)(henderson, gary)(pd).adf" size="901120" crc="a4c4c538" sha1="63bed38b40d53694ad52a9ef2fe41a9347d640a8"/>
+				<rom name="games galore 01 (1990-09-24)(henderson, gary)(pd).adf" size="901120" crc="96c0d584" sha1="f89f45de2204c86dfd94e33cc2f16c03e382f9c3"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="gamesgal_3" supported="no">
+	<software name="gamesgal_2" supported="no">
 		<description>Games Galore 02 (Public Domain)</description>
 		<year>1992</year>
 		<publisher>Gary Henderson - 17-Bit Software</publisher>
@@ -7985,19 +7973,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="gamesgal_4" supported="no">
-		<description>Games Galore 03 (1990-11-16, Public Domain)</description>
+	<software name="gamesgal_3" supported="no">
+		<description>Games Galore 02 (1990-10-15, Public Domain)</description>
 		<year>1990</year>
 		<publisher>Gary Henderson</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="games galore 03 (1990-11-16)(henderson, gary)(pd).adf" size="901120" crc="c32cdf98" sha1="c1553e15e1e03b2dc539916cdaca69f3fb7e112e"/>
+				<rom name="games galore 02 (1990-10-15)(henderson, gary)(pd).adf" size="901120" crc="a4c4c538" sha1="63bed38b40d53694ad52a9ef2fe41a9347d640a8"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="gamesgal_5" supported="no">
+	<software name="gamesgal_4" supported="no">
 		<description>Games Galore 03 (Public Domain)</description>
 		<year>1992</year>
 		<publisher>Gary Henderson - 17-Bit Software</publisher>
@@ -8010,19 +7998,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="gamesgal_6" supported="no">
-		<description>Games Galore 04 (1990-11-28, Public Domain)</description>
+	<software name="gamesgal_5" supported="no">
+		<description>Games Galore 03 (1990-11-16, Public Domain)</description>
 		<year>1990</year>
 		<publisher>Gary Henderson</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="games galore 04 (1990-11-28)(henderson, gary)(pd).adf" size="901120" crc="9e7ed029" sha1="60f9e2e896046da4ac6d6782136b0c9cf9c64f54"/>
+				<rom name="games galore 03 (1990-11-16)(henderson, gary)(pd).adf" size="901120" crc="c32cdf98" sha1="c1553e15e1e03b2dc539916cdaca69f3fb7e112e"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="gamesgal_7" supported="no">
+	<software name="gamesgal_6" supported="no">
 		<description>Games Galore 04 (Public Domain)</description>
 		<year>1992</year>
 		<publisher>Gary Henderson - 17-Bit Software</publisher>
@@ -8035,19 +8023,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="gamesgal_8" supported="no">
-		<description>Games Galore 05 (1990-12-17, Public Domain)</description>
+	<software name="gamesgal_7" supported="no">
+		<description>Games Galore 04 (1990-11-28, Public Domain)</description>
 		<year>1990</year>
 		<publisher>Gary Henderson</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="games galore 05 (1990-12-17)(henderson, gary)(pd).adf" size="901120" crc="a9836aa0" sha1="7e9f867711586b622c1671f324ef17aea748aaa9"/>
+				<rom name="games galore 04 (1990-11-28)(henderson, gary)(pd).adf" size="901120" crc="9e7ed029" sha1="60f9e2e896046da4ac6d6782136b0c9cf9c64f54"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="gamesgal_9" supported="no">
+	<software name="gamesgal_8" supported="no">
 		<description>Games Galore 05 (Public Domain)</description>
 		<year>1992</year>
 		<publisher>Gary Henderson - 17-Bit Software</publisher>
@@ -8060,19 +8048,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="gamesgal_10" supported="no">
-		<description>Games Galore 06 (1991-02-02, Public Domain)</description>
-		<year>1991</year>
+	<software name="gamesgal_9" supported="no">
+		<description>Games Galore 05 (1990-12-17, Public Domain)</description>
+		<year>1990</year>
 		<publisher>Gary Henderson</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="games galore 06 (1991-02-02)(henderson, gary)(pd).adf" size="901120" crc="a026076d" sha1="e8786b8216e20990ae91c909f86c28499038285c"/>
+				<rom name="games galore 05 (1990-12-17)(henderson, gary)(pd).adf" size="901120" crc="a9836aa0" sha1="7e9f867711586b622c1671f324ef17aea748aaa9"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="gamesgal_11" supported="no">
+	<software name="gamesgal_10" supported="no">
 		<description>Games Galore 06 (Public Domain)</description>
 		<year>1992</year>
 		<publisher>Gary Henderson - 17-Bit Software</publisher>
@@ -8081,6 +8069,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="A500+ compatible version"/>
 			<dataarea name="flop" size="901120">
 				<rom name="games galore 06 (1992)(henderson, gary - 17-bit software)(pd)[a500+ compatible version].adf" size="901120" crc="b5ead37f" sha1="3793d5ca9816d2a1130650175f2edaa6353c1441"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gamesgal_11" supported="no">
+		<description>Games Galore 06 (1991-02-02, Public Domain)</description>
+		<year>1991</year>
+		<publisher>Gary Henderson</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="games galore 06 (1991-02-02)(henderson, gary)(pd).adf" size="901120" crc="a026076d" sha1="e8786b8216e20990ae91c909f86c28499038285c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8110,18 +8110,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="gamesgal_14" supported="no">
-		<description>Games Galore 09 (1991-10-20, Public Domain)</description>
-		<year>1991</year>
-		<publisher>Gary Henderson</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="games galore 09 (1991-10-20)(henderson, gary)(pd).adf" size="901120" crc="bd612d89" sha1="4892b0a5496515e8059145755a2abeda28925241"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamesgal_15" supported="no">
 		<description>Games Galore 09 (Public Domain)</description>
 		<year>1992</year>
 		<publisher>Gary Henderson - 17-Bit Software</publisher>
@@ -8140,20 +8128,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="gamesgal_16" supported="no">
-		<description>Games Galore 10 (1992-01-22, Public Domain)</description>
-		<year>1992</year>
+	<software name="gamesgal_15" supported="no">
+		<description>Games Galore 09 (1991-10-20, Public Domain)</description>
+		<year>1991</year>
 		<publisher>Gary Henderson</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked 1"/>
 			<dataarea name="flop" size="901120">
-				<rom name="games galore 10 (1992-01-22)(henderson, gary)(pd)[h].adf" size="901120" crc="6e6292d9" sha1="ce61ea257ab174e32828f127dfb2a8366be52a53"/>
+				<rom name="games galore 09 (1991-10-20)(henderson, gary)(pd).adf" size="901120" crc="bd612d89" sha1="4892b0a5496515e8059145755a2abeda28925241"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="gamesgal_17" supported="no">
+	<software name="gamesgal_16" supported="no">
 		<description>Games Galore 10 (Public Domain)</description>
 		<year>1992</year>
 		<publisher>Gary Henderson - 17-Bit Software</publisher>
@@ -8174,6 +8161,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="A500+ compatible version, Alt intro removed"/>
 			<dataarea name="flop" size="901120">
 				<rom name="games galore 10 (1992)(henderson, gary - 17-bit software)(pd)[a intro removed][a500+ compatible version].adf" size="901120" crc="c25ee96d" sha1="7caa55dc00ec59d74aaccf9377342d08a0499791"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gamesgal_17" supported="no">
+		<description>Games Galore 10 (1992-01-22, Public Domain)</description>
+		<year>1992</year>
+		<publisher>Gary Henderson</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="games galore 10 (1992-01-22)(henderson, gary)(pd)[h].adf" size="901120" crc="6e6292d9" sha1="ce61ea257ab174e32828f127dfb2a8366be52a53"/>
 			</dataarea>
 		</part>
 	</software>
@@ -10107,6 +10107,72 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="megagame" supported="no">
+		<description>Mega Game Pack (v5.0)</description>
+		<year>1989</year>
+		<publisher>Trilogy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mega game pack v5.0 (1989)(trilogy).adf" size="901120" crc="9fcd676e" sha1="a8b1572a1d1956aee6b3a07267b12c8c796a0316"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megagame_a" cloneof="megagame" supported="no">
+		<description>Mega Game Pack (v6.0)</description>
+		<year>1989</year>
+		<publisher>Trilogy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mega game pack v6.0 (1989)(trilogy).adf" size="901120" crc="6b0cc9da" sha1="167464c66bfd93edb22dfaac8760ae4af884bbb1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megagame_b" cloneof="megagame" supported="no">
+		<description>Mega Game Pack (v7.0)</description>
+		<year>1989</year>
+		<publisher>Trilogy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mega game pack v7.0 (1989)(trilogy).adf" size="901120" crc="267bb0fe" sha1="0b5293e6014fe77bf2b980554359300d67a7f605"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megagame_c" cloneof="megagame" supported="no">
+		<description>Mega Game Pack (v8.0)</description>
+		<year>1989</year>
+		<publisher>Trilogy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mega game pack v8.0 (1989)(trilogy).adf" size="901120" crc="0e536f33" sha1="ac5d090114bd5fb5c79a0e5a31445199987b8407"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megagame_d" cloneof="megagame" supported="no">
+		<description>Mega Game Pack (v9.0)</description>
+		<year>1989</year>
+		<publisher>Trilogy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mega game pack v9.0 (1989)(trilogy).adf" size="901120" crc="83121b0b" sha1="17667a105b924923411f0a386d9dddd5c18af004"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="mega game pack v9.0 (1989)(trilogy)[m bamcopy].adf" size="901120" crc="1760c50b" sha1="16fa41deb03a542fb7caa37ff0219ce006827100"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megagame_e" cloneof="megagame" supported="no">
 		<description>Mega Game Pack (v10.0)</description>
 		<year>19??</year>
 		<publisher>Trilogy</publisher>
@@ -10124,7 +10190,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megagame_a" cloneof="megagame" supported="no">
+	<software name="megagame_f" cloneof="megagame" supported="no">
 		<description>Mega Game Pack (v13.0)</description>
 		<year>19??</year>
 		<publisher>Trilogy</publisher>
@@ -10142,7 +10208,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megagame_b" cloneof="megagame" supported="no">
+	<software name="megagame_g" cloneof="megagame" supported="no">
 		<description>Mega Game Pack (v16.0)</description>
 		<year>19??</year>
 		<publisher>Trilogy</publisher>
@@ -10150,72 +10216,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="mega game pack v16.0 (19xx)(trilogy).adf" size="901120" crc="97e4c95f" sha1="6584dfb8f986b47b7c1aedd577ee93f34caea5dc"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megagame_c" cloneof="megagame" supported="no">
-		<description>Mega Game Pack (v5.0)</description>
-		<year>1989</year>
-		<publisher>Trilogy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mega game pack v5.0 (1989)(trilogy).adf" size="901120" crc="9fcd676e" sha1="a8b1572a1d1956aee6b3a07267b12c8c796a0316"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megagame_d" cloneof="megagame" supported="no">
-		<description>Mega Game Pack (v6.0)</description>
-		<year>1989</year>
-		<publisher>Trilogy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mega game pack v6.0 (1989)(trilogy).adf" size="901120" crc="6b0cc9da" sha1="167464c66bfd93edb22dfaac8760ae4af884bbb1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megagame_e" cloneof="megagame" supported="no">
-		<description>Mega Game Pack (v7.0)</description>
-		<year>1989</year>
-		<publisher>Trilogy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mega game pack v7.0 (1989)(trilogy).adf" size="901120" crc="267bb0fe" sha1="0b5293e6014fe77bf2b980554359300d67a7f605"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megagame_f" cloneof="megagame" supported="no">
-		<description>Mega Game Pack (v8.0)</description>
-		<year>1989</year>
-		<publisher>Trilogy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mega game pack v8.0 (1989)(trilogy).adf" size="901120" crc="0e536f33" sha1="ac5d090114bd5fb5c79a0e5a31445199987b8407"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megagame_g" cloneof="megagame" supported="no">
-		<description>Mega Game Pack (v9.0)</description>
-		<year>1989</year>
-		<publisher>Trilogy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mega game pack v9.0 (1989)(trilogy).adf" size="901120" crc="83121b0b" sha1="17667a105b924923411f0a386d9dddd5c18af004"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy"/>
-			<dataarea name="flop" size="901120">
-				<rom name="mega game pack v9.0 (1989)(trilogy)[m bamcopy].adf" size="901120" crc="1760c50b" sha1="16fa41deb03a542fb7caa37ff0219ce006827100"/>
 			</dataarea>
 		</part>
 	</software>

@@ -566,18 +566,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="jurassic_1" supported="no">
-		<description>Jurassic Pack - Issue 1 (1994-05-16)</description>
-		<year>1994</year>
-		<publisher>Tonic</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="jurassic pack - issue 1 (1994-05-16)(tonic).adf" size="901120" crc="296aefba" sha1="12e081b856a632ab9fbe20956c994d03ab12eb70"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="jurassic_2" supported="no">
 		<description>Jurassic Pack - Issue 1 (AGA, 1996-01-25)</description>
 		<year>1996</year>
 		<publisher>Gods</publisher>
@@ -607,25 +595,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="jurassic_3" supported="no">
-		<description>Jurassic Pack - Issue 2 (1994-07-05)</description>
+	<software name="jurassic_2" supported="no">
+		<description>Jurassic Pack - Issue 1 (1994-05-16)</description>
 		<year>1994</year>
-		<publisher>Iris</publisher>
+		<publisher>Tonic</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="jurassic pack - issue 2 (1994-07-05)(iris).adf" size="901120" crc="8de6e67c" sha1="2983764274720f7ee4db8fb060995e07d0217f9a"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Bad disk label"/>
-			<dataarea name="flop" size="901120">
-				<rom name="jurassic pack - issue 2 (1994-07-05)(iris)[b disk label].adf" size="901120" crc="9f8b74f9" sha1="0109964fd7de782fe4636f1890bbb702d06ee0e4" status="baddump"/>
+				<rom name="jurassic pack - issue 1 (1994-05-16)(tonic).adf" size="901120" crc="296aefba" sha1="12e081b856a632ab9fbe20956c994d03ab12eb70"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="jurassic_4" supported="no">
+	<software name="jurassic_3" supported="no">
 		<description>Jurassic Pack - Issue 2 (AGA, 1996-04-05)</description>
 		<year>1996</year>
 		<publisher>Gods</publisher>
@@ -649,25 +631,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="jurassic_5" supported="no">
-		<description>Jurassic Pack - Issue 3 (1994-08-17)</description>
+	<software name="jurassic_4" supported="no">
+		<description>Jurassic Pack - Issue 2 (1994-07-05)</description>
 		<year>1994</year>
 		<publisher>Iris</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="jurassic pack - issue 3 (1994-08-17)(iris).adf" size="901120" crc="b3d3bb52" sha1="de145a288f1ab12253ce6c09e4e74eb872a78a34"/>
+				<rom name="jurassic pack - issue 2 (1994-07-05)(iris).adf" size="901120" crc="8de6e67c" sha1="2983764274720f7ee4db8fb060995e07d0217f9a"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Ghandy's release"/>
+			<feature name="part_id" value="Bad disk label"/>
 			<dataarea name="flop" size="901120">
-				<rom name="jurassic pack - issue 3 (1994-08-17)(iris)[ghandy's release].adf" size="901120" crc="206d1494" sha1="4f450f0f8567b041bac3e1689fe5b783691205fc"/>
+				<rom name="jurassic pack - issue 2 (1994-07-05)(iris)[b disk label].adf" size="901120" crc="9f8b74f9" sha1="0109964fd7de782fe4636f1890bbb702d06ee0e4" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="jurassic_6" supported="no">
+	<software name="jurassic_5" supported="no">
 		<description>Jurassic Pack - Issue 3 (AGA, 1996-03-02)</description>
 		<year>1996</year>
 		<publisher>Gods</publisher>
@@ -681,6 +663,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked BTTR"/>
 			<dataarea name="flop" size="901120">
 				<rom name="jurassic pack - issue 3 (1996-03-02)(gods)(aga)[h bttr].adf" size="901120" crc="654c88e6" sha1="a8b47c0264c67439db94aa32614ebd206c513d07"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jurassic_6" supported="no">
+		<description>Jurassic Pack - Issue 3 (1994-08-17)</description>
+		<year>1994</year>
+		<publisher>Iris</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="jurassic pack - issue 3 (1994-08-17)(iris).adf" size="901120" crc="b3d3bb52" sha1="de145a288f1ab12253ce6c09e4e74eb872a78a34"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Ghandy's release"/>
+			<dataarea name="flop" size="901120">
+				<rom name="jurassic pack - issue 3 (1994-08-17)(iris)[ghandy's release].adf" size="901120" crc="206d1494" sha1="4f450f0f8567b041bac3e1689fe5b783691205fc"/>
 			</dataarea>
 		</part>
 	</software>

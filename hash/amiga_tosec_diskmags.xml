@@ -17789,6 +17789,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="romrewar_5" supported="no">
+		<description>R.O.M. - Rewarding Orthographical Masterpiece - Issue 4 (AGA, 1995-06-04)</description>
+		<year>1995</year>
+		<publisher>Essence - 17-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2, intro only"/>
+			<dataarea name="flop" size="901120">
+				<rom name="r.o.m. - rewarding orthographical masterpiece - issue 4 (1995-06-04)(essence - 17-bit software)(aga)(disk 1 of 2)[intro onl.adf" size="901120" crc="873629cb" sha1="1d9310f99a9b1c0bbe6f844e00107f950f60699d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="romrewar_6" supported="no">
 		<description>R.O.M. - Rewarding Orthographical Masterpiece - Issue 4 (1995-06-04)</description>
 		<year>1995</year>
 		<publisher>Essence</publisher>
@@ -17813,7 +17826,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="romrewar_5_a" cloneof="romrewar_5" supported="no">
+	<software name="romrewar_6_a" cloneof="romrewar_6" supported="no">
 		<description>R.O.M. - Rewarding Orthographical Masterpiece - Issue 4 (AGA, 1995-06-04) (1)</description>
 		<year>1995</year>
 		<publisher>Essence</publisher>
@@ -17828,19 +17841,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 1 of 2, intro only"/>
 			<dataarea name="flop" size="901120">
 				<rom name="r.o.m. - rewarding orthographical masterpiece - issue 4 (1995-06-04)(essence)(aga)(disk 1 of 2)[intro only].adf" size="901120" crc="ffeaf3cb" sha1="92c135239ad6820071ad825db29479779dbca74f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="romrewar_6" supported="no">
-		<description>R.O.M. - Rewarding Orthographical Masterpiece - Issue 4 (AGA, 1995-06-04)</description>
-		<year>1995</year>
-		<publisher>Essence - 17-Bit Software</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2, intro only"/>
-			<dataarea name="flop" size="901120">
-				<rom name="r.o.m. - rewarding orthographical masterpiece - issue 4 (1995-06-04)(essence - 17-bit software)(aga)(disk 1 of 2)[intro onl.adf" size="901120" crc="873629cb" sha1="1d9310f99a9b1c0bbe6f844e00107f950f60699d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20052,18 +20052,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="stolenda_6" supported="no">
-		<description>Stolen Data - Issue 07 (1991-10) (1)</description>
-		<year>1991</year>
-		<publisher>Anarchy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="stolen data - issue 07 (1991-10)(anarchy).adf" size="901120" crc="8fc8e3bc" sha1="c13c36239cbbe0a4adf3f967401aa36d9ba91412"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="stolenda_7" supported="no">
 		<description>Stolen Data - Issue 07 (1991-10)</description>
 		<year>1991</year>
 		<publisher>Anarchy - Flash Production</publisher>
@@ -20072,6 +20060,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="stolen data - issue 07 (1991-10)(anarchy - flash production)[a].adf" size="901120" crc="5c536377" sha1="fcee0a421f0527f3fea24c393980219352799843"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stolenda_7" supported="no">
+		<description>Stolen Data - Issue 07 (1991-10) (1)</description>
+		<year>1991</year>
+		<publisher>Anarchy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="stolen data - issue 07 (1991-10)(anarchy).adf" size="901120" crc="8fc8e3bc" sha1="c13c36239cbbe0a4adf3f967401aa36d9ba91412"/>
 			</dataarea>
 		</part>
 	</software>
@@ -24851,18 +24851,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="timesiss" supported="no">
-		<description>Times - Issue 3</description>
-		<year>19??</year>
-		<publisher>Travellers</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="times - issue 3 (19xx)(travellers).adf" size="901120" crc="0618ec20" sha1="00c017153f38565aec17169f7f826a9b9d2ca377"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="timesiss_1" supported="no">
 		<description>Times - Issue 3 (1993-07-30)</description>
 		<year>1993</year>
 		<publisher>Stellar</publisher>
@@ -24877,6 +24865,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
 				<rom name="times - issue 3 (1993-07-30)(stellar)[h warlock][m bamcopy].adf" size="901120" crc="d889c623" sha1="85cda5e301a8a9457bf048b332cf33f9f1956926"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="timesiss_1" supported="no">
+		<description>Times - Issue 3</description>
+		<year>19??</year>
+		<publisher>Travellers</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="times - issue 3 (19xx)(travellers).adf" size="901120" crc="0618ec20" sha1="00c017153f38565aec17169f7f826a9b9d2ca377"/>
 			</dataarea>
 		</part>
 	</software>
@@ -25541,19 +25541,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="travello_1" supported="no">
-		<description>Travellog</description>
-		<year>199?</year>
-		<publisher>Arise</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="AMOS"/>
-			<dataarea name="flop" size="901120">
-				<rom name="travellog (199x)(arise)[amos].adf" size="901120" crc="dae70a50" sha1="a1698b6d4b7873ef497cf2c0cf2ce3b2315e4f4b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="travello_1_a" cloneof="travello_1" supported="no">
 		<description>Travellog (1992-03-28)</description>
 		<year>1992</year>
 		<publisher>Arise</publisher>
@@ -25566,7 +25553,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="travello_1_b" cloneof="travello_1" supported="no">
+	<software name="travello_1_a" cloneof="travello_1" supported="no">
 		<description>Travellog (1992-07-09)</description>
 		<year>1992</year>
 		<publisher>Arise</publisher>
@@ -25575,6 +25562,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="AMOS"/>
 			<dataarea name="flop" size="901120">
 				<rom name="travellog (1992-07-09)(arise)[amos].adf" size="901120" crc="f5b473b8" sha1="0006bd4b1beb2e3a10ed283165608a1685feff8e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="travello_1_b" cloneof="travello_1" supported="no">
+		<description>Travellog</description>
+		<year>199?</year>
+		<publisher>Arise</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="AMOS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="travellog (199x)(arise)[amos].adf" size="901120" crc="dae70a50" sha1="a1698b6d4b7873ef497cf2c0cf2ce3b2315e4f4b"/>
 			</dataarea>
 		</part>
 	</software>

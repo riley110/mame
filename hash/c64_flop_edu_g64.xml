@@ -2215,6 +2215,92 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="paulwhit" supported="no">
+		<description>Paul Whitehead Teaches Chess (de)</description>
+		<year>1985</year>
+		<publisher>Ariolasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="333744">
+				<rom name="paul whitehead teaches chess (1985)(ariolasoft)(de)(side a).g64" size="333744" crc="81ef2bca" sha1="3de6b3f644323c2d7594879ab1335f6a02dd8ef8"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, Alt 1"/>
+			<dataarea name="flop" size="333744">
+				<rom name="paul whitehead teaches chess (1985)(ariolasoft)(de)(side a)[a].g64" size="333744" crc="da6a6822" sha1="a198ca97fa255f701b49d0767649cf303c50b84f"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, Alt 2"/>
+			<dataarea name="flop" size="278234">
+				<rom name="paul whitehead teaches chess (1985)(ariolasoft)(de)(side a)[a2].g64" size="278234" crc="8b220616" sha1="b69d033ca136b39c2651c1d21191df45d7ae76ca"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="333744">
+				<rom name="paul whitehead teaches chess (1985)(ariolasoft)(de)(side b).g64" size="333744" crc="950ee520" sha1="95d311f1ff5384ca01a5dd879921c13934e31305"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Alt 1"/>
+			<dataarea name="flop" size="333744">
+				<rom name="paul whitehead teaches chess (1985)(ariolasoft)(de)(side b)[a].g64" size="333744" crc="d497c63d" sha1="20f4caf54f7947da7cab110fb645b52dc56e952f"/>
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Alt 2"/>
+			<dataarea name="flop" size="278234">
+				<rom name="paul whitehead teaches chess (1985)(ariolasoft)(de)(side b)[a2].g64" size="278234" crc="ea472e00" sha1="18abdfc2225705f853f09184bc81864a4872bb4c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="paulwhit_a" cloneof="paulwhit" supported="no">
+		<description>Paul Whitehead Teaches Chess (de) (1)</description>
+		<year>1987</year>
+		<publisher>Ariolasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2 Side B"/>
+			<dataarea name="flop" size="333744">
+				<rom name="paul whitehead teaches chess (1987)(ariolasoft)(de)(disk 1 of 2 side b).g64" size="333744" crc="57aea63a" sha1="cd5c692456bccc58e03a0f0aa53a02274ab313be"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2 Side B, Alt 1"/>
+			<dataarea name="flop" size="333744">
+				<rom name="paul whitehead teaches chess (1987)(ariolasoft)(de)(disk 1 of 2 side b)[a].g64" size="333744" crc="fa4d2a67" sha1="8bd376a057646cff4ec51a4119eb2ecf44b6121f"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 2 Side B, Alt 2"/>
+			<dataarea name="flop" size="278234">
+				<rom name="paul whitehead teaches chess (1987)(ariolasoft)(de)(disk 1 of 2 side b)[a2].g64" size="278234" crc="93902e3a" sha1="08f42bc143a9a189651a6d4384dc6104d7d856c2"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2 Side A"/>
+			<dataarea name="flop" size="333744">
+				<rom name="paul whitehead teaches chess (1987)(ariolasoft)(de)(disk 2 of 2 side a).g64" size="333744" crc="e1e344cb" sha1="2a027dfc902c71ee26de34425f5de8c21dac5c05"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2 Side A, Alt 1"/>
+			<dataarea name="flop" size="278234">
+				<rom name="paul whitehead teaches chess (1987)(ariolasoft)(de)(disk 2 of 2 side a)[a].g64" size="278234" crc="faf86a80" sha1="36dbde707c8d16f9f2ee2795f7c7a9bd59f3e352"/>
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 2 Side A, Alt 2"/>
+			<dataarea name="flop" size="333744">
+				<rom name="paul whitehead teaches chess (1987)(ariolasoft)(de)(disk 2 of 2 side a)[a2].g64" size="333744" crc="302ab1d3" sha1="33be82711d28672b820dfe3d8ec865cc090e31da"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="paulwhit_1" supported="no">
 		<description>Paul Whitehead Teaches Chess</description>
 		<year>1985</year>
 		<publisher>Enlightenment</publisher>
@@ -2289,92 +2375,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2 Side A, Alt 3"/>
 			<dataarea name="flop" size="333744">
 				<rom name="paul whitehead teaches chess (1985)(enlightenment)(disk 2 of 2 side a)[a3].g64" size="333744" crc="a9514c60" sha1="67d8c92a6d69db43427183a9e8a7d51c2e35c59c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="paulwhit_1" supported="no">
-		<description>Paul Whitehead Teaches Chess (de)</description>
-		<year>1985</year>
-		<publisher>Ariolasoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A"/>
-			<dataarea name="flop" size="333744">
-				<rom name="paul whitehead teaches chess (1985)(ariolasoft)(de)(side a).g64" size="333744" crc="81ef2bca" sha1="3de6b3f644323c2d7594879ab1335f6a02dd8ef8"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt 1"/>
-			<dataarea name="flop" size="333744">
-				<rom name="paul whitehead teaches chess (1985)(ariolasoft)(de)(side a)[a].g64" size="333744" crc="da6a6822" sha1="a198ca97fa255f701b49d0767649cf303c50b84f"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt 2"/>
-			<dataarea name="flop" size="278234">
-				<rom name="paul whitehead teaches chess (1985)(ariolasoft)(de)(side a)[a2].g64" size="278234" crc="8b220616" sha1="b69d033ca136b39c2651c1d21191df45d7ae76ca"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B"/>
-			<dataarea name="flop" size="333744">
-				<rom name="paul whitehead teaches chess (1985)(ariolasoft)(de)(side b).g64" size="333744" crc="950ee520" sha1="95d311f1ff5384ca01a5dd879921c13934e31305"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt 1"/>
-			<dataarea name="flop" size="333744">
-				<rom name="paul whitehead teaches chess (1985)(ariolasoft)(de)(side b)[a].g64" size="333744" crc="d497c63d" sha1="20f4caf54f7947da7cab110fb645b52dc56e952f"/>
-			</dataarea>
-		</part>
-		<part name="flop6" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt 2"/>
-			<dataarea name="flop" size="278234">
-				<rom name="paul whitehead teaches chess (1985)(ariolasoft)(de)(side b)[a2].g64" size="278234" crc="ea472e00" sha1="18abdfc2225705f853f09184bc81864a4872bb4c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="paulwhit_1_a" cloneof="paulwhit_1" supported="no">
-		<description>Paul Whitehead Teaches Chess (de) (1)</description>
-		<year>1987</year>
-		<publisher>Ariolasoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1 of 2 Side B"/>
-			<dataarea name="flop" size="333744">
-				<rom name="paul whitehead teaches chess (1987)(ariolasoft)(de)(disk 1 of 2 side b).g64" size="333744" crc="57aea63a" sha1="cd5c692456bccc58e03a0f0aa53a02274ab313be"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1 of 2 Side B, Alt 1"/>
-			<dataarea name="flop" size="333744">
-				<rom name="paul whitehead teaches chess (1987)(ariolasoft)(de)(disk 1 of 2 side b)[a].g64" size="333744" crc="fa4d2a67" sha1="8bd376a057646cff4ec51a4119eb2ecf44b6121f"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1 of 2 Side B, Alt 2"/>
-			<dataarea name="flop" size="278234">
-				<rom name="paul whitehead teaches chess (1987)(ariolasoft)(de)(disk 1 of 2 side b)[a2].g64" size="278234" crc="93902e3a" sha1="08f42bc143a9a189651a6d4384dc6104d7d856c2"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 2 Side A"/>
-			<dataarea name="flop" size="333744">
-				<rom name="paul whitehead teaches chess (1987)(ariolasoft)(de)(disk 2 of 2 side a).g64" size="333744" crc="e1e344cb" sha1="2a027dfc902c71ee26de34425f5de8c21dac5c05"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 2 Side A, Alt 1"/>
-			<dataarea name="flop" size="278234">
-				<rom name="paul whitehead teaches chess (1987)(ariolasoft)(de)(disk 2 of 2 side a)[a].g64" size="278234" crc="faf86a80" sha1="36dbde707c8d16f9f2ee2795f7c7a9bd59f3e352"/>
-			</dataarea>
-		</part>
-		<part name="flop6" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2 of 2 Side A, Alt 2"/>
-			<dataarea name="flop" size="333744">
-				<rom name="paul whitehead teaches chess (1987)(ariolasoft)(de)(disk 2 of 2 side a)[a2].g64" size="333744" crc="302ab1d3" sha1="33be82711d28672b820dfe3d8ec865cc090e31da"/>
 			</dataarea>
 		</part>
 	</software>

@@ -892,13 +892,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="amibase" supported="no">
-		<description>AmiBase (v3.76, 1990-06-11, Shareware)</description>
+		<description>AmiBase (v3.76, Shareware)</description>
 		<year>1990</year>
-		<publisher>Keith Grant</publisher>
+		<publisher>KAG Productions - 17-Bit Software</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="amibase v3.76 (1990-06-11)(grant, keith)(sw).adf" size="901120" crc="eceed5f4" sha1="31c6ad5b74bf1c0563597b24c8dd660f96398f43"/>
+				<rom name="amibase v3.76 (1990)(kag productions - 17-bit software)(sw).adf" size="901120" crc="7588141a" sha1="ac04a53f178fd1c3f570183d10164adb1b8f31ef"/>
 			</dataarea>
 		</part>
 	</software>
@@ -916,13 +916,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="amibase_2" supported="no">
-		<description>AmiBase (v3.76, Shareware)</description>
+		<description>AmiBase (v3.76, 1990-06-11, Shareware)</description>
 		<year>1990</year>
-		<publisher>KAG Productions - 17-Bit Software</publisher>
+		<publisher>Keith Grant</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="amibase v3.76 (1990)(kag productions - 17-bit software)(sw).adf" size="901120" crc="7588141a" sha1="ac04a53f178fd1c3f570183d10164adb1b8f31ef"/>
+				<rom name="amibase v3.76 (1990-06-11)(grant, keith)(sw).adf" size="901120" crc="eceed5f4" sha1="31c6ad5b74bf1c0563597b24c8dd660f96398f43"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1070,42 +1070,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="amigates" supported="no">
-		<description>Amiga Test Kit (v1.10, 2020-06-20)</description>
-		<year>2020</year>
-		<publisher>Keirf</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="amiga test kit v1.10 (2020-06-20)(keirf).adf" size="901120" crc="f97ddd50" sha1="c38eefbbf98a8e0a971daeae0981849b58772d6b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="amigates_a" cloneof="amigates" supported="no">
-		<description>Amiga Test Kit (v1.11, 2020-07-22)</description>
-		<year>2020</year>
-		<publisher>Keirf</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="amiga test kit v1.11 (2020-07-22)(keirf).adf" size="901120" crc="9f7124a8" sha1="fafb0ddea63256eef26a8055978349ac6d601d37"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="amigates_b" cloneof="amigates" supported="no">
-		<description>Amiga Test Kit (v1.12, 2020-08-21)</description>
-		<year>2020</year>
-		<publisher>Keirf</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="amiga test kit v1.12 (2020-08-21)(keirf).adf" size="901120" crc="77fd6235" sha1="eabd0017268e11cbfedf8d397762ba3b3e3c8150"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="amigates_c" cloneof="amigates" supported="no">
 		<description>Amiga Test Kit (v1.3, 2019-03-14)</description>
 		<year>2019</year>
 		<publisher>Keirf</publisher>
@@ -1117,7 +1081,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="amigates_d" cloneof="amigates" supported="no">
+	<software name="amigates_a" cloneof="amigates" supported="no">
 		<description>Amiga Test Kit (v1.4, 2019-06-03)</description>
 		<year>2019</year>
 		<publisher>Keirf</publisher>
@@ -1129,7 +1093,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="amigates_e" cloneof="amigates" supported="no">
+	<software name="amigates_b" cloneof="amigates" supported="no">
 		<description>Amiga Test Kit (v1.5, 2019-09-28)</description>
 		<year>2019</year>
 		<publisher>Keirf</publisher>
@@ -1137,6 +1101,42 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="amiga test kit v1.5 (2019-09-28)(keirf).adf" size="901120" crc="c692e821" sha1="57f00a3bc0d83548573237f1336b56fab371c84d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amigates_c" cloneof="amigates" supported="no">
+		<description>Amiga Test Kit (v1.10, 2020-06-20)</description>
+		<year>2020</year>
+		<publisher>Keirf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="amiga test kit v1.10 (2020-06-20)(keirf).adf" size="901120" crc="f97ddd50" sha1="c38eefbbf98a8e0a971daeae0981849b58772d6b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amigates_d" cloneof="amigates" supported="no">
+		<description>Amiga Test Kit (v1.11, 2020-07-22)</description>
+		<year>2020</year>
+		<publisher>Keirf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="amiga test kit v1.11 (2020-07-22)(keirf).adf" size="901120" crc="9f7124a8" sha1="fafb0ddea63256eef26a8055978349ac6d601d37"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amigates_e" cloneof="amigates" supported="no">
+		<description>Amiga Test Kit (v1.12, 2020-08-21)</description>
+		<year>2020</year>
+		<publisher>Keirf</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="amiga test kit v1.12 (2020-08-21)(keirf).adf" size="901120" crc="77fd6235" sha1="eabd0017268e11cbfedf8d397762ba3b3e3c8150"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1645,6 +1645,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="bellespa" supported="no">
+		<description>Belle's Paint (v2.0, Licenceware)</description>
+		<year>1996</year>
+		<publisher>Portia Software - 5th Dimension</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="belle's paint v2.0 (1996)(portia software - 5th dimension)(lw).adf" size="901120" crc="294fe5c9" sha1="45050c6c6539d417a0b0e38922f8477c10442999"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bellespa_1" supported="no">
 		<description>Belle's Paint (v1.0, 1995-02-18)</description>
 		<year>1995</year>
 		<publisher>Portia Software</publisher>
@@ -1671,18 +1683,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="one disk version, AMOS, Hacked TDD - OTL, Virus Ebola"/>
 			<dataarea name="flop" size="901120">
 				<rom name="belle's paint v1.0 (1995-02-18)(portia software)[h tdd - otl][v ebola][one disk version][amos].adf" size="901120" crc="a5e6cd9f" sha1="1d8bcb9aec484275475e79bc0bb3372d30e032f6" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bellespa_1" supported="no">
-		<description>Belle's Paint (v2.0, Licenceware)</description>
-		<year>1996</year>
-		<publisher>Portia Software - 5th Dimension</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="belle's paint v2.0 (1996)(portia software - 5th dimension)(lw).adf" size="901120" crc="294fe5c9" sha1="45050c6c6539d417a0b0e38922f8477c10442999"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1897,19 +1897,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="burnit_a" cloneof="burnit" supported="no">
-		<description>BurnIt (Demo, v1.21, 1997-04-08, Shareware)</description>
-		<year>1997</year>
-		<publisher>DnS</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="68020, KS3.0, WB, Hacked Quartz PD"/>
-			<dataarea name="flop" size="901120">
-				<rom name="burnit v1.21 (demo) (1997-04-08)(dns)(sw)[h quartz pd][68020, ks3.0, wb].adf" size="901120" crc="701b4308" sha1="735d0fa0e5fb78b29e4ae75e4fb6a51ea7a4c26c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="burnit_b" cloneof="burnit" supported="no">
 		<description>BurnIt (v1.00, 1996-09, Shareware/Registered)</description>
 		<year>1996</year>
 		<publisher>DnS</publisher>
@@ -1924,6 +1911,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="68020, KS3.0, WB, Cracked by DC"/>
 			<dataarea name="flop" size="901120">
 				<rom name="burnit v1.00 (1996-09)(dns)(sw-r)[cr dc][68020, ks3.0, wb].adf" size="901120" crc="36ab2803" sha1="b4d5a4afc02bf13707144a1e93ac6ebba3f302d4"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="burnit_b" cloneof="burnit" supported="no">
+		<description>BurnIt (Demo, v1.21, 1997-04-08, Shareware)</description>
+		<year>1997</year>
+		<publisher>DnS</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="68020, KS3.0, WB, Hacked Quartz PD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="burnit v1.21 (demo) (1997-04-08)(dns)(sw)[h quartz pd][68020, ks3.0, wb].adf" size="901120" crc="701b4308" sha1="735d0fa0e5fb78b29e4ae75e4fb6a51ea7a4c26c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4741,31 +4741,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="med" supported="no">
-		<description>MED (v1.12)</description>
-		<year>1989</year>
-		<publisher>Teijo Kinnunen</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="med v1.12 (1989)(kinnunen, teijo)[wb].adf" size="901120" crc="95af1cdf" sha1="1552e95c6c457d62871f0a163ce6c340d9649862"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="med_a" cloneof="med" supported="no">
-		<description>MED (v2.01, 1990-04-10)</description>
-		<year>1990</year>
-		<publisher>Teijo Kinnunen</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="med v2.01 (1990-04-10)(kinnunen, teijo).adf" size="901120" crc="3d893eb6" sha1="edbbd5ceb70d183a8318fb08c1db1b4315c569b8"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="med_1" supported="no">
 		<description>MED (v3.00, 1991-01-30)</description>
 		<year>1991</year>
 		<publisher>Teijo Kinnunen - Amiganuts United</publisher>
@@ -4796,7 +4771,32 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="med_b" cloneof="med" supported="no">
+	<software name="med_1" supported="no">
+		<description>MED (v1.12)</description>
+		<year>1989</year>
+		<publisher>Teijo Kinnunen</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="med v1.12 (1989)(kinnunen, teijo)[wb].adf" size="901120" crc="95af1cdf" sha1="1552e95c6c457d62871f0a163ce6c340d9649862"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="med_1_a" cloneof="med_1" supported="no">
+		<description>MED (v2.01, 1990-04-10)</description>
+		<year>1990</year>
+		<publisher>Teijo Kinnunen</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="med v2.01 (1990-04-10)(kinnunen, teijo).adf" size="901120" crc="3d893eb6" sha1="edbbd5ceb70d183a8318fb08c1db1b4315c569b8"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="med_1_b" cloneof="med_1" supported="no">
 		<description>MED (v3.11, 1991-05-07)</description>
 		<year>1991</year>
 		<publisher>Teijo Kinnunen</publisher>
@@ -4809,7 +4809,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="med_c" cloneof="med" supported="no">
+	<software name="med_1_c" cloneof="med_1" supported="no">
 		<description>MED (v3.11b, 1991-05-09)</description>
 		<year>1991</year>
 		<publisher>Teijo Kinnunen</publisher>
@@ -4822,7 +4822,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="med_d" cloneof="med" supported="no">
+	<software name="med_1_d" cloneof="med_1" supported="no">
 		<description>MED (v3.20, 1991-08-25)</description>
 		<year>1991</year>
 		<publisher>Teijo Kinnunen</publisher>
@@ -5483,6 +5483,32 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="ncomm" supported="no">
+		<description>NComm (v2.0, 1992-03-09, Shareware/Registered)</description>
+		<year>1992</year>
+		<publisher>Daniel Bloch &amp; co</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="virus removed, Virus Saddam 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="ncomm v2.0 (1992-03-09)(daniel bloch &amp; co)(sw-r)[v saddam 1][virus removed].adf" size="901120" crc="646e472a" sha1="6de659c6b50f2e12640825f562f1c3f2169b20f7" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ncomm_a" cloneof="ncomm" supported="no">
+		<description>NComm (v3.05, 1994-09-16, Shareware/Registered)</description>
+		<year>1994</year>
+		<publisher>Daniel Bloch &amp; co</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="ncomm v3.05 (1994-09-16)(daniel bloch &amp; co)(sw-r)[wb].adf" size="901120" crc="4d53716a" sha1="d245be3232f44324a5371a9cfc4a58f8dd92eec3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ncomm_1" supported="no">
 		<description>NComm (v2.0, 1992-03-09, Shareware)</description>
 		<year>1992</year>
 		<publisher>Torkel Lodberg</publisher>
@@ -5496,32 +5522,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="ncomm v2.0 (1992-03-09)(lodberg, torkel)(sw)[a].adf" size="901120" crc="7113cb99" sha1="7065c610b4b3b446482b5884a50541c506c6941c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ncomm_1" supported="no">
-		<description>NComm (v2.0, 1992-03-09, Shareware/Registered)</description>
-		<year>1992</year>
-		<publisher>Daniel Bloch &amp; co</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="virus removed, Virus Saddam 1"/>
-			<dataarea name="flop" size="901120">
-				<rom name="ncomm v2.0 (1992-03-09)(daniel bloch &amp; co)(sw-r)[v saddam 1][virus removed].adf" size="901120" crc="646e472a" sha1="6de659c6b50f2e12640825f562f1c3f2169b20f7" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ncomm_1_a" cloneof="ncomm_1" supported="no">
-		<description>NComm (v3.05, 1994-09-16, Shareware/Registered)</description>
-		<year>1994</year>
-		<publisher>Daniel Bloch &amp; co</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="ncomm v3.05 (1994-09-16)(daniel bloch &amp; co)(sw-r)[wb].adf" size="901120" crc="4d53716a" sha1="d245be3232f44324a5371a9cfc4a58f8dd92eec3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5658,19 +5658,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="pcq" supported="no">
-		<description>PCQ (v1.1c, 1990-03-03)</description>
-		<year>1990</year>
-		<publisher>Patrick Quaid</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="pcq v1.1c (1990-03-03)(quaid, patrick)[wb].adf" size="901120" crc="f64a463a" sha1="2ba2a1157ef5d390330827258ed83902abd2f117"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pcq_1" supported="no">
 		<description>PCQ (v1.2b, 1993-04)</description>
 		<year>1993</year>
 		<publisher>Patrick Quaid - France Festival Distribution</publisher>
@@ -5691,6 +5678,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 3 of 3, Translated fr FFD"/>
 			<dataarea name="flop" size="901120">
 				<rom name="pcq v1.2b (1993-04)(quaid, patrick - france festival distribution)(disk 3 of 3)[tr fr ffd].adf" size="901120" crc="78ac459a" sha1="81c61105d39610319873b8f4c95cc270e089a228"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pcq_1" supported="no">
+		<description>PCQ (v1.1c, 1990-03-03)</description>
+		<year>1990</year>
+		<publisher>Patrick Quaid</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="pcq v1.1c (1990-03-03)(quaid, patrick)[wb].adf" size="901120" crc="f64a463a" sha1="2ba2a1157ef5d390330827258ed83902abd2f117"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6244,67 +6244,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="protrack_3" supported="no">
-		<description>ProTracker (v2.1A, 1992-04-16, Public Domain)</description>
-		<year>1992</year>
-		<publisher>Noxious</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v2.1a (1992-04-16)(noxious)(pd).adf" size="901120" crc="a31ac25b" sha1="f10c5a2014f61813b13c24da41898ffc209f7427"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Hi-Lite, Modified corrupt files"/>
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v2.1a (1992-04-16)(noxious)(pd)[h hi-lite][m corrupt files].adf" size="901120" crc="3f577e73" sha1="6100de840f0d44d883876bb5f9424f4d758fb184"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="reissue, Modified corrupt files"/>
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v2.1a (1992-04-16)(noxious)(pd)[m corrupt files][reissue].adf" size="901120" crc="e4f7cbf6" sha1="f684a6897592960cc4e73b4fb498227eb89d80b5"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="protrack_3_a" cloneof="protrack_3" supported="no">
-		<description>ProTracker (v2.2A, 1992-06-22, Public Domain, Beta)</description>
-		<year>1992</year>
-		<publisher>Noxious</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v2.2a (1992-06-22)(noxious)(pd)(beta).adf" size="901120" crc="bf99751b" sha1="985fd92685cc658ab8ab4de93f679ce4b7c859d5"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Modified 1"/>
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v2.2a (1992-06-22)(noxious)(pd)(beta)[m].adf" size="901120" crc="3c7af499" sha1="7ed4bc9f9b2fda3326d185bc7348e9c29dd2fc76"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="protrack_3_b" cloneof="protrack_3" supported="no">
-		<description>ProTracker (v2.3A, 1993-01-01, Public Domain)</description>
-		<year>1993</year>
-		<publisher>Noxious</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="KS2.0, Virus Saddam 1"/>
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v2.3a (1993-01-01)(noxious)(pd)[v saddam 1][ks2.0].adf" size="901120" crc="f604cf82" sha1="e88de7fa396a7a69a7652e301e4b6497db460879" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="KS2.0, Virus Saddam 1, Alt 1"/>
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v2.3a (1993-01-01)(noxious)(pd)[v saddam 1][a][ks2.0].adf" size="901120" crc="60a463fe" sha1="b3ee31f2fa4c10116440ce1949b79b05cf286a1c" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="protrack_4" supported="no">
 		<description>ProTracker (v2.95b, 1993-01, Public Domain)</description>
 		<year>1993</year>
 		<publisher>Apogee Technologies</publisher>
@@ -6316,7 +6255,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="protrack_4_a" cloneof="protrack_4" supported="no">
+	<software name="protrack_3_a" cloneof="protrack_3" supported="no">
 		<description>ProTracker (v2.95d, 1993-01, Public Domain)</description>
 		<year>1993</year>
 		<publisher>Apogee Technologies</publisher>
@@ -6324,6 +6263,167 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="protracker v2.95d (1993-01)(apogee technologies)(pd).adf" size="901120" crc="438906b9" sha1="27a0b5ab252c287a4074e6c9254d83ee5e56fc8b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="protrack_4" supported="no">
+		<description>ProTracker (v3.15, 1996-01-24, Freeware)</description>
+		<year>1996</year>
+		<publisher>Cryptoburners - RD10</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v3.15 (1996-01-24)(cryptoburners - rd10)(fw)[wb].adf" size="901120" crc="909bb796" sha1="87a86a8ca5a70d76087af3c535817aca91ee285d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="protrack_4_a" cloneof="protrack_4" supported="no">
+		<description>ProTracker (v3.32, 1996-03-03, Freeware)</description>
+		<year>1996</year>
+		<publisher>Cryptoburners - RD10</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v3.32 (1996-03-03)(cryptoburners - rd10)(fw).adf" size="901120" crc="0d418113" sha1="48022aca0cec7c5ea30ed6bcf210275f3a91726b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="protrack_4_b" cloneof="protrack_4" supported="no">
+		<description>ProTracker (v3.33, 1996-03-06, Freeware)</description>
+		<year>1996</year>
+		<publisher>Cryptoburners - RD10</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="FFS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v3.33 (1996-03-06)(cryptoburners - rd10)(fw)[ffs].adf" size="901120" crc="2b5a90b0" sha1="a555fa489800e2c9760f75dd8c97922b9d776f08"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="protrack_4_c" cloneof="protrack_4" supported="no">
+		<description>ProTracker (v3.50, 1996-03-14, Freeware)</description>
+		<year>1996</year>
+		<publisher>Cryptoburners - RD10</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="FFS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v3.50 (1996-03-14)(cryptoburners - rd10)(fw)[ffs].adf" size="901120" crc="3dc7c20f" sha1="f4c6e28b3a7ec5092a4b670ec96ef203e478ea34"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="protrack_4_d" cloneof="protrack_4" supported="no">
+		<description>ProTracker (v3.50c, 1996-04-02, Freeware)</description>
+		<year>1996</year>
+		<publisher>Cryptoburners - RD10</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v3.50c (1996-04-02)(cryptoburners - rd10)(fw)[wb].adf" size="901120" crc="2e1d2822" sha1="288f39fb6604a3a3615f2652b6ea66fb004bfc97"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="protrack_4_e" cloneof="protrack_4" supported="no">
+		<description>ProTracker (v3.50d, 1996-04-20, Freeware)</description>
+		<year>1996</year>
+		<publisher>Cryptoburners - RD10</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v3.50d (1996-04-20)(cryptoburners - rd10)(fw)[wb].adf" size="901120" crc="3426ba07" sha1="64f021dc9c42d80592ce5d7c3eaf55fa62b1435a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="protrack_4_f" cloneof="protrack_4" supported="no">
+		<description>ProTracker (v3.51, 1996-03-23, Freeware)</description>
+		<year>1996</year>
+		<publisher>Cryptoburners - RD10</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB, Hacked TEC Design - Metal Impact"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v3.51 (1996-03-23)(cryptoburners - rd10)(fw)[h tec design - metal impact][wb].adf" size="901120" crc="495b1b4d" sha1="e3e52a48407f6ab362be67e11730865498e4a5e0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="protrack_4_g" cloneof="protrack_4" supported="no">
+		<description>ProTracker (v3.55, 1996-06-13, Freeware)</description>
+		<year>1996</year>
+		<publisher>Cryptoburners - RD10</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB, hTEC Design"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v3.55 (1996-06-13)(cryptoburners - rd10)(fw)[htec design][wb].adf" size="901120" crc="39d391ef" sha1="cb9ad6e5a807cb510a69affc97983dbabda91024"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="protrack_4_h" cloneof="protrack_4" supported="no">
+		<description>ProTracker (v3.58, 1996-06-30, Freeware)</description>
+		<year>1996</year>
+		<publisher>Cryptoburners - RD10</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v3.58 (1996-06-30)(cryptoburners - rd10)(fw)[wb].adf" size="901120" crc="aa5890e9" sha1="7c231865a9c6cfda5b8873733e4fa51dd52b0272"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="protrack_4_i" cloneof="protrack_4" supported="no">
+		<description>ProTracker (v3.60, 1996-07-12, Freeware)</description>
+		<year>1996</year>
+		<publisher>Cryptoburners - RD10</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v3.60 (1996-07-12)(cryptoburners - rd10)(fw)[wb].adf" size="901120" crc="4bcef542" sha1="d33466ba2c9d43ab77f29a860646b2788f30fa8d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="protrack_4_j" cloneof="protrack_4" supported="no">
+		<description>ProTracker (v3.61, 1996-08-22, Freeware)</description>
+		<year>1996</year>
+		<publisher>Cryptoburners - RD10</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="68000 version"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v3.61 (1996-08-22)(cryptoburners - rd10)(fw)[68000 version].adf" size="901120" crc="f1b59c8d" sha1="ed9a951296687c9d193ab6ace3342df019c6d1a9"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="68000 version, Modified 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v3.61 (1996-08-22)(cryptoburners - rd10)(fw)[m][68000 version].adf" size="901120" crc="885b5dc2" sha1="84a799dbb22fca134404663009f8abc450197910"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="protrack_4_k" cloneof="protrack_4" supported="no">
+		<description>ProTracker (v3.62, 1996-08-30, Freeware)</description>
+		<year>1996</year>
+		<publisher>Cryptoburners - RD10</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB, FFS"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v3.62 (1996-08-30)(cryptoburners - rd10)(fw)[wb][ffs].adf" size="901120" crc="30761197" sha1="26e5959daa7734b44bf306d64b0b64af7dfa85ed"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6378,162 +6478,62 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="protrack_6" supported="no">
-		<description>ProTracker (v3.15, 1996-01-24, Freeware)</description>
-		<year>1996</year>
-		<publisher>Cryptoburners - RD10</publisher>
+		<description>ProTracker (v2.1A, 1992-04-16, Public Domain)</description>
+		<year>1992</year>
+		<publisher>Noxious</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
-				<rom name="protracker v3.15 (1996-01-24)(cryptoburners - rd10)(fw)[wb].adf" size="901120" crc="909bb796" sha1="87a86a8ca5a70d76087af3c535817aca91ee285d"/>
+				<rom name="protracker v2.1a (1992-04-16)(noxious)(pd).adf" size="901120" crc="a31ac25b" sha1="f10c5a2014f61813b13c24da41898ffc209f7427"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked Hi-Lite, Modified corrupt files"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v2.1a (1992-04-16)(noxious)(pd)[h hi-lite][m corrupt files].adf" size="901120" crc="3f577e73" sha1="6100de840f0d44d883876bb5f9424f4d758fb184"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="reissue, Modified corrupt files"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v2.1a (1992-04-16)(noxious)(pd)[m corrupt files][reissue].adf" size="901120" crc="e4f7cbf6" sha1="f684a6897592960cc4e73b4fb498227eb89d80b5"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="protrack_6_a" cloneof="protrack_6" supported="no">
-		<description>ProTracker (v3.32, 1996-03-03, Freeware)</description>
-		<year>1996</year>
-		<publisher>Cryptoburners - RD10</publisher>
+		<description>ProTracker (v2.2A, 1992-06-22, Public Domain, Beta)</description>
+		<year>1992</year>
+		<publisher>Noxious</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="protracker v3.32 (1996-03-03)(cryptoburners - rd10)(fw).adf" size="901120" crc="0d418113" sha1="48022aca0cec7c5ea30ed6bcf210275f3a91726b"/>
+				<rom name="protracker v2.2a (1992-06-22)(noxious)(pd)(beta).adf" size="901120" crc="bf99751b" sha1="985fd92685cc658ab8ab4de93f679ce4b7c859d5"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Modified 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="protracker v2.2a (1992-06-22)(noxious)(pd)(beta)[m].adf" size="901120" crc="3c7af499" sha1="7ed4bc9f9b2fda3326d185bc7348e9c29dd2fc76"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="protrack_6_b" cloneof="protrack_6" supported="no">
-		<description>ProTracker (v3.33, 1996-03-06, Freeware)</description>
-		<year>1996</year>
-		<publisher>Cryptoburners - RD10</publisher>
+		<description>ProTracker (v2.3A, 1993-01-01, Public Domain)</description>
+		<year>1993</year>
+		<publisher>Noxious</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="FFS"/>
+			<feature name="part_id" value="KS2.0, Virus Saddam 1"/>
 			<dataarea name="flop" size="901120">
-				<rom name="protracker v3.33 (1996-03-06)(cryptoburners - rd10)(fw)[ffs].adf" size="901120" crc="2b5a90b0" sha1="a555fa489800e2c9760f75dd8c97922b9d776f08"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="protrack_6_c" cloneof="protrack_6" supported="no">
-		<description>ProTracker (v3.50, 1996-03-14, Freeware)</description>
-		<year>1996</year>
-		<publisher>Cryptoburners - RD10</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="FFS"/>
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v3.50 (1996-03-14)(cryptoburners - rd10)(fw)[ffs].adf" size="901120" crc="3dc7c20f" sha1="f4c6e28b3a7ec5092a4b670ec96ef203e478ea34"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="protrack_6_d" cloneof="protrack_6" supported="no">
-		<description>ProTracker (v3.50c, 1996-04-02, Freeware)</description>
-		<year>1996</year>
-		<publisher>Cryptoburners - RD10</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v3.50c (1996-04-02)(cryptoburners - rd10)(fw)[wb].adf" size="901120" crc="2e1d2822" sha1="288f39fb6604a3a3615f2652b6ea66fb004bfc97"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="protrack_6_e" cloneof="protrack_6" supported="no">
-		<description>ProTracker (v3.50d, 1996-04-20, Freeware)</description>
-		<year>1996</year>
-		<publisher>Cryptoburners - RD10</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v3.50d (1996-04-20)(cryptoburners - rd10)(fw)[wb].adf" size="901120" crc="3426ba07" sha1="64f021dc9c42d80592ce5d7c3eaf55fa62b1435a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="protrack_6_f" cloneof="protrack_6" supported="no">
-		<description>ProTracker (v3.51, 1996-03-23, Freeware)</description>
-		<year>1996</year>
-		<publisher>Cryptoburners - RD10</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB, Hacked TEC Design - Metal Impact"/>
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v3.51 (1996-03-23)(cryptoburners - rd10)(fw)[h tec design - metal impact][wb].adf" size="901120" crc="495b1b4d" sha1="e3e52a48407f6ab362be67e11730865498e4a5e0"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="protrack_6_g" cloneof="protrack_6" supported="no">
-		<description>ProTracker (v3.55, 1996-06-13, Freeware)</description>
-		<year>1996</year>
-		<publisher>Cryptoburners - RD10</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB, hTEC Design"/>
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v3.55 (1996-06-13)(cryptoburners - rd10)(fw)[htec design][wb].adf" size="901120" crc="39d391ef" sha1="cb9ad6e5a807cb510a69affc97983dbabda91024"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="protrack_6_h" cloneof="protrack_6" supported="no">
-		<description>ProTracker (v3.58, 1996-06-30, Freeware)</description>
-		<year>1996</year>
-		<publisher>Cryptoburners - RD10</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v3.58 (1996-06-30)(cryptoburners - rd10)(fw)[wb].adf" size="901120" crc="aa5890e9" sha1="7c231865a9c6cfda5b8873733e4fa51dd52b0272"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="protrack_6_i" cloneof="protrack_6" supported="no">
-		<description>ProTracker (v3.60, 1996-07-12, Freeware)</description>
-		<year>1996</year>
-		<publisher>Cryptoburners - RD10</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v3.60 (1996-07-12)(cryptoburners - rd10)(fw)[wb].adf" size="901120" crc="4bcef542" sha1="d33466ba2c9d43ab77f29a860646b2788f30fa8d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="protrack_6_j" cloneof="protrack_6" supported="no">
-		<description>ProTracker (v3.61, 1996-08-22, Freeware)</description>
-		<year>1996</year>
-		<publisher>Cryptoburners - RD10</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="68000 version"/>
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v3.61 (1996-08-22)(cryptoburners - rd10)(fw)[68000 version].adf" size="901120" crc="f1b59c8d" sha1="ed9a951296687c9d193ab6ace3342df019c6d1a9"/>
+				<rom name="protracker v2.3a (1993-01-01)(noxious)(pd)[v saddam 1][ks2.0].adf" size="901120" crc="f604cf82" sha1="e88de7fa396a7a69a7652e301e4b6497db460879" status="baddump"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="68000 version, Modified 1"/>
+			<feature name="part_id" value="KS2.0, Virus Saddam 1, Alt 1"/>
 			<dataarea name="flop" size="901120">
-				<rom name="protracker v3.61 (1996-08-22)(cryptoburners - rd10)(fw)[m][68000 version].adf" size="901120" crc="885b5dc2" sha1="84a799dbb22fca134404663009f8abc450197910"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="protrack_6_k" cloneof="protrack_6" supported="no">
-		<description>ProTracker (v3.62, 1996-08-30, Freeware)</description>
-		<year>1996</year>
-		<publisher>Cryptoburners - RD10</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB, FFS"/>
-			<dataarea name="flop" size="901120">
-				<rom name="protracker v3.62 (1996-08-30)(cryptoburners - rd10)(fw)[wb][ffs].adf" size="901120" crc="30761197" sha1="26e5959daa7734b44bf306d64b0b64af7dfa85ed"/>
+				<rom name="protracker v2.3a (1993-01-01)(noxious)(pd)[v saddam 1][a][ks2.0].adf" size="901120" crc="60a463fe" sha1="b3ee31f2fa4c10116440ce1949b79b05cf286a1c" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6753,18 +6753,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="rsidemom_2" supported="no">
-		<description>RSI Demo-Maker Volume 2</description>
-		<year>1993</year>
-		<publisher>Red Sector - Virus Free PD</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="rsi demo-maker volume 2 (1993)(red sector - virus free pd).adf" size="901120" crc="4336e65e" sha1="44d09796156125000ed52347c4e53a2928d46a59"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="rsidemom_3" supported="no">
 		<description>RSI Demo-Maker Volume 2 (1992-01-14)</description>
 		<year>1992</year>
 		<publisher>Red Sector - 17-Bit Software</publisher>
@@ -6785,6 +6773,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2, Instructions, Modified doscopy"/>
 			<dataarea name="flop" size="901120">
 				<rom name="rsi demo-maker volume 2 (1992-01-14)(red sector - 17-bit software)(disk 2 of 2)(instructions)[m doscopy].adf" size="901120" crc="55756faf" sha1="31dd7dd498a4604b4f5a2ef62fcb463d7fe2787f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rsidemom_3" supported="no">
+		<description>RSI Demo-Maker Volume 2</description>
+		<year>1993</year>
+		<publisher>Red Sector - Virus Free PD</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="rsi demo-maker volume 2 (1993)(red sector - virus free pd).adf" size="901120" crc="4336e65e" sha1="44d09796156125000ed52347c4e53a2928d46a59"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6945,58 +6945,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="redit" supported="no">
-		<description>Redit (v1.10, 2016-01-15, Public Domain)</description>
-		<year>2016</year>
-		<publisher>Kai Scherrer</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="redit v1.10 (2016-01-15)(scherrer, kai)(pd)[wb].adf" size="901120" crc="c7e85419" sha1="bd8ed256a39b666ca4568637e316d0e2e1698eb4"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="redit_a" cloneof="redit" supported="no">
-		<description>Redit (v1.11, 2016-01-28, Public Domain)</description>
-		<year>2016</year>
-		<publisher>Kai Scherrer</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="redit v1.11 (2016-01-28)(scherrer, kai)(pd)[wb].adf" size="901120" crc="37a15106" sha1="f98126966fbf89805e4aba05c39fe09878b8111c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="redit_b" cloneof="redit" supported="no">
-		<description>Redit (v1.12, 2016-02-06, Public Domain)</description>
-		<year>2016</year>
-		<publisher>Kai Scherrer</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="redit v1.12 (2016-02-06)(scherrer, kai)(pd)[wb].adf" size="901120" crc="4a812e98" sha1="91732520498cf7fed942a3d77a60bf299818b043"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="redit_c" cloneof="redit" supported="no">
-		<description>Redit (v1.13, 2016-02-13, Public Domain)</description>
-		<year>2016</year>
-		<publisher>Kai Scherrer</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="WB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="redit v1.13 (2016-02-13)(scherrer, kai)(pd)[wb].adf" size="901120" crc="84368bba" sha1="4fea32defd605b23d090ca1aeba1879f2b772810"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="redit_d" cloneof="redit" supported="no">
 		<description>Redit (v1.2, 2014-01-03, Public Domain)</description>
 		<year>2014</year>
 		<publisher>Kai Scherrer</publisher>
@@ -7009,7 +6957,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="redit_e" cloneof="redit" supported="no">
+	<software name="redit_a" cloneof="redit" supported="no">
 		<description>Redit (v1.3, 2014-01-05, Public Domain)</description>
 		<year>2014</year>
 		<publisher>Kai Scherrer</publisher>
@@ -7022,7 +6970,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="redit_f" cloneof="redit" supported="no">
+	<software name="redit_b" cloneof="redit" supported="no">
 		<description>Redit (v1.4, 2014-01-07, Public Domain)</description>
 		<year>2014</year>
 		<publisher>Kai Scherrer</publisher>
@@ -7035,7 +6983,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="redit_g" cloneof="redit" supported="no">
+	<software name="redit_c" cloneof="redit" supported="no">
 		<description>Redit (v1.5, 2014-01-08, Public Domain)</description>
 		<year>2014</year>
 		<publisher>Kai Scherrer</publisher>
@@ -7048,7 +6996,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="redit_h" cloneof="redit" supported="no">
+	<software name="redit_d" cloneof="redit" supported="no">
 		<description>Redit (v1.6, 2014-01-08, Public Domain)</description>
 		<year>2014</year>
 		<publisher>Kai Scherrer</publisher>
@@ -7061,7 +7009,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="redit_i" cloneof="redit" supported="no">
+	<software name="redit_e" cloneof="redit" supported="no">
 		<description>Redit (v1.7, 2014-01-16, Public Domain)</description>
 		<year>2014</year>
 		<publisher>Kai Scherrer</publisher>
@@ -7074,7 +7022,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="redit_j" cloneof="redit" supported="no">
+	<software name="redit_f" cloneof="redit" supported="no">
 		<description>Redit (v1.8, 2014-01-16, Public Domain)</description>
 		<year>2014</year>
 		<publisher>Kai Scherrer</publisher>
@@ -7083,6 +7031,58 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="redit v1.8 (2014-01-16)(scherrer, kai)(pd)[wb].adf" size="901120" crc="0b50a4a0" sha1="57933fceccb9e9ab998eadcead138bc971eaf284"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="redit_g" cloneof="redit" supported="no">
+		<description>Redit (v1.10, 2016-01-15, Public Domain)</description>
+		<year>2016</year>
+		<publisher>Kai Scherrer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="redit v1.10 (2016-01-15)(scherrer, kai)(pd)[wb].adf" size="901120" crc="c7e85419" sha1="bd8ed256a39b666ca4568637e316d0e2e1698eb4"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="redit_h" cloneof="redit" supported="no">
+		<description>Redit (v1.11, 2016-01-28, Public Domain)</description>
+		<year>2016</year>
+		<publisher>Kai Scherrer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="redit v1.11 (2016-01-28)(scherrer, kai)(pd)[wb].adf" size="901120" crc="37a15106" sha1="f98126966fbf89805e4aba05c39fe09878b8111c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="redit_i" cloneof="redit" supported="no">
+		<description>Redit (v1.12, 2016-02-06, Public Domain)</description>
+		<year>2016</year>
+		<publisher>Kai Scherrer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="redit v1.12 (2016-02-06)(scherrer, kai)(pd)[wb].adf" size="901120" crc="4a812e98" sha1="91732520498cf7fed942a3d77a60bf299818b043"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="redit_j" cloneof="redit" supported="no">
+		<description>Redit (v1.13, 2016-02-13, Public Domain)</description>
+		<year>2016</year>
+		<publisher>Kai Scherrer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="redit v1.13 (2016-02-13)(scherrer, kai)(pd)[wb].adf" size="901120" crc="84368bba" sha1="4fea32defd605b23d090ca1aeba1879f2b772810"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8390,36 +8390,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="themaste" supported="no">
-		<description>The Master Virus Killer (fr, v1.7, 1990-03, Shareware)</description>
-		<year>1990</year>
-		<publisher>Xavier Leclercq</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="master virus killer, the v1.7 (1990-03)(leclercq, xavier)(fr)(sw).adf" size="901120" crc="2361b9aa" sha1="86d73c9e87533592dafde86741efa2a474a4f4ff"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Modified 1"/>
-			<dataarea name="flop" size="901120">
-				<rom name="master virus killer, the v1.7 (1990-03)(leclercq, xavier)(fr)(sw)[m].adf" size="901120" crc="7aa64861" sha1="580b39b17bcbc59cb0ce2016e3b1e952f49ed2ca"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="themaste_a" cloneof="themaste" supported="no">
-		<description>The Master Virus Killer (fr, v1.8, Shareware)</description>
-		<year>1990</year>
-		<publisher>Xavier Leclercq</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="master virus killer, the v1.8 (1990)(leclercq, xavier)(fr)(sw).adf" size="901120" crc="6916b40c" sha1="3d97388ecc824e11ac64ebba469154aa2fbc83fc"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="themaste_1" supported="no">
 		<description>The Master Virus Killer (fr, v2.2, 1991-07)</description>
 		<year>1991</year>
 		<publisher>Free Distribution Software - Xavier Leclercq</publisher>
@@ -8443,43 +8413,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="themaste_b" cloneof="themaste" supported="no">
-		<description>The Master Virus Killer (v2.0, 1990-11, Shareware)</description>
-		<year>1990</year>
-		<publisher>Xavier Leclercq</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="master virus killer, the v2.0 (1990-11)(leclercq, xavier)(sw).adf" size="901120" crc="60ba6b23" sha1="a8156cce96b739a54b17ef39f0059726482d4dcd"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Domenico Soft"/>
-			<dataarea name="flop" size="901120">
-				<rom name="master virus killer, the v2.0 (1990-11)(leclercq, xavier)(sw)[h domenico soft].adf" size="901120" crc="60de0660" sha1="b1dfe232dd7cdda1530702a0a7b8d988b033bee0"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="themaste_c" cloneof="themaste" supported="no">
-		<description>The Master Virus Killer (v2.1, 1991-04, Shareware)</description>
-		<year>1991</year>
-		<publisher>Xavier Leclercq</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="master virus killer, the v2.1 (1991-04)(leclercq, xavier)(sw).adf" size="901120" crc="11f21fa0" sha1="97e032facac4980079858c54f47f90a817073780"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Unit Gang"/>
-			<dataarea name="flop" size="901120">
-				<rom name="master virus killer, the v2.1 (1991-04)(leclercq, xavier)(sw)[h unit gang].adf" size="901120" crc="f4655e9c" sha1="7024e3231360c90d4c44fdb5d86ec604006f43f4"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="themaste_1_a" cloneof="themaste_1" supported="no">
+	<software name="themaste_a" cloneof="themaste" supported="no">
 		<description>The Master Virus Killer (v2.2, 1991-07)</description>
 		<year>1991</year>
 		<publisher>Free Distribution Software - Xavier Leclercq</publisher>
@@ -8499,6 +8433,72 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="faked v2.3, Hacked 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="master virus killer, the v2.2 (1991-07)(free distribution software - leclercq, xavier)[h][faked v2.3].adf" size="901120" crc="b1c82f2b" sha1="3cbbc851d3d2b2a6387dfff3f98e00dfd746b220"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="themaste_1" supported="no">
+		<description>The Master Virus Killer (fr, v1.7, 1990-03, Shareware)</description>
+		<year>1990</year>
+		<publisher>Xavier Leclercq</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="master virus killer, the v1.7 (1990-03)(leclercq, xavier)(fr)(sw).adf" size="901120" crc="2361b9aa" sha1="86d73c9e87533592dafde86741efa2a474a4f4ff"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Modified 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="master virus killer, the v1.7 (1990-03)(leclercq, xavier)(fr)(sw)[m].adf" size="901120" crc="7aa64861" sha1="580b39b17bcbc59cb0ce2016e3b1e952f49ed2ca"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="themaste_1_a" cloneof="themaste_1" supported="no">
+		<description>The Master Virus Killer (fr, v1.8, Shareware)</description>
+		<year>1990</year>
+		<publisher>Xavier Leclercq</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="master virus killer, the v1.8 (1990)(leclercq, xavier)(fr)(sw).adf" size="901120" crc="6916b40c" sha1="3d97388ecc824e11ac64ebba469154aa2fbc83fc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="themaste_1_b" cloneof="themaste_1" supported="no">
+		<description>The Master Virus Killer (v2.0, 1990-11, Shareware)</description>
+		<year>1990</year>
+		<publisher>Xavier Leclercq</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="master virus killer, the v2.0 (1990-11)(leclercq, xavier)(sw).adf" size="901120" crc="60ba6b23" sha1="a8156cce96b739a54b17ef39f0059726482d4dcd"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked Domenico Soft"/>
+			<dataarea name="flop" size="901120">
+				<rom name="master virus killer, the v2.0 (1990-11)(leclercq, xavier)(sw)[h domenico soft].adf" size="901120" crc="60de0660" sha1="b1dfe232dd7cdda1530702a0a7b8d988b033bee0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="themaste_1_c" cloneof="themaste_1" supported="no">
+		<description>The Master Virus Killer (v2.1, 1991-04, Shareware)</description>
+		<year>1991</year>
+		<publisher>Xavier Leclercq</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="master virus killer, the v2.1 (1991-04)(leclercq, xavier)(sw).adf" size="901120" crc="11f21fa0" sha1="97e032facac4980079858c54f47f90a817073780"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked Unit Gang"/>
+			<dataarea name="flop" size="901120">
+				<rom name="master virus killer, the v2.1 (1991-04)(leclercq, xavier)(sw)[h unit gang].adf" size="901120" crc="f4655e9c" sha1="7024e3231360c90d4c44fdb5d86ec604006f43f4"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8644,18 +8644,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thenewsu_h" cloneof="thenewsu" supported="no">
-		<description>The New Superkillers (1993-01-11, Public Domain)</description>
-		<year>1993</year>
-		<publisher>Safe Hex International</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="new superkillers, the (1993-01-11)(safe hex international)(pd).adf" size="901120" crc="44fc6bb0" sha1="866a2d1b90f25aae6f417def79386e6c9415f900"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thenewsu_i" cloneof="thenewsu" supported="no">
 		<description>The New Superkillers (sv, 1992-05-02, Public Domain)</description>
 		<year>1992</year>
 		<publisher>Safe Hex International</publisher>
@@ -8663,6 +8651,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="new superkillers, the (1992-05-02)(safe hex international)(sv)(pd).adf" size="901120" crc="59a27046" sha1="bba7fa5c6103f87cefee1e0af5dbee015cdff006"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thenewsu_i" cloneof="thenewsu" supported="no">
+		<description>The New Superkillers (1993-01-11, Public Domain)</description>
+		<year>1993</year>
+		<publisher>Safe Hex International</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="new superkillers, the (1993-01-11)(safe hex international)(pd).adf" size="901120" crc="44fc6bb0" sha1="866a2d1b90f25aae6f417def79386e6c9415f900"/>
 			</dataarea>
 		</part>
 	</software>

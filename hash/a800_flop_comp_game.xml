@@ -400,18 +400,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="templeof" supported="no">
-		<description>Temple of Apshai Trilogy (GB)</description>
-		<year>1986</year>
-		<publisher>U.S. Gold</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="92176">
-				<rom name="temple of apshai trilogy (1986)(u.s. gold)(gb).atr" size="92176" crc="a5cdca88" sha1="e9955303ba855beeafb0e5bf9b5b683d0fbb8701"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="templeof_1" supported="no">
 		<description>Temple of Apshai Trilogy (US)</description>
 		<year>1985</year>
 		<publisher>Epyx</publisher>
@@ -420,6 +408,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Cracked by Tron - Zork"/>
 			<dataarea name="flop" size="92176">
 				<rom name="temple of apshai trilogy (1985)(epyx)(us)[cr tron - zork].atr" size="92176" crc="2d51b202" sha1="2678d1b00a5f35ccd012e0747a4212ad412783d6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="templeof_1" supported="no">
+		<description>Temple of Apshai Trilogy (GB)</description>
+		<year>1986</year>
+		<publisher>U.S. Gold</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="temple of apshai trilogy (1986)(u.s. gold)(gb).atr" size="92176" crc="a5cdca88" sha1="e9955303ba855beeafb0e5bf9b5b683d0fbb8701"/>
 			</dataarea>
 		</part>
 	</software>

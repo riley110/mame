@@ -12107,6 +12107,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="pcsclubd_14" supported="no">
+		<description>PCS Club Disk #21 (Shareware)</description>
+		<year>1991</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="pcs club disk #21 (1991)(-)(sw).d64" size="174848" crc="b47cf307" sha1="a14e21f91186de06c995d6b42065cbc1800f56d5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pcsclubd_15" supported="no">
 		<description>PCS Club Disk #21</description>
 		<year>19??</year>
 		<publisher>PCSC</publisher>
@@ -12120,18 +12132,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="pcs club disk #21 (19xx)(pcsc)[a].d64" size="174848" crc="e9bb1cd6" sha1="d370cc56a76afc6cb1f79990c36de507b355a236"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pcsclubd_15" supported="no">
-		<description>PCS Club Disk #21 (Shareware)</description>
-		<year>1991</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="pcs club disk #21 (1991)(-)(sw).d64" size="174848" crc="b47cf307" sha1="a14e21f91186de06c995d6b42065cbc1800f56d5"/>
 			</dataarea>
 		</part>
 	</software>

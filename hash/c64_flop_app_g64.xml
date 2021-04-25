@@ -1353,6 +1353,37 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="maveric_b" cloneof="maveric" supported="no">
+		<description>Maveric (v4.01)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="333744">
+				<rom name="maveric v4.01 (19xx)(-)(side a).g64" size="333744" crc="42efb795" sha1="72ec01788299b394a1b81995b5d3bfbb0c60a1d7"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, Alt 1"/>
+			<dataarea name="flop" size="278234">
+				<rom name="maveric v4.01 (19xx)(-)(side a)[a].g64" size="278234" crc="2a4a4f78" sha1="365fd4037b6d5ad6d01ee9dc34a5dda54a18caba"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="333744">
+				<rom name="maveric v4.01 (19xx)(-)(side b).g64" size="333744" crc="d969ba22" sha1="c1471cdd848c0eb029a22e4c48897698619d6692"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Alt 1"/>
+			<dataarea name="flop" size="333744">
+				<rom name="maveric v4.01 (19xx)(-)(side b)[a].g64" size="333744" crc="6dded8d7" sha1="9c35c5be2899dc1a0e7f4d9649849d5f38e4aa09"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="maveric_1" supported="no">
 		<description>Maveric (v3.03)</description>
 		<year>19??</year>
@@ -1393,37 +1424,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side A"/>
 			<dataarea name="flop" size="333744">
 				<rom name="maveric v4.00 (19xx)(kjpb)(side a).g64" size="333744" crc="2273b66a" sha1="e1c1617bdc135ec90f59feb2b259f06d0fb781d1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="maveric_b" cloneof="maveric" supported="no">
-		<description>Maveric (v4.01)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A"/>
-			<dataarea name="flop" size="333744">
-				<rom name="maveric v4.01 (19xx)(-)(side a).g64" size="333744" crc="42efb795" sha1="72ec01788299b394a1b81995b5d3bfbb0c60a1d7"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt 1"/>
-			<dataarea name="flop" size="278234">
-				<rom name="maveric v4.01 (19xx)(-)(side a)[a].g64" size="278234" crc="2a4a4f78" sha1="365fd4037b6d5ad6d01ee9dc34a5dda54a18caba"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Side B"/>
-			<dataarea name="flop" size="333744">
-				<rom name="maveric v4.01 (19xx)(-)(side b).g64" size="333744" crc="d969ba22" sha1="c1471cdd848c0eb029a22e4c48897698619d6692"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt 1"/>
-			<dataarea name="flop" size="333744">
-				<rom name="maveric v4.01 (19xx)(-)(side b)[a].g64" size="333744" crc="6dded8d7" sha1="9c35c5be2899dc1a0e7f4d9649849d5f38e4aa09"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1754,25 +1754,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="moviemak" supported="no">
-		<description>Movie Maker</description>
-		<year>1984</year>
-		<publisher>IPS</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side 1"/>
-			<dataarea name="flop" size="333744">
-				<rom name="movie maker (1984)(ips)(side 1).g64" size="333744" crc="5f2e6344" sha1="048dcfaf352af60fdac90d6d65de0adc20e14467"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side 1, Alt 1"/>
-			<dataarea name="flop" size="333744">
-				<rom name="movie maker (1984)(ips)(side 1)[a].g64" size="333744" crc="c8261f4f" sha1="84e25bc439f4620deadee6b7b9f7390a521583ac"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="moviemak_1" supported="no">
 		<description>Movie Maker (1)</description>
 		<year>1985</year>
 		<publisher>Electronic Arts</publisher>
@@ -1847,6 +1828,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 4 of 4, Data Disk 2, Alt 2"/>
 			<dataarea name="flop" size="448537">
 				<rom name="movie maker (1985)(electronic arts)(disk 4 of 4)(data disk 2)[a2].g64" size="448537" crc="074c1b2c" sha1="3b173fcfdd0478db9e86c1c1d4d6a5f543d7192d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="moviemak_1" supported="no">
+		<description>Movie Maker</description>
+		<year>1984</year>
+		<publisher>IPS</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1"/>
+			<dataarea name="flop" size="333744">
+				<rom name="movie maker (1984)(ips)(side 1).g64" size="333744" crc="5f2e6344" sha1="048dcfaf352af60fdac90d6d65de0adc20e14467"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side 1, Alt 1"/>
+			<dataarea name="flop" size="333744">
+				<rom name="movie maker (1984)(ips)(side 1)[a].g64" size="333744" crc="c8261f4f" sha1="84e25bc439f4620deadee6b7b9f7390a521583ac"/>
 			</dataarea>
 		</part>
 	</software>

@@ -3146,18 +3146,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="dungeonm_2_a" cloneof="dungeonm_2" supported="no">
-		<description>Dungeon Master (de, v1.2)</description>
-		<year>1988</year>
-		<publisher>FTL</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="929052">
-				<rom name="dungeon master v1.2 (1988)(ftl)(de).stx" size="929052" crc="8ae1dd25" sha1="a350a4677440a74aee505b5a15ca62c62ee8d395"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dungeonm_2_b" cloneof="dungeonm_2" supported="no">
 		<description>Dungeon Master (fr, v1.3)</description>
 		<year>1987</year>
 		<publisher>FTL</publisher>
@@ -3165,6 +3153,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="924914">
 				<rom name="dungeon master v1.3 (1987)(ftl)(fr).stx" size="924914" crc="61dcd1e7" sha1="e374a1838a657d1d0f5dcbe17b8b67e8c874f966"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dungeonm_2_b" cloneof="dungeonm_2" supported="no">
+		<description>Dungeon Master (de, v1.2)</description>
+		<year>1988</year>
+		<publisher>FTL</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="929052">
+				<rom name="dungeon master v1.2 (1988)(ftl)(de).stx" size="929052" crc="8ae1dd25" sha1="a350a4677440a74aee505b5a15ca62c62ee8d395"/>
 			</dataarea>
 		</part>
 	</software>

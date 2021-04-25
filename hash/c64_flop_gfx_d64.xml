@@ -1129,18 +1129,36 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="abaselog" supported="no">
-		<description>Abase Logo</description>
+		<description>Abase Logo (1990-05)</description>
 		<year>1990</year>
-		<publisher>Stash</publisher>
+		<publisher>Abase</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="abase logo (1990)(stash).d64" size="174848" crc="2b1018b3" sha1="e67503a7e070bca6122774513d1af33143b9bb80"/>
+				<rom name="abase logo (1990-05)(abase).d64" size="174848" crc="c995e339" sha1="988e396d3631b4db3c1f57ba09a266eb92d006c0"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="abase logo (1990-05)(abase)[a].d64" size="174848" crc="5c953ea6" sha1="a5b05128b97905afb31549ef54782052221ce4bf"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="abaselog_1" supported="no">
+		<description>Abase Logo (1990-04)</description>
+		<year>1990</year>
+		<publisher>Atrix</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="abase logo (1990-04)(atrix).d64" size="174848" crc="2428790e" sha1="aa3d24d0a8ca73ec8958a7daa99674a32378551c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="abaselog_2" supported="no">
 		<description>Abase Logo (1)</description>
 		<year>19??</year>
 		<publisher>Collision</publisher>
@@ -1152,7 +1170,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="abaselog_2" supported="no">
+	<software name="abaselog_3" supported="no">
 		<description>Abase Logo (2)</description>
 		<year>19??</year>
 		<publisher>Demons</publisher>
@@ -1170,32 +1188,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="abaselog_3" supported="no">
-		<description>Abase Logo (1990-04)</description>
-		<year>1990</year>
-		<publisher>Atrix</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="abase logo (1990-04)(atrix).d64" size="174848" crc="2428790e" sha1="aa3d24d0a8ca73ec8958a7daa99674a32378551c"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="abaselog_4" supported="no">
-		<description>Abase Logo (1990-05)</description>
+		<description>Abase Logo</description>
 		<year>1990</year>
-		<publisher>Abase</publisher>
+		<publisher>Stash</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="abase logo (1990-05)(abase).d64" size="174848" crc="c995e339" sha1="988e396d3631b4db3c1f57ba09a266eb92d006c0"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="abase logo (1990-05)(abase)[a].d64" size="174848" crc="5c953ea6" sha1="a5b05128b97905afb31549ef54782052221ce4bf"/>
+				<rom name="abase logo (1990)(stash).d64" size="174848" crc="2b1018b3" sha1="e67503a7e070bca6122774513d1af33143b9bb80"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1393,18 +1393,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="acidchil" supported="no">
-		<description>Acidchild Logo</description>
-		<year>1997</year>
-		<publisher>Wrath Designs</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="acidchild logo (1997)(wrath designs).d64" size="174848" crc="869e06a9" sha1="a760b1971be173ed139a8a68f52f31e6b7a35eae"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="acidchil_1" supported="no">
 		<description>Acidchild Logo (2016-08-27)</description>
 		<year>2016</year>
 		<publisher>Madhead</publisher>
@@ -1412,6 +1400,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="acidchild logo (2016-08-27)(madhead).d64" size="174848" crc="e14e9e0e" sha1="cf2a33f689ad97d8aec0146feb887e0553d59e0b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="acidchil_1" supported="no">
+		<description>Acidchild Logo</description>
+		<year>1997</year>
+		<publisher>Wrath Designs</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="acidchild logo (1997)(wrath designs).d64" size="174848" crc="869e06a9" sha1="a760b1971be173ed139a8a68f52f31e6b7a35eae"/>
 			</dataarea>
 		</part>
 	</software>
@@ -1477,18 +1477,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="actionlo" supported="no">
-		<description>Action Logo</description>
-		<year>1991</year>
-		<publisher>Genesis Project</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="action logo (1991)(genesis project).d64" size="174848" crc="e264a8a5" sha1="d774a0354a2435d6d62f3797195f3c9cf29f9ade"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="actionlo_1" supported="no">
 		<description>Action Logo (1)</description>
 		<year>19??</year>
 		<publisher>Alcoholics</publisher>
@@ -1496,6 +1484,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="action logo (19xx)(alcoholics).d64" size="174848" crc="98dfc01d" sha1="675c0efa81ae5246b4bb994d2b6d4d65d8635b99"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="actionlo_1" supported="no">
+		<description>Action Logo</description>
+		<year>1991</year>
+		<publisher>Genesis Project</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="action logo (1991)(genesis project).d64" size="174848" crc="e264a8a5" sha1="d774a0354a2435d6d62f3797195f3c9cf29f9ade"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2150,18 +2150,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="arraylog" supported="no">
-		<description>Array Logo</description>
-		<year>19??</year>
-		<publisher>Future Designs</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="array logo (19xx)(future designs).d64" size="174848" crc="7f870894" sha1="fd2efce8fd5423aad8c5017f0bd3789276f4c746"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="arraylog_1" supported="no">
 		<description>Array Logo (1989-02)</description>
 		<year>1989</year>
 		<publisher>Contex</publisher>
@@ -2169,6 +2157,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="array logo (1989-02)(contex).d64" size="174848" crc="cb894d95" sha1="3e5ee3500ebca9808a8c28ad5cbb280246af128b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arraylog_1" supported="no">
+		<description>Array Logo</description>
+		<year>19??</year>
+		<publisher>Future Designs</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="array logo (19xx)(future designs).d64" size="174848" crc="7f870894" sha1="fd2efce8fd5423aad8c5017f0bd3789276f4c746"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2668,18 +2668,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="byglogo" supported="no">
-		<description>BYG Logo</description>
-		<year>1990</year>
-		<publisher>Zone 45</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="byg logo (1990)(zone 45).d64" size="174848" crc="96594fc5" sha1="68713f59c3df69bf45610cea268336f269081098"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="byglogo_1" supported="no">
 		<description>BYG Logo (1989-03)</description>
 		<year>1989</year>
 		<publisher>Actual Trading Generation</publisher>
@@ -2687,6 +2675,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="byg logo (1989-03)(actual trading generation).d64" size="174848" crc="e554aa15" sha1="46ce50e12f9418b0b21b8597eda4362c8b894610"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="byglogo_1" supported="no">
+		<description>BYG Logo</description>
+		<year>1990</year>
+		<publisher>Zone 45</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="byg logo (1990)(zone 45).d64" size="174848" crc="96594fc5" sha1="68713f59c3df69bf45610cea268336f269081098"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2854,6 +2854,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="beyondlo" supported="no">
+		<description>Beyond Logo (1989-02)</description>
+		<year>1989</year>
+		<publisher>Drive</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="beyond logo (1989-02)(drive).d64" size="174848" crc="092c1c3a" sha1="6ce2fa8233a7333fedc9c49e47eba22261381cdc"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="beyond logo (1989-02)(drive)[a].d64" size="174848" crc="b9ba3583" sha1="ee50d7992cfc9d7ef54876cd3a5fa9d1c3a21386"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beyondlo_1" supported="no">
 		<description>Beyond Logo</description>
 		<year>1989</year>
 		<publisher>Quality</publisher>
@@ -2891,24 +2909,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="LNX"/>
 			<dataarea name="flop" size="174848">
 				<rom name="beyond logo (1989)(quality)[lnx].d64" size="174848" crc="2dc42c61" sha1="20670e4571ea2b87c2ae30919099e90b5145ec37"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="beyondlo_1" supported="no">
-		<description>Beyond Logo (1989-02)</description>
-		<year>1989</year>
-		<publisher>Drive</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="beyond logo (1989-02)(drive).d64" size="174848" crc="092c1c3a" sha1="6ce2fa8233a7333fedc9c49e47eba22261381cdc"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="beyond logo (1989-02)(drive)[a].d64" size="174848" crc="b9ba3583" sha1="ee50d7992cfc9d7ef54876cd3a5fa9d1c3a21386"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3168,6 +3168,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="bonzailo" supported="no">
+		<description>Bonzai Logo (1)</description>
+		<year>1990</year>
+		<publisher>Occult</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="bonzai logo (1990)(occult).d64" size="174848" crc="50ecc984" sha1="e760e10ef7ee2566d1231e53ade9e6204ddbc038"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="bonzai logo (1990)(occult)[a].d64" size="174848" crc="8f29e0cd" sha1="c969742f097bb6eb188c0b020ef6254d33dcb0ee"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bonzailo_1" supported="no">
 		<description>Bonzai Logo</description>
 		<year>1989</year>
 		<publisher>The Ruling Company</publisher>
@@ -3193,24 +3211,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 3"/>
 			<dataarea name="flop" size="174848">
 				<rom name="bonzai logo (1989)(the ruling company)[a3].d64" size="174848" crc="399b9fa6" sha1="7f308fa41fc903f05ae649ed8ad0c0056bb7bf34"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bonzailo_1" supported="no">
-		<description>Bonzai Logo (1)</description>
-		<year>1990</year>
-		<publisher>Occult</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="bonzai logo (1990)(occult).d64" size="174848" crc="50ecc984" sha1="e760e10ef7ee2566d1231e53ade9e6204ddbc038"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="bonzai logo (1990)(occult)[a].d64" size="174848" crc="8f29e0cd" sha1="c969742f097bb6eb188c0b020ef6254d33dcb0ee"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3378,18 +3378,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="cfalogo" supported="no">
-		<description>CFA Logo</description>
-		<year>1989</year>
-		<publisher>Saga Connection</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="cfa logo (1989)(saga connection).d64" size="174848" crc="bb9c5922" sha1="fde26a7769d8d3e47a12a0632b755950b9bca425"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cfalogo_1" supported="no">
 		<description>CFA Logo (1)</description>
 		<year>1990</year>
 		<publisher>Computer Freaks Association - tera</publisher>
@@ -3397,6 +3385,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="cfa logo (1990)(computer freaks association - tera).d64" size="174848" crc="417774e7" sha1="2f75498ac85d134eb4053dfd284159c443ed9123"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cfalogo_1" supported="no">
+		<description>CFA Logo</description>
+		<year>1989</year>
+		<publisher>Saga Connection</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="cfa logo (1989)(saga connection).d64" size="174848" crc="bb9c5922" sha1="fde26a7769d8d3e47a12a0632b755950b9bca425"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3626,18 +3626,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="cheyensl_1" supported="no">
-		<description>Cheyens Logo (1)</description>
-		<year>1989</year>
-		<publisher>Dynamix</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="cheyens logo (1989)(dynamix).d64" size="174848" crc="4bee89a2" sha1="e3f17e6f79d6af20819ef2b0e941082e5d8e722f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cheyensl_2" supported="no">
 		<description>Cheyens Logo (2)</description>
 		<year>1990</year>
 		<publisher>Depredators</publisher>
@@ -3651,6 +3639,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="cheyens logo (1990)(depredators)[a].d64" size="174848" crc="166fb60c" sha1="416bcdfccd47f3427cea6caec4e2b415b9b3fe9b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cheyensl_2" supported="no">
+		<description>Cheyens Logo (1)</description>
+		<year>1989</year>
+		<publisher>Dynamix</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="cheyens logo (1989)(dynamix).d64" size="174848" crc="4bee89a2" sha1="e3f17e6f79d6af20819ef2b0e941082e5d8e722f"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3776,18 +3776,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="clanlogo" supported="no">
-		<description>Clan Logo</description>
-		<year>1990</year>
-		<publisher>Trans-X</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="clan logo (1990)(trans-x).d64" size="174848" crc="57b718c7" sha1="86d2e676ece7dfed8004935e03bdb9ac4f283c7a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="clanlogo_1" supported="no">
 		<description>Clan Logo (1)</description>
 		<year>1992</year>
 		<publisher>Clan</publisher>
@@ -3795,6 +3783,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="clan logo (1992)(clan).d64" size="174848" crc="4c1f4be4" sha1="be7daf577a7bd109ca1b419c2d09890e52e71eab"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="clanlogo_1" supported="no">
+		<description>Clan Logo</description>
+		<year>1990</year>
+		<publisher>Trans-X</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="clan logo (1990)(trans-x).d64" size="174848" crc="57b718c7" sha1="86d2e676ece7dfed8004935e03bdb9ac4f283c7a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4833,6 +4833,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="compopic_18" supported="no">
+		<description>Compopic (1993-12-30)</description>
+		<year>1993</year>
+		<publisher>Agony Design</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="compopic (1993-12-30)(agony design).d64" size="174848" crc="c88d4c0f" sha1="9a77a2f2b5405cfd62f3b6b6308411ce8b5c4c26"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="compopic (1993-12-30)(agony design)[a].d64" size="174848" crc="91eb54c3" sha1="b04c38f1bd7badc779848b9c89f1f20b268f1ed1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="compopic_19" supported="no">
 		<description>Compopic (1992-04-20)</description>
 		<year>1992</year>
 		<publisher>Beyond Force</publisher>
@@ -4856,49 +4874,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="compopic_19" supported="no">
-		<description>Compopic (1992-04-20) (1)</description>
-		<year>1992</year>
-		<publisher>Fairlight</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="compopic (1992-04-20)(fairlight).d64" size="174848" crc="ad4b44e3" sha1="44b4348b4c5f5ee204e6dadb5b6bb874fbf393e3"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="compopic_20" supported="no">
-		<description>Compopic (1992-04-20) (2)</description>
-		<year>1992</year>
-		<publisher>Hoaxers</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="compopic (1992-04-20)(hoaxers).d64" size="174848" crc="607f0235" sha1="655272babad9d337f8e8f513ac5ae776dfa52cf5"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="compopic_21" supported="no">
-		<description>Compopic (1992-04-20) (3)</description>
-		<year>1992</year>
-		<publisher>Pretzel Logic</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="compopic (1992-04-20)(pretzel logic).d64" size="174848" crc="6bbd3d43" sha1="2996f76fcad2aa6670563a21f43c6a18455b463d"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="compopic (1992-04-20)(pretzel logic)[a].d64" size="174848" crc="71c9d44f" sha1="c0bc31e762bcc9d94487fd98935bb7ad952f9341"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="compopic_22" supported="no">
 		<description>Compopic (1992-06-29)</description>
 		<year>1992</year>
 		<publisher>Censor Design</publisher>
@@ -4928,7 +4904,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="compopic_23" supported="no">
+	<software name="compopic_21" supported="no">
 		<description>Compopic (1992-06-29) (1)</description>
 		<year>1992</year>
 		<publisher>Comic Pirates</publisher>
@@ -4940,37 +4916,43 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="compopic_24" supported="no">
-		<description>Compopic (1992-06-29) (2)</description>
+	<software name="compopic_22" supported="no">
+		<description>Compopic (1992-04-20) (1)</description>
 		<year>1992</year>
-		<publisher>Offence</publisher>
+		<publisher>Fairlight</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="compopic (1992-06-29)(offence).d64" size="174848" crc="70c18792" sha1="bdf974caed46f5c25325e2fd98044d9b9d136700"/>
+				<rom name="compopic (1992-04-20)(fairlight).d64" size="174848" crc="ad4b44e3" sha1="44b4348b4c5f5ee204e6dadb5b6bb874fbf393e3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="compopic_23" supported="no">
+		<description>Compopic (1992-04-20) (2)</description>
+		<year>1992</year>
+		<publisher>Hoaxers</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="compopic (1992-04-20)(hoaxers).d64" size="174848" crc="607f0235" sha1="655272babad9d337f8e8f513ac5ae776dfa52cf5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="compopic_24" supported="no">
+		<description>Compopic (2000-07-30)</description>
+		<year>2000</year>
+		<publisher>Hollowman - Triad</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="compopic (2000-07-30)(hollowman - triad).d64" size="174848" crc="d000b03a" sha1="e1a7e30fa027698fa74d32f7fd05d59e6ecba3a0"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="compopic_25" supported="no">
-		<description>Compopic (1993-12-30)</description>
-		<year>1993</year>
-		<publisher>Agony Design</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="compopic (1993-12-30)(agony design).d64" size="174848" crc="c88d4c0f" sha1="9a77a2f2b5405cfd62f3b6b6308411ce8b5c4c26"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="compopic (1993-12-30)(agony design)[a].d64" size="174848" crc="91eb54c3" sha1="b04c38f1bd7badc779848b9c89f1f20b268f1ed1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="compopic_26" supported="no">
 		<description>Compopic (1995-12-29)</description>
 		<year>1995</year>
 		<publisher>Masters' Design Group</publisher>
@@ -4982,7 +4964,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="compopic_27" supported="no">
+	<software name="compopic_26" supported="no">
 		<description>Compopic (1995-12-29) (1)</description>
 		<year>1995</year>
 		<publisher>No Name</publisher>
@@ -4994,7 +4976,37 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="compopic_27" supported="no">
+		<description>Compopic (1992-06-29) (2)</description>
+		<year>1992</year>
+		<publisher>Offence</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="compopic (1992-06-29)(offence).d64" size="174848" crc="70c18792" sha1="bdf974caed46f5c25325e2fd98044d9b9d136700"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="compopic_28" supported="no">
+		<description>Compopic (1992-04-20) (3)</description>
+		<year>1992</year>
+		<publisher>Pretzel Logic</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="compopic (1992-04-20)(pretzel logic).d64" size="174848" crc="6bbd3d43" sha1="2996f76fcad2aa6670563a21f43c6a18455b463d"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="compopic (1992-04-20)(pretzel logic)[a].d64" size="174848" crc="71c9d44f" sha1="c0bc31e762bcc9d94487fd98935bb7ad952f9341"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="compopic_29" supported="no">
 		<description>Compopic (1995-12-29) (2)</description>
 		<year>1995</year>
 		<publisher>Smash Designs</publisher>
@@ -5002,18 +5014,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="compopic (1995-12-29)(smash designs).d64" size="174848" crc="de3e3482" sha1="e0f842d71fe16e97a2f8290a552e6bed278ea67d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="compopic_29" supported="no">
-		<description>Compopic (2000-07-30)</description>
-		<year>2000</year>
-		<publisher>Hollowman - Triad</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="compopic (2000-07-30)(hollowman - triad).d64" size="174848" crc="d000b03a" sha1="e1a7e30fa027698fa74d32f7fd05d59e6ecba3a0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5157,30 +5157,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="contexlo_3" supported="no">
-		<description>Contex Logo (1)</description>
-		<year>1989</year>
-		<publisher>Wild 57</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="contex logo (1989)(wild 57).d64" size="174848" crc="9ee402aa" sha1="ca348bae8b137183f38a3acfe29daa51c7129dc8"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="contexlo_4" supported="no">
-		<description>Contex Logo (2)</description>
-		<year>1990</year>
-		<publisher>Lazer</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="contex logo (1990)(lazer).d64" size="174848" crc="20ac77d5" sha1="65471a87e45166d0927c5c59722b11edca170ab9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="contexlo_5" supported="no">
 		<description>Contex Logo (3)</description>
 		<year>19??</year>
 		<publisher>Dust</publisher>
@@ -5204,7 +5180,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="contexlo_6" supported="no">
+	<software name="contexlo_4" supported="no">
 		<description>Contex Logo (4)</description>
 		<year>19??</year>
 		<publisher>Fbi Crew</publisher>
@@ -5212,6 +5188,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="contex logo (19xx)(fbi crew).d64" size="174848" crc="f5191f18" sha1="4ef7a2ecd6bf8ffed9cdbe0348d2e5fbaafce0d1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="contexlo_5" supported="no">
+		<description>Contex Logo (2)</description>
+		<year>1990</year>
+		<publisher>Lazer</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="contex logo (1990)(lazer).d64" size="174848" crc="20ac77d5" sha1="65471a87e45166d0927c5c59722b11edca170ab9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="contexlo_6" supported="no">
+		<description>Contex Logo (1)</description>
+		<year>1989</year>
+		<publisher>Wild 57</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="contex logo (1989)(wild 57).d64" size="174848" crc="9ee402aa" sha1="ca348bae8b137183f38a3acfe29daa51c7129dc8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5259,18 +5259,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="cooplogo" supported="no">
-		<description>Coop Logo (1990-04)</description>
-		<year>1990</year>
-		<publisher>Saga Connection - Time</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="coop logo (1990-04)(saga connection - time).d64" size="174848" crc="3f57b2ba" sha1="6ca7f6e04c17de19569e7f2704c5fa1ea86cf0f9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cooplogo_1" supported="no">
 		<description>Coop Logo (1990-07-03)</description>
 		<year>1990</year>
 		<publisher>Poison</publisher>
@@ -5278,6 +5266,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="coop logo (1990-07-03)(poison).d64" size="174848" crc="8569fd62" sha1="a667f12041d618ce456b0446dfed16e5e2e99eee"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cooplogo_1" supported="no">
+		<description>Coop Logo (1990-04)</description>
+		<year>1990</year>
+		<publisher>Saga Connection - Time</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="coop logo (1990-04)(saga connection - time).d64" size="174848" crc="3f57b2ba" sha1="6ca7f6e04c17de19569e7f2704c5fa1ea86cf0f9"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5295,30 +5295,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="cosmoslo" supported="no">
-		<description>Cosmos Logo</description>
-		<year>1988</year>
-		<publisher>Logic</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="cosmos logo (1988)(logic).d64" size="174848" crc="f76bcc78" sha1="d38a14d98cded84ec8ce19cf3db5541071db8d7d"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="cosmos logo (1988)(logic)[a].d64" size="174848" crc="8d0acdd0" sha1="bbeb7e574474c456a6637d90b1ed6883f513343e"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2"/>
-			<dataarea name="flop" size="174848">
-				<rom name="cosmos logo (1988)(logic)[a2].d64" size="174848" crc="a3cacd58" sha1="04d2210400b2ce307c79bd7506663054fcb70b66"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cosmoslo_1" supported="no">
 		<description>Cosmos Logo (1)</description>
 		<year>1989</year>
 		<publisher>Drive</publisher>
@@ -5342,7 +5318,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="cosmoslo_2" supported="no">
+	<software name="cosmoslo_1" supported="no">
 		<description>Cosmos Logo (1989-07)</description>
 		<year>1989</year>
 		<publisher>Dynamix</publisher>
@@ -5350,6 +5326,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="cosmos logo (1989-07)(dynamix).d64" size="174848" crc="16431268" sha1="130a2548b35cf14dfd34950739b98524701deed0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cosmoslo_2" supported="no">
+		<description>Cosmos Logo</description>
+		<year>1988</year>
+		<publisher>Logic</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="cosmos logo (1988)(logic).d64" size="174848" crc="f76bcc78" sha1="d38a14d98cded84ec8ce19cf3db5541071db8d7d"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="cosmos logo (1988)(logic)[a].d64" size="174848" crc="8d0acdd0" sha1="bbeb7e574474c456a6637d90b1ed6883f513343e"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
+			<dataarea name="flop" size="174848">
+				<rom name="cosmos logo (1988)(logic)[a2].d64" size="174848" crc="a3cacd58" sha1="04d2210400b2ce307c79bd7506663054fcb70b66"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5379,30 +5379,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="crestlog" supported="no">
-		<description>Crest Logo</description>
-		<year>1989</year>
-		<publisher>Unicess</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="crest logo (1989)(unicess).d64" size="174848" crc="ca7602e0" sha1="ae07217b3980f3d9d5fd294ea35994860a9a70c2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="crestlog_1" supported="no">
-		<description>Crest Logo (1)</description>
-		<year>19??</year>
-		<publisher>Trays</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="crest logo (19xx)(trays).d64" size="174848" crc="aff05745" sha1="c7eabc33f68a1bf211c6b47769b37377417c7fc7"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="crestlog_2" supported="no">
 		<description>Crest Logo (1990-12)</description>
 		<year>1990</year>
 		<publisher>Ruthless</publisher>
@@ -5422,6 +5398,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="174848">
 				<rom name="crest logo (1990-12)(ruthless)[a2].d64" size="174848" crc="2763e1ae" sha1="e88c9728edd0288c226d2d4310e64fc798f826ae"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crestlog_1" supported="no">
+		<description>Crest Logo (1)</description>
+		<year>19??</year>
+		<publisher>Trays</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="crest logo (19xx)(trays).d64" size="174848" crc="aff05745" sha1="c7eabc33f68a1bf211c6b47769b37377417c7fc7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crestlog_2" supported="no">
+		<description>Crest Logo</description>
+		<year>1989</year>
+		<publisher>Unicess</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="crest logo (1989)(unicess).d64" size="174848" crc="ca7602e0" sha1="ae07217b3980f3d9d5fd294ea35994860a9a70c2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5493,6 +5493,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="cruisesg" supported="no">
+		<description>Cruise's Graphics Collection 2 (1993-08-06)</description>
+		<year>1993</year>
+		<publisher>Elysium - Style</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="cruise's graphics collection 2 (1993-08-06)(elysium - style).d64" size="174848" crc="4a64b5c9" sha1="d5c90adf38a254e0035e94c265fc377cfa710c3d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cruisesg_1" supported="no">
 		<description>Cruise's Graphics Collection 2 (1993-07)</description>
 		<year>1993</year>
 		<publisher>Elysium</publisher>
@@ -5530,18 +5542,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 5"/>
 			<dataarea name="flop" size="174848">
 				<rom name="cruise's graphics collection 2 (1993-07)(elysium)[a5].d64" size="174848" crc="d5978d12" sha1="10189ca0664743255166d34cc5365073f7eb3b43"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cruisesg_1" supported="no">
-		<description>Cruise's Graphics Collection 2 (1993-08-06)</description>
-		<year>1993</year>
-		<publisher>Elysium - Style</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="cruise's graphics collection 2 (1993-08-06)(elysium - style).d64" size="174848" crc="4a64b5c9" sha1="d5c90adf38a254e0035e94c265fc377cfa710c3d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7225,18 +7225,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="forcelog_1" supported="no">
-		<description>Force Logo (1)</description>
-		<year>1990</year>
-		<publisher>Secure</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="force logo (1990)(secure).d64" size="174848" crc="6467d89d" sha1="112c9b09052f9aee08f9f2d8b7e0291f6f318009"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="forcelog_2" supported="no">
 		<description>Force Logo (1990-09)</description>
 		<year>1990</year>
 		<publisher>Digitech</publisher>
@@ -7244,6 +7232,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="force logo (1990-09)(digitech).d64" size="174848" crc="5a6974fe" sha1="dc03a7944d22b095de0f7a5eb825162947c272ed"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="forcelog_2" supported="no">
+		<description>Force Logo (1)</description>
+		<year>1990</year>
+		<publisher>Secure</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="force logo (1990)(secure).d64" size="174848" crc="6467d89d" sha1="112c9b09052f9aee08f9f2d8b7e0291f6f318009"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8807,18 +8807,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="lazerlog" supported="no">
-		<description>Lazer Logo</description>
-		<year>1989</year>
-		<publisher>Trays</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="lazer logo (1989)(trays).d64" size="174848" crc="3d5c1d9e" sha1="7b187295d2c6b48adba3cdaaa97ff0ddff16fcf5"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="lazerlog_1" supported="no">
 		<description>Lazer Logo (1)</description>
 		<year>19??</year>
 		<publisher>Noice</publisher>
@@ -8826,6 +8814,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="lazer logo (19xx)(noice).d64" size="174848" crc="e6686010" sha1="f35799d4f7d12246cf56fc073625566aefef105e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lazerlog_1" supported="no">
+		<description>Lazer Logo</description>
+		<year>1989</year>
+		<publisher>Trays</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="lazer logo (1989)(trays).d64" size="174848" crc="3d5c1d9e" sha1="7b187295d2c6b48adba3cdaaa97ff0ddff16fcf5"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8981,6 +8981,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="lightlog" supported="no">
+		<description>Light Logo (1990-04-16)</description>
+		<year>1990</year>
+		<publisher>Cryptic Tales</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="light logo (1990-04-16)(cryptic tales).d64" size="174848" crc="c4f7be2c" sha1="17baf7728e9bf40349ce49a28eab47011303ab59"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lightlog_1" supported="no">
 		<description>Light Logo</description>
 		<year>1990</year>
 		<publisher>Megastyle</publisher>
@@ -9000,18 +9012,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="174848">
 				<rom name="light logo (1990)(megastyle)[a2].d64" size="174848" crc="dcf9c823" sha1="5cef74be777787ec4faa7d3404dde8daca3ff460"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="lightlog_1" supported="no">
-		<description>Light Logo (1990-04-16)</description>
-		<year>1990</year>
-		<publisher>Cryptic Tales</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="light logo (1990-04-16)(cryptic tales).d64" size="174848" crc="c4f7be2c" sha1="17baf7728e9bf40349ce49a28eab47011303ab59"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9071,18 +9071,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="logo001_2" supported="no">
-		<description>Logo #001 (1989-02-16)</description>
-		<year>1989</year>
-		<publisher>Z-Circle</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="logo #001 (1989-02-16)(z-circle).d64" size="174848" crc="c90a7bb2" sha1="97c47905da3f434365a3428092ebabf470b8e2eb"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="logo001_3" supported="no">
 		<description>Logo #001 (1989-11)</description>
 		<year>1989</year>
 		<publisher>Super Krack Crew Service</publisher>
@@ -9090,6 +9078,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="logo #001 (1989-11)(super krack crew service).d64" size="174848" crc="b4b77015" sha1="16b0fd96454d5f6d2488605808ee240c645da8f2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logo001_3" supported="no">
+		<description>Logo #001 (1989-02-16)</description>
+		<year>1989</year>
+		<publisher>Z-Circle</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="logo #001 (1989-02-16)(z-circle).d64" size="174848" crc="c90a7bb2" sha1="97c47905da3f434365a3428092ebabf470b8e2eb"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9545,18 +9545,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="logo3" supported="no">
-		<description>Logo 3</description>
-		<year>1989</year>
-		<publisher>Seico</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="logo 3 (1989)(seico).d64" size="174848" crc="276bb341" sha1="fbb4c1287ea059478f743736310288b32bd93bcf"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="logo3_1" supported="no">
 		<description>Logo 3 (1)</description>
 		<year>19??</year>
 		<publisher>Lore of Arts</publisher>
@@ -9564,6 +9552,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="logo 3 (19xx)(lore of arts).d64" size="174848" crc="b974060b" sha1="fde7d136528075fc78077efeb32de7d55d49e98b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logo3_1" supported="no">
+		<description>Logo 3</description>
+		<year>1989</year>
+		<publisher>Seico</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="logo 3 (1989)(seico).d64" size="174848" crc="276bb341" sha1="fbb4c1287ea059478f743736310288b32bd93bcf"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9881,18 +9881,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="logo4rol" supported="no">
-		<description>Logo 4 ROLE</description>
-		<year>1991</year>
-		<publisher>Mystic</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="logo 4 role (1991)(mystic).d64" size="174848" crc="8781cae0" sha1="190806902b46f8f10a54a2a51be2c7e695291b25"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="logo4rol_1" supported="no">
 		<description>Logo 4 ROLE (1)</description>
 		<year>19??</year>
 		<publisher>Black Asp</publisher>
@@ -9900,6 +9888,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="logo 4 role (19xx)(black asp).d64" size="174848" crc="6960b132" sha1="1d9956be29448b57a143dd82c511b2057652f9ca"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logo4rol_1" supported="no">
+		<description>Logo 4 ROLE</description>
+		<year>1991</year>
+		<publisher>Mystic</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="logo 4 role (1991)(mystic).d64" size="174848" crc="8781cae0" sha1="190806902b46f8f10a54a2a51be2c7e695291b25"/>
 			</dataarea>
 		</part>
 	</software>
@@ -10145,18 +10145,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="logo4" supported="no">
-		<description>Logo 4</description>
-		<year>1989</year>
-		<publisher>Seico</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="logo 4 (1989)(seico).d64" size="174848" crc="ccdcf5c3" sha1="8d2ee14c72a50eb53d67f23473e230d52bbd3153"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="logo4_1" supported="no">
 		<description>Logo 4 (1)</description>
 		<year>19??</year>
 		<publisher>Lore of Arts</publisher>
@@ -10164,6 +10152,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="logo 4 (19xx)(lore of arts).d64" size="174848" crc="badc50ff" sha1="e8a74ba70880da6ac5c4c08eb8f44a0d81cab0ee"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logo4_1" supported="no">
+		<description>Logo 4</description>
+		<year>1989</year>
+		<publisher>Seico</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="logo 4 (1989)(seico).d64" size="174848" crc="ccdcf5c3" sha1="8d2ee14c72a50eb53d67f23473e230d52bbd3153"/>
 			</dataarea>
 		</part>
 	</software>
@@ -10415,24 +10415,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="logoshow" supported="no">
-		<description>Logo Show 2</description>
-		<year>1991</year>
-		<publisher>Lore of Arts</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="logo show 2 (1991)(lore of arts).d64" size="174848" crc="d3421f2d" sha1="6f26ea851319039541bb0512a852910751ef9b89"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="logo show 2 (1991)(lore of arts)[a].d64" size="174848" crc="e3a9caa2" sha1="0216a36f5ec77a17c4063410ed379f8fd090181f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="logoshow_1" supported="no">
 		<description>Logo Show 2 (1992-10-31)</description>
 		<year>1992</year>
 		<publisher>Hitmen</publisher>
@@ -10493,7 +10475,85 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="logoshow_1" supported="no">
+		<description>Logo Show 2</description>
+		<year>1991</year>
+		<publisher>Lore of Arts</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="logo show 2 (1991)(lore of arts).d64" size="174848" crc="d3421f2d" sha1="6f26ea851319039541bb0512a852910751ef9b89"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="logo show 2 (1991)(lore of arts)[a].d64" size="174848" crc="e3a9caa2" sha1="0216a36f5ec77a17c4063410ed379f8fd090181f"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="logoshow_2" supported="no">
+		<description>Logo Show (1)</description>
+		<year>1992</year>
+		<publisher>Atlantis</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="logo show (1992)(atlantis).d64" size="174848" crc="9c4a26cc" sha1="0c5e92affaad09aeedceafacb1413f14db227509"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="logo show (1992)(atlantis)[a].d64" size="174848" crc="01de7c84" sha1="fcd826bb8f7471a94ee4837156f2f9d44eb1a739"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logoshow_3" supported="no">
+		<description>Logo Show (2)</description>
+		<year>1994</year>
+		<publisher>Cadgers</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="logo show (1994)(cadgers).d64" size="174848" crc="df84e85c" sha1="03f92f8d1ee4341d79707cb148fb0397fa9d800c"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="logo show (1994)(cadgers)[a].d64" size="174848" crc="9ed1bc84" sha1="260a2a30ecb90e05ef537a8e9e429bef9cf78e1a"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
+			<dataarea name="flop" size="174848">
+				<rom name="logo show (1994)(cadgers)[a2].d64" size="174848" crc="932e01ae" sha1="48a1680f1618634717ea8a284535d5f58870a4f1"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 3"/>
+			<dataarea name="flop" size="174848">
+				<rom name="logo show (1994)(cadgers)[a3].d64" size="174848" crc="bc24a0b9" sha1="b8f48a42ed6add608b34049ec5195794d059b5ee"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logoshow_4" supported="no">
+		<description>Logo Show (3)</description>
+		<year>19??</year>
+		<publisher>Cosmos</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="logo show (19xx)(cosmos).d64" size="174848" crc="45a5d74f" sha1="3da0748cbc4912f58c08afb5e86e913dd6459f28"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logoshow_5" supported="no">
 		<description>Logo Show</description>
 		<year>1989</year>
 		<publisher>Drive</publisher>
@@ -10525,66 +10585,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 4"/>
 			<dataarea name="flop" size="174848">
 				<rom name="logo show (1989)(drive)[a4].d64" size="174848" crc="ef5d2934" sha1="34123cf3ceab7ecda2e9fd0308a0244a4c349ef4"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="logoshow_3" supported="no">
-		<description>Logo Show (1)</description>
-		<year>1992</year>
-		<publisher>Atlantis</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="logo show (1992)(atlantis).d64" size="174848" crc="9c4a26cc" sha1="0c5e92affaad09aeedceafacb1413f14db227509"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="logo show (1992)(atlantis)[a].d64" size="174848" crc="01de7c84" sha1="fcd826bb8f7471a94ee4837156f2f9d44eb1a739"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="logoshow_4" supported="no">
-		<description>Logo Show (2)</description>
-		<year>1994</year>
-		<publisher>Cadgers</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="logo show (1994)(cadgers).d64" size="174848" crc="df84e85c" sha1="03f92f8d1ee4341d79707cb148fb0397fa9d800c"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="logo show (1994)(cadgers)[a].d64" size="174848" crc="9ed1bc84" sha1="260a2a30ecb90e05ef537a8e9e429bef9cf78e1a"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 2"/>
-			<dataarea name="flop" size="174848">
-				<rom name="logo show (1994)(cadgers)[a2].d64" size="174848" crc="932e01ae" sha1="48a1680f1618634717ea8a284535d5f58870a4f1"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 3"/>
-			<dataarea name="flop" size="174848">
-				<rom name="logo show (1994)(cadgers)[a3].d64" size="174848" crc="bc24a0b9" sha1="b8f48a42ed6add608b34049ec5195794d059b5ee"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="logoshow_5" supported="no">
-		<description>Logo Show (3)</description>
-		<year>19??</year>
-		<publisher>Cosmos</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="logo show (19xx)(cosmos).d64" size="174848" crc="45a5d74f" sha1="3da0748cbc4912f58c08afb5e86e913dd6459f28"/>
 			</dataarea>
 		</part>
 	</software>
@@ -11496,18 +11496,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="logoforl_5" supported="no">
-		<description>Logo for Life</description>
-		<year>1989</year>
-		<publisher>New Formula Crew</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="logo for life (1989)(new formula crew).d64" size="174848" crc="0e1f2915" sha1="25bb27558184b604ca5793515b84e342cb1b4d8b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="logoforl_6" supported="no">
 		<description>Logo for Life (1989-10)</description>
 		<year>1989</year>
 		<publisher>Merlin</publisher>
@@ -11515,6 +11503,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="logo for life (1989-10)(merlin).d64" size="174848" crc="f6209f8a" sha1="94e95abd60fc8e5c92a6b61cc24b3915617767fc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logoforl_6" supported="no">
+		<description>Logo for Life</description>
+		<year>1989</year>
+		<publisher>New Formula Crew</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="logo for life (1989)(new formula crew).d64" size="174848" crc="0e1f2915" sha1="25bb27558184b604ca5793515b84e342cb1b4d8b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -11700,18 +11700,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="logoforp_2" supported="no">
-		<description>Logo for Poltergeist</description>
-		<year>1989</year>
-		<publisher>Boonfire</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="logo for poltergeist (1989)(boonfire).d64" size="174848" crc="08be03fc" sha1="bd359b762fc11fb8f46619b5a71685de09145acb"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="logoforp_3" supported="no">
 		<description>Logo for Poltergeist (1989-08)</description>
 		<year>1989</year>
 		<publisher>Babygang</publisher>
@@ -11719,6 +11707,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="logo for poltergeist (1989-08)(babygang).d64" size="174848" crc="eb8019c3" sha1="1a21a343467de3a765e85f504345c03ef65853d2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logoforp_3" supported="no">
+		<description>Logo for Poltergeist</description>
+		<year>1989</year>
+		<publisher>Boonfire</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="logo for poltergeist (1989)(boonfire).d64" size="174848" crc="08be03fc" sha1="bd359b762fc11fb8f46619b5a71685de09145acb"/>
 			</dataarea>
 		</part>
 	</software>
@@ -12114,18 +12114,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="logofort_9" supported="no">
-		<description>Logo for Triad</description>
-		<year>1989</year>
-		<publisher>Weird Science 2662</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="logo for triad (1989)(weird science 2662).d64" size="174848" crc="d090ff6c" sha1="66a256261ad55cd156b20035dab91c15d186cfd3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="logofort_10" supported="no">
 		<description>Logo for Triad (1988-12-31)</description>
 		<year>1988</year>
 		<publisher>Contex</publisher>
@@ -12133,6 +12121,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="logo for triad (1988-12-31)(contex).d64" size="174848" crc="be6d774b" sha1="163d2de415232b423a53a9030a5c4b021b6b57b1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logofort_10" supported="no">
+		<description>Logo for Triad</description>
+		<year>1989</year>
+		<publisher>Weird Science 2662</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="logo for triad (1989)(weird science 2662).d64" size="174848" crc="d090ff6c" sha1="66a256261ad55cd156b20035dab91c15d186cfd3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -13625,6 +13625,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="newlogo" supported="no">
+		<description>New Logo (1990-01-10)</description>
+		<year>1990</year>
+		<publisher>Darkman</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="new logo (1990-01-10)(darkman).d64" size="174848" crc="685aa82b" sha1="77d25143128723a2ad5a91a710f6113e568bbd85"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="newlogo_1" supported="no">
 		<description>New Logo</description>
 		<year>1990</year>
 		<publisher>Guards of Doom</publisher>
@@ -13642,7 +13654,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="newlogo_1" supported="no">
+	<software name="newlogo_2" supported="no">
 		<description>New Logo (1)</description>
 		<year>1990</year>
 		<publisher>MTX Vision</publisher>
@@ -13654,7 +13666,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="newlogo_2" supported="no">
+	<software name="newlogo_3" supported="no">
 		<description>New Logo (1989-12)</description>
 		<year>1989</year>
 		<publisher>Orion</publisher>
@@ -13668,18 +13680,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="new logo (1989-12)(orion)[a].d64" size="174848" crc="3e91646b" sha1="6eecc281eb683b859fbf5ebb8d66749de4dbe35b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="newlogo_3" supported="no">
-		<description>New Logo (1990-01-10)</description>
-		<year>1990</year>
-		<publisher>Darkman</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="new logo (1990-01-10)(darkman).d64" size="174848" crc="685aa82b" sha1="77d25143128723a2ad5a91a710f6113e568bbd85"/>
 			</dataarea>
 		</part>
 	</software>
@@ -16023,18 +16023,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="teralogo_1" supported="no">
-		<description>Tera Logo #2</description>
-		<year>1989</year>
-		<publisher>TERA</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="tera logo #2 (1989)(tera).d64" size="174848" crc="2471053e" sha1="ffc79b4ba288805a4d0daf989f1311e53187c392"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="teralogo_2" supported="no">
 		<description>Tera Logo #2 (1)</description>
 		<year>19??</year>
 		<publisher>Spirit</publisher>
@@ -16042,6 +16030,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="tera logo #2 (19xx)(spirit).d64" size="174848" crc="f8902484" sha1="a96d88e95d2753c8b5d7c9d18d3072111acf866a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="teralogo_2" supported="no">
+		<description>Tera Logo #2</description>
+		<year>1989</year>
+		<publisher>TERA</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="tera logo #2 (1989)(tera).d64" size="174848" crc="2471053e" sha1="ffc79b4ba288805a4d0daf989f1311e53187c392"/>
 			</dataarea>
 		</part>
 	</software>
@@ -16095,6 +16095,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="teralogo_7" supported="no">
+		<description>Tera Logo (3)</description>
+		<year>19??</year>
+		<publisher>Best Cracking Team - Chaos #1</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="tera logo (19xx)(best cracking team - chaos #1).d64" size="174848" crc="fa2dbd78" sha1="3190d6c0995de66535989229163a95ea5c37478c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="teralogo_8" supported="no">
 		<description>Tera Logo (1)</description>
 		<year>1990</year>
 		<publisher>Depredators</publisher>
@@ -16106,7 +16118,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="teralogo_8" supported="no">
+	<software name="teralogo_9" supported="no">
 		<description>Tera Logo (2)</description>
 		<year>1990</year>
 		<publisher>Stash</publisher>
@@ -16114,18 +16126,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="tera logo (1990)(stash).d64" size="174848" crc="63a9f0e1" sha1="8a6800c03fbd9972e5a1b917d825610a19b076ab"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="teralogo_9" supported="no">
-		<description>Tera Logo (3)</description>
-		<year>19??</year>
-		<publisher>Best Cracking Team - Chaos #1</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="tera logo (19xx)(best cracking team - chaos #1).d64" size="174848" crc="fa2dbd78" sha1="3190d6c0995de66535989229163a95ea5c37478c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -17393,18 +17393,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="wotlogo" supported="no">
-		<description>WOT Logo</description>
-		<year>1989</year>
-		<publisher>X-Factor</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="wot logo (1989)(x-factor).d64" size="174848" crc="705baf5f" sha1="7902c15309685c3e8cd316c5da4856808b4fc40b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="wotlogo_1" supported="no">
 		<description>WOT Logo (1)</description>
 		<year>19??</year>
 		<publisher>Array</publisher>
@@ -17424,6 +17412,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="flop" size="174848">
 				<rom name="wot logo (19xx)(array)[a2].d64" size="174848" crc="17deb7a7" sha1="d6e8374871794756602a66cf0efe8fc16c3d3771"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wotlogo_1" supported="no">
+		<description>WOT Logo</description>
+		<year>1989</year>
+		<publisher>X-Factor</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="wot logo (1989)(x-factor).d64" size="174848" crc="705baf5f" sha1="7902c15309685c3e8cd316c5da4856808b4fc40b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18061,6 +18061,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="xentrixl" supported="no">
+		<description>Xentrix Logo (2)</description>
+		<year>19??</year>
+		<publisher>A-Team</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="xentrix logo (19xx)(a-team).d64" size="174848" crc="c7589f26" sha1="69f8390ef351936bb06e79fba756529349e77e6a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xentrixl_1" supported="no">
 		<description>Xentrix Logo</description>
 		<year>1990</year>
 		<publisher>Deek</publisher>
@@ -18072,7 +18084,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="xentrixl_1" supported="no">
+	<software name="xentrixl_2" supported="no">
 		<description>Xentrix Logo (1)</description>
 		<year>1991</year>
 		<publisher>Flare</publisher>
@@ -18080,18 +18092,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="xentrix logo (1991)(flare).d64" size="174848" crc="c4272616" sha1="8c7599b47a50b939b1eaa57321e53dc934119798"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="xentrixl_2" supported="no">
-		<description>Xentrix Logo (2)</description>
-		<year>19??</year>
-		<publisher>A-Team</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="174848">
-				<rom name="xentrix logo (19xx)(a-team).d64" size="174848" crc="c7589f26" sha1="69f8390ef351936bb06e79fba756529349e77e6a"/>
 			</dataarea>
 		</part>
 	</software>

@@ -5183,6 +5183,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="bomb" supported="no">
+		<description>Bomb (2018-08-04)</description>
+		<year>2018</year>
+		<publisher>Insane</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="bomb (2018-08-04)(insane).adf" size="901120" crc="2c64b2c7" sha1="b42cfe453cd4ece0f831447f622643e9cbbdc45a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bomb_1" supported="no">
 		<description>Bomb (1992-06-16)</description>
 		<year>1992</year>
 		<publisher>Melon Dezign</publisher>
@@ -5214,18 +5226,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
 				<rom name="bomb (1992-06-16)(melon dezign)[h warlock][m bamcopy].adf" size="901120" crc="d6dee096" sha1="8ed204e4a14a6cad2554916694eddc74cce7a0ee"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bomb_1" supported="no">
-		<description>Bomb (2018-08-04)</description>
-		<year>2018</year>
-		<publisher>Insane</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="bomb (2018-08-04)(insane).adf" size="901120" crc="2c64b2c7" sha1="b42cfe453cd4ece0f831447f622643e9cbbdc45a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5503,6 +5503,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="borntro" supported="no">
+		<description>Borntro (1994-08-14)</description>
+		<year>1994</year>
+		<publisher>Avantgarde</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="borntro (1994-08-14)(avantgarde).adf" size="901120" crc="a0bf3d0a" sha1="ac857d8c28f6d94e7a0cff61cd6e242c454fd633"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="borntro_1" supported="no">
 		<description>Borntro (1994-04-16)</description>
 		<year>1994</year>
 		<publisher>TRSI</publisher>
@@ -5522,18 +5534,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
 				<rom name="borntro (1994-04-16)(trsi)[h warlock].adf" size="901120" crc="0f06198d" sha1="8f1f67aa5c3e45e7acd67abb0190d568c54d256a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="borntro_1" supported="no">
-		<description>Borntro (1994-08-14)</description>
-		<year>1994</year>
-		<publisher>Avantgarde</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="borntro (1994-08-14)(avantgarde).adf" size="901120" crc="a0bf3d0a" sha1="ac857d8c28f6d94e7a0cff61cd6e242c454fd633"/>
 			</dataarea>
 		</part>
 	</software>
@@ -7152,6 +7152,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="coma" supported="no">
+		<description>Coma (AGA)</description>
+		<year>2002</year>
+		<publisher>Ephidrena</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked BTTR"/>
+			<dataarea name="flop" size="901120">
+				<rom name="coma (2002)(ephidrena)(aga)[h bttr].adf" size="901120" crc="d1414cff" sha1="b4505468f11d10cba73b758dcf949ce7546cc306"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coma_1" supported="no">
 		<description>Coma (1990-03)</description>
 		<year>1990</year>
 		<publisher>Rebels</publisher>
@@ -7171,19 +7184,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked Warlock, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
 				<rom name="coma (1990-03)(rebels)[h warlock][m bamcopy].adf" size="901120" crc="cf9c43c6" sha1="cf92addf8a0dba489945383310de26b6ca8ab699"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="coma_1" supported="no">
-		<description>Coma (AGA)</description>
-		<year>2002</year>
-		<publisher>Ephidrena</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked BTTR"/>
-			<dataarea name="flop" size="901120">
-				<rom name="coma (2002)(ephidrena)(aga)[h bttr].adf" size="901120" crc="d1414cff" sha1="b4505468f11d10cba73b758dcf949ce7546cc306"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9705,14 +9705,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="dentro" supported="no">
-		<description>Dentro</description>
-		<year>1994</year>
-		<publisher>Virtual Dreams - Fairlight</publisher>
+		<description>Dentro (AGA)</description>
+		<year>1995</year>
+		<publisher>Bronx</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked BTTR"/>
 			<dataarea name="flop" size="901120">
-				<rom name="dentro (1994)(virtual dreams - fairlight)[h bttr].adf" size="901120" crc="bb1b660e" sha1="77c337d0c089fa6198c946a7b8cf6542a7edfc04"/>
+				<rom name="dentro (1995)(bronx)(aga).adf" size="901120" crc="84d539cb" sha1="51dbcd792731a5689811246419b843761c93983a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9730,13 +9729,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="dentro_2" supported="no">
-		<description>Dentro (AGA)</description>
-		<year>1995</year>
-		<publisher>Bronx</publisher>
+		<description>Dentro</description>
+		<year>1994</year>
+		<publisher>Virtual Dreams - Fairlight</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked BTTR"/>
 			<dataarea name="flop" size="901120">
-				<rom name="dentro (1995)(bronx)(aga).adf" size="901120" crc="84d539cb" sha1="51dbcd792731a5689811246419b843761c93983a"/>
+				<rom name="dentro (1994)(virtual dreams - fairlight)[h bttr].adf" size="901120" crc="bb1b660e" sha1="77c337d0c089fa6198c946a7b8cf6542a7edfc04"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9822,6 +9822,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="despair" supported="no">
+		<description>Despair (AGA, 1994-08-07)</description>
+		<year>1994</year>
+		<publisher>Insane</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="A94#7"/>
+			<dataarea name="flop" size="901120">
+				<rom name="despair (1994-08-07)(insane)(aga)[a94#7].adf" size="901120" crc="9aba30ad" sha1="f5da92b4551749fe13aabbaadc026bd3ab20da3b"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="A94#7, Hacked BTTR"/>
+			<dataarea name="flop" size="901120">
+				<rom name="despair (1994-08-07)(insane)(aga)[h bttr][a94#7].adf" size="901120" crc="6103382f" sha1="d4fdc80d757e17def7c9ee02c34d2d0b0899ccd1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="despair_1" supported="no">
 		<description>Despair (1991-10-05)</description>
 		<year>1991</year>
 		<publisher>LSD</publisher>
@@ -9841,25 +9860,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Modified bamcopy, Overdumped 1"/>
 			<dataarea name="flop" size="923648">
 				<rom name="despair (1991-10-05)(lsd)[m bamcopy][o].adf" size="923648" crc="6439295c" sha1="189207769bef12f70461f09b309a684111a821e9" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="despair_1" supported="no">
-		<description>Despair (AGA, 1994-08-07)</description>
-		<year>1994</year>
-		<publisher>Insane</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="A94#7"/>
-			<dataarea name="flop" size="901120">
-				<rom name="despair (1994-08-07)(insane)(aga)[a94#7].adf" size="901120" crc="9aba30ad" sha1="f5da92b4551749fe13aabbaadc026bd3ab20da3b"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="A94#7, Hacked BTTR"/>
-			<dataarea name="flop" size="901120">
-				<rom name="despair (1994-08-07)(insane)(aga)[h bttr][a94#7].adf" size="901120" crc="6103382f" sha1="d4fdc80d757e17def7c9ee02c34d2d0b0899ccd1"/>
 			</dataarea>
 		</part>
 	</software>
@@ -11146,19 +11146,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="eclipse" supported="no">
-		<description>Eclipse (1999-08-28)</description>
-		<year>1999</year>
-		<publisher>Scoopex</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked BTTR"/>
-			<dataarea name="flop" size="901120">
-				<rom name="eclipse (1999-08-28)(scoopex)[h bttr].adf" size="901120" crc="04b247bf" sha1="9c7b256d96cb68ea2082e501969b98aaf60c182f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="eclipse_1" supported="no">
 		<description>Eclipse (AGA, 1999-07-10)</description>
 		<year>1999</year>
 		<publisher>MadWizards</publisher>
@@ -11167,6 +11154,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked BTTR"/>
 			<dataarea name="flop" size="901120">
 				<rom name="eclipse (1999-07-10)(madwizards)(aga)[h bttr].adf" size="901120" crc="d5fc83fe" sha1="8105fd117d629718ddcc09f6d61b98daf31bebaa"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eclipse_1" supported="no">
+		<description>Eclipse (1999-08-28)</description>
+		<year>1999</year>
+		<publisher>Scoopex</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked BTTR"/>
+			<dataarea name="flop" size="901120">
+				<rom name="eclipse (1999-08-28)(scoopex)[h bttr].adf" size="901120" crc="04b247bf" sha1="9c7b256d96cb68ea2082e501969b98aaf60c182f"/>
 			</dataarea>
 		</part>
 	</software>
@@ -11944,19 +11944,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="euphoria" supported="no">
-		<description>Euphoria</description>
-		<year>1991</year>
-		<publisher>The Giants</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked Subway PD"/>
-			<dataarea name="flop" size="901120">
-				<rom name="euphoria (1991)(the giants)[h subway pd].adf" size="901120" crc="71ff2cb6" sha1="1cf460890bf9c483d3744f77ebfaa25795730a55"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="euphoria_1" supported="no">
 		<description>Euphoria (AGA)</description>
 		<year>1998</year>
 		<publisher>Picco</publisher>
@@ -11965,6 +11952,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked BTTR"/>
 			<dataarea name="flop" size="901120">
 				<rom name="euphoria (1998)(picco)(aga)[h bttr].adf" size="901120" crc="144fd854" sha1="00c73b19a4a8b8c78a6a142142998eb1fc26e02b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="euphoria_1" supported="no">
+		<description>Euphoria</description>
+		<year>1991</year>
+		<publisher>The Giants</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked Subway PD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="euphoria (1991)(the giants)[h subway pd].adf" size="901120" crc="71ff2cb6" sha1="1cf460890bf9c483d3744f77ebfaa25795730a55"/>
 			</dataarea>
 		</part>
 	</software>
@@ -13313,13 +13313,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="firstdem" supported="no">
-		<description>First Demo</description>
-		<year>1992</year>
-		<publisher>Dream</publisher>
+		<description>First Demo (1988-03-06)</description>
+		<year>1988</year>
+		<publisher>Axenon</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="first demo (1992)(dream).adf" size="901120" crc="c621a7ca" sha1="0af62f69fff60f931cec131574dd799792e3b3e8"/>
+				<rom name="first demo (1988-03-06)(axenon).adf" size="901120" crc="26daea5b" sha1="1d278e83fdb92a86f6ed7ae4f011607d61bf7c9e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -13337,13 +13337,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="firstdem_2" supported="no">
-		<description>First Demo (1988-03-06)</description>
-		<year>1988</year>
-		<publisher>Axenon</publisher>
+		<description>First Demo</description>
+		<year>1992</year>
+		<publisher>Dream</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="first demo (1988-03-06)(axenon).adf" size="901120" crc="26daea5b" sha1="1d278e83fdb92a86f6ed7ae4f011607d61bf7c9e"/>
+				<rom name="first demo (1992)(dream).adf" size="901120" crc="c621a7ca" sha1="0af62f69fff60f931cec131574dd799792e3b3e8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -13380,6 +13380,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="firstint" supported="no">
+		<description>First Intro (1992-04)</description>
+		<year>1992</year>
+		<publisher>Comotion</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked TSB"/>
+			<dataarea name="flop" size="901120">
+				<rom name="first intro (1992-04)(comotion)[h tsb].adf" size="901120" crc="9486fd6b" sha1="9c650699b081bee1046aa08497a2f69105dcc153"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="firstint_1" supported="no">
 		<description>First Intro (1988-02-20)</description>
 		<year>1988</year>
 		<publisher>Magnificent Force</publisher>
@@ -13393,19 +13406,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Modified baddump"/>
 			<dataarea name="flop" size="901120">
 				<rom name="first intro (1988-02-20)(magnificent force)[m baddump].adf" size="901120" crc="2f5d10d0" sha1="f1badd4ee325c43320004a3d10e972bc8a935136"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="firstint_1" supported="no">
-		<description>First Intro (1992-04)</description>
-		<year>1992</year>
-		<publisher>Comotion</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked TSB"/>
-			<dataarea name="flop" size="901120">
-				<rom name="first intro (1992-04)(comotion)[h tsb].adf" size="901120" crc="9486fd6b" sha1="9c650699b081bee1046aa08497a2f69105dcc153"/>
 			</dataarea>
 		</part>
 	</software>
@@ -13492,18 +13492,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="five" supported="no">
-		<description>Five (2019-12-17)</description>
-		<year>2019</year>
-		<publisher>The Deadliners</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="five (2019-12-17)(the deadliners).adf" size="901120" crc="259fc2fc" sha1="8c9e18dbcbe6b0171fe09b31d0db97e03fdc6a6b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="five_1" supported="no">
 		<description>Five (AGA)</description>
 		<year>1998</year>
 		<publisher>Sonik Clique</publisher>
@@ -13511,6 +13499,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="five (1998)(sonik clique)(aga).adf" size="901120" crc="14a49a59" sha1="eff11691d3389c88522445d8797b8ee3c1e0b599"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="five_1" supported="no">
+		<description>Five (2019-12-17)</description>
+		<year>2019</year>
+		<publisher>The Deadliners</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="five (2019-12-17)(the deadliners).adf" size="901120" crc="259fc2fc" sha1="8c9e18dbcbe6b0171fe09b31d0db97e03fdc6a6b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -14894,42 +14894,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="genesis" supported="no">
-		<description>Genesis</description>
-		<year>1991</year>
-		<publisher>Paradise</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="genesis (1991)(paradise).adf" size="901120" crc="3bc45951" sha1="6b819f79b827c056ede62b035f94698ea975ab5d"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt quizz tester"/>
-			<dataarea name="flop" size="901120">
-				<rom name="genesis (1991)(paradise)[a quizz tester].adf" size="901120" crc="b5f9b60e" sha1="92cbf93e82061ea26511a9b117aee7f9deaec910"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Bad doscopy, Alt quizz tester"/>
-			<dataarea name="flop" size="901120">
-				<rom name="genesis (1991)(paradise)[b doscopy][a quizz tester].adf" size="901120" crc="bfff67f4" sha1="3f7ac14910f3771693a213af7f476c4088ad2622" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="genesis_1" supported="no">
-		<description>Genesis (1)</description>
-		<year>1992</year>
-		<publisher>Toxic Track</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="genesis (1992)(toxic track).adf" size="901120" crc="5f2c90c6" sha1="6505c74e9c16a9c811da8845fef807917e294bb8"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="genesis_2" supported="no">
 		<description>Genesis (1997-06-27)</description>
 		<year>1997</year>
 		<publisher>LLFB</publisher>
@@ -14956,6 +14920,42 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 4 of 4"/>
 			<dataarea name="flop" size="901120">
 				<rom name="genesis (1997-06-27)(llfb)(disk 4 of 4).adf" size="901120" crc="e554b83c" sha1="35acca8201d13ec130d6232e5b3006025537b9d6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="genesis_1" supported="no">
+		<description>Genesis</description>
+		<year>1991</year>
+		<publisher>Paradise</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="genesis (1991)(paradise).adf" size="901120" crc="3bc45951" sha1="6b819f79b827c056ede62b035f94698ea975ab5d"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt quizz tester"/>
+			<dataarea name="flop" size="901120">
+				<rom name="genesis (1991)(paradise)[a quizz tester].adf" size="901120" crc="b5f9b60e" sha1="92cbf93e82061ea26511a9b117aee7f9deaec910"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Bad doscopy, Alt quizz tester"/>
+			<dataarea name="flop" size="901120">
+				<rom name="genesis (1991)(paradise)[b doscopy][a quizz tester].adf" size="901120" crc="bfff67f4" sha1="3f7ac14910f3771693a213af7f476c4088ad2622" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="genesis_2" supported="no">
+		<description>Genesis (1)</description>
+		<year>1992</year>
+		<publisher>Toxic Track</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="genesis (1992)(toxic track).adf" size="901120" crc="5f2c90c6" sha1="6505c74e9c16a9c811da8845fef807917e294bb8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -17805,30 +17805,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="hysteria" supported="no">
-		<description>Hysteria</description>
-		<year>1994</year>
-		<publisher>Pici</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="hysteria (1994)(pici).adf" size="901120" crc="ecf3488d" sha1="f9021b5be3e0c0eb375b8b8379f952922d414a9a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="hysteria_1" supported="no">
-		<description>Hysteria (1990-12-29)</description>
-		<year>1990</year>
-		<publisher>Flash Production</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="hysteria (1990-12-29)(flash production).adf" size="901120" crc="6ebd502c" sha1="85b0c3ea660d0d232cba329380cd79e76705aff2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="hysteria_2" supported="no">
 		<description>Hysteria (1993-07-30)</description>
 		<year>1993</year>
 		<publisher>Analogy</publisher>
@@ -17849,6 +17825,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2, A93#5, Bad dump"/>
 			<dataarea name="flop" size="901120">
 				<rom name="hysteria (1993-07-30)(analogy)(disk 2 of 2)[b dump][a93#5].adf" size="901120" crc="589c2e9d" sha1="830c032eb656287cab6d5e503d1b4ce0a8a65db5" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hysteria_1" supported="no">
+		<description>Hysteria (1990-12-29)</description>
+		<year>1990</year>
+		<publisher>Flash Production</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="hysteria (1990-12-29)(flash production).adf" size="901120" crc="6ebd502c" sha1="85b0c3ea660d0d232cba329380cd79e76705aff2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hysteria_2" supported="no">
+		<description>Hysteria</description>
+		<year>1994</year>
+		<publisher>Pici</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="hysteria (1994)(pici).adf" size="901120" crc="ecf3488d" sha1="f9021b5be3e0c0eb375b8b8379f952922d414a9a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -19738,18 +19738,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="jointro" supported="no">
-		<description>Jointro (1994-07)</description>
-		<year>1994</year>
-		<publisher>Analog</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="jointro (1994-07)(analog).adf" size="901120" crc="7c9bc315" sha1="673cd5551cbaf6f65748047ddf9620fb8ca1f43c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="jointro_1" supported="no">
 		<description>Jointro (1995-03-09)</description>
 		<year>1995</year>
 		<publisher>Act</publisher>
@@ -19757,6 +19745,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="jointro (1995-03-09)(act).adf" size="901120" crc="aec6ba4a" sha1="c536ebadcbc93e1b7238f1aeec922c567da5f32c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jointro_1" supported="no">
+		<description>Jointro (1994-07)</description>
+		<year>1994</year>
+		<publisher>Analog</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="jointro (1994-07)(analog).adf" size="901120" crc="7c9bc315" sha1="673cd5551cbaf6f65748047ddf9620fb8ca1f43c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -22774,43 +22774,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="maximumo_1" supported="no">
-		<description>Maximum Overdrive (1990-01)</description>
-		<year>1990</year>
-		<publisher>The Special Brothers</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="maximum overdrive (1990-01)(the special brothers).adf" size="901120" crc="c43e5b75" sha1="88ba44de19c7083648b62bda9b37ce16c5096a50"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Bad dump"/>
-			<dataarea name="flop" size="901120">
-				<rom name="maximum overdrive (1990-01)(the special brothers)[b dump].adf" size="901120" crc="be292dda" sha1="69b0ab3ff5ffc99238d9e483e378590127ab21e9" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="maximumo_1_a" cloneof="maximumo_1" supported="no">
-		<description>Maximum Overdrive (1990-12-05)</description>
-		<year>1990</year>
-		<publisher>The Special Brothers</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="maximum overdrive (1990-12-05)(the special brothers)(disk 1 of 2).adf" size="901120" crc="f674192e" sha1="2c4c7920e7985096ebe96e48d2a1a1f5a0c240a0"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="maximum overdrive (1990-12-05)(the special brothers)(disk 2 of 2).adf" size="901120" crc="0e23f871" sha1="fe8124ea3d4f8efcd39f712c54640f15fa11f17a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="maximumo_2" supported="no">
 		<description>Maximum Overdrive (AGA, 1993-11-05)</description>
 		<year>1993</year>
 		<publisher>Rage</publisher>
@@ -22855,6 +22818,43 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2, HD"/>
 			<dataarea name="flop" size="901120">
 				<rom name="maximum overdrive (1993-11-05)(rage)(aga)(disk 2 of 2)[hd].adf" size="901120" crc="ffef1de2" sha1="9078de84463a8b0eb7a2496a2dab43b7ebccba16"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="maximumo_2" supported="no">
+		<description>Maximum Overdrive (1990-01)</description>
+		<year>1990</year>
+		<publisher>The Special Brothers</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="maximum overdrive (1990-01)(the special brothers).adf" size="901120" crc="c43e5b75" sha1="88ba44de19c7083648b62bda9b37ce16c5096a50"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Bad dump"/>
+			<dataarea name="flop" size="901120">
+				<rom name="maximum overdrive (1990-01)(the special brothers)[b dump].adf" size="901120" crc="be292dda" sha1="69b0ab3ff5ffc99238d9e483e378590127ab21e9" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="maximumo_2_a" cloneof="maximumo_2" supported="no">
+		<description>Maximum Overdrive (1990-12-05)</description>
+		<year>1990</year>
+		<publisher>The Special Brothers</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="maximum overdrive (1990-12-05)(the special brothers)(disk 1 of 2).adf" size="901120" crc="f674192e" sha1="2c4c7920e7985096ebe96e48d2a1a1f5a0c240a0"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="maximum overdrive (1990-12-05)(the special brothers)(disk 2 of 2).adf" size="901120" crc="0e23f871" sha1="fe8124ea3d4f8efcd39f712c54640f15fa11f17a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -23121,6 +23121,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="megademo_6" supported="no">
+		<description>Mega Demo (1989-03-11)</description>
+		<year>1989</year>
+		<publisher>The Assassins</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="mega demo (1989-03-11)(the assassins).adf" size="901120" crc="9e4bae80" sha1="a109b5f756fd4907e19ac389f653c845b244be2d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_7" supported="no">
 		<description>Mega Demo (1988-10)</description>
 		<year>1988</year>
 		<publisher>Top Swap</publisher>
@@ -23135,18 +23147,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="KS1.2, Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
 				<rom name="mega demo (1988-10)(top swap)[m bamcopy][ks1.2].adf" size="901120" crc="1ed6c9cd" sha1="b9812f32f0dd7b7dad24098ae1f90485e46c9ed7"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_7" supported="no">
-		<description>Mega Demo (1989-03-11)</description>
-		<year>1989</year>
-		<publisher>The Assassins</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="mega demo (1989-03-11)(the assassins).adf" size="901120" crc="9e4bae80" sha1="a109b5f756fd4907e19ac389f653c845b244be2d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -23452,49 +23452,43 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="megademo_22" supported="no">
-		<description>Megademo 1</description>
-		<year>1989</year>
-		<publisher>Doctor Destroy Team</publisher>
+		<description>Megademo 1 (1990-06-29)</description>
+		<year>1990</year>
+		<publisher>Budbrain Productions</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2"/>
 			<dataarea name="flop" size="901120">
-				<rom name="megademo 1 (1989)(doctor destroy team).adf" size="901120" crc="9cd04f71" sha1="3ca6c3343afa31952de3b26e4d16d62e2cb69ac4"/>
+				<rom name="megademo 1 (1990-06-29)(budbrain productions)(disk 1 of 2).adf" size="901120" crc="e1620155" sha1="94b01b49aacbc3df326f3ed776cbae47685e3d87"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2, Bad 2 dump"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo 1 (1990-06-29)(budbrain productions)(disk 1 of 2)[b2 dump].adf" size="901120" crc="4faf0447" sha1="4ed7d0cb580388ceb0eabe99d91182ce04ef29a7" status="baddump"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2, Bad dump"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo 1 (1990-06-29)(budbrain productions)(disk 1 of 2)[b dump].adf" size="901120" crc="7930c9ed" sha1="5b390ff7a50edb5d55e4ddfc0b8316c2976da8b0" status="baddump"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo 1 (1990-06-29)(budbrain productions)(disk 2 of 2).adf" size="901120" crc="5210dc9e" sha1="77aa079997f2d384a5261b78de1dc4628f4ff608"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2, Bad dump"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo 1 (1990-06-29)(budbrain productions)(disk 2 of 2)[b dump].adf" size="901120" crc="714d5fde" sha1="4bfd1efdec90606ad000604713d78c93f68fa5e6" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="megademo_23" supported="no">
-		<description>Megademo 1 (1)</description>
-		<year>1991</year>
-		<publisher>Fanatix</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2, Hacked AMOS PD"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo 1 (1991)(fanatix)(disk 1 of 2)[h amos pd].adf" size="901120" crc="18f55c8d" sha1="f8a6150c4af60ff571c70337bb5e2a02c9ba4d25"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2, Hacked AMOS PD, Bad disk label"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo 1 (1991)(fanatix)(disk 1 of 2)[h amos pd][b disk label].adf" size="901120" crc="92694b85" sha1="f81e1fe919f73e5a84bfb53b63a7f0531601333e" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo 1 (1991)(fanatix)(disk 2 of 2).adf" size="901120" crc="94d28dea" sha1="8983aabb9c3348aa4379cf655e1e4586fdf4d8ce"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 2, Bad disk label"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo 1 (1991)(fanatix)(disk 2 of 2)[b disk label].adf" size="901120" crc="1e4e9ae2" sha1="06dba46e0ace3e616b193ec9d41781b3c74bd9a4" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_24" supported="no">
 		<description>Megademo 1 (1988-12)</description>
 		<year>1988</year>
 		<publisher>Cascade 1733</publisher>
@@ -23536,7 +23530,50 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="megademo_24" supported="no">
+		<description>Megademo 1</description>
+		<year>1989</year>
+		<publisher>Doctor Destroy Team</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo 1 (1989)(doctor destroy team).adf" size="901120" crc="9cd04f71" sha1="3ca6c3343afa31952de3b26e4d16d62e2cb69ac4"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="megademo_25" supported="no">
+		<description>Megademo 1 (1)</description>
+		<year>1991</year>
+		<publisher>Fanatix</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2, Hacked AMOS PD"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo 1 (1991)(fanatix)(disk 1 of 2)[h amos pd].adf" size="901120" crc="18f55c8d" sha1="f8a6150c4af60ff571c70337bb5e2a02c9ba4d25"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2, Hacked AMOS PD, Bad disk label"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo 1 (1991)(fanatix)(disk 1 of 2)[h amos pd][b disk label].adf" size="901120" crc="92694b85" sha1="f81e1fe919f73e5a84bfb53b63a7f0531601333e" status="baddump"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo 1 (1991)(fanatix)(disk 2 of 2).adf" size="901120" crc="94d28dea" sha1="8983aabb9c3348aa4379cf655e1e4586fdf4d8ce"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2, Bad disk label"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo 1 (1991)(fanatix)(disk 2 of 2)[b disk label].adf" size="901120" crc="1e4e9ae2" sha1="06dba46e0ace3e616b193ec9d41781b3c74bd9a4" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_26" supported="no">
 		<description>Megademo 1 (1990-04-23)</description>
 		<year>1990</year>
 		<publisher>Star Rangers</publisher>
@@ -23544,43 +23581,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="megademo 1 (1990-04-23)(star rangers).adf" size="901120" crc="fabe4e88" sha1="f119d71f0e5dabd2631a2dd835caa433843f4a4f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_26" supported="no">
-		<description>Megademo 1 (1990-06-29)</description>
-		<year>1990</year>
-		<publisher>Budbrain Productions</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo 1 (1990-06-29)(budbrain productions)(disk 1 of 2).adf" size="901120" crc="e1620155" sha1="94b01b49aacbc3df326f3ed776cbae47685e3d87"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2, Bad 2 dump"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo 1 (1990-06-29)(budbrain productions)(disk 1 of 2)[b2 dump].adf" size="901120" crc="4faf0447" sha1="4ed7d0cb580388ceb0eabe99d91182ce04ef29a7" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2, Bad dump"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo 1 (1990-06-29)(budbrain productions)(disk 1 of 2)[b dump].adf" size="901120" crc="7930c9ed" sha1="5b390ff7a50edb5d55e4ddfc0b8316c2976da8b0" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo 1 (1990-06-29)(budbrain productions)(disk 2 of 2).adf" size="901120" crc="5210dc9e" sha1="77aa079997f2d384a5261b78de1dc4628f4ff608"/>
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 2, Bad dump"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo 1 (1990-06-29)(budbrain productions)(disk 2 of 2)[b dump].adf" size="901120" crc="714d5fde" sha1="4bfd1efdec90606ad000604713d78c93f68fa5e6" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -23640,24 +23640,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="megademo_29" supported="no">
-		<description>Megademo 2 (1)</description>
-		<year>1990</year>
-		<publisher>Disorder</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo 2 (1990)(disorder).adf" size="901120" crc="acba053f" sha1="3ab6abf6ff76e9802e8cd0a960193abe6f858b71"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Modified baddump"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo 2 (1990)(disorder)[m baddump].adf" size="901120" crc="ef47cb46" sha1="5f3e1a3c6d16294d72ee87c78776bc04a132f772"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_30" supported="no">
 		<description>Megademo 2 (1990-12-29)</description>
 		<year>1990</year>
 		<publisher>Budbrain Productions</publisher>
@@ -23677,6 +23659,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Overdumped 1"/>
 			<dataarea name="flop" size="923648">
 				<rom name="megademo 2 (1990-12-29)(budbrain productions)[o].adf" size="923648" crc="83d7b5ed" sha1="3e62ed77250f49e6501a91491e4307cea141fdcf" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_30" supported="no">
+		<description>Megademo 2 (1)</description>
+		<year>1990</year>
+		<publisher>Disorder</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo 2 (1990)(disorder).adf" size="901120" crc="acba053f" sha1="3ab6abf6ff76e9802e8cd0a960193abe6f858b71"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Modified baddump"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo 2 (1990)(disorder)[m baddump].adf" size="901120" crc="ef47cb46" sha1="5f3e1a3c6d16294d72ee87c78776bc04a132f772"/>
 			</dataarea>
 		</part>
 	</software>
@@ -23800,18 +23800,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="megademo_37" supported="no">
-		<description>Megademo II (1989-07-29)</description>
-		<year>1989</year>
-		<publisher>Vision</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo ii (1989-07-29)(vision).adf" size="901120" crc="33a17cd3" sha1="a8d4ac43fe7463ffb1d464aed0de6bdfc0eae2fa"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_38" supported="no">
 		<description>Megademo II (1990-02-17)</description>
 		<year>1990</year>
 		<publisher>Rebels</publisher>
@@ -23819,6 +23807,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="megademo ii (1990-02-17)(rebels).adf" size="901120" crc="47f31263" sha1="be1cd6c15b85393f02719361a54a9addbbfa312b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_38" supported="no">
+		<description>Megademo II (1989-07-29)</description>
+		<year>1989</year>
+		<publisher>Vision</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo ii (1989-07-29)(vision).adf" size="901120" crc="33a17cd3" sha1="a8d4ac43fe7463ffb1d464aed0de6bdfc0eae2fa"/>
 			</dataarea>
 		</part>
 	</software>
@@ -23891,6 +23891,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="megademo_40" supported="no">
+		<description>Megademo I (1990-04-23)</description>
+		<year>1990</year>
+		<publisher>Omega</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo i (1990-04-23)(omega).adf" size="901120" crc="58a485c9" sha1="48b3b2df1c8c158f322b4d00e2febfc8e6116e9f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_41" supported="no">
+		<description>Megademo I (1992-10-18)</description>
+		<year>1992</year>
+		<publisher>Proxis</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo i (1992-10-18)(proxis).adf" size="901120" crc="2d92fb2c" sha1="59aca466c355715bfe2b333a82d68e065661efa3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_42" supported="no">
 		<description>Megademo I</description>
 		<year>1993</year>
 		<publisher>Syndicate</publisher>
@@ -23904,30 +23928,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="megademo i (1993)(syndicate)[a].adf" size="901120" crc="fd9ae212" sha1="945ba1a53c8750e01b0dd8c64b0951da0076061a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_41" supported="no">
-		<description>Megademo I (1990-04-23)</description>
-		<year>1990</year>
-		<publisher>Omega</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo i (1990-04-23)(omega).adf" size="901120" crc="58a485c9" sha1="48b3b2df1c8c158f322b4d00e2febfc8e6116e9f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_42" supported="no">
-		<description>Megademo I (1992-10-18)</description>
-		<year>1992</year>
-		<publisher>Proxis</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo i (1992-10-18)(proxis).adf" size="901120" crc="2d92fb2c" sha1="59aca466c355715bfe2b333a82d68e065661efa3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -23963,18 +23963,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="megademo_44" supported="no">
-		<description>Megademo One</description>
-		<year>1989</year>
-		<publisher>Manowar</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo one (1989)(manowar).adf" size="901120" crc="84a5a173" sha1="2c413a715fb4f8cbe80cb6207b089dc753328bb8"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_45" supported="no">
 		<description>Megademo One (1990-08-02)</description>
 		<year>1990</year>
 		<publisher>Katharsis</publisher>
@@ -23988,6 +23976,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Bad doscopy"/>
 			<dataarea name="flop" size="901120">
 				<rom name="megademo one (1990-08-02)(katharsis)[b doscopy].adf" size="901120" crc="5b5cf48b" sha1="f85e4aab60627bef901d9043324b1b040fa9683c" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_45" supported="no">
+		<description>Megademo One</description>
+		<year>1989</year>
+		<publisher>Manowar</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo one (1989)(manowar).adf" size="901120" crc="84a5a173" sha1="2c413a715fb4f8cbe80cb6207b089dc753328bb8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -24024,97 +24024,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="megademo_48" supported="no">
-		<description>Megademo (1)</description>
-		<year>1989</year>
-		<publisher>Phenomena</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989)(phenomena).adf" size="901120" crc="7012885a" sha1="f789a893ec13c5c96566bb8ff21021a17cbebc2c"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989)(phenomena)[a].adf" size="901120" crc="5a7ca310" sha1="2d1d9daa4486da429ab511bd28514e17731945e8"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Bad dump"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989)(phenomena)[b dump].adf" size="901120" crc="8ff5ef94" sha1="4d76fa9f9441b1d1894233f0e6c025c39a087c62" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_49" supported="no">
-		<description>Megademo (2)</description>
-		<year>1989</year>
-		<publisher>Scoopex - Share and Enjoy</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989)(scoopex - share and enjoy).adf" size="901120" crc="ef8c6130" sha1="23fb41ef861da4f0952636446ac00f0c635c7ffc"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Bad errdms"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989)(scoopex - share and enjoy)[b errdms].adf" size="901120" crc="03d174eb" sha1="dcec7c596f4b2c01b311f98c0a9193242ce6ef96" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_50" supported="no">
-		<description>Megademo (3)</description>
-		<year>1989</year>
-		<publisher>The Fast Guys</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad dump"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989)(the fast guys)[b dump].adf" size="901120" crc="d8243d20" sha1="b3d768dee02e08db35a82791c750851ddf61c2e9" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_51" supported="no">
-		<description>Megademo (4)</description>
-		<year>1990</year>
-		<publisher>Excellence</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1990)(excellence).adf" size="901120" crc="f1d57e29" sha1="55a04f0e6e2c0d8a6a19d3421b3473d4f3417c97"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_52" supported="no">
-		<description>Megademo (5)</description>
-		<year>1990</year>
-		<publisher>MC-ZZZ</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1990)(mc-zzz).adf" size="901120" crc="37e44c08" sha1="905f8b3b7064a69cc0679a237c09c2ad56c56177"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_53" supported="no">
-		<description>Megademo (6)</description>
-		<year>1990</year>
-		<publisher>Supplex</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1990)(supplex).adf" size="901120" crc="983051e3" sha1="adf68b9f37970bf2e756030b498934ba491f2a23"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_54" supported="no">
 		<description>Megademo (1987-12-04)</description>
 		<year>1987</year>
 		<publisher>Antitrax 2010</publisher>
@@ -24150,73 +24059,31 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megademo_55" supported="no">
-		<description>Megademo (1988-05-25)</description>
-		<year>1988</year>
-		<publisher>Ian &amp; Mic</publisher>
+	<software name="megademo_49" supported="no">
+		<description>Megademo (1990-08)</description>
+		<year>1990</year>
+		<publisher>Asperity</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="megademo (1988-05-25)(ian &amp; mic).adf" size="901120" crc="e0ae4447" sha1="fa747682be8c5dc1f9346d5d643688d1125aa294"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Bad doscopy"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1988-05-25)(ian &amp; mic)[b doscopy].adf" size="901120" crc="56d297e0" sha1="ab179f05b63c0b44685f9a2f0f1629b7793561ab" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Hacked SPC"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1988-05-25)(ian &amp; mic)[h spc].adf" size="901120" crc="262b00dc" sha1="5707d1f906336938f4b2c1737735ce42aedc4b24"/>
+				<rom name="megademo (1990-08)(asperity).adf" size="901120" crc="668ceec7" sha1="69adad9a94066239f2abdacdb108ddaf1a433908"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="megademo_56" supported="no">
-		<description>Megademo (1988-08-23)</description>
-		<year>1988</year>
-		<publisher>Scientific Cracking Team</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1988-08-23)(scientific cracking team).adf" size="901120" crc="c4db0f2b" sha1="8117c4978bf2ded1e22bd2627a3115d09be63a89"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1988-08-23)(scientific cracking team)[a].adf" size="901120" crc="4dfa579a" sha1="8e3572150495984aff0510a8818000ca21897aa1"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy - doscopy"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1988-08-23)(scientific cracking team)[m bamcopy - doscopy].adf" size="901120" crc="ac2a640a" sha1="37888d8d349fdc125ddb101e84e8e8b2faa7809d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_57" supported="no">
-		<description>Megademo (1989-01-07)</description>
+	<software name="megademo_50" supported="no">
+		<description>Megademo (1989-12)</description>
 		<year>1989</year>
-		<publisher>Jungle Command - Magnificent Force - Joy</publisher>
+		<publisher>Darklight</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989-01-07)(jungle command - magnificent force - joy).adf" size="901120" crc="35f4a183" sha1="8b53c8cc8f8a86ecb3dd10e6a52d6a78417369b4"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Bad doscopy - dump"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989-01-07)(jungle command - magnificent force - joy)[b doscopy - dump].adf" size="901120" crc="6ba54328" sha1="e1d22e55201b35b627b7a161e5cc36ffe89e55af" status="baddump"/>
+				<rom name="megademo (1989-12)(darklight).adf" size="901120" crc="31b7e171" sha1="317cd2f2e0e71a350355931cf5f3a8de532d3cc0"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="megademo_58" supported="no">
+	<software name="megademo_51" supported="no">
 		<description>Megademo (1989-01-24)</description>
 		<year>1989</year>
 		<publisher>Deathstar</publisher>
@@ -24277,37 +24144,43 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megademo_59" supported="no">
-		<description>Megademo (1989-03-24)</description>
-		<year>1989</year>
-		<publisher>Electronic Artists</publisher>
+	<software name="megademo_52" supported="no">
+		<description>Megademo (v1.0)</description>
+		<year>1988</year>
+		<publisher>Defjam - Red Sector Inc</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989-03-24)(electronic artists).adf" size="901120" crc="b5093dd9" sha1="d6f3d0f50bbe93704ecdb1d7dc0d92d206ed49f6"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_60" supported="no">
-		<description>Megademo (1989-03-25)</description>
-		<year>1989</year>
-		<publisher>Vision</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989-03-25)(vision).adf" size="901120" crc="7f1f936f" sha1="6aced11b1555cfa2656e2b7ac32f9ec2d7374460"/>
+				<rom name="megademo v1.0 (1988)(defjam - red sector inc).adf" size="901120" crc="8c832a6a" sha1="ab0a03241ac1877007f4e7c47bac4916d209c11b"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Modified baddump"/>
+			<feature name="part_id" value="Alt bootblock"/>
 			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989-03-25)(vision)[m baddump].adf" size="901120" crc="e6ffa314" sha1="46fe40c38130c992e31bc50ba4a3e164e62b8641"/>
+				<rom name="megademo v1.0 (1988)(defjam - red sector inc)[a bootblock].adf" size="901120" crc="08a62521" sha1="45405ce812344014804a8dd026cfeec459fbfcf2"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt file, Alt startup-sequence"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo v1.0 (1988)(defjam - red sector inc)[b corrupt file][a startup-sequence].adf" size="901120" crc="44cef1dd" sha1="6f8364b2b1b3896da963fe578eec1401e6011575" status="baddump"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Fixed Andreas, Alt startup-sequence"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo v1.0 (1988)(defjam - red sector inc)[f andreas][a startup-sequence].adf" size="901120" crc="84be9a4d" sha1="6c2db4ba0f24306cbbf3bb03678d5a229552c05f"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<feature name="part_id" value="Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo v1.0 (1988)(defjam - red sector inc)[m bamcopy].adf" size="901120" crc="662444d9" sha1="fdb61314644df1ae004deec23be92ac3329e7f9d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="megademo_61" supported="no">
+	<software name="megademo_53" supported="no">
 		<description>Megademo (1989-04-01)</description>
 		<year>1989</year>
 		<publisher>Digilogic</publisher>
@@ -24319,80 +24192,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megademo_62" supported="no">
-		<description>Megademo (1989-07-29)</description>
-		<year>1989</year>
-		<publisher>United Forces</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989-07-29)(united forces).adf" size="901120" crc="5fdcce40" sha1="b19ffb621cf02fc149d69fafdc2efe7cd091f05d"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Bad doscopy - dump"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989-07-29)(united forces)[b doscopy - dump].adf" size="901120" crc="8fd4e661" sha1="781f6ca8c2b79e19d8fbd291cc13e30ff93d0f4e" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Modified baddump"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989-07-29)(united forces)[m baddump].adf" size="901120" crc="22568cae" sha1="92273841567f08bff6f549f4450e70f1d84d64aa"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_63" supported="no">
-		<description>Megademo (1989-08-20)</description>
-		<year>1989</year>
-		<publisher>Errors</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989-08-20)(errors).adf" size="901120" crc="04a2dde2" sha1="d8ec0b20f3fec3513791a57d9bec63a769717cdd"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_64" supported="no">
-		<description>Megademo (1989-11)</description>
-		<year>1989</year>
-		<publisher>Sunlight</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989-11)(sunlight).adf" size="901120" crc="ff1aa131" sha1="b87580775fe358c2f5da5ca224e6e952958502fe"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_64_a" cloneof="megademo_64" supported="no">
-		<description>Megademo (1989-11, Preview)</description>
-		<year>1989</year>
-		<publisher>Sunlight</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad dump"/>
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989-11)(sunlight)(preview)[b dump].adf" size="901120" crc="011ffaad" sha1="f855c686084ddb66a32d8c0680b08a8eb1b7e91e" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_65" supported="no">
-		<description>Megademo (1989-12)</description>
-		<year>1989</year>
-		<publisher>Darklight</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="megademo (1989-12)(darklight).adf" size="901120" crc="31b7e171" sha1="317cd2f2e0e71a350355931cf5f3a8de532d3cc0"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megademo_66" supported="no">
+	<software name="megademo_54" supported="no">
 		<description>Megademo (1990-01-05)</description>
 		<year>1990</year>
 		<publisher>Dual Crew</publisher>
@@ -24428,7 +24228,85 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megademo_67" supported="no">
+	<software name="megademo_55" supported="no">
+		<description>Megademo (1989-03-24)</description>
+		<year>1989</year>
+		<publisher>Electronic Artists</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1989-03-24)(electronic artists).adf" size="901120" crc="b5093dd9" sha1="d6f3d0f50bbe93704ecdb1d7dc0d92d206ed49f6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_56" supported="no">
+		<description>Megademo (1989-08-20)</description>
+		<year>1989</year>
+		<publisher>Errors</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1989-08-20)(errors).adf" size="901120" crc="04a2dde2" sha1="d8ec0b20f3fec3513791a57d9bec63a769717cdd"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_57" supported="no">
+		<description>Megademo (4)</description>
+		<year>1990</year>
+		<publisher>Excellence</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1990)(excellence).adf" size="901120" crc="f1d57e29" sha1="55a04f0e6e2c0d8a6a19d3421b3473d4f3417c97"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_58" supported="no">
+		<description>Megademo (1988-05-25)</description>
+		<year>1988</year>
+		<publisher>Ian &amp; Mic</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1988-05-25)(ian &amp; mic).adf" size="901120" crc="e0ae4447" sha1="fa747682be8c5dc1f9346d5d643688d1125aa294"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Bad doscopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1988-05-25)(ian &amp; mic)[b doscopy].adf" size="901120" crc="56d297e0" sha1="ab179f05b63c0b44685f9a2f0f1629b7793561ab" status="baddump"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked SPC"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1988-05-25)(ian &amp; mic)[h spc].adf" size="901120" crc="262b00dc" sha1="5707d1f906336938f4b2c1737735ce42aedc4b24"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_59" supported="no">
+		<description>Megademo (1989-01-07)</description>
+		<year>1989</year>
+		<publisher>Jungle Command - Magnificent Force - Joy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1989-01-07)(jungle command - magnificent force - joy).adf" size="901120" crc="35f4a183" sha1="8b53c8cc8f8a86ecb3dd10e6a52d6a78417369b4"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Bad doscopy - dump"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1989-01-07)(jungle command - magnificent force - joy)[b doscopy - dump].adf" size="901120" crc="6ba54328" sha1="e1d22e55201b35b627b7a161e5cc36ffe89e55af" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_60" supported="no">
 		<description>Megademo (1990-03-24)</description>
 		<year>1990</year>
 		<publisher>Legion-7</publisher>
@@ -24440,7 +24318,43 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megademo_68" supported="no">
+	<software name="megademo_61" supported="no">
+		<description>Megademo (5)</description>
+		<year>1990</year>
+		<publisher>MC-ZZZ</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1990)(mc-zzz).adf" size="901120" crc="37e44c08" sha1="905f8b3b7064a69cc0679a237c09c2ad56c56177"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_62" supported="no">
+		<description>Megademo (1)</description>
+		<year>1989</year>
+		<publisher>Phenomena</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1989)(phenomena).adf" size="901120" crc="7012885a" sha1="f789a893ec13c5c96566bb8ff21021a17cbebc2c"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1989)(phenomena)[a].adf" size="901120" crc="5a7ca310" sha1="2d1d9daa4486da429ab511bd28514e17731945e8"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Bad dump"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1989)(phenomena)[b dump].adf" size="901120" crc="8ff5ef94" sha1="4d76fa9f9441b1d1894233f0e6c025c39a087c62" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_63" supported="no">
 		<description>Megademo (1990-07-01)</description>
 		<year>1990</year>
 		<publisher>Pyrrusians</publisher>
@@ -24452,19 +24366,49 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megademo_69" supported="no">
-		<description>Megademo (1990-08)</description>
-		<year>1990</year>
-		<publisher>Asperity</publisher>
+	<software name="megademo_64" supported="no">
+		<description>Megademo (1988-08-23)</description>
+		<year>1988</year>
+		<publisher>Scientific Cracking Team</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="megademo (1990-08)(asperity).adf" size="901120" crc="668ceec7" sha1="69adad9a94066239f2abdacdb108ddaf1a433908"/>
+				<rom name="megademo (1988-08-23)(scientific cracking team).adf" size="901120" crc="c4db0f2b" sha1="8117c4978bf2ded1e22bd2627a3115d09be63a89"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1988-08-23)(scientific cracking team)[a].adf" size="901120" crc="4dfa579a" sha1="8e3572150495984aff0510a8818000ca21897aa1"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Modified bamcopy - doscopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1988-08-23)(scientific cracking team)[m bamcopy - doscopy].adf" size="901120" crc="ac2a640a" sha1="37888d8d349fdc125ddb101e84e8e8b2faa7809d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="megademo_70" supported="no">
+	<software name="megademo_65" supported="no">
+		<description>Megademo (2)</description>
+		<year>1989</year>
+		<publisher>Scoopex - Share and Enjoy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1989)(scoopex - share and enjoy).adf" size="901120" crc="ef8c6130" sha1="23fb41ef861da4f0952636446ac00f0c635c7ffc"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Bad errdms"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1989)(scoopex - share and enjoy)[b errdms].adf" size="901120" crc="03d174eb" sha1="dcec7c596f4b2c01b311f98c0a9193242ce6ef96" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_66" supported="no">
 		<description>Megademo (1992-01)</description>
 		<year>1992</year>
 		<publisher>Semtex</publisher>
@@ -24476,38 +24420,94 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="megademo_71" supported="no">
-		<description>Megademo (v1.0)</description>
-		<year>1988</year>
-		<publisher>Defjam - Red Sector Inc</publisher>
+	<software name="megademo_67" supported="no">
+		<description>Megademo (1989-11)</description>
+		<year>1989</year>
+		<publisher>Sunlight</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="megademo v1.0 (1988)(defjam - red sector inc).adf" size="901120" crc="8c832a6a" sha1="ab0a03241ac1877007f4e7c47bac4916d209c11b"/>
+				<rom name="megademo (1989-11)(sunlight).adf" size="901120" crc="ff1aa131" sha1="b87580775fe358c2f5da5ca224e6e952958502fe"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_67_a" cloneof="megademo_67" supported="no">
+		<description>Megademo (1989-11, Preview)</description>
+		<year>1989</year>
+		<publisher>Sunlight</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad dump"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1989-11)(sunlight)(preview)[b dump].adf" size="901120" crc="011ffaad" sha1="f855c686084ddb66a32d8c0680b08a8eb1b7e91e" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_68" supported="no">
+		<description>Megademo (6)</description>
+		<year>1990</year>
+		<publisher>Supplex</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1990)(supplex).adf" size="901120" crc="983051e3" sha1="adf68b9f37970bf2e756030b498934ba491f2a23"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_69" supported="no">
+		<description>Megademo (3)</description>
+		<year>1989</year>
+		<publisher>The Fast Guys</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad dump"/>
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1989)(the fast guys)[b dump].adf" size="901120" crc="d8243d20" sha1="b3d768dee02e08db35a82791c750851ddf61c2e9" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megademo_70" supported="no">
+		<description>Megademo (1989-07-29)</description>
+		<year>1989</year>
+		<publisher>United Forces</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="megademo (1989-07-29)(united forces).adf" size="901120" crc="5fdcce40" sha1="b19ffb621cf02fc149d69fafdc2efe7cd091f05d"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Alt bootblock"/>
+			<feature name="part_id" value="Bad doscopy - dump"/>
 			<dataarea name="flop" size="901120">
-				<rom name="megademo v1.0 (1988)(defjam - red sector inc)[a bootblock].adf" size="901120" crc="08a62521" sha1="45405ce812344014804a8dd026cfeec459fbfcf2"/>
+				<rom name="megademo (1989-07-29)(united forces)[b doscopy - dump].adf" size="901120" crc="8fd4e661" sha1="781f6ca8c2b79e19d8fbd291cc13e30ff93d0f4e" status="baddump"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt file, Alt startup-sequence"/>
+			<feature name="part_id" value="Modified baddump"/>
 			<dataarea name="flop" size="901120">
-				<rom name="megademo v1.0 (1988)(defjam - red sector inc)[b corrupt file][a startup-sequence].adf" size="901120" crc="44cef1dd" sha1="6f8364b2b1b3896da963fe578eec1401e6011575" status="baddump"/>
+				<rom name="megademo (1989-07-29)(united forces)[m baddump].adf" size="901120" crc="22568cae" sha1="92273841567f08bff6f549f4450e70f1d84d64aa"/>
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_3_5">
-			<feature name="part_id" value="Fixed Andreas, Alt startup-sequence"/>
+	</software>
+
+	<software name="megademo_71" supported="no">
+		<description>Megademo (1989-03-25)</description>
+		<year>1989</year>
+		<publisher>Vision</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="megademo v1.0 (1988)(defjam - red sector inc)[f andreas][a startup-sequence].adf" size="901120" crc="84be9a4d" sha1="6c2db4ba0f24306cbbf3bb03678d5a229552c05f"/>
+				<rom name="megademo (1989-03-25)(vision).adf" size="901120" crc="7f1f936f" sha1="6aced11b1555cfa2656e2b7ac32f9ec2d7374460"/>
 			</dataarea>
 		</part>
-		<part name="flop5" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy"/>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Modified baddump"/>
 			<dataarea name="flop" size="901120">
-				<rom name="megademo v1.0 (1988)(defjam - red sector inc)[m bamcopy].adf" size="901120" crc="662444d9" sha1="fdb61314644df1ae004deec23be92ac3329e7f9d"/>
+				<rom name="megademo (1989-03-25)(vision)[m baddump].adf" size="901120" crc="e6ffa314" sha1="46fe40c38130c992e31bc50ba4a3e164e62b8641"/>
 			</dataarea>
 		</part>
 	</software>
@@ -25684,25 +25684,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="motionor" supported="no">
-		<description>Motion - Origin 2 (AGA)</description>
-		<year>1995</year>
-		<publisher>Bomb</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2, updated, TP4#3"/>
-			<dataarea name="flop" size="901120">
-				<rom name="motion - origin 2 (1995)(bomb)(aga)(disk 1 of 2)[updated][tp4#3].adf" size="901120" crc="bc184523" sha1="874ecf9c967204602bbac164674860146ed41476"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 2, updated"/>
-			<dataarea name="flop" size="901120">
-				<rom name="motion - origin 2 (1995)(bomb)(aga)(disk 2 of 2)[updated].adf" size="901120" crc="9856a749" sha1="943d199a730c59437d81a30af3f7bbb0ca5e7188"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="motionor_a" cloneof="motionor" supported="no">
 		<description>Motion - Origin 2 (AGA, 1994-12-28)</description>
 		<year>1994</year>
 		<publisher>Bomb</publisher>
@@ -25729,6 +25710,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2, Modified doscopy"/>
 			<dataarea name="flop" size="901120">
 				<rom name="motion - origin 2 (1994-12-28)(bomb)(aga)(disk 2 of 2)[m doscopy].adf" size="901120" crc="0db63c69" sha1="38d8066f05152eb075378db658b8fccda78d4c0e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="motionor_a" cloneof="motionor" supported="no">
+		<description>Motion - Origin 2 (AGA)</description>
+		<year>1995</year>
+		<publisher>Bomb</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2, updated, TP4#3"/>
+			<dataarea name="flop" size="901120">
+				<rom name="motion - origin 2 (1995)(bomb)(aga)(disk 1 of 2)[updated][tp4#3].adf" size="901120" crc="bc184523" sha1="874ecf9c967204602bbac164674860146ed41476"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2, updated"/>
+			<dataarea name="flop" size="901120">
+				<rom name="motion - origin 2 (1995)(bomb)(aga)(disk 2 of 2)[updated].adf" size="901120" crc="9856a749" sha1="943d199a730c59437d81a30af3f7bbb0ca5e7188"/>
 			</dataarea>
 		</part>
 	</software>
@@ -28826,18 +28826,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="partydem" supported="no">
-		<description>Party Demo</description>
-		<year>1991</year>
-		<publisher>Grace</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="party demo (1991)(grace).adf" size="901120" crc="69583ba0" sha1="01f3868d31941d9ff100b57a2afe2a96620723fe"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="partydem_1" supported="no">
 		<description>Party Demo (1990-06-29)</description>
 		<year>1990</year>
 		<publisher>Cycron</publisher>
@@ -28846,6 +28834,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked Warlock"/>
 			<dataarea name="flop" size="901120">
 				<rom name="party demo (1990-06-29)(cycron)[h warlock].adf" size="901120" crc="6f744cd1" sha1="44e43feae1e77a34654b8e4ed66f1f77ab4ca724"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="partydem_1" supported="no">
+		<description>Party Demo</description>
+		<year>1991</year>
+		<publisher>Grace</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="party demo (1991)(grace).adf" size="901120" crc="69583ba0" sha1="01f3868d31941d9ff100b57a2afe2a96620723fe"/>
 			</dataarea>
 		</part>
 	</software>
@@ -37743,6 +37743,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thebegin" supported="no">
+		<description>The Beginning (AGA)</description>
+		<year>1994</year>
+		<publisher>Digital Chaos</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="beginning, the (1994)(digital chaos)(aga).adf" size="901120" crc="f899fafd" sha1="8e1978ce8684f17fef58bf191a5fdbbb420f7477"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thebegin_1" supported="no">
 		<description>The Beginning (1993-07-11)</description>
 		<year>1993</year>
 		<publisher>Logic</publisher>
@@ -37762,18 +37774,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Modified doscopy"/>
 			<dataarea name="flop" size="901120">
 				<rom name="beginning, the (1993-07-11)(logic)[m doscopy].adf" size="901120" crc="724050a3" sha1="421aadbb20cdc1b5b90ceb546d31968131f9505a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thebegin_1" supported="no">
-		<description>The Beginning (AGA)</description>
-		<year>1994</year>
-		<publisher>Digital Chaos</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="beginning, the (1994)(digital chaos)(aga).adf" size="901120" crc="f899fafd" sha1="8e1978ce8684f17fef58bf191a5fdbbb420f7477"/>
 			</dataarea>
 		</part>
 	</software>
@@ -43131,6 +43131,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="wildstoc" supported="no">
+		<description>Wildstock '95 Party Invitation Intro (AGA)</description>
+		<year>1995</year>
+		<publisher>Absolute!</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="wildstock '95 party invitation intro (1995)(absolute)(aga).adf" size="901120" crc="25e8acd8" sha1="88654bcec3684393e747d2916d6f499012aaca4c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wildstoc_1" supported="no">
 		<description>Wildstock '95 Party Invitation Intro</description>
 		<year>19??</year>
 		<publisher>Beast - Rack - Scorpik - Teroplex</publisher>
@@ -43139,18 +43151,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="WB"/>
 			<dataarea name="flop" size="901120">
 				<rom name="wildstock '95 party invitation intro (19xx)(beast - rack - scorpik - teroplex)[wb].adf" size="901120" crc="7c89ed38" sha1="728a8f24179a9a0dcca3aeab7be8bde17804480a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="wildstoc_1" supported="no">
-		<description>Wildstock '95 Party Invitation Intro (AGA)</description>
-		<year>1995</year>
-		<publisher>Absolute!</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="wildstock '95 party invitation intro (1995)(absolute)(aga).adf" size="901120" crc="25e8acd8" sha1="88654bcec3684393e747d2916d6f499012aaca4c"/>
 			</dataarea>
 		</part>
 	</software>

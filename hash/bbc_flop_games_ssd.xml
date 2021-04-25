@@ -168,6 +168,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="3dmaze" supported="no">
+		<description>3D Maze (1)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="3DMAZ"/>
+			<dataarea name="flop" size="5376">
+				<rom name="3d maze (19xx)(-)[3dmaz].ssd" size="5376" crc="ef7790f4" sha1="61240ebdd91ac84410ab24bc7f9f26841aaf349c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="3dmaze_1" supported="no">
 		<description>3D Maze</description>
 		<year>1982</year>
 		<publisher>IJK</publisher>
@@ -192,20 +205,20 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="3dmaze_1" supported="no">
-		<description>3D Maze (1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="3dmunchy" supported="no">
+		<description>3D Munchy (1)</description>
+		<year>1985</year>
+		<publisher>Blue Ribbon</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="3DMAZ"/>
-			<dataarea name="flop" size="5376">
-				<rom name="3d maze (19xx)(-)[3dmaz].ssd" size="5376" crc="ef7790f4" sha1="61240ebdd91ac84410ab24bc7f9f26841aaf349c"/>
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="12800">
+				<rom name="3d munchy (1985)(blue ribbon)[h tsth].ssd" size="12800" crc="bbff1695" sha1="ff1738643c4351a632db0ebb192392e51dae50fb"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="3dmunchy" supported="no">
+	<software name="3dmunchy_1" supported="no">
 		<description>3D Munchy</description>
 		<year>1983</year>
 		<publisher>MRM</publisher>
@@ -232,19 +245,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="MUNCHY, Alt 1"/>
 			<dataarea name="flop" size="12544">
 				<rom name="3d munchy (1983)(mrm)[a][munchy].ssd" size="12544" crc="57ff11e4" sha1="9a2de123ee0d197552f36ee9196c6cc65f5ebdd1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="3dmunchy_1" supported="no">
-		<description>3D Munchy (1)</description>
-		<year>1985</year>
-		<publisher>Blue Ribbon</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="12800">
-				<rom name="3d munchy (1985)(blue ribbon)[h tsth].ssd" size="12800" crc="bbff1695" sha1="ff1738643c4351a632db0ebb192392e51dae50fb"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2880,6 +2880,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="bananama" supported="no">
+		<description>Banana Man (1)</description>
+		<year>19??</year>
+		<publisher>Blue Ribbon</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="9728">
+				<rom name="banana man (19xx)(blue ribbon)[h tsth].ssd" size="9728" crc="6d7332a3" sha1="7e07f0124d30bee84f64d5365d803d431245d2f8"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bananama_1" supported="no">
 		<description>Banana Man</description>
 		<year>1983</year>
 		<publisher>MRM</publisher>
@@ -2900,19 +2913,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="10240">
 				<rom name="banana man (1983)(mrm)[h tsth].ssd" size="10240" crc="d001a566" sha1="7c279bcadf81222ff0a9b7eb4225f967de00934b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bananama_1" supported="no">
-		<description>Banana Man (1)</description>
-		<year>19??</year>
-		<publisher>Blue Ribbon</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="9728">
-				<rom name="banana man (19xx)(blue ribbon)[h tsth].ssd" size="9728" crc="6d7332a3" sha1="7e07f0124d30bee84f64d5365d803d431245d2f8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2967,6 +2967,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="bandits" supported="no">
+		<description>Bandits (v2.0)</description>
+		<year>1983</year>
+		<publisher>Deskflair Games</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="13312">
+				<rom name="bandits v2.0 (1983)(deskflair games)[h tsth].ssd" size="13312" crc="c705f327" sha1="311ce102742ce927803b8e3f5a5e9d5d8938df27"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bandits_1" supported="no">
 		<description>Bandits</description>
 		<year>19??</year>
 		<publisher>Micro Power</publisher>
@@ -2986,19 +2999,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="BANDITS, Alt 1"/>
 			<dataarea name="flop" size="13056">
 				<rom name="bandits (19xx)(micro power)[a][bandits].ssd" size="13056" crc="9f9968bb" sha1="1cca0180e4249f5e1279e671f95c9e154629bc58"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bandits_1" supported="no">
-		<description>Bandits (v2.0)</description>
-		<year>1983</year>
-		<publisher>Deskflair Games</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="13312">
-				<rom name="bandits v2.0 (1983)(deskflair games)[h tsth].ssd" size="13312" crc="c705f327" sha1="311ce102742ce927803b8e3f5a5e9d5d8938df27"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3717,6 +3717,38 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="birdieba" supported="no">
+		<description>Birdie Barrage (v2.0)</description>
+		<year>1983</year>
+		<publisher>CDS</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="13056">
+				<rom name="birdie barrage v2.0 (1983)(cds)[h tsth].ssd" size="13056" crc="4f0df77e" sha1="901ad49d9f61a71dde2c775aff4853f97be82197"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="birdieba_a" cloneof="birdieba" supported="no">
+		<description>Birdie Barrage (v3.0)</description>
+		<year>1985</year>
+		<publisher>CDS</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="MENU"/>
+			<dataarea name="flop" size="43008">
+				<rom name="birdie barrage v3.0 (1985)(cds)[menu].ssd" size="43008" crc="de0ede05" sha1="de44cdc2284b3af3de2be8253c030c20ca45e328"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="MENU, Alt 1"/>
+			<dataarea name="flop" size="43008">
+				<rom name="birdie barrage v3.0 (1985)(cds)[a][menu].ssd" size="43008" crc="c54b27e0" sha1="c985bd33ba7f2c3965b3a99ac0b5cde58a7ec115"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="birdieba_1" supported="no">
 		<description>Birdie Barrage (v1.0)</description>
 		<year>1983</year>
 		<publisher>Computasolve</publisher>
@@ -3743,38 +3775,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="12032">
 				<rom name="birdie barrage v1.0 (1983)(computasolve)[h tsth].ssd" size="12032" crc="91f50481" sha1="3ce1d6a1bf9dd68f3e598a51c5abdefa24ce5b2d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="birdieba_1" supported="no">
-		<description>Birdie Barrage (v2.0)</description>
-		<year>1983</year>
-		<publisher>CDS</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="13056">
-				<rom name="birdie barrage v2.0 (1983)(cds)[h tsth].ssd" size="13056" crc="4f0df77e" sha1="901ad49d9f61a71dde2c775aff4853f97be82197"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="birdieba_1_a" cloneof="birdieba_1" supported="no">
-		<description>Birdie Barrage (v3.0)</description>
-		<year>1985</year>
-		<publisher>CDS</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="MENU"/>
-			<dataarea name="flop" size="43008">
-				<rom name="birdie barrage v3.0 (1985)(cds)[menu].ssd" size="43008" crc="de0ede05" sha1="de44cdc2284b3af3de2be8253c030c20ca45e328"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="MENU, Alt 1"/>
-			<dataarea name="flop" size="43008">
-				<rom name="birdie barrage v3.0 (1985)(cds)[a][menu].ssd" size="43008" crc="c54b27e0" sha1="c985bd33ba7f2c3965b3a99ac0b5cde58a7ec115"/>
 			</dataarea>
 		</part>
 	</software>
@@ -3867,19 +3867,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="blackjac" supported="no">
-		<description>BlackJack</description>
-		<year>1983</year>
-		<publisher>Software Invasion</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="11520">
-				<rom name="blackjack (1983)(software invasion)[h tsth].ssd" size="11520" crc="71ce797c" sha1="fd4657cbf37c61884aa183ae8613dfc80d1dec53"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="blackjac_1" supported="no">
 		<description>BlackJack (1)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -3898,7 +3885,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="blackjac_2" supported="no">
+	<software name="blackjac_1" supported="no">
 		<description>BlackJack (2)</description>
 		<year>19??</year>
 		<publisher>IJK</publisher>
@@ -3919,6 +3906,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="10752">
 				<rom name="blackjack (19xx)(ijk)[h tsth].ssd" size="10752" crc="1ab67632" sha1="a432927221ace1858051942ff31472a6580f60a6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blackjac_2" supported="no">
+		<description>BlackJack</description>
+		<year>1983</year>
+		<publisher>Software Invasion</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="11520">
+				<rom name="blackjack (1983)(software invasion)[h tsth].ssd" size="11520" crc="71ce797c" sha1="fd4657cbf37c61884aa183ae8613dfc80d1dec53"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4151,6 +4151,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="blockbus_1" supported="no">
+		<description>Blockbusters (2)</description>
+		<year>1988</year>
+		<publisher>Domark - TV Games</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="113152">
+				<rom name="blockbusters (1988)(domark - tv games)[h tsth].ssd" size="113152" crc="212a0271" sha1="511fed139dd91a1242a38762c674d5357577c6a1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blockbus_2" supported="no">
 		<description>Blockbusters</description>
 		<year>1984</year>
 		<publisher>Macsen</publisher>
@@ -4163,7 +4176,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="blockbus_1_a" cloneof="blockbus_1" supported="no">
+	<software name="blockbus_2_a" cloneof="blockbus_2" supported="no">
 		<description>Blockbusters (1)</description>
 		<year>1985</year>
 		<publisher>Macsen</publisher>
@@ -4178,19 +4191,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="BLOCKB, Bad 2"/>
 			<dataarea name="flop" size="38912">
 				<rom name="blockbusters (1985)(macsen)[b2][blockb].ssd" size="38912" crc="d86a4d6c" sha1="b4b6c813ee20d0499439032f37aac79cd5ba6b39" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="blockbus_2" supported="no">
-		<description>Blockbusters (2)</description>
-		<year>1988</year>
-		<publisher>Domark - TV Games</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="113152">
-				<rom name="blockbusters (1988)(domark - tv games)[h tsth].ssd" size="113152" crc="212a0271" sha1="511fed139dd91a1242a38762c674d5357577c6a1"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4707,6 +4707,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="bouncer" supported="no">
+		<description>Bouncer (v1.6)</description>
+		<year>1984</year>
+		<publisher>Acornsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="14592">
+				<rom name="bouncer v1.6 (1984)(acornsoft)[h tsth].ssd" size="14592" crc="0555a3af" sha1="4c13309957bc28357fe3658c55e499b85d95f48e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bouncer_1" supported="no">
 		<description>Bouncer</description>
 		<year>1983</year>
 		<publisher>Brian Clark - Marian Clark</publisher>
@@ -4730,7 +4743,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="bouncer_1" supported="no">
+	<software name="bouncer_2" supported="no">
 		<description>Bouncer (1)</description>
 		<year>1984</year>
 		<publisher>M. Stanger</publisher>
@@ -4739,19 +4752,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="BOUNCER"/>
 			<dataarea name="flop" size="12032">
 				<rom name="bouncer (1984)(stanger, m.)[bouncer].ssd" size="12032" crc="d32de0f8" sha1="07dc60061daa37d7d1cf5998f292a2b09e47b19d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bouncer_2" supported="no">
-		<description>Bouncer (v1.6)</description>
-		<year>1984</year>
-		<publisher>Acornsoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="14592">
-				<rom name="bouncer v1.6 (1984)(acornsoft)[h tsth].ssd" size="14592" crc="0555a3af" sha1="4c13309957bc28357fe3658c55e499b85d95f48e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5789,6 +5789,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="castleas" supported="no">
+		<description>Castle Assault (1)</description>
+		<year>19??</year>
+		<publisher>Blue Ribbon</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="14080">
+				<rom name="castle assault (19xx)(blue ribbon)[h tsth].ssd" size="14080" crc="3caedd86" sha1="670d2cdd493f6bcd032ed23b2e46aef50810a1f5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="castleas_1" supported="no">
 		<description>Castle Assault</description>
 		<year>1984</year>
 		<publisher>MRM</publisher>
@@ -5821,19 +5834,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="INTRO, Bad 1"/>
 			<dataarea name="flop" size="13568">
 				<rom name="castle assault (1984)(mrm)[b][intro].ssd" size="13568" crc="52731044" sha1="d3d9e29494c75a8895a5540e9f85e463afd4465d" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="castleas_1" supported="no">
-		<description>Castle Assault (1)</description>
-		<year>19??</year>
-		<publisher>Blue Ribbon</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="14080">
-				<rom name="castle assault (19xx)(blue ribbon)[h tsth].ssd" size="14080" crc="3caedd86" sha1="670d2cdd493f6bcd032ed23b2e46aef50810a1f5"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6229,19 +6229,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="cellsand" supported="no">
-		<description>Cells and Serpents</description>
-		<year>1982</year>
-		<publisher>A&amp;B</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="12544">
-				<rom name="cells and serpents (1982)(a&amp;b)[h tsth].ssd" size="12544" crc="278d6f77" sha1="4045fe36663e76cc703a08203d3fe3a56c28ba79"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cellsand_1" supported="no">
 		<description>Cells and Serpents (1)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -6255,6 +6242,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="15872">
 				<rom name="cells and serpents (19xx)(-)[a].ssd" size="15872" crc="446e2b11" sha1="d96d146e69fdbc30baaa37e6263b6c5a5af62805"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cellsand_1" supported="no">
+		<description>Cells and Serpents</description>
+		<year>1982</year>
+		<publisher>A&amp;B</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="12544">
+				<rom name="cells and serpents (1982)(a&amp;b)[h tsth].ssd" size="12544" crc="278d6f77" sha1="4045fe36663e76cc703a08203d3fe3a56c28ba79"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6522,33 +6522,39 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="chess_1" supported="no">
-		<description>Chess (1)</description>
+	<software name="chess_a" cloneof="chess" supported="no">
+		<description>Chess (v2)</description>
 		<year>1983</year>
-		<publisher>S.C. Askey</publisher>
+		<publisher>Acornsoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="CHESS"/>
-			<dataarea name="flop" size="10240">
-				<rom name="chess (1983)(askey, s.c.)[chess].ssd" size="10240" crc="d913edb7" sha1="df9d598306d8fbf42f797232ceca7773493298f7"/>
+			<dataarea name="flop" size="25600">
+				<rom name="chess v2 (1983)(acornsoft).ssd" size="25600" crc="73c15270" sha1="580d9b3c05cd7d377d2663d5286fd85db031113f"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="CHESS, Alt 1"/>
-			<dataarea name="flop" size="10240">
-				<rom name="chess (1983)(askey, s.c.)[a][chess].ssd" size="10240" crc="d700b881" sha1="3182913f88067bbf580bc0e6b41b4d3312879326"/>
+			<feature name="part_id" value="CHESS"/>
+			<dataarea name="flop" size="16896">
+				<rom name="chess v2 (1983)(acornsoft)[chess].ssd" size="16896" crc="830c116c" sha1="1a7a0fb3e6beb7fdf806d51a19a8bb37e3cd6ea6"/>
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="CHESS-B"/>
-			<dataarea name="flop" size="9472">
-				<rom name="chess (1983)(askey, s.c.)[chess-b].ssd" size="9472" crc="6bcc6cd0" sha1="b52408482e295efa64b6a4abb204b90b55c0e467"/>
+	</software>
+
+	<software name="chess_1" supported="no">
+		<description>Chess (v2.32)</description>
+		<year>1983</year>
+		<publisher>Computer Concepts</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="CHESS"/>
+			<dataarea name="flop" size="13568">
+				<rom name="chess v2.32 (1983)(computer concepts)[chess].ssd" size="13568" crc="d05620fd" sha1="03ed4e407c75b4edf08324bb3177497500d9c2f8"/>
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="CHESS-B, Alt 1"/>
-			<dataarea name="flop" size="9472">
-				<rom name="chess (1983)(askey, s.c.)[a][chess-b].ssd" size="9472" crc="9ac8a020" sha1="bd8b917b5f344c945959875de393f275c52faec6"/>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="14336">
+				<rom name="chess v2.32 (1983)(computer concepts)[h tsth].ssd" size="14336" crc="c03cf104" sha1="ed6888471a26d4f87ebf7b9491526bcd51253a16"/>
 			</dataarea>
 		</part>
 	</software>
@@ -6591,39 +6597,33 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="chess_a" cloneof="chess" supported="no">
-		<description>Chess (v2)</description>
-		<year>1983</year>
-		<publisher>Acornsoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="25600">
-				<rom name="chess v2 (1983)(acornsoft).ssd" size="25600" crc="73c15270" sha1="580d9b3c05cd7d377d2663d5286fd85db031113f"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="CHESS"/>
-			<dataarea name="flop" size="16896">
-				<rom name="chess v2 (1983)(acornsoft)[chess].ssd" size="16896" crc="830c116c" sha1="1a7a0fb3e6beb7fdf806d51a19a8bb37e3cd6ea6"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="chess_3" supported="no">
-		<description>Chess (v2.32)</description>
+		<description>Chess (1)</description>
 		<year>1983</year>
-		<publisher>Computer Concepts</publisher>
+		<publisher>S.C. Askey</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="CHESS"/>
-			<dataarea name="flop" size="13568">
-				<rom name="chess v2.32 (1983)(computer concepts)[chess].ssd" size="13568" crc="d05620fd" sha1="03ed4e407c75b4edf08324bb3177497500d9c2f8"/>
+			<dataarea name="flop" size="10240">
+				<rom name="chess (1983)(askey, s.c.)[chess].ssd" size="10240" crc="d913edb7" sha1="df9d598306d8fbf42f797232ceca7773493298f7"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="14336">
-				<rom name="chess v2.32 (1983)(computer concepts)[h tsth].ssd" size="14336" crc="c03cf104" sha1="ed6888471a26d4f87ebf7b9491526bcd51253a16"/>
+			<feature name="part_id" value="CHESS, Alt 1"/>
+			<dataarea name="flop" size="10240">
+				<rom name="chess (1983)(askey, s.c.)[a][chess].ssd" size="10240" crc="d700b881" sha1="3182913f88067bbf580bc0e6b41b4d3312879326"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="CHESS-B"/>
+			<dataarea name="flop" size="9472">
+				<rom name="chess (1983)(askey, s.c.)[chess-b].ssd" size="9472" crc="6bcc6cd0" sha1="b52408482e295efa64b6a4abb204b90b55c0e467"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="CHESS-B, Alt 1"/>
+			<dataarea name="flop" size="9472">
+				<rom name="chess (1983)(askey, s.c.)[a][chess-b].ssd" size="9472" crc="9ac8a020" sha1="bd8b917b5f344c945959875de393f275c52faec6"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8642,19 +8642,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="cricket" supported="no">
-		<description>Cricket</description>
-		<year>1983</year>
-		<publisher>Computer Rentals</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="26880">
-				<rom name="cricket (1983)(computer rentals)[h tsth].ssd" size="26880" crc="4634bb52" sha1="5434e6f33fe6d822d2e683cfbdb44e029dc04628"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cricket_1" supported="no">
 		<description>Cricket (1)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -8679,7 +8666,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="cricket_2" supported="no">
+	<software name="cricket_1" supported="no">
 		<description>Cricket (2)</description>
 		<year>19??</year>
 		<publisher>A&amp;F</publisher>
@@ -8700,6 +8687,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="15104">
 				<rom name="cricket (19xx)(a&amp;f)[h tsth].ssd" size="15104" crc="3ef5fca7" sha1="143b6277767b0ea3684937e34269e794b5f8a172"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cricket_2" supported="no">
+		<description>Cricket</description>
+		<year>1983</year>
+		<publisher>Computer Rentals</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="26880">
+				<rom name="cricket (1983)(computer rentals)[h tsth].ssd" size="26880" crc="4634bb52" sha1="5434e6f33fe6d822d2e683cfbdb44e029dc04628"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9339,25 +9339,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="darts" supported="no">
-		<description>Darts</description>
-		<year>1984</year>
-		<publisher>MRM</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="DARTS"/>
-			<dataarea name="flop" size="13056">
-				<rom name="darts (1984)(mrm)[darts].ssd" size="13056" crc="0af8dd5e" sha1="847ad9b107f94d6e91f5aa4eaa1e51e4bb260335"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="13824">
-				<rom name="darts (1984)(mrm)[h tsth].ssd" size="13824" crc="ee1453c6" sha1="767827ee3707efbc760ece3bbafcc90ee92b9a83"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="darts_1" supported="no">
 		<description>Darts (1)</description>
 		<year>19??</year>
 		<publisher>Blue Ribbon</publisher>
@@ -9370,7 +9351,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="darts_2" supported="no">
+	<software name="darts_1" supported="no">
 		<description>Darts (3)</description>
 		<year>19??</year>
 		<publisher>G.R. Owen</publisher>
@@ -9402,6 +9383,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="12032">
 				<rom name="darts (19xx)(owen, g.r.)[h tsth].ssd" size="12032" crc="e318e58d" sha1="20c95c831f6a38eccdcda0c36675bb8c6a634189"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="darts_2" supported="no">
+		<description>Darts</description>
+		<year>1984</year>
+		<publisher>MRM</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="DARTS"/>
+			<dataarea name="flop" size="13056">
+				<rom name="darts (1984)(mrm)[darts].ssd" size="13056" crc="0af8dd5e" sha1="847ad9b107f94d6e91f5aa4eaa1e51e4bb260335"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="13824">
+				<rom name="darts (1984)(mrm)[h tsth].ssd" size="13824" crc="ee1453c6" sha1="767827ee3707efbc760ece3bbafcc90ee92b9a83"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9788,6 +9788,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="diamondm_1" supported="no">
+		<description>Diamond Mine (1)</description>
+		<year>19??</year>
+		<publisher>Blue Ribbon</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="8192">
+				<rom name="diamond mine (19xx)(blue ribbon)[h tsth].ssd" size="8192" crc="03d73ac2" sha1="708b5bcf9ae4847bff7b393c105060504d45a6d0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diamondm_2" supported="no">
 		<description>Diamond Mine</description>
 		<year>1983</year>
 		<publisher>MRM</publisher>
@@ -9802,19 +9815,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="9728">
 				<rom name="diamond mine (1983)(mrm)[h tsth].ssd" size="9728" crc="e6c9206d" sha1="a52edac1388b7e1cffdff4ada95487357ff4a2be"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="diamondm_2" supported="no">
-		<description>Diamond Mine (1)</description>
-		<year>19??</year>
-		<publisher>Blue Ribbon</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="8192">
-				<rom name="diamond mine (19xx)(blue ribbon)[h tsth].ssd" size="8192" crc="03d73ac2" sha1="708b5bcf9ae4847bff7b393c105060504d45a6d0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9953,18 +9953,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="dinosaur_1" supported="no">
-		<description>Dinosaur Discovery</description>
-		<year>1985</year>
-		<publisher>Jacaranda Wiley</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="dinosaur discovery (1985)(wiley, jacaranda).ssd" size="204800" crc="bf888e05" sha1="34a9a957ad6a87e015094a525fb0c2a74bdaf52e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dinosaur_2" supported="no">
 		<description>Dinosaur Discovery (1)</description>
 		<year>1986</year>
 		<publisher>4Mation</publisher>
@@ -9972,6 +9960,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="102400">
 				<rom name="dinosaur discovery (1986)(4mation).ssd" size="102400" crc="21766e7c" sha1="dbb4a8c91652427456453c711df7cc87ce27eb39"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dinosaur_2" supported="no">
+		<description>Dinosaur Discovery</description>
+		<year>1985</year>
+		<publisher>Jacaranda Wiley</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="dinosaur discovery (1985)(wiley, jacaranda).ssd" size="204800" crc="bf888e05" sha1="34a9a957ad6a87e015094a525fb0c2a74bdaf52e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -10109,31 +10109,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="dominoes" supported="no">
-		<description>Dominoes</description>
-		<year>1987</year>
-		<publisher>M. Williams</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="DOMLOAD"/>
-			<dataarea name="flop" size="16640">
-				<rom name="dominoes (1987)(williams, m.)[domload].ssd" size="16640" crc="536ee610" sha1="fb58d9fa5a4db2d9d91430146a187543efe996dc"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="DOMLOAD, Alt 1"/>
-			<dataarea name="flop" size="16640">
-				<rom name="dominoes (1987)(williams, m.)[a][domload].ssd" size="16640" crc="506e18f7" sha1="644293168e435594e086abd86ac75107d951d442"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="17408">
-				<rom name="dominoes (1987)(williams, m.)[h tsth].ssd" size="17408" crc="a72d0598" sha1="5ee79b3e209c9c1de96698d9b486500c7c822bb2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dominoes_1" supported="no">
 		<description>Dominoes (1)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -10154,6 +10129,31 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="DOMINO, Alt 2"/>
 			<dataarea name="flop" size="6912">
 				<rom name="dominoes (19xx)(-)[a2][domino].ssd" size="6912" crc="7b20d115" sha1="e93a43908dad7a3623ec69bf29be4f3d87dae58d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dominoes_1" supported="no">
+		<description>Dominoes</description>
+		<year>1987</year>
+		<publisher>M. Williams</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="DOMLOAD"/>
+			<dataarea name="flop" size="16640">
+				<rom name="dominoes (1987)(williams, m.)[domload].ssd" size="16640" crc="536ee610" sha1="fb58d9fa5a4db2d9d91430146a187543efe996dc"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="DOMLOAD, Alt 1"/>
+			<dataarea name="flop" size="16640">
+				<rom name="dominoes (1987)(williams, m.)[a][domload].ssd" size="16640" crc="506e18f7" sha1="644293168e435594e086abd86ac75107d951d442"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="17408">
+				<rom name="dominoes (1987)(williams, m.)[h tsth].ssd" size="17408" crc="a72d0598" sha1="5ee79b3e209c9c1de96698d9b486500c7c822bb2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -10513,6 +10513,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="draughts_1" supported="no">
+		<description>Draughts (v1.32)</description>
+		<year>1983</year>
+		<publisher>Computer Concepts</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="12544">
+				<rom name="draughts v1.32 (1983)(computer concepts)[h tsth].ssd" size="12544" crc="9d0cd726" sha1="1a7bf23587045d74358b966844df5219a0b331c4"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="draughts_2" supported="no">
 		<description>Draughts (1)</description>
 		<year>19??</year>
 		<publisher>Micro User</publisher>
@@ -10531,7 +10544,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="draughts_2" supported="no">
+	<software name="draughts_3" supported="no">
 		<description>Draughts (2)</description>
 		<year>19??</year>
 		<publisher>Superior</publisher>
@@ -10540,19 +10553,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="7168">
 				<rom name="draughts (19xx)(superior)[h tsth].ssd" size="7168" crc="e5d68212" sha1="3f1a8da18bbf32cd0a57bb8bd99ca5f832f353cb"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="draughts_3" supported="no">
-		<description>Draughts (v1.32)</description>
-		<year>1983</year>
-		<publisher>Computer Concepts</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="12544">
-				<rom name="draughts v1.32 (1983)(computer concepts)[h tsth].ssd" size="12544" crc="9d0cd726" sha1="1a7bf23587045d74358b966844df5219a0b331c4"/>
 			</dataarea>
 		</part>
 	</software>
@@ -10944,24 +10944,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="eddiekid" supported="no">
-		<description>Eddie Kidd Jump Challenge</description>
-		<year>1985</year>
-		<publisher>Software Communications</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="23040">
-				<rom name="eddie kidd jump challenge (1985)(software communications).ssd" size="23040" crc="ed12b66d" sha1="c557f226550959b7874a80f4754e0eeb1ddba3ce"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="23552">
-				<rom name="eddie kidd jump challenge (1985)(software communications)[h tsth].ssd" size="23552" crc="559ce04e" sha1="e502cfac878749ae1803185787192d314ffef944"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="eddiekid_1" supported="no">
 		<description>Eddie Kidd Jump Challenge (1)</description>
 		<year>19??</year>
 		<publisher>Martech</publisher>
@@ -10976,6 +10958,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="EDDIE, Alt 1"/>
 			<dataarea name="flop" size="21760">
 				<rom name="eddie kidd jump challenge (19xx)(martech)[a][eddie].ssd" size="21760" crc="07fe5565" sha1="7d39da9fac474aee9efefcf4331e6a66868adfe3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eddiekid_1" supported="no">
+		<description>Eddie Kidd Jump Challenge</description>
+		<year>1985</year>
+		<publisher>Software Communications</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="23040">
+				<rom name="eddie kidd jump challenge (1985)(software communications).ssd" size="23040" crc="ed12b66d" sha1="c557f226550959b7874a80f4754e0eeb1ddba3ce"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="23552">
+				<rom name="eddie kidd jump challenge (1985)(software communications)[h tsth].ssd" size="23552" crc="559ce04e" sha1="e502cfac878749ae1803185787192d314ffef944"/>
 			</dataarea>
 		</part>
 	</software>
@@ -11369,6 +11369,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="erbert" supported="no">
+		<description>Er-Bert (1)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="BERT"/>
+			<dataarea name="flop" size="13312">
+				<rom name="er-bert (19xx)(-)[bert].ssd" size="13312" crc="5e2edebd" sha1="c6a9451bf602e5b66e4c9d265774727b1278f43d"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="ERBCODE"/>
+			<dataarea name="flop" size="29696">
+				<rom name="er-bert (19xx)(-)[erbcode].ssd" size="29696" crc="e4662591" sha1="8f8fb5aeeecdd350fc4dac543ddf63b082fa8b20"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="erbert_1" supported="no">
 		<description>Er-Bert</description>
 		<year>1984</year>
 		<publisher>Microbyte</publisher>
@@ -11389,25 +11408,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="14080">
 				<rom name="er-bert (1984)(microbyte)[h tsth].ssd" size="14080" crc="3f269ca1" sha1="2e1fbb36757f7690ed2089b70d7ff8f81d18a13f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="erbert_1" supported="no">
-		<description>Er-Bert (1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="BERT"/>
-			<dataarea name="flop" size="13312">
-				<rom name="er-bert (19xx)(-)[bert].ssd" size="13312" crc="5e2edebd" sha1="c6a9451bf602e5b66e4c9d265774727b1278f43d"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="ERBCODE"/>
-			<dataarea name="flop" size="29696">
-				<rom name="er-bert (19xx)(-)[erbcode].ssd" size="29696" crc="e4662591" sha1="8f8fb5aeeecdd350fc4dac543ddf63b082fa8b20"/>
 			</dataarea>
 		</part>
 	</software>
@@ -12411,25 +12411,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="flip" supported="no">
-		<description>Flip!</description>
-		<year>1985</year>
-		<publisher>Icon</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked 1"/>
-			<dataarea name="flop" size="19968">
-				<rom name="flip (1985)(icon)[h].ssd" size="19968" crc="c19e61da" sha1="4e456d292d99ddd2822d30764239fabe2b2bf492"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked 2"/>
-			<dataarea name="flop" size="18944">
-				<rom name="flip (1985)(icon)[h2].ssd" size="18944" crc="cc71b103" sha1="5aebce041cce306dc3a835e310a7b3b517bbf1ea"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="flip_1" supported="no">
 		<description>Flip! (1)</description>
 		<year>1986</year>
 		<publisher>Audiogenic</publisher>
@@ -12444,6 +12425,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Bad 2"/>
 			<dataarea name="flop" size="21248">
 				<rom name="flip (1986)(audiogenic)[b2].ssd" size="21248" crc="49f3caa7" sha1="5882a0d2ebdc4669c6c4f61d49e22befa94d0729" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flip_1" supported="no">
+		<description>Flip!</description>
+		<year>1985</year>
+		<publisher>Icon</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 1"/>
+			<dataarea name="flop" size="19968">
+				<rom name="flip (1985)(icon)[h].ssd" size="19968" crc="c19e61da" sha1="4e456d292d99ddd2822d30764239fabe2b2bf492"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 2"/>
+			<dataarea name="flop" size="18944">
+				<rom name="flip (1985)(icon)[h2].ssd" size="18944" crc="cc71b103" sha1="5aebce041cce306dc3a835e310a7b3b517bbf1ea"/>
 			</dataarea>
 		</part>
 	</software>
@@ -12836,31 +12836,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="frankens" supported="no">
-		<description>Frankenstein 2000 (v1.0)</description>
-		<year>19??</year>
-		<publisher>Icon</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="FRANKEN"/>
-			<dataarea name="flop" size="19968">
-				<rom name="frankenstein 2000 v1.0 (19xx)(icon)[franken].ssd" size="19968" crc="2797ccb1" sha1="db6249ad251b05fe59fee68d2806f98fb5edb6a0"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="FRANKEN, Alt 1"/>
-			<dataarea name="flop" size="19968">
-				<rom name="frankenstein 2000 v1.0 (19xx)(icon)[a][franken].ssd" size="19968" crc="e6e63f4c" sha1="80b36d9cde03e0640dee8700968934c478d31713"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="21248">
-				<rom name="frankenstein 2000 v1.0 (19xx)(icon)[h tsth].ssd" size="21248" crc="70dc343f" sha1="9b2e22b2736b53b6d6e0b3e7e5c8bfba03601986"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="frankens_a" cloneof="frankens" supported="no">
 		<description>Frankenstein 2000 (v2.0)</description>
 		<year>1985</year>
 		<publisher>Icon</publisher>
@@ -12881,6 +12856,31 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="LOADER, Alt 1"/>
 			<dataarea name="flop" size="21248">
 				<rom name="frankenstein 2000 v2.0 (1985)(icon)[a][loader].ssd" size="21248" crc="1d330355" sha1="f43344e5e8b62e8d31b46b8386438dafdd20261f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frankens_a" cloneof="frankens" supported="no">
+		<description>Frankenstein 2000 (v1.0)</description>
+		<year>19??</year>
+		<publisher>Icon</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="FRANKEN"/>
+			<dataarea name="flop" size="19968">
+				<rom name="frankenstein 2000 v1.0 (19xx)(icon)[franken].ssd" size="19968" crc="2797ccb1" sha1="db6249ad251b05fe59fee68d2806f98fb5edb6a0"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="FRANKEN, Alt 1"/>
+			<dataarea name="flop" size="19968">
+				<rom name="frankenstein 2000 v1.0 (19xx)(icon)[a][franken].ssd" size="19968" crc="e6e63f4c" sha1="80b36d9cde03e0640dee8700968934c478d31713"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="21248">
+				<rom name="frankenstein 2000 v1.0 (19xx)(icon)[h tsth].ssd" size="21248" crc="70dc343f" sha1="9b2e22b2736b53b6d6e0b3e7e5c8bfba03601986"/>
 			</dataarea>
 		</part>
 	</software>
@@ -13066,6 +13066,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="frogger" supported="no">
+		<description>Frogger (1)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="FROGGER"/>
+			<dataarea name="flop" size="9728">
+				<rom name="frogger (19xx)(-)[frogger].ssd" size="9728" crc="32cf53d5" sha1="c42692fcea1f9f947d6253a7bcb0057c108b2bad"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="FROGGER, Alt 1"/>
+			<dataarea name="flop" size="9728">
+				<rom name="frogger (19xx)(-)[a][frogger].ssd" size="9728" crc="3e9cb1fa" sha1="6423eaa5ee2aa514cc44f7c490626cca0cc7f634"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frogger_1" supported="no">
 		<description>Frogger</description>
 		<year>1982</year>
 		<publisher>A&amp;F</publisher>
@@ -13086,25 +13105,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="10496">
 				<rom name="frogger (1982)(a&amp;f)[h tsth].ssd" size="10496" crc="d9d6bc08" sha1="694fbe536632d471c4faf4cd000b6270da87541d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="frogger_1" supported="no">
-		<description>Frogger (1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="FROGGER"/>
-			<dataarea name="flop" size="9728">
-				<rom name="frogger (19xx)(-)[frogger].ssd" size="9728" crc="32cf53d5" sha1="c42692fcea1f9f947d6253a7bcb0057c108b2bad"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="FROGGER, Alt 1"/>
-			<dataarea name="flop" size="9728">
-				<rom name="frogger (19xx)(-)[a][frogger].ssd" size="9728" crc="3e9cb1fa" sha1="6423eaa5ee2aa514cc44f7c490626cca0cc7f634"/>
 			</dataarea>
 		</part>
 	</software>
@@ -13160,30 +13160,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="fruitmac_1" supported="no">
-		<description>Fruit Machine</description>
-		<year>1982</year>
-		<publisher>Superior</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="20224">
-				<rom name="fruit machine (1982)(superior).ssd" size="20224" crc="7a4d6eb2" sha1="c353d0ab7b6c0515ec1c158a8d29b0200adfac76"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="FRUIT"/>
-			<dataarea name="flop" size="10240">
-				<rom name="fruit machine (1982)(superior)[fruit].ssd" size="10240" crc="c22ab4e8" sha1="6337c608a82f3b2f6598f62e97a3f3bbeb492ace"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="9984">
-				<rom name="fruit machine (1982)(superior)[h tsth].ssd" size="9984" crc="96670d9e" sha1="3bd5b5d227b6f066189654f3f3b9159930cb7874"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="fruitmac_2" supported="no">
 		<description>Fruit Machine (1)</description>
 		<year>19??</year>
 		<publisher>Alligata</publisher>
@@ -13196,7 +13172,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="fruitmac_3" supported="no">
+	<software name="fruitmac_2" supported="no">
 		<description>Fruit Machine (v2)</description>
 		<year>1983</year>
 		<publisher>Simonsoft</publisher>
@@ -13217,6 +13193,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="16896">
 				<rom name="fruit machine v2 (1983)(simonsoft)[h tsth].ssd" size="16896" crc="1448bf81" sha1="54bfa6ac909d083b7d25e04ef9ad0d5364bc56b6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fruitmac_3" supported="no">
+		<description>Fruit Machine</description>
+		<year>1982</year>
+		<publisher>Superior</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="20224">
+				<rom name="fruit machine (1982)(superior).ssd" size="20224" crc="7a4d6eb2" sha1="c353d0ab7b6c0515ec1c158a8d29b0200adfac76"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="FRUIT"/>
+			<dataarea name="flop" size="10240">
+				<rom name="fruit machine (1982)(superior)[fruit].ssd" size="10240" crc="c22ab4e8" sha1="6337c608a82f3b2f6598f62e97a3f3bbeb492ace"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="9984">
+				<rom name="fruit machine (1982)(superior)[h tsth].ssd" size="9984" crc="96670d9e" sha1="3bd5b5d227b6f066189654f3f3b9159930cb7874"/>
 			</dataarea>
 		</part>
 	</software>
@@ -14331,38 +14331,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="golf" supported="no">
-		<description>Golf</description>
-		<year>1984</year>
-		<publisher>Micro User</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="GOLF"/>
-			<dataarea name="flop" size="7168">
-				<rom name="golf (1984)(micro user)[golf].ssd" size="7168" crc="609a5292" sha1="a82fa7fea42bf99597a78b2577fa0ad218cef221"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="GOLF, Alt 1"/>
-			<dataarea name="flop" size="7168">
-				<rom name="golf (1984)(micro user)[a][golf].ssd" size="7168" crc="75555129" sha1="b298e64e032aa222398903c08b3ba1faea98c794"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="golf_1" supported="no">
-		<description>Golf (1)</description>
-		<year>1986</year>
-		<publisher>Yes</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="8960">
-				<rom name="golf (1986)(yes)[h tsth].ssd" size="8960" crc="d30c1483" sha1="8c4f8943a5ed3aeac408699ccbf13a3569677874"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="golf_2" supported="no">
 		<description>Golf (2)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -14395,6 +14363,38 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="GOLFY, Alt 2"/>
 			<dataarea name="flop" size="8448">
 				<rom name="golf (19xx)(-)[a2][golfy].ssd" size="8448" crc="86c7d1f8" sha1="1f5ff15a479313718a8b0bfa32ddcc96f57cf2f2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="golf_1" supported="no">
+		<description>Golf</description>
+		<year>1984</year>
+		<publisher>Micro User</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="GOLF"/>
+			<dataarea name="flop" size="7168">
+				<rom name="golf (1984)(micro user)[golf].ssd" size="7168" crc="609a5292" sha1="a82fa7fea42bf99597a78b2577fa0ad218cef221"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="GOLF, Alt 1"/>
+			<dataarea name="flop" size="7168">
+				<rom name="golf (1984)(micro user)[a][golf].ssd" size="7168" crc="75555129" sha1="b298e64e032aa222398903c08b3ba1faea98c794"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="golf_2" supported="no">
+		<description>Golf (1)</description>
+		<year>1986</year>
+		<publisher>Yes</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="8960">
+				<rom name="golf (1986)(yes)[h tsth].ssd" size="8960" crc="d30c1483" sha1="8c4f8943a5ed3aeac408699ccbf13a3569677874"/>
 			</dataarea>
 		</part>
 	</software>
@@ -15042,6 +15042,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="hangman" supported="no">
+		<description>Hangman (2)</description>
+		<year>1985</year>
+		<publisher>Blue Ribbon</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="15872">
+				<rom name="hangman (1985)(blue ribbon)[h tsth].ssd" size="15872" crc="bc1a5c50" sha1="03cfb748f1d9f2e489d3e87538cff11319b2e6c3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hangman_1" supported="no">
 		<description>Hangman</description>
 		<year>1982</year>
 		<publisher>IJK</publisher>
@@ -15078,33 +15091,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="hangman_1" supported="no">
-		<description>Hangman (1)</description>
-		<year>1984</year>
-		<publisher>Sifma Soft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="15104">
-				<rom name="hangman (1984)(sifma soft)[h tsth].ssd" size="15104" crc="6082ef8d" sha1="37eeb848a16c74625e2bac41da2d1c39f90ed1fa"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="hangman_2" supported="no">
-		<description>Hangman (2)</description>
-		<year>1985</year>
-		<publisher>Blue Ribbon</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="15872">
-				<rom name="hangman (1985)(blue ribbon)[h tsth].ssd" size="15872" crc="bc1a5c50" sha1="03cfb748f1d9f2e489d3e87538cff11319b2e6c3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="hangman_3" supported="no">
 		<description>Hangman (3)</description>
 		<year>19??</year>
 		<publisher>Paul Forrest</publisher>
@@ -15113,6 +15100,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="HANGMAN"/>
 			<dataarea name="flop" size="6400">
 				<rom name="hangman (19xx)(forrest, paul)[hangman].ssd" size="6400" crc="b4869683" sha1="5f38a70550eab3efb15cf321d2539b2b3d99d222"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hangman_3" supported="no">
+		<description>Hangman (1)</description>
+		<year>1984</year>
+		<publisher>Sifma Soft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="15104">
+				<rom name="hangman (1984)(sifma soft)[h tsth].ssd" size="15104" crc="6082ef8d" sha1="37eeb848a16c74625e2bac41da2d1c39f90ed1fa"/>
 			</dataarea>
 		</part>
 	</software>
@@ -16216,6 +16216,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="imogen" supported="no">
+		<description>Imogen</description>
+		<year>1986</year>
+		<publisher>Micro Power - Superior</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="99072">
+				<rom name="imogen (1986)(micro power - superior)[h tsth].ssd" size="99072" crc="fbeba51d" sha1="bcef301c0c766ad94bb11e5dd075faec970e4a74"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="imogen_1" supported="no">
 		<description>Imogen (1)</description>
 		<year>1986</year>
 		<publisher>Micro Power</publisher>
@@ -16259,19 +16272,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="IMOGEN, Alt 2"/>
 			<dataarea name="flop" size="90368">
 				<rom name="imogen (1986)(micro power)[a2][imogen].ssd" size="90368" crc="aea210e4" sha1="f5b446533ecf4e8a80bf0eb1949fa63e21a3d89d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="imogen_1" supported="no">
-		<description>Imogen</description>
-		<year>1986</year>
-		<publisher>Micro Power - Superior</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="99072">
-				<rom name="imogen (1986)(micro power - superior)[h tsth].ssd" size="99072" crc="fbeba51d" sha1="bcef301c0c766ad94bb11e5dd075faec970e4a74"/>
 			</dataarea>
 		</part>
 	</software>
@@ -17315,31 +17315,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="jumpjet" supported="no">
-		<description>Jump Jet</description>
-		<year>1984</year>
-		<publisher>Doctor</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="15616">
-				<rom name="jump jet (1984)(doctor)[h tsth].ssd" size="15616" crc="89769af6" sha1="b138296b21c5d40badacf660896dbfbd0aec02d7"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="JET"/>
-			<dataarea name="flop" size="14848">
-				<rom name="jump jet (1984)(doctor)[jet].ssd" size="14848" crc="38c3663c" sha1="a1a73898b28009f911e87bb55874f28b5833e269"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="JET, Alt 1"/>
-			<dataarea name="flop" size="14848">
-				<rom name="jump jet (1984)(doctor)[a][jet].ssd" size="14848" crc="ff60390c" sha1="06c45d91761be9efaff7f1faee152afb5727f456"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="jumpjet_1" supported="no">
 		<description>Jump Jet (1)</description>
 		<year>1985</year>
 		<publisher>Anirog</publisher>
@@ -17360,6 +17335,31 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="JUMP, Hacked 2"/>
 			<dataarea name="flop" size="19200">
 				<rom name="jump jet (1985)(anirog)[h2][jump].ssd" size="19200" crc="300f1945" sha1="d28523f9f8b9c2e8a0f2b7a1bdde1ecb28631c46"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jumpjet_1" supported="no">
+		<description>Jump Jet</description>
+		<year>1984</year>
+		<publisher>Doctor</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="15616">
+				<rom name="jump jet (1984)(doctor)[h tsth].ssd" size="15616" crc="89769af6" sha1="b138296b21c5d40badacf660896dbfbd0aec02d7"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="JET"/>
+			<dataarea name="flop" size="14848">
+				<rom name="jump jet (1984)(doctor)[jet].ssd" size="14848" crc="38c3663c" sha1="a1a73898b28009f911e87bb55874f28b5833e269"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="JET, Alt 1"/>
+			<dataarea name="flop" size="14848">
+				<rom name="jump jet (1984)(doctor)[a][jet].ssd" size="14848" crc="ff60390c" sha1="06c45d91761be9efaff7f1faee152afb5727f456"/>
 			</dataarea>
 		</part>
 	</software>
@@ -18600,19 +18600,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="lightcyc" supported="no">
-		<description>Light Cycle</description>
-		<year>1983</year>
-		<publisher>Jonathan Robb</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="E00DFS, Hacked TSTH"/>
-			<dataarea name="flop" size="12288">
-				<rom name="light cycle (1983)(robb, jonathan)[h tsth][e00dfs].ssd" size="12288" crc="9ac453c6" sha1="592cd7e94c05d3ecd518b2b24dabff7d3012cfad"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="lightcyc_1" supported="no">
 		<description>Light Cycle (v0.5)</description>
 		<year>1983</year>
 		<publisher>A. Roe</publisher>
@@ -18627,6 +18614,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="TRON1, Alt 1"/>
 			<dataarea name="flop" size="7680">
 				<rom name="light cycle v0.5 (1983)(roe, a.)[a][tron1].ssd" size="7680" crc="a15933a9" sha1="c2cf3fb7360a9298371a91269873f25ce3ec9032"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lightcyc_1" supported="no">
+		<description>Light Cycle</description>
+		<year>1983</year>
+		<publisher>Jonathan Robb</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="E00DFS, Hacked TSTH"/>
+			<dataarea name="flop" size="12288">
+				<rom name="light cycle (1983)(robb, jonathan)[h tsth][e00dfs].ssd" size="12288" crc="9ac453c6" sha1="592cd7e94c05d3ecd518b2b24dabff7d3012cfad"/>
 			</dataarea>
 		</part>
 	</software>
@@ -19056,6 +19056,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="magicmus" supported="no">
+		<description>Magic Mushrooms</description>
+		<year>1985</year>
+		<publisher>Acornsoft - Superior</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="13056">
+				<rom name="magic mushrooms (1985)(acornsoft - superior)[h tsth].ssd" size="13056" crc="30529194" sha1="c72ac08af924c93fbc056e7b05b859259b698106"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magicmus_1" supported="no">
 		<description>Magic Mushrooms (1)</description>
 		<year>1985</year>
 		<publisher>Acornsoft</publisher>
@@ -19087,19 +19100,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="MMUSH"/>
 			<dataarea name="flop" size="23808">
 				<rom name="magic mushrooms (1985)(acornsoft)[mmush].ssd" size="23808" crc="e52b8b57" sha1="7b81bcbfe68e670e7f5f08ad7ef1904158fa02e5"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magicmus_1" supported="no">
-		<description>Magic Mushrooms</description>
-		<year>1985</year>
-		<publisher>Acornsoft - Superior</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="13056">
-				<rom name="magic mushrooms (1985)(acornsoft - superior)[h tsth].ssd" size="13056" crc="30529194" sha1="c72ac08af924c93fbc056e7b05b859259b698106"/>
 			</dataarea>
 		</part>
 	</software>
@@ -19438,6 +19438,38 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="maze" supported="no">
+		<description>Maze (2)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="MAZE"/>
+			<dataarea name="flop" size="2048">
+				<rom name="maze (19xx)(-)[maze].ssd" size="2048" crc="a8e53baf" sha1="29b20c409c60a6ca4a95728c8aeae44df787f90c"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="MAZE, Alt 1"/>
+			<dataarea name="flop" size="2048">
+				<rom name="maze (19xx)(-)[a][maze].ssd" size="2048" crc="ef591f33" sha1="189b547f322ff61fa69e9ed7318396e5c700acfc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="maze_1" supported="no">
+		<description>Maze</description>
+		<year>1984</year>
+		<publisher>Acornsoft - Superior</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked 2"/>
+			<dataarea name="flop" size="14336">
+				<rom name="maze (1984)(acornsoft - superior)[h2].ssd" size="14336" crc="0df3c583" sha1="bee5dffcf8ba14051162ab7cfe8fb8e9a88f8975"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="maze_2" supported="no">
 		<description>Maze (1)</description>
 		<year>1984</year>
 		<publisher>Acornsoft</publisher>
@@ -19457,38 +19489,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="MAZE"/>
 			<dataarea name="flop" size="14080">
 				<rom name="maze (1984)(acornsoft)[maze].ssd" size="14080" crc="d22e0dfa" sha1="8713e99d3767b2a0ab9557ed52ad841c8ec07781"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="maze_1" supported="no">
-		<description>Maze</description>
-		<year>1984</year>
-		<publisher>Acornsoft - Superior</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked 2"/>
-			<dataarea name="flop" size="14336">
-				<rom name="maze (1984)(acornsoft - superior)[h2].ssd" size="14336" crc="0df3c583" sha1="bee5dffcf8ba14051162ab7cfe8fb8e9a88f8975"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="maze_2" supported="no">
-		<description>Maze (2)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="MAZE"/>
-			<dataarea name="flop" size="2048">
-				<rom name="maze (19xx)(-)[maze].ssd" size="2048" crc="a8e53baf" sha1="29b20c409c60a6ca4a95728c8aeae44df787f90c"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="MAZE, Alt 1"/>
-			<dataarea name="flop" size="2048">
-				<rom name="maze (19xx)(-)[a][maze].ssd" size="2048" crc="ef591f33" sha1="189b547f322ff61fa69e9ed7318396e5c700acfc"/>
 			</dataarea>
 		</part>
 	</software>
@@ -19586,6 +19586,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="meteors" supported="no">
+		<description>Meteors</description>
+		<year>1982</year>
+		<publisher>Acornsoft - Superior</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="12288">
+				<rom name="meteors (1982)(acornsoft - superior)[h tsth].ssd" size="12288" crc="c84bfab9" sha1="75318fca1874e2e81852d4c426582174bebb3d1a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="meteors_1" supported="no">
 		<description>Meteors (1)</description>
 		<year>1982</year>
 		<publisher>Acornsoft</publisher>
@@ -19617,19 +19630,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="METEORS, Alt 1"/>
 			<dataarea name="flop" size="11264">
 				<rom name="meteors (1982)(acornsoft)[a][meteors].ssd" size="11264" crc="c4c1fc97" sha1="c68d9f9498df936e50943bc561fdf5e22f020c7c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="meteors_1" supported="no">
-		<description>Meteors</description>
-		<year>1982</year>
-		<publisher>Acornsoft - Superior</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="12288">
-				<rom name="meteors (1982)(acornsoft - superior)[h tsth].ssd" size="12288" crc="c84bfab9" sha1="75318fca1874e2e81852d4c426582174bebb3d1a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20184,6 +20184,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="monopoly" supported="no">
+		<description>Monopoly (2)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="MONOPOL"/>
+			<dataarea name="flop" size="20480">
+				<rom name="monopoly (19xx)(-)[monopol].ssd" size="20480" crc="bf3830aa" sha1="6de90fa5401ef5152cc84170a3fd78b055463036"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="MONOPOL, Alt 1"/>
+			<dataarea name="flop" size="20480">
+				<rom name="monopoly (19xx)(-)[a][monopol].ssd" size="20480" crc="b4b61493" sha1="5d6bd127ec7fd770cc077a283db54348518add90"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="monopoly_1" supported="no">
 		<description>Monopoly</description>
 		<year>1982</year>
 		<publisher>IAS</publisher>
@@ -20208,7 +20227,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="monopoly_1" supported="no">
+	<software name="monopoly_2" supported="no">
 		<description>Monopoly (1)</description>
 		<year>1985</year>
 		<publisher>Leisure Genius</publisher>
@@ -20234,25 +20253,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="MENU, Alt 1"/>
 			<dataarea name="flop" size="59136">
 				<rom name="monopoly (1985)(leisure genius)[a][menu].ssd" size="59136" crc="bcb5cbe9" sha1="5c31d7080647a71f4dfed8ed795c8791a87ae897"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="monopoly_2" supported="no">
-		<description>Monopoly (2)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="MONOPOL"/>
-			<dataarea name="flop" size="20480">
-				<rom name="monopoly (19xx)(-)[monopol].ssd" size="20480" crc="bf3830aa" sha1="6de90fa5401ef5152cc84170a3fd78b055463036"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="MONOPOL, Alt 1"/>
-			<dataarea name="flop" size="20480">
-				<rom name="monopoly (19xx)(-)[a][monopol].ssd" size="20480" crc="b4b61493" sha1="5d6bd127ec7fd770cc077a283db54348518add90"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20346,6 +20346,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="moonbugg" supported="no">
+		<description>Moon Buggy (1)</description>
+		<year>1986</year>
+		<publisher>Brian Ascroft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="MOON1"/>
+			<dataarea name="flop" size="12800">
+				<rom name="moon buggy (1986)(ascroft, brian)[moon1].ssd" size="12800" crc="c1fb9a19" sha1="74af0b6445ab388c755a494b33c84ba59f1fed81"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="moonbugg_1" supported="no">
 		<description>Moon Buggy</description>
 		<year>1985</year>
 		<publisher>Kansas City Systems</publisher>
@@ -20366,19 +20379,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="MOON, Alt 1"/>
 			<dataarea name="flop" size="20736">
 				<rom name="moon buggy (1985)(kansas city systems)[a][moon].ssd" size="20736" crc="09ff80fe" sha1="2f3a0fdda8afa90b489465dd2e1dde59ff991673"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="moonbugg_1" supported="no">
-		<description>Moon Buggy (1)</description>
-		<year>1986</year>
-		<publisher>Brian Ascroft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="MOON1"/>
-			<dataarea name="flop" size="12800">
-				<rom name="moon buggy (1986)(ascroft, brian)[moon1].ssd" size="12800" crc="c1fb9a19" sha1="74af0b6445ab388c755a494b33c84ba59f1fed81"/>
 			</dataarea>
 		</part>
 	</software>
@@ -21377,19 +21377,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="nemesis" supported="no">
-		<description>Nemesis</description>
-		<year>1983</year>
-		<publisher>T. Chown</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="12288">
-				<rom name="nemesis (1983)(chown, t.)[h tsth].ssd" size="12288" crc="91907445" sha1="be46b06352ea3ba257db96808292d782591a8ca2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="nemesis_1" supported="no">
 		<description>Nemesis (1)</description>
 		<year>19??</year>
 		<publisher>Micro Power</publisher>
@@ -21410,6 +21397,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="NEMESIS, Alt 2"/>
 			<dataarea name="flop" size="11008">
 				<rom name="nemesis (19xx)(micro power)[a2][nemesis].ssd" size="11008" crc="6a8b87f6" sha1="61d9e5addd863ea6d4971f472bc71a8a6bc2f170"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nemesis_1" supported="no">
+		<description>Nemesis</description>
+		<year>1983</year>
+		<publisher>T. Chown</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="12288">
+				<rom name="nemesis (1983)(chown, t.)[h tsth].ssd" size="12288" crc="91907445" sha1="be46b06352ea3ba257db96808292d782591a8ca2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -21558,6 +21558,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="nightmar" supported="no">
+		<description>Nightmare Maze (1)</description>
+		<year>1985</year>
+		<publisher>Blue Ribbon</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="13312">
+				<rom name="nightmare maze (1985)(blue ribbon)[h tsth].ssd" size="13312" crc="8559497c" sha1="447f03d936e2306097a2b1f90fe3667a63824966"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="NIGHT"/>
+			<dataarea name="flop" size="12032">
+				<rom name="nightmare maze (1985)(blue ribbon)[night].ssd" size="12032" crc="89831525" sha1="500dd7833a33291717e9da931dd79acc80eb4efc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nightmar_1" supported="no">
 		<description>Nightmare Maze</description>
 		<year>1984</year>
 		<publisher>MRM</publisher>
@@ -21578,25 +21597,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="MINTRO, Alt 1"/>
 			<dataarea name="flop" size="14080">
 				<rom name="nightmare maze (1984)(mrm)[a][mintro].ssd" size="14080" crc="1b1ef183" sha1="6e35f9c128719dd106e41452932e74510a8f21ff"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="nightmar_1" supported="no">
-		<description>Nightmare Maze (1)</description>
-		<year>1985</year>
-		<publisher>Blue Ribbon</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="13312">
-				<rom name="nightmare maze (1985)(blue ribbon)[h tsth].ssd" size="13312" crc="8559497c" sha1="447f03d936e2306097a2b1f90fe3667a63824966"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="NIGHT"/>
-			<dataarea name="flop" size="12032">
-				<rom name="nightmare maze (1985)(blue ribbon)[night].ssd" size="12032" crc="89831525" sha1="500dd7833a33291717e9da931dd79acc80eb4efc"/>
 			</dataarea>
 		</part>
 	</software>
@@ -22560,6 +22560,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="patience" supported="no">
+		<description>Patience (1)</description>
+		<year>19??</year>
+		<publisher>B. Notarianni</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="PATIENC"/>
+			<dataarea name="flop" size="8192">
+				<rom name="patience (19xx)(notarianni, b.)[patienc].ssd" size="8192" crc="233e1bcc" sha1="e4099b942340daec649841cc192e59c75eee1abb"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="patience_1" supported="no">
 		<description>Patience</description>
 		<year>1982</year>
 		<publisher>IJK</publisher>
@@ -22574,19 +22587,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="PATIENC"/>
 			<dataarea name="flop" size="6912">
 				<rom name="patience (1982)(ijk)[patienc].ssd" size="6912" crc="c2fad477" sha1="acfe119e8634a12a778b4de0a8bc91f839efb47c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="patience_1" supported="no">
-		<description>Patience (1)</description>
-		<year>19??</year>
-		<publisher>B. Notarianni</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="PATIENC"/>
-			<dataarea name="flop" size="8192">
-				<rom name="patience (19xx)(notarianni, b.)[patienc].ssd" size="8192" crc="233e1bcc" sha1="e4099b942340daec649841cc192e59c75eee1abb"/>
 			</dataarea>
 		</part>
 	</software>
@@ -23121,19 +23121,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="pinball" supported="no">
-		<description>Pinball</description>
-		<year>1983</year>
-		<publisher>Microbyte</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="11264">
-				<rom name="pinball (1983)(microbyte)[h tsth].ssd" size="11264" crc="58c342b2" sha1="68d166e4d24d6ad3f1f04b03ce3f55d30a1c6fa8"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pinball_1" supported="no">
 		<description>Pinball (1)</description>
 		<year>19??</year>
 		<publisher>Kansas City</publisher>
@@ -23146,7 +23133,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="pinball_2" supported="no">
+	<software name="pinball_1" supported="no">
 		<description>Pinball (2)</description>
 		<year>19??</year>
 		<publisher>Micro User</publisher>
@@ -23155,6 +23142,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="PINBALL"/>
 			<dataarea name="flop" size="10752">
 				<rom name="pinball (19xx)(micro user)[pinball].ssd" size="10752" crc="f766820d" sha1="278f2ead05ac6b00ed601271e28b699f1e135ba9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pinball_2" supported="no">
+		<description>Pinball</description>
+		<year>1983</year>
+		<publisher>Microbyte</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="11264">
+				<rom name="pinball (1983)(microbyte)[h tsth].ssd" size="11264" crc="58c342b2" sha1="68d166e4d24d6ad3f1f04b03ce3f55d30a1c6fa8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -23438,6 +23438,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="planetoi" supported="no">
+		<description>Planetoid</description>
+		<year>1982</year>
+		<publisher>Acornsoft - Superior</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="13056">
+				<rom name="planetoid (1982)(acornsoft - superior)[h tsth].ssd" size="13056" crc="c10bbe78" sha1="e9e23179126b8d8462df4c0114a9ffd4bd8a7fb8"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="planetoi_1" supported="no">
 		<description>Planetoid (1)</description>
 		<year>1982</year>
 		<publisher>Acornsoft</publisher>
@@ -23469,19 +23482,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="PLANET"/>
 			<dataarea name="flop" size="23296">
 				<rom name="planetoid (1982)(acornsoft)[planet].ssd" size="23296" crc="3a4fcc37" sha1="a908fba9e5114c5effba651238e1dbb07c604056"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="planetoi_1" supported="no">
-		<description>Planetoid</description>
-		<year>1982</year>
-		<publisher>Acornsoft - Superior</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="13056">
-				<rom name="planetoid (1982)(acornsoft - superior)[h tsth].ssd" size="13056" crc="c10bbe78" sha1="e9e23179126b8d8462df4c0114a9ffd4bd8a7fb8"/>
 			</dataarea>
 		</part>
 	</software>
@@ -23814,20 +23814,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="pontoon" supported="no">
-		<description>Pontoon</description>
-		<year>1982</year>
-		<publisher>IJK</publisher>
+		<description>Pontoon (2)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="12032">
-				<rom name="pontoon (1982)(ijk)[h tsth].ssd" size="12032" crc="f18ac2a7" sha1="de35501b4d09ef52ddffcc47bb86c9b79cdda642"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="PONTOON"/>
-			<dataarea name="flop" size="11776">
-				<rom name="pontoon (1982)(ijk)[pontoon].ssd" size="11776" crc="52fd9fd4" sha1="6ef4793dd64e44d03ecc5c035ab80257ca3adf50"/>
+			<feature name="part_id" value="PONTLD"/>
+			<dataarea name="flop" size="8192">
+				<rom name="pontoon (19xx)(-)[pontld].ssd" size="8192" crc="933fe9c8" sha1="db75a21669ca42551b840956f327f8f2a8ecf685"/>
 			</dataarea>
 		</part>
 	</software>
@@ -23846,14 +23840,20 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="pontoon_2" supported="no">
-		<description>Pontoon (2)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Pontoon</description>
+		<year>1982</year>
+		<publisher>IJK</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="PONTLD"/>
-			<dataarea name="flop" size="8192">
-				<rom name="pontoon (19xx)(-)[pontld].ssd" size="8192" crc="933fe9c8" sha1="db75a21669ca42551b840956f327f8f2a8ecf685"/>
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="12032">
+				<rom name="pontoon (1982)(ijk)[h tsth].ssd" size="12032" crc="f18ac2a7" sha1="de35501b4d09ef52ddffcc47bb86c9b79cdda642"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="PONTOON"/>
+			<dataarea name="flop" size="11776">
+				<rom name="pontoon (1982)(ijk)[pontoon].ssd" size="11776" crc="52fd9fd4" sha1="6ef4793dd64e44d03ecc5c035ab80257ca3adf50"/>
 			</dataarea>
 		</part>
 	</software>
@@ -24486,6 +24486,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="quadline" supported="no">
+		<description>Quadline (1)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="CONNECT"/>
+			<dataarea name="flop" size="6912">
+				<rom name="quadline (19xx)(-)[connect].ssd" size="6912" crc="8a2548fc" sha1="23ec73b5bf6c8668e6e8569746f000324eab4a97"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quadline_1" supported="no">
 		<description>Quadline</description>
 		<year>1985</year>
 		<publisher>Acorn User</publisher>
@@ -24500,19 +24513,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="MINEQ, Alt 1"/>
 			<dataarea name="flop" size="6912">
 				<rom name="quadline (1985)(acorn user)[a][mineq].ssd" size="6912" crc="6fb02534" sha1="0416eb13e6481b4a9fa844616ea2a53ab48e484f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="quadline_1" supported="no">
-		<description>Quadline (1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="CONNECT"/>
-			<dataarea name="flop" size="6912">
-				<rom name="quadline (19xx)(-)[connect].ssd" size="6912" crc="8a2548fc" sha1="23ec73b5bf6c8668e6e8569746f000324eab4a97"/>
 			</dataarea>
 		</part>
 	</software>
@@ -24643,6 +24643,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="quondam" supported="no">
+		<description>Quondam (1)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="28672">
+				<rom name="quondam (19xx)(-).ssd" size="28672" crc="35dec33f" sha1="2d4a07ca5a17407018ebbc30564285cca71c6838"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quondam_1" supported="no">
 		<description>Quondam</description>
 		<year>1984</year>
 		<publisher>Acornsoft</publisher>
@@ -24651,18 +24663,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="30464">
 				<rom name="quondam (1984)(acornsoft)[h tsth].ssd" size="30464" crc="d99938bb" sha1="f8bee4d9e101c564623bbb1d6c22d5b82df809cc"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="quondam_1" supported="no">
-		<description>Quondam (1)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="28672">
-				<rom name="quondam (19xx)(-).ssd" size="28672" crc="35dec33f" sha1="2d4a07ca5a17407018ebbc30564285cca71c6838"/>
 			</dataarea>
 		</part>
 	</software>
@@ -25520,19 +25520,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="reversi_1" supported="no">
-		<description>Reversi (1)</description>
-		<year>1989</year>
-		<publisher>W.H. Scholten</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="REV2P"/>
-			<dataarea name="flop" size="12032">
-				<rom name="reversi (1989)(scholten, w.h.)[rev2p].ssd" size="12032" crc="69e071d5" sha1="9845db0076ac318ac9299dffe2b447ea1cb2237a"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="reversi_a" cloneof="reversi" supported="no">
 		<description>Reversi (2)</description>
 		<year>19??</year>
@@ -25557,7 +25544,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="reversi_2" supported="no">
+	<software name="reversi_1" supported="no">
 		<description>Reversi (v2.32A)</description>
 		<year>1982</year>
 		<publisher>D. Thompson</publisher>
@@ -25566,6 +25553,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked TSTH"/>
 			<dataarea name="flop" size="14336">
 				<rom name="reversi v2.32a (1982)(thompson, d.)[h tsth].ssd" size="14336" crc="b839e8e1" sha1="f206283ffe3c54e191b0a7608aae6a7f1e0509fe"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="reversi_2" supported="no">
+		<description>Reversi (1)</description>
+		<year>1989</year>
+		<publisher>W.H. Scholten</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="REV2P"/>
+			<dataarea name="flop" size="12032">
+				<rom name="reversi (1989)(scholten, w.h.)[rev2p].ssd" size="12032" crc="69e071d5" sha1="9845db0076ac318ac9299dffe2b447ea1cb2237a"/>
 			</dataarea>
 		</part>
 	</software>
@@ -26087,6 +26087,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="rocketra" supported="no">
+		<description>Rocket Raid</description>
+		<year>1982</year>
+		<publisher>Acornsoft - Superior</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="14080">
+				<rom name="rocket raid (1982)(acornsoft - superior)[h tsth].ssd" size="14080" crc="3458c274" sha1="b07291c731aaafc65a40dc8639022640e1caeeba"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rocketra_1" supported="no">
 		<description>Rocket Raid (1)</description>
 		<year>1982</year>
 		<publisher>Acornsoft</publisher>
@@ -26124,19 +26137,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="ROCKET"/>
 			<dataarea name="flop" size="12800">
 				<rom name="rocket raid (1982)(acornsoft)[rocket].ssd" size="12800" crc="e3e1897f" sha1="20941ae217d8a22f7aa8b87bb80c49ac62068bd7"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="rocketra_1" supported="no">
-		<description>Rocket Raid</description>
-		<year>1982</year>
-		<publisher>Acornsoft - Superior</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="14080">
-				<rom name="rocket raid (1982)(acornsoft - superior)[h tsth].ssd" size="14080" crc="3458c274" sha1="b07291c731aaafc65a40dc8639022640e1caeeba"/>
 			</dataarea>
 		</part>
 	</software>
@@ -26249,6 +26249,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="rubbletr" supported="no">
+		<description>Rubble Trouble (1)</description>
+		<year>19??</year>
+		<publisher>Micro Power</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="RUBBLE"/>
+			<dataarea name="flop" size="16640">
+				<rom name="rubble trouble (19xx)(micro power)[rubble].ssd" size="16640" crc="382431e0" sha1="3196f8bbc498556f02d5737cf7e03aa2fa6424bd"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="RUBBLE, Alt 1"/>
+			<dataarea name="flop" size="16640">
+				<rom name="rubble trouble (19xx)(micro power)[a][rubble].ssd" size="16640" crc="ce928a0f" sha1="d7e43ee4a426f90703246f9dd939d3e801f33489"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rubbletr_1" supported="no">
 		<description>Rubble Trouble</description>
 		<year>1983</year>
 		<publisher>Program Power</publisher>
@@ -26280,25 +26299,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="RUBBLE, Alt 1"/>
 			<dataarea name="flop" size="20992">
 				<rom name="rubble trouble (1983)(program power)[a][rubble].ssd" size="20992" crc="cb480488" sha1="527c2a4b65f6ebd6bf7c84ce658c127e9cd39844"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="rubbletr_1" supported="no">
-		<description>Rubble Trouble (1)</description>
-		<year>19??</year>
-		<publisher>Micro Power</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="RUBBLE"/>
-			<dataarea name="flop" size="16640">
-				<rom name="rubble trouble (19xx)(micro power)[rubble].ssd" size="16640" crc="382431e0" sha1="3196f8bbc498556f02d5737cf7e03aa2fa6424bd"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="RUBBLE, Alt 1"/>
-			<dataarea name="flop" size="16640">
-				<rom name="rubble trouble (19xx)(micro power)[a][rubble].ssd" size="16640" crc="ce928a0f" sha1="d7e43ee4a426f90703246f9dd939d3e801f33489"/>
 			</dataarea>
 		</part>
 	</software>
@@ -26868,19 +26868,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="secretsa" supported="no">
-		<description>Secret Sam - Adventure 1</description>
-		<year>1983</year>
-		<publisher>MRM</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="22016">
-				<rom name="secret sam - adventure 1 (1983)(mrm)[h tsth].ssd" size="22016" crc="68ed0a2f" sha1="1060917ac2af7979e38223a75a338539c7cc332c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="secretsa_1" supported="no">
 		<description>Secret Sam - Adventure 1 (1)</description>
 		<year>1985</year>
 		<publisher>Blue Ribbon</publisher>
@@ -26893,7 +26880,33 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="secretsa_1" supported="no">
+		<description>Secret Sam - Adventure 1</description>
+		<year>1983</year>
+		<publisher>MRM</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="22016">
+				<rom name="secret sam - adventure 1 (1983)(mrm)[h tsth].ssd" size="22016" crc="68ed0a2f" sha1="1060917ac2af7979e38223a75a338539c7cc332c"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="secretsa_2" supported="no">
+		<description>Secret Sam - Adventure 2 (1)</description>
+		<year>1985</year>
+		<publisher>Blue Ribbon</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="25600">
+				<rom name="secret sam - adventure 2 (1985)(blue ribbon)[h tsth].ssd" size="25600" crc="83a3a386" sha1="7a12e3af4a752c15eb9078ff7e4f3fe7d5ff011b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="secretsa_3" supported="no">
 		<description>Secret Sam - Adventure 2</description>
 		<year>1983</year>
 		<publisher>MRM</publisher>
@@ -26914,19 +26927,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="SECRET, Alt 1"/>
 			<dataarea name="flop" size="17920">
 				<rom name="secret sam - adventure 2 (1983)(mrm)[a][secret].ssd" size="17920" crc="f41e6450" sha1="7db6082a030b20872bd2361f40d7ce4d6add3e32"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="secretsa_3" supported="no">
-		<description>Secret Sam - Adventure 2 (1)</description>
-		<year>1985</year>
-		<publisher>Blue Ribbon</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="25600">
-				<rom name="secret sam - adventure 2 (1985)(blue ribbon)[h tsth].ssd" size="25600" crc="83a3a386" sha1="7a12e3af4a752c15eb9078ff7e4f3fe7d5ff011b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -27498,19 +27498,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="skyhawk" supported="no">
-		<description>Skyhawk</description>
-		<year>1986</year>
-		<publisher>Bug Byte</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="10752">
-				<rom name="skyhawk (1986)(bug byte)[h tsth].ssd" size="10752" crc="d3d1bb7e" sha1="cdfb8e05c8a56952462861b8f392b1e878ed1d82"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="skyhawk_1" supported="no">
 		<description>Skyhawk (1)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -27519,6 +27506,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="SKYHAWK"/>
 			<dataarea name="flop" size="7168">
 				<rom name="skyhawk (19xx)(-)[skyhawk].ssd" size="7168" crc="132c90fd" sha1="a70d7eecea8224ea2515d39bc3f1947eec0288ba"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="skyhawk_1" supported="no">
+		<description>Skyhawk</description>
+		<year>1986</year>
+		<publisher>Bug Byte</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="10752">
+				<rom name="skyhawk (1986)(bug byte)[h tsth].ssd" size="10752" crc="d3d1bb7e" sha1="cdfb8e05c8a56952462861b8f392b1e878ed1d82"/>
 			</dataarea>
 		</part>
 	</software>
@@ -27737,6 +27737,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="snapper" supported="no">
+		<description>Snapper (v2)</description>
+		<year>1982</year>
+		<publisher>Acornsoft - Superior</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="21248">
+				<rom name="snapper v2 (1982)(acornsoft - superior)[h tsth].ssd" size="21248" crc="52a5a3df" sha1="e6515ecd0be35a0170aa2c53c0b47df8c71a48f2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="snapper_1" supported="no">
 		<description>Snapper (v1)</description>
 		<year>1982</year>
 		<publisher>Acornsoft</publisher>
@@ -27772,7 +27785,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="snapper_a" cloneof="snapper" supported="no">
+	<software name="snapper_1_a" cloneof="snapper_1" supported="no">
 		<description>Snapper (v2) (1)</description>
 		<year>1982</year>
 		<publisher>Acornsoft</publisher>
@@ -27802,20 +27815,44 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="snapper_1" supported="no">
-		<description>Snapper (v2)</description>
-		<year>1982</year>
-		<publisher>Acornsoft - Superior</publisher>
+	<software name="snooker" supported="no">
+		<description>Snooker (v1)</description>
+		<year>1983</year>
+		<publisher>Acornsoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="21248">
-				<rom name="snapper v2 (1982)(acornsoft - superior)[h tsth].ssd" size="21248" crc="52a5a3df" sha1="e6515ecd0be35a0170aa2c53c0b47df8c71a48f2"/>
+			<dataarea name="flop" size="12544">
+				<rom name="snooker v1 (1983)(acornsoft)[h tsth].ssd" size="12544" crc="690891e5" sha1="27a5a81563f6ee7f08c519b75d95c1c90c519fc5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="snooker" supported="no">
+	<software name="snooker_a" cloneof="snooker" supported="no">
+		<description>Snooker (v4)</description>
+		<year>19??</year>
+		<publisher>Acornsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="11008">
+				<rom name="snooker v4 (19xx)(acornsoft).ssd" size="11008" crc="7da7ee81" sha1="33bbd75bc7558ca63e2afdeba4419c7d1803e7fa"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="11520">
+				<rom name="snooker v4 (19xx)(acornsoft)[h tsth].ssd" size="11520" crc="9f54ec7a" sha1="b43dd14e5032ebcc8557fdbefed840ff19be376f"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="SNOOKER"/>
+			<dataarea name="flop" size="10496">
+				<rom name="snooker v4 (19xx)(acornsoft)[snooker].ssd" size="10496" crc="b085c9dc" sha1="ddc766183264d8bee089948bb8ce1dd7d3c62e85"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="snooker_1" supported="no">
 		<description>Snooker</description>
 		<year>1982</year>
 		<publisher>Kevin Reid</publisher>
@@ -27827,7 +27864,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="snooker_1" supported="no">
+	<software name="snooker_2" supported="no">
 		<description>Snooker (1)</description>
 		<year>19??</year>
 		<publisher>Visions</publisher>
@@ -27860,43 +27897,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="SNOOKER, Alt 1"/>
 			<dataarea name="flop" size="8960">
 				<rom name="snooker (19xx)(visions)[a][snooker].ssd" size="8960" crc="7df388b9" sha1="9a3d15f479081b3fa89f974be9cb7f1f87dd050e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="snooker_2" supported="no">
-		<description>Snooker (v1)</description>
-		<year>1983</year>
-		<publisher>Acornsoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="12544">
-				<rom name="snooker v1 (1983)(acornsoft)[h tsth].ssd" size="12544" crc="690891e5" sha1="27a5a81563f6ee7f08c519b75d95c1c90c519fc5"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="snooker_2_a" cloneof="snooker_2" supported="no">
-		<description>Snooker (v4)</description>
-		<year>19??</year>
-		<publisher>Acornsoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="11008">
-				<rom name="snooker v4 (19xx)(acornsoft).ssd" size="11008" crc="7da7ee81" sha1="33bbd75bc7558ca63e2afdeba4419c7d1803e7fa"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="11520">
-				<rom name="snooker v4 (19xx)(acornsoft)[h tsth].ssd" size="11520" crc="9f54ec7a" sha1="b43dd14e5032ebcc8557fdbefed840ff19be376f"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="SNOOKER"/>
-			<dataarea name="flop" size="10496">
-				<rom name="snooker v4 (19xx)(acornsoft)[snooker].ssd" size="10496" crc="b085c9dc" sha1="ddc766183264d8bee089948bb8ce1dd7d3c62e85"/>
 			</dataarea>
 		</part>
 	</software>
@@ -29668,14 +29668,20 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="startrek_2" supported="no">
-		<description>Star Trek</description>
-		<year>1982</year>
-		<publisher>R. Hanson</publisher>
+		<description>Star Trek (2)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="10496">
-				<rom name="star trek (1982)(hanson, r.)[h tsth].ssd" size="10496" crc="4d806396" sha1="55023f425471f03a0acc075e5cb86830a3a56b5e"/>
+			<dataarea name="flop" size="10240">
+				<rom name="star trek (19xx)(-)[h tsth].ssd" size="10240" crc="2f17c563" sha1="f0deb7521a4fb5e921d577afbaf68f83a3e5b653"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="START"/>
+			<dataarea name="flop" size="9472">
+				<rom name="star trek (19xx)(-)[start].ssd" size="9472" crc="8b226f0f" sha1="4cbdd4e98d59582fdce12d29f25b3929474ee5b0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -29694,20 +29700,14 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="startrek_4" supported="no">
-		<description>Star Trek (2)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Star Trek</description>
+		<year>1982</year>
+		<publisher>R. Hanson</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="10240">
-				<rom name="star trek (19xx)(-)[h tsth].ssd" size="10240" crc="2f17c563" sha1="f0deb7521a4fb5e921d577afbaf68f83a3e5b653"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="START"/>
-			<dataarea name="flop" size="9472">
-				<rom name="star trek (19xx)(-)[start].ssd" size="9472" crc="8b226f0f" sha1="4cbdd4e98d59582fdce12d29f25b3929474ee5b0"/>
+			<dataarea name="flop" size="10496">
+				<rom name="star trek (1982)(hanson, r.)[h tsth].ssd" size="10496" crc="4d806396" sha1="55023f425471f03a0acc075e5cb86830a3a56b5e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -29805,25 +29805,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="starwars_2" supported="no">
-		<description>Star Wars</description>
-		<year>1987</year>
-		<publisher>Domark</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="40448">
-				<rom name="star wars (1987)(domark)[h tsth].ssd" size="40448" crc="fece17cb" sha1="90679edddd86c4934e85a78c16d724e9aa9a6783"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="STARW"/>
-			<dataarea name="flop" size="40192">
-				<rom name="star wars (1987)(domark)[starw].ssd" size="40192" crc="0b8537ce" sha1="ef77f4858e5110240d2fab6539e77e7b7bb70bed"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="starwars_3" supported="no">
 		<description>Star Wars (1)</description>
 		<year>19??</year>
 		<publisher>C. Arnold</publisher>
@@ -29842,26 +29823,26 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="starfire" supported="no">
-		<description>Starfire (v2)</description>
-		<year>1982</year>
-		<publisher>Beebug</publisher>
+	<software name="starwars_3" supported="no">
+		<description>Star Wars</description>
+		<year>1987</year>
+		<publisher>Domark</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="STAR"/>
-			<dataarea name="flop" size="5888">
-				<rom name="starfire v2 (1982)(beebug)[star].ssd" size="5888" crc="60ebf14d" sha1="ab377c936938eae9a4bf164855830292aab923bb"/>
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="40448">
+				<rom name="star wars (1987)(domark)[h tsth].ssd" size="40448" crc="fece17cb" sha1="90679edddd86c4934e85a78c16d724e9aa9a6783"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="STAR, Alt 1"/>
-			<dataarea name="flop" size="5888">
-				<rom name="starfire v2 (1982)(beebug)[a][star].ssd" size="5888" crc="d1c0609a" sha1="a25081e3788f03c051261b28d556115dbfdf7062"/>
+			<feature name="part_id" value="STARW"/>
+			<dataarea name="flop" size="40192">
+				<rom name="star wars (1987)(domark)[starw].ssd" size="40192" crc="0b8537ce" sha1="ef77f4858e5110240d2fab6539e77e7b7bb70bed"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="starfire_1" supported="no">
+	<software name="starfire" supported="no">
 		<description>Starfire (v2.2)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -29876,6 +29857,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="STARFIR, Alt 1"/>
 			<dataarea name="flop" size="5376">
 				<rom name="starfire v2.2 (19xx)(-)[a][starfir].ssd" size="5376" crc="89b5fd3c" sha1="7c3a059d94b031c534ec92a1e49c4ed6d9c2fc80"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="starfire_1" supported="no">
+		<description>Starfire (v2)</description>
+		<year>1982</year>
+		<publisher>Beebug</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="STAR"/>
+			<dataarea name="flop" size="5888">
+				<rom name="starfire v2 (1982)(beebug)[star].ssd" size="5888" crc="60ebf14d" sha1="ab377c936938eae9a4bf164855830292aab923bb"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="STAR, Alt 1"/>
+			<dataarea name="flop" size="5888">
+				<rom name="starfire v2 (1982)(beebug)[a][star].ssd" size="5888" crc="d1c0609a" sha1="a25081e3788f03c051261b28d556115dbfdf7062"/>
 			</dataarea>
 		</part>
 	</software>
@@ -29919,6 +29919,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="starship" supported="no">
+		<description>Starship Command</description>
+		<year>1982</year>
+		<publisher>Acornsoft - Superior</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="21248">
+				<rom name="starship command (1982)(acornsoft - superior)[h tsth].ssd" size="21248" crc="2f147c8d" sha1="8867f819ecd408e0ecb282e047be79c51425e450"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="starship_1" supported="no">
 		<description>Starship Command (1)</description>
 		<year>1982</year>
 		<publisher>Acornsoft</publisher>
@@ -29956,19 +29969,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="STARSHI"/>
 			<dataarea name="flop" size="18432">
 				<rom name="starship command (1982)(acornsoft)[starshi].ssd" size="18432" crc="92398521" sha1="196b33d4f9f152d7098d0efc5659ee28c2d20d02"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="starship_1" supported="no">
-		<description>Starship Command</description>
-		<year>1982</year>
-		<publisher>Acornsoft - Superior</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="21248">
-				<rom name="starship command (1982)(acornsoft - superior)[h tsth].ssd" size="21248" crc="2f147c8d" sha1="8867f819ecd408e0ecb282e047be79c51425e450"/>
 			</dataarea>
 		</part>
 	</software>
@@ -32884,6 +32884,38 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="themine" supported="no">
+		<description>The Mine (1)</description>
+		<year>1984</year>
+		<publisher>Micro Power</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="MINE"/>
+			<dataarea name="flop" size="15872">
+				<rom name="mine, the (1984)(micro power)[mine].ssd" size="15872" crc="9eab7273" sha1="e41e33171b0f34d616310ee02d340b0c85e1587b"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="MINE, Alt 1"/>
+			<dataarea name="flop" size="15872">
+				<rom name="mine, the (1984)(micro power)[a][mine].ssd" size="15872" crc="ae58d1ee" sha1="db4390804aa879de0b8adb8870424c4ff8a7c0a0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="themine_1" supported="no">
+		<description>The Mine (2)</description>
+		<year>1984</year>
+		<publisher>Program Power</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="14848">
+				<rom name="mine, the (1984)(program power)[h tsth].ssd" size="14848" crc="fb20be11" sha1="15c764f31c841c4747a488712887979077666b52"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="themine_2" supported="no">
 		<description>The Mine</description>
 		<year>1983</year>
 		<publisher>W. Mansell</publisher>
@@ -32904,38 +32936,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="MINE1, Hacked 3"/>
 			<dataarea name="flop" size="12800">
 				<rom name="mine, the (1983)(mansell, w.)[h3][mine1].ssd" size="12800" crc="fe32b79a" sha1="e866f290090ca0ce85f4d75c587ff626063dc6ed"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="themine_1" supported="no">
-		<description>The Mine (1)</description>
-		<year>1984</year>
-		<publisher>Micro Power</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="MINE"/>
-			<dataarea name="flop" size="15872">
-				<rom name="mine, the (1984)(micro power)[mine].ssd" size="15872" crc="9eab7273" sha1="e41e33171b0f34d616310ee02d340b0c85e1587b"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="MINE, Alt 1"/>
-			<dataarea name="flop" size="15872">
-				<rom name="mine, the (1984)(micro power)[a][mine].ssd" size="15872" crc="ae58d1ee" sha1="db4390804aa879de0b8adb8870424c4ff8a7c0a0"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="themine_2" supported="no">
-		<description>The Mine (2)</description>
-		<year>1984</year>
-		<publisher>Program Power</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="14848">
-				<rom name="mine, the (1984)(program power)[h tsth].ssd" size="14848" crc="fb20be11" sha1="15c764f31c841c4747a488712887979077666b52"/>
 			</dataarea>
 		</part>
 	</software>
@@ -33275,6 +33275,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thesenti" supported="no">
+		<description>The Sentinel</description>
+		<year>19??</year>
+		<publisher>Firebird - Superior</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="33536">
+				<rom name="sentinel, the (19xx)(firebird - superior)[h tsth].ssd" size="33536" crc="7f3d3fc9" sha1="2f54db810307a8a75b9f644a4f410e7390b5c9a3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thesenti_1" supported="no">
 		<description>The Sentinel (1)</description>
 		<year>19??</year>
 		<publisher>Firebird</publisher>
@@ -33307,19 +33320,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Hacked 2"/>
 			<dataarea name="flop" size="29440">
 				<rom name="sentinel, the (19xx)(firebird)[h2].ssd" size="29440" crc="9034e40d" sha1="aa4770ff9d9d961d1b7012e8b83d49272e30104d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thesenti_1" supported="no">
-		<description>The Sentinel</description>
-		<year>19??</year>
-		<publisher>Firebird - Superior</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="33536">
-				<rom name="sentinel, the (19xx)(firebird - superior)[h tsth].ssd" size="33536" crc="7f3d3fc9" sha1="2f54db810307a8a75b9f644a4f410e7390b5c9a3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -34608,63 +34608,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="ultron" supported="no">
-		<description>Ultron</description>
-		<year>1984</year>
-		<publisher>Audiogenic</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="10752">
-				<rom name="ultron (1984)(audiogenic)[h tsth].ssd" size="10752" crc="ae9c3b3d" sha1="05d26e2661415789d385f9addcfc2ae6ca3944d9"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ultron_1" supported="no">
-		<description>Ultron (1)</description>
-		<year>1984</year>
-		<publisher>Partis Soft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="14848">
-				<rom name="ultron (1984)(partis soft)[h tsth].ssd" size="14848" crc="69ba5ee9" sha1="599e2df85c5d0cd7070ef6402c3a232a3980b6ed"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="ULTRON"/>
-			<dataarea name="flop" size="14592">
-				<rom name="ultron (1984)(partis soft)[ultron].ssd" size="14592" crc="79f6ff18" sha1="556e7e0699d5c045ec1d921f896276ff0a7be431"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="ULTRON, Alt 1"/>
-			<dataarea name="flop" size="14592">
-				<rom name="ultron (1984)(partis soft)[a][ultron].ssd" size="14592" crc="703cd355" sha1="e6112429eefbeca76ec896d80a9e5e458cc7c95e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ultron_a" cloneof="ultron" supported="no">
-		<description>Ultron (2)</description>
-		<year>1986</year>
-		<publisher>Audiogenic</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="11264">
-				<rom name="ultron (1986)(audiogenic)[h tsth].ssd" size="11264" crc="c03c29aa" sha1="31a991123d78ee2de608dbd7e98847f214435fd3"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="ULTRON"/>
-			<dataarea name="flop" size="10496">
-				<rom name="ultron (1986)(audiogenic)[ultron].ssd" size="10496" crc="03e07d5a" sha1="73620b0369d3b884e53bb5715fc91d0c2cb2155d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ultron_2" supported="no">
 		<description>Ultron (3)</description>
 		<year>19??</year>
 		<publisher>Alligata</publisher>
@@ -34691,6 +34634,63 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="ULTRON, Alt 1"/>
 			<dataarea name="flop" size="16384">
 				<rom name="ultron (19xx)(alligata)[a][ultron].ssd" size="16384" crc="149ca3f8" sha1="c74ebad37dd147e346fb40107e15b2e83344b89d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultron_1" supported="no">
+		<description>Ultron</description>
+		<year>1984</year>
+		<publisher>Audiogenic</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="10752">
+				<rom name="ultron (1984)(audiogenic)[h tsth].ssd" size="10752" crc="ae9c3b3d" sha1="05d26e2661415789d385f9addcfc2ae6ca3944d9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultron_1_a" cloneof="ultron_1" supported="no">
+		<description>Ultron (2)</description>
+		<year>1986</year>
+		<publisher>Audiogenic</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="11264">
+				<rom name="ultron (1986)(audiogenic)[h tsth].ssd" size="11264" crc="c03c29aa" sha1="31a991123d78ee2de608dbd7e98847f214435fd3"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="ULTRON"/>
+			<dataarea name="flop" size="10496">
+				<rom name="ultron (1986)(audiogenic)[ultron].ssd" size="10496" crc="03e07d5a" sha1="73620b0369d3b884e53bb5715fc91d0c2cb2155d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultron_2" supported="no">
+		<description>Ultron (1)</description>
+		<year>1984</year>
+		<publisher>Partis Soft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="14848">
+				<rom name="ultron (1984)(partis soft)[h tsth].ssd" size="14848" crc="69ba5ee9" sha1="599e2df85c5d0cd7070ef6402c3a232a3980b6ed"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="ULTRON"/>
+			<dataarea name="flop" size="14592">
+				<rom name="ultron (1984)(partis soft)[ultron].ssd" size="14592" crc="79f6ff18" sha1="556e7e0699d5c045ec1d921f896276ff0a7be431"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="ULTRON, Alt 1"/>
+			<dataarea name="flop" size="14592">
+				<rom name="ultron (1984)(partis soft)[a][ultron].ssd" size="14592" crc="703cd355" sha1="e6112429eefbeca76ec896d80a9e5e458cc7c95e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -35194,6 +35194,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="vortex" supported="no">
+		<description>Vortex (1)</description>
+		<year>1990</year>
+		<publisher>Anthony Bartran</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked TSTH"/>
+			<dataarea name="flop" size="16384">
+				<rom name="vortex (1990)(bartran, anthony)[h tsth].ssd" size="16384" crc="e7437f2d" sha1="c3989bfe2ae07b2ccd1f4d5fdac5b4259161e503"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="PART-1"/>
+			<dataarea name="flop" size="27648">
+				<rom name="vortex (1990)(bartran, anthony)[part-1].ssd" size="27648" crc="aacf668a" sha1="81777f53a844302fca8eca1c3d46072b8bf8bf8e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vortex_1" supported="no">
 		<description>Vortex</description>
 		<year>1983</year>
 		<publisher>Software Invasion</publisher>
@@ -35214,25 +35233,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="VORTEX, Alt 1"/>
 			<dataarea name="flop" size="19712">
 				<rom name="vortex (1983)(software invasion)[a][vortex].ssd" size="19712" crc="c395173f" sha1="9062008515f7c57effbddae75cd2b15e5118fd87"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="vortex_1" supported="no">
-		<description>Vortex (1)</description>
-		<year>1990</year>
-		<publisher>Anthony Bartran</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Hacked TSTH"/>
-			<dataarea name="flop" size="16384">
-				<rom name="vortex (1990)(bartran, anthony)[h tsth].ssd" size="16384" crc="e7437f2d" sha1="c3989bfe2ae07b2ccd1f4d5fdac5b4259161e503"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="PART-1"/>
-			<dataarea name="flop" size="27648">
-				<rom name="vortex (1990)(bartran, anthony)[part-1].ssd" size="27648" crc="aacf668a" sha1="81777f53a844302fca8eca1c3d46072b8bf8bf8e"/>
 			</dataarea>
 		</part>
 	</software>

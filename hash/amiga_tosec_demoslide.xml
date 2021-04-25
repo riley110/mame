@@ -4482,6 +4482,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="elleslid" supported="no">
+		<description>Elle Slideshow (1992-10-10)</description>
+		<year>1992</year>
+		<publisher>Digital Access</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="elle slideshow (1992-10-10)(digital access)(disk 1 of 2).adf" size="901120" crc="0497ac52" sha1="08cd1d7732ce8834a42a0516c82a65cddd1cc4e7"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="elle slideshow (1992-10-10)(digital access)(disk 2 of 2).adf" size="901120" crc="9975a3ef" sha1="b366f278d7b72373aae1d27573171d782e29f131"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="elleslid_1" supported="no">
 		<description>Elle Slideshow</description>
 		<year>199?</year>
 		<publisher>Happy Hacker</publisher>
@@ -4502,25 +4521,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 3 of 3"/>
 			<dataarea name="flop" size="901120">
 				<rom name="elle slideshow (199x)(happy hacker)(disk 3 of 3).adf" size="901120" crc="0d9e14eb" sha1="eb00fdb53167f56c1d51392034fad0cd9fa949df"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="elleslid_1" supported="no">
-		<description>Elle Slideshow (1992-10-10)</description>
-		<year>1992</year>
-		<publisher>Digital Access</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="elle slideshow (1992-10-10)(digital access)(disk 1 of 2).adf" size="901120" crc="0497ac52" sha1="08cd1d7732ce8834a42a0516c82a65cddd1cc4e7"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="elle slideshow (1992-10-10)(digital access)(disk 2 of 2).adf" size="901120" crc="9975a3ef" sha1="b366f278d7b72373aae1d27573171d782e29f131"/>
 			</dataarea>
 		</part>
 	</software>
@@ -4766,6 +4766,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="faces" supported="no">
+		<description>Faces (AGA)</description>
+		<year>19??</year>
+		<publisher>Dengue</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="faces (19xx)(dengue)(aga).adf" size="901120" crc="60a3abe4" sha1="4d0a9f377bc66b548eca08611928ff2aae3eb8a2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="faces_1" supported="no">
 		<description>Faces</description>
 		<year>1994</year>
 		<publisher>Illusion</publisher>
@@ -4783,7 +4795,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="faces_a" cloneof="faces" supported="no">
+	<software name="faces_1_a" cloneof="faces_1" supported="no">
 		<description>Faces (1)</description>
 		<year>19??</year>
 		<publisher>Illusion</publisher>
@@ -4791,18 +4803,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="faces (19xx)(illusion).adf" size="901120" crc="9a7cb069" sha1="fcdc8d8ea05e92cd93dd0a897658442e4839509f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="faces_1" supported="no">
-		<description>Faces (AGA)</description>
-		<year>19??</year>
-		<publisher>Dengue</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="faces (19xx)(dengue)(aga).adf" size="901120" crc="60a3abe4" sha1="4d0a9f377bc66b548eca08611928ff2aae3eb8a2"/>
 			</dataarea>
 		</part>
 	</software>
@@ -11396,18 +11396,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="samantha_1" supported="no">
-		<description>Samantha Fox</description>
-		<year>1988</year>
-		<publisher>Software of Sweden</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="samantha fox (1988)(software of sweden).adf" size="901120" crc="8df47b62" sha1="21455f59da72a60e83b19c2df8fe0ba5fa6de5c3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="samantha_2" supported="no">
 		<description>Samantha Fox (1988-09)</description>
 		<year>1988</year>
 		<publisher>Mega!Max</publisher>
@@ -11421,6 +11409,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="samantha fox (1988-09)(megamax)[a].adf" size="901120" crc="b6e90c68" sha1="30c117e4f6c51b6b72237bf2feacccc66c982ca1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="samantha_2" supported="no">
+		<description>Samantha Fox</description>
+		<year>1988</year>
+		<publisher>Software of Sweden</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="samantha fox (1988)(software of sweden).adf" size="901120" crc="8df47b62" sha1="21455f59da72a60e83b19c2df8fe0ba5fa6de5c3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -11537,19 +11537,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="sexcarto" supported="no">
-		<description>Sex Cartoons 2 (1995-05-14)</description>
-		<year>1995</year>
-		<publisher>History</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="XXX"/>
-			<dataarea name="flop" size="901120">
-				<rom name="sex cartoons 2 (1995-05-14)(history)[xxx].adf" size="901120" crc="1b47e403" sha1="166ae4327cb49d6acc55fee355875cb5ee8b284c"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="sexcarto_1" supported="no">
 		<description>Sex Cartoons 2 (AGA, 1995-05)</description>
 		<year>1995</year>
 		<publisher>Alpine - Raider</publisher>
@@ -11558,6 +11545,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="XXX"/>
 			<dataarea name="flop" size="901120">
 				<rom name="sex cartoons 2 (1995-05)(alpine - raider)(aga)[xxx].adf" size="901120" crc="6aafb68a" sha1="26acd5464f127969f16e54673d1ff1bc5cdef849"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sexcarto_1" supported="no">
+		<description>Sex Cartoons 2 (1995-05-14)</description>
+		<year>1995</year>
+		<publisher>History</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="XXX"/>
+			<dataarea name="flop" size="901120">
+				<rom name="sex cartoons 2 (1995-05-14)(history)[xxx].adf" size="901120" crc="1b47e403" sha1="166ae4327cb49d6acc55fee355875cb5ee8b284c"/>
 			</dataarea>
 		</part>
 	</software>
@@ -11771,18 +11771,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="sherilyn" supported="no">
-		<description>Sherilyn Fenn Slideshow (AGA)</description>
-		<year>1994</year>
-		<publisher>NFA</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="sherilyn fenn slideshow (1994)(nfa)(aga).adf" size="901120" crc="56a5306e" sha1="cbacc2dd3edc649b4538bd28e4f695816e3e3b32"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="sherilyn_1" supported="no">
 		<description>Sherilyn Fenn Slideshow (AGA) (1)</description>
 		<year>199?</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -11797,6 +11785,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="sherilyn fenn slideshow (199x)(-)(aga)(disk 2 of 2).adf" size="901120" crc="19157f12" sha1="e0e53b7af79f60bf334f240fbb9a9b5d0129b21d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sherilyn_1" supported="no">
+		<description>Sherilyn Fenn Slideshow (AGA)</description>
+		<year>1994</year>
+		<publisher>NFA</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="sherilyn fenn slideshow (1994)(nfa)(aga).adf" size="901120" crc="56a5306e" sha1="cbacc2dd3edc649b4538bd28e4f695816e3e3b32"/>
 			</dataarea>
 		</part>
 	</software>
@@ -14280,18 +14280,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thegalle" supported="no">
-		<description>The Gallery</description>
-		<year>1993</year>
-		<publisher>Isch Crew</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="gallery, the (1993)(isch crew).adf" size="901120" crc="70964188" sha1="8e3a8a04bdf6d02bf62ab8bc2406da793e1596b3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thegalle_1" supported="no">
 		<description>The Gallery (1992-07-07)</description>
 		<year>1992</year>
 		<publisher>Ghost</publisher>
@@ -14299,6 +14287,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="gallery, the (1992-07-07)(ghost).adf" size="901120" crc="01bcc4d8" sha1="26d790b43066fabf4c3569d21db7ac59fd7e04cc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thegalle_1" supported="no">
+		<description>The Gallery</description>
+		<year>1993</year>
+		<publisher>Isch Crew</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="gallery, the (1993)(isch crew).adf" size="901120" crc="70964188" sha1="8e3a8a04bdf6d02bf62ab8bc2406da793e1596b3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -14880,6 +14880,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thereddw" supported="no">
+		<description>The Red Dwarf Slideshow (AGA) (1)</description>
+		<year>19??</year>
+		<publisher>Captain Colorcycle</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="red dwarf slideshow, the (19xx)(captain colorcycle)(aga)(disk 1 of 2).adf" size="901120" crc="d441b578" sha1="268476ad072f060af833dc2d562e5d5abeadd9da"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="red dwarf slideshow, the (19xx)(captain colorcycle)(aga)(disk 2 of 2).adf" size="901120" crc="292c9b3d" sha1="6973e36feed10917642b30b36c8f898e7e010556"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thereddw_1" supported="no">
 		<description>The Red Dwarf Slideshow (AGA)</description>
 		<year>199?</year>
 		<publisher>G. Owens</publisher>
@@ -14900,25 +14919,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2, Mailware, Alt 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="red dwarf slideshow, the (199x)(g. owens)(aga)(disk 2 of 2)[a][mailware].adf" size="901120" crc="187fe899" sha1="a09aef174cd53650679ec38f46ee84be49c2b745"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thereddw_1" supported="no">
-		<description>The Red Dwarf Slideshow (AGA) (1)</description>
-		<year>19??</year>
-		<publisher>Captain Colorcycle</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="red dwarf slideshow, the (19xx)(captain colorcycle)(aga)(disk 1 of 2).adf" size="901120" crc="d441b578" sha1="268476ad072f060af833dc2d562e5d5abeadd9da"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="red dwarf slideshow, the (19xx)(captain colorcycle)(aga)(disk 2 of 2).adf" size="901120" crc="292c9b3d" sha1="6973e36feed10917642b30b36c8f898e7e010556"/>
 			</dataarea>
 		</part>
 	</software>

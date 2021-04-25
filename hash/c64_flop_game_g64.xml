@@ -4527,6 +4527,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="blackgol" supported="no">
+		<description>Black Gold (de)</description>
+		<year>1992</year>
+		<publisher>Starbyte Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="333744">
+				<rom name="black gold (1992)(starbyte software)(de).g64" size="333744" crc="a5b01238" sha1="b8719da00d35b790c22df78698590c2f759a177c"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="278234">
+				<rom name="black gold (1992)(starbyte software)(de)[a].g64" size="278234" crc="6f7e8ee2" sha1="5dbfeb4278ffd0978944b9bea39e7a6e508f1787"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blackgol_1" supported="no">
 		<description>Black Gold</description>
 		<year>1989</year>
 		<publisher>reLine Software</publisher>
@@ -4565,24 +4583,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side B, Alt 2"/>
 			<dataarea name="flop" size="278234">
 				<rom name="black gold (1989)(reline software)(side b)[a2].g64" size="278234" crc="5c493b71" sha1="966a8fb1c830707fc6d3cec433e4419180b16093"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="blackgol_1" supported="no">
-		<description>Black Gold (de)</description>
-		<year>1992</year>
-		<publisher>Starbyte Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
-				<rom name="black gold (1992)(starbyte software)(de).g64" size="333744" crc="a5b01238" sha1="b8719da00d35b790c22df78698590c2f759a177c"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="278234">
-				<rom name="black gold (1992)(starbyte software)(de)[a].g64" size="278234" crc="6f7e8ee2" sha1="5dbfeb4278ffd0978944b9bea39e7a6e508f1787"/>
 			</dataarea>
 		</part>
 	</software>
@@ -5993,37 +5993,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="caveman" supported="no">
-		<description>Caveman</description>
-		<year>1984</year>
-		<publisher>Zinta-Micro Systems</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 3 of 4"/>
-			<dataarea name="flop" size="333744">
-				<rom name="caveman (1984)(zinta-micro systems)(disk 3 of 4).g64" size="333744" crc="28a5577e" sha1="e48bae5183d3e44f53f3fa8486a065cf10a43748"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 3 of 4, Alt 1"/>
-			<dataarea name="flop" size="278234">
-				<rom name="caveman (1984)(zinta-micro systems)(disk 3 of 4)[a].g64" size="278234" crc="eba31522" sha1="158bc1787c04e37c0e1c367ad9634bd5f0f9341c"/>
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 4 of 4"/>
-			<dataarea name="flop" size="333744">
-				<rom name="caveman (1984)(zinta-micro systems)(disk 4 of 4).g64" size="333744" crc="d7917557" sha1="eba3801c849f2089a8f61f0e97c7ebfd3d80e22e"/>
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 4 of 4, Alt 1"/>
-			<dataarea name="flop" size="278234">
-				<rom name="caveman (1984)(zinta-micro systems)(disk 4 of 4)[a].g64" size="278234" crc="c2e6068f" sha1="b9f2b8fa58a13a7d57ecffb2c00db784aa70c48f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="caveman_1" supported="no">
 		<description>Caveman (1)</description>
 		<year>1990</year>
 		<publisher>Compute!</publisher>
@@ -6050,6 +6019,37 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side B, Alt 1"/>
 			<dataarea name="flop" size="278234">
 				<rom name="caveman (1990)(compute)(side b)[a].g64" size="278234" crc="8fc85697" sha1="4c375ebb0afd008e1463c162f5dc02dc6b64f59e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="caveman_1" supported="no">
+		<description>Caveman</description>
+		<year>1984</year>
+		<publisher>Zinta-Micro Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 3 of 4"/>
+			<dataarea name="flop" size="333744">
+				<rom name="caveman (1984)(zinta-micro systems)(disk 3 of 4).g64" size="333744" crc="28a5577e" sha1="e48bae5183d3e44f53f3fa8486a065cf10a43748"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 3 of 4, Alt 1"/>
+			<dataarea name="flop" size="278234">
+				<rom name="caveman (1984)(zinta-micro systems)(disk 3 of 4)[a].g64" size="278234" crc="eba31522" sha1="158bc1787c04e37c0e1c367ad9634bd5f0f9341c"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 4 of 4"/>
+			<dataarea name="flop" size="333744">
+				<rom name="caveman (1984)(zinta-micro systems)(disk 4 of 4).g64" size="333744" crc="d7917557" sha1="eba3801c849f2089a8f61f0e97c7ebfd3d80e22e"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 4 of 4, Alt 1"/>
+			<dataarea name="flop" size="278234">
+				<rom name="caveman (1984)(zinta-micro systems)(disk 4 of 4)[a].g64" size="278234" crc="c2e6068f" sha1="b9f2b8fa58a13a7d57ecffb2c00db784aa70c48f"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8128,24 +8128,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="cyborg" supported="no">
-		<description>Cyborg</description>
-		<year>1982</year>
-		<publisher>Sentient Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
-				<rom name="cyborg (1982)(sentient software).g64" size="333744" crc="dee90b90" sha1="723143fc03dd86432aab108592c611322e474347"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Alt 1"/>
-			<dataarea name="flop" size="333744">
-				<rom name="cyborg (1982)(sentient software)[a].g64" size="333744" crc="05fb90ce" sha1="68b3b98a4937082ccf85d8511426b188a227422b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cyborg_1" supported="no">
 		<description>Cyborg (1)</description>
 		<year>1986</year>
 		<publisher>CRL</publisher>
@@ -8159,6 +8141,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt 1"/>
 			<dataarea name="flop" size="278234">
 				<rom name="cyborg (1986)(crl)[a].g64" size="278234" crc="72236e69" sha1="f1c70db17cf5754647ebdd4f22af3d1bcdd5433a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cyborg_1" supported="no">
+		<description>Cyborg</description>
+		<year>1982</year>
+		<publisher>Sentient Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="333744">
+				<rom name="cyborg (1982)(sentient software).g64" size="333744" crc="dee90b90" sha1="723143fc03dd86432aab108592c611322e474347"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="333744">
+				<rom name="cyborg (1982)(sentient software)[a].g64" size="333744" crc="05fb90ce" sha1="68b3b98a4937082ccf85d8511426b188a227422b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -9029,25 +9029,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="dejavu_1" supported="no">
-		<description>Deja Vu</description>
-		<year>1987</year>
-		<publisher>Metribotics</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Cracked by DetoNator"/>
-			<dataarea name="flop" size="333744">
-				<rom name="deja vu (1987)(metribotics)(side b)[cr detonator].g64" size="333744" crc="34c0ea81" sha1="9c69a82f5543c44b4916a49d69b18379e05e4fcc"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Cracked by DetoNator, Alt 1"/>
-			<dataarea name="flop" size="278234">
-				<rom name="deja vu (1987)(metribotics)(side b)[cr detonator][a].g64" size="278234" crc="9ac9f756" sha1="ff9f873294aefab16b876064da280e6081e9de80"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dejavu_2" supported="no">
 		<description>Deja Vu (de)</description>
 		<year>1985</year>
 		<publisher>Ariolasoft</publisher>
@@ -9098,6 +9079,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2 Side B, Alt 1"/>
 			<dataarea name="flop" size="286164">
 				<rom name="deja vu (1985)(ariolasoft)(de)(disk 2 of 2 side b)[a].g64" size="286164" crc="5a719997" sha1="6c6de50c872015d1e40abf50e0ba6651bf1bff90"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dejavu_2" supported="no">
+		<description>Deja Vu</description>
+		<year>1987</year>
+		<publisher>Metribotics</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Cracked by DetoNator"/>
+			<dataarea name="flop" size="333744">
+				<rom name="deja vu (1987)(metribotics)(side b)[cr detonator].g64" size="333744" crc="34c0ea81" sha1="9c69a82f5543c44b4916a49d69b18379e05e4fcc"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Cracked by DetoNator, Alt 1"/>
+			<dataarea name="flop" size="278234">
+				<rom name="deja vu (1987)(metribotics)(side b)[cr detonator][a].g64" size="278234" crc="9ac9f756" sha1="ff9f873294aefab16b876064da280e6081e9de80"/>
 			</dataarea>
 		</part>
 	</software>
@@ -19306,6 +19306,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="modemwar" supported="no">
+		<description>Modem Wars (1)</description>
+		<year>1988</year>
+		<publisher>Electronic Arts+Ozark Softscape</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="333744">
+				<rom name="modem wars (1988)(electronic arts+ozark softscape).g64" size="333744" crc="89876af4" sha1="9d51e3e3f748dcebc9abb607b6e1a369e78e4e64"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modemwar_1" supported="no">
 		<description>Modem Wars</description>
 		<year>1988</year>
 		<publisher>Electronic Arts</publisher>
@@ -19326,18 +19338,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side A, Alt 2"/>
 			<dataarea name="flop" size="325814">
 				<rom name="modem wars (1988)(electronic arts)(side a)[a2].g64" size="325814" crc="5a952b99" sha1="1a744c9e9113ccd16b66c4546d2fa39b727d6e56"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="modemwar_1" supported="no">
-		<description>Modem Wars (1)</description>
-		<year>1988</year>
-		<publisher>Electronic Arts+Ozark Softscape</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
-				<rom name="modem wars (1988)(electronic arts+ozark softscape).g64" size="333744" crc="89876af4" sha1="9d51e3e3f748dcebc9abb607b6e1a369e78e4e64"/>
 			</dataarea>
 		</part>
 	</software>
@@ -19952,25 +19952,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="navalbat" supported="no">
-		<description>Naval Battle of Tsushima</description>
-		<year>1984</year>
-		<publisher>Avalon Hill</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A"/>
-			<dataarea name="flop" size="333744">
-				<rom name="naval battle of tsushima (1984)(avalon hill)(side a).g64" size="333744" crc="0a2d67f2" sha1="202541233789f58a9e93af0b1a7832f986565196"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side A, Alt 1"/>
-			<dataarea name="flop" size="278234">
-				<rom name="naval battle of tsushima (1984)(avalon hill)(side a)[a].g64" size="278234" crc="c930e4d7" sha1="3b810c2675530d1faaab8a82a1ba843ba15a7df3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="navalbat_1" supported="no">
 		<description>Naval Battle of Tsushima (1989-02-08)</description>
 		<year>1989</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -19997,6 +19978,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side B, Cracked by Hellcats - The Blasters Inc., Alt 1"/>
 			<dataarea name="flop" size="333744">
 				<rom name="naval battle of tsushima (1989-02-08)(-)(side b)[cr hellcats - the blasters inc.][a].g64" size="333744" crc="600e9e90" sha1="3a2543ae4fb3924fbbc05b9e665f453d62133105"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="navalbat_1" supported="no">
+		<description>Naval Battle of Tsushima</description>
+		<year>1984</year>
+		<publisher>Avalon Hill</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="333744">
+				<rom name="naval battle of tsushima (1984)(avalon hill)(side a).g64" size="333744" crc="0a2d67f2" sha1="202541233789f58a9e93af0b1a7832f986565196"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, Alt 1"/>
+			<dataarea name="flop" size="278234">
+				<rom name="naval battle of tsushima (1984)(avalon hill)(side a)[a].g64" size="278234" crc="c930e4d7" sha1="3b810c2675530d1faaab8a82a1ba843ba15a7df3"/>
 			</dataarea>
 		</part>
 	</software>
@@ -33257,18 +33257,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="tourname" supported="no">
-		<description>Tournament Golf (1)</description>
-		<year>1983</year>
-		<publisher>Avalon Hill</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="286164">
-				<rom name="tournament golf (1983)(avalon hill).g64" size="286164" crc="04c083c1" sha1="76a52cf5b519ed4f37200164ae786e527f308a21"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tourname_1" supported="no">
 		<description>Tournament Golf</description>
 		<year>1983</year>
 		<publisher>Avalon Hill Microcomputer Games</publisher>
@@ -33277,6 +33265,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side B"/>
 			<dataarea name="flop" size="286164">
 				<rom name="tournament golf (1983)(avalon hill microcomputer games)(side b).g64" size="286164" crc="bf9acaf7" sha1="69f79761e08b650ad5747167231e159a693680ef"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tourname_1" supported="no">
+		<description>Tournament Golf (1)</description>
+		<year>1983</year>
+		<publisher>Avalon Hill</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="286164">
+				<rom name="tournament golf (1983)(avalon hill).g64" size="286164" crc="04c083c1" sha1="76a52cf5b519ed4f37200164ae786e527f308a21"/>
 			</dataarea>
 		</part>
 	</software>
@@ -36594,25 +36594,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="wizard" supported="no">
-		<description>Wizard</description>
-		<year>1984</year>
-		<publisher>Progressive Peripherals &amp; Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side B"/>
-			<dataarea name="flop" size="286164">
-				<rom name="wizard (1984)(progressive peripherals &amp; software)(side b).g64" size="286164" crc="c724aebc" sha1="a1ebfb4ba99a236627c5e00c7913ddb6e14f9ace"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B, Alt 1"/>
-			<dataarea name="flop" size="333744">
-				<rom name="wizard (1984)(progressive peripherals &amp; software)(side b)[a].g64" size="333744" crc="f2c891ae" sha1="e21398b2d7af80ada9ecdca225947c27b60d460f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="wizard_1" supported="no">
 		<description>Wizard (1)</description>
 		<year>1986</year>
 		<publisher>Electronic Arts</publisher>
@@ -36681,6 +36662,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Side B, Alt 4"/>
 			<dataarea name="flop" size="302024">
 				<rom name="wizard (1986)(electronic arts)(side b)[a4].g64" size="302024" crc="a9f20469" sha1="16bddcea1ce9c292eeac6b37e965aa516e92aa83"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wizard_1" supported="no">
+		<description>Wizard</description>
+		<year>1984</year>
+		<publisher>Progressive Peripherals &amp; Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="286164">
+				<rom name="wizard (1984)(progressive peripherals &amp; software)(side b).g64" size="286164" crc="c724aebc" sha1="a1ebfb4ba99a236627c5e00c7913ddb6e14f9ace"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Alt 1"/>
+			<dataarea name="flop" size="333744">
+				<rom name="wizard (1984)(progressive peripherals &amp; software)(side b)[a].g64" size="333744" crc="f2c891ae" sha1="e21398b2d7af80ada9ecdca225947c27b60d460f"/>
 			</dataarea>
 		</part>
 	</software>

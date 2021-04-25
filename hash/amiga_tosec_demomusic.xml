@@ -9160,6 +9160,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="dreams" supported="no">
+		<description>Dreams (1996-02-18)</description>
+		<year>1996</year>
+		<publisher>Almagest</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="KS2.0"/>
+			<dataarea name="flop" size="901120">
+				<rom name="dreams (1996-02-18)(almagest)[ks2.0].adf" size="901120" crc="782f303e" sha1="b5172dd9bb63d5c7a3347089d1e4b16f4a50a887"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dreams_1" supported="no">
 		<description>Dreams (1992-06-28)</description>
 		<year>1992</year>
 		<publisher>The Special Brothers</publisher>
@@ -9173,19 +9186,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt baddump"/>
 			<dataarea name="flop" size="901120">
 				<rom name="dreams (1992-06-28)(the special brothers)[a baddump].adf" size="901120" crc="9b5f8252" sha1="9e54f714e303f765bc931c85034a3c0bbe604461"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dreams_1" supported="no">
-		<description>Dreams (1996-02-18)</description>
-		<year>1996</year>
-		<publisher>Almagest</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="KS2.0"/>
-			<dataarea name="flop" size="901120">
-				<rom name="dreams (1996-02-18)(almagest)[ks2.0].adf" size="901120" crc="782f303e" sha1="b5172dd9bb63d5c7a3347089d1e4b16f4a50a887"/>
 			</dataarea>
 		</part>
 	</software>
@@ -10053,24 +10053,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="expressi" supported="no">
-		<description>Expressions</description>
-		<year>1989</year>
-		<publisher>Time Circle</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="expressions (1989)(time circle).adf" size="901120" crc="ddbd4d59" sha1="9c801acdbeae7792e78ec43e1da28bb2ca67ccea"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Overdumped 1"/>
-			<dataarea name="flop" size="923648">
-				<rom name="expressions (1989)(time circle)[o].adf" size="923648" crc="7c063ac8" sha1="cf6219318a55be1195b40317c126e56ee6f4dc8a" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="expressi_1" supported="no">
 		<description>Expressions (1)</description>
 		<year>1990</year>
 		<publisher>Quartz</publisher>
@@ -10084,6 +10066,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
 				<rom name="expressions (1990)(quartz)[m bamcopy].adf" size="901120" crc="c7f29b86" sha1="3796c8e759148ae939f2005ab810d1d658e75c0a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="expressi_1" supported="no">
+		<description>Expressions</description>
+		<year>1989</year>
+		<publisher>Time Circle</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="expressions (1989)(time circle).adf" size="901120" crc="ddbd4d59" sha1="9c801acdbeae7792e78ec43e1da28bb2ca67ccea"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Overdumped 1"/>
+			<dataarea name="flop" size="923648">
+				<rom name="expressions (1989)(time circle)[o].adf" size="923648" crc="7c063ac8" sha1="cf6219318a55be1195b40317c126e56ee6f4dc8a" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -10548,18 +10548,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="firstmus_7" supported="no">
-		<description>First Musicdisk (1991-07-07)</description>
-		<year>1991</year>
-		<publisher>Pretando - Voice</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="first musicdisk (1991-07-07)(pretando - voice).adf" size="901120" crc="c81ea65c" sha1="1d647338194d8de497ec8ab2c4cf8a8e57a86df0"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="firstmus_8" supported="no">
 		<description>First Musicdisk (1992-10-01)</description>
 		<year>1992</year>
 		<publisher>Kaycee</publisher>
@@ -10567,6 +10555,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="first musicdisk (1992-10-01)(kaycee).adf" size="901120" crc="1ed3183d" sha1="ddc847ae486246cf39c5816371b839f7a02c6320"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="firstmus_8" supported="no">
+		<description>First Musicdisk (1991-07-07)</description>
+		<year>1991</year>
+		<publisher>Pretando - Voice</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="first musicdisk (1991-07-07)(pretando - voice).adf" size="901120" crc="c81ea65c" sha1="1d647338194d8de497ec8ab2c4cf8a8e57a86df0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -19449,6 +19449,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musiccol_11" supported="no">
+		<description>Music Collection #1 (1991-02-23)</description>
+		<year>1991</year>
+		<publisher>Battletech</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music collection #1 (1991-02-23)(battletech).adf" size="901120" crc="bf966262" sha1="7d433696d2b442c7592962c6fca6974ace4a1244"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musiccol_12" supported="no">
 		<description>Music Collection #1</description>
 		<year>1989</year>
 		<publisher>Lamers Incorporated</publisher>
@@ -19460,7 +19472,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="musiccol_12" supported="no">
+	<software name="musiccol_13" supported="no">
 		<description>Music Collection #1 (1990-03-04)</description>
 		<year>1990</year>
 		<publisher>SemiCoders</publisher>
@@ -19475,18 +19487,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="music collection #1 (1990-03-04)(semicoders)(disk 2 of 2).adf" size="901120" crc="47afecee" sha1="dd37f0fd74611d696092bc2c9f1802505d3ef1f6"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musiccol_13" supported="no">
-		<description>Music Collection #1 (1991-02-23)</description>
-		<year>1991</year>
-		<publisher>Battletech</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music collection #1 (1991-02-23)(battletech).adf" size="901120" crc="bf966262" sha1="7d433696d2b442c7592962c6fca6974ace4a1244"/>
 			</dataarea>
 		</part>
 	</software>
@@ -19564,6 +19564,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musiccol_20" supported="no">
+		<description>Music Collection 1 (1990-08-13)</description>
+		<year>1990</year>
+		<publisher>Fatal Beauty</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music collection 1 (1990-08-13)(fatal beauty).adf" size="901120" crc="3995bf66" sha1="172319956266f145d3174bb72264a73eadc58f5b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musiccol_21" supported="no">
 		<description>Music Collection 1</description>
 		<year>1991</year>
 		<publisher>Shadow</publisher>
@@ -19577,18 +19589,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
 				<rom name="music collection 1 (1991)(shadow)[m bamcopy].adf" size="901120" crc="4adfb6a9" sha1="06f0ad74c93acb64eb69465700a0ada233a0eb30"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musiccol_21" supported="no">
-		<description>Music Collection 1 (1990-08-13)</description>
-		<year>1990</year>
-		<publisher>Fatal Beauty</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music collection 1 (1990-08-13)(fatal beauty).adf" size="901120" crc="3995bf66" sha1="172319956266f145d3174bb72264a73eadc58f5b"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20017,18 +20017,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musicdem_4" supported="no">
-		<description>Music Demo (1990-09-19)</description>
-		<year>1990</year>
-		<publisher>Fox - Xad - Vision</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music demo (1990-09-19)(fox - xad - vision).adf" size="901120" crc="67722767" sha1="867e0cdf1dfcea1ce0bff3bbe9a5a113d2c4fa8d"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdem_5" supported="no">
 		<description>Music Demo (1994-01)</description>
 		<year>1994</year>
 		<publisher>Degeneration</publisher>
@@ -20042,6 +20030,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Alt deleted files"/>
 			<dataarea name="flop" size="901120">
 				<rom name="music demo (1994-01)(degeneration)[a deleted files].adf" size="901120" crc="0f3f939e" sha1="cd88d97f8c3c73070fc6ae7064d5ad4999ad2e12"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdem_5" supported="no">
+		<description>Music Demo (1990-09-19)</description>
+		<year>1990</year>
+		<publisher>Fox - Xad - Vision</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music demo (1990-09-19)(fox - xad - vision).adf" size="901120" crc="67722767" sha1="867e0cdf1dfcea1ce0bff3bbe9a5a113d2c4fa8d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20095,67 +20095,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musicdis_4" supported="no">
-		<description>Music Disk #1</description>
-		<year>1989</year>
-		<publisher>The Gameboy Crew</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk #1 (1989)(the gameboy crew).adf" size="901120" crc="bbe363ea" sha1="021f9f05a7b8f569ff5a0ab500309cc9b7145185"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_5" supported="no">
-		<description>Music Disk #1 (1)</description>
-		<year>1989</year>
-		<publisher>Zenith</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Virus SystemZ v5.0"/>
-			<dataarea name="flop" size="901120">
-				<rom name="music disk #1 (1989)(zenith)[v systemz v5.0].adf" size="901120" crc="23c886eb" sha1="4f89948b6e26e0784b3d51f59eeb8f7d84a82d7f" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_6" supported="no">
-		<description>Music Disk #1 (2)</description>
-		<year>1990</year>
-		<publisher>Lamer Federation</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk #1 (1990)(lamer federation).adf" size="901120" crc="97e35c03" sha1="8dcbf75dfecb101e5d8c28366654d881ee52d890"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_7" supported="no">
-		<description>Music Disk #1 (3)</description>
-		<year>1991</year>
-		<publisher>Hell Order Team</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk #1 (1991)(hell order team).adf" size="901120" crc="8f88b91f" sha1="21c8430cfecdf1c59638a5f76bf27577b898f454"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_8" supported="no">
-		<description>Music Disk #1 (1990-08-11)</description>
-		<year>1990</year>
-		<publisher>Testament</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk #1 (1990-08-11)(testament).adf" size="901120" crc="21ffc5cc" sha1="835cdca39dd6275f941bf0c35ca05259bb90406e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_9" supported="no">
 		<description>Music Disk #1 (1990-09-01)</description>
 		<year>1990</year>
 		<publisher>Galaxy Force</publisher>
@@ -20179,19 +20118,43 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="musicdis_10" supported="no">
-		<description>Music Disk #1 (1990-10-06)</description>
-		<year>1990</year>
-		<publisher>Shade</publisher>
+	<software name="musicdis_5" supported="no">
+		<description>Music Disk #1 (3)</description>
+		<year>1991</year>
+		<publisher>Hell Order Team</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="music disk #1 (1990-10-06)(shade).adf" size="901120" crc="ff64a4d0" sha1="d9722d320f658e99cdba2534a92d2f8347a26eeb"/>
+				<rom name="music disk #1 (1991)(hell order team).adf" size="901120" crc="8f88b91f" sha1="21c8430cfecdf1c59638a5f76bf27577b898f454"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="musicdis_11" supported="no">
+	<software name="musicdis_6" supported="no">
+		<description>Music Disk #1 (es)</description>
+		<year>1994</year>
+		<publisher>LLFB</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk #1 (1994)(llfb)(es).adf" size="901120" crc="54a8641a" sha1="3481ce71b94e9977e25ad45a77b2efa4686f5b5e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_7" supported="no">
+		<description>Music Disk #1 (2)</description>
+		<year>1990</year>
+		<publisher>Lamer Federation</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk #1 (1990)(lamer federation).adf" size="901120" crc="97e35c03" sha1="8dcbf75dfecb101e5d8c28366654d881ee52d890"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_8" supported="no">
 		<description>Music Disk #1 (1990-11-18)</description>
 		<year>1990</year>
 		<publisher>Pendle Europe</publisher>
@@ -20203,14 +20166,51 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="musicdis_12" supported="no">
-		<description>Music Disk #1 (es)</description>
-		<year>1994</year>
-		<publisher>LLFB</publisher>
+	<software name="musicdis_9" supported="no">
+		<description>Music Disk #1 (1990-10-06)</description>
+		<year>1990</year>
+		<publisher>Shade</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="music disk #1 (1994)(llfb)(es).adf" size="901120" crc="54a8641a" sha1="3481ce71b94e9977e25ad45a77b2efa4686f5b5e"/>
+				<rom name="music disk #1 (1990-10-06)(shade).adf" size="901120" crc="ff64a4d0" sha1="d9722d320f658e99cdba2534a92d2f8347a26eeb"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_10" supported="no">
+		<description>Music Disk #1 (1990-08-11)</description>
+		<year>1990</year>
+		<publisher>Testament</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk #1 (1990-08-11)(testament).adf" size="901120" crc="21ffc5cc" sha1="835cdca39dd6275f941bf0c35ca05259bb90406e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_11" supported="no">
+		<description>Music Disk #1</description>
+		<year>1989</year>
+		<publisher>The Gameboy Crew</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk #1 (1989)(the gameboy crew).adf" size="901120" crc="bbe363ea" sha1="021f9f05a7b8f569ff5a0ab500309cc9b7145185"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_12" supported="no">
+		<description>Music Disk #1 (1)</description>
+		<year>1989</year>
+		<publisher>Zenith</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Virus SystemZ v5.0"/>
+			<dataarea name="flop" size="901120">
+				<rom name="music disk #1 (1989)(zenith)[v systemz v5.0].adf" size="901120" crc="23c886eb" sha1="4f89948b6e26e0784b3d51f59eeb8f7d84a82d7f" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20314,18 +20314,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musicdis_21" supported="no">
-		<description>Music Disk #8</description>
-		<year>1990</year>
-		<publisher>The Studio</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk #8 (1990)(the studio).adf" size="901120" crc="33972506" sha1="906a6ba25459ce83f82bc6f902dc73239f2fc6b5"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_22" supported="no">
 		<description>Music Disk #8 (1990-05-11)</description>
 		<year>1990</year>
 		<publisher>Darkstar</publisher>
@@ -20333,6 +20321,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="music disk #8 (1990-05-11)(darkstar).adf" size="901120" crc="e2a2e066" sha1="287d0919780f06de146b057370769036ff474133"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_22" supported="no">
+		<description>Music Disk #8</description>
+		<year>1990</year>
+		<publisher>The Studio</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk #8 (1990)(the studio).adf" size="901120" crc="33972506" sha1="906a6ba25459ce83f82bc6f902dc73239f2fc6b5"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20374,6 +20374,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musicdis_26" supported="no">
+		<description>Music Disk 1 (7)</description>
+		<year>199?</year>
+		<publisher>Digital Zone</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk 1 (199x)(digital zone).adf" size="901120" crc="56438c8a" sha1="f6a4659398dd257d68efe282598fece9045141b3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_27" supported="no">
 		<description>Music Disk 1 (2)</description>
 		<year>1989</year>
 		<publisher>Inner City</publisher>
@@ -20385,7 +20397,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="musicdis_27" supported="no">
+	<software name="musicdis_28" supported="no">
+		<description>Music Disk 1 (8)</description>
+		<year>19??</year>
+		<publisher>James Deavall</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk 1 (19xx)(james deavall).adf" size="901120" crc="f655288d" sha1="3d316c0c94da65e45d1a71f839a31c6bbcb37080"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_29" supported="no">
 		<description>Music Disk 1 (3)</description>
 		<year>1990</year>
 		<publisher>Justice Europe</publisher>
@@ -20404,74 +20428,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="musicdis_28" supported="no">
-		<description>Music Disk 1 (4)</description>
-		<year>1990</year>
-		<publisher>The Style Council</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk 1 (1990)(the style council).adf" size="901120" crc="118ec4b5" sha1="44367190e2a430eed190d771c9465ddfb5d49978"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_29" supported="no">
-		<description>Music Disk 1 (5)</description>
-		<year>1991</year>
-		<publisher>Revolver</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk 1 (1991)(revolver).adf" size="901120" crc="9dd789c0" sha1="5dd46ee14b1d0863ecf0a9be261b89842b478575"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="musicdis_30" supported="no">
-		<description>Music Disk 1 (6)</description>
-		<year>1992</year>
-		<publisher>Slipstream</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Bad corrupt file"/>
-			<dataarea name="flop" size="901120">
-				<rom name="music disk 1 (1992)(slipstream)[b corrupt file].adf" size="901120" crc="3c7ff09d" sha1="f225acac11f7ff500a31537dbb86b0d348c43361" status="baddump"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy, Bad corrupt file"/>
-			<dataarea name="flop" size="901120">
-				<rom name="music disk 1 (1992)(slipstream)[m bamcopy][b corrupt file].adf" size="901120" crc="4e8db593" sha1="a1cb38fff3f6b82118a598c7de17a40db03e553b" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_31" supported="no">
-		<description>Music Disk 1 (7)</description>
-		<year>199?</year>
-		<publisher>Digital Zone</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk 1 (199x)(digital zone).adf" size="901120" crc="56438c8a" sha1="f6a4659398dd257d68efe282598fece9045141b3"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_32" supported="no">
-		<description>Music Disk 1 (8)</description>
-		<year>19??</year>
-		<publisher>James Deavall</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk 1 (19xx)(james deavall).adf" size="901120" crc="f655288d" sha1="3d316c0c94da65e45d1a71f839a31c6bbcb37080"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_33" supported="no">
 		<description>Music Disk 1 (1991-04-15)</description>
 		<year>1991</year>
 		<publisher>Prologic</publisher>
@@ -20495,6 +20452,49 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="musicdis_31" supported="no">
+		<description>Music Disk 1 (5)</description>
+		<year>1991</year>
+		<publisher>Revolver</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk 1 (1991)(revolver).adf" size="901120" crc="9dd789c0" sha1="5dd46ee14b1d0863ecf0a9be261b89842b478575"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_32" supported="no">
+		<description>Music Disk 1 (6)</description>
+		<year>1992</year>
+		<publisher>Slipstream</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt file"/>
+			<dataarea name="flop" size="901120">
+				<rom name="music disk 1 (1992)(slipstream)[b corrupt file].adf" size="901120" crc="3c7ff09d" sha1="f225acac11f7ff500a31537dbb86b0d348c43361" status="baddump"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Modified bamcopy, Bad corrupt file"/>
+			<dataarea name="flop" size="901120">
+				<rom name="music disk 1 (1992)(slipstream)[m bamcopy][b corrupt file].adf" size="901120" crc="4e8db593" sha1="a1cb38fff3f6b82118a598c7de17a40db03e553b" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_33" supported="no">
+		<description>Music Disk 1 (4)</description>
+		<year>1990</year>
+		<publisher>The Style Council</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk 1 (1990)(the style council).adf" size="901120" crc="118ec4b5" sha1="44367190e2a430eed190d771c9465ddfb5d49978"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="musicdis_34" supported="no">
 		<description>Music Disk 2.5 (1990-09-02)</description>
 		<year>1990</year>
@@ -20508,42 +20508,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musicdis_35" supported="no">
-		<description>Music Disk 2</description>
-		<year>1989</year>
-		<publisher>Inner City</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk 2 (1989)(inner city).adf" size="901120" crc="dc9ab7b4" sha1="f8a34590a1500014f2e3d88359a9947d00e9f063"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_36" supported="no">
-		<description>Music Disk 2 (1)</description>
-		<year>199?</year>
-		<publisher>Digital Zone</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk 2 (199x)(digital zone).adf" size="901120" crc="5d8fa995" sha1="223d0422791c0308c77006f9f0e91ce2aa2ead50"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_37" supported="no">
-		<description>Music Disk 2 (1990-10-01)</description>
-		<year>1990</year>
-		<publisher>The Style Council</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk 2 (1990-10-01)(the style council).adf" size="901120" crc="3fa3329b" sha1="454cd0f793379b85891fbbe982d727654aea92c1"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_38" supported="no">
 		<description>Music Disk 2 (1992-07-29)</description>
 		<year>1992</year>
 		<publisher>Darkness</publisher>
@@ -20561,6 +20525,42 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
+	<software name="musicdis_36" supported="no">
+		<description>Music Disk 2 (1)</description>
+		<year>199?</year>
+		<publisher>Digital Zone</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk 2 (199x)(digital zone).adf" size="901120" crc="5d8fa995" sha1="223d0422791c0308c77006f9f0e91ce2aa2ead50"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_37" supported="no">
+		<description>Music Disk 2</description>
+		<year>1989</year>
+		<publisher>Inner City</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk 2 (1989)(inner city).adf" size="901120" crc="dc9ab7b4" sha1="f8a34590a1500014f2e3d88359a9947d00e9f063"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_38" supported="no">
+		<description>Music Disk 2 (1990-10-01)</description>
+		<year>1990</year>
+		<publisher>The Style Council</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk 2 (1990-10-01)(the style council).adf" size="901120" crc="3fa3329b" sha1="454cd0f793379b85891fbbe982d727654aea92c1"/>
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="musicdis_39" supported="no">
 		<description>Music Disk 3</description>
 		<year>1992</year>
@@ -20574,18 +20574,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musicdis_40" supported="no">
-		<description>Music Disk 4</description>
-		<year>1991</year>
-		<publisher>Sonix Systems</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk 4 (1991)(sonix systems).adf" size="901120" crc="cde863e6" sha1="9b964532c137e27b0aced9d60de30f2769dfa43a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_41" supported="no">
 		<description>Music Disk 4 (1)</description>
 		<year>1992</year>
 		<publisher>Aliens</publisher>
@@ -20597,19 +20585,19 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="musicdis_42" supported="no">
-		<description>Music Disk 5</description>
-		<year>1989</year>
-		<publisher>Slipstream</publisher>
+	<software name="musicdis_41" supported="no">
+		<description>Music Disk 4</description>
+		<year>1991</year>
+		<publisher>Sonix Systems</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="music disk 5 (1989)(slipstream).adf" size="901120" crc="0d3a5df5" sha1="e5d0c60f70d355b0afcddb0d865cb6f290e1ee70"/>
+				<rom name="music disk 4 (1991)(sonix systems).adf" size="901120" crc="cde863e6" sha1="9b964532c137e27b0aced9d60de30f2769dfa43a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="musicdis_43" supported="no">
+	<software name="musicdis_42" supported="no">
 		<description>Music Disk 5 (1)</description>
 		<year>1990</year>
 		<publisher>Phantasy</publisher>
@@ -20617,6 +20605,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="music disk 5 (1990)(phantasy).adf" size="901120" crc="260b73bf" sha1="281596dd043eca6b541ebf35bb78aeb9fa756830"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_43" supported="no">
+		<description>Music Disk 5</description>
+		<year>1989</year>
+		<publisher>Slipstream</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk 5 (1989)(slipstream).adf" size="901120" crc="0d3a5df5" sha1="e5d0c60f70d355b0afcddb0d865cb6f290e1ee70"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20653,18 +20653,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musicdis_46" supported="no">
-		<description>Music Disk III</description>
-		<year>1990</year>
-		<publisher>Zenith</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk iii (1990)(zenith).adf" size="901120" crc="87c7f9d0" sha1="acf2d67e7390f3f6d02e74d8a30ccca69a544829"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_47" supported="no">
 		<description>Music Disk III (1)</description>
 		<year>199?</year>
 		<publisher>Digital Zone</publisher>
@@ -20672,6 +20660,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="music disk iii (199x)(digital zone).adf" size="901120" crc="5ddff226" sha1="0c86c8492e3e8debcaec577f55bccbbded46f4f6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_47" supported="no">
+		<description>Music Disk III</description>
+		<year>1990</year>
+		<publisher>Zenith</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk iii (1990)(zenith).adf" size="901120" crc="87c7f9d0" sha1="acf2d67e7390f3f6d02e74d8a30ccca69a544829"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20738,18 +20738,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musicdis_53" supported="no">
-		<description>Music Disk Vol. 1 (1991-01-28)</description>
-		<year>1991</year>
-		<publisher>Vogue</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk vol. 1 (1991-01-28)(vogue).adf" size="901120" crc="e006d9ed" sha1="851b2985410913b75ab33b1a0249f5d939142487"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_54" supported="no">
 		<description>Music Disk Vol. 1 (1991-03-02)</description>
 		<year>1991</year>
 		<publisher>The Flashing Bytes</publisher>
@@ -20757,6 +20745,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="music disk vol. 1 (1991-03-02)(the flashing bytes).adf" size="901120" crc="62905c04" sha1="e27b13cc0ab3ab45f5b5c88ac56a03da8270d86b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_54" supported="no">
+		<description>Music Disk Vol. 1 (1991-01-28)</description>
+		<year>1991</year>
+		<publisher>Vogue</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk vol. 1 (1991-01-28)(vogue).adf" size="901120" crc="e006d9ed" sha1="851b2985410913b75ab33b1a0249f5d939142487"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20798,13 +20798,13 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musicdis_58" supported="no">
-		<description>Music Disk (1)</description>
-		<year>1991</year>
-		<publisher>Grace</publisher>
+		<description>Music Disk (1990-10-02)</description>
+		<year>1990</year>
+		<publisher>Bass</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
-				<rom name="music disk (1991)(grace).adf" size="901120" crc="060cb025" sha1="001430c6281ca418e6cca73151571028159a8a92"/>
+				<rom name="music disk (1990-10-02)(bass).adf" size="901120" crc="3f55f00f" sha1="48140c729716a32fc835463053576df150e9d89e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -20834,30 +20834,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musicdis_60" supported="no">
-		<description>Music Disk (1990-06-30)</description>
-		<year>1990</year>
-		<publisher>Triumph</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk (1990-06-30)(triumph).adf" size="901120" crc="3646aeef" sha1="398fdf566870754413066c7c7039de593f05ab32"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_61" supported="no">
-		<description>Music Disk (1990-10-02)</description>
-		<year>1990</year>
-		<publisher>Bass</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music disk (1990-10-02)(bass).adf" size="901120" crc="3f55f00f" sha1="48140c729716a32fc835463053576df150e9d89e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_62" supported="no">
 		<description>Music Disk (1991-01-24)</description>
 		<year>1991</year>
 		<publisher>Erosion</publisher>
@@ -20865,6 +20841,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="music disk (1991-01-24)(erosion).adf" size="901120" crc="90f66d80" sha1="834ebdf8cee6832b58201bfd844c09dfe05de43e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_61" supported="no">
+		<description>Music Disk (1)</description>
+		<year>1991</year>
+		<publisher>Grace</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk (1991)(grace).adf" size="901120" crc="060cb025" sha1="001430c6281ca418e6cca73151571028159a8a92"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_62" supported="no">
+		<description>Music Disk (1990-06-30)</description>
+		<year>1990</year>
+		<publisher>Triumph</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music disk (1990-06-30)(triumph).adf" size="901120" crc="3646aeef" sha1="398fdf566870754413066c7c7039de593f05ab32"/>
 			</dataarea>
 		</part>
 	</software>
@@ -21288,6 +21288,30 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musicmad_2" supported="no">
+		<description>Music Madness (1)</description>
+		<year>1989</year>
+		<publisher>Freedom Force - The Amiga Superiors</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music madness (1989)(freedom force - the amiga superiors).adf" size="901120" crc="6d55d1ea" sha1="44fddec68e8bdb9d40957c1cd849ab34798390a2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicmad_3" supported="no">
+		<description>Music Madness (2)</description>
+		<year>1991</year>
+		<publisher>Ghost</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music madness (1991)(ghost).adf" size="901120" crc="66a31ed8" sha1="902e5406490121a8e72467db70d639f2e5742fc5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicmad_4" supported="no">
 		<description>Music Madness</description>
 		<year>1988</year>
 		<publisher>Jungle Command</publisher>
@@ -21301,30 +21325,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Modified bamcopy"/>
 			<dataarea name="flop" size="901120">
 				<rom name="music madness (1988)(jungle command)[m bamcopy].adf" size="901120" crc="245c9fc8" sha1="4338fe97a7185f363f8c85cb5d62a7210fff3e1f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicmad_3" supported="no">
-		<description>Music Madness (1)</description>
-		<year>1989</year>
-		<publisher>Freedom Force - The Amiga Superiors</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music madness (1989)(freedom force - the amiga superiors).adf" size="901120" crc="6d55d1ea" sha1="44fddec68e8bdb9d40957c1cd849ab34798390a2"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicmad_4" supported="no">
-		<description>Music Madness (2)</description>
-		<year>1991</year>
-		<publisher>Ghost</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music madness (1991)(ghost).adf" size="901120" crc="66a31ed8" sha1="902e5406490121a8e72467db70d639f2e5742fc5"/>
 			</dataarea>
 		</part>
 	</software>
@@ -21974,18 +21974,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musicbox_6" supported="no">
-		<description>Music-Box</description>
-		<year>1990</year>
-		<publisher>Exodus</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="music-box (1990)(exodus).adf" size="901120" crc="dfd0c723" sha1="a2cd3213b8ab348ccf4a53e8150f8ca41df6de58"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicbox_7" supported="no">
 		<description>Music-Box (1991-03-13)</description>
 		<year>1991</year>
 		<publisher>Bayram Brothers</publisher>
@@ -21994,6 +21982,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="rebuilt, Hacked Kick PD"/>
 			<dataarea name="flop" size="901120">
 				<rom name="music-box (1991-03-13)(bayram brothers)[h kick pd][rebuilt].adf" size="901120" crc="b872d4c5" sha1="901559f20c471de4929ae98d6570d47aa4a23b29"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicbox_7" supported="no">
+		<description>Music-Box</description>
+		<year>1990</year>
+		<publisher>Exodus</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="music-box (1990)(exodus).adf" size="901120" crc="dfd0c723" sha1="a2cd3213b8ab348ccf4a53e8150f8ca41df6de58"/>
 			</dataarea>
 		</part>
 	</software>
@@ -22920,66 +22920,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="musicdis_99" supported="no">
-		<description>Musicdisk</description>
-		<year>1988</year>
-		<publisher>Zigag</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="musicdisk (1988)(zigag).adf" size="901120" crc="0e24bfca" sha1="7d113414fb9f5f5689037543b33a9d5173cdafea"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_100" supported="no">
-		<description>Musicdisk (1)</description>
-		<year>1989</year>
-		<publisher>Hysteria</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="musicdisk (1989)(hysteria).adf" size="901120" crc="c0d099a3" sha1="71f7fcfe502ad5f437a3aada5776bbab9d84cf73"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_101" supported="no">
-		<description>Musicdisk (2)</description>
-		<year>1990</year>
-		<publisher>Cryptic</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="musicdisk (1990)(cryptic).adf" size="901120" crc="22d00857" sha1="ae5565c280bef557f1dfaa2201f46d4d0e8682be"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_102" supported="no">
-		<description>Musicdisk (3)</description>
-		<year>1993</year>
-		<publisher>Megarebel</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="musicdisk (1993)(megarebel).adf" size="901120" crc="05a00c61" sha1="44da417696513397aa969a5a97fd0178f1651673"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_103" supported="no">
-		<description>Musicdisk (1988-03)</description>
-		<year>1988</year>
-		<publisher>Fashion</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="musicdisk (1988-03)(fashion).adf" size="901120" crc="e3ea2836" sha1="512d46c6b1d392a94f71a5c58bc234ef564b3a9a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="musicdis_104" supported="no">
 		<description>Musicdisk (1989-05)</description>
 		<year>1989</year>
 		<publisher>Action Force</publisher>
@@ -22991,7 +22931,55 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="musicdis_105" supported="no">
+	<software name="musicdis_100" supported="no">
+		<description>Musicdisk (2)</description>
+		<year>1990</year>
+		<publisher>Cryptic</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="musicdisk (1990)(cryptic).adf" size="901120" crc="22d00857" sha1="ae5565c280bef557f1dfaa2201f46d4d0e8682be"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_101" supported="no">
+		<description>Musicdisk (1988-03)</description>
+		<year>1988</year>
+		<publisher>Fashion</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="musicdisk (1988-03)(fashion).adf" size="901120" crc="e3ea2836" sha1="512d46c6b1d392a94f71a5c58bc234ef564b3a9a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_102" supported="no">
+		<description>Musicdisk (1)</description>
+		<year>1989</year>
+		<publisher>Hysteria</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="musicdisk (1989)(hysteria).adf" size="901120" crc="c0d099a3" sha1="71f7fcfe502ad5f437a3aada5776bbab9d84cf73"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_103" supported="no">
+		<description>Musicdisk (3)</description>
+		<year>1993</year>
+		<publisher>Megarebel</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="musicdisk (1993)(megarebel).adf" size="901120" crc="05a00c61" sha1="44da417696513397aa969a5a97fd0178f1651673"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_104" supported="no">
 		<description>Musicdisk (1990-10)</description>
 		<year>1990</year>
 		<publisher>Prologic</publisher>
@@ -22999,6 +22987,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="musicdisk (1990-10)(prologic).adf" size="901120" crc="03247589" sha1="0adf2c39652ae4459512809cf71998f29ad31e82"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musicdis_105" supported="no">
+		<description>Musicdisk</description>
+		<year>1988</year>
+		<publisher>Zigag</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="musicdisk (1988)(zigag).adf" size="901120" crc="0e24bfca" sha1="7d113414fb9f5f5689037543b33a9d5173cdafea"/>
 			</dataarea>
 		</part>
 	</software>
@@ -25924,24 +25924,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="phobia" supported="no">
-		<description>Phobia (1993-12-14)</description>
-		<year>1993</year>
-		<publisher>Neoplasia</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="phobia (1993-12-14)(neoplasia).adf" size="901120" crc="f17f27f7" sha1="5c549fdcd68c8cf44aaec98b8aedfabb31d6f5f7"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Modified bamcopy"/>
-			<dataarea name="flop" size="901120">
-				<rom name="phobia (1993-12-14)(neoplasia)[m bamcopy].adf" size="901120" crc="9ac7e1e1" sha1="6f430d01f4ccc96cc29cd1a2b7e960e9e2fdd31e"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="phobia_1" supported="no">
 		<description>Phobia (1995-01-23)</description>
 		<year>1995</year>
 		<publisher>Binary</publisher>
@@ -25962,6 +25944,24 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2"/>
 			<dataarea name="flop" size="901120">
 				<rom name="phobia (1995-01-23)(binary)(disk 2 of 2).adf" size="901120" crc="1cdde902" sha1="b0ad26bebe85350699f14b9ad6ecb65ff5b5f4e8"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="phobia_1" supported="no">
+		<description>Phobia (1993-12-14)</description>
+		<year>1993</year>
+		<publisher>Neoplasia</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="phobia (1993-12-14)(neoplasia).adf" size="901120" crc="f17f27f7" sha1="5c549fdcd68c8cf44aaec98b8aedfabb31d6f5f7"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Modified bamcopy"/>
+			<dataarea name="flop" size="901120">
+				<rom name="phobia (1993-12-14)(neoplasia)[m bamcopy].adf" size="901120" crc="9ac7e1e1" sha1="6f430d01f4ccc96cc29cd1a2b7e960e9e2fdd31e"/>
 			</dataarea>
 		</part>
 	</software>
@@ -27622,18 +27622,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="revoluti_2" supported="no">
-		<description>Revolutions (1988-12)</description>
-		<year>1988</year>
-		<publisher>Reptilia Design</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="revolutions (1988-12)(reptilia design).adf" size="901120" crc="ca673461" sha1="2f20b2469a4eeec00794c266521eb0360a422629"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="revoluti_3" supported="no">
 		<description>Revolutions (1990-06)</description>
 		<year>1990</year>
 		<publisher>Amaze</publisher>
@@ -27645,7 +27633,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="revoluti_3_a" cloneof="revoluti_3" supported="no">
+	<software name="revoluti_2_a" cloneof="revoluti_2" supported="no">
 		<description>Revolutions (1990-06, Preview)</description>
 		<year>1990</year>
 		<publisher>Amaze</publisher>
@@ -27665,6 +27653,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Bad dump"/>
 			<dataarea name="flop" size="901120">
 				<rom name="revolutions (1990-06)(amaze)(preview)[b dump].adf" size="901120" crc="58f0a97d" sha1="f99206311ac8dfcdb55e5937737796352b74e440" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="revoluti_3" supported="no">
+		<description>Revolutions (1988-12)</description>
+		<year>1988</year>
+		<publisher>Reptilia Design</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="revolutions (1988-12)(reptilia design).adf" size="901120" crc="ca673461" sha1="2f20b2469a4eeec00794c266521eb0360a422629"/>
 			</dataarea>
 		</part>
 	</software>
@@ -30744,18 +30744,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="sounddis_7" supported="no">
-		<description>Sound Disk II (1989-07)</description>
-		<year>1989</year>
-		<publisher>Future Mirror - United Graphic Artists</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="sound disk ii (1989-07)(future mirror - united graphic artists).adf" size="901120" crc="eac2ff26" sha1="a5ab5b96da0a260446c575e1e42390e7dd1fe4cd"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="sounddis_8" supported="no">
 		<description>Sound Disk II (1989-12-05)</description>
 		<year>1989</year>
 		<publisher>Aeon</publisher>
@@ -30768,7 +30756,7 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		</part>
 	</software>
 
-	<software name="sounddis_8_a" cloneof="sounddis_8" supported="no">
+	<software name="sounddis_7_a" cloneof="sounddis_7" supported="no">
 		<description>Sound Disk II (1990-01-27)</description>
 		<year>1990</year>
 		<publisher>Aeon</publisher>
@@ -30782,6 +30770,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="rebuilt"/>
 			<dataarea name="flop" size="901120">
 				<rom name="sound disk ii (1990-01-27)(aeon)[rebuilt].adf" size="901120" crc="81b6f1e6" sha1="1e86069181aa0e7d456b9c9d49c2837012776ae2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sounddis_8" supported="no">
+		<description>Sound Disk II (1989-07)</description>
+		<year>1989</year>
+		<publisher>Future Mirror - United Graphic Artists</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="sound disk ii (1989-07)(future mirror - united graphic artists).adf" size="901120" crc="eac2ff26" sha1="a5ab5b96da0a260446c575e1e42390e7dd1fe4cd"/>
 			</dataarea>
 		</part>
 	</software>
@@ -34288,6 +34288,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="technoma_1" supported="no">
+		<description>Technomania (1992-04)</description>
+		<year>1992</year>
+		<publisher>Ram Jam</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="technomania (1992-04)(ram jam).adf" size="901120" crc="321c491a" sha1="6fbffb9c3f9c6d049f4c166c6367058fcb053c56"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="technoma_2" supported="no">
 		<description>Technomania (1991-08)</description>
 		<year>1991</year>
 		<publisher>Shining 8</publisher>
@@ -34307,18 +34319,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Overdumped 1"/>
 			<dataarea name="flop" size="923648">
 				<rom name="technomania (1991-08)(shining 8)[o].adf" size="923648" crc="6281d3e9" sha1="94a7cc7a1d7554b64918b5491b9055de3bad6f93" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="technoma_2" supported="no">
-		<description>Technomania (1992-04)</description>
-		<year>1992</year>
-		<publisher>Ram Jam</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="technomania (1992-04)(ram jam).adf" size="901120" crc="321c491a" sha1="6fbffb9c3f9c6d049f4c166c6367058fcb053c56"/>
 			</dataarea>
 		</part>
 	</software>
@@ -35237,25 +35237,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thechris_1" supported="no">
-		<description>The Christmas Song</description>
-		<year>1987</year>
-		<publisher>Melbourne Cracking Crew</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="christmas song, the (1987)(melbourne cracking crew)(disk 1 of 2).adf" size="901120" crc="e9fcb2dd" sha1="cb19a7eb28d2ab0ae485253c651e0e6047545f81"/>
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2 of 2"/>
-			<dataarea name="flop" size="901120">
-				<rom name="christmas song, the (1987)(melbourne cracking crew)(disk 2 of 2).adf" size="901120" crc="5fc6da64" sha1="ebf32dbb6522657bee14b3c503f9edb1d08eeb7f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thechris_2" supported="no">
 		<description>The Christmas Song (1)</description>
 		<year>19??</year>
 		<publisher>British Bulldogs</publisher>
@@ -35270,6 +35251,25 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="Disk 2 of 2, Modified 1"/>
 			<dataarea name="flop" size="901120">
 				<rom name="christmas song, the (19xx)(british bulldogs)(disk 2 of 2)[m].adf" size="901120" crc="83eb92b2" sha1="482f032cf2a6f02359a0715dff688fa5e303e347"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thechris_2" supported="no">
+		<description>The Christmas Song</description>
+		<year>1987</year>
+		<publisher>Melbourne Cracking Crew</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 1 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="christmas song, the (1987)(melbourne cracking crew)(disk 1 of 2).adf" size="901120" crc="e9fcb2dd" sha1="cb19a7eb28d2ab0ae485253c651e0e6047545f81"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Disk 2 of 2"/>
+			<dataarea name="flop" size="901120">
+				<rom name="christmas song, the (1987)(melbourne cracking crew)(disk 2 of 2).adf" size="901120" crc="5fc6da64" sha1="ebf32dbb6522657bee14b3c503f9edb1d08eeb7f"/>
 			</dataarea>
 		</part>
 	</software>
@@ -37205,6 +37205,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="thunderd" supported="no">
+		<description>Thunderdome III (1993-12)</description>
+		<year>1993</year>
+		<publisher>Projekt Alpha - Tanic</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="thunderdome iii (1993-12)(projekt alpha - tanic).adf" size="901120" crc="201583ff" sha1="c7cb15698fcc549ddd75255981c72d5d011f116d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thunderd_a" cloneof="thunderd" supported="no">
 		<description>Thunderdome III</description>
 		<year>1994</year>
 		<publisher>Projekt Alpha - Tanic</publisher>
@@ -37213,18 +37225,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 			<feature name="part_id" value="KS2.0"/>
 			<dataarea name="flop" size="901120">
 				<rom name="thunderdome iii (1994)(projekt alpha - tanic)[ks2.0].adf" size="901120" crc="a75399cb" sha1="d4810f3623fa39f91be35a6e9ac7246d1720934b"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thunderd_a" cloneof="thunderd" supported="no">
-		<description>Thunderdome III (1993-12)</description>
-		<year>1993</year>
-		<publisher>Projekt Alpha - Tanic</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="thunderdome iii (1993-12)(projekt alpha - tanic).adf" size="901120" crc="201583ff" sha1="c7cb15698fcc549ddd75255981c72d5d011f116d"/>
 			</dataarea>
 		</part>
 	</software>
@@ -38011,18 +38011,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="tunedisk_1" supported="no">
-		<description>Tune Disk (1990-11-02)</description>
-		<year>1990</year>
-		<publisher>Omega Machine Designer</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="901120">
-				<rom name="tune disk (1990-11-02)(omega machine designer).adf" size="901120" crc="ed7f397a" sha1="9af1d541024026221bab61c661f12afe3aa47c9f"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tunedisk_2" supported="no">
 		<description>Tune Disk (en/fr, 1992-02-29)</description>
 		<year>1992</year>
 		<publisher>Dmacon</publisher>
@@ -38030,6 +38018,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="901120">
 				<rom name="tune disk (1992-02-29)(dmacon)(en-fr).adf" size="901120" crc="e8971646" sha1="983dabb14da28a5904caf89add1fb0b8611b72c9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tunedisk_2" supported="no">
+		<description>Tune Disk (1990-11-02)</description>
+		<year>1990</year>
+		<publisher>Omega Machine Designer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="tune disk (1990-11-02)(omega machine designer).adf" size="901120" crc="ed7f397a" sha1="9af1d541024026221bab61c661f12afe3aa47c9f"/>
 			</dataarea>
 		</part>
 	</software>
