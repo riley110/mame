@@ -1246,27 +1246,9 @@ void bbc_state::bbcb(machine_config &config)
 	SOFTWARE_LIST(config, "flop_ls_b_orig").set_original("bbcb_flop_orig");
     SOFTWARE_LIST(config, "hdd_ls").set_original("bbc_hdd").set_filter("B");
     
-    SOFTWARE_LIST(config, "flop_apps_adl").set_original("bbc_flop_apps_adl");
-    SOFTWARE_LIST(config, "flop_apps_dsd").set_original("bbc_flop_apps_dsd");
-    SOFTWARE_LIST(config, "flop_apps_ssd").set_original("bbc_flop_apps_ssd");
-    SOFTWARE_LIST(config, "flop_comps_adl").set_original("bbc_flop_comps_adl");
-    SOFTWARE_LIST(config, "flop_comps_dsd").set_original("bbc_flop_comps_dsd");
-    SOFTWARE_LIST(config, "flop_comps_ssd").set_original("bbc_flop_comps_ssd");
-    SOFTWARE_LIST(config, "flop_cover_dsd").set_original("bbc_flop_cover_dsd");
-    SOFTWARE_LIST(config, "flop_cover_ssd").set_original("bbc_flop_cover_ssd");
-    SOFTWARE_LIST(config, "flop_demos").set_original("bbc_flop_demos");
-    SOFTWARE_LIST(config, "flop_edu_adl").set_original("bbc_flop_edu_adl");
-    SOFTWARE_LIST(config, "flop_edu_dsd").set_original("bbc_flop_edu_dsd");
-    SOFTWARE_LIST(config, "flop_edu_ssd").set_original("bbc_flop_edu_ssd");
-    SOFTWARE_LIST(config, "flop_games_adl").set_original("bbc_flop_games_adl");
-    SOFTWARE_LIST(config, "flop_games_dsd").set_original("bbc_flop_games_dsd");
-    SOFTWARE_LIST(config, "flop_games_ssd").set_original("bbc_flop_games_ssd");
-    SOFTWARE_LIST(config, "flop_mags_adl").set_original("bbc_flop_mags_adl");
-    SOFTWARE_LIST(config, "flop_mags_dsd").set_original("bbc_flop_mags_dsd");
-    SOFTWARE_LIST(config, "flop_mags_ssd").set_original("bbc_flop_mags_ssd");
-    SOFTWARE_LIST(config, "flop_multi_adl").set_original("bbc_flop_multi_adl");
-    SOFTWARE_LIST(config, "flop_multi_dsd").set_original("bbc_flop_multi_dsd");
-    SOFTWARE_LIST(config, "flop_multi_ssd").set_original("bbc_flop_multi_ssd");
+    SOFTWARE_LIST(config, "flop_tosec_adl").set_original("bbc_flop_tosec_adl");
+    SOFTWARE_LIST(config, "flop_tosec_dsd").set_original("bbc_flop_tosec_dsd");
+    SOFTWARE_LIST(config, "flop_tosec_ssd").set_original("bbc_flop_tosec_ssd");
 }
 
 
@@ -1453,6 +1435,10 @@ void bbcbp_state::cfa3000bp(machine_config &config)
 	config.device_remove("cass_ls");
 	config.device_remove("flop_ls_b");
 	config.device_remove("flop_ls_b_orig");
+    
+    config.device_remove("flop_tosec_adl");
+    config.device_remove("flop_tosec_dsd");
+    config.device_remove("flop_tosec_ssd");
 }
 
 
@@ -1552,7 +1538,11 @@ void bbcbp_state::reutapm(machine_config &config)
 	config.device_remove("cass_ls");
 	config.device_remove("flop_ls_b");
 	config.device_remove("flop_ls_b_orig");
-
+    
+    config.device_remove("flop_tosec_adl");
+    config.device_remove("flop_tosec_dsd");
+    config.device_remove("flop_tosec_ssd");
+    
 	/* expansion ports */
 	config.device_remove("analogue");
 }
@@ -1587,6 +1577,10 @@ void bbcbp_state::econx25(machine_config &config)
 	config.device_remove("cass_ls");
 	config.device_remove("flop_ls_b");
 	config.device_remove("flop_ls_b_orig");
+    
+    config.device_remove("flop_tosec_adl");
+    config.device_remove("flop_tosec_dsd");
+    config.device_remove("flop_tosec_ssd");
 }
 
 
@@ -1778,6 +1772,10 @@ void bbcm_state::bbcm(machine_config &config)
 	SOFTWARE_LIST(config, "flop_ls_b_orig").set_compatible("bbcb_flop_orig");
 	SOFTWARE_LIST(config, "rom_ls").set_original("bbc_rom").set_filter("M");
 	SOFTWARE_LIST(config, "hdd_ls").set_original("bbc_hdd").set_filter("M");
+    
+    SOFTWARE_LIST(config, "flop_tosec_adl").set_original("bbc_flop_tosec_adl");
+    SOFTWARE_LIST(config, "flop_tosec_dsd").set_original("bbc_flop_tosec_dsd");
+    SOFTWARE_LIST(config, "flop_tosec_ssd").set_original("bbc_flop_tosec_ssd");
 }
 
 
@@ -1828,6 +1826,10 @@ void bbcm_state::bbcmet(machine_config &config)
 	config.device_remove("flop_ls_m");
 	config.device_remove("flop_ls_b");
 	config.device_remove("flop_ls_b_orig");
+    
+    config.device_remove("flop_tosec_adl");
+    config.device_remove("flop_tosec_dsd");
+    config.device_remove("flop_tosec_ssd");
 
 	/* acia */
 	config.device_remove("acia6850");
@@ -1899,6 +1901,10 @@ void bbcm_state::discmon(machine_config &config)
 	config.device_remove("flop_ls_m");
 	config.device_remove("flop_ls_b");
 	config.device_remove("flop_ls_b_orig");
+    
+    config.device_remove("flop_tosec_adl");
+    config.device_remove("flop_tosec_dsd");
+    config.device_remove("flop_tosec_ssd");
 }
 
 
@@ -1914,6 +1920,10 @@ void bbcm_state::discmate(machine_config &config)
 	config.device_remove("flop_ls_m");
 	config.device_remove("flop_ls_b");
 	config.device_remove("flop_ls_b_orig");
+    
+    config.device_remove("flop_tosec_adl");
+    config.device_remove("flop_tosec_dsd");
+    config.device_remove("flop_tosec_ssd");
 }
 
 
@@ -1993,6 +2003,10 @@ void bbcm_state::cfa3000(machine_config &config)
 	config.device_remove("flop_ls_m");
 	config.device_remove("flop_ls_b");
 	config.device_remove("flop_ls_b_orig");
+    
+    config.device_remove("flop_tosec_adl");
+    config.device_remove("flop_tosec_dsd");
+    config.device_remove("flop_tosec_ssd");
 }
 
 

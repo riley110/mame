@@ -2165,17 +2165,7 @@ void a400_state::atari_common(machine_config &config)
 	SOFTWARE_LIST(config, "cass_list").set_original("a800_cass");
 	SOFTWARE_LIST(config, "xegs_list").set_original("xegs");
     
-    SOFTWARE_LIST(config, "flop_apps").set_original("a800_flop_apps");
-    SOFTWARE_LIST(config, "flop_comp_apps").set_original("a800_flop_comp_apps");
-    SOFTWARE_LIST(config, "flop_comp_demo").set_original("a800_flop_comp_demo");
-    SOFTWARE_LIST(config, "flop_comp_edu").set_original("a800_flop_comp_edu");
-    SOFTWARE_LIST(config, "flop_comp_game").set_original("a800_flop_comp_game");
-    SOFTWARE_LIST(config, "flop_demos").set_original("a800_flop_demos");
-    SOFTWARE_LIST(config, "flop_docs").set_original("a800_flop_docs");
-    SOFTWARE_LIST(config, "flop_edu").set_original("a800_flop_edu");
-    SOFTWARE_LIST(config, "flop_games").set_original("a800_flop_games");
-    SOFTWARE_LIST(config, "flop_mags").set_original("a800_flop_mags");
-    SOFTWARE_LIST(config, "flop_src").set_original("a800_flop_src");
+    SOFTWARE_LIST(config, "flop_tosec").set_original("a800_flop_tosec");
 }
 
 // memory map A400 + NTSC screen

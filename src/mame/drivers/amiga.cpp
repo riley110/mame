@@ -1642,50 +1642,15 @@ void amiga_state::amiga_base(machine_config &config)
 	SOFTWARE_LIST(config, "ocs_list").set_original("amigaocs_flop");
     
     // TOSEC lists
-    SOFTWARE_LIST(config, "tosec_apps_pd").set_original("amiga_tosec_apps_pd");
-    SOFTWARE_LIST(config, "tosec_apps").set_original("amiga_tosec_apps");
-    SOFTWARE_LIST(config, "tosec_comp_apps").set_original("amiga_tosec_comp_apps");
-    SOFTWARE_LIST(config, "tosec_comp_games").set_original("amiga_tosec_comp_games");
-    SOFTWARE_LIST(config, "tosec_comp_var").set_original("amiga_tosec_comp_var");
+    SOFTWARE_LIST(config, "tosec_app").set_original("amiga_tosec_app");
+    SOFTWARE_LIST(config, "tosec_comp").set_original("amiga_tosec_comp");
     SOFTWARE_LIST(config, "tosec_cover").set_original("amiga_tosec_cover");
-    SOFTWARE_LIST(config, "tosec_demoav").set_original("amiga_tosec_demoav");
-    SOFTWARE_LIST(config, "tosec_demomusic").set_original("amiga_tosec_demomusic");
-    SOFTWARE_LIST(config, "tosec_demopacks").set_original("amiga_tosec_demopacks");
-    SOFTWARE_LIST(config, "tosec_demoslide").set_original("amiga_tosec_demoslide");
-    SOFTWARE_LIST(config, "tosec_demovar").set_original("amiga_tosec_demovar");
-    SOFTWARE_LIST(config, "tosec_diskmags").set_original("amiga_tosec_diskmags");
-    SOFTWARE_LIST(config, "tosec_docs").set_original("amiga_tosec_docs");
-    SOFTWARE_LIST(config, "tosec_games").set_original("amiga_tosec_games");
-    SOFTWARE_LIST(config, "tosec_games_adds").set_original("amiga_tosec_games_adds");
-    SOFTWARE_LIST(config, "tosec_games_em").set_original("amiga_tosec_games_em");
-    SOFTWARE_LIST(config, "tosec_games_pd").set_original("amiga_tosec_games_pd");
-    SOFTWARE_LIST(config, "tosec_games_save").set_original("amiga_tosec_games_save");
-    SOFTWARE_LIST(config, "tosec_packmags").set_original("amiga_tosec_packmags");
-    
-    SOFTWARE_LIST(config, "tosec_pd_aarug").set_original("amiga_tosec_pd_aarug");
-    SOFTWARE_LIST(config, "tosec_pd_apdc").set_original("amiga_tosec_pd_apdc");
-    SOFTWARE_LIST(config, "tosec_pd_auge").set_original("amiga_tosec_pd_auge");
-    SOFTWARE_LIST(config, "tosec_pd_bav").set_original("amiga_tosec_pd_bav");
-    SOFTWARE_LIST(config, "tosec_pd_bpd").set_original("amiga_tosec_pd_bpd");
-    SOFTWARE_LIST(config, "tosec_pd_bsk").set_original("amiga_tosec_pd_bsk");
-    SOFTWARE_LIST(config, "tosec_pd_cactus").set_original("amiga_tosec_pd_cactus");
-    SOFTWARE_LIST(config, "tosec_pd_camelot").set_original("amiga_tosec_pd_camelot");
-    SOFTWARE_LIST(config, "tosec_pd_dnh").set_original("amiga_tosec_pd_dnh");
-    SOFTWARE_LIST(config, "tosec_pd_fish").set_original("amiga_tosec_pd_fish");
-    SOFTWARE_LIST(config, "tosec_pd_franz").set_original("amiga_tosec_pd_franz");
-    SOFTWARE_LIST(config, "tosec_pd_mag").set_original("amiga_tosec_pd_mag");
-    SOFTWARE_LIST(config, "tosec_pd_mega").set_original("amiga_tosec_pd_mega");
-    SOFTWARE_LIST(config, "tosec_pd_nord").set_original("amiga_tosec_pd_nord");
-    SOFTWARE_LIST(config, "tosec_pd_nzaug").set_original("amiga_tosec_pd_nzaug");
-    SOFTWARE_LIST(config, "tosec_pd_pan").set_original("amiga_tosec_pd_pan");
-    SOFTWARE_LIST(config, "tosec_pd_scope").set_original("amiga_tosec_pd_scope");
-    SOFTWARE_LIST(config, "tosec_pd_somc").set_original("amiga_tosec_pd_somc");
-    SOFTWARE_LIST(config, "tosec_pd_taifun").set_original("amiga_tosec_pd_taifun");
-    SOFTWARE_LIST(config, "tosec_pd_tbag").set_original("amiga_tosec_pd_tbag");
-    SOFTWARE_LIST(config, "tosec_pd_toga").set_original("amiga_tosec_pd_toga");
-    SOFTWARE_LIST(config, "tosec_pd_topik").set_original("amiga_tosec_pd_topik");
-    SOFTWARE_LIST(config, "tosec_pd_tswf").set_original("amiga_tosec_pd_tswf");
-    SOFTWARE_LIST(config, "tosec_pd_var").set_original("amiga_tosec_pd_var");
+    SOFTWARE_LIST(config, "tosec_demo").set_original("amiga_tosec_demo");
+    SOFTWARE_LIST(config, "tosec_doc").set_original("amiga_tosec_doc");
+    SOFTWARE_LIST(config, "tosec_edu").set_original("amiga_tosec_edu");
+    SOFTWARE_LIST(config, "tosec_game").set_original("amiga_tosec_game");
+    SOFTWARE_LIST(config, "tosec_mag").set_original("amiga_tosec_mag");
+    SOFTWARE_LIST(config, "tosec_pd").set_original("amiga_tosec_pd");
 }
 
 void a1000_state::a1000(machine_config &config)

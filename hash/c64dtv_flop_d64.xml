@@ -3,14 +3,11 @@
 <!--
 This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
 Credit goes to the TOSECDEV team for building this vast database over the years.
-
-Floppy disks currently cannot be used in the current C64DTV emulation; this is simply
-to document available software.
 -->
-<softwarelist name="c64dtv_flop_d64" description="C64DTV floppy disks (1541)">
+<softwarelist name="c64dtv_flop_d64" description="Commodore 64 DTV floppy disks (TOSEC - D64)">
 
-    <!-- TOSEC - Applications -->
-    
+	<!-- Commodore C64DTV - Applications - [D64] (TOSEC-v2013-03-05_CM).dat -->
+
 	<software name="dmaloade" supported="no">
 		<description>DMA loader II (2010-04-02)</description>
 		<year>2010</year>
@@ -23,585 +20,585 @@ to document available software.
 		</part>
 	</software>
 
-    <!-- TOSEC - Demos -->
-    
-    <software name="2008adtv" supported="no">
-        <description>2008 - a DTV Odyssey (2008-02-23)</description>
-        <year>2008</year>
-        <publisher>Tristar &amp; Red Sector Incorporated</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Side A"/>
-            <dataarea name="flop" size="174848">
-                <rom name="2008 - a dtv odyssey (2008-02-23)(tristar &amp; red sector incorporated)(side a).d64" size="174848" crc="9c6762b2" sha1="e538de9924922dbf18ec063a86b5b08f371a790d"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Side B"/>
-            <dataarea name="flop" size="174848">
-                <rom name="2008 - a dtv odyssey (2008-02-23)(tristar &amp; red sector incorporated)(side b).d64" size="174848" crc="e0853ba3" sha1="420ee010f681ab6fbb2461172c95e496ceb9fea0"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="22050her" supported="no">
-        <description>22050 HERTZ (2006-11-14)</description>
-        <year>2006</year>
-        <publisher>Tristar &amp; Red Sector Incorporated</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Side A"/>
-            <dataarea name="flop" size="174848">
-                <rom name="22050 hertz (2006-11-14)(tristar &amp; red sector incorporated)(side a).d64" size="174848" crc="c48b4927" sha1="9419dfec6b82b8d6d7e1203e9191e5126847f32c"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Side B"/>
-            <dataarea name="flop" size="174848">
-                <rom name="22050 hertz (2006-11-14)(tristar &amp; red sector incorporated)(side b).d64" size="174848" crc="9153ce8a" sha1="0342260eb928b6518c261a61466bdb38dbae77e5"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="320x4754" supported="no">
-        <description>320x4754 for DTV (2006-07-22)</description>
-        <year>2006</year>
-        <publisher>Crest</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Side A"/>
-            <dataarea name="flop" size="174848">
-                <rom name="320x4754 for dtv (2006-07-22)(crest)(side a).d64" size="174848" crc="4cebbd0e" sha1="a39e0949c090c887a8b2e0ded3a6ae1ce55c5a30"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Side A, Alt"/>
-            <dataarea name="flop" size="174848">
-                <rom name="320x4754 for dtv (2006-07-22)(crest)(side a)[a].d64" size="174848" crc="8f86914b" sha1="aa3cec60a2ecf26195f846ffe1b8946bfb0cdfea"/>
-            </dataarea>
-        </part>
-        <part name="flop3" interface="floppy_5_25">
-            <feature name="part_id" value="Side B"/>
-            <dataarea name="flop" size="174848">
-                <rom name="320x4754 for dtv (2006-07-22)(crest)(side b).d64" size="174848" crc="bc7db714" sha1="ff611cca678dfc0c6c2f80b04db679a1d75a1690"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="anbieren" supported="no">
-        <description>Anbieren (2018-07-21)</description>
-        <year>2018</year>
-        <publisher>Oxyron</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="anbieren (2018-07-21)(oxyron).d64" size="174848" crc="ca8a7671" sha1="29ef357c90b42c78134d8f33392ad8f5f2432381"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="critical" supported="no">
-        <description>Critical Update! (2005-10-28)</description>
-        <year>2005</year>
-        <publisher>Crest</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="critical update (2005-10-28)(crest).d64" size="174848" crc="1bb654c9" sha1="f0a82390a8ccf55a2689697177c588041ac73359"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="thedavin" supported="no">
-        <description>The DaVinci Code (2005-11-26)</description>
-        <year>2005</year>
-        <publisher>Crest</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Side A"/>
-            <dataarea name="flop" size="174848">
-                <rom name="davinci code, the (2005-11-26)(crest)(side a).d64" size="174848" crc="86cef4b2" sha1="eee656f4be27ec16d83db73fe8cdd8f45cd98449"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Side B"/>
-            <dataarea name="flop" size="174848">
-                <rom name="davinci code, the (2005-11-26)(crest)(side b).d64" size="174848" crc="c8eaa854" sha1="78cd80502d74a3b0986b6b10c8a242113ec13479"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="ghostint" supported="no">
-        <description>Ghost in the Machine (2007-05-28)</description>
-        <year>2007</year>
-        <publisher>Tristar &amp; Red Sector Incorporated</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Side A"/>
-            <dataarea name="flop" size="174848">
-                <rom name="ghost in the machine (2007-05-28)(tristar &amp; red sector incorporated)(side a).d64" size="174848" crc="76d575e0" sha1="0d1c98cff0b7d8101a4d080746df1262bdb476cb"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Side B"/>
-            <dataarea name="flop" size="174848">
-                <rom name="ghost in the machine (2007-05-28)(tristar &amp; red sector incorporated)(side b).d64" size="174848" crc="176eb76f" sha1="91bbf13388eb8cdc8a3ebe1314a4a5dcc24a7467"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="insania" supported="no">
-        <description>Insania (2013-07-20)</description>
-        <year>2013</year>
-        <publisher>The Obsessed Maniacs</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="insania (2013-07-20)(the obsessed maniacs).d64" size="174848" crc="f18999fc" sha1="00961f94ed883f5826569c01409b08ddb0fa68d4"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="thekingi" supported="no">
-        <description>The King is Back (2005-09-28)</description>
-        <year>2005</year>
-        <publisher>Crest</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="king is back, the (2005-09-28)(crest).d64" size="174848" crc="64e9b9ae" sha1="86854dcd86dc7b17d5a3fd03ed88b578a6a41959"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="misery3" supported="no">
-        <description>Misery 3 (2009-10-03)</description>
-        <year>2009</year>
-        <publisher>Tristar &amp; Red Sector Incorporated</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="misery 3 (2009-10-03)(tristar &amp; red sector incorporated).d64" size="174848" crc="9e8e5f1a" sha1="dab58b3363c4ca784de391015f199792ed7e4dc3"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="mustseed" supported="no">
-        <description>Must See DTV (2005-11-12)</description>
-        <year>2005</year>
-        <publisher>Style</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="must see dtv (2005-11-12)(style).d64" size="174848" crc="5e9ae4b9" sha1="a540fb474e35c8e8299a09063f3df406320513f3"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="newtonsc" supported="no">
-        <description>Newtons Cradle (2006-10-23)</description>
-        <year>2006</year>
-        <publisher>Tristar &amp; Red Sector Incorporated</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Side A"/>
-            <dataarea name="flop" size="174848">
-                <rom name="newtons cradle (2006-10-23)(tristar &amp; red sector incorporated)(side a).d64" size="174848" crc="de4f4961" sha1="c7cbc84a5019e8d08b6c945043c5be5dccc49b13"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Side B"/>
-            <dataarea name="flop" size="174848">
-                <rom name="newtons cradle (2006-10-23)(tristar &amp; red sector incorporated)(side b).d64" size="174848" crc="0204a077" sha1="28529dbcb470f586d5f4a44db08a6415821f9f33"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="numeroun" supported="no">
-        <description>Numero Uno (2005-11-11)</description>
-        <year>2005</year>
-        <publisher>Crest</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="numero uno (2005-11-11)(crest).d64" size="174848" crc="c554ab0b" sha1="424928a7f05f291c8db52111dccde3099540c46d"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="ofjewors" supported="no">
-        <description>Of je worst lust (2009-01-03)</description>
-        <year>2009</year>
-        <publisher>HeMa!</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="of je worst lust (2009-01-03)(hema).d64" size="174848" crc="3153d2fc" sha1="7d09e5217e1915721209b4c187b1a4219ec4d354"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="outtakes" supported="no">
-        <description>Outtakes (2013-07-20)</description>
-        <year>2013</year>
-        <publisher>TRSI</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="outtakes (2013-07-20)(trsi).d64" size="174848" crc="5227e38f" sha1="9610d962dc6cf6495528d43d3e2d10f416e12ca1"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Alt"/>
-            <dataarea name="flop" size="174848">
-                <rom name="outtakes (2013-07-20)(trsi)[a].d64" size="174848" crc="0ac9bd1b" sha1="b87b6a31e0e077d6e37abd73da2e080ca00d406e"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="rambodtv" supported="no">
-        <description>Rambo dtv (2011-08-24)</description>
-        <year>2011</year>
-        <publisher>Peiselulli</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="rambo dtv (2011-08-24)(peiselulli).d64" size="174848" crc="42d6e7e2" sha1="ed892f49e36dec587bb2b85d6df1cea0189ec6ab"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="saufzuch" supported="no">
-        <description>Saufzucht! (2017-07-22)</description>
-        <year>2017</year>
-        <publisher>Oxyron</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="saufzucht (2017-07-22)(oxyron).d64" size="174848" crc="b4f3bafe" sha1="ab77e9073f6b4830389da252b414ec75a410c9a7"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="spacelan" supported="no">
-        <description>Spacelane (2006-11-08)</description>
-        <year>2006</year>
-        <publisher>Street Tuff - tlr</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Side A"/>
-            <dataarea name="flop" size="174848">
-                <rom name="spacelane (2006-11-08)(street tuff - tlr)(side a).d64" size="174848" crc="fd967336" sha1="99fc8becd0c90051a9fcfc6c59dedb4bc0f7ed32"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Side B"/>
-            <dataarea name="flop" size="174848">
-                <rom name="spacelane (2006-11-08)(street tuff - tlr)(side b).d64" size="174848" crc="d6f5e613" sha1="677cd75fc2c86d18e30c978afba814dfdf9e9ea1"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="twistro" supported="no">
-        <description>Twistro (2010-01-13)</description>
-        <year>2010</year>
-        <publisher>Silicon Limited</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="twistro (2010-01-13)(silicon limited).d64" size="174848" crc="efdc8736" sha1="43c1702804045d53a621ef63c5b7a8d344262c8f"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="uncharte" supported="no">
-        <description>Uncharted Territory (2007-07-28)</description>
-        <year>2007</year>
-        <publisher>Noice</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Side A"/>
-            <dataarea name="flop" size="174848">
-                <rom name="uncharted territory (2007-07-28)(noice)(side a).d64" size="174848" crc="e5d707fb" sha1="1b049843fb975d5eb99c145027dafdc21c54120c"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Side B"/>
-            <dataarea name="flop" size="174848">
-                <rom name="uncharted territory (2007-07-28)(noice)(side b).d64" size="174848" crc="cdef842f" sha1="71e8a250d18f0a2dc56b25205d4fbd2a9fec16b2"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="uncharte_1" supported="no">
-        <description>Uncharted Territory 101% (2007-08-03)</description>
-        <year>2007</year>
-        <publisher>Noice</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Side A"/>
-            <dataarea name="flop" size="174848">
-                <rom name="uncharted territory 101 (2007-08-03)(noice)(side a).d64" size="174848" crc="56e14242" sha1="a28ab56eefbb9983a694cff7ce9df8381fe6c315"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Side B"/>
-            <dataarea name="flop" size="174848">
-                <rom name="uncharted territory 101 (2007-08-03)(noice)(side b).d64" size="174848" crc="ee85c760" sha1="3ce8b64778c123f616d333141de60259c1fc603c"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="vampires" supported="no">
-        <description>Vampires Empire (2012-07-21)</description>
-        <year>2012</year>
-        <publisher>TRSI</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="vampires empire (2012-07-21)(trsi).d64" size="174848" crc="ee7dcd1a" sha1="75074a5171bfe7d6a9ac505aa7c9b281b120b456"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="widescre" supported="no">
-        <description>Wide Screen Slide (2006-10-22)</description>
-        <year>2006</year>
-        <publisher>Tristar &amp; Red Sector Incorporated</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="wide screen slide (2006-10-22)(tristar &amp; red sector incorporated).d64" size="174848" crc="78294a4e" sha1="50af6ac5a775ec4482b3aaa6fdc9401e6f978655"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Alt"/>
-            <dataarea name="flop" size="174848">
-                <rom name="wide screen slide (2006-10-22)(tristar &amp; red sector incorporated)[a].d64" size="174848" crc="b43bfa2f" sha1="d73a7372b0b657bbb43f3b0116a4b414b1730459"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <!-- TOSEC - Games -->
-
-    <software name="abyss" supported="no">
-        <description>Abyss</description>
-        <year>2007</year>
-        <publisher>&lt;unknown&gt;</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Hummer"/>
-            <dataarea name="flop" size="174848">
-                <rom name="abyss (2007)(-)[hummer].d64" size="174848" crc="0811acd4" sha1="2314dedb8d550e3f5751af7d4f1114685fe7301d"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="boulderd" supported="no">
-        <description>Boulder Dash DTV</description>
-        <year>2008</year>
-        <publisher>P. &amp; Peiselulli Liepa</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="boulder dash dtv (2008)(liepa, p. &amp; peiselulli).d64" size="174848" crc="91831f75" sha1="564b889ddc2faee9d08357b6e0b7e2b05986b386"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="dtvgamec" supported="no">
-        <description>DTV Game-Collection 1 (2006-09-25)</description>
-        <year>2006</year>
-        <publisher>Crossbow</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <dataarea name="flop" size="174848">
-                <rom name="dtv game-collection 1 (2006-09-25)(crossbow).d64" size="174848" crc="4fe938d2" sha1="27e7afc7951d04e261ece42dfdda8288073af89c"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Side A"/>
-            <dataarea name="flop" size="174848">
-                <rom name="dtv game-collection 1 (2006-09-25)(crossbow)(side a).d64" size="174848" crc="8581d45d" sha1="0501d5cdac095dd17f45555cb3364ef9b0deb079"/>
-            </dataarea>
-        </part>
-        <part name="flop3" interface="floppy_5_25">
-            <feature name="part_id" value="Side A, Alt"/>
-            <dataarea name="flop" size="174848">
-                <rom name="dtv game-collection 1 (2006-09-25)(crossbow)(side a)[a].d64" size="174848" crc="f3496a91" sha1="a002139b508ae7faa35ad72f4fe5f2c020b15d47"/>
-            </dataarea>
-        </part>
-        <part name="flop4" interface="floppy_5_25">
-            <feature name="part_id" value="Side B"/>
-            <dataarea name="flop" size="174848">
-                <rom name="dtv game-collection 1 (2006-09-25)(crossbow)(side b).d64" size="174848" crc="02c940ec" sha1="12994e6b47e991f1b0a56f37b3cce0dfa4d1cd96"/>
-            </dataarea>
-        </part>
-        <part name="flop5" interface="floppy_5_25">
-            <feature name="part_id" value="Side B, Alt"/>
-            <dataarea name="flop" size="174848">
-                <rom name="dtv game-collection 1 (2006-09-25)(crossbow)(side b)[a].d64" size="174848" crc="57608454" sha1="794da0052a3e4765411cf81afa78480aa4057ca9"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="dtvgamec_1" supported="no">
-        <description>DTV Game-Collection 2 (2006-09-25)</description>
-        <year>2006</year>
-        <publisher>Crossbow</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Side A"/>
-            <dataarea name="flop" size="174848">
-                <rom name="dtv game-collection 2 (2006-09-25)(crossbow)(side a).d64" size="174848" crc="94a25a0f" sha1="de6223f4fe379d5d682288325793a1ebbfc29777"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Side A, Alt"/>
-            <dataarea name="flop" size="174848">
-                <rom name="dtv game-collection 2 (2006-09-25)(crossbow)(side a)[a].d64" size="174848" crc="4361b297" sha1="178e81a2702c4de38bb2554498037706834ab954"/>
-            </dataarea>
-        </part>
-        <part name="flop3" interface="floppy_5_25">
-            <feature name="part_id" value="Side B"/>
-            <dataarea name="flop" size="174848">
-                <rom name="dtv game-collection 2 (2006-09-25)(crossbow)(side b).d64" size="174848" crc="09357f1b" sha1="ab1e15a9152d1af4d21f21e5ce820b6b92756826"/>
-            </dataarea>
-        </part>
-        <part name="flop4" interface="floppy_5_25">
-            <feature name="part_id" value="Side B, Alt"/>
-            <dataarea name="flop" size="174848">
-                <rom name="dtv game-collection 2 (2006-09-25)(crossbow)(side b)[a].d64" size="174848" crc="b944dbba" sha1="3ea9919757c05243c6c9f993cabbbd11dbd27bfc"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="dtvgamec_2" supported="no">
-        <description>DTV Game-Collection Last Ninja (2006-09-27)</description>
-        <year>2006</year>
-        <publisher>Crossbow</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Side A"/>
-            <dataarea name="flop" size="174848">
-                <rom name="dtv game-collection last ninja (2006-09-27)(crossbow)(side a).d64" size="174848" crc="ae24bea1" sha1="bc0ce92471fdbc3161811cd584a0ad84ebb5cda2"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Side A, Alt"/>
-            <dataarea name="flop" size="174848">
-                <rom name="dtv game-collection last ninja (2006-09-27)(crossbow)(side a)[a].d64" size="174848" crc="d405c293" sha1="6cb76ef35d3650bdf4835011c58bf3a79fb65ae6"/>
-            </dataarea>
-        </part>
-        <part name="flop3" interface="floppy_5_25">
-            <feature name="part_id" value="Side B"/>
-            <dataarea name="flop" size="174848">
-                <rom name="dtv game-collection last ninja (2006-09-27)(crossbow)(side b).d64" size="174848" crc="363eda84" sha1="4ad57a48f52cf89d78b05bdc5c013d77b543524d"/>
-            </dataarea>
-        </part>
-        <part name="flop4" interface="floppy_5_25">
-            <feature name="part_id" value="Side B, Alt"/>
-            <dataarea name="flop" size="174848">
-                <rom name="dtv game-collection last ninja (2006-09-27)(crossbow)(side b)[a].d64" size="174848" crc="46e07d34" sha1="3b52ce09263af320ad8516247f139e9dbeefcda6"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="games1" supported="no">
-        <description>Games1</description>
-        <year>2007</year>
-        <publisher>&lt;unknown&gt;</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Hummer"/>
-            <dataarea name="flop" size="174848">
-                <rom name="games1 (2007)(-)[hummer].d64" size="174848" crc="b541537c" sha1="02a68d6c38df55875f0e3c1355c07b1ef3ec7d8a"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="games2" supported="no">
-        <description>Games2</description>
-        <year>2007</year>
-        <publisher>&lt;unknown&gt;</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Hummer"/>
-            <dataarea name="flop" size="174848">
-                <rom name="games2 (2007)(-)[hummer].d64" size="174848" crc="84a9807e" sha1="a868b2fe499a3d091a4ce87873ad86e3f10a03a9"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="games3" supported="no">
-        <description>Games3</description>
-        <year>2007</year>
-        <publisher>&lt;unknown&gt;</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Hummer"/>
-            <dataarea name="flop" size="174848">
-                <rom name="games3 (2007)(-)[hummer].d64" size="174848" crc="c36ac2a8" sha1="0b1dbd8b08dd66dc1814746814a0dc0b730216f9"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="games4" supported="no">
-        <description>Games4</description>
-        <year>2007</year>
-        <publisher>&lt;unknown&gt;</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Hummer"/>
-            <dataarea name="flop" size="174848">
-                <rom name="games4 (2007)(-)[hummer].d64" size="174848" crc="059774a1" sha1="2152a927d9cf8f18b9b72aeb95a3e7dbdedbf51f"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="games5" supported="no">
-        <description>Games5</description>
-        <year>2007</year>
-        <publisher>&lt;unknown&gt;</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Hummer"/>
-            <dataarea name="flop" size="174848">
-                <rom name="games5 (2007)(-)[hummer].d64" size="174848" crc="b0997e6c" sha1="facd0c67394d5ec1b55d147119967103c2a1e212"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="gianasis" supported="no">
-        <description>Giana Sisters</description>
-        <year>2007</year>
-        <publisher>&lt;unknown&gt;</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Alt, Hummer"/>
-            <dataarea name="flop" size="174848">
-                <rom name="giana sisters (2007)(-)[a][hummer].d64" size="174848" crc="62793d9e" sha1="251aeee48f73d41e1387fe66b2aa73e537257d1c"/>
-            </dataarea>
-        </part>
-        <part name="flop2" interface="floppy_5_25">
-            <feature name="part_id" value="Hummer"/>
-            <dataarea name="flop" size="174848">
-                <rom name="giana sisters (2007)(-)[hummer].d64" size="174848" crc="9a696e7e" sha1="70459fe835075de1fee04d6a60f626ce295d3022"/>
-            </dataarea>
-        </part>
-    </software>
-
-    <software name="spacetax" supported="no">
-        <description>Space Taxi (2005-10-31)</description>
-        <year>2005</year>
-        <publisher>Crest</publisher>
-
-        <part name="flop1" interface="floppy_5_25">
-            <feature name="part_id" value="Samplefixed"/>
-            <dataarea name="flop" size="174848">
-                <rom name="space taxi (2005-10-31)(crest)[samplefixed].d64" size="174848" crc="ecd86bce" sha1="58d48b4e3a9a51a93bdaeb5c67b5312a948bb18f"/>
-            </dataarea>
-        </part>
-    </software>
+	<!-- Commodore C64DTV - Demos - [D64] (TOSEC-v2019-03-24_CM).dat -->
+
+	<software name="2008adtv" supported="no">
+		<description>2008 - a DTV Odyssey (2008-02-23)</description>
+		<year>2008</year>
+		<publisher>Tristar &amp; Red Sector Incorporated</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="174848">
+				<rom name="2008 - a dtv odyssey (2008-02-23)(tristar &amp; red sector incorporated)(side a).d64" size="174848" crc="9c6762b2" sha1="e538de9924922dbf18ec063a86b5b08f371a790d"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="174848">
+				<rom name="2008 - a dtv odyssey (2008-02-23)(tristar &amp; red sector incorporated)(side b).d64" size="174848" crc="e0853ba3" sha1="420ee010f681ab6fbb2461172c95e496ceb9fea0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="22050her" supported="no">
+		<description>22050 HERTZ (2006-11-14)</description>
+		<year>2006</year>
+		<publisher>Tristar &amp; Red Sector Incorporated</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="174848">
+				<rom name="22050 hertz (2006-11-14)(tristar &amp; red sector incorporated)(side a).d64" size="174848" crc="c48b4927" sha1="9419dfec6b82b8d6d7e1203e9191e5126847f32c"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="174848">
+				<rom name="22050 hertz (2006-11-14)(tristar &amp; red sector incorporated)(side b).d64" size="174848" crc="9153ce8a" sha1="0342260eb928b6518c261a61466bdb38dbae77e5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="320x4754" supported="no">
+		<description>320x4754 for DTV (2006-07-22)</description>
+		<year>2006</year>
+		<publisher>Crest</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="174848">
+				<rom name="320x4754 for dtv (2006-07-22)(crest)(side a).d64" size="174848" crc="4cebbd0e" sha1="a39e0949c090c887a8b2e0ded3a6ae1ce55c5a30"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="320x4754 for dtv (2006-07-22)(crest)(side a)[a].d64" size="174848" crc="8f86914b" sha1="aa3cec60a2ecf26195f846ffe1b8946bfb0cdfea"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="174848">
+				<rom name="320x4754 for dtv (2006-07-22)(crest)(side b).d64" size="174848" crc="bc7db714" sha1="ff611cca678dfc0c6c2f80b04db679a1d75a1690"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anbieren" supported="no">
+		<description>Anbieren (2018-07-21)</description>
+		<year>2018</year>
+		<publisher>Oxyron</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="anbieren (2018-07-21)(oxyron).d64" size="174848" crc="ca8a7671" sha1="29ef357c90b42c78134d8f33392ad8f5f2432381"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="critical" supported="no">
+		<description>Critical Update! (2005-10-28)</description>
+		<year>2005</year>
+		<publisher>Crest</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="critical update (2005-10-28)(crest).d64" size="174848" crc="1bb654c9" sha1="f0a82390a8ccf55a2689697177c588041ac73359"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghostint" supported="no">
+		<description>Ghost in the Machine (2007-05-28)</description>
+		<year>2007</year>
+		<publisher>Tristar &amp; Red Sector Incorporated</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="174848">
+				<rom name="ghost in the machine (2007-05-28)(tristar &amp; red sector incorporated)(side a).d64" size="174848" crc="76d575e0" sha1="0d1c98cff0b7d8101a4d080746df1262bdb476cb"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="174848">
+				<rom name="ghost in the machine (2007-05-28)(tristar &amp; red sector incorporated)(side b).d64" size="174848" crc="176eb76f" sha1="91bbf13388eb8cdc8a3ebe1314a4a5dcc24a7467"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="insania" supported="no">
+		<description>Insania (2013-07-20)</description>
+		<year>2013</year>
+		<publisher>The Obsessed Maniacs</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="insania (2013-07-20)(the obsessed maniacs).d64" size="174848" crc="f18999fc" sha1="00961f94ed883f5826569c01409b08ddb0fa68d4"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="misery3" supported="no">
+		<description>Misery 3 (2009-10-03)</description>
+		<year>2009</year>
+		<publisher>Tristar &amp; Red Sector Incorporated</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="misery 3 (2009-10-03)(tristar &amp; red sector incorporated).d64" size="174848" crc="9e8e5f1a" sha1="dab58b3363c4ca784de391015f199792ed7e4dc3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mustseed" supported="no">
+		<description>Must See DTV (2005-11-12)</description>
+		<year>2005</year>
+		<publisher>Style</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="must see dtv (2005-11-12)(style).d64" size="174848" crc="5e9ae4b9" sha1="a540fb474e35c8e8299a09063f3df406320513f3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="newtonsc" supported="no">
+		<description>Newtons Cradle (2006-10-23)</description>
+		<year>2006</year>
+		<publisher>Tristar &amp; Red Sector Incorporated</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="174848">
+				<rom name="newtons cradle (2006-10-23)(tristar &amp; red sector incorporated)(side a).d64" size="174848" crc="de4f4961" sha1="c7cbc84a5019e8d08b6c945043c5be5dccc49b13"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="174848">
+				<rom name="newtons cradle (2006-10-23)(tristar &amp; red sector incorporated)(side b).d64" size="174848" crc="0204a077" sha1="28529dbcb470f586d5f4a44db08a6415821f9f33"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="numeroun" supported="no">
+		<description>Numero Uno (2005-11-11)</description>
+		<year>2005</year>
+		<publisher>Crest</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="numero uno (2005-11-11)(crest).d64" size="174848" crc="c554ab0b" sha1="424928a7f05f291c8db52111dccde3099540c46d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ofjewors" supported="no">
+		<description>Of je worst lust (2009-01-03)</description>
+		<year>2009</year>
+		<publisher>HeMa!</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="of je worst lust (2009-01-03)(hema).d64" size="174848" crc="3153d2fc" sha1="7d09e5217e1915721209b4c187b1a4219ec4d354"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="outtakes" supported="no">
+		<description>Outtakes (2013-07-20)</description>
+		<year>2013</year>
+		<publisher>TRSI</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="outtakes (2013-07-20)(trsi).d64" size="174848" crc="5227e38f" sha1="9610d962dc6cf6495528d43d3e2d10f416e12ca1"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="outtakes (2013-07-20)(trsi)[a].d64" size="174848" crc="0ac9bd1b" sha1="b87b6a31e0e077d6e37abd73da2e080ca00d406e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rambodtv" supported="no">
+		<description>Rambo dtv (2011-08-24)</description>
+		<year>2011</year>
+		<publisher>Peiselulli</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="rambo dtv (2011-08-24)(peiselulli).d64" size="174848" crc="42d6e7e2" sha1="ed892f49e36dec587bb2b85d6df1cea0189ec6ab"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="saufzuch" supported="no">
+		<description>Saufzucht! (2017-07-22)</description>
+		<year>2017</year>
+		<publisher>Oxyron</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="saufzucht (2017-07-22)(oxyron).d64" size="174848" crc="b4f3bafe" sha1="ab77e9073f6b4830389da252b414ec75a410c9a7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spacelan" supported="no">
+		<description>Spacelane (2006-11-08)</description>
+		<year>2006</year>
+		<publisher>Street Tuff - tlr</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="174848">
+				<rom name="spacelane (2006-11-08)(street tuff - tlr)(side a).d64" size="174848" crc="fd967336" sha1="99fc8becd0c90051a9fcfc6c59dedb4bc0f7ed32"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="174848">
+				<rom name="spacelane (2006-11-08)(street tuff - tlr)(side b).d64" size="174848" crc="d6f5e613" sha1="677cd75fc2c86d18e30c978afba814dfdf9e9ea1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thedavin" supported="no">
+		<description>The DaVinci Code (2005-11-26)</description>
+		<year>2005</year>
+		<publisher>Crest</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="174848">
+				<rom name="davinci code, the (2005-11-26)(crest)(side a).d64" size="174848" crc="86cef4b2" sha1="eee656f4be27ec16d83db73fe8cdd8f45cd98449"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="174848">
+				<rom name="davinci code, the (2005-11-26)(crest)(side b).d64" size="174848" crc="c8eaa854" sha1="78cd80502d74a3b0986b6b10c8a242113ec13479"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thekingi" supported="no">
+		<description>The King is Back (2005-09-28)</description>
+		<year>2005</year>
+		<publisher>Crest</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="king is back, the (2005-09-28)(crest).d64" size="174848" crc="64e9b9ae" sha1="86854dcd86dc7b17d5a3fd03ed88b578a6a41959"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="twistro" supported="no">
+		<description>Twistro (2010-01-13)</description>
+		<year>2010</year>
+		<publisher>Silicon Limited</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="twistro (2010-01-13)(silicon limited).d64" size="174848" crc="efdc8736" sha1="43c1702804045d53a621ef63c5b7a8d344262c8f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="uncharte" supported="no">
+		<description>Uncharted Territory 101% (2007-08-03)</description>
+		<year>2007</year>
+		<publisher>Noice</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="174848">
+				<rom name="uncharted territory 101 (2007-08-03)(noice)(side a).d64" size="174848" crc="56e14242" sha1="a28ab56eefbb9983a694cff7ce9df8381fe6c315"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="174848">
+				<rom name="uncharted territory 101 (2007-08-03)(noice)(side b).d64" size="174848" crc="ee85c760" sha1="3ce8b64778c123f616d333141de60259c1fc603c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="uncharte_1" supported="no">
+		<description>Uncharted Territory (2007-07-28)</description>
+		<year>2007</year>
+		<publisher>Noice</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="174848">
+				<rom name="uncharted territory (2007-07-28)(noice)(side a).d64" size="174848" crc="e5d707fb" sha1="1b049843fb975d5eb99c145027dafdc21c54120c"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="174848">
+				<rom name="uncharted territory (2007-07-28)(noice)(side b).d64" size="174848" crc="cdef842f" sha1="71e8a250d18f0a2dc56b25205d4fbd2a9fec16b2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vampires" supported="no">
+		<description>Vampires Empire (2012-07-21)</description>
+		<year>2012</year>
+		<publisher>TRSI</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="vampires empire (2012-07-21)(trsi).d64" size="174848" crc="ee7dcd1a" sha1="75074a5171bfe7d6a9ac505aa7c9b281b120b456"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="widescre" supported="no">
+		<description>Wide Screen Slide (2006-10-22)</description>
+		<year>2006</year>
+		<publisher>Tristar &amp; Red Sector Incorporated</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="wide screen slide (2006-10-22)(tristar &amp; red sector incorporated).d64" size="174848" crc="78294a4e" sha1="50af6ac5a775ec4482b3aaa6fdc9401e6f978655"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="wide screen slide (2006-10-22)(tristar &amp; red sector incorporated)[a].d64" size="174848" crc="b43bfa2f" sha1="d73a7372b0b657bbb43f3b0116a4b414b1730459"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Commodore C64DTV - Games - [D64] (TOSEC-v2015-07-25_CM).dat -->
+
+	<software name="abyss" supported="no">
+		<description>Abyss</description>
+		<year>2007</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hummer"/>
+			<dataarea name="flop" size="174848">
+				<rom name="abyss (2007)(-)[hummer].d64" size="174848" crc="0811acd4" sha1="2314dedb8d550e3f5751af7d4f1114685fe7301d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boulderd" supported="no">
+		<description>Boulder Dash DTV</description>
+		<year>2008</year>
+		<publisher>P. &amp; Peiselulli Liepa</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="boulder dash dtv (2008)(liepa, p. &amp; peiselulli).d64" size="174848" crc="91831f75" sha1="564b889ddc2faee9d08357b6e0b7e2b05986b386"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dtvgamec" supported="no">
+		<description>DTV Game-Collection 1 (2006-09-25)</description>
+		<year>2006</year>
+		<publisher>Crossbow</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="dtv game-collection 1 (2006-09-25)(crossbow).d64" size="174848" crc="4fe938d2" sha1="27e7afc7951d04e261ece42dfdda8288073af89c"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="174848">
+				<rom name="dtv game-collection 1 (2006-09-25)(crossbow)(side a).d64" size="174848" crc="8581d45d" sha1="0501d5cdac095dd17f45555cb3364ef9b0deb079"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="dtv game-collection 1 (2006-09-25)(crossbow)(side a)[a].d64" size="174848" crc="f3496a91" sha1="a002139b508ae7faa35ad72f4fe5f2c020b15d47"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="174848">
+				<rom name="dtv game-collection 1 (2006-09-25)(crossbow)(side b).d64" size="174848" crc="02c940ec" sha1="12994e6b47e991f1b0a56f37b3cce0dfa4d1cd96"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="dtv game-collection 1 (2006-09-25)(crossbow)(side b)[a].d64" size="174848" crc="57608454" sha1="794da0052a3e4765411cf81afa78480aa4057ca9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dtvgamec_1" supported="no">
+		<description>DTV Game-Collection 2 (2006-09-25)</description>
+		<year>2006</year>
+		<publisher>Crossbow</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="174848">
+				<rom name="dtv game-collection 2 (2006-09-25)(crossbow)(side a).d64" size="174848" crc="94a25a0f" sha1="de6223f4fe379d5d682288325793a1ebbfc29777"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="dtv game-collection 2 (2006-09-25)(crossbow)(side a)[a].d64" size="174848" crc="4361b297" sha1="178e81a2702c4de38bb2554498037706834ab954"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="174848">
+				<rom name="dtv game-collection 2 (2006-09-25)(crossbow)(side b).d64" size="174848" crc="09357f1b" sha1="ab1e15a9152d1af4d21f21e5ce820b6b92756826"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="dtv game-collection 2 (2006-09-25)(crossbow)(side b)[a].d64" size="174848" crc="b944dbba" sha1="3ea9919757c05243c6c9f993cabbbd11dbd27bfc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dtvgamec_2" supported="no">
+		<description>DTV Game-Collection Last Ninja (2006-09-27)</description>
+		<year>2006</year>
+		<publisher>Crossbow</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="174848">
+				<rom name="dtv game-collection last ninja (2006-09-27)(crossbow)(side a).d64" size="174848" crc="ae24bea1" sha1="bc0ce92471fdbc3161811cd584a0ad84ebb5cda2"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="dtv game-collection last ninja (2006-09-27)(crossbow)(side a)[a].d64" size="174848" crc="d405c293" sha1="6cb76ef35d3650bdf4835011c58bf3a79fb65ae6"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="174848">
+				<rom name="dtv game-collection last ninja (2006-09-27)(crossbow)(side b).d64" size="174848" crc="363eda84" sha1="4ad57a48f52cf89d78b05bdc5c013d77b543524d"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="dtv game-collection last ninja (2006-09-27)(crossbow)(side b)[a].d64" size="174848" crc="46e07d34" sha1="3b52ce09263af320ad8516247f139e9dbeefcda6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games1" supported="no">
+		<description>Games1</description>
+		<year>2007</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hummer"/>
+			<dataarea name="flop" size="174848">
+				<rom name="games1 (2007)(-)[hummer].d64" size="174848" crc="b541537c" sha1="02a68d6c38df55875f0e3c1355c07b1ef3ec7d8a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games2" supported="no">
+		<description>Games2</description>
+		<year>2007</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hummer"/>
+			<dataarea name="flop" size="174848">
+				<rom name="games2 (2007)(-)[hummer].d64" size="174848" crc="84a9807e" sha1="a868b2fe499a3d091a4ce87873ad86e3f10a03a9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games3" supported="no">
+		<description>Games3</description>
+		<year>2007</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hummer"/>
+			<dataarea name="flop" size="174848">
+				<rom name="games3 (2007)(-)[hummer].d64" size="174848" crc="c36ac2a8" sha1="0b1dbd8b08dd66dc1814746814a0dc0b730216f9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games4" supported="no">
+		<description>Games4</description>
+		<year>2007</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hummer"/>
+			<dataarea name="flop" size="174848">
+				<rom name="games4 (2007)(-)[hummer].d64" size="174848" crc="059774a1" sha1="2152a927d9cf8f18b9b72aeb95a3e7dbdedbf51f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games5" supported="no">
+		<description>Games5</description>
+		<year>2007</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hummer"/>
+			<dataarea name="flop" size="174848">
+				<rom name="games5 (2007)(-)[hummer].d64" size="174848" crc="b0997e6c" sha1="facd0c67394d5ec1b55d147119967103c2a1e212"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gianasis" supported="no">
+		<description>Giana Sisters</description>
+		<year>2007</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hummer"/>
+			<dataarea name="flop" size="174848">
+				<rom name="giana sisters (2007)(-)[hummer].d64" size="174848" crc="9a696e7e" sha1="70459fe835075de1fee04d6a60f626ce295d3022"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hummer, Alt 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="giana sisters (2007)(-)[a][hummer].d64" size="174848" crc="62793d9e" sha1="251aeee48f73d41e1387fe66b2aa73e537257d1c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spacetax" supported="no">
+		<description>Space Taxi (2005-10-31)</description>
+		<year>2005</year>
+		<publisher>Crest</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Samplefixed"/>
+			<dataarea name="flop" size="174848">
+				<rom name="space taxi (2005-10-31)(crest)[samplefixed].d64" size="174848" crc="ecd86bce" sha1="58d48b4e3a9a51a93bdaeb5c67b5312a948bb18f"/>
+			</dataarea>
+		</part>
+	</software>
 
 </softwarelist>

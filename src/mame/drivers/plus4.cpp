@@ -946,12 +946,12 @@ void c16_state::plus4p(machine_config &config)
 	m_ted->set_clock(XTAL(17'734'470)/5);
 
 	// software list
-	SOFTWARE_LIST(config, "cart_list").set_original("plus4_cart");
-	SOFTWARE_LIST(config, "cass_list").set_original("plus4_cass");
-	SOFTWARE_LIST(config, "flop_list").set_original("plus4_flop");
-	subdevice<software_list_device>("cart_list")->set_filter("PAL");
-	subdevice<software_list_device>("cass_list")->set_filter("PAL");
-	subdevice<software_list_device>("flop_list")->set_filter("PAL");
+	SOFTWARE_LIST(config, "cart_list").set_original("plus4_cart").set_filter("PAL");
+	SOFTWARE_LIST(config, "cass_list").set_original("plus4_cass").set_filter("PAL");
+	SOFTWARE_LIST(config, "flop_list").set_original("plus4_flop").set_filter("PAL");
+    
+    SOFTWARE_LIST(config, "cass_list_tosec").set_original("plus4_cass_tosec").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_list_tosec").set_original("plus4_flop_tosec").set_filter("PAL");
 }
 
 //-------------------------------------------------
@@ -965,12 +965,12 @@ void c16_state::plus4n(machine_config &config)
 	m_ted->set_clock(XTAL(14'318'181)/4);
 
 	// software list
-	SOFTWARE_LIST(config, "cart_list").set_original("plus4_cart");
-	SOFTWARE_LIST(config, "cass_list").set_original("plus4_cass");
-	SOFTWARE_LIST(config, "flop_list").set_original("plus4_flop");
-	subdevice<software_list_device>("cart_list")->set_filter("NTSC");
-	subdevice<software_list_device>("cass_list")->set_filter("NTSC");
-	subdevice<software_list_device>("flop_list")->set_filter("NTSC");
+	SOFTWARE_LIST(config, "cart_list").set_original("plus4_cart").set_filter("NTSC");
+	SOFTWARE_LIST(config, "cass_list").set_original("plus4_cass").set_filter("NTSC");
+	SOFTWARE_LIST(config, "flop_list").set_original("plus4_flop").set_filter("NTSC");
+    
+    SOFTWARE_LIST(config, "cass_list_tosec").set_original("plus4_cass_tosec").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_list_tosec").set_original("plus4_flop_tosec").set_filter("NTSC");
 }
 
 
