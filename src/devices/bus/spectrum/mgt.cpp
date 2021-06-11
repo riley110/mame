@@ -297,6 +297,7 @@ void spectrum_plusd_device::device_add_mconfig(machine_config &config)
 
 	/* software list */
 	SOFTWARE_LIST(config, "flop_list").set_original("spectrum_mgt_flop");
+    SOFTWARE_LIST(config, "flop_list_tosec").set_original("spectrum_mgt_flop_tosec");
 }
 
 void spectrum_disciple_device::device_add_mconfig(machine_config &config)

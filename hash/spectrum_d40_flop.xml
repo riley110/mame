@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
+<softwarelist name="spectrum_d40_flop" description="Sinclair ZX Spectrum D40 floppy disks (TOSEC)">
+
+	<!-- Sinclair ZX Spectrum - Applications - [D40] (TOSEC-v2021-01-15_CM).dat -->
+
+	<software name="artdisk" supported="no">
+		<description>Art Disk (CZ)</description>
+		<year>19??</year>
+		<publisher>Proxima</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="46080">
+				<rom name="art disk (19xx)(proxima)(cz).d40" size="46080" crc="131829a5" sha1="f8bbfbd9fa16fb31bdd6a0180dd47894d7516796"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="exportim" supported="no">
+		<description>Export-Import Manager (SK)</description>
+		<year>1992</year>
+		<publisher>Perpetum</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="export-import manager (1992)(perpetum)(sk).d40" size="368640" crc="8390d933" sha1="2281632cf9ad58bfd870a54a479648414bb525e5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="orfeusth" supported="no">
+		<description>Orfeus - The Music Assembler (CZ, en)</description>
+		<year>1990</year>
+		<publisher>Proxima</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="orfeus - the music assembler (1990)(proxima)(cz)(en).d40" size="368640" crc="94ffe221" sha1="9db732b61b73215dd99b1a10c2d2617cc0b4d3ad"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sqtracke" supported="no">
+		<description>SQ Tracker (128K, CZ)</description>
+		<year>1993</year>
+		<publisher>Proxima</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="aka Scalex Qjeta Tracker"/>
+			<dataarea name="flop" size="368640">
+				<rom name="sq tracker (1993)(proxima)(128k)(cz)[aka scalex qjeta tracker].d40" size="368640" crc="0434be03" sha1="80e3ed59fec4d84599d167f39134a310bc6db218"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Sinclair ZX Spectrum - Compilations - Applications - [D40] (TOSEC-v2021-01-15_CM).dat -->
+
+	<software name="toolscop" supported="no">
+		<description>Tools Copy (CZ)</description>
+		<year>1993</year>
+		<publisher>Proxima</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="36864">
+				<rom name="tools copy (1993)(proxima)(cz).d40" size="36864" crc="bc502f63" sha1="0fffb6edea7a5c08df33b889daf433127671aa7b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Sinclair ZX Spectrum - Games - [D40] (TOSEC-v2021-01-15_CM).dat -->
+
+	<software name="towdie" supported="no">
+		<description>Towdie (48K-128K, SK)</description>
+		<year>1994</year>
+		<publisher>Ultrasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="towdie (1994)(ultrasoft)(48k-128k)(sk).d40" size="409600" crc="154f3e8c" sha1="097efdb6f8f644977360501c2d17770b6bca91c4"/>
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

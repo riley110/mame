@@ -1454,8 +1454,8 @@ void c64_state::machine_reset()
 //**************************************************************************
 
 void c64_state::softlists(machine_config &config, const char *filter) {
-    SOFTWARE_LIST(config, "cart_list_vic10").set_original("vic10").set_filter(filter);
-    SOFTWARE_LIST(config, "cart_list_c64").set_original("c64_cart").set_filter(filter);
+    SOFTWARE_LIST(config, "cart_list").set_original("c64_cart").set_filter(filter);
+    SOFTWARE_LIST(config, "cart_list_vic10").set_compatible("vic10").set_filter(filter);
     SOFTWARE_LIST(config, "cass_list").set_original("c64_cass").set_filter(filter);
     // disk softlist split into originals and misc (homebrew and cracks)
     SOFTWARE_LIST(config, "flop525_orig").set_original("c64_flop_orig").set_filter(filter);

@@ -297,8 +297,9 @@ void beta_disk_device::device_add_mconfig(machine_config &config)
 	FLOPPY_CONNECTOR(config, m_floppy1, beta_disk_floppies, "525qd", beta_disk_device::floppy_formats).enable_sound(true);
 	FLOPPY_CONNECTOR(config, m_floppy2, beta_disk_floppies, "525qd", beta_disk_device::floppy_formats).enable_sound(true);
 	FLOPPY_CONNECTOR(config, m_floppy3, beta_disk_floppies, "525qd", beta_disk_device::floppy_formats).enable_sound(true);
-	
-	SOFTWARE_LIST(config, "beta_flop_list").set_original("spectrum_beta");
+    
+    SOFTWARE_LIST(config, "betadisc_list").set_original("spectrum_betadisc_flop");
+    SOFTWARE_LIST(config, "betadisc_list_tosec").set_original("spectrum_betadisc_flop_tosec");
 }
 
 //-------------------------------------------------

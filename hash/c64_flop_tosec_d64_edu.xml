@@ -197,6 +197,18 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 	</software>
 
 	<software name="afelesem" supported="no">
+		<description>A Fele Sem Igaz! [Not Even Half True] (hu)</description>
+		<year>19??</year>
+		<publisher>Monitor-Soft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174848">
+				<rom name="fele sem igaz, a [not even half true] (19xx)(monitor-soft)(hu).d64" size="174848" crc="07370852" sha1="383563ac330083a8a87d49c544e7dff459a45848"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="afelesem_1" supported="no">
 		<description>A Fele Sem Igaz! (hu)</description>
 		<year>19??</year>
 		<publisher>Monitor-Soft</publisher>
@@ -39528,21 +39540,6 @@ Credit goes to the TOSECDEV team for building this vast database over the years.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
 				<rom name="ph problems (1983)(commodore educational).d64" size="174848" crc="6b073b6b" sha1="8ef31918f240e2f77e21e329c31ee692ea0b513a"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- The following files violate the TOSEC Naming Convention -->
-
-	<!-- Commodore C64 - Educational - [D64] (TOSEC-v2021-01-12_CM).dat -->
-	<software name="_fixme1" supported="no">
-		<description>Fele Sem Igaz!, A [Not Even Half True] (19xx)(Monitor-Soft)(hu)</description>
-		<year>????</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="rom" size="174848">
-				<rom name="fele sem igaz, a [not even half true] (19xx)(monitor-soft)(hu).d64" size="174848" crc="07370852" sha1="383563ac330083a8a87d49c544e7dff459a45848"/>
 			</dataarea>
 		</part>
 	</software>

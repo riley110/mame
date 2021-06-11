@@ -1,0 +1,868 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
+<softwarelist name="c128_flop_tosec_d81" description="Commodore 128 floppy disks (TOSEC - D81)">
+
+	<!-- Commodore C128 - Applications - [D81] (TOSEC-v2020-06-26_CM).dat -->
+
+	<software name="1581tool" supported="no">
+		<description>1581 Toolkit (v2.01)</description>
+		<year>1988</year>
+		<publisher>Kracker Jax</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="autoboot"/>
+			<dataarea name="flop" size="819200">
+				<rom name="1581 toolkit v2.01 (1988)(kracker jax)[autoboot].d81" size="819200" crc="6f407224" sha1="3c63709f527c9b0557cd879355a6e776fe81204d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="1581util" supported="no">
+		<description>1581 Utility (v1.0)</description>
+		<year>1987</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="1581 utility v1.0 (1987)(commodore).d81" size="819200" crc="167bb6ea" sha1="016e53ee1c39d0eb9669c0af8fc4935ad0d9c1df"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="819200">
+				<rom name="1581 utility v1.0 (1987)(commodore)[a].d81" size="819200" crc="37309a63" sha1="067c3f334d024155ce1b670837783ac3c0da3bac"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="acebiosb" supported="no">
+		<description>ACE BIOS BETA version 1 (2010-12-24)</description>
+		<year>2010</year>
+		<publisher>MIRKOSOFT</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="ace bios beta version 1 (2010-12-24)(mirkosoft).d81" size="819200" crc="56a5b3ce" sha1="3109dc66ec9eb098adf4d57b6c6a4e859e30d7fe"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="booterv1" supported="no">
+		<description>Booter V1.0.3 (2015-01-22)</description>
+		<year>2015</year>
+		<publisher>MIRKOSOFT</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="booter v1.0.3 (2015-01-22)(mirkosoft).d81" size="819200" crc="887771a1" sha1="6a12b12eb2496bed53b691dc89d9378fa719bd8b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cbmfileb" supported="no">
+		<description>CBM Filebrowser (v1.5, 2013-03-03)</description>
+		<year>2013</year>
+		<publisher>nbla000</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="40-80 column"/>
+			<dataarea name="flop" size="819200">
+				<rom name="cbm filebrowser v1.5 (2013-03-03)(nbla000)[40-80 column].d81" size="819200" crc="1d192e09" sha1="19be5a4696364f624ed8ccaf6c61eb3f6f776569"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cbmfileb_a" cloneof="cbmfileb" supported="no">
+		<description>CBM Filebrowser (v1.6, 2013-08-20)</description>
+		<year>2013</year>
+		<publisher>nbla000</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="40-80 column"/>
+			<dataarea name="flop" size="819200">
+				<rom name="cbm filebrowser v1.6 (2013-08-20)(nbla000)[40-80 column].d81" size="819200" crc="53950226" sha1="d1dc32dd8a442283c5c0bfeb14b03047bce25458"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="desterm1" supported="no">
+		<description>DesTerm 128 v2.01 Beta Test Release</description>
+		<year>199?</year>
+		<publisher>Matthew Desmond</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="80 column"/>
+			<dataarea name="flop" size="819200">
+				<rom name="desterm 128 v2.01 beta test release (199x)(desmond, matthew)[80 column].d81" size="819200" crc="5a8a525e" sha1="cd65fb37064c3103ac13d04207fb01a076f2a190"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="desterm1_1" supported="no">
+		<description>DesTerm 128 v3.02 Beta Test (1998-06-06)</description>
+		<year>1998</year>
+		<publisher>Matthew Desmond</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="80 column"/>
+			<dataarea name="flop" size="819200">
+				<rom name="desterm 128 v3.02 beta test (1998-06-06)(desmond, matthew)[80 column].d81" size="819200" crc="59c67573" sha1="fdb3880b0d0f52f1d7f67bf8d007331e768f89cf"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="80 column, Alt 1"/>
+			<dataarea name="flop" size="819200">
+				<rom name="desterm 128 v3.02 beta test (1998-06-06)(desmond, matthew)[a][80 column].d81" size="819200" crc="dbca8a2e" sha1="cb8e2d3881e44a84d8f993c468b427fd6f2afffd"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="littlere" supported="no">
+		<description>Little Red Reader 128 (v2.5, 1996-06-03)</description>
+		<year>1996</year>
+		<publisher>Craig Bruce</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="40-80 column"/>
+			<dataarea name="flop" size="819200">
+				<rom name="little red reader 128 v2.5 (1996-06-03)(bruce, craig)[40-80 column].d81" size="819200" crc="f14e92d8" sha1="51f3baa57d8ec2b0524009f30a6223fbde05b88f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Commodore C128 - Applications - CPM - [D81] (TOSEC-v2018-03-25_CM).dat -->
+
+	<software name="sgctools" supported="no">
+		<description>SG C Tools Boot (v1.8, 2017-01-09)</description>
+		<year>2017</year>
+		<publisher>Steven P. Goldsmith</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="sg c tools boot v1.8 (2017-01-09)(goldsmith, steven p.).d81" size="819200" crc="9ebf0c05" sha1="6ad67cf4744584794e7504e8cfbf73ad9a8f26f6"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sgctools_1" supported="no">
+		<description>SG C Tools (v1.8, 2017-01-09)</description>
+		<year>2017</year>
+		<publisher>Steven P. Goldsmith</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="sg c tools v1.8 (2017-01-09)(goldsmith, steven p.).d81" size="819200" crc="5d5e2de2" sha1="e9039d2aadc8b6989711dda7560f90decdfe0397"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Commodore C128 - Demos - [D81] (TOSEC-v2017-10-23_CM).dat -->
+
+	<software name="particle" supported="no">
+		<description>Particles BBS (2017-09-25)</description>
+		<year>2017</year>
+		<publisher>particles.org</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="80 column"/>
+			<dataarea name="flop" size="819200">
+				<rom name="particles bbs (2017-09-25)(particles.org)[80 column].d81" size="819200" crc="13add16f" sha1="182ee591d4ec309b331e11b0872a8866d4aa99ef"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Commodore C128 - Games - [D81] (TOSEC-v2018-10-26_CM).dat -->
+
+	<software name="adventur" supported="no">
+		<description>Adventure Games 128</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="adventure games 128 (19xx)(-).d81" size="819200" crc="4286899e" sha1="469e6cc4641750f1cd314e8afdd0dd7eeff64cf1"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="819200">
+				<rom name="adventure games 128 (19xx)(-)[a].d81" size="819200" crc="b819bc6d" sha1="0bff18ed85a79690262eaacb4c60bb9510a4b43f"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 10"/>
+			<dataarea name="flop" size="819200">
+				<rom name="adventure games 128 (19xx)(-)[a10].d81" size="819200" crc="9ff5a100" sha1="c8904ea9af4287b204784fea5b90dd405b67735c"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 2"/>
+			<dataarea name="flop" size="819200">
+				<rom name="adventure games 128 (19xx)(-)[a2].d81" size="819200" crc="d765848f" sha1="b6236a53322ac5222c055b938aa7073fa0cf3a48"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 3"/>
+			<dataarea name="flop" size="819200">
+				<rom name="adventure games 128 (19xx)(-)[a3].d81" size="819200" crc="daa5bf29" sha1="55c268b3a6cdb4eb6dc92d67d29d607051a1cf7a"/>
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 4"/>
+			<dataarea name="flop" size="819200">
+				<rom name="adventure games 128 (19xx)(-)[a4].d81" size="819200" crc="562abedd" sha1="86b509890528a4b46afddc0028e4651cea86dd03"/>
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 5"/>
+			<dataarea name="flop" size="819200">
+				<rom name="adventure games 128 (19xx)(-)[a5].d81" size="819200" crc="9e5a1c66" sha1="dc10134bea31a63324441f48219a84cd9d4e85fe"/>
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 6"/>
+			<dataarea name="flop" size="819200">
+				<rom name="adventure games 128 (19xx)(-)[a6].d81" size="819200" crc="611cc479" sha1="d6e527480bda1362a0ebb587b451b4fc923677ae"/>
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 7"/>
+			<dataarea name="flop" size="819200">
+				<rom name="adventure games 128 (19xx)(-)[a7].d81" size="819200" crc="8d7a06f2" sha1="c773afb533adcefe4e76742b734435fab9375c3e"/>
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 8"/>
+			<dataarea name="flop" size="819200">
+				<rom name="adventure games 128 (19xx)(-)[a8].d81" size="819200" crc="3c4e12de" sha1="186ca10f335f1e691498c80fc3a2b6801b2c6b36"/>
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 9"/>
+			<dataarea name="flop" size="819200">
+				<rom name="adventure games 128 (19xx)(-)[a9].d81" size="819200" crc="61da590e" sha1="273fb6069abf6dd1b956ae72a4150c42d886088a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="brettgam" supported="no">
+		<description>Brett-Games 128</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="brett-games 128 (19xx)(-).d81" size="819200" crc="047e86c7" sha1="ae952420286df620a056153a9ba516baf945da4c"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 1"/>
+			<dataarea name="flop" size="819200">
+				<rom name="brett-games 128 (19xx)(-)[a].d81" size="819200" crc="6b2344eb" sha1="ee48d7af34a8c0c5e7c4e4fc328b115c85ee3e5b"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 2"/>
+			<dataarea name="flop" size="819200">
+				<rom name="brett-games 128 (19xx)(-)[a2].d81" size="819200" crc="bf57d14d" sha1="e1fe5ad1961ae3536c2a34bf6a356efe6db48be5"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 3"/>
+			<dataarea name="flop" size="819200">
+				<rom name="brett-games 128 (19xx)(-)[a3].d81" size="819200" crc="3b0d1102" sha1="4080449b77f48820d511c03b64a8c291faa473d3"/>
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 4"/>
+			<dataarea name="flop" size="819200">
+				<rom name="brett-games 128 (19xx)(-)[a4].d81" size="819200" crc="678021e3" sha1="29cab51391aa29ea72eaf738eee22db65442418a"/>
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 5"/>
+			<dataarea name="flop" size="819200">
+				<rom name="brett-games 128 (19xx)(-)[a5].d81" size="819200" crc="3118a1fb" sha1="bfc826184d1b731e1968b50d7cc2b1e4b1d3513e"/>
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 6"/>
+			<dataarea name="flop" size="819200">
+				<rom name="brett-games 128 (19xx)(-)[a6].d81" size="819200" crc="a7b6343b" sha1="02beade0cb1bba033543c4ee829d09cc6c6d5a15"/>
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 7"/>
+			<dataarea name="flop" size="819200">
+				<rom name="brett-games 128 (19xx)(-)[a7].d81" size="819200" crc="3b2c416e" sha1="90000d750bb9570b9c231c99bca0e9680b3538a6"/>
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 8"/>
+			<dataarea name="flop" size="819200">
+				<rom name="brett-games 128 (19xx)(-)[a8].d81" size="819200" crc="50a51f78" sha1="40c8f9acf6e320790adbc09f3e56b037d0735dd3"/>
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_3_5">
+			<feature name="part_id" value="Alt 9"/>
+			<dataarea name="flop" size="819200">
+				<rom name="brett-games 128 (19xx)(-)[a9].d81" size="819200" crc="315bd92e" sha1="32647e6dae805f380d952c6ab0852b7e7579f9d5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="empire12" supported="no">
+		<description>Empire 128 - Enhanced (1987-10)</description>
+		<year>1987</year>
+		<publisher>Cleve Blakemore</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="80column, Hacked Binary Legens"/>
+			<dataarea name="flop" size="819200">
+				<rom name="empire 128 - enhanced (1987-10)(blakemore, cleve)[h binary legens][80column].d81" size="819200" crc="c69a43fe" sha1="20d21c7fcf8b4f97852519a19a517d83d5713e1b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="princesq" supported="no">
+		<description>Prince's Quest</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad 1"/>
+			<dataarea name="flop" size="819200">
+				<rom name="prince's quest (19xx)(-)[b].d81" size="819200" crc="a7d49d41" sha1="80fb720bfda4051fbf6ee3544bf4177f8e579d0a" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Commodore C128 - Magazines - [D81] (TOSEC-v2019-01-04_CM).dat -->
+
+	<software name="loadstar" supported="no">
+		<description>Loadstar 128 Issue #01</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #01 (19xx)(softdisk).d81" size="819200" crc="8261F3A6" sha1="24542FCC5630B522D3D1F825F720FFE0E80AE894"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_1" supported="no">
+		<description>Loadstar 128 Issue #02</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #02 (19xx)(softdisk).d81" size="819200" crc="0E12EB00" sha1="4283B3B20BB7760A2247354623D38DE9539C5C9C"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_2" supported="no">
+		<description>Loadstar 128 Issue #03</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #03 (19xx)(softdisk).d81" size="819200" crc="47777773" sha1="096C2EE4BE6F353A223118E78E4BC244AC42283A"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_3" supported="no">
+		<description>Loadstar 128 Issue #04</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #04 (19xx)(softdisk).d81" size="819200" crc="4481A544" sha1="27D6B4043B9C381AFE36E764B09A18E6BF820D37"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_4" supported="no">
+		<description>Loadstar 128 Issue #05</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #05 (19xx)(softdisk).d81" size="819200" crc="DB4F7587" sha1="FAA65CD9DBAC49D8F79DCD9D399B854CCE82350D"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_5" supported="no">
+		<description>Loadstar 128 Issue #06</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #06 (19xx)(softdisk).d81" size="819200" crc="360F9111" sha1="F26DA4D7303F4B5EB3687AFE72A9B4C519EE1E71"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_6" supported="no">
+		<description>Loadstar 128 Issue #07</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #07 (19xx)(softdisk).d81" size="819200" crc="A3D8042D" sha1="7E7A8283A45744C829C5383FBA097E081CF38AB5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_7" supported="no">
+		<description>Loadstar 128 Issue #08</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #08 (19xx)(softdisk).d81" size="819200" crc="3FED02FB" sha1="917229FC1CD11E0EEEA1C35AE25A341D23C2A639"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_8" supported="no">
+		<description>Loadstar 128 Issue #09</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #09 (19xx)(softdisk).d81" size="819200" crc="FA675C59" sha1="65AF3BDE1D630C72F580389ECD3B0E46BE4A0DBB"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_9" supported="no">
+		<description>Loadstar 128 Issue #10</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #10 (19xx)(softdisk).d81" size="819200" crc="E0B9835F" sha1="4641554D39B3500EFAB676D6EDE5105764C49CE5"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_10" supported="no">
+		<description>Loadstar 128 Issue #11</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #11 (19xx)(softdisk).d81" size="819200" crc="38571C68" sha1="D974814EDF8A13498DB5F15B5AB6CBC667E85A79"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_11" supported="no">
+		<description>Loadstar 128 Issue #12</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #12 (19xx)(softdisk).d81" size="819200" crc="673C348C" sha1="CC3E519EDBAA06F5FD276634A7D684DA2B9F59A2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_12" supported="no">
+		<description>Loadstar 128 Issue #13</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #13 (19xx)(softdisk).d81" size="819200" crc="5E978692" sha1="D254EFEF5AE1CB79170061A83DC1711C0D5FB3F7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_13" supported="no">
+		<description>Loadstar 128 Issue #14</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #14 (19xx)(softdisk).d81" size="819200" crc="2A928403" sha1="8957AC14D92FE0A188C6B0D52F5726427ADE175C"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_14" supported="no">
+		<description>Loadstar 128 Issue #15</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #15 (19xx)(softdisk).d81" size="819200" crc="DA129900" sha1="014291D3779A15997C52E3E6E6AF4AC1198BE6B9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_15" supported="no">
+		<description>Loadstar 128 Issue #16</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #16 (19xx)(softdisk).d81" size="819200" crc="FAEF2EA5" sha1="269B0F4EF5CF4D91841903223EAFA6CE571C15CD"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_16" supported="no">
+		<description>Loadstar 128 Issue #17</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #17 (19xx)(softdisk).d81" size="819200" crc="15789BA3" sha1="C8BADB62A98DE50BF7DEA3B679064A3A30D7F837"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_17" supported="no">
+		<description>Loadstar 128 Issue #18</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #18 (19xx)(softdisk).d81" size="819200" crc="71717658" sha1="03CA15282A3B0AAD5DD72887D97DD50778C02A61"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_18" supported="no">
+		<description>Loadstar 128 Issue #19</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #19 (19xx)(softdisk).d81" size="819200" crc="C5B39054" sha1="BA7455BE0AB0F7CB4DF8DD7FA1739AC6E33B6FC4"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_19" supported="no">
+		<description>Loadstar 128 Issue #20</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #20 (19xx)(softdisk).d81" size="819200" crc="6FEDF657" sha1="534EBF84712CC763AB1158D6715B2A5C1E301B34"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_20" supported="no">
+		<description>Loadstar 128 Issue #21</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #21 (19xx)(softdisk).d81" size="819200" crc="B5102338" sha1="42EAF2518E6C7FEAACF6EFD91B667F0667553BAC"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_21" supported="no">
+		<description>Loadstar 128 Issue #22</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #22 (19xx)(softdisk).d81" size="819200" crc="9EAAC6F7" sha1="5D2DAAE8C95440BDEB0444C744127FA75553544C"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_22" supported="no">
+		<description>Loadstar 128 Issue #23</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #23 (19xx)(softdisk).d81" size="819200" crc="726D7AA8" sha1="838503BC17A1584E81FFE9AC4ED7936445DD2669"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_23" supported="no">
+		<description>Loadstar 128 Issue #24</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #24 (19xx)(softdisk).d81" size="819200" crc="FBADB368" sha1="4B0FFD9DB1C266C4426A439D32B9A4AD0F71381C"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_24" supported="no">
+		<description>Loadstar 128 Issue #25</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #25 (19xx)(softdisk).d81" size="819200" crc="A4D78F79" sha1="6C6D7861C8CD0617EEDDAD7C9732279868C4F59A"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_25" supported="no">
+		<description>Loadstar 128 Issue #26</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #26 (19xx)(softdisk).d81" size="819200" crc="384BC33C" sha1="EF2072A392BAC88C6D28B9826DB53A1C23EB8DAD"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_26" supported="no">
+		<description>Loadstar 128 Issue #27</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #27 (19xx)(softdisk).d81" size="819200" crc="03F27E9B" sha1="B00249A367A41D8AAEBD9707CC8E89C9D5D91273"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_27" supported="no">
+		<description>Loadstar 128 Issue #28</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #28 (19xx)(softdisk).d81" size="819200" crc="8DD5F734" sha1="04971271B260F349DFF306922A16C3C9D347795E"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_28" supported="no">
+		<description>Loadstar 128 Issue #29</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #29 (19xx)(softdisk).d81" size="819200" crc="B4BE6DA9" sha1="2A92687C3ECB9920561A40D804CF7B9D40A7DD92"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_29" supported="no">
+		<description>Loadstar 128 Issue #30</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #30 (19xx)(softdisk).d81" size="819200" crc="E95EC665" sha1="FEA859FB6D0040ED1EDDE9CB9CE90DF31ECAA5BE"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_30" supported="no">
+		<description>Loadstar 128 Issue #31</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #31 (19xx)(softdisk).d81" size="819200" crc="76170ECE" sha1="CF9E413CFC33CBC3B84FC6796772D75B7746A50E"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_31" supported="no">
+		<description>Loadstar 128 Issue #34</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #34 (19xx)(softdisk).d81" size="819200" crc="4F7D0AE1" sha1="1BAD69987A9764D52EB97FCCC80FCD3F17471C3F"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_32" supported="no">
+		<description>Loadstar 128 Issue #35</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #35 (19xx)(softdisk).d81" size="819200" crc="2CB8E6DE" sha1="73CCE7172BF4924BEBB22771656668DCE1D608A3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_33" supported="no">
+		<description>Loadstar 128 Issue #36</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #36 (19xx)(softdisk).d81" size="819200" crc="3C69752E" sha1="81D1DB0FDE4AA1494F2A30887FCFAB21CF869D89"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_34" supported="no">
+		<description>Loadstar 128 Issue #37</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #37 (19xx)(softdisk).d81" size="819200" crc="9DB956FC" sha1="0A2B3DB6278B9A044B3E02930651FE96B4AFB2D8"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_35" supported="no">
+		<description>Loadstar 128 Issue #38</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #38 (19xx)(softdisk).d81" size="819200" crc="59B4728C" sha1="80047B51D3413AE2010C274596B70F62EE2CF011"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_36" supported="no">
+		<description>Loadstar 128 Issue #39</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #39 (19xx)(softdisk).d81" size="819200" crc="7850BA74" sha1="757267B80392DFBBDE6B56AF0D55A326C494A276"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_37" supported="no">
+		<description>Loadstar 128 Issue #40</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #40 (19xx)(softdisk).d81" size="819200" crc="AA1023A1" sha1="4D9FB6A5659208334FD247E16CEA08DE94B5713A"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_38" supported="no">
+		<description>Loadstar 128 Issue #41</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #41 (19xx)(softdisk).d81" size="819200" crc="D77B7196" sha1="8E09F4B9573C453B96DDC21B620983F1AC70C768"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loadstar_39" supported="no">
+		<description>Loadstar 128 Issue #42</description>
+		<year>19??</year>
+		<publisher>Softdisk</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="loadstar 128 issue #42 (19xx)(softdisk).d81" size="819200" crc="D58B5819" sha1="9BED6689D4ED087F77A75EB0BBCB93C695766014"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Commodore C128 - Operating Systems - [D81] (TOSEC-v2018-03-25_CM).dat -->
+
+	<software name="cpmsyste" supported="no">
+		<description>CPM System Fast (1999-08-28)</description>
+		<year>1999</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Modified Linards Ticmanis"/>
+			<dataarea name="flop" size="819200">
+				<rom name="cpm system fast (1999-08-28)(commodore)[m linards ticmanis].d81" size="819200" crc="8f54ff41" sha1="cab7b26cb5260cc1771339ea5858c17f1144aa89"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="contiki" supported="no">
+		<description>Contiki (v3.0, 2015-08-25)</description>
+		<year>2015</year>
+		<publisher>contiki-os.org</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="contiki v3.0 (2015-08-25)(contiki-os.org).d81" size="819200" crc="4f0edeab" sha1="9df50768853f3149786150b53f0d413c7e202dc9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Commodore C128 - Operating Systems - GEOS - [D81] (TOSEC-v2017-10-23_CM).dat -->
+
+	<software name="geos128" supported="no">
+		<description>GEOS 128 (v2.0)</description>
+		<year>1988</year>
+		<publisher>Berkeley Softworks</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="40-80 column"/>
+			<dataarea name="flop" size="819200">
+				<rom name="geos 128 v2.0 (1988)(berkeley softworks)[40-80 column].d81" size="819200" crc="0520ff04" sha1="43dc349cc870ee196132705ef865ca3501c88a89"/>
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

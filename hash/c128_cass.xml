@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
+<softwarelist name="c128_cass" description="Commodore 128 cassettes (TOSEC)">
+
+	<!-- Commodore C128 - Games - [TAP] (TOSEC-v2019-09-07_CM).dat -->
+
+	<software name="therocky" supported="no">
+		<description>The Rocky Horror Show</description>
+		<year>1986</year>
+		<publisher>CRL</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="1069596">
+				<rom name="rocky horror show, the (1986)(crl).tap" size="1069596" crc="607901ea" sha1="99ef3450f5ebad5957cc067a77d2b1a3238f0153"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Commodore C128 - Magazines - [TAP] (TOSEC-v2013-10-03_CM).dat -->
+
+	<software name="programm" supported="no">
+		<description>Programmi per Commodore 128 (it)</description>
+		<year>19??</year>
+		<publisher>Jackson</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="2446284">
+				<rom name="programmi per commodore 128 (19xx)(jackson)(it).tap" size="2446284" crc="c2e6b114" sha1="4c6705eeb89840804e642e9abf51203c1f5d9438"/>
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

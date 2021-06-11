@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
+<softwarelist name="vic20_flop_tosec_d81" description="Commodore VIC-1001 / VIC-20 floppy disks (TOSEC - D81)">
+
+	<!-- Commodore VIC20 - Applications - [D81] (TOSEC-v2017-10-23_CM).dat -->
+
+	<software name="cbmfileb" supported="no">
+		<description>CBM Filebrowser (v1.3, 2012-05-31)</description>
+		<year>2012</year>
+		<publisher>nbla000</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="cbm filebrowser v1.3 (2012-05-31)(nbla000).d81" size="819200" crc="1779fd69" sha1="5a06453634684f8bb6467bdd4f7a8540d928859b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cbmfileb_a" cloneof="cbmfileb" supported="no">
+		<description>CBM Filebrowser (v1.4, 2012-07-19)</description>
+		<year>2012</year>
+		<publisher>nbla000</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="cbm filebrowser v1.4 (2012-07-19)(nbla000).d81" size="819200" crc="05b064a1" sha1="e3ef933d80798a09a5869349862bb95662e49b7a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cbmfileb_b" cloneof="cbmfileb" supported="no">
+		<description>CBM Filebrowser (v1.5, 2013-03-03)</description>
+		<year>2013</year>
+		<publisher>nbla000</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="cbm filebrowser v1.5 (2013-03-03)(nbla000).d81" size="819200" crc="1d192e09" sha1="19be5a4696364f624ed8ccaf6c61eb3f6f776569"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cbmfileb_c" cloneof="cbmfileb" supported="no">
+		<description>CBM Filebrowser (v1.6, 2013-08-20)</description>
+		<year>2013</year>
+		<publisher>nbla000</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="cbm filebrowser v1.6 (2013-08-20)(nbla000).d81" size="819200" crc="53950226" sha1="d1dc32dd8a442283c5c0bfeb14b03047bce25458"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Commodore VIC20 - Magazines - [D81] (TOSEC-v2014-10-28_CM).dat -->
+
+	<software name="bestofvi" supported="no">
+		<description>Best of VIC-20 (US)</description>
+		<year>198?</year>
+		<publisher>Family Computing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="type-in"/>
+			<dataarea name="flop" size="819200">
+				<rom name="best of vic-20 (198x)(family computing)(us)[type-in].d81" size="819200" crc="a987bf11" sha1="ecef9474855b93ea9e39fc242848d90cb50a55d1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="computei" supported="no">
+		<description>Compute! - Issues 1982</description>
+		<year>1982</year>
+		<publisher>Compute!</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="issues 01-12"/>
+			<dataarea name="flop" size="819200">
+				<rom name="compute - issues 1982 (1982)(compute)[issues 01-12].d81" size="819200" crc="52108947" sha1="960dca19f41d85c69045cb1befe89fde81c92b94"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="computei_1" supported="no">
+		<description>Compute! - Issues 1983</description>
+		<year>1983</year>
+		<publisher>Compute!</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="issues 01-12"/>
+			<dataarea name="flop" size="819200">
+				<rom name="compute - issues 1983 (1983)(compute)[issues 01-12].d81" size="819200" crc="3a32f81f" sha1="d76c25afaef1ac54672d83c7d56ca53b933996a1"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="computei_2" supported="no">
+		<description>Compute! - Issues 1984</description>
+		<year>1984</year>
+		<publisher>Compute!</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="issues 01-12"/>
+			<dataarea name="flop" size="819200">
+				<rom name="compute - issues 1984 (1984)(compute)[issues 01-12].d81" size="819200" crc="ca6e05e2" sha1="ae3dec7e05f8f08fd8eee3f8bfe70db46e10069a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="computei_3" supported="no">
+		<description>Compute! - Issues 1985</description>
+		<year>1985</year>
+		<publisher>Compute!</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="issues 01-10"/>
+			<dataarea name="flop" size="819200">
+				<rom name="compute - issues 1985 (1985)(compute)[issues 01-10].d81" size="819200" crc="63063545" sha1="3d1ce2a64670e8397123b7230e9b74e62b036e0b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kpower" supported="no">
+		<description>K-Power (US)</description>
+		<year>1984</year>
+		<publisher>Scholastic</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="k-power (1984)(scholastic)(us).d81" size="819200" crc="89b740b1" sha1="54eed90a8c87e7aa168b9a2e007b4543082f1697"/>
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

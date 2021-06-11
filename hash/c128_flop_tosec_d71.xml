@@ -1,0 +1,585 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
+<softwarelist name="c128_flop_tosec_d71" description="Commodore 128 floppy disks (TOSEC - D71)">
+
+	<!-- Commodore C128 - Applications - [D71] (TOSEC-v2020-01-19_CM).dat -->
+
+	<software name="1571test" supported="no">
+		<description>1571 Test Demo</description>
+		<year>1985</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="1571 test demo (1985)(commodore).d71" size="349696" crc="384eecd9" sha1="15626358a9c5b29e730c5ca56affaf60e9bbcd9f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cbmfileb" supported="no">
+		<description>CBM Filebrowser (v1.5, 2013-03-03)</description>
+		<year>2013</year>
+		<publisher>nbla000</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="40-80 column"/>
+			<dataarea name="flop" size="349696">
+				<rom name="cbm filebrowser v1.5 (2013-03-03)(nbla000)[40-80 column].d71" size="349696" crc="39d64c4d" sha1="f2bff8190f0d05da078c7c7d1c193f3f94f6798e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cbmfileb_a" cloneof="cbmfileb" supported="no">
+		<description>CBM Filebrowser (v1.6, 2013-08-20)</description>
+		<year>2013</year>
+		<publisher>nbla000</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="40-80 column"/>
+			<dataarea name="flop" size="349696">
+				<rom name="cbm filebrowser v1.6 (2013-08-20)(nbla000)[40-80 column].d71" size="349696" crc="05ca4691" sha1="518f746baf5caf1912c70d2a1f55782c0810051f"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chardef" supported="no">
+		<description>Chardef (v2.32, 1992-08-12)</description>
+		<year>1992</year>
+		<publisher>Erasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="chardef v2.32 (1992-08-12)(erasoft).d71" size="349696" crc="b1c66eea" sha1="c7b4580cfdab79df93c5907ae68e11579c539e56"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="desterm1" supported="no">
+		<description>DesTerm 128 (v2.0, Shareware)</description>
+		<year>199?</year>
+		<publisher>Matthew Desmond</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 3, 80 column"/>
+			<dataarea name="flop" size="349696">
+				<rom name="desterm 128 v2.0 (199x)(desmond, matthew)(sw)(disk 1 of 3)[80 column].d71" size="349696" crc="a9df00cf" sha1="fe01d15b9be2f70182a5399f7ba92850c2f38b02"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="oxfordpa" supported="no">
+		<description>Oxford Pascal v2.0 + Petspeed compiler</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by SNA"/>
+			<dataarea name="flop" size="349696">
+				<rom name="oxford pascal v2.0 + petspeed compiler (19xx)(-)[cr sna].d71" size="349696" crc="80c3767b" sha1="1f48489f7ad667288fc6cf9513c02b9dba4a34f3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="puncher" supported="no">
+		<description>Puncher (AR)</description>
+		<year>1992</year>
+		<publisher>Erasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="puncher (1992)(erasoft)(ar).d71" size="349696" crc="bf8be278" sha1="866189c3512f92b5be1d4f1402e186856b5e4743"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ramresid" supported="no">
+		<description>RAM-resident Turbo Loader (2007-04-08)</description>
+		<year>2007</year>
+		<publisher>FMan</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="ram-resident turbo loader (2007-04-08)(fman).d71" size="349696" crc="1ef29b09" sha1="9c4e80979a1f1d6d94dd2da8042d0b78111e5242"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="superscr" supported="no">
+		<description>Superscript 128</description>
+		<year>1985</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Training"/>
+			<dataarea name="flop" size="349696">
+				<rom name="superscript 128 (1985)(commodore)[training].d71" size="349696" crc="427af1fb" sha1="97c00cfbea81f5dcf8c3bda87fd3ba9d65dc48a7"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Training, Alt 1"/>
+			<dataarea name="flop" size="349696">
+				<rom name="superscript 128 (1985)(commodore)[a][training].d71" size="349696" crc="e53c45b3" sha1="11823587e989be476f1a5816eaea2fd3068200e3"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="UK Dictionary"/>
+			<dataarea name="flop" size="349696">
+				<rom name="superscript 128 (1985)(commodore)[uk dictionary].d71" size="349696" crc="c5f001eb" sha1="5ccecce895b0b220c434714df00424b61b60fe25"/>
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="US Dictionary"/>
+			<dataarea name="flop" size="349696">
+				<rom name="superscript 128 (1985)(commodore)[us dictionary].d71" size="349696" crc="6062804c" sha1="6a1d4e4c57bc6e2c26ae97838e6eb617ee230119"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Commodore C128 - Applications - CPM - [D71] (TOSEC-v2018-09-22_CM).dat -->
+
+	<software name="busypack" supported="no">
+		<description>BusyPack 128 ╪konomisystem</description>
+		<year>1985</year>
+		<publisher>DSC</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 3, Opstartsdiskette"/>
+			<dataarea name="flop" size="349696">
+				<rom name="busypack 128 konomisystem (1985)(dsc)(disk 1 of 3)[opstartsdiskette].d71" size="349696" crc="9d0c67c8" sha1="7466711da10fd2dd3ab7e13ccb16ad96feacec05"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 3, Programdiskette"/>
+			<dataarea name="flop" size="349696">
+				<rom name="busypack 128 konomisystem (1985)(dsc)(disk 2 of 3)[programdiskette].d71" size="349696" crc="2da235bf" sha1="39851a6b8ff9efd736d42419274f40df8524a807"/>
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 3 of 3, Datadiskette"/>
+			<dataarea name="flop" size="349696">
+				<rom name="busypack 128 konomisystem (1985)(dsc)(disk 3 of 3)[datadiskette].d71" size="349696" crc="67c35f39" sha1="ba111f46b5d75d5d1c7686365c702af600dd138a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="summaryd" supported="no">
+		<description>Summary Disk of PD Software (nl)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="summary disk of pd software (19xx)(-)(nl).d71" size="349696" crc="821d50b0" sha1="551df0a9672a1bf7bd17da360e5d254732abb461"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wordstar" supported="no">
+		<description>Wordstar r3.00-2 (de)</description>
+		<year>1981</year>
+		<publisher>MicroPro</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, req cpm"/>
+			<dataarea name="flop" size="349696">
+				<rom name="wordstar r3.00-2 (1981)(micropro)(de)[80 column][req cpm].d71" size="349696" crc="217dad8a" sha1="38cf9951f41ad9e5bb9cb3a6fed905bfced5ef1b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wordstar_1" supported="no">
+		<description>Wordstar r3.00 (nl)</description>
+		<year>1981</year>
+		<publisher>MicroPro</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot"/>
+			<dataarea name="flop" size="349696">
+				<rom name="wordstar r3.00 (1981)(micropro)(nl)[80 column][autoboot].d71" size="349696" crc="996f21d1" sha1="20166292539a7555986cb44278eec2ab12750f3a"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Commodore C128 - Games - [D71] (TOSEC-v2017-10-23_CM).dat -->
+
+	<software name="race" supported="no">
+		<description>Race (AR)</description>
+		<year>1990</year>
+		<publisher>Erasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="race (1990)(erasoft)(ar).d71" size="349696" crc="b26d5046" sha1="61b671928a48b666b4d676dd0cd95212eb31e595"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sexgames" supported="no">
+		<description>Sex Games III (AR)</description>
+		<year>1989</year>
+		<publisher>Erasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="sex games iii (1989)(erasoft)(ar).d71" size="349696" crc="9f2e0957" sha1="6518346e4d5a437d58b8ba7a85e8fcdc0817f37c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="teenagem" supported="no">
+		<description>Teenage Mutant Runner Turtle</description>
+		<year>1991</year>
+		<publisher>Erasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="teenage mutant runner turtle (1991)(erasoft).d71" size="349696" crc="2dd82b2a" sha1="2533880098cc539dd49aa5121aa5c0bfc5b068bf"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="therace" supported="no">
+		<description>The Race (AR)</description>
+		<year>1992</year>
+		<publisher>Erasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="race, the (1992)(erasoft)(ar).d71" size="349696" crc="ca789141" sha1="edfdf84dcfce8f04f4592b4b323c6f42535dd59c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Commodore C128 - Games - CPM - [D71] (TOSEC-v2018-03-25_CM).dat -->
+
+	<software name="ballyhoo" supported="no">
+		<description>Ballyhoo r97</description>
+		<year>1986</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="ballyhoo r97 (1986)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="0813f38b" sha1="8ddae17a08494a002828f082047646c015b853a7"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cutthroa" supported="no">
+		<description>Cutthroat r23</description>
+		<year>1984</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="cutthroat r23 (1984)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="df169e13" sha1="65f30e7dfa4609122a578bf062197033a37c70f3"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deadline" supported="no">
+		<description>Deadline r27</description>
+		<year>1982</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="deadline r27 (1982)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="baa9e8ef" sha1="4e5c2c6daaaa8f6e354ca15cecdb12f93ea900c2"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="enchante" supported="no">
+		<description>Enchanter r29</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="enchanter r29 (1983)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="c6a4f2aa" sha1="320e6c14418baf19862d4d7638f90ea8b7a7911b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="infidelr" supported="no">
+		<description>Infidel r22</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="infidel r22 (1983)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="acbee147" sha1="8c2ec56cb7a2052bb62d96caa7fcbaa6d9dd4161"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="leatherg" supported="no">
+		<description>Leather Goddesses of Phobos r59</description>
+		<year>1986</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="leather goddesses of phobos r59 (1986)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="9c6212c2" sha1="90fce1b3c45ecb113d3f6e1d878cc8a4b2e70727"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="planetfa" supported="no">
+		<description>Planetfall r37</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="planetfall r37 (1983)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="943db2aa" sha1="58c1ea0bf370d3caa588c0e8565aa5815afdc34c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sorcerer" supported="no">
+		<description>Sorcerer</description>
+		<year>1984</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="sorcerer (1984)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="668d8501" sha1="07f8030627173428b8393849ab8139c7b458b971"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spellbre" supported="no">
+		<description>Spellbreaker r87</description>
+		<year>1985</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="spellbreaker r87 (1985)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="c7c042b2" sha1="2b55eddc74520ec333a5c3c3e4121c139319b32d"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="starcros" supported="no">
+		<description>Starcross r17</description>
+		<year>1982</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="starcross r17 (1982)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="ac776686" sha1="d437bc3e9c8ef5630f4bfc9bd54eb82221775c67"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stationf" supported="no">
+		<description>Stationfall r107</description>
+		<year>1987</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="stationfall r107 (1987)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="de182ed9" sha1="883eb21075e3a30bcdbeb89bf99522b5389b220c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="suspectr" supported="no">
+		<description>Suspect r14</description>
+		<year>1984</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="suspect r14 (1984)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="c2514e07" sha1="a368a3ecbf92293c13611b005d3ee022acaa8e60"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="suspende" supported="no">
+		<description>Suspended r8</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="suspended r8 (1983)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="fc844b60" sha1="ce6acc10ba5390d426e541b19ccbfc5f18876f09"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thehitch" supported="no">
+		<description>The Hitchhiker's guide to the Galaxy r59</description>
+		<year>1984</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="hitchhiker's guide to the galaxy, the r59 (1984)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="11b1456f" sha1="2dc551006f43e663f5dcd5455362bbf94e869e2b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wishbrin" supported="no">
+		<description>Wishbringer r69</description>
+		<year>1985</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="wishbringer r69 (1985)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="6ef571fe" sha1="a6af6315f894df54400c58eab8ec0516e7c7b25e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="witnessr" supported="no">
+		<description>Witness r22</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="witness r22 (1983)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="b1c79dd7" sha1="9962ed442df1c94f8eb4cca8b2a1a8664738a0bd"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zork1the" supported="no">
+		<description>Zork 1 - The Great Underground Empire r88</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="zork 1 - the great underground empire r88 (1983)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="98d6fdf3" sha1="0676cda4a5ebf92c0a0fe04475438d06533d91bc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zork2the" supported="no">
+		<description>Zork 2 - The Wizard of Frobozz r48</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="zork 2 - the wizard of frobozz r48 (1983)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="3ac06d94" sha1="ba3873a98d77533d4dcab040745d4c881b8abdb0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zork3the" supported="no">
+		<description>Zork 3 - The Dungeon Master r17</description>
+		<year>1982</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot, Modified Brian Green"/>
+			<dataarea name="flop" size="349696">
+				<rom name="zork 3 - the dungeon master r17 (1982)(infocom)[m brian green][80 column][autoboot].d71" size="349696" crc="884d3c4d" sha1="0ae0986c429b683b41642f0e09d8222ba60dcdb9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Commodore C128 - Operating Systems - [D71] (TOSEC-v2020-06-26_CM).dat -->
+
+	<software name="cpm30" supported="no">
+		<description>CPM 3.0</description>
+		<year>1985</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="cpm 3.0 (1985)(commodore).d71" size="349696" crc="c282fdd5" sha1="f04b935ffb7a7b6816926622c813b5cea27e4bbb"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpm30_a" cloneof="cpm30" supported="no">
+		<description>CPM 3.0 (1987-05-28)</description>
+		<year>1987</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="req Kerberos midi cart, Modified Sorensen, Carsten Elton"/>
+			<dataarea name="flop" size="349696">
+				<rom name="cpm 3.0 (1987-05-28)(commodore)[m sorensen, carsten elton][req kerberos midi cart].d71" size="349696" crc="0e6ca11b" sha1="56f139035b33d36cf680304712db559ccd63fa04"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpmsyste" supported="no">
+		<description>CPM System Fast (1987-05-28)</description>
+		<year>1987</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Modified Linards Ticmanis"/>
+			<dataarea name="flop" size="349696">
+				<rom name="cpm system fast (1987-05-28)(commodore)[m linards ticmanis].d71" size="349696" crc="d0e56925" sha1="b713c99122397fd96e02b73ee94e19a26d41b67e"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="contiki" supported="no">
+		<description>Contiki (v3.0, 2015-08-25)</description>
+		<year>2015</year>
+		<publisher>contiki-os.org</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="contiki v3.0 (2015-08-25)(contiki-os.org).d71" size="349696" crc="5386410a" sha1="6a803cc587cda16005aba0b54a5faedfc3d59967"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fastcpm3" supported="no">
+		<description>Fast CPM 3.1 (1991-02-28)</description>
+		<year>1991</year>
+		<publisher>Commodore</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="80 column, autoboot"/>
+			<dataarea name="flop" size="351062">
+				<rom name="fast cpm 3.1 (1991-02-28)(commodore)[80 column][autoboot].d71" size="351062" crc="5ca411d1" sha1="a119ed1da8441e972939f971dc72b7e39851566c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Commodore C128 - Operating Systems - GEOS - [D71] (TOSEC-v2017-10-23_CM).dat -->
+
+	<software name="geopubli" supported="no">
+		<description>Geopublisher</description>
+		<year>1986</year>
+		<publisher>Berkeley Softworks</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="349696">
+				<rom name="geopublisher (1986)(berkeley softworks).d71" size="349696" crc="809ba5e5" sha1="508ef390d7c7faffc82e501e61367151e1b698d1"/>
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

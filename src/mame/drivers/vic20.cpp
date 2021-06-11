@@ -849,7 +849,12 @@ void vic20_state::vic20(machine_config &config, const char* softlist_filter)
 	SOFTWARE_LIST(config, "cart_list").set_original("vic20_cart").set_filter(softlist_filter);
 	SOFTWARE_LIST(config, "cass_list").set_original("vic20_cass").set_filter(softlist_filter);
 	SOFTWARE_LIST(config, "flop_list").set_original("vic20_flop").set_filter(softlist_filter);
-
+    
+    SOFTWARE_LIST(config, "cass_list_tosec").set_original("vic20_cass_tosec").set_filter(softlist_filter);
+    SOFTWARE_LIST(config, "flop_list_tosec_d64").set_original("vic20_flop_tosec_d64").set_filter(softlist_filter);
+    SOFTWARE_LIST(config, "flop_list_tosec_d71").set_original("vic20_flop_tosec_d71").set_filter(softlist_filter);
+    SOFTWARE_LIST(config, "flop_list_tosec_d81").set_original("vic20_flop_tosec_d81").set_filter(softlist_filter);
+    
 	RAM(config, m_ram);
 	m_ram->set_default_size("5K");
 }

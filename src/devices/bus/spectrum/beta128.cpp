@@ -114,6 +114,9 @@ void spectrum_beta128_device::device_add_mconfig(machine_config &config)
 	SPECTRUM_EXPANSION_SLOT(config, m_exp, spectrum_expansion_devices, nullptr);
 	m_exp->irq_handler().set(DEVICE_SELF_OWNER, FUNC(spectrum_expansion_slot_device::irq_w));
 	m_exp->nmi_handler().set(DEVICE_SELF_OWNER, FUNC(spectrum_expansion_slot_device::nmi_w));
+    
+    SOFTWARE_LIST(config, "betadisc_list").set_original("spectrum_betadisc_flop");
+    SOFTWARE_LIST(config, "betadisc_list_tosec").set_original("spectrum_betadisc_flop_tosec");
 }
 
 const tiny_rom_entry *spectrum_beta128_device::device_rom_region() const

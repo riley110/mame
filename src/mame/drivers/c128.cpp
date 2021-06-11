@@ -218,6 +218,7 @@ public:
 
 	int m_user_pa2;
 	int m_user_pb;
+    void softlists(machine_config &config, const char *filter);
 	void pal(machine_config &config);
 	void ntsc(machine_config &config);
 	void c128pal(machine_config &config);
@@ -1560,7 +1561,7 @@ void c128d81_iec_devices(device_slot_interface &device)
 //**************************************************************************
 
 //-------------------------------------------------
-//  MACHINE_START( c64 )
+//  MACHINE_START( c128 )
 //-------------------------------------------------
 
 void c128_state::machine_start()
@@ -1618,6 +1619,40 @@ void c128_state::machine_reset()
 //**************************************************************************
 //  MACHINE DRIVERS
 //**************************************************************************
+
+void c128_state::softlists(machine_config &config, const char *filter) {
+    SOFTWARE_LIST(config, "cart_list").set_original("c128_cart").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_list").set_original("c128_flop").set_filter(filter);
+    SOFTWARE_LIST(config, "from_list").set_original("c128_rom").set_filter(filter);
+    SOFTWARE_LIST(config, "cart_list_c64").set_compatible("c64_cart").set_filter(filter);
+    SOFTWARE_LIST(config, "cart_list_vic10").set_compatible("vic10").set_filter(filter);
+    SOFTWARE_LIST(config, "cass_list_c64").set_compatible("c64_cass").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_list_c64_orig").set_compatible("c64_flop_orig").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_list_c64_misc").set_compatible("c64_flop_misc").set_filter(filter);
+    
+    // TOSEC lists
+    SOFTWARE_LIST(config, "cass_list").set_original("c128_cass").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_tosec_d64").set_original("c128_flop_tosec_d64").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_tosec_d71").set_original("c128_flop_tosec_d71").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_tosec_d81").set_original("c128_flop_tosec_d81").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_tosec_g64").set_original("c128_flop_tosec_g64").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_c64_tosec_d64_app").set_compatible("c64_flop_tosec_d64_app").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_c64_tosec_d64_col").set_compatible("c64_flop_tosec_d64_col").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_c64_tosec_d64_comp").set_compatible("c64_flop_tosec_d64_comp").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_c64_tosec_d64_cover").set_compatible("c64_flop_tosec_d64_cover").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_c64_tosec_d64_demo").set_compatible("c64_flop_tosec_d64_demo").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_c64_tosec_d64_doc").set_compatible("c64_flop_tosec_d64_doc").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_c64_tosec_d64_edu").set_compatible("c64_flop_tosec_d64_edu").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_c64_tosec_d64_game").set_compatible("c64_flop_tosec_d64_game").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_c64_tosec_d64_mag").set_compatible("c64_flop_tosec_d64_mag").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_c64_tosec_d64_pd").set_compatible("c64_flop_tosec_d64_pd").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_c64_tosec_d64_src").set_compatible("c64_flop_tosec_d64_src").set_filter(filter);
+    
+    SOFTWARE_LIST(config, "flop_c64_tosec_d71").set_compatible("c64_flop_tosec_d71").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_c64_tosec_d81").set_compatible("c64_flop_tosec_d81").set_filter(filter);
+    SOFTWARE_LIST(config, "flop_c64_tosec_g64").set_compatible("c64_flop_tosec_g64").set_filter(filter);
+}
 
 //-------------------------------------------------
 //  machine_config( ntsc )
@@ -1747,15 +1782,7 @@ void c128_state::ntsc(machine_config &config)
 	QUICKLOAD(config, "quickload", "p00,prg", CBM_QUICKLOAD_DELAY).set_load_callback(FUNC(c128_state::quickload_c128));
 
 	// software list
-	SOFTWARE_LIST(config, "cart_list").set_original("c128_cart").set_filter("NTSC");
-	SOFTWARE_LIST(config, "flop_list").set_original("c128_flop").set_filter("NTSC");
-	SOFTWARE_LIST(config, "from_list").set_original("c128_rom").set_filter("NTSC");
-	SOFTWARE_LIST(config, "cart_list_c64").set_original("c64_cart").set_filter("NTSC");
-	SOFTWARE_LIST(config, "cass_list_c64").set_original("c64_cass").set_filter("NTSC");
-	SOFTWARE_LIST(config, "cart_list_vic10").set_original("vic10").set_filter("NTSC");
-	// disk softlist split into originals and misc (homebrew and cracks)
-	SOFTWARE_LIST(config, "flop525_orig").set_original("c64_flop_orig").set_filter("NTSC");
-	SOFTWARE_LIST(config, "flop525_misc").set_compatible("c64_flop_misc").set_filter("NTSC");
+    softlists(config, "NTSC");
 
 	// function ROM
 	GENERIC_SOCKET(config, "from", generic_plain_slot, "c128_rom", "bin,rom");
@@ -1934,20 +1961,7 @@ void c128_state::pal(machine_config &config)
 	QUICKLOAD(config, "quickload", "p00,prg", CBM_QUICKLOAD_DELAY).set_load_callback(FUNC(c128_state::quickload_c128));
 
 	// software list
-	SOFTWARE_LIST(config, "cart_list_vic10").set_original("vic10");
-	SOFTWARE_LIST(config, "cart_list_c64").set_original("c64_cart");
-	SOFTWARE_LIST(config, "cart_list").set_original("c128_cart");
-	SOFTWARE_LIST(config, "cass_list_c64").set_original("c64_cass");
-	SOFTWARE_LIST(config, "flop_list_c64").set_original("c64_flop");
-	SOFTWARE_LIST(config, "flop_list").set_original("c128_flop");
-	SOFTWARE_LIST(config, "from_list").set_original("c128_rom");
-	subdevice<software_list_device>("cart_list_vic10")->set_filter("PAL");
-	subdevice<software_list_device>("cart_list_c64")->set_filter("PAL");
-	subdevice<software_list_device>("cart_list")->set_filter("PAL");
-	subdevice<software_list_device>("cass_list_c64")->set_filter("PAL");
-	subdevice<software_list_device>("flop_list_c64")->set_filter("PAL");
-	subdevice<software_list_device>("flop_list")->set_filter("PAL");
-	subdevice<software_list_device>("from_list")->set_filter("PAL");
+    softlists(config, "PAL");
 
 	// function ROM
 	GENERIC_SOCKET(config, "from", generic_plain_slot, "c128_rom", "bin,rom");

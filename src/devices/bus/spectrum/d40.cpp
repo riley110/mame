@@ -98,7 +98,7 @@ void spectrum_d40_device::device_add_mconfig(machine_config &config)
 	m_ppi->in_pa_callback().set_ioport("JOY");
 
 	/* software list */
-	//SOFTWARE_LIST(config, "flop_list").set_original("spectrum_d40_flop");
+	SOFTWARE_LIST(config, "flop_list").set_original("spectrum_d40_flop");
 }
 
 void spectrum_d80_device::device_add_mconfig(machine_config &config)
@@ -112,7 +112,7 @@ void spectrum_d80_device::device_add_mconfig(machine_config &config)
 	I8255(config, m_ppi);
 
 	/* software list */
-	//SOFTWARE_LIST(config, "flop_list").set_original("spectrum_d40_flop");
+	SOFTWARE_LIST(config, "flop_list").set_original("spectrum_d80_flop");
 }
 
 void spectrum_d80v2_device::device_add_mconfig(machine_config &config)
@@ -124,7 +124,7 @@ void spectrum_d80v2_device::device_add_mconfig(machine_config &config)
 	I8255(config, m_ppi);
 
 	/* software list */
-	//SOFTWARE_LIST(config, "flop_list").set_original("spectrum_d40_flop");
+	SOFTWARE_LIST(config, "flop_list").set_original("spectrum_d80_flop");
 }
 
 const tiny_rom_entry *spectrum_d40_device::device_rom_region() const
